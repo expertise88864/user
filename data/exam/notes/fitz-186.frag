@@ -2,13 +2,13 @@
 <h2>1. Background &amp; SSTI Approach（背景與皮膚軟組織感染的處理原則）</h2>
 <ul>
 <li>多數 skin and soft tissue infections（SSTIs）由 Gram-positive 菌引起，多半對窄效譜藥物敏感；β-Lactams 一直是 SSTI 的主力。<span class="ex-ref">p.3407</span></li>
-<li>Community-acquired MRSA 近年增加；課本寫 MRSA 現在約佔所有 SSTIs 的 <strong class="ex-n">50%</strong>。<span class="ex-ref">p.3407</span></li>
+<li>Community-acquired MRSA 近年增加；課本寫 MRSA 現在佔所有 SSTIs 的 <strong class="ex-n">50%</strong>。<span class="ex-ref">p.3407</span></li>
 <li>治療方向依 SSTI 型態（purulent 或 nonpurulent）與嚴重度（mild、moderate、severe）決定。<span class="ex-ref">p.3407</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">SSTI 類型與嚴重度</th><th scope="col">Empiric therapy（經驗治療）選項（課本 At-a-glance 與內文）</th></tr></thead>
 <tbody>
-<tr><td>Mild／moderate <strong>nonpurulent</strong></td><td>β-Lactams（penicillins、cephalosporins）與 clindamycin 為 first line options<span class="ex-ref">p.3407</span>；β-lactamase-resistant penicillins 適合 CA-MRSA 未被懷疑的 cellulitis<span class="ex-ref">p.3409</span>；tetracyclines 不建議單獨作為 nonpurulent SSTIs 的 empiric therapy<span class="ex-ref">p.3413</span>；TMP-SMX 不建議用於 nonpurulent SSTIs<span class="ex-ref">p.3417</span></td></tr>
+<tr><td>Mild／moderate <strong>nonpurulent</strong></td><td>β-Lactams（penicillins、cephalosporins）與 clindamycin 為 first line options<span class="ex-ref">p.3407</span>；β-lactamase-resistant penicillins 是 CA-MRSA 未被懷疑之 mild nonpurulent SSTIs（如 cellulitis）的良好 empiric 選擇<span class="ex-ref">p.3409</span>；tetracyclines 不建議單獨作為 nonpurulent SSTIs 的 empiric therapy<span class="ex-ref">p.3413</span>；TMP-SMX 不建議用於 nonpurulent SSTIs<span class="ex-ref">p.3417</span></td></tr>
 <tr><td>Moderate <strong>purulent</strong></td><td>需涵蓋 MRSA<span class="ex-ref">p.3407</span>；doxycycline／minocycline<span class="ex-ref">p.3413</span> 與 TMP-SMX<span class="ex-ref">p.3417</span> 可用於 empiric therapy；clindamycin 因 MRSA 可能對其抗藥，不建議作為 purulent SSTI 的 empiric therapy<span class="ex-ref">p.3414</span></td></tr>
 <tr><td>Severe <strong>purulent</strong></td><td>需涵蓋 MRSA<span class="ex-ref">p.3407</span>；課本列出 ceftaroline<span class="ex-ref">p.3412</span>、vancomycin<span class="ex-ref">p.3418</span>、telavancin<span class="ex-ref">p.3418</span>、linezolid（first-line option）<span class="ex-ref">p.3418</span></td></tr>
 </tbody>
@@ -34,7 +34,7 @@
 <section class="ex-note" id="penicillins">
 <h2>2. Penicillins（青黴素類）</h2>
 <ul>
-<li>β-Lactam family；抗菌活性來自 thiazolidine ring nucleus 與 β-lactam ring；所有 β-lactams 機轉相同：結合 penicillin-binding proteins、抑制 cell wall peptidoglycan synthesis。<span class="ex-ref">p.3407</span></li>
+<li>β-Lactam family；抗菌活性來自 thiazolidine ring nucleus 與 β-lactam ring；所有 β-lactams 機轉相似（share a similar mechanism）：結合 penicillin-binding proteins、抑制 cell wall peptidoglycan synthesis。<span class="ex-ref">p.3407</span></li>
 <li>臨床上分為 natural、aminopenicillins、antistaphylococcal、extended-spectrum 四類。<span class="ex-ref">p.3407</span></li>
 </ul>
 <table class="ex-table">
@@ -51,7 +51,7 @@
 <ul>
 <li>吸收因藥物對酸的穩定度與胃中食物而異；多數口服 penicillins 應在飯前或飯後至少 <strong class="ex-n">1 hour</strong> 服用；amoxicillin 吸收不受食物影響。<span class="ex-ref">p.3409</span></li>
 <li>Penicillin G、nafcillin、carbenicillin、ticarcillin、piperacillin 在低 pH 不穩定、吸收差，因此以 parenteral 給藥。</li>
-<li>一般不通過 blood–brain barrier，但腦膜炎時通透性增加，可達治療濃度。</li>
+<li>一般不通過 blood–brain barrier，但腦膜炎可增加通透性（can enhance permeability），使藥物達治療濃度。</li>
 <li>Natural penicillins 與 procaine、benzathine 形成低溶解度鹽，肌注後緩慢釋放。</li>
 <li>多數游離 penicillin 經腎排泄；<strong>nafcillin、oxacillin、ureidopenicillins 經 hepatobiliary system 排泄，腎衰竭時不需調整劑量</strong>。</li>
 <li>Pregnancy category <strong>B</strong>；母乳中量低，哺乳期視為安全。</li>
@@ -67,7 +67,7 @@
 <li>Hypersensitivity reactions 是 penicillins 最常見的不良反應；penicillin 是 drug-induced anaphylaxis 的主要原因，約佔所有 anaphylaxis 的 <strong class="ex-n">1% to 10%</strong>。<span class="ex-ref">p.3409</span></li>
 <li>一般族群約 <strong class="ex-n">5% to 10%</strong> 自述對 penicillin 過敏，但可能被高估。</li>
 <li>過敏不確定又需用 penicillin：先做 skin prick test（偵測 Type I hypersensitivity），陰性再做 intradermal test；仍陰性可在觀察下給口服 challenge dose。</li>
-<li>自述過敏史者約 <strong class="ex-n">10% to 20%</strong> skin test 陽性；皮試陰性且有過敏史者，challenge 後約 <strong class="ex-n">3%</strong> 出現過敏反應，多數輕微。</li>
+<li>自述過敏史者約 <strong class="ex-n">10% to 20%</strong> skin test 陽性；皮試陰性且有過敏史者，challenge 後約 <strong class="ex-n">3%</strong> 出現過敏反應，這些反應多數傾向輕微（tend to be mild）。</li>
 <li>皮試陽性但必須使用 β-lactam：建議 <strong>desensitization</strong>。</li>
 </ul>
 </section>
@@ -99,7 +99,7 @@
 <h3>Cross-reactivity with penicillin（與 penicillin 的交叉反應）</h3>
 <ul>
 <li>第一、二代 cephalosporins 在約 <strong class="ex-n">10%</strong> penicillin-allergic 病人交叉反應；第三代為 <strong class="ex-n">2% to 3%</strong>。<span class="ex-ref">p.3412</span></li>
-<li>共有 β-lactam ring，但 <strong>side chains</strong> 較能預測交叉反應：cefoxitin、cefamandole、cephaloridine 的 side chains 類似 penicillin；cefaclor、cephalexin、cefadroxil 類似 amoxicillin；cefdinir、cefpodoxime、cefuroxime 與 penicillin、ampicillin、amoxicillin 無 side chain 相似性，可能對 penicillin 過敏病人較安全。<span class="ex-ref">p.3412–3413</span></li>
+<li>共有 β-lactam ring，但 <strong>side chains</strong> 往往可預測交叉反應（tend to predict）：cefoxitin、cefamandole、cephaloridine 的 side chains 類似 penicillin；cefaclor、cephalexin、cefadroxil 類似 amoxicillin；cefdinir、cefpodoxime、cefuroxime 與 penicillin、ampicillin、amoxicillin 無 side chain 相似性，可能對 penicillin 過敏病人較安全。<span class="ex-ref">p.3412–3413</span></li>
 <li>自述 penicillin 過敏但 penicillin skin test 陰性者，對 β-lactams 過敏反應的風險不高於一般族群；cephalosporins 也可因其代謝物引起 cephalosporin-specific 過敏反應。<span class="ex-ref">p.3413</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Cephalosporin 的 thiazolidine 與 dihydrothiazine：penicillins 是 thiazolidine ring，cephalosporins 是 dihydrothiazine ring（p.3410）。Ceftaroline 涵蓋 MRSA 但不涵蓋 <em>P. aeruginosa</em>（p.3412）。</aside>
@@ -174,7 +174,7 @@
 <ul>
 <li>Erythromycin 是原型，較新衍生物有 clarithromycin 與 azithromycin；可逆地結合 <strong>50S</strong> ribosomal subunit，抑制 RNA-dependent protein synthesis。<span class="ex-ref">p.3415</span></li>
 <li><mark data-q="106-21">同時 <strong>抑制 neutrophil chemotaxis 與 interleukin-8 secretion</strong></mark>。<span class="ex-ref">p.3415</span></li>
-<li>對 Gram-positive pathogens 活性好但不一：clarithromycin &gt; erythromycin &gt; azithromycin。<em>S. aureus</em> 對 erythromycin 敏感度不一；Streptococcus 抗藥性增加，近期一項兒童研究約 <strong class="ex-n">50%</strong> group A streptococci 分離株對 erythromycin 抗藥，且抗藥是整個 class 的現象，不限於特定藥物。<span class="ex-ref">p.3415</span></li>
+<li>對 Gram-positive pathogens 活性好但不一：clarithromycin &gt; erythromycin &gt; azithromycin。<em>S. aureus</em> 對 erythromycin 敏感度不一；Streptococcus 抗藥性增加，近期一項兒童研究約 <strong class="ex-n">50%</strong> group A streptococci 分離株對 erythromycin 抗藥；streptococci 對 macrolides 的抗藥是整個 class 的現象，不限於特定藥物。<span class="ex-ref">p.3415</span></li>
 <li>Erythromycin 的 Gram-negative 涵蓋差，全身使用已多被 clarithromycin 與 azithromycin 取代；後兩者對 <em>H. influenzae</em>、<em>N. gonorrhoeae</em>、<em>M. catarrhalis</em>、<em>Chlamydia</em>、<em>Mycoplasma pneumoniae</em>、<em>Helicobacter pylori</em>、<em>T. gondii</em>、<em>T. pallidum</em>、<em>Borrelia burgdorferi</em> 與 nontuberculous mycobacteria 有良好活性。</li>
 <li>Azithromycin 對 <em>P. multocida</em> 與 <em>E. corrodens</em> 活性佳，是 infected animal bites 的有用替代。</li>
 <li>Clarithromycin 是對 <em>Mycobacterium leprae</em> 最有活性的 macrolide，廣泛用於 <em>M. chelonae</em>、<em>M. abscessus</em>、<em>M. fortuitum</em> 等 nontuberculous mycobacteria 的皮膚感染。<span class="ex-ref">p.3415</span></li>
@@ -216,7 +216,7 @@
 <ul>
 <li>吸收快、分布體積大；食物不抑制吸收，但 antacids 或含 divalent cations 的產品（如牛奶）可降低吸收。<span class="ex-ref">p.3416</span></li>
 <li>與 β-lactams 不同，fluoroquinolones 為 <strong>concentration-dependent</strong>，每日給藥一或兩次。</li>
-<li>除 <strong>moxifloxacin 經肝排除</strong>外，多數經腎排泄，腎衰竭需調整；皆無法經透析清除；乳汁中量很小。</li>
+<li>除 <strong>moxifloxacin 經肝排除</strong>外，多數經腎排泄，腎衰竭需調整；皆無法經透析清除；多數在乳汁中量很小、幾可忽略。</li>
 <li>Indications（Table 186-14）：first-line 為 Gram-negative SSTIs、<em>P. aeruginosa</em> 感染（otitis externa、ecthyma gangrenosum、SSTI；ciprofloxacin）、rhinoscleroma、chancroid、anthrax；alternative 為 <em>Bartonella</em>、chlamydia（levofloxacin、ofloxacin）、granuloma inguinale、erysipeloid。<span class="ex-ref">p.3416–3417</span></li>
 <li>Table 186-15：antacids（aluminum、magnesium、alum）、iron、zinc、sucralfate 降低 bioavailability；ciprofloxacin 抑制 theophylline 與 aminophylline 代謝；tendon rupture（腎病、hemodialysis 或使用 steroid 者）；降低 seizure threshold；降低 warfarin 與 cyclosporine 代謝。<span class="ex-ref">p.3417</span></li>
 <li>Adverse effects（Table 186-5，pregnancy class <strong>C</strong>）：common 為 nausea、vomiting、cephalgia、dizziness；uncommon 為 exanthem、photosensitivity、delirium、seizure、<strong>tendon rupture 與 arthropathy（in the immature）</strong>、QT prolongation、hepatitis（trovafloxacin，已自美國撤出）。<span class="ex-ref">p.3411</span></li>
@@ -231,7 +231,7 @@
 <li>廣效譜；對許多 aerobic Gram-positive cocci 有良好活性，包括 <em>S. aureus</em>、<em>S. viridans</em> 與 <mark data-q="104-47,105-28">community-acquired MRSA</mark>；亦有效於 <em>H. influenzae</em>、<em>E. coli</em>、<em>Proteus mirabilis</em>、<em>Klebsiella pneumoniae</em>、<em>Shigella</em>、<em>Yersinia</em>、<em>Vibrio cholera</em>、<em>Nocardia</em> spp.、<em>M. marinum</em>、<em>M. fortuitum</em>、<em>Brucella</em>。<span class="ex-ref">p.3417</span></li>
 <li><mark data-q="104-47,105-28">TMP-SMX 對多數 community-acquired MRSA 有活性，可用於 moderate purulent SSTIs 的 empiric therapy</mark>；但<strong>不建議</strong>用於 nonpurulent SSTIs（對 <em>S. pyogenes</em> 的使用有爭議，因抗藥性疑慮，可能與實驗室檢測技術有關）。<span class="ex-ref">p.3417</span></li>
 <li>對 TMP-SMX 抗藥：<em>Mycoplasma</em> spp.、<em>Rickettsia</em> spp.、<em>M. tuberculosis</em>、<em>T. pallidum</em>；<em>P. aeruginosa</em> 不敏感，但其他 pseudomonal species 敏感；偶爾對 <em>Nocardia</em> 與 nontuberculous mycobacteria 有效；<strong>對 anaerobes 無活性</strong>。</li>
-<li>PK：兩者吸收良好但血清濃度不同；對多數病原達到 synergy 需血清 TMP:SMX <strong class="ex-n">1:20</strong>，由固定 1:5 配方達成；迅速分布至組織，包括 cerebrospinal fluid 與 sputum；經腎排泄。<span class="ex-ref">p.3417</span></li>
+<li>PK：兩者吸收良好但血清濃度不同；對多數病原達到 optimal synergy（理想的協同作用）需血清 TMP:SMX <strong class="ex-n">1:20</strong>，由固定 1:5 配方達成；迅速分布至組織，包括 cerebrospinal fluid 與 sputum；經腎排泄。<span class="ex-ref">p.3417</span></li>
 <li>Indications（Table 186-16）：CA-MRSA；<em>Nocardia asteroides</em> 感染；moderate purulent SSTIs 的 empiric therapy；susceptible pathogens 引起的 uncomplicated SSTIs；granuloma inguinale（alternative）。<span class="ex-ref">p.3417</span></li>
 <li>Table 186-17：HIV/AIDS 病人出現嚴重反應；使 warfarin 病人 prothrombin time 延長；<strong>methotrexate 使用者禁忌</strong>。<span class="ex-ref">p.3418</span></li>
 <li>Pregnancy category <strong>D</strong>；哺乳婦女應避免，尤其新生兒出生後前 <strong class="ex-n">6 weeks</strong>。<span class="ex-ref">p.3418</span></li>
@@ -242,17 +242,17 @@
 
 <section class="ex-note" id="other-agents">
 <h2>9. Other Agents for Resistant Pathogens（其他用於抗藥菌的藥物）</h2>
-<p>這些藥物多為 complicated SSTIs 或抗藥菌造成的全身感染而設，多數限制使用，需 infectious disease specialist 同意。<span class="ex-ref">p.3418</span></p>
+<p>數種新藥或不常用藥物值得注意，用於 complicated SSTIs 或抗藥菌造成的全身感染；多數限制使用，需 infectious disease specialist 同意。<span class="ex-ref">p.3418</span></p>
 <table class="ex-table">
 <thead><tr><th scope="col">Drug</th><th scope="col">Mechanism / spectrum</th><th scope="col">重點</th></tr></thead>
 <tbody>
-<tr><td><strong>Vancomycin</strong>（glycopeptide）</td><td>抑制 cell wall peptidoglycan synthesis；Gram-positive，特別是對 β-lactams 抗藥或 β-lactam 禁忌者</td><td>Hospital-acquired MRSA 引起的 complicated／severe SSTIs 的 first line；severe purulent 與 nonpurulent（加 piperacillin-tazobactam）SSTIs 的 empiric 選項。劑量依體重（<strong class="ex-n">15 to 20 mg/kg</strong>），給藥頻率依 creatinine clearance 決定，需監測腎功能。不良反應：nephrotoxicity、ototoxicity、injection site phlebitis、hypersensitivity、leukopenia。<strong>&quot;Red man syndrome&quot;</strong> 由 histamine release 引起，較少見，被認為與藥物雜質有關，可用更純化製劑與較慢輸注減少。<strong>Drug-induced linear IgA disease</strong> 是罕見的皮膚副作用。<span class="ex-ref">p.3418</span></td></tr>
+<tr><td><strong>Vancomycin</strong>（glycopeptide）</td><td>抑制 cell wall peptidoglycan synthesis；Gram-positive，特別是對 β-lactams 抗藥或 β-lactam 禁忌者</td><td>Hospital-acquired MRSA 引起的 complicated／severe SSTIs 的 first line；severe purulent 與 nonpurulent（加 piperacillin-tazobactam）SSTIs 的 empiric 選項。劑量依體重（<strong class="ex-n">15 to 20 mg/kg</strong>），給藥頻率依 creatinine clearance 決定，需監測腎功能。可能的不良反應（potential adverse reactions）：nephrotoxicity、ototoxicity、injection site phlebitis、hypersensitivity、leukopenia。<strong>&quot;Red man syndrome&quot;</strong> 由 histamine release 引起，較少見，被認為與藥物雜質有關，可用更純化製劑與較慢輸注減少。<strong>Drug-induced linear IgA disease</strong> 是罕見的皮膚副作用。<span class="ex-ref">p.3418</span></td></tr>
 <tr><td><strong>Lipoglycopeptides</strong>：dalbavancin、oritavancin、telavancin</td><td>Vancomycin 的 semisynthetic derivatives；破壞細胞壁完整性與／或抑制細胞壁合成。IV 給藥</td><td>用於 complicated SSTIs（<em>S. aureus</em>、streptococci、clostridia、MRSA、VRE、multidrug-resistant pneumococci）；telavancin 是 severe purulent SSTIs 的 empiric 選項。Oritavancin 單劑、dalbavancin 兩劑（半衰期長）；telavancin 與 dalbavancin 腎衰竭需調整，oritavancin 不需。Pregnancy category C。可能引起類似 vancomycin 的 red man syndrome；oritavancin 可能增加 osteomyelitis 風險；telavancin 增加 taste disturbances、nephrotoxicity、QT prolongation 風險；dalbavancin 與 oritavancin 可有 transaminitis；oritavancin 與 telavancin 可干擾凝血檢驗；oritavancin 抑制 CYP2C9 與 2C19、誘導 CYP3A4 與 2D6，與 warfarin 併用要小心。<span class="ex-ref">p.3418</span></td></tr>
 <tr><td><strong>Oxazolidinones</strong>：linezolid、tedizolid</td><td>結合 50S 的 <strong>23S</strong> 部分抑制蛋白質合成，機轉獨特、減少與其他抗生素的 cross-resistance</td><td>Linezolid 核准用於 MRSA、VRE、vancomycin-resistant <em>S. aureus</em> 引起的 complicated SSTIs；tedizolid 於 <strong class="ex-n">2014</strong> 核准，對 Gram-positive 的效力比 linezolid 強 <strong class="ex-n">2-fold to 8-fold</strong>。對 Gram-positive（含 anaerobes）與 <em>M. chelonae</em>、<em>M. fortuitum</em> 有活性。Linezolid 的可逆性 thrombocytopenia 與 leukopenia 見於 <strong class="ex-n">2%</strong> 病人，與療程長短相關，需監測 CBC。口服與 IV 劑量相同：linezolid <strong class="ex-n">600 mg bid</strong>、tedizolid <strong class="ex-n">200 mg qd</strong>。Linezolid 是 severe purulent SSTIs empiric treatment 的 first-line option。<span class="ex-ref">p.3418</span></td></tr>
-<tr><td><strong>Quinupristin-dalfopristin</strong>（streptogramins）</td><td>固定比例 <strong class="ex-n">3:7</strong>；兩者結合 50S 的不同位置，不可逆抑制蛋白質轉譯，有協同作用</td><td>用於 multidrug-resistant Gram-positive（MRSA、VRE、vancomycin-resistant <em>S. aureus</em>）。劑量 <strong class="ex-n">7.5 mg/kg IV bid</strong>，至少 7 天。耐受性問題：phlebitis（<strong class="ex-n">75%</strong>）、arthralgia、myalgia；肝酵素與 bilirubin 可能升高。經 CYP3A4 代謝的藥物併用為禁忌；cyclosporine 或延長 QT 的藥物要小心。<span class="ex-ref">p.3419</span></td></tr>
-<tr><td><strong>Daptomycin</strong>（lipopeptide）</td><td>來自 <em>Streptomyces roseosporus</em>；破壞細菌細胞壁功能</td><td>核准用於 <em>S. aureus</em>（含 MRSA）、penicillin-resistant <em>S. pneumoniae</em>、VRE 引起的 complicated SSTIs；<strong class="ex-n">4 mg/kg IV q24h</strong>，7 to 14 天；腎排泄，腎功能不全需調整。主要嚴重不良反應是 <strong>myopathy</strong>，通常短暫可逆，未進展為 rhabdomyolysis。<span class="ex-ref">p.3419</span></td></tr>
+<tr><td><strong>Quinupristin-dalfopristin</strong>（streptogramins）</td><td>固定比例 <strong class="ex-n">3:7</strong>；兩者結合 50S 的不同位置，不可逆抑制蛋白質轉譯，有協同作用</td><td>對多種 multidrug-resistant Gram-positive（MRSA、VRE、vancomycin-resistant <em>S. aureus</em>）有協同活性。劑量 <strong class="ex-n">7.5 mg/kg IV bid</strong>，至少 7 天。耐受性可能是問題，尤其出現 phlebitis（<strong class="ex-n">75%</strong>）、arthralgia、myalgia；肝酵素與 bilirubin 可能升高。經 CYP3A4 代謝的藥物併用為禁忌；cyclosporine 或延長 QT 的藥物要小心。<span class="ex-ref">p.3419</span></td></tr>
+<tr><td><strong>Daptomycin</strong>（lipopeptide）</td><td>來自 <em>Streptomyces roseosporus</em>；破壞細菌細胞壁功能</td><td>核准用於 <em>S. aureus</em>（含 MRSA）、penicillin-resistant <em>S. pneumoniae</em>、VRE 引起的 complicated SSTIs；通常 <strong class="ex-n">4 mg/kg IV q24h</strong>，7 to 14 天；主要經腎排泄，腎功能不全需調整。主要嚴重不良反應是 <strong>myopathy</strong>，通常短暫可逆，未進展為 rhabdomyolysis。<span class="ex-ref">p.3419</span></td></tr>
 <tr><td><strong>Ertapenem</strong>（carbapenem）</td><td>β-lactam；對 extended-spectrum β-lactamases 穩定</td><td>廣效譜（Gram-positive 與 Gram-negative aerobes 與 anaerobes），但對 <em>Pseudomonas</em>、<em>Acinetobacter</em>、enterococci 活性差；與 piperacillin-tazobactam 治療 complicated SSTIs 相當，應保留給較窄效譜藥物無效的 polymicrobial infections。半衰期長，<strong class="ex-n">1 g/day</strong> IV，7 to 14 天；腎功能不全需小心；可有 CNS effects 與 hypersensitivity。<span class="ex-ref">p.3419</span></td></tr>
-<tr><td><strong>Tigecycline</strong>（glycylcycline）</td><td>Minocycline 衍生物，與其共用 30S 結合位置</td><td>核准用於 complicated SSTIs（susceptible organisms，含 MRSA、VRE、<em>Acinetobacter</em>、ESBL-producing Gram-negatives）；分布體積較大，對 tetracycline-resistant 菌與 <em>Streptococcus</em> spp. 活性較好；<strong class="ex-n">50 mg IV bid</strong>（先 100 mg loading dose）；肝病需減量；副作用與注意事項同 tetracycline 家族。<span class="ex-ref">p.3419</span></td></tr>
+<tr><td><strong>Tigecycline</strong>（glycylcycline）</td><td>Minocycline 衍生物，與其共用 30S 結合位置</td><td>核准用於 complicated SSTIs（susceptible organisms，含 MRSA、VRE、<em>Acinetobacter</em>、ESBL-producing Gram-negatives）；效譜與傳統 tetracyclines 相似；相較於 tetracyclines，分布體積較大，對 tetracycline-resistant 菌與 <em>Streptococcus</em> spp. 活性較好；<strong class="ex-n">50 mg IV bid</strong>（先 100 mg loading dose）；肝病需減量；副作用與 tetracycline 家族相似，並應採取相同注意事項。<span class="ex-ref">p.3419</span></td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.3418–3419。HA-MRSA 的 first-line 在 Table 186-1 列為 vancomycin、ceftaroline、oritavancin、dalbavancin、linezolid、tedizolid、quinupristin/dalfopristin、tigecycline，p.3408。</p>
@@ -261,8 +261,8 @@
 <section class="ex-note" id="topical">
 <h2>10. Topical Antibiotics（外用抗生素）</h2>
 <ul>
-<li>局部淺層感染（如 impetigo）外用抗生素即可，可能不需 systemic therapy；<strong>extensive impetigo、下肢感染或 immunocompromised 病人</strong>應全身性治療。<span class="ex-ref">p.3419</span></li>
-<li>微小手術或美容處置後常預防性外用抗生素，但<strong>不必要</strong>、甚至可能反效果（花費、誘發過敏風險）；多數手術以 petrolatum 即足夠。Burns 易續發感染，預防性外用常屬合理。<span class="ex-ref">p.3419</span></li>
+<li>局部淺層感染（如 impetigo），外用抗生素可能免除 systemic therapy 的需要（may eliminate the need）；<strong>extensive impetigo、下肢感染或 immunocompromised 病人</strong>應全身性治療。<span class="ex-ref">p.3419</span></li>
+<li>微小手術或美容處置後仍有人開立預防性外用抗生素（still prescribed），但<strong>不必要</strong>、甚至可能反效果（花費、誘發過敏風險）；多數手術以 petrolatum 即足夠。Burns 易續發感染，預防性外用常屬合理。<span class="ex-ref">p.3419</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Agent</th><th scope="col">Mechanism</th><th scope="col">Coverage / indication</th><th scope="col">Application</th><th scope="col">Safety</th><th scope="col">Adverse effects</th></tr></thead>
@@ -282,8 +282,8 @@
 <li><strong>Clindamycin</strong>：主要用於 acne；有與 benzoyl peroxide 的複方製劑，<mark data-q="101-12">加入 benzoyl peroxide 可能減緩對 clindamycin 的抗藥性發展</mark>；局部使用罕見報告 pseudomembranous colitis；懷孕期可安全使用。<span class="ex-ref">p.3419</span></li>
 <li><strong>Mupirocin</strong>：原名 pseudomonic acid A，來自 <em>Pseudomonas fluorescens</em>；活性僅限 Gram-positive；酸性 pH（<strong class="ex-n">5.5</strong>，皮膚正常 pH）活性增強；高溫下可能失效；2% ointment 每日 3 次，主要用於 <em>S. aureus</em> 與 <em>S. pyogenes</em> 的局部 impetigo；長期使用可致抗藥；可每日 2 次、每鼻孔、持續 <strong class="ex-n">5 days</strong> 鼻內使用以根除 MRSA colonization。<span class="ex-ref">p.3420</span></li>
 <li><strong>Retapamulin</strong>：semisynthetic pleuromutilin，來自 <em>Clitopilus scyphoides</em>；核准用於 &gt;9 個月兒童的 impetigo（<em>S. aureus</em> excluding MRSA 與 <em>S. pyogenes</em>）。<span class="ex-ref">p.3420</span></li>
-<li><strong>Bacitracin</strong>：polypeptide，來自 <em>Bacillus subtilis</em> 的 Tracy-I strain；結合並抑制 membrane-bound lipid pyrophosphate 的 dephosphorylation；對 Gram-positive cocci 有活性，對多數 Gram-negative 與 yeasts 無效；ointment 與 zinc bacitracin 為 <strong class="ex-n">400 to 500 units/g</strong>，可用於 impetigo、furunculosis、pyodermas；常與 polymyxin B 及 neomycin 合為 triple antibiotic；風險為 allergic contact sensitization，罕見 anaphylactic shock。<span class="ex-ref">p.3421</span></li>
-<li><strong>Polymyxin B</strong>：來自 <em>Bacillus polymyxa</em>；ointment <strong class="ex-n">5000–10,000 units/g</strong>，常與 bacitracin 合併，或為 triple antibiotic 的一部分。<span class="ex-ref">p.3421</span></li>
+<li><strong>Bacitracin</strong>：polypeptide，來自 <em>Bacillus subtilis</em> 的 Tracy-I strain；結合細胞壁並抑制 membrane-bound lipid pyrophosphate 的 dephosphorylation，以干擾 cell-wall synthesis；對 Gram-positive cocci 有活性，對多數 Gram-negative 與 yeasts 無效；ointment 與 zinc bacitracin 為 <strong class="ex-n">400 to 500 units/g</strong>，可用於 impetigo、furunculosis、pyodermas；常與 polymyxin B 及 neomycin 合為 triple antibiotic；風險為 allergic contact sensitization，罕見 anaphylactic shock。<span class="ex-ref">p.3421</span></li>
+<li><strong>Polymyxin B</strong>：來自 <em>Bacillus polymyxa</em>；ointment（<strong class="ex-n">5000–10,000 units/g</strong>）與 bacitracin 合併，或作為含 bacitracin 與 neomycin 的 triple antibiotic ointment；建議每日 1 to 3 次。<span class="ex-ref">p.3421</span></li>
 <li><strong>Neomycin</strong>：來自 <em>Streptomyces fradiae</em>；allergic contact dermatitis 風險高，<strong class="ex-n">9%</strong> 接受 patch testing 的病人。<strong>Gentamicin</strong>：來自 <em>Micromonospora purpurea</em>；0.1% cream 或 ointment，部分外科醫師用於耳部手術（特別是糖尿病或 immunocompromised 病人），預防 <em>P. aeruginosa</em> 引起的 malignant otitis externa；眼科製劑可用於眼周手術傷口。<span class="ex-ref">p.3421</span></li>
 <li><strong>Fusidic acid</strong>：fusidate antibiotic；<strong>美國無販售</strong>；allergic contact dermatitis 不常見（&lt;1%），與其他抗生素 cross-resistance 不常見；某些地區與 steroids 複方用於 atopic dermatitis。<span class="ex-ref">p.3421</span></li>
 </ul>
@@ -324,7 +324,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 186-1，p.3408；腳註：rifampin 因明顯的抗藥性發展，不建議單獨使用。</p>
-<aside class="ex-trap"><strong>易錯</strong>表中 CA-MRSA 的 first-line 是 TMP-SMX、doxycycline、clindamycin，minocycline 與 rifampin 列為 alternative；HA-MRSA 的 first-line 則是 vancomycin 等一組靜脈／新藥（p.3408）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>表中 CA-MRSA 的 first-line 是 TMP-SMX、doxycycline、clindamycin，minocycline 與 rifampin 列為 alternative；HA-MRSA 的 first-line 則是 vancomycin、ceftaroline、oritavancin、dalbavancin、linezolid、tedizolid、quinupristin/dalfopristin、tigecycline（p.3408）。</aside>
 </section>
 
 <section class="ex-note" id="adverse-summary">

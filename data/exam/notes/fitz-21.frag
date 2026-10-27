@@ -9,10 +9,10 @@
 <h3>Anatomy（解剖）</h3>
 <ul>
 <li>Barring the stratum corneum，整個人類皮膚都有神經支配（除角質層外）。<span class="ex-ref">p.351</span></li>
-<li>除臉部外，皮膚神經是由 spinal nerves 節段性發出的 cutaneous branches；臉部由 <strong>trigeminal nerve</strong> 分支支配。<span class="ex-ref">p.351</span></li>
+<li>除臉部外，皮膚神經是由 spinal nerves 節段性發出的 musculocutaneous nerves 之 cutaneous branches；臉部由 <strong>trigeminal nerve</strong> 分支支配。<span class="ex-ref">p.351</span></li>
 <li>在 dermal–subcutaneous junction，主要神經幹進入皮下脂肪並分支成 plexus，支配血管、附屬器與 encapsulated sensory nerves（e.g. Pacinian corpuscles）；再重組成小神經束，與血管、淋巴管形成表皮下與表皮內的網絡（Fig. 21-1）。<span class="ex-ref">p.351</span></li>
 <li>Cutaneous nerve fibers 包含 <strong>sensory</strong> 與 <strong>autonomic</strong> 兩類。感覺神經的 afferent impulses 傳到 dorsal root ganglia（DRG）；臉部傳到 trigeminal ganglion。感覺神經元為 unipolar：單一 axon 一支向周邊、一支向 CNS。<span class="ex-ref">p.351</span></li>
-<li>Sensory innervation 依 <strong>dermatomes</strong> 分節，但可有重疊支配。<span class="ex-ref">p.351</span></li>
+<li>Sensory innervation 依 <strong>dermatomes</strong> 分節，但可能（possibly）有重疊支配。<span class="ex-ref">p.351</span></li>
 <li>Autonomic：兩神經元序列路徑，spinal nerve 的 preganglionic fibers 先與 postganglionic fibers 形成 synapse，再支配 skin glands、blood vessels、arrector pili muscles。<span class="ex-ref">p.351</span></li>
 <li>Sensory nerve 的 <strong>free nerve endings</strong> 位於 epidermis 與 papillary dermis（Fig. 21-2）；特化構造包括 hair disk（毛囊周圍的上皮增厚）與 encapsulated endings：Ruffini、Pacinian、Meissner、Krause corpuscles，可感知不同機械刺激（vibration、pressure 等）。<span class="ex-ref">p.351–352</span></li>
 </ul>
@@ -33,7 +33,7 @@
 <thead><tr><th scope="col">Fiber（纖維）</th><th scope="col">Diameter（直徑）</th><th scope="col">Myelin（髓鞘）</th><th scope="col">Conduction velocity（傳導速度）</th><th scope="col">Function（功能）</th></tr></thead>
 <tbody>
 <tr><td>Aβ</td><td><strong class="ex-n">6–12 µm</strong></td><td>Yes（moderate）</td><td><strong class="ex-n">33–75 m/s</strong></td><td>Touch receptors</td></tr>
-<tr><td>Aδ</td><td><strong class="ex-n">1–5 µm</strong></td><td>Yes（thin）</td><td><strong class="ex-n">4–30 m/s</strong>（intermediate）</td><td>Cold、quick pain、pressure；亦可傳遞 pruritus</td></tr>
+<tr><td>Aδ</td><td><strong class="ex-n">1–5 µm</strong></td><td>Yes（thin）</td><td><strong class="ex-n">4–30 m/s</strong>（intermediate）</td><td>Cold、quick pain、pressure；recent studies suggest 亦可傳遞 pruritus</td></tr>
 <tr><td>C</td><td><strong class="ex-n">0.2–1.5 µm</strong></td><td>No（unmyelinated）</td><td><strong class="ex-n">0.5–2 m/s</strong>（slow）</td><td>Burning、pain、pruritus、warmth、touch</td></tr>
 </tbody>
 </table>
@@ -43,7 +43,7 @@
 <li><strong>TRPV1</strong> 表現在 C 與 Aδ fibers；TRPV1 屬於 thermosensors，表現在 keratinocytes 與 sensory nerves。<mark data-q="112-35">TRPV1 活化可介導 heat、pain 與 pruritus</mark>。<span class="ex-ref">p.353</span></li>
 <li>Thermosensors 感知溫度範圍：cold 為 TRPA1、TRPM8；warmth 與 heat 為 TRPV1–TRPV4。<span class="ex-ref">p.353</span></li>
 <li>CNS 可依不同神經元傳來的訊號分辨其性質與位置。<span class="ex-ref">p.353</span></li>
-<li>Peripheral 與 CNS 的交互作用被認為參與 thermoregulation，以及 psoriasis、atopic dermatitis、acne、wound healing、hair loss／regrowth 等疾病的病理生理。<span class="ex-ref">p.353</span></li>
+<li>Peripheral 與 CNS 的交互作用被推測（It is suspected）參與 thermoregulation，以及 psoriasis、atopic dermatitis、acne、wound healing、hair loss／regrowth 等疾病的病理生理。<span class="ex-ref">p.353</span></li>
 </ul>
 </section>
 
@@ -51,7 +51,7 @@
 <h2>3. C and A Fibers in Pruritus（傳遞癢的神經纖維）</h2>
 <ul>
 <li>Burning、pain、pruritus、warmth、touch 由 <strong>C fibers</strong> 傳遞；C fibers 是 polymodal nociceptors（可對 chemical、mechanical、thermal 刺激起反應），但不是每個亞群都能感知全部刺激。<span class="ex-ref">p.353</span></li>
-<li>兩個 C fiber 亞群作為 pruriceptors；另有 Aδ fibers 在多種 pruritogens 活化時也可傳遞 pruritus。<span class="ex-ref">p.353</span></li>
+<li>兩個 C fiber 亞群作為 pruriceptors；另有近期研究提示（recent studies suggest）Aδ fibers 在多種 pruritogens 活化時也可傳遞 pruritus。<span class="ex-ref">p.353</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Fiber（纖維）</th><th scope="col">Activated by（活化物）</th><th scope="col">Receptors / channels（受體與通道）</th><th scope="col">Sensation（感覺）</th></tr></thead>
@@ -72,7 +72,7 @@
 <h2>4. Efferent Function &amp; Neurogenic Inflammation（傳出功能與神經源性發炎）</h2>
 <ul>
 <li>皮膚中已發現 <strong>&gt;20 種</strong> neuropeptides（在感覺神經或 keratinocytes 等其他細胞），包括 substance P（SP）、neurokinin A、VIP、CGRP、PACAP、NPY、somatostatin、dynorphin、β-endorphin、CRH 等；未受刺激的感覺神經以 cytoplasmic vesicles 儲存。<span class="ex-ref">p.353</span></li>
-<li><mark data-q="106-29">Peptidergic CMIA fibers 受刺激時 antidromic activation 釋放 vasoactive neuropeptides（SP、CGRP）</mark>，經 autocrine／paracrine 造成 <strong>neurogenic inflammation</strong>：vasodilation 與 mast cell degranulation。<span class="ex-ref">p.353–354</span></li>
+<li><mark data-q="106-29">Peptidergic CMIA fibers 受刺激時 antidromic activation 可（can）釋放 vasoactive neuropeptides（SP、CGRP）</mark>，其釋放可經 autocrine／paracrine 造成 <strong>neurogenic inflammation</strong>：vasodilation 與 mast cell degranulation。<span class="ex-ref">p.353–354</span></li>
 <li>神經纖維因此可影響 epidermal growth、cytokine expression 與 keratinocyte proliferation。<span class="ex-ref">p.354</span></li>
 <li>Papillary dermis 中 unmyelinated nerve fibers 與 mast cells 經 neuropeptides 直接溝通。實驗上 intradermal SP 經 mast cell 上的受體造成 histamine 釋放而有 pruritogenic effect；但這在健康人皮膚是否成立仍有爭議。<span class="ex-ref">p.354</span></li>
 <li>Neuropeptide 受體包括 GPCRs、ion channels 與特定 cytokine receptors。Keratinocytes、Merkel cells、microvascular endothelial cells、leukocytes、fibroblasts 在特定情況下也會釋放 neuropeptides。<span class="ex-ref">p.354</span></li>
@@ -120,7 +120,7 @@
 <li>脊髓含 ascending afferent、descending inhibitory neurons 與 interneurons，構成傳遞 pruritus 與 pain 的迴路；pruritus 與 pain 共用 spinothalamic tract 等 ascending sensory pathways，兩者有數種共通的機制與神經解剖（several mechanisms and neuroanatomy），但許多功能不同。<span class="ex-ref">p.355</span></li>
 <li><mark data-q="108-02">κ-opioids 有 analgesic 與 antipruritic 作用；µ-opioids（e.g. morphine）雖有 analgesic 作用，卻可能誘發 pruritus</mark>。<span class="ex-ref">p.355</span></li>
 <li>動物研究：<strong>GRPR</strong> 與 µ-opioid receptor isoform <strong>MOR1D</strong> 在淺層脊髓大量 colocalize，GRPR antagonist 可消除 morphine-induced scratching（小鼠實驗）；提示可能有專屬 pruritus 的脊髓路徑。另有 glutamate／AMPA／kainate receptor、Nppb／Npra、somatostatin／Ret 在評估中；Nppb 推測由 primary afferent pruriceptors 釋放，興奮 second-order spinal interneurons。<span class="ex-ref">p.355</span></li>
-<li>Neurokinin-1 receptor（NK1R；SP receptor）也是 spinal 與 trigeminal pruritus transmission 研究重點。<span class="ex-ref">p.355</span></li>
+<li>近期動物模型研究（recent studies have used animal models）探討 spinal 與 trigeminal pruritus transmission 的 neurotransmitters，特別著重 GRPR 與 Neurokinin-1 receptor（NK1R；SP receptor）。<span class="ex-ref">p.355</span></li>
 <li>抓癢可緩解癢，推測 scratching 活化調節 pain 的 interneurons，進而抑制 pruritus 傳導；µ- 與 κ-opioid receptors 都被認為表現在 pruritus 相關 interneurons。<span class="ex-ref">p.355</span></li>
 <li><mark data-q="108-02">全身性 <strong>µ-antagonists（naltrexone、naloxone）</strong>與 <strong>κ-agonist（nalfurafine）</strong>可能控制多種 chronic pruritus，包括 cholestatic 與 uremic pruritus</mark>。<span class="ex-ref">p.355</span></li>
 </ul>
@@ -136,7 +136,7 @@
 <li><strong>Cowhage</strong>：<em>Mucuna pruriens</em> 刺毛中的 cysteine protease，可選擇性活化 CMH fibers；被認為經 CMH 上的 <strong>PAR2 與 PAR4</strong> 作用；PARs 與 Mrgprs 可能功能重疊。Cowhage 與 histamine 常用於人類實驗性 pruritus 研究。<span class="ex-ref">p.356</span></li>
 <li><strong>Cathepsin S</strong>（人類 cysteine protease，與 cowhage 高度同源）在特定病理條件下由 γ-interferon 誘導於 keratinocytes；與 atopic dermatitis、seborrheic dermatitis 的 pruritus 有關，並結合 PAR 與 Mrgprs。<span class="ex-ref">p.356</span></li>
 <li>Keratinocytes 在 atopic dermatitis 釋放的 <strong>TSLP</strong>，可經 keratinocytes 上 PARs 活化而上調。<span class="ex-ref">p.356</span></li>
-<li>TLR3、TLR4、TLR7 表現在 DRGs、周邊感覺神經、spinal glial cells、淺層 dorsal horn neurons。TLRs 促進多種 pruritogens（chloroquine、endothelin-1、imiquimod、Mrgpr agonists）造成的 pruritus 傳遞，但不直接誘發癢；TLR3 在 DRG 增強 TRPV1 活性而放大 histamine-induced pruritus。<span class="ex-ref">p.356–357</span></li>
+<li>TLR3、TLR4、TLR7 表現在 DRGs、周邊感覺神經、spinal glial cells、淺層 dorsal horn neurons。TLRs 被認為（thought to）在 pruritus 中有角色；knockout mice 實驗顯示 TLRs 促進多種 pruritogens（chloroquine、endothelin-1、imiquimod、Mrgpr agonists）造成的 pruritus 傳遞，但不直接誘發癢；TLR3 在 DRG 增強 TRPV1 活性而放大 histamine-induced pruritus。<span class="ex-ref">p.356–357</span></li>
 </ul>
 <h3>Pruritogens（致癢物質）</h3>
 <p>已知可直接經 neuroreceptor 活化、或間接經上調神經 ligands 與使神經敏感化而致癢的介質：endothelin、cytokines（IL-6、IL-8、<strong>IL-31</strong>、IL-33）、leukotrienes、neuropeptides（SP、CGRP）、serotonin、prostaglandins。<span class="ex-ref">p.356</span></p>
@@ -168,7 +168,7 @@
 <aside class="ex-trap"><strong>易錯</strong>本章與 atopic dermatitis、prurigo nodularis 的 pruritus 連結的 interleukin 是 IL-31（p.356、Table 21-1）；p.356 列出的致癢 cytokines 為 IL-6、IL-8、IL-31、IL-33。IL-31 receptor 是 IL-31RA 加 oncostatin M receptor 的 heterodimer。</aside>
 <h3>Acute vs chronic（急性與慢性）</h3>
 <ul>
-<li>人類 chronic pruritus 的病理生理仍不清楚，acute pruritus 機轉則明確得多。皮膚與 CNS 的複雜機制導致 <strong>peripheral sensitization</strong>、<strong>central sensitization</strong>、impaired interneuron function 與 descending inhibitory neurons 在脊髓層級的異常。<span class="ex-ref">p.357</span></li>
+<li>人類 chronic pruritus 的病理生理仍不清楚，acute pruritus 機轉則明確得多。可推測（It can be assumed）皮膚與 CNS 的複雜機制促成 chronic pruritus 並導致 <strong>peripheral sensitization</strong>、<strong>central sensitization</strong>、impaired interneuron function 與 descending inhibitory neurons 在脊髓層級的異常。<span class="ex-ref">p.357</span></li>
 <li>動物模型提示部分 pruritogens 在發炎性皮膚病與 systemic pruritus 有臨床角色；多數仍待人類臨床驗證。<span class="ex-ref">p.357</span></li>
 </ul>
 </section>
@@ -186,8 +186,8 @@
 <h3>Diseases with neurogenic component（具神經成分的疾病）</h3>
 <ul>
 <li>Atopic dermatitis、prurigo nodularis、psoriasis vulgaris、rosacea、herpes zoster、urticaria、wound healing 都有重要的 neurogenic component（除 pruritus 誘發之外）。<span class="ex-ref">p.357</span></li>
-<li><strong>Urticaria</strong>：neuropeptides 可刺激人類 mast cells 並誘發 urticaria；chronic spontaneous urticaria（以及較輕度的 pressure urticaria）SP 增加，且有 CGRP-induced wheal and flare；sensory nerves 與 mast cells 的 TRP ion channels 可被 warmth、cold、food allergens 觸發。<span class="ex-ref">p.357</span></li>
-<li><strong>Psoriasis</strong>：表現 <strong>TRPV1 與 Nav1.8</strong> 的感覺神經元參與發炎反應；<strong>IL-23</strong>-producing dermal dendritic cells 與這些 nociceptors 緊鄰；選擇性藥理或基因 ablation nociceptors 後，dermal dendritic cells 不再產生 IL-23，也不再引起 psoriasiform skin inflammation；<strong>topical capsaicin</strong>（耗竭感覺神經的 neuropeptides、破壞表淺感覺神經）可使 psoriasis 顯著改善，並已開發含 capsaicin 的 liposome topical 劑型。<span class="ex-ref">p.357</span></li>
+<li><strong>Urticaria</strong>：neuropeptides 可刺激人類 mast cells 並誘發 urticaria；chronic spontaneous urticaria（pressure urticaria 程度較低，to a lesser extent）SP 增加，且有 CGRP-induced wheal and flare；sensory nerves 與 mast cells 的 TRP ion channels 可被 warmth、cold、food allergens 觸發。<span class="ex-ref">p.357</span></li>
+<li><strong>Psoriasis</strong>：一群（a subset of）表現 <strong>TRPV1 與 Nav1.8</strong> 的感覺神經元參與發炎反應；<strong>IL-23</strong>-producing dermal dendritic cells 與這些 nociceptors 緊鄰；選擇性藥理或基因 ablation nociceptors 後，dermal dendritic cells 不再產生 IL-23，也不再引起 psoriasiform skin inflammation；<strong>topical capsaicin</strong>（耗竭感覺神經的 neuropeptides、破壞表淺感覺神經）可使 psoriasis 顯著改善，並已開發含 capsaicin 的 liposome topical 劑型。<span class="ex-ref">p.357</span></li>
 </ul>
 <h3>Wound healing（傷口癒合）</h3>
 <table class="ex-table">
@@ -208,7 +208,7 @@
 <ul>
 <li>Pruritus 是皮膚科<strong>最常見的症狀</strong>；WHO Global Burden of Disease study 列為 <strong>50 種</strong>最常見跨科症狀之一。<span class="ex-ref">p.357</span></li>
 <li><strong>Chronic pruritus</strong>：持續 <strong class="ex-n">&gt;6 weeks</strong>。估計全球 <strong class="ex-n">one-fifth</strong> 人口有 chronic pruritus，其中許多人生活品質明顯受損。<span class="ex-ref">p.357</span></li>
-<li>Acute pruritus 的原因通常易找（e.g. allergen 反應、urticaria）且易治療；chronic pruritus 則不然，涉及 peripheral 與 central sensitization，即使原因已消除癢仍可持續。<span class="ex-ref">p.357</span></li>
+<li>Acute pruritus 的原因常（often）易找（e.g. allergen 反應、urticaria）且易治療；chronic pruritus 則不然，被認為（believed）涉及 peripheral 與 central sensitization，即使原因已消除癢仍可持續。<span class="ex-ref">p.357</span></li>
 </ul>
 <h3>IFSI clinical classification（International Forum for the Study of Itch）</h3>
 <table class="ex-table">
@@ -222,11 +222,11 @@
 <p class="ex-cite">p.358，Fig. 21-4、Fig. 21-5。</p>
 <ul>
 <li>診斷意義：發炎皮膚（group I）或有慢性搔抓病灶（group III）的病人，skin biopsy 組織學檢查可能有助釐清可能的皮膚病；正常皮膚（group II）或有慢性搔抓病灶（group III）的病人，則 laboratory workup 對評估 systemic 或 neurologic 疾病更重要。<span class="ex-ref">p.358</span></li>
-<li><mark data-q="101-03,102-28">Etiologic classification：<strong>dermatologic、systemic、neurologic、somatoform</strong>，另有 multifactorial 與 unknown origin</mark>；同一病人可有多重病因。<span class="ex-ref">p.358</span></li>
-<li>Fig. 21-5 例子：A 58 歲 atopic dermatitis（inflamed skin）；<mark data-q="101-03,102-28">B 45 歲男性 liver transplant 後 cholestatic pruritus（normal-appearing skin）</mark>；<mark data-q="101-03">C 60 歲男性 chronic prurigo 合併 advanced renal insufficiency（chronic scratch lesions）</mark>。<span class="ex-ref">p.359</span></li>
+<li><mark data-q="101-03,102-28">Etiologic classification：<strong>dermatologic、systemic、neurologic、somatoform</strong>，另有 multifactorial 與 unknown origin</mark>；同一病人可能（may）有多重病因，或可能找不到病因。<span class="ex-ref">p.358</span></li>
+<li>Fig. 21-5 例子：A 58 歲男性 atopic dermatitis（inflamed skin）；<mark data-q="101-03,102-28">B 45 歲男性 liver transplant 後 cholestatic pruritus（normal-appearing skin）</mark>；<mark data-q="101-03">C 60 歲男性 chronic prurigo 合併 advanced renal insufficiency（chronic scratch lesions）</mark>。<span class="ex-ref">p.359</span></li>
 <li>Table 21-1 中 cholestatic pruritus 相關介質：bile acids（TGR5）與 autotaxin／LPA。<span class="ex-ref">p.356</span></li>
-<li>慢性化後，即使原始病因已排除癢仍可持續，可能需要 centrally acting drugs。<span class="ex-ref">p.359</span></li>
-<li><mark data-q="106-29"><strong>Itch–scratch cycle</strong>：長期癢性疾病後，病人有想抓的衝動，即使已不癢仍有 automatic scratching behavior；應考慮 behavioral therapies</mark>。<span class="ex-ref">p.359–360</span></li>
+<li>慢性化後，即使原始病因已排除癢仍可能（may）持續，可能需要 centrally acting drugs。<span class="ex-ref">p.359</span></li>
+<li><mark data-q="106-29"><strong>Itch–scratch cycle</strong>：長期癢性疾病後可能（may）出現，病人有想抓的衝動，即使已不癢仍有 automatic scratching behavior；behavioral therapies 在此情況有用，應與病人討論</mark>。<span class="ex-ref">p.359–360</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>IFSI clinical classification 依皮膚狀態分三組（inflamed／normal／chronic scratch lesions）；etiologic classification 另分 dermatologic、systemic、neurologic、somatoform、multifactorial、unknown（p.358，Fig. 21-4）。</aside>
 </section>
@@ -239,12 +239,12 @@
 <tbody>
 <tr><td>Elementary measures</td><td>不論病因，皆用 emollients 預防 xerosis、避免 allergens 與刺激物；含 urea、menthol、polidocanol 的 ointments；<mark data-q="108-02">antihistamines 對多種癢性疾病有症狀緩解，可在病因確定前就開立</mark></td></tr>
 <tr><td>Targeted therapy（病因已知）</td><td><mark data-q="106-29,108-02">Immunosuppressive drugs（e.g. <strong>cyclosporine</strong>）用於 atopic dermatitis</mark>；<mark data-q="108-02"><strong>gabapentinoids</strong> 用於 neuropathic pruritus</mark>；antidepressants（e.g. <strong>paroxetine</strong>）用於 <mark data-q="101-03">paraneoplastic pruritus</mark></td></tr>
-<tr><td>Symptomatic（病因不明或標靶無效）</td><td><mark data-q="106-29,108-02">Topical <strong>calcineurin inhibitors</strong> 可能對發炎性疾病有用（may be useful）</mark>；<strong>capsaicin</strong> 對 neuropathic 與 aquagenic pruritus 等有效；<strong>local anesthetics</strong> 用於 notalgia paraesthetica；<strong>antidepressants</strong> 對多種來源的 pruritus 有用；<mark data-q="101-03,102-28,108-02"><strong>naltrexone</strong> 可能對 cholestatic 與 nephrogenic（uremic）pruritus 有幫助</mark></td></tr>
+<tr><td>Symptomatic（病因不明或標靶無效）</td><td><mark data-q="106-29,108-02">Topical <strong>calcineurin inhibitors</strong> 可能對發炎性疾病有用（may be useful）</mark>；<strong>capsaicin</strong> 對 neuropathic 與 aquagenic pruritus 等有效；<strong>local anesthetics</strong> 可用於 notalgia paraesthetica；<strong>antidepressants</strong> 對多種來源的 pruritus 有用；<mark data-q="101-03,102-28,108-02"><strong>naltrexone</strong> 可能對 cholestatic 與 nephrogenic（uremic）pruritus 有幫助</mark></td></tr>
 <tr><td>Accompanying disorders</td><td>Sleep disturbances、depression、anxiety 應及早處理；可討論 hypnotics、sedating antidepressants、relaxation techniques；有心理因素時建議 psychosomatic 專科會診</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.358–359。</p>
-<aside class="ex-trap"><strong>易錯</strong>課本列出的對應：cyclosporine→atopic dermatitis、gabapentinoids→neuropathic pruritus、paroxetine（antidepressants）→paraneoplastic pruritus、local anesthetics→notalgia paraesthetica、capsaicin→neuropathic 與 aquagenic pruritus、naltrexone→cholestatic 與 nephrogenic pruritus（p.358）；κ-agonist nalfurafine 與 µ-antagonists 用於 cholestatic 與 uremic pruritus（p.355）。Antihistamines 對多種癢性疾病有症狀緩解（p.358）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>課本列出的對應：cyclosporine→atopic dermatitis、gabapentinoids→neuropathic pruritus、paroxetine（antidepressants）→paraneoplastic pruritus、local anesthetics→notalgia paraesthetica、capsaicin→neuropathic 與 aquagenic pruritus、naltrexone→cholestatic 與 nephrogenic pruritus（p.358）；全身性 µ-antagonists 與 κ-agonist nalfurafine 可能（may）控制包括 cholestatic 與 uremic pruritus 在內的多種 chronic pruritus（p.355）。Antihistamines 對多種癢性疾病有症狀緩解（p.358）。</aside>
 </section>
 
 <section class="ex-note" id="new-drugs">
@@ -273,22 +273,22 @@
 <h3>Atopic dermatitis 免疫（McKee）</h3>
 <ul>
 <li><mark data-q="108-50">Disease onset 與 Th2 cytokines <strong>IL-4、IL-5、IL-13、IL-31</strong> 有關；IL-4、IL-13、IL-4 receptor 與 IL-31 的基因變異都曾被連結到疾病</mark>；TSLP 表現增加；disease maintenance（chronic phase）與 <strong>Th1 cytokines</strong> 有關。<span class="ex-ref ex-ref-mckee">McKee p.203</span></li>
-<li><mark data-q="108-50">多數 atopic dermatitis 病人皮膚被 <em>Staphylococcus aureus</em> colonize（對照組僅少數）；disease severity 與 toxigenic <em>S. aureus</em> 有相關；staphylococcal superantigens（SEA、SEB）活化 T cells</mark>；superantigens 是否為發病關鍵或只是惡化症狀仍待研究。<span class="ex-ref ex-ref-mckee">McKee p.203</span></li>
+<li><mark data-q="108-50">多數 atopic dermatitis 病人皮膚被 <em>Staphylococcus aureus</em> colonize（對照組僅少數）；disease severity 與 toxigenic <em>S. aureus</em> 有相關；staphylococcal superantigens（SEA、SEB）被認為（It is thought）活化 T cells</mark>；superantigens 是否為發病關鍵或只是惡化症狀仍待研究。<span class="ex-ref ex-ref-mckee">McKee p.203</span></li>
 <li>早期機械創傷與 barrier 破壞釋放 IL-1α、IL-1β、TNF-α、GM-CSF；CCL27、CCL22、CCL17 增加且與疾病活動度相關。<span class="ex-ref ex-ref-mckee">McKee p.203</span></li>
 </ul>
 <h3>Spongiotic dermatitis 病理（McKee）</h3>
 <ul>
 <li>Hallmark：<strong>spongiosis</strong>（intercellular edema），可進展為 intraepidermal vesicle；常伴 lymphocytic exocytosis。<span class="ex-ref ex-ref-mckee">McKee p.207</span></li>
 <li><mark data-q="108-50">真皮表淺血管叢周圍為 lymphocytes、histiocytes 混合浸潤，<strong>occasional</strong> eosinophils 或 neutrophils；allergic contact dermatitis 可有許多 eosinophils</mark>。<span class="ex-ref ex-ref-mckee">McKee p.208</span></li>
-<li><mark data-q="108-50">Spongiotic dermatitis 不少見地被細菌或真菌 <strong>superimposed infection</strong>，可大幅改變組織像；需 Gram、PAS stain 或 culture 評估感染</mark>。<span class="ex-ref ex-ref-mckee">McKee p.207–208</span></li>
+<li><mark data-q="108-50">Spongiotic dermatitis 不少見地被細菌或真菌 <strong>superimposed infection</strong>，可能（may）大幅改變組織像；需 Gram、PAS stain 或 culture 評估感染</mark>。<span class="ex-ref ex-ref-mckee">McKee p.207–208</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>McKee p.208 對 spongiotic dermatitis 真皮浸潤的描述是 lymphocytes、histiocytes 與「occasional」eosinophils 或 neutrophils；p.207 另寫 severe contact irritant dermatitis 的表皮可被大量 neutrophils 浸潤並伴 necrotic keratinocytes。</aside>
 <h3>Prurigo nodularis 病理（McKee）</h3>
 <ul>
 <li>Nodular prurigo：globular nodules，其間皮膚外觀正常；prurigo nodule 是局部搔抓或摳抓造成的 solitary variant。<span class="ex-ref ex-ref-mckee">McKee p.211</span></li>
 <li><mark data-q="111-01">偶可合併 bullous pemphigoid 特徵（<strong>pemphigoid nodularis</strong>）；此時通常無水疱，需高度臨床懷疑加 immunofluorescence studies 確診</mark>。<span class="ex-ref ex-ref-mckee">McKee p.211</span></li>
-<li>多數病人其他方面健康；偶見於 gluten enteropathy；pruritus 為 episodic，可被 heat 與 anxiety 誘發；檢驗可有 anemia、eosinophilia、血清 IgE 升高。<span class="ex-ref ex-ref-mckee">McKee p.211</span></li>
-<li>表皮：orthohyperkeratosis、hypergranulosis、acanthosis，可達 <strong>pseudoepitheliomatous hyperplasia</strong>；真皮：血管增生（含新生血管）、perivascular 輕度發炎浸潤（主要為 lymphocytes，另有部分 histiocytes、plasma cells、偶見 eosinophils）與散在的 Montgomery giant cells；papillary dermis 纖維化。<span class="ex-ref ex-ref-mckee">McKee p.212</span></li>
+<li>多數病人其他方面健康；偶見於 gluten enteropathy；pruritus 為 episodic，可能（may）被 heat 與 anxiety 誘發或加重；檢驗可有 anemia、eosinophilia、血清 IgE 升高。<span class="ex-ref ex-ref-mckee">McKee p.211</span></li>
+<li>表皮：orthohyperkeratosis、hypergranulosis、acanthosis，有時（sometimes）可達 <strong>pseudoepitheliomatous hyperplasia</strong>；真皮：血管增生（含新生血管）、perivascular 輕度發炎浸潤（主要為 lymphocytes，另有部分 histiocytes、plasma cells、偶見 eosinophils）與散在的 Montgomery giant cells；papillary dermis 纖維化。<span class="ex-ref ex-ref-mckee">McKee p.212</span></li>
 <li><mark data-q="111-01">神經：光鏡下可正常、數量增加或偶爾 hyperplastic；special neural stains 或 <strong>S100</strong> 可凸顯輕度增生；神經變化似乎對診斷並非必要（do not appear to be essential），部分作者認為是長期搔抓的續發變化；研究未見真正 neuroma 形成的證據，極罕見才有 hyperplastic nerve trunks 合併 Schwann cell 增生而形成小 neuromata</mark>。<span class="ex-ref ex-ref-mckee">McKee p.212</span></li>
 </ul>
 <p class="ex-cite">Fitzpatrick 與 McKee 對 PN 神經變化的講法：Fitzpatrick 寫 dermal nerves hyperinnervation 已被證實（p.357）；McKee 則寫神經變化似乎並非診斷必要，部分作者認為可能是續發（p.212）。</p>

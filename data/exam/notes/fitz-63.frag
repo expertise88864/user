@@ -7,7 +7,7 @@
 <li>Incidence 由 <strong class="ex-n">0.6 增至 16</strong> per million inhabitants，prevalence 由 <strong class="ex-n">2 增至 233</strong> per million per year（視 case definition 與統計期間而異）；數字可能低估，因輕症常未被診斷。<span class="ex-ref">p.1086</span></li>
 <li>AT-A-GLANCE 重點：Raynaud phenomenon、circulating autoantibodies 與 skin sclerosis 幾乎必定存在，對早期診斷重要；依皮膚硬化範圍分為 2 個主要 subtype（diffuse、limited）；消化道、肺、腎、心臟的內臟侵犯可造成嚴重功能障礙並決定預後。<span class="ex-ref">p.1086</span></li>
 <li>SSc 是自體免疫風濕疾病中 case-specific mortality 最高者；死亡率隨族群、器官侵犯程度、subset、診斷年齡與性別而異。<span class="ex-ref">p.1086</span></li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.797</span> 補充：估計 incidence 約 <strong class="ex-n">20 new cases per million per year</strong>；女性 <strong class="ex-n">3–4 : 1</strong>；最常在 fourth、fifth、sixth decades 發病；家族史是已知最強的風險因子，但每位家族成員的 absolute risk 低；juvenile SSc 約佔 <strong class="ex-n">3%</strong>，與成人相比 overlap syndromes 較多、存活較好；整體 5-year survival <strong class="ex-n">34%–73%</strong>。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.797</span> 補充：估計 incidence 約 <strong class="ex-n">20 new cases per million per year</strong>；女性 <strong class="ex-n">3–4 : 1</strong>；最常在 fourth、fifth、sixth decades 發病；家族史被認為是已知最強的風險因子（regarded as the strongest risk factor），但每位家族成員的 absolute risk 低；juvenile SSc 約佔 <strong class="ex-n">3%</strong>，與成人相比 overlap syndromes 較多、存活較好；整體 5-year survival <strong class="ex-n">34%–73%</strong>。</li>
 <li>McKee 另記載：大型系列中 diffuse 與 limited 一樣常見，約 <strong class="ex-n">10%</strong> 屬 overlap syndromes。<span class="ex-ref ex-ref-mckee">McKee p.797</span></li>
 </ul>
 </section>
@@ -20,7 +20,7 @@
 <li><strong>ACR 1980</strong>：sensitivity <strong class="ex-n">97%</strong>、specificity <strong class="ex-n">98%</strong>；<strong class="ex-n">1 項 major</strong> 或 <strong class="ex-n">至少 2 項 minor</strong> 即成立。Major = scleroderma proximal to MCP／MTP joints；minor = sclerodactyly、digital ulcerations 和／或 pitting digital scars、bibasilar PF。無法納入 early SSc 與部分 limited SSc。<span class="ex-ref">p.1087</span></li>
 <li><strong>ACR/EULAR 2013</strong>：計分制，納入 abnormal nailfold capillaries、fingertip lesions、autoantibodies，可早期診斷；發表年份 2013 見 reference 7。<span class="ex-ref">p.1087、p.1102</span></li>
 <li><span class="ex-ref ex-ref-mckee">McKee p.801</span> 2013 criteria：總分 <strong class="ex-n">≥9</strong> 即 definite SSc；手指皮膚增厚延伸到 MCP joints 近端 = <strong class="ex-n">9</strong> 分（本身即足夠）。其他項目：手指皮膚增厚（puffy fingers <strong class="ex-n">2</strong> 或 sclerodactyly <strong class="ex-n">4</strong>，只計較高者）、fingertip lesions（digital-tip ulcers <strong class="ex-n">2</strong> 或 pitting scars <strong class="ex-n">3</strong>，只計較高者）、telangiectasia <strong class="ex-n">2</strong>、abnormal nailfold capillaries <strong class="ex-n">2</strong>、ILD 或 PAH <strong class="ex-n">2</strong>、RP <strong class="ex-n">3</strong>、SSc-specific autoantibodies <strong class="ex-n">3</strong>。加拿大 724 位病人的研究中，2013 criteria sensitivity 為 <strong class="ex-n">98.3%</strong>，1980 criteria 為 <strong class="ex-n">88.3%</strong>。</li>
-<li>McKee 另指出 1980 criteria 的缺點是至少 10% 的確診病人兩者皆不符合。<span class="ex-ref ex-ref-mckee">McKee p.801</span></li>
+<li>McKee 另指出 1980 criteria 的缺點是會排除至少 10% 的確診病例（這些病人 major 與 minor criteria 皆不符合）。<span class="ex-ref ex-ref-mckee">McKee p.801</span></li>
 <li>LeRoy 1988 提出 limited vs diffuse 的描述性分類（依皮膚侵犯範圍），至今臨床仍廣泛使用；2001 LeRoy &amp; Medsger 修訂加入 autoantibodies 與 nailfold capillaroscopy，並增加 minimal skin thickening 的 early SSc 組（需有 RP 加上 scleroderma-specific autoantibodies 和／或 nailfold capillaroscopic 變化）。<span class="ex-ref">p.1087</span></li>
 </ul>
 <h3>Diffuse vs limited cutaneous SSc</h3>
@@ -40,7 +40,7 @@
 <ul>
 <li>Diffuse：RP 在皮膚變化 <strong class="ex-n">1 year</strong> 內出現、truncal 與 acral 皮膚侵犯、<strong>tendon friction rubs</strong>、早期且明顯的 interstitial lung disease／oliguric renal failure／diffuse GI disease／myocardial involvement、<strong>沒有</strong> anticentromere、nailfold capillary dilatation 與 capillary destruction、antitopoisomerase 抗體見於 <strong class="ex-n">20–60%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.802</span></li>
 <li>Limited：Raynaud 持續多年（偶爾數十年）；皮膚侵犯局限在 hands、face、feet、forearms（acral）或沒有；較晚出現的 pulmonary hypertension（有或無 ILD）、trigeminal neuralgia、skin calcifications、telangiectasia；anticentromere 高；nailfold capillary loops 擴張，通常<strong>沒有</strong> capillary dropout。<span class="ex-ref ex-ref-mckee">McKee p.802</span></li>
-<li>McKee 也指出：limited 病人若追蹤夠久，相當比例會發生嚴重 pulmonary hypertension；「CREST」一詞的價值已降低，因許多 limited 病人不符合其所有條件，且 CREST 表現也可見於 diffuse 病人。<span class="ex-ref ex-ref-mckee">McKee p.799</span></li>
+<li>McKee 也指出：limited 病人若追蹤夠久，相當比例會發生嚴重 pulmonary hypertension；「CREST」一詞的價值已降低，因許多 limited 病人不符合其所有條件，且 CREST 表現可能見於許多（many）diffuse 病人。<span class="ex-ref ex-ref-mckee">McKee p.799</span></li>
 <li>McKee 另有 skin sclerosis extent 的四亞型：ssSSc（sine scleroderma）、lcSSc、icSSc（intermediate）、dcSSc；比較二分法與三分法（diffuse／intermediate／limited），三分法與 antibody specificity、survival 的對應最緊密。<span class="ex-ref ex-ref-mckee">McKee p.801–802</span></li>
 </ul>
 <h3>Other subsets（其他亞型）</h3>
@@ -51,12 +51,12 @@
 <tr><td>SSc sine scleroderma</td><td>極少數（<strong class="ex-n">1.5%</strong>）出現 vascular（RP 和／或 PAH）、immunologic（最常見 anticentromere）與器官纖維化特徵，但<strong>沒有 skin sclerosis</strong>。<span class="ex-ref">p.1087</span></td></tr>
 <tr><td>SSc overlap syndrome</td><td>SSc 合併其他 connective tissue／autoimmune disease（dermatomyositis、Sjögren syndrome、SLE、vasculitis、polyarthritis），多為高 titer anti-U1RNP、anti-nRNP、antifibrillarin、anti-PmScl。<span class="ex-ref">p.1087</span></td></tr>
 <tr><td>Mixed connective tissue disease（MCTD）</td><td>高 titer <strong>anti-U1RNP</strong>；是否為獨立疾病或其他 CTD 的早期型仍在討論。SLE 或 RA 症狀合併 Raynaud，之後出現硬皮樣病灶；swollen fingers、puffy hands；常有強烈發炎症狀與明顯 arthralgia；可有 pericarditis、pleuritis、pulmonary hypertension。對 antiinflammatory／anti-immune therapy 反應良好，預後<strong>明顯優於</strong> classic scleroderma。<span class="ex-ref">p.1087</span></td></tr>
-<tr><td>Pm-Scl overlap（SSc/myositis）</td><td>硬皮樣病灶合併強烈 myositis；特異 <strong>Pm-Scl</strong> 抗體、典型 mechanic hands、早期明顯 subcutaneous calcifications；對早期 antiinflammatory treatment（e.g. methotrexate／glucocorticosteroids）反應良好。<span class="ex-ref">p.1087</span></td></tr>
+<tr><td>Pm-Scl overlap（SSc/myositis）</td><td>硬皮樣病灶合併強烈 myositis；通常（usually）有特異 <strong>Pm-Scl</strong> 抗體、典型 mechanic hands、早期明顯 subcutaneous calcifications；對早期 antiinflammatory treatment（e.g. methotrexate／glucocorticosteroids）反應良好。<span class="ex-ref">p.1087</span></td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 63-1（SSc/myositis overlap：RP、sclerodactyly、mechanic hands、myositis、pulmonary involvement、calcinosis cutis、serositis、PmScl 抗體）與 Table 63-2（MCTD：RP、puffy fingers/hands、sclerodactyly、esophageal involvement、PH/ILD、myositis、arthritis/arthralgia、serositis、anemia/lymphopenia、高 titer U1RNP 抗體），p.1089；Fig. 63-3 overlap 光譜含 MCTD（U1snRNP+）、SSc/myositis（Ku+）、SSc/polymyositis（PmScl+）、SSc/SLE、SSc/RA、SSc/dermatomyositis。</p>
 <ul>
-<li>另有完全以 autoantibodies 為基礎的分類被提出，臨床意義見 Table 63-3；皮膚硬化範圍仍是多數 classification criteria 的基礎。<span class="ex-ref">p.1089</span></li>
+<li>另有完全以 autoantibodies 為基礎的分類被提出；association studies 的證據顯示其可能（may）具臨床意義，見 Table 63-3；皮膚硬化範圍仍是多數 classification criteria 的基礎。<span class="ex-ref">p.1089</span></li>
 </ul>
 </section>
 
@@ -65,18 +65,18 @@
 <h3>Raynaud phenomenon（RP）</h3>
 <ul>
 <li><mark data-q="111-39">RP 是 SSc 特徵性的起始表現，出現在<strong class="ex-n">超過 90%</strong> 的 SSc 病人</mark>，可早於疾病多年。<span class="ex-ref">p.1086、p.1089</span></li>
-<li>定義：手指與腳趾小動脈／微動脈反覆 vasospasm，常由寒冷或情緒壓力誘發；突然發作、界線清楚，伴疼痛性 pallor／ischemia，再加溫後 reactive hyperemia，有時出現 cyanosis（triphasic RP）。<span class="ex-ref">p.1089–1090</span></li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.797</span>：RP 在 limited 與 diffuse 都很常見；limited 型的 RP 可早於皮膚病灶很多年。</li>
+<li>定義：手指與腳趾小動脈／微動脈反覆 vasospasm，通常（usually）由寒冷和／或其他刺激（例如情緒壓力）誘發；突然發作、界線清楚，伴疼痛性 pallor／ischemia，再加溫後 reactive hyperemia，有時出現 cyanosis（triphasic RP）。<span class="ex-ref">p.1089–1090</span></li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.797</span>：RP 在 limited 與 diffuse 都很常見；limited 型中，相當大比例（a large proportion）的病人 RP 可能早於皮膚病灶很多年。</li>
 </ul>
 <h3>Skin involvement（皮膚侵犯）</h3>
 <ul>
 <li><mark data-q="106-45">通常先出現在手指與手：<strong>nonpitting edema</strong>（puffy fingers）→ induration 與 skin thickening（<strong>sclerodactyly</strong>）</mark>；視部位可有 dermatogenous contractures 與呼吸動度受限。<span class="ex-ref">p.1090</span></li>
 <li>Facial features：telangiectasias、beak-shaped nose、microstomia、radial furrowing around the mouth、mask-like 面容、frenulum sclerosis。<span class="ex-ref">p.1090</span></li>
 <li>其他：hypo-／hyperpigmented（<strong>salt-and-pepper</strong>）皮膚；毛囊與汗腺消失（hypohidrosis／anhydrosis）。<span class="ex-ref">p.1090</span></li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.797–798</span>（limited）：早期 edematous、sclerotic、晚期 atrophic 三階段；水腫為 nonpitting、雙側對稱，手指呈 <strong>sausage-like</strong>；fingertips 變尖（tapered）、pulp atrophy、末節指骨吸收，皮膚光亮、平滑、蠟樣；常有 flexion contractures；晚期面容僵硬、鼻尖如鳥喙、薄唇、口周放射狀皺褶、張口受限。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.797–798</span>（limited）：早期 edematous、sclerotic、晚期 atrophic 三階段；水腫為 nonpitting、雙側對稱，手指呈 <strong>sausage-like</strong>；fingertips 變尖（tapered）、pulp atrophy、末節指骨吸收，皮膚光亮、平滑、蠟樣；常有 flexion contractures；晚期許多病人（many patients）面容僵硬、鼻尖如鳥喙、薄唇、口周放射狀皺褶、張口受限。</li>
 <li>McKee：<strong>nail fold capillaries 消失與殘存者擴張</strong>是有用的診斷特徵；其異常與 diffuse form、皮膚侵犯嚴重度、受侵犯器官數、anti-Scl-70 相關。<span class="ex-ref ex-ref-mckee">McKee p.798</span></li>
-<li>McKee：limited／CREST 的 telangiectases 常多達數百個（比 diffuse 多），好發於手指、手、臉、舌與黏膜，可能難與 hereditary hemorrhagic telangiectasia 區分；hyperpigmentation 合併小片 hypopigmentation 呈 salt-and-pepper，好發於手背、前臂、上胸與背部。<span class="ex-ref ex-ref-mckee">McKee p.798–800</span></li>
-<li>McKee：SSc 也可有 erythema nodosum-like panniculitis、livedo reticularis 與下肢 atrophie blanche；罕見表現為 cobblestone 外觀的小丘疹／結節（可能與淋巴管阻塞有關）。<span class="ex-ref ex-ref-mckee">McKee p.800</span></li>
+<li>McKee：limited／CREST 的 telangiectases 常多達數百個（比 diffuse 多），好發於手指、手、臉、舌與黏膜，可能難與 hereditary hemorrhagic telangiectasia 區分；hyperpigmentation 常（often）合併小片 hypopigmentation 呈 salt-and-pepper，好發於手背、前臂、上胸與背部。<span class="ex-ref ex-ref-mckee">McKee p.798–800</span></li>
+<li>McKee：SSc 有時（sometimes）合併 erythema nodosum-like panniculitis，病人也可能出現 livedo reticularis 與下肢 atrophie blanche；罕見表現為 cobblestone 外觀的小丘疹／結節（可能與淋巴管阻塞有關）。<span class="ex-ref ex-ref-mckee">McKee p.800</span></li>
 </ul>
 <h3>Calcinosis cutis（皮膚鈣化）</h3>
 <ul>
@@ -88,9 +88,9 @@
 <h3>Digital ulcers（指端潰瘍）</h3>
 <ul>
 <li>約 <strong class="ex-n">50%</strong> 的 SSc 病人在病程中發生 digital ulceration，是 structural vessel disease 的主要外在表現（可能與 intima 增厚與管腔阻塞有關）。<span class="ex-ref">p.1090</span></li>
-<li>疼痛的 pitting scars 非常常見，有時進展為潰瘍；好發於 finger-／toe-tips、關節伸側（microtrauma）或與 calcinosis cutis 相關。</li>
+<li>疼痛的 pitting scars 非常常見，偶爾（on occasion）進展為潰瘍；好發於 finger-／toe-tips、關節伸側（microtrauma）或與 calcinosis cutis 相關。</li>
 <li>併發症：critical digital ischemia、paronychia、infection、gangrene、osteomyelitis、finger pulp loss 或 amputation。</li>
-<li>McKee：潰瘍好發於繃緊的皮膚覆蓋骨突處；3196 位病人的研究中，<strong>digital ulcer 病史</strong>可預測新的 digital ulcers、肺動脈壓升高與其他心血管事件，也是存活率下降的獨立預測因子。<span class="ex-ref ex-ref-mckee">McKee p.797、p.801</span></li>
+<li>McKee：潰瘍好發於繃緊的皮膚覆蓋骨突處；3196 位病人的研究中，<strong>digital ulcer 病史</strong>可預測新的 digital ulcers、肺動脈壓升高與其他可能的心血管事件（other possible cardiovascular events），也是存活率下降的獨立預測因子。<span class="ex-ref ex-ref-mckee">McKee p.797、p.801</span></li>
 </ul>
 </section>
 
@@ -99,8 +99,8 @@
 <h3>Cardiopulmonary（心肺）</h3>
 <ul>
 <li><mark data-q="111-39">心肺系統最常表現為 <strong>fibrosis（肺纖維化）與 PAH</strong></mark>；兩者臨床上常因重疊特徵（dyspnea、nonproductive cough、disturbed diffusion capacity、cyanosis）而難以區分。<span class="ex-ref">p.1090</span></li>
-<li><mark data-q="112-45">PAH 目前是 SSc 疾病相關死亡最常見的原因</mark>；兩個 subset 都會發生，但最典型是 limited SSc 合併 <strong>isolated PAH</strong>（與 idiopathic PAH 相似）。另有少數 late-stage 廣泛 interstitial lung fibrosis 病人發生真正的 secondary pulmonary hypertension。<span class="ex-ref">p.1090</span></li>
-<li>Heart：可有 diffuse 或 focal fibrosis、inflammatory myocarditis，導致 diastolic／systolic dysfunction，臨床表現 arrhythmia、paroxysmal tachycardia、incomplete 或 complete right-heart blocks、heart insufficiency。<span class="ex-ref">p.1090–1091</span></li>
+<li><mark data-q="112-45">PAH 目前是 SSc 疾病相關死亡最常見的原因</mark>；兩個 subset 都會發生，但最典型是 limited SSc 合併 <strong>isolated PAH</strong>（與 idiopathic PAH 相似）。另有部分（some）late-stage 廣泛 interstitial lung fibrosis 病人發生真正的 secondary pulmonary hypertension。<span class="ex-ref">p.1090</span></li>
+<li>Heart：可有 diffuse 或 focal fibrosis、inflammatory myocarditis，可能（may）導致 diastolic／systolic dysfunction，臨床表現 arrhythmia、paroxysmal tachycardia、incomplete 或 complete right-heart blocks、heart insufficiency。<span class="ex-ref">p.1090–1091</span></li>
 <li>Hemodynamically significant cardiac involvement 在 diffuse cutaneous SSc 最多達 <strong class="ex-n">10%</strong>；心臟侵犯也是重要死因，但仍是最不被認識的內臟併發症之一。<span class="ex-ref">p.1101</span></li>
 <li><span class="ex-ref ex-ref-mckee">McKee p.800</span>：肺部三大形式是 interstitial pneumonitis、bronchiolitis（約 <strong class="ex-n">13%–25%</strong>，通常無症狀）、pulmonary vascular disease；<strong>interstitial lung disease 是 SSc 最常見的死因</strong>（與 Fitzpatrick 的 PAH 說法不同，見下表）；pulmonary hypertension 在 limited 型較常見；X 光常見雙側基底纖維化，可有 honeycomb lung。</li>
 <li>McKee：多數病人有 subclinical cardiac involvement；autopsy 中 pericarditis 與 effusion 超過 <strong class="ex-n">50%</strong>，myocardial fibrosis 在 postmortem series 可達 <strong class="ex-n">70%</strong>；小血管與 arterioles 可有 endothelial／intimal proliferative changes，增加 arrhythmia 與猝死風險。<span class="ex-ref ex-ref-mckee">McKee p.800–801</span></li>
@@ -117,14 +117,14 @@
 <h3>GI involvement（腸胃道）</h3>
 <ul>
 <li><mark data-q="111-39,112-45">GI involvement 是 limited 與 diffuse SSc 中最常見的內臟侵犯（<strong class="ex-n">&gt;60%</strong>）</mark>；影響 motility、digestion、absorption、excretion。<span class="ex-ref">p.1091</span></li>
-<li><mark data-q="112-45">Esophagus：dysphagia、heartburn（reflux）、nausea／vomiting；lower esophageal sphincter 變弱與 peristalsis 受損增加 esophagitis 風險</mark>，未治療可發展為 peptic esophagitis、潰瘍、stricture、fistulae；長期 GERD 增加 Barrett esophagus 風險，可進展為 adenocarcinoma。</li>
-<li>Stomach：mucosal atrophy 相關潰瘍、delayed gastric emptying；<strong>gastric antral vascular ectasia（GAVE）</strong>需以 endoscopy 偵測，可造成嚴重且常被忽略的出血。</li>
+<li><mark data-q="112-45">Esophagus：dysphagia、heartburn（reflux）、nausea／vomiting；lower esophageal sphincter 變弱與 peristalsis 受損增加 esophagitis 風險</mark>，未治療可發展為 peptic esophagitis、潰瘍、stricture、fistulae；長期 GERD 增加 Barrett esophagus 風險，可能（may）進展為 adenocarcinoma。</li>
+<li>Stomach：可能的表現（possible gastric manifestations）包括 mucosal atrophy 相關潰瘍、delayed gastric emptying；<strong>gastric antral vascular ectasia（GAVE）</strong>是部分（some）SSc 病人的重要併發症，需以 endoscopy 偵測，可造成嚴重且常被忽略的出血。</li>
 <li>Intestine：atonic dilation、constrictions、malabsorption、pseudoobstruction、diarrhea、constipation、fecal incontinence、severe malnutrition。</li>
 <li>McKee：periodontal space 增寬（X 光）是特徵；結腸 saccular diverticula 沿 mesenteric border 是特徵；small intestine stasis 可造成 malabsorption；可併發 celiac disease。<span class="ex-ref ex-ref-mckee">McKee p.801</span></li>
 </ul>
 <h3>Kidney: scleroderma renal crisis（SRC）</h3>
 <ul>
-<li>SRC 見於 <strong class="ex-n">5% to 10%</strong> 的 SSc 病人：突發明顯高血壓（<strong class="ex-n">&gt;140/90 mm Hg</strong>，或收縮壓／舒張壓上升 <strong class="ex-n">≥30／≥20 mm Hg</strong>），伴 serum creatinine 上升、proteinuria、hematuria、thrombocytopenia 或 hemolysis，隨後 acute renal failure。<span class="ex-ref">p.1091</span></li>
+<li>SRC 見於 <strong class="ex-n">5% to 10%</strong> 的 SSc 病人，可能（may）造成突發明顯高血壓（<strong class="ex-n">&gt;140/90 mm Hg</strong>，或收縮壓／舒張壓上升 <strong class="ex-n">≥30／≥20 mm Hg</strong>），伴 serum creatinine 上升、proteinuria、hematuria、thrombocytopenia 或 hemolysis，隨後 acute renal failure。<span class="ex-ref">p.1091</span></li>
 <li>許多病例（many cases）發生在病程<strong class="ex-n">前 12 個月</strong>內；<strong class="ex-n">最多 25%</strong> 的 SRC 病人是在腎臟表現時才診斷 SSc。可有 encephalopathy 合併 generalized seizures 或 flash pulmonary edema；microangiopathic anemia 常見，有時發生 DIC。</li>
 <li><mark data-q="109-31">應避免 nephrotoxic drugs 與 <strong>high-dose prednisolone（&gt;7.5 mg/day）</strong></mark>。<span class="ex-ref">p.1091</span></li>
 <li>治療：<strong>高劑量 ACE inhibitors</strong>；SRC 是 medical emergency。約 <strong class="ex-n">2/3</strong>（two-thirds）到專科中心的病人需 renal replacement therapy，其中約 <strong class="ex-n">1/2</strong>（one-half）最終可停止透析，可能發生在 SRC 後 <strong class="ex-n">24 個月</strong>以上，因此腎移植決策應延後；ACE inhibitors 出現前，established SRC 12 個月死亡率 <strong class="ex-n">&gt;90%</strong>。<span class="ex-ref">p.1102</span></li>
@@ -133,7 +133,7 @@
 <aside class="ex-trap"><strong>易錯</strong>課本明確寫「Nephrotoxic drugs and high-dose prednisolone (&gt;7.5 mg/day) should be avoided in patients suffering from SSc」（p.1091）；Table 63-7 中 SRC 的治療是高劑量 ACE inhibitor（p.1099）。</aside>
 <h3>Musculoskeletal, others（肌肉骨骼與其他）</h3>
 <ul>
-<li>McKee：多數病人有 arthralgia 或 arthritis，常侵犯 wrists、hands、knees、ankles；contractures 與 ankylosis、osteoporosis 常見；肌肉可有 focal scarring 與 chronic inflammatory infiltrate。<span class="ex-ref ex-ref-mckee">McKee p.801、p.806</span></li>
+<li>McKee：多數病人有 arthralgia 或 arthritis，關節病變通常輕微，侵犯 wrists、hands、knees、ankles；contractures 與 ankylosis 是重要併發症，osteoporosis 常見；肌肉可有 focal scarring 與 chronic inflammatory infiltrate。<span class="ex-ref ex-ref-mckee">McKee p.801、p.806</span></li>
 <li>McKee：SSc 與 malignancy 風險增加相關，發生率 <strong class="ex-n">3.6% to 10.7%</strong>，最常見為 breast cancer、lung cancer 與 hematological malignancies（e.g. non-Hodgkin lymphoma）。<span class="ex-ref ex-ref-mckee">McKee p.802</span> Fitzpatrick：RNA polymerase 抗體的 subset 與 malignancy 同時發生相關。<span class="ex-ref">p.1095</span></li>
 </ul>
 <h3>Frequency in two networks（Table 63-10）</h3>
@@ -202,39 +202,39 @@
 </ul>
 <h3>Genetic factors（遺傳）</h3>
 <ul>
-<li>證據來自家族聚集與雙胞胎研究；familial SSc 的 absolute risk 低，但 first-degree relatives 的 relative risk 比一般族群高 <strong class="ex-n">13-fold</strong>；positive family history 是最強的 risk factor，族群也有影響。<span class="ex-ref">p.1093</span></li>
-<li>Autoantibody profile 有強烈遺傳決定因素；對特定抗原產生免疫反應的能力受 MHC haplotype 限制（可能解釋 hallmark reactivities 彼此互斥）。HLA-DRB1*1302、HLA-DQB1*0604/0605 與 antifibrillarin 陽性相關。</li>
-<li>GWAS 多指向 innate immune system 相關 loci；epigenetic 機制也被認為重要。</li>
+<li>證據來自家族聚集與雙胞胎研究；familial SSc 的 absolute risk 低，但 first-degree relatives 的 relative risk 比一般族群高 <strong class="ex-n">13-fold</strong>；數個研究提示（several studies suggest）positive family history 是最強的 risk factor，族群也有影響。<span class="ex-ref">p.1093</span></li>
+<li>Autoantibody profile 似乎（appear to）有強烈遺傳決定因素，這可能解釋 hallmark reactivities 看似彼此互斥；對特定抗原產生免疫反應的能力受 MHC haplotype 限制。數個研究提示 HLA-DRB1*1302、HLA-DQB1*0604/0605 與 antifibrillarin 陽性相關。</li>
+<li>GWAS 多指向 innate immune system 相關 loci；越來越多證據顯示 epigenetic 機制是重要的附加因素。</li>
 <li>McKee：susceptibility genes 包括 STAT-4、IRF5、BANK-1。<span class="ex-ref ex-ref-mckee">McKee p.805</span></li>
 </ul>
 <h3>Environmental factors（環境）</h3>
 <ul>
-<li><mark data-q="112-45">Scleroderma-like syndromes 與多種環境毒物及藥物有關：solvents（vinyl chloride、benzene、toluene、epoxy resins）、drugs（bleomycin、carbidopa、pentazocine、cocaine、docetaxel、metaphenylenediamine）</mark>及其他物質。<span class="ex-ref">p.1093</span></li>
+<li><mark data-q="112-45">Scleroderma-like syndromes 曾被報告（have been reported）與多種環境毒物及藥物相關：solvents（vinyl chloride、benzene、toluene、epoxy resins）、drugs（bleomycin、carbidopa、pentazocine、cocaine、docetaxel、metaphenylenediamine）</mark>及其他物質。<span class="ex-ref">p.1093</span></li>
 <li>地下煤礦與金礦工人曾有 SSc 報告；40 歲以上男性 silicosis 病人發生 SSc 的可能性約為未暴露 silica 男性的 <strong class="ex-n">190 倍</strong>，為有 silica 暴露但無 silicosis 者的 <strong class="ex-n">50 倍</strong>。</li>
-<li>Silicone gel implants 的角色受到質疑，多數流行病學研究未顯示顯著關聯；接觸 polyvinyl chloride 的工人可出現類 SSc 變化（RP、morphea-like skin、nailfold 異常、遠端指骨 osteolysis、肝與肺纖維化）。</li>
-<li>Bleomycin 可造成 PF、RP 與和 SSc 無法區分的皮膚變化，與劑量相關，停藥後可逆。整體而言化學暴露只佔 scleroderma-like diseases 的一小部分。</li>
-<li>McKee：vinyl chloride 聚合工人可有 RP、acral osteolysis、皮膚增厚、肺與肝纖維化；bleomycin 可有 sclerodermiform plaques 與 nodules，好發於手；煤礦與 silica 暴露者 SSc 發生率高；長期暴露工業溶劑後可出現 generalized morphea-like variant；silicone breast implants 之後的自體免疫病中以 SSc 似乎最常見。<span class="ex-ref ex-ref-mckee">McKee p.801–802</span></li>
+<li>Silicone gel implants 的角色受到質疑，多數流行病學研究未顯示顯著關聯；接觸 polyvinyl chloride 的工人可能（may）出現一種不尋常的類 SSc 變化（RP、morphea-like skin、nailfold 異常、遠端指骨 osteolysis、肝與肺纖維化）。</li>
+<li>Bleomycin 可造成 PF、RP 與和 SSc 無法區分的皮膚變化，這些變化似乎（appears to be）與劑量相關，停藥後可逆。整體而言化學暴露只佔 scleroderma-like diseases 的一小部分。</li>
+<li>McKee：vinyl chloride 聚合工人可有 RP、acral osteolysis、皮膚增厚、肺與肝纖維化；bleomycin 可能伴 sclerodermiform plaques 與 nodules，好發於手；煤礦與 silica 暴露者 SSc 發生率高；長期暴露工業溶劑後曾有 generalized morphea-like variant 的描述；silicone breast implants 之後的自體免疫病中以 SSc 似乎最常見。<span class="ex-ref ex-ref-mckee">McKee p.801–802</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>課本列出的藥物包括 bleomycin、carbidopa、pentazocine、cocaine、docetaxel、metaphenylenediamine（p.1093）；大型流行病學研究尚未顯示 toxins 與 drugs 在 scleroderma 的顯著角色（p.1093）。</aside>
 <h3>Vasculopathy（血管病變）</h3>
 <ul>
 <li>是 SSc 的<strong>早期事件</strong>，很可能是 primary event；涉及 microcirculation 與 arterioles，特徵為 vasoconstriction、adventitial 與 intimal proliferation、inflammation、thrombosis。<span class="ex-ref">p.1094</span></li>
 <li>最早的血管功能障礙是血管通透性增加，且 vasodilatory（nitric oxide、prostacyclin、CGRP）與 vasoconstrictive（endothelin-1、angiotensin II、α2-adrenoreceptors）mediators 失衡；組織缺氧誘發 VEGF 及其受體表現，伴 vasculogenesis 缺陷。</li>
-<li>微循環早期結構損傷最先見於 <strong>nailfold capillaries</strong>與 RP 的 vasospastic responses；endothelium 過度增生與 scar tissue 沉積造成 PAH、SRC、digital vasculopathy。</li>
-<li>McKee：最早的 ultrastructural 變化是 endothelial cells 分離（造成水腫）；可用 plasma <strong>von Willebrand factor</strong> 監測 endothelial injury；ACE levels 降低；<strong>endothelin</strong> 增加（vasoconstriction、fibroblast mitogen、刺激 collagen synthesis）；arterioles 的 vessel wall 增厚（smooth muscle hyperplasia、fibrosis、過多 glycosaminoglycans）。<span class="ex-ref ex-ref-mckee">McKee p.802–803</span></li>
+<li>微循環早期結構損傷最先見於 <strong>nailfold capillaries</strong>與 RP 的 vasospastic responses；endothelium 過度增生與 scar tissue 沉積造成部分主要併發症（some of the major complications），包括 PAH、SRC、digital vasculopathy。</li>
+<li>McKee：最早的 ultrastructural 變化是 endothelial cells 分離（可能造成液體滲漏，至少部分解釋早期水腫）；可用 plasma <strong>von Willebrand factor</strong> 監測 endothelial injury；ACE levels 降低；<strong>endothelin</strong> 增加（vasoconstriction、fibroblast mitogen、刺激 collagen synthesis）；arterioles 的 vessel wall 增厚（smooth muscle hyperplasia、fibrosis、過多 glycosaminoglycans）。<span class="ex-ref ex-ref-mckee">McKee p.802–803</span></li>
 </ul>
 <h3>Immune events（免疫）</h3>
 <ul>
 <li>早期病灶先是 monocyte lineage 細胞（T cells、macrophages、B cells、mast cells）浸潤；interferon regulatory factor-5 variants 與 SSc 相關，顯示 innate immune system 的角色。<span class="ex-ref">p.1094</span></li>
-<li>之後 <strong>T lymphocytes</strong> 為主，主要是 CD4+、活化、oligoclonal expansion、<strong>T-helper 2 phenotype</strong>；血清 Th2 cytokines 升高（IL-2、IL-4、IL-10、IL-13、IL-17）。B cells 可經 IL-6 與 TGF-β 誘發 ECM 生成，並參與自體抗體產生。</li>
-<li>Microchimerism 與 GVHD 機轉曾被提出，但可能只是貢獻而非因果。<span class="ex-ref">p.1095</span> McKee 也指出 microchimerism 的角色仍不清楚（女性 SSc 病人多個器官可找到 male cells）。<span class="ex-ref ex-ref-mckee">McKee p.803</span></li>
+<li>之後 <strong>T lymphocytes</strong> 為主，主要是 CD4+、活化、oligoclonal expansion、<strong>T-helper 2 phenotype</strong>；血清 Th2 cytokines 升高（IL-2、IL-4、IL-10、IL-13、IL-17）。數個研究提示 B cells 可經分泌 IL-6 與 TGF-β 誘發 ECM 生成，並參與自體抗體產生。</li>
+<li>Microchimerism 與 GVHD 機轉曾在部分病例（some cases）中被提出，但若有角色，可能只是貢獻而非因果。<span class="ex-ref">p.1095</span> McKee 也指出 microchimerism 的角色仍不清楚（女性 SSc 病人多個器官可找到 male cells）。<span class="ex-ref ex-ref-mckee">McKee p.803</span></li>
 <li>McKee：皮膚炎症細胞大多是 <strong>CD4+ T cells</strong>；TGF-β 與 IL-4 增加 fibroblast 增生與 collagen synthesis；<strong>IL-17</strong>（由 T cells 分泌）早期在皮膚與血液升高；CD8+ effector T cells 是血清 IL-13 的來源；TGF-β 誘導 endothelin 與 connective tissue growth factor（CTGF）。<span class="ex-ref ex-ref-mckee">McKee p.803</span></li>
 </ul>
 <h3>Fibrosis（纖維化）</h3>
 <ul>
 <li>Fibroblasts 轉變為 activated <strong>myofibroblasts</strong> 是纖維化的關鍵事件（也可由 circulating precursor cells、endothelial cells、epithelial cells 轉變）；關鍵 cytokines／growth factors：<strong>TGF-β</strong>（中心角色）、CTGF、PDGF、endothelin-1。<span class="ex-ref">p.1095</span></li>
 <li>Myofibroblasts 特徵：高 contractility、ECM production、cytokine release。Fli1 與 KLF5 同時下調的小鼠模型會發生硬皮樣疾病並產生自體抗體。</li>
-<li>McKee：膠原沉積為 types I、III、V、VI，伴過多 fibronectin；involved skin 中 type VII collagen 也明顯增加；早期病灶含過量 glycosaminoglycans（dermatan sulfate、chondroitin 4- 與 6-sulfate）；單位重量 collagen 濃度正常，但單位<strong>表面積</strong>的 collagen 含量大增；fibrillin-1 缺陷、抗 fibrillin 抗體。<span class="ex-ref ex-ref-mckee">McKee p.803–804</span></li>
+<li>McKee：膠原沉積為 types I、III、V、VI，伴過多 fibronectin；involved skin 中 type VII collagen 也明顯增加；早期病灶含過量 glycosaminoglycans（dermatan sulfate、chondroitin 4- 與 6-sulfate）；單位重量 collagen 濃度正常，但單位<strong>表面積</strong>的 collagen 含量大增；微纖維不穩定（可能因 fibrillin-1 內在缺陷）、血清抗 fibrillin 抗體升高。<span class="ex-ref ex-ref-mckee">McKee p.803–804</span></li>
 </ul>
 </section>
 
@@ -242,19 +242,19 @@
 <h2>7. Histopathology（病理）</h2>
 <ul>
 <li>Fitzpatrick：纖維化涵蓋 <strong>lower two-thirds of the dermis</strong> 與 subcutaneous fibrous trabeculae，主要是 ECM（最主要為 collagen types I 與 III）過度沉積；早期可有 panniculitis 與 mucoid edema，皮下脂肪被纖維結締組織取代。<span class="ex-ref">p.1093</span></li>
-<li>早期（cellular stage）：reticular dermis 的 collagen bundles 蒼白、均質、平行皮膚表面且腫脹；<strong>perivascular lymphocytic infiltrate</strong>（亦在 collagen bundles 之間，可延伸到皮下脂肪並包圍 sweat glands）；表皮常萎縮。<span class="ex-ref">p.1093–1094</span></li>
-<li>血管：早期僅 capillaries 擴張，之後 endothelial proliferation 與血管完全阻塞；病程進展皮膚變得更 avascular 且發炎減少。</li>
-<li>晚期（fibrotic stage）：pilosebaceous units 與 eccrine glands 消失、collagen bundles 緊密堆疊、rete ridges 可能消失。<span class="ex-ref">p.1094</span></li>
-<li>Fig. 63-6：早期 perivascular mononuclear cell infiltrate <strong>先於</strong> skin sclerosis；晚期有 skin sclerosis、血管密度低、無發炎細胞，可有表皮增厚並喪失毛囊與汗腺，rete ridges 缺失。<span class="ex-ref">p.1094</span></li>
+<li>早期（cellular stage）：reticular dermis 的 collagen bundles 蒼白、均質、平行皮膚表面且腫脹；常有（often）<strong>perivascular lymphocytic infiltrate</strong>（亦在 collagen bundles 之間，可延伸到皮下脂肪並包圍 sweat glands）；表皮常萎縮。<span class="ex-ref">p.1093–1094</span></li>
+<li>血管：各種大小血管都可能受侵犯；早期可能只有 capillaries 擴張，之後 endothelial proliferation 與血管完全阻塞；病程進展皮膚變得更 avascular 且發炎減少。</li>
+<li>晚期（fibrotic stage）：pilosebaceous units 與 eccrine glands 消失、collagen bundles 看似（appear）緊密堆疊、rete ridges 可能消失。<span class="ex-ref">p.1094</span></li>
+<li>Fig. 63-6（diffuse cutaneous SSc 的早期與晚期皮膚）：早期 perivascular mononuclear cell infiltrate <strong>先於</strong> skin sclerosis；晚期有 skin sclerosis、血管密度低、無發炎細胞，可有表皮增厚並喪失毛囊與汗腺，rete ridges 缺失。<span class="ex-ref">p.1094</span></li>
 </ul>
 <h3>McKee 補充</h3>
 <ul>
-<li>早期水腫階段的組織像與 <strong>scleredema of Buschke</strong> 無法區分；成熟病灶表皮可正常或 rete ridges 消失，basal cells 色素增加，superficial dermis 常見 melanophages。<span class="ex-ref ex-ref-mckee">McKee p.805</span></li>
-<li>特徵：真皮被<strong>粗大、拉長、腫脹的 collagen bundles</strong>增厚，常與表皮平行；纖維邊界不清，外觀均質；<strong>elastic fibers 通常不受影響</strong>；纖維化常侵犯 subcutis，使脂肪細胞被納入真皮；skin appendages（特別是 eccrine sweat glands）萎縮。<span class="ex-ref ex-ref-mckee">McKee p.805</span></li>
-<li>血管：動脈（特別是 digital vessels）可見 endothelial cell swelling、intimal thickening、medial hypertrophy，之後 hyalinization；可有 fibrin 沉積、完全阻塞造成潰瘍與壞疽；慢性期血管數目漸減（尤其淺層真皮）；perineural fibrosis 偶見、calcification 不少見。<span class="ex-ref ex-ref-mckee">McKee p.805</span></li>
+<li>早期水腫階段的組織像與 <strong>scleredema of Buschke</strong> 無法區分；成熟病灶表皮有時（sometimes）正常，或 rete ridges 消失，basal cells 常（often）色素增加，superficial dermis 常見 melanophages。<span class="ex-ref ex-ref-mckee">McKee p.805</span></li>
+<li>特徵：真皮被<strong>粗大、拉長、腫脹的 collagen bundles</strong>增厚，常與表皮平行；纖維邊界常（frequently）不清，外觀均質；<strong>elastic fibers 通常不受影響</strong>；纖維化特徵性地（characteristically）侵犯 subcutis，脂肪細胞因此通常被納入真皮；skin appendages（特別是 eccrine sweat glands）萎縮是常見特徵。<span class="ex-ref ex-ref-mckee">McKee p.805</span></li>
+<li>血管：動脈（特別是 digital vessels）典型（typically）可見 endothelial cell swelling、intimal thickening、medial hypertrophy，之後可能 hyalinization；有時（sometimes）有 fibrin 沉積，偶爾（occasionally）完全阻塞造成潰瘍與壞疽；慢性期血管數目漸減（尤其淺層真皮）；perineural fibrosis 有時（sometimes）可見、calcification 不少見。<span class="ex-ref ex-ref-mckee">McKee p.805</span></li>
 <li>早期病灶可有血管周圍及真皮與皮下脂肪交界的 lymphocytes、histiocytes 與少數 plasma cells；T-helper cells 為主，dermal Langerhans cells 增加，mast cells 常活化而增多。<span class="ex-ref ex-ref-mckee">McKee p.805</span></li>
 <li>組織學上通常無法區分 localized scleroderma（morphea）與 SSc；但 morphea 的表皮通常正常、血管變化較輕，炎症浸潤常較重且多在 reticular dermis。<span class="ex-ref ex-ref-mckee">McKee p.805–806</span></li>
-<li>骨骼肌：可有 focal scarring 與 chronic inflammatory infiltrate，也可見類似 dermatomyositis 的 degeneration／regeneration 變化；腎臟：可見多處 infarcts、出血灶，偶有 renal cortical necrosis，組織像類似 malignant hypertension。<span class="ex-ref ex-ref-mckee">McKee p.806</span></li>
+<li>骨骼肌：可有 focal scarring 與 chronic inflammatory infiltrate，也可見類似 dermatomyositis 的 degeneration／regeneration 變化；腎臟：肉眼檢查常（often）見多處 infarcts、出血灶，偶有 renal cortical necrosis，組織像類似 malignant hypertension。<span class="ex-ref ex-ref-mckee">McKee p.806</span></li>
 <li>Calcinosis cutis 在病理上屬 dystrophic（hydroxyapatite），見前面 Skin 段落。<span class="ex-ref ex-ref-mckee">McKee p.800</span></li>
 </ul>
 </section>
@@ -268,7 +268,7 @@
 <ul>
 <li><mark data-q="105-43,113-10">只表現 RP 的病人應檢查 <strong>capillary alterations（nailfold）</strong>與 autoantibody status；這些都是發展成 SSc 的預測因子，合起來使 SSc 診斷相當可能</mark>。<span class="ex-ref">p.1095</span></li>
 <li><mark data-q="105-43,113-10">Nailfold capillaroscopy 是非侵入性、簡單，且<strong>最有用的診斷與預後方法之一</strong>；可將 capillary changes 分為 early、active、late patterns</mark>。<span class="ex-ref">p.1096</span></li>
-<li><mark data-q="105-43,113-10">McKee：SSc 的有用診斷特徵是許多 nail fold capillaries 消失、其餘擴張；capillaroscopy 異常與 diffuse form、皮膚侵犯嚴重度、受侵犯器官數、anti-Scl-70 相關</mark>。<span class="ex-ref ex-ref-mckee">McKee p.798</span> 殘餘血管擴張被認為是代償，殘餘血管的 endothelial proliferation 增加。<span class="ex-ref ex-ref-mckee">McKee p.802</span></li>
+<li><mark data-q="105-43,113-10">McKee：SSc 的有用診斷特徵是許多 nail fold capillaries 消失、其餘擴張；capillaroscopy 異常與 diffuse form、皮膚侵犯嚴重度、受侵犯器官數、anti-Scl-70 相關</mark>。<span class="ex-ref ex-ref-mckee">McKee p.798</span> 殘餘血管擴張很可能（likely）是代償，殘餘血管的 endothelial proliferation 增加。<span class="ex-ref ex-ref-mckee">McKee p.802</span></li>
 <li>Laser Doppler perfusion imaging 也是非侵入性微血管影像技術，可提供皮膚血流圖。<span class="ex-ref">p.1096</span></li>
 </ul>
 <h3>Skin sclerosis（皮膚硬化評估）</h3>
@@ -284,11 +284,11 @@
 <li>ILD 影像：subpleural line opacities、ground-glass opacities、subpleural cysts 與 honeycomb（用 HRCT 或 thoracic radiography）。</li>
 <li>Echocardiography（transthoracic Doppler）可顯示 RV hypertrophy／enlargement、interventricular septum paradoxical motion、tricuspid insufficiency、pericardial effusion。</li>
 <li><strong>Right-heart catheterization 是 PAH 的 gold standard</strong>：PAH = mean pulmonary artery pressure <strong class="ex-n">≥25 mm Hg</strong>（at rest）加上 pulmonary capillary wedge pressure <strong class="ex-n">≤15 mm Hg</strong>。</li>
-<li>Cardiac MRI 可評估心肌侵犯；N-terminal brain natriuretic peptide 有助偵測 right ventricular impairment。</li>
+<li>Cardiac MRI 也是評估心肌侵犯的可能策略（potential strategy）；N-terminal brain natriuretic peptide 在偵測 right ventricular impairment 上也有一些前景（some promise）。</li>
 </ul>
 <h3>GI 與 kidney</h3>
 <ul>
-<li>Esophagitis：upper GI endoscopy 加組織學；esophageal motility：scintigraphy（radiolabeled meal）或 24-hour pH manometry。<span class="ex-ref">p.1097</span></li>
+<li>Esophagitis：upper GI endoscopy 加組織學；esophageal motility 通常（usually）可用 scintigraphy（radiolabeled meal）或 24-hour pH manometry 診斷。<span class="ex-ref">p.1097</span></li>
 <li>SRC：早期診斷是改善預後的關鍵，靠定期血壓監測、urine analysis microelectrophoresis 與 creatinine clearance。<span class="ex-ref">p.1097</span></li>
 </ul>
 <h3>Recommended diagnostic procedures（Table 63-5）</h3>
@@ -342,8 +342,8 @@
 <ul>
 <li><strong>Limited</strong>：<mark data-q="102-35">RP 早於其他器官表現多年；皮膚纖維化局限於 acral areas</mark>；主要併發症是 digital ulcerations 與 pulmonary hypertension。<span class="ex-ref">p.1098</span></li>
 <li><strong>Diffuse</strong>：<mark data-q="102-35">纖維化早發，合併 inflammation、joint pain，迅速擴及幾乎全身皮膚</mark>；肺（fibrosis）、心、腎侵犯在病程早期出現，常決定預後；此 subset 死亡仍多。</li>
-<li>Diffuse 病人最初幾年快速惡化，之後疾病活動下降、症狀可改善；硬化的皮膚甚至可能變軟、contractures 減輕。</li>
-<li>SSc 仍是 life-threatening disease，但多專科照護與早期偵測、治療併發症可大幅改善預後。<span class="ex-ref">p.1098</span></li>
+<li>數個研究顯示（several studies indicate）diffuse 病人最初幾年快速惡化，之後疾病活動下降、症狀可改善；硬化的皮膚甚至可能變軟、contractures 減輕。</li>
+<li>SSc 仍是 life-threatening disease，但多專科照護與早期偵測、治療併發症可能（may）大幅改善預後。<span class="ex-ref">p.1098</span></li>
 <li>McKee：SSc 整體死亡率高，5-year survival <strong class="ex-n">34% to 73%</strong>；皮膚增厚改善與存活改善相關；<strong>trunk 皮膚增厚提示預後不良</strong>且與廣泛系統性侵犯相關；年長者與男性預後較差；digital ulcer 病史是存活下降的獨立預測因子。<span class="ex-ref ex-ref-mckee">McKee p.797、p.800–801</span></li>
 </ul>
 </section>
@@ -352,11 +352,11 @@
 <h2>11. Treatment（治療）</h2>
 <h3>Disease-modifying treatment（疾病修飾治療）</h3>
 <ul>
-<li>三個可調控面向：vasculopathy、immunomodulation、fibrosis；目前 vascular therapies 與 immunomodulation 的候選療法最多。<span class="ex-ref">p.1098</span></li>
+<li>三個可能（potentially）可調控的面向：vasculopathy、immunomodulation、fibrosis；目前 vascular therapies 與 immunomodulation 的候選療法最多。<span class="ex-ref">p.1098</span></li>
 <li><mark data-q="112-45">一般 immunosuppression 可改善 skin involvement 與 interstitial lung disease；<strong>有 best evidence 的是 cyclophosphamide</strong>，近年 <strong>mycophenolate mofetil（MMF）</strong>被證實與 oral cyclophosphamide 同樣有效，許多中心使用</mark>；<mark data-q="112-45">rituximab 對標準 immunosuppression 失敗的特定病人可能改善病程</mark>。<span class="ex-ref">p.1098</span></li>
 <li>Autologous hemopoietic stem cell transplantation（ASCT）：用於 poor-prognosis early diffuse cutaneous SSc 且<strong>沒有嚴重器官表現</strong>者；<strong>Pro</strong>：改善 long-term survival 與 event-free survival；<strong>Contra</strong>：<strong class="ex-n">10%</strong> transplant-related mortality，cardiopulmonary disease 病人必須排除。<span class="ex-ref">p.1098、p.1100</span> <span class="ex-ref">Table 63-9</span></li>
 <li>Antifibrotic：目前沒有已證實的 antifibrotic agent；anti-TGF-β antibody 的早期研究改善皮膚嚴重度並降低多個 TGF-β 依賴基因表現。<span class="ex-ref">p.1098</span></li>
-<li>Methotrexate：2 個 RCT 顯示可改善 <strong>early diffuse SSc</strong> 的 skin score，對其他器官的正向效果未建立；cyclophosphamide 在 2 個 RCT 改善 skin sclerosis；MMF 可能是平衡療效與副作用的選項；imatinib 等 protein kinase inhibitors 的對照試驗結果不一且耐受性差。<span class="ex-ref">p.1101</span></li>
+<li>Methotrexate：2 個 RCT 顯示可改善 <strong>early diffuse SSc</strong> 的 skin score，對其他器官的正向效果未建立；cyclophosphamide 在 2 個 RCT 改善 skin sclerosis；MMF 可能是平衡療效與副作用的選項；imatinib 等 protein kinase inhibitors 的對照試驗結果不一，並提示（suggest）耐受性差。<span class="ex-ref">p.1101</span></li>
 </ul>
 <h3>Vasculopathy: Raynaud phenomenon 與 digital ulcers</h3>
 <ul>
@@ -368,7 +368,7 @@
 <li>Phosphodiesterase type 5 inhibitors（sildenafil、tadalafil）曾用於 RP 與 digital ulcers，但沒有前瞻性臨床試驗資料（off-label）。</li>
 <li>手術：digital microarteriolysis 可使單一指頭頑固潰瘍受益；盡量避免 amputation；lumbar sympathectomy 可能對下肢 RP 或潰瘍有幫助（通常先做暫時性手術評估效果）。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Bosentan 在 2 個大型 controlled trials 中減少新的 digital ulcers，但沒有顯示對已存在潰瘍癒合的正向效果（p.1100）；高劑量 prednisolone（&gt;7.5 mg/day）應避免（p.1091）；課本提到的 aspirin 與 clopidogrel 是用於 critical digital ischemia（p.1100）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Bosentan 在 2 個大型 controlled trials 中減少新的 digital ulcers，但沒有顯示對已存在潰瘍癒合的正向效果（p.1100）；高劑量 prednisolone（&gt;7.5 mg/day）應避免（p.1091）；課本提到 aspirin 與 clopidogrel 等 antiplatelet agents 也有使用，特別是（especially）在 critical digital ischemia（p.1100）。</aside>
 <h3>Skin（Table 63-8）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Clinical feature</th><th scope="col">Therapeutic options</th></tr></thead>
@@ -388,9 +388,9 @@
 <tbody>
 <tr><td>Synovitis／myositis</td><td><mark data-q="112-45">Methotrexate（口服、IM）、rituximab（off-label）</mark></td></tr>
 <tr><td>GI: reflux／dysphagia</td><td>Proton pump inhibitors、prokinetics；H2-receptor antagonists；domperidone 等可增加 lower esophageal sphincter tone，高劑量可能增加 arrhythmia 風險（p.1101）</td></tr>
-<tr><td>GI: diarrhea／obstipation</td><td>改變飲食習慣、parenteral nutrition；抗生素（e.g. ciprofloxacin）；antidiarrheal agents 或 laxatives；pseudoobstruction 先保守治療，之後可能需 parenteral nutrition；SIBO 用廣效抗生素；pancreatic insufficiency 補酵素（p.1101–1102）</td></tr>
-<tr><td>Alveolitis／lung fibrosis</td><td>Cyclophosphamide IV；mycophenolate mofetil（alternative 或接續 cyclophosphamide）；glucocorticoids（短期）</td></tr>
-<tr><td>PAH</td><td>Oxygen、diuretics、endothelin receptor blockade（bosentan、macitentan；內文另有 ambrisentan）、inhaled iloprost、PDE5 inhibitors（sildenafil、tadalafil）、epoprostenol、combination</td></tr>
+<tr><td>GI: diarrhea／obstipation</td><td>改變飲食習慣、parenteral nutrition；抗生素（e.g. ciprofloxacin）；antidiarrheal agents 或 laxatives；pseudoobstruction 先保守治療，之後可能需 parenteral nutrition；SIBO 可用廣效抗生素治療；pancreatic insufficiency 可能需補酵素（p.1101–1102）</td></tr>
+<tr><td>Alveolitis／lung fibrosis</td><td>Cyclophosphamide IV；mycophenolate mofetil（alternative 或接續 cyclophosphamide）；glucocorticoids（短期，必要時）</td></tr>
+<tr><td>PAH</td><td>Oxygen（必要時）、diuretics、endothelin receptor blockade（bosentan、macitentan；內文另有 ambrisentan）、inhaled iloprost、PDE5 inhibitors（sildenafil、tadalafil）、epoprostenol、combination</td></tr>
 <tr><td>Systolic／diastolic heart failure</td><td>Systolic：immunosuppression（可加 pacemaker）、cardioverter defibrillator、ACE inhibitors 與 carvedilol；Diastolic：diuretics、calcium channel inhibitors</td></tr>
 <tr><td>Scleroderma renal crisis</td><td>高劑量 ACE inhibitors</td></tr>
 </tbody>
@@ -399,7 +399,7 @@
 <ul>
 <li><strong>PAH</strong>：多數病例在功能明顯受限（NYHA class III）後以口服 endothelin receptor antagonist（bosentan、ambrisentan）或 PDE5 inhibitor（sildenafil、tadalafil）治療；進展時合併口服藥或加入 parenteral prostacyclin（IV 或 SC）；iloprost 有吸入劑型。<span class="ex-ref">p.1101</span></li>
 <li><strong>Pulmonary fibrosis</strong>：2 個 RCT 對 cyclophosphamide 顯示 modest 的 placebo-subtracted benefit（Scleroderma Lung Study 的 oral cyclophosphamide 對 FVC 有統計顯著差異；IV cyclophosphamide 後接 oral azathioprine 的試驗 p = 0.06）；多數中心用 cyclophosphamide 治療嚴重或進展性 SSc-PF；MMF 與 cyclophosphamide 穩定肺功能的療效相當，MMF 肺功能可穩定至多 36 個月，副作用優於 azathioprine；<strong>bosentan 在大型多中心 SSc-PF 研究中不優於 placebo</strong>。<span class="ex-ref">p.1101</span></li>
-<li><strong>SRC</strong>：高劑量 ACE inhibitors 是核心；病人需住院。<span class="ex-ref">p.1102</span></li>
+<li><strong>SRC</strong>：高劑量 ACE inhibitors 是核心；SRC 是 medical emergency，出現任何腎功能受損或 end-organ damage 表現應住院。<span class="ex-ref">p.1102</span></li>
 <li>一般支持：保暖、改善營養狀態、paraffin waxing、physical therapy，並教育病人辨識疾病進展與新器官侵犯的症狀。<span class="ex-ref">p.1102</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>MMF 被證實與 oral cyclophosphamide 同樣有效（p.1098）；Table 63-7 把 methotrexate 與 rituximab 列在 synovitis／myositis（p.1099），而內文另說 2 個 RCT 顯示 methotrexate 改善 early diffuse SSc 的 skin score、對其他器官的正向效果未建立（p.1101）。</aside>

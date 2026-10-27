@@ -339,93 +339,93 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <style id="dn-nav-critical">.dn-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}.dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep,#4d6358);text-decoration:none;white-space:nowrap}.dn-nav-link:hover{background:var(--mint-soft,#eaf6f3);color:#0e7c86}.dn-nav .dn-nav-divider{width:1px;height:20px;background:var(--border,#dcd5c8);margin:0 4px}.dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;font-size:15px;line-height:1;padding:0}.dn-nav-icon:hover{background:var(--mint-soft,#eaf6f3)}.dn-nav-icon::after{display:none}.dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;min-height:32px;font-size:11.5px}.dn-nav-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}@media(max-width:899px){header.dn-nav-expanded{z-index:70}.dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:var(--bg,#faf7f2);max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;flex-direction:column;align-items:stretch;padding:14px 18px;border-bottom:1px solid var(--border,#dcd5c8);gap:2px}.dn-nav.open,.dn-nav.dn-nav-open{display:flex}.dn-nav-link{min-height:44px;padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}.dn-nav-icon{width:auto;min-height:44px;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}.dn-nav-icon::after{display:inline;content:attr(aria-label)!important;white-space:nowrap;font-size:14px;font-weight:600}.dn-nav .dn-nav-divider{display:none}.dn-nav .lang-select{min-height:44px;flex-shrink:0}.dn-nav-burger{display:inline-flex}}</style></head><body class="font-sans antialiased text-ink-900"><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><header class="sticky top-0 z-40 backdrop-blur border-b" style="background:rgba(250,247,242,.92); border-color:var(--border)"><div class="max-w-6xl mx-auto px-5 sm:px-8"><div class="h-16 flex items-center justify-between gap-3"><a href="/" class="flex items-center gap-3 min-w-0 flex-shrink-0"><img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" width="36" height="36" fetchpriority="high" loading="eager" decoding="async"><div class="min-w-0 leading-tight"><div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div><div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate" data-zh="陳翊嘉醫師 · 皮膚科衛教筆記" data-en="Dr. Chen Yi-Jia · Dermatology Notes">陳翊嘉醫師 · 皮膚科衛教筆記</div></div></a><nav class="dn-nav" aria-label="主導覽"><a href="/blog" class="dn-nav-link" data-zh="衛教文章" data-en="Articles">衛教文章</a><a href="/exam" class="dn-nav-link" data-zh="皮膚科專科考試" data-en="Board Exam">皮膚科專科考試</a><a href="/about" class="dn-nav-link" data-zh="關於我" data-en="About">關於我</a><span class="dn-nav-divider" aria-hidden="true"></span><button type="button" id="dn-nav-search" class="dn-nav-icon" aria-label="搜尋" title="搜尋文章 (Cmd/Ctrl + K)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button><button type="button" id="dn-nav-theme" class="dn-nav-icon" aria-label="切換暗色模式" title="切換亮 / 暗">🌙</button><select id="langToggle" class="lang-select" aria-label="Language" title="語言切換"><option value="zh">中文</option><option value="en">EN</option></select></nav><button type="button" id="dn-nav-burger" class="dn-nav-burger" aria-label="開啟選單" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button></div></div></header>
 <style>          @media (max-width:899px){   @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}    #dn-nav-search::after{content:'搜尋'} #dn-nav-theme::after{content:'切換暗色'}  #langToggle{align-self:flex-start;margin-top:4px} } body.dn-en #dn-nav-search::after{content:'Search'} body.dn-en #dn-nav-theme::after{content:'Theme'}</style>
 <script src="/assets/inline/nav-burger.js?v=202610232200" defer></script>
-<main id="main-content" class="ex-main" data-exam-page="chapter" data-exam-data="/exam/exam-data.json?v=52cdcc5074"><div class="ex-layout"><details class="ex-toc ex-toc-side" open><summary>本章目錄</summary><nav aria-label="本章目錄"><ol><li><a href="#overview" title="1. Overview &amp; Principles（總論與原則）" aria-label="1. Overview &amp; Principles（總論與原則）">1. Overview &amp; Principles</a></li><li><a href="#equipment" title="2. Equipment（器械與設備）" aria-label="2. Equipment（器械與設備）">2. Equipment</a></li><li><a href="#ellipse-planning" title="3. Elliptical Excision: Planning（梭形切除的設計）" aria-label="3. Elliptical Excision: Planning（梭形切除的設計）">3. Elliptical Excision: Planning</a></li><li><a href="#ellipse-technique" title="4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）" aria-label="4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）">4. Elliptical Excision: Technique &amp; Closure</a></li><li><a href="#ellipse-variations" title="5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）" aria-label="5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）">5. Standing Cones &amp; Variations of the Ellipse</a></li><li><a href="#second-intention" title="6. Excision without Closure: Second Intention Healing（二度癒合）" aria-label="6. Excision without Closure: Second Intention Healing（二度癒合）">6. Excision without Closure: Second Intention Healing</a></li><li><a href="#flap-principles" title="7. Flaps: Principles（皮瓣總論）" aria-label="7. Flaps: Principles（皮瓣總論）">7. Flaps: Principles</a></li><li><a href="#advancement" title="8. Advancement Flaps（推進皮瓣）" aria-label="8. Advancement Flaps（推進皮瓣）">8. Advancement Flaps</a></li><li><a href="#rotation" title="9. Rotation Flaps（旋轉皮瓣）" aria-label="9. Rotation Flaps（旋轉皮瓣）">9. Rotation Flaps</a></li><li><a href="#transposition" title="10. Transposition Flaps（轉位皮瓣）" aria-label="10. Transposition Flaps（轉位皮瓣）">10. Transposition Flaps</a></li><li><a href="#interpolation" title="11. Interpolation Flaps（內插／分期皮瓣）" aria-label="11. Interpolation Flaps（內插／分期皮瓣）">11. Interpolation Flaps</a></li><li><a href="#graft-basics" title="12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）" aria-label="12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）">12. Skin Grafts: Basics &amp; Healing Stages</a></li><li><a href="#ftsg" title="13. Full-Thickness Skin Grafts（全層植皮）" aria-label="13. Full-Thickness Skin Grafts（全層植皮）">13. Full-Thickness Skin Grafts</a></li><li><a href="#stsg" title="14. Split-Thickness Skin Grafts（裂層植皮）" aria-label="14. Split-Thickness Skin Grafts（裂層植皮）">14. Split-Thickness Skin Grafts</a></li><li><a href="#composite" title="15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）" aria-label="15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）">15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes</a></li><li><a href="#postop" title="16. Postoperative Care（術後照顧）" aria-label="16. Postoperative Care（術後照顧）">16. Postoperative Care</a></li><li><a href="#complications" title="17. Complications（併發症）" aria-label="17. Complications（併發症）">17. Complications</a></li><li><a href="#followup" title="18. Monitoring &amp; Follow-up（追蹤）" aria-label="18. Monitoring &amp; Follow-up（追蹤）">18. Monitoring &amp; Follow-up</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（21）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（12 題）</a></li></ol></nav></details><div class="ex-content"><nav class="crumbs" aria-label="麵包屑"><a href="/">首頁</a><span class="ex-sep" aria-hidden="true">/</span><a href="/exam">專科考試</a><span class="ex-sep" aria-hidden="true">/</span><span>Ch.203</span></nav><p class="ex-kicker">Fitzpatrick 9e · Part 30 Dermatologic Surgery</p><h1 class="ex-h1">Ch.203 Excisional Surgery and Repair, Flaps, and Grafts</h1><p class="ex-meta">原書 p.3726–3760 · 考題共 12 題（已有詳解 12 題）</p><p class="ex-meta">103 年 1 題、105 年 1 題、106 年 1 題、108 年 1 題、109 年 1 題、110 年 1 題、112 年 2 題、113 年 2 題、114 年 1 題、115 年 1 題</p><div class="ex-notice">題目取自<a href="https://www.derma.org.tw/specialist/download.php?id=9" target="_blank" rel="noopener noreferrer">臺灣皮膚科醫學會專科醫師甄審筆試試題</a>，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 McKee's Pathology of the Skin, 5th Edition 整理</div><section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2><p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p><div class="ex-links-group"><p class="ex-links-name">DermNet（臨床照片與疾病介紹）</p><ul><li><a href="https://dermnetnz.org/topics/skin-surgery" target="_blank" rel="noopener noreferrer">Skin surgery</a></li><li><a href="https://dermnetnz.org/topics/excision-of-skin-lesions" target="_blank" rel="noopener noreferrer">Excision of skin lesions</a></li><li><a href="https://dermnetnz.org/topics/wound-closure" target="_blank" rel="noopener noreferrer">Wound closure techniques</a></li><li><a href="https://dermnetnz.org/topics/suturing-techniques" target="_blank" rel="noopener noreferrer">Suturing techniques</a></li><li><a href="https://dermnetnz.org/topics/suture-materials" target="_blank" rel="noopener noreferrer">Suture materials</a></li><li><a href="https://dermnetnz.org/topics/skin-flaps" target="_blank" rel="noopener noreferrer">Skin flaps</a></li><li><a href="https://dermnetnz.org/topics/skin-grafting" target="_blank" rel="noopener noreferrer">Skin grafting</a></li><li><a href="https://dermnetnz.org/topics/bioengineered-skin" target="_blank" rel="noopener noreferrer">Bioengineered skin</a></li><li><a href="https://dermnetnz.org/topics/risks-and-complications-of-skin-surgery" target="_blank" rel="noopener noreferrer">Complications of skin surgery</a></li></ul></div></section><details class="ex-toc ex-toc-mobile"><summary>本章目錄</summary><nav aria-label="本章目錄（展開式）"><ol><li><a href="#overview" title="1. Overview &amp; Principles（總論與原則）" aria-label="1. Overview &amp; Principles（總論與原則）">1. Overview &amp; Principles</a></li><li><a href="#equipment" title="2. Equipment（器械與設備）" aria-label="2. Equipment（器械與設備）">2. Equipment</a></li><li><a href="#ellipse-planning" title="3. Elliptical Excision: Planning（梭形切除的設計）" aria-label="3. Elliptical Excision: Planning（梭形切除的設計）">3. Elliptical Excision: Planning</a></li><li><a href="#ellipse-technique" title="4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）" aria-label="4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）">4. Elliptical Excision: Technique &amp; Closure</a></li><li><a href="#ellipse-variations" title="5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）" aria-label="5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）">5. Standing Cones &amp; Variations of the Ellipse</a></li><li><a href="#second-intention" title="6. Excision without Closure: Second Intention Healing（二度癒合）" aria-label="6. Excision without Closure: Second Intention Healing（二度癒合）">6. Excision without Closure: Second Intention Healing</a></li><li><a href="#flap-principles" title="7. Flaps: Principles（皮瓣總論）" aria-label="7. Flaps: Principles（皮瓣總論）">7. Flaps: Principles</a></li><li><a href="#advancement" title="8. Advancement Flaps（推進皮瓣）" aria-label="8. Advancement Flaps（推進皮瓣）">8. Advancement Flaps</a></li><li><a href="#rotation" title="9. Rotation Flaps（旋轉皮瓣）" aria-label="9. Rotation Flaps（旋轉皮瓣）">9. Rotation Flaps</a></li><li><a href="#transposition" title="10. Transposition Flaps（轉位皮瓣）" aria-label="10. Transposition Flaps（轉位皮瓣）">10. Transposition Flaps</a></li><li><a href="#interpolation" title="11. Interpolation Flaps（內插／分期皮瓣）" aria-label="11. Interpolation Flaps（內插／分期皮瓣）">11. Interpolation Flaps</a></li><li><a href="#graft-basics" title="12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）" aria-label="12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）">12. Skin Grafts: Basics &amp; Healing Stages</a></li><li><a href="#ftsg" title="13. Full-Thickness Skin Grafts（全層植皮）" aria-label="13. Full-Thickness Skin Grafts（全層植皮）">13. Full-Thickness Skin Grafts</a></li><li><a href="#stsg" title="14. Split-Thickness Skin Grafts（裂層植皮）" aria-label="14. Split-Thickness Skin Grafts（裂層植皮）">14. Split-Thickness Skin Grafts</a></li><li><a href="#composite" title="15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）" aria-label="15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）">15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes</a></li><li><a href="#postop" title="16. Postoperative Care（術後照顧）" aria-label="16. Postoperative Care（術後照顧）">16. Postoperative Care</a></li><li><a href="#complications" title="17. Complications（併發症）" aria-label="17. Complications（併發症）">17. Complications</a></li><li><a href="#followup" title="18. Monitoring &amp; Follow-up（追蹤）" aria-label="18. Monitoring &amp; Follow-up（追蹤）">18. Monitoring &amp; Follow-up</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（21）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（12 題）</a></li></ol></nav></details><section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2><div class="ex-notes-tools"><span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）<span class="ex-legend-trap">紅框</span>＝易錯陷阱<strong class="ex-n">粗體數字</strong>＝門檻值</span></div><p class="ex-reading" id="ex-reading" hidden></p><section class="ex-note" id="overview" data-w="637">
+<main id="main-content" class="ex-main" data-exam-page="chapter" data-exam-data="/exam/exam-data.json?v=52cdcc5074"><div class="ex-layout"><details class="ex-toc ex-toc-side" open><summary>本章目錄</summary><nav aria-label="本章目錄"><ol><li><a href="#overview" title="1. Overview &amp; Principles（總論與原則）" aria-label="1. Overview &amp; Principles（總論與原則）">1. Overview &amp; Principles</a></li><li><a href="#equipment" title="2. Equipment（器械與設備）" aria-label="2. Equipment（器械與設備）">2. Equipment</a></li><li><a href="#ellipse-planning" title="3. Elliptical Excision: Planning（梭形切除的設計）" aria-label="3. Elliptical Excision: Planning（梭形切除的設計）">3. Elliptical Excision: Planning</a></li><li><a href="#ellipse-technique" title="4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）" aria-label="4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）">4. Elliptical Excision: Technique &amp; Closure</a></li><li><a href="#ellipse-variations" title="5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）" aria-label="5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）">5. Standing Cones &amp; Variations of the Ellipse</a></li><li><a href="#second-intention" title="6. Excision without Closure: Second Intention Healing（二度癒合）" aria-label="6. Excision without Closure: Second Intention Healing（二度癒合）">6. Excision without Closure: Second Intention Healing</a></li><li><a href="#flap-principles" title="7. Flaps: Principles（皮瓣總論）" aria-label="7. Flaps: Principles（皮瓣總論）">7. Flaps: Principles</a></li><li><a href="#advancement" title="8. Advancement Flaps（推進皮瓣）" aria-label="8. Advancement Flaps（推進皮瓣）">8. Advancement Flaps</a></li><li><a href="#rotation" title="9. Rotation Flaps（旋轉皮瓣）" aria-label="9. Rotation Flaps（旋轉皮瓣）">9. Rotation Flaps</a></li><li><a href="#transposition" title="10. Transposition Flaps（轉位皮瓣）" aria-label="10. Transposition Flaps（轉位皮瓣）">10. Transposition Flaps</a></li><li><a href="#interpolation" title="11. Interpolation Flaps（內插／分期皮瓣）" aria-label="11. Interpolation Flaps（內插／分期皮瓣）">11. Interpolation Flaps</a></li><li><a href="#graft-basics" title="12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）" aria-label="12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）">12. Skin Grafts: Basics &amp; Healing Stages</a></li><li><a href="#ftsg" title="13. Full-Thickness Skin Grafts（全層植皮）" aria-label="13. Full-Thickness Skin Grafts（全層植皮）">13. Full-Thickness Skin Grafts</a></li><li><a href="#stsg" title="14. Split-Thickness Skin Grafts（裂層植皮）" aria-label="14. Split-Thickness Skin Grafts（裂層植皮）">14. Split-Thickness Skin Grafts</a></li><li><a href="#composite" title="15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）" aria-label="15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）">15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes</a></li><li><a href="#postop" title="16. Postoperative Care（術後照顧）" aria-label="16. Postoperative Care（術後照顧）">16. Postoperative Care</a></li><li><a href="#complications" title="17. Complications（併發症）" aria-label="17. Complications（併發症）">17. Complications</a></li><li><a href="#followup" title="18. Monitoring &amp; Follow-up（追蹤）" aria-label="18. Monitoring &amp; Follow-up（追蹤）">18. Monitoring &amp; Follow-up</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（21）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（12 題）</a></li></ol></nav></details><div class="ex-content"><nav class="crumbs" aria-label="麵包屑"><a href="/">首頁</a><span class="ex-sep" aria-hidden="true">/</span><a href="/exam">專科考試</a><span class="ex-sep" aria-hidden="true">/</span><span>Ch.203</span></nav><p class="ex-kicker">Fitzpatrick 9e · Part 30 Dermatologic Surgery</p><h1 class="ex-h1">Ch.203 Excisional Surgery and Repair, Flaps, and Grafts</h1><p class="ex-meta">原書 p.3726–3760 · 考題共 12 題（已有詳解 12 題）</p><p class="ex-meta">103 年 1 題、105 年 1 題、106 年 1 題、108 年 1 題、109 年 1 題、110 年 1 題、112 年 2 題、113 年 2 題、114 年 1 題、115 年 1 題</p><div class="ex-notice">題目取自<a href="https://www.derma.org.tw/specialist/download.php?id=9" target="_blank" rel="noopener noreferrer">臺灣皮膚科醫學會專科醫師甄審筆試試題</a>，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 McKee's Pathology of the Skin, 5th Edition 整理</div><section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2><p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p><div class="ex-links-group"><p class="ex-links-name">DermNet（臨床照片與疾病介紹）</p><ul><li><a href="https://dermnetnz.org/topics/skin-surgery" target="_blank" rel="noopener noreferrer">Skin surgery</a></li><li><a href="https://dermnetnz.org/topics/excision-of-skin-lesions" target="_blank" rel="noopener noreferrer">Excision of skin lesions</a></li><li><a href="https://dermnetnz.org/topics/wound-closure" target="_blank" rel="noopener noreferrer">Wound closure techniques</a></li><li><a href="https://dermnetnz.org/topics/suturing-techniques" target="_blank" rel="noopener noreferrer">Suturing techniques</a></li><li><a href="https://dermnetnz.org/topics/suture-materials" target="_blank" rel="noopener noreferrer">Suture materials</a></li><li><a href="https://dermnetnz.org/topics/skin-flaps" target="_blank" rel="noopener noreferrer">Skin flaps</a></li><li><a href="https://dermnetnz.org/topics/skin-grafting" target="_blank" rel="noopener noreferrer">Skin grafting</a></li><li><a href="https://dermnetnz.org/topics/bioengineered-skin" target="_blank" rel="noopener noreferrer">Bioengineered skin</a></li><li><a href="https://dermnetnz.org/topics/risks-and-complications-of-skin-surgery" target="_blank" rel="noopener noreferrer">Complications of skin surgery</a></li></ul></div></section><details class="ex-toc ex-toc-mobile"><summary>本章目錄</summary><nav aria-label="本章目錄（展開式）"><ol><li><a href="#overview" title="1. Overview &amp; Principles（總論與原則）" aria-label="1. Overview &amp; Principles（總論與原則）">1. Overview &amp; Principles</a></li><li><a href="#equipment" title="2. Equipment（器械與設備）" aria-label="2. Equipment（器械與設備）">2. Equipment</a></li><li><a href="#ellipse-planning" title="3. Elliptical Excision: Planning（梭形切除的設計）" aria-label="3. Elliptical Excision: Planning（梭形切除的設計）">3. Elliptical Excision: Planning</a></li><li><a href="#ellipse-technique" title="4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）" aria-label="4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）">4. Elliptical Excision: Technique &amp; Closure</a></li><li><a href="#ellipse-variations" title="5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）" aria-label="5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）">5. Standing Cones &amp; Variations of the Ellipse</a></li><li><a href="#second-intention" title="6. Excision without Closure: Second Intention Healing（二度癒合）" aria-label="6. Excision without Closure: Second Intention Healing（二度癒合）">6. Excision without Closure: Second Intention Healing</a></li><li><a href="#flap-principles" title="7. Flaps: Principles（皮瓣總論）" aria-label="7. Flaps: Principles（皮瓣總論）">7. Flaps: Principles</a></li><li><a href="#advancement" title="8. Advancement Flaps（推進皮瓣）" aria-label="8. Advancement Flaps（推進皮瓣）">8. Advancement Flaps</a></li><li><a href="#rotation" title="9. Rotation Flaps（旋轉皮瓣）" aria-label="9. Rotation Flaps（旋轉皮瓣）">9. Rotation Flaps</a></li><li><a href="#transposition" title="10. Transposition Flaps（轉位皮瓣）" aria-label="10. Transposition Flaps（轉位皮瓣）">10. Transposition Flaps</a></li><li><a href="#interpolation" title="11. Interpolation Flaps（內插／分期皮瓣）" aria-label="11. Interpolation Flaps（內插／分期皮瓣）">11. Interpolation Flaps</a></li><li><a href="#graft-basics" title="12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）" aria-label="12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）">12. Skin Grafts: Basics &amp; Healing Stages</a></li><li><a href="#ftsg" title="13. Full-Thickness Skin Grafts（全層植皮）" aria-label="13. Full-Thickness Skin Grafts（全層植皮）">13. Full-Thickness Skin Grafts</a></li><li><a href="#stsg" title="14. Split-Thickness Skin Grafts（裂層植皮）" aria-label="14. Split-Thickness Skin Grafts（裂層植皮）">14. Split-Thickness Skin Grafts</a></li><li><a href="#composite" title="15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）" aria-label="15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）">15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes</a></li><li><a href="#postop" title="16. Postoperative Care（術後照顧）" aria-label="16. Postoperative Care（術後照顧）">16. Postoperative Care</a></li><li><a href="#complications" title="17. Complications（併發症）" aria-label="17. Complications（併發症）">17. Complications</a></li><li><a href="#followup" title="18. Monitoring &amp; Follow-up（追蹤）" aria-label="18. Monitoring &amp; Follow-up（追蹤）">18. Monitoring &amp; Follow-up</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（21）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（12 題）</a></li></ol></nav></details><section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2><div class="ex-notes-tools"><span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）<span class="ex-legend-trap">紅框</span>＝易錯陷阱<strong class="ex-n">粗體數字</strong>＝門檻值</span></div><p class="ex-reading" id="ex-reading" hidden></p><section class="ex-note" id="overview" data-w="685">
 <h2>1. Overview &amp; Principles（總論與原則）</h2>
 <ul>
 <li>Excisional surgery 的目標：以適當 margin 切除病灶，並留下最不明顯的疤痕。<span class="ex-ref">p.3726</span></li>
-<li>四大原則：wound 在 <strong>minimal tension</strong> 下閉合；疤痕放在 <mark class="ex-key">cosmetic unit junctions</mark><span class="ex-qref">110-42</span> 或 skin tension lines；盡量侷限在少數 cosmetic unit 內；不扭曲 eyelid、eyebrow、nose、lip、hairline 等重要 landmarks。<span class="ex-ref">p.3726</span></li>
-<li>Biologically：被移動的皮膚與附屬器要能存活，並保留 sensory 與 motor nerve function。<span class="ex-ref">p.3726</span></li>
+<li>原則：wound 在 <strong>minimal tension</strong> 下閉合；疤痕放在 <mark class="ex-key">cosmetic unit junctions</mark><span class="ex-qref">110-42</span> 或 skin tension lines；盡量侷限在少數 cosmetic unit 內；不扭曲 eyelid、eyebrow、nose、lip、hairline 等重要 landmarks。<span class="ex-ref">p.3726</span></li>
+<li>Biologically：被移動的皮膚與附屬器要能存活，並最大程度保留（maximal preservation）sensory 與 motor nerve function。<span class="ex-ref">p.3726</span></li>
 <li>主要風險：pain、bleeding、bruising、hematoma、nerve damage、wound infection、wound dehiscence、undesirable scar 或 contracture。<span class="ex-ref">p.3726</span></li>
-<li>Elliptical（fusiform）excision 是皮膚外科的基本術式，可做 linear side-to-side closure；不能線性閉合時考慮 flap 或 graft。<span class="ex-ref">p.3726</span></li>
-<li>Flap 依 primary movement 分為 <strong>advancement、rotation、transposition、interpolation</strong>；skin graft 三種基本型為 <strong>full-thickness、split-thickness、composite</strong>。<span class="ex-ref">p.3726</span></li>
+<li>Elliptical（fusiform）excision 是皮膚外科的基本術式，通常（typically）可做 linear side-to-side closure；不能線性閉合時可考慮 flap 或 graft。<span class="ex-ref">p.3726</span></li>
+<li>Flap 常（commonly）依 primary movement 分為 <strong>advancement、rotation、transposition、interpolation</strong>；skin graft 三種基本型為 <strong>full-thickness、split-thickness、composite</strong>。<span class="ex-ref">p.3726</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="equipment" data-w="443">
+<section class="ex-note" id="equipment" data-w="457">
 <h2>2. Equipment（器械與設備）</h2>
 <ul>
 <li>Procedure room（basic）：mechanical table、overhead procedure lights、electrocautery、vital signs monitor、Mayo stand、污染廢棄物容器、sharps container；視情況加 suction。<span class="ex-ref">p.3726</span></li>
 <li>Basic excision tray：curette、No. 3 或 No. 7 Bard-Parker handle 配 <strong>No. 15 或 No. 10 blade</strong>（或 Beaver blade）、Bishop-Harmon／Adson forceps、skin hook、curved iris scissors、blunt-tipped undermining scissors、hemostat、needle holder、suture scissors。<span class="ex-ref">p.3726–3727</span></li>
-<li>每次以相同位置擺放器械（尤其 sharps），可避免被污染器械刺傷；STSG 另需 dermatome。<span class="ex-ref">p.3726–3727</span></li>
+<li>托盤基本器械每次以相同配置擺放有幫助；sharps 擺放位置一致可避免術者或助手被污染器械誤傷；STSG 另需 dermatome。<span class="ex-ref">p.3726–3727</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="ellipse-planning" data-w="1024">
+<section class="ex-note" id="ellipse-planning" data-w="1123">
 <h2>3. Elliptical Excision: Planning（梭形切除的設計）</h2>
 <ul>
 <li>所謂 elliptical excision 其實是 <strong>fusiform</strong>（兩端尖、不是圓弧）；適用於小到中型良性或惡性腫瘤、excisional biopsy 與 scar revision。<span class="ex-ref">p.3727</span></li>
 <li>先由病人確認病灶，畫出含適當 margin 的圓，再設計 ellipse；margin 大小視病灶性質而定。<span class="ex-ref">p.3727</span></li>
 <li><strong>Free margins</strong>（eyelid margin、alar rim、lip vermilion）幾乎無法抵抗周圍組織移動的張力；閉合設計要讓 tension vectors <strong>垂直於 free margin</strong>。<span class="ex-ref">p.3727</span></li>
-<li><mark class="ex-key">Fusiform excision 的長軸應沿 <strong>relaxed skin tension lines（RSTL）</strong>，RSTL 大致<strong>垂直於下方肌肉拉動的方向</strong></mark><span class="ex-qref">110-42 114-28</span>；應在病人坐直時辨識，可請病人做表情或以手推擠找出 laxity 方向；RSTL 很少與教科書圖完全一致。<span class="ex-ref">p.3727–3728</span></li>
+<li><mark class="ex-key">Fusiform excision 的長軸應沿 <strong>relaxed skin tension lines（RSTL）</strong>，RSTL 大致<strong>垂直於下方肌肉拉動的方向</strong></mark><span class="ex-qref">110-42 114-28</span>；應在病人坐直時辨識，可請病人做表情來突顯；RSTL 不明顯時可以手推擠找出 laxity 方向；RSTL 很少與已發表的圖示（published diagrams）相符，閉合應模仿臉部表情線的細微弧度。<span class="ex-ref">p.3727–3728</span></li>
 <li>Cosmetic units：同一 unit 內皮膚顏色、厚度、質地、皮脂與毛髮密度相近；臉部主要 units 為 forehead、periorbital、nose、lips/perioral、chin、cheeks。<mark class="ex-key">切口放在 cosmetic unit 交界或 contour lines，疤痕藏在眼睛預期會有變化的自然轉換區</mark><span class="ex-qref">110-42</span>。<span class="ex-ref">p.3728</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Parameter</th><th scope="col">Value（數值）</th><th scope="col">Note（說明）</th></tr></thead>
 <tbody>
 <tr><td>Optimal length-to-width ratio</td><td><mark class="ex-key"><strong class="ex-n">3.5:1</strong></mark><span class="ex-qref">110-42</span></td><td>減少兩端 redundant tissue（dog-ears／standing tri-cones）</td></tr>
-<tr><td>增加比例</td><td><mark class="ex-key"><strong class="ex-n">4:1</strong> 或更大</mark><span class="ex-qref">110-42</span></td><td><mark class="ex-key">組織延展性差、convex surfaces</mark><span class="ex-qref">110-42</span>（如四肢凸面、nasal dorsum）</td></tr>
+<tr><td>增加比例</td><td><mark class="ex-key"><strong class="ex-n">4:1</strong> 或更大</mark><span class="ex-qref">110-42</span></td><td><mark class="ex-key">組織延展性差、convex surfaces</mark><span class="ex-qref">110-42</span>（Fig. 203-4：四肢凸面、nasal dorsum 等處需 &gt;3:1）</td></tr>
 <tr><td>降低比例</td><td><strong class="ex-n">3:1</strong> 或更小</td><td>Concave surfaces、組織較鬆弛處</td></tr>
 <tr><td>Apical angle</td><td><strong class="ex-n">37°–74°</strong></td><td>比例越大角度越小；<strong class="ex-n">5:1</strong>（頭皮可能需要）時接近 <strong class="ex-n">30°</strong></td></tr>
-<tr><td>疤痕長度</td><td>弧線約比中線長 <strong class="ex-n">20%</strong></td><td>多半被長軸收縮吸收；但 upper lip 可把唇緣往下拉，可把閉合延長越過 wet mucosal margin 來隱藏</td></tr>
+<tr><td>疤痕長度</td><td>弧線約比中線長 <strong class="ex-n">20%</strong></td><td>多數情況下疤痕沿長軸收縮、周圍組織延展，可吸收此差異；但 upper lip 這點差異可能把唇緣往下拉，把閉合延長越過 wet mucosal margin 常有助於隱藏</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.3728。兩側長度不等時，較長的一側會形成 standing cone。</p>
-<aside class="ex-trap"><strong>易錯</strong>RSTL 大致垂直於下方肌肉拉動的方向；ellipse 長寬比在組織延展性差處與凸面可增加到 4:1 或更大，在凹面或組織較鬆弛處可降到 3:1 或更小。</aside>
+<aside class="ex-trap"><strong>易錯</strong>RSTL 大致垂直於下方肌肉拉動的方向<span class="ex-ref">p.3727</span>；ellipse 長寬比在組織延展性差處與凸面可增加到 4:1 或更大，在凹面或組織較鬆弛處可降到 3:1 或更小<span class="ex-ref">p.3728</span>。</aside>
 </section>
 
-<section class="ex-note" id="ellipse-technique" data-w="1825">
+<section class="ex-note" id="ellipse-technique" data-w="2002">
 <h2>4. Elliptical Excision: Technique &amp; Closure（切除與縫合技巧）</h2>
 <h3>Incision（切開）</h3>
 <ul>
 <li>多用 <strong>No. 15 blade</strong>；厚的背部皮膚可用 <strong>No. 10 blade</strong>。從離術者較遠的 apex 開始，blade belly 垂直皮面（避免 beveled incision），接近另一端 apex 時刀刃回到刀尖以免切過頭。<span class="ex-ref">p.3728–3729</span></li>
-<li>要做 side-to-side closure 時，深度必須全層到 <strong>superficial subcutaneous fat</strong>；apex 的深度要和中央一樣，否則兩端更容易出現 standing cone。<span class="ex-ref">p.3729</span></li>
+<li>要做 side-to-side closure 時，深度必須全層到 <strong>superficial subcutaneous fat</strong>；apex 的深度要和中央一樣，深度不一致時兩端可能出現較明顯的 standing cone。<span class="ex-ref">p.3729</span></li>
 </ul>
 <h3>Undermining &amp; hemostasis（剝離與止血）</h3>
 <ul>
 <li>Undermining 目的：增加周圍組織 mobility、幫助 wound eversion、降低傷緣張力、分散疤痕收縮；所有邊緣（含 apex）要在同一層面。<span class="ex-ref">p.3729</span></li>
-<li>過度 undermining 的風險：傷及神經血管、flap 血流受損、形成大 dead space 而增加 hematoma／seroma。<mark class="ex-key">使用 anticoagulants 或血小板數目／功能下降的病人，可限制 undermining 範圍以降低出血與 hematoma 風險</mark><span class="ex-qref">109-36</span>。<span class="ex-ref">p.3729</span></li>
-<li>Indirect coagulation（以鑷子夾住血管再碰電燒）可減少周圍熱傷害、可能加速癒合並降低感染；大的高壓動脈以 absorbable suture 結紮。<span class="ex-ref">p.3729</span></li>
+<li>廣泛（extensive）undermining 的風險：傷及神經血管、flap 血流受損、形成大 dead space 而增加 hematoma／seroma。<mark class="ex-key">使用 anticoagulants 或血小板數目／功能下降的病人，可能因限制 undermining 範圍而受益（出血與 hematoma 風險降低）</mark><span class="ex-qref">109-36</span>。<span class="ex-ref">p.3729</span></li>
+<li>Indirect coagulation（以鑷子夾住血管再碰電燒）可減少周圍熱傷害、可能加速癒合並降低感染；較大的高壓動脈可能需要以 absorbable suture 結紮。<span class="ex-ref">p.3729</span></li>
 </ul>
 <h3>Suturing（縫合）</h3>
 <ul>
-<li>多數傷口兩層閉合：absorbable deep sutures + nonabsorbable superficial sutures；dead space 大者可加第三層（fat 或 fascia）。<span class="ex-ref">p.3729</span></li>
+<li>多數傷口兩層閉合：absorbable deep sutures + nonabsorbable superficial sutures；較深或 dead space 明顯的傷口可能受益於第三層（subcutaneous fat 或 fascia 層）。<span class="ex-ref">p.3729</span></li>
 <li><strong>Rule of halves</strong>：第一針縫在中央，再逐次對半縫合，減少 dog-ears。<span class="ex-ref">p.3729</span></li>
-<li><mark class="ex-key">傷口在 <strong class="ex-n">2 weeks</strong> 時只達最終強度的 <strong class="ex-n">7%</strong></mark><span class="ex-qref">112-34</span>；皮膚縫線多在 1–2 週拆除，因此 <strong>absorbable buried sutures</strong> 是層狀閉合的重要部分，在數月內溶解並支撐傷口。<span class="ex-ref">p.3729</span></li>
+<li><mark class="ex-key">傷口在 <strong class="ex-n">2 weeks</strong> 時只達最終強度的 <strong class="ex-n">7%</strong></mark><span class="ex-qref">112-34</span>；皮膚縫線多在 1–2 週拆除，因此 <strong>absorbable buried sutures</strong> 是層狀閉合的重要部分，通常在數月間逐漸溶解，支撐傷口直到 epidermal tensile strength 足以防止 dehiscence。<span class="ex-ref">p.3729</span></li>
 <li><strong>Buried vertical mattress suture</strong>：大幅幫助 eversion、降低傷緣張力、疤痕較細，幾乎所有閉合都應使用。<span class="ex-ref">p.3729</span></li>
 <li>Subcutaneous sutures 可把組織 anchor 到 periosteum，避免 free margin 變形（例：melolabial flap 固定到 maxillary periosteum）；打 buried knot 時兩個 free ends 留在 loop 同側。<span class="ex-ref">p.3730</span></li>
-<li>Epidermal sutures 與傷緣的距離約等於 dermal–epidermal 厚度（eyelid 密、背部疏）。<mark class="ex-key">多數使用 running nonabsorbable minimally reactive monofilament（<strong>polypropylene 或 nylon</strong>）</mark><span class="ex-qref">105-26</span>；替代：fast-absorbing gut、running subcuticular、simple interrupted、polymethylmethacrylate tissue glue。<span class="ex-ref">p.3730</span></li>
-<li>高齡或癒合不良者可偏好 simple interrupted sutures：其他條件相同時 tensile strength 較大、較不易撕裂薄皮膚或影響 microcirculation。<span class="ex-ref">p.3730</span></li>
+<li>Epidermal sutures 與傷緣的距離約等於 dermal–epidermal 厚度（eyelid 密、背部疏）。<mark class="ex-key">多數使用 running nonabsorbable minimally reactive monofilament（<strong>polypropylene 或 nylon</strong>）</mark><span class="ex-qref">105-26</span>；替代：running absorbable fast-acting gut、absorbable 或 nonabsorbable running subcuticular、simple interrupted nonabsorbable sutures、polymethylmethacrylate tissue glue。<span class="ex-ref">p.3730</span></li>
+<li>因高齡或潛在疾病而癒合可能受損時，可能偏好 simple interrupted sutures：其他條件相同時可能 tensile strength 較大、較不易撕裂薄皮膚或影響 microcirculation。<span class="ex-ref">p.3730</span></li>
 </ul>
 <h3>Suture removal（拆線時間）</h3>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Site（部位）</th><th scope="col">Removal（拆線）</th></tr></thead>
 <tbody>
-<tr><td>Face、ears</td><td><strong class="ex-n">5–7 days</strong></td></tr>
+<tr><td>Face、ears</td><td>多數 <strong class="ex-n">5–7 days</strong></td></tr>
 <tr><td>Neck</td><td><strong class="ex-n">7 days</strong></td></tr>
 <tr><td>Scalp</td><td><strong class="ex-n">7–10 days</strong></td></tr>
-<tr><td>Trunk、extremities</td><td><strong class="ex-n">10–14 days</strong></td></tr>
-<tr><td>High tension 或易 dehiscence</td><td>再多留 <strong class="ex-n">3–4 days</strong>（buried sutures 足夠、傷口對合良好時 7–10 天即可拆）</td></tr>
+<tr><td>Trunk、extremities</td><td>通常 <strong class="ex-n">10–14 days</strong></td></tr>
+<tr><td>High tension 或易 dehiscence</td><td>可再多留 <strong class="ex-n">3–4 days</strong>（buried sutures 足夠、傷口對合良好時 7–10 天可拆）</td></tr>
 <tr><td>FTSG on face</td><td><strong class="ex-n">1 week</strong></td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.3730–3731；FTSG 見 p.3755。</p>
 <ul>
-<li><mark class="ex-key">一週內拆線可在 epithelial suture tracks 形成前拆除，減少 crosshatch marks；需留置 &gt;7 天者多數應改用 <strong>running subcuticular suture</strong> 以避免 suture tracks</mark><span class="ex-qref">105-26</span>。<span class="ex-ref">p.3730–3731</span></li>
+<li><mark class="ex-key">一週內拆線可在 epithelial suture tracks 形成前拆除，減少 crosshatch marks；對合良好的傷口，需留置 &gt;7 天者多數應改用 <strong>running subcuticular suture</strong> 以避免 suture tracks</mark><span class="ex-qref">105-26</span>。<span class="ex-ref">p.3730–3731</span></li>
 </ul>
 <p class="ex-cite">105-26 其餘選項（garlic／Ginkgo／vitamin E 抑制血小板、lidocaine 中毒早期症狀、polypropylene 的 plasticity、dehiscence 處理）屬 Chap. 202。</p>
 </section>
 
-<section class="ex-note" id="ellipse-variations" data-w="950">
+<section class="ex-note" id="ellipse-variations" data-w="1049">
 <h2>5. Standing Cones &amp; Variations of the Ellipse（狗耳修整與梭形變化）</h2>
 <ul>
 <li>Standing cone 成因：nonelliptical（圓形）缺損、apical angle 太寬、兩側不等長、convex surfaces。修整：提起 cone、切開一側、把多餘皮膚拉過切口再切掉另一側 → 切下的三角為 <strong>Burow's triangle</strong>，疤痕線性延長；變化有 curved extension、angled extension、M-plasty。<span class="ex-ref">p.3731</span></li>
@@ -437,58 +437,58 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <tr><td>Rhombic／tangent-to-circle excision</td><td>以直線連接兩端成兩個三角；設計簡單、切除較少正常組織；缺點是中央可能出現 notching／gap</td></tr>
 <tr><td>Curved ellipse</td><td>刻意設計一側較長，形成 curvilinear scar；用於 cheek、chin 周圍；以 rule of halves 閉合</td></tr>
 <tr><td><mark class="ex-key">S-plasty</mark><span class="ex-qref">106-06</span></td><td><mark class="ex-key">用於 <strong>convex surfaces</strong>（如四肢），把張力分散到較長距離與多種角度，不會只沿長軸收縮，避免凸面上疤痕凹陷</mark><span class="ex-qref">106-06</span></td></tr>
-<tr><td>M-plasty</td><td><strong>縮短</strong>疤痕長度（減掉中央倒三角的長度）；把疤痕限制在單一 cosmetic unit 或接近 free margin 時；可藏在 crow's feet、唇周皺紋分岔處；tip stitch（half-buried horizontal mattress）預防中央尖端壞死</td></tr>
-<tr><td>Partial closure</td><td>局部組織不足、病人健康或凝血狀況差時；由兩端往中央縫，剩下二度癒合；或用 purse-string suture 收到剛好不起皺</td></tr>
-<tr><td><mark class="ex-key">Serial excision</mark><span class="ex-qref">113-06</span></td><td><mark class="ex-key">以 3–4:1 切除會使疤痕過長時分次切除；第一次理想上是涵蓋病灶全長的 ellipse 並線性縫合，數月後組織延展再切除剩餘病灶與舊疤</mark><span class="ex-qref">113-06</span>；用於大範圍、良性或 low-risk 腫瘤</td></tr>
+<tr><td>M-plasty</td><td><strong>縮短</strong>疤痕長度（減掉中央倒三角的長度）；適用於把疤痕限制在單一 cosmetic unit，或切口接近 free margin 時；可藏在 crow's feet、唇周皺紋分岔處；tip stitch（half-buried horizontal mattress）可能有助於預防中央尖端壞死</td></tr>
+<tr><td>Partial closure</td><td>局部組織不足、病人健康或凝血狀況差時；由兩端往中央縫，剩下二度癒合；或用 purse-string suture 收緊到僅出現輕微組織皺褶（minimal tissue buckling）為止</td></tr>
+<tr><td><mark class="ex-key">Serial excision</mark><span class="ex-qref">113-06</span></td><td><mark class="ex-key">某些情況以 3–4:1 切除會使疤痕過長時可分次切除；第一次理想上是涵蓋病灶全長的 ellipse 並線性縫合，數月後組織延展再切除剩餘病灶與舊疤</mark><span class="ex-qref">113-06</span>；通常用於良性或 low-risk 的大範圍（large circumference）腫瘤，以縮短最終疤痕</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.3731–3732。</p>
-<aside class="ex-trap"><strong>易錯</strong>M-plasty 可縮短疤痕長度；S-plasty 用於凸面，把張力分散到較長距離與多種角度；切除 Burow's triangle 修整 standing cone 會使疤痕線性延長。</aside>
+<aside class="ex-trap"><strong>易錯</strong>M-plasty 可縮短疤痕長度<span class="ex-ref">p.3732</span>；S-plasty 用於凸面，把張力分散到較長距離與多種角度<span class="ex-ref">p.3731–3732</span>；切除 Burow's triangle 修整 standing cone 會使疤痕線性延長<span class="ex-ref">p.3731</span>。</aside>
 </section>
 
-<section class="ex-note" id="second-intention" data-w="612">
+<section class="ex-note" id="second-intention" data-w="628">
 <h2>6. Excision without Closure: Second Intention Healing（二度癒合）</h2>
 <ul>
 <li>適應症：重建手術風險高的病人、組織活動度小（scalp、distal lower extremities）、高感染風險、病人希望 down-time 少。<span class="ex-ref">p.3732–3733</span></li>
 <li>適合部位為 <strong>concave areas</strong>：medial canthus、ear concha、alar crease（小缺損）、temple、postauricular sulcus。<span class="ex-ref">p.3733</span></li>
-<li><mark class="ex-key">先收縮到最大程度，再由疤痕組織填滿；<strong>contraction</strong> 約占最終閉合的 <strong class="ex-n">50–70%</strong></mark><span class="ex-qref">113-06</span>。收縮多、疤痕組織少者外觀較好，但影響外觀最重要的因素是部位的 <strong>contour</strong>。<span class="ex-ref">p.3733</span></li>
+<li><mark class="ex-key">先收縮到最大程度，再由疤痕組織填滿；<strong>contraction</strong> 約占最終閉合的 <strong class="ex-n">50–70%</strong></mark><span class="ex-qref">113-06</span>。一般而言，收縮多、疤痕組織少者外觀較好，但影響外觀最重要的因素是部位的 <strong>contour</strong>。<span class="ex-ref">p.3733</span></li>
 <li>很表淺的傷口即使在凸面（forehead、nose）也可能癒合良好。<span class="ex-ref">p.3733</span></li>
-<li>傷口一側若有 free margin（eyelid、ear margin、eyebrow、nasal ala、vermilion border），收縮會造成變形 → 幾乎都應改做重建。<span class="ex-ref">p.3733</span></li>
+<li>傷口一側若有 free margin（eyelid、ear margin、eyebrow、nasal ala、vermilion border），收縮會造成變形 → 這些部位幾乎都以適當的重建手術處理較佳。<span class="ex-ref">p.3733</span></li>
 <li>技巧：切口向內 bevel 以暴露傷口底部；只要能切除病灶，深度不必到脂肪。<span class="ex-ref">p.3733</span></li>
 <li>優點：對感染較有抵抗力、不形成 hematoma、不需切除 standing cones。缺點：癒合時間長、contracture 較多、外觀有時不可預期。Purse-string suture 可明顯縮小傷口、縮短癒合時間。<span class="ex-ref">p.3733–3734</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="flap-principles" data-w="1345">
+<section class="ex-note" id="flap-principles" data-w="1482">
 <h2>7. Flaps: Principles（皮瓣總論）</h2>
 <ul>
 <li>Local skin flap：含全層皮膚與皮下組織，從相鄰 donor site 移到缺損，經 <strong>vascular pedicle</strong> 維持血流。<span class="ex-ref">p.3734</span></li>
 <li><strong>Axial pattern flap</strong>：依賴 named artery。<strong>Random pattern flap</strong>（皮膚外科最常用）：靠 mid-to-superficial fat 中的 <strong>subdermal vascular plexus</strong>，因此 undermining 與 mobilization 必須在此層或更深；太淺時只剩 intradermal vasculature，常不足以支撐 flap。<span class="ex-ref">p.3734</span></li>
-<li>臉部血流約為皮膚基本代謝需求的 <strong class="ex-n">10 倍</strong>，可支撐多種 random flap；臉以外部位 subdermal plexus 的 perfusion pressure 常不足。<span class="ex-ref">p.3734</span></li>
+<li>臉部血流約為皮膚基本代謝需求的 <strong class="ex-n">10 倍</strong>，可支撐多種 random flap；臉以外的某些部位，即使 subdermal plexus 的 perfusion pressure 也常不足以支撐 random flap。<span class="ex-ref">p.3734</span></li>
 <li>Perfusion pressure 在 pedicle 近端最高、向遠端遞減；低於臨界值時遠端微血管關閉。<span class="ex-ref">p.3734</span></li>
-<li>Milton（1970，豬模型）：同樣血流條件下 flap 只能存活到固定長度，<strong>與 pedicle 寬度無關</strong>；Daniel &amp; Williams、Stell 證實 → 最大長度由 vascular supply 決定，不只是 pedicle width。Perfusion pressure 越大，flap 可越長、pedicle 可越窄。<span class="ex-ref">p.3734</span></li>
+<li>Milton（1970，豬模型的 axial flaps）：同樣血流條件下 flap 只能存活到固定長度，<strong>與 pedicle 寬度無關</strong>；Daniel &amp; Williams、Stell 證實 → 最大長度由 vascular supply 決定，不只是 pedicle width。Perfusion pressure 越大，flap 可越長、pedicle 可越窄。<span class="ex-ref">p.3734</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
-<thead><tr><th scope="col">Flap type（依 perfusion pressure 高→低）</th><th scope="col">Length-to-width ratio</th></tr></thead>
+<thead><tr><th scope="col">Flap type（依 perfusion pressure 高→低）</th><th scope="col">Perfusion pressure／length-to-width ratio</th></tr></thead>
 <tbody>
 <tr><td><mark class="ex-key">Axial pattern</mark><span class="ex-qref">106-06</span></td><td><mark class="ex-key">蒂部 perfusion pressure 最高，可支撐窄長 flap（一般 <strong class="ex-n">&gt;4:1</strong>）</mark><span class="ex-qref">106-06</span>；最大存活長度比 random flap 多 <strong class="ex-n">60%</strong>（Stell）</td></tr>
-<tr><td>Musculocutaneous</td><td>次高</td></tr>
-<tr><td>Fasciocutaneous</td><td>再次</td></tr>
-<tr><td>Random pattern（face）</td><td><mark class="ex-key">最大約 <strong class="ex-n">3:1</strong>（粗略原則，受吸菸、皮脂腺性皮膚、放療、先前手術與部位影響）</mark><span class="ex-qref">109-36 112-38</span></td></tr>
+<tr><td>Musculocutaneous</td><td>Perfusion pressure 次高（原文未給比例）</td></tr>
+<tr><td>Fasciocutaneous</td><td>Perfusion pressure 再次（原文未給比例）</td></tr>
+<tr><td>Random pattern（face）</td><td><mark class="ex-key">一般（in general）最大 <strong class="ex-n">3:1</strong>（僅為粗略原則，受吸菸、皮脂腺性皮膚、放療、先前手術與部位影響）</mark><span class="ex-qref">109-36 112-38</span></td></tr>
 <tr><td>Random pattern（trunk、extremities）</td><td><mark class="ex-key">Pedicle 長寬比 <strong class="ex-n">不超過 2:1</strong></mark><span class="ex-qref">109-36 112-38</span></td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.3734。</p>
-<aside class="ex-trap"><strong>易錯</strong>Random pattern flap 在臉部長寬比最大約 3:1；軀幹與四肢的 pedicle 長寬比不應超過 2:1；Axial pattern flap 蒂部 perfusion pressure 最高，一般可 &gt;4:1。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Random pattern flap 在臉部長寬比一般最大 3:1；軀幹與四肢的 pedicle 長寬比不應超過 2:1；Axial pattern flap 蒂部 perfusion pressure 最高，一般可 &gt;4:1。<span class="ex-ref">p.3734</span></aside>
 <ul>
 <li><strong>Primary movement</strong>：把 flap 放進缺損；<strong>secondary movement</strong>：donor 區組織移動以關閉 secondary defect。兩者都影響張力分布。<span class="ex-ref">p.3734</span></li>
 <li>另一種分類：<strong>sliding</strong>（advancement、rotation；把多餘組織移到遠離缺損處）vs <strong>lifting</strong>（transposition、interpolation；越過完整皮膚、重新定向張力）。<span class="ex-ref">p.3734</span></li>
 <li>Flap 只能蓋在 <strong>neoplasm-free</strong> 的缺損上：flap 下的腫瘤難以察覺，可長期生長才被發現。<span class="ex-ref">p.3734</span></li>
-<li>設計：病人坐直時畫出 flap 與 Burow's triangles，並在<strong>打麻藥前</strong>規劃（注射量會扭曲組織）；切口垂直皮面、受區傷緣修成方正、flap 厚度均勻並與傷緣相當、周圍廣泛 undermining。<span class="ex-ref">p.3734</span></li>
+<li>設計：病人坐直時畫出 flap 與 Burow's triangles，並建議在<strong>打麻藥前</strong>規劃（注射量可能扭曲組織）；切口垂直皮面、受區傷緣同樣修成垂直（squared off）、flap 厚度均勻並與傷緣相當、周圍廣泛 undermining。<span class="ex-ref">p.3734</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="advancement" data-w="2479">
+<section class="ex-note" id="advancement" data-w="2599">
 <h2>8. Advancement Flaps（推進皮瓣）</h2>
 <ul>
 <li>Primary movement 為一維滑動直接進入缺損；tension vectors 與原閉合相同，主要優點是把 <strong>closure lines 移到較不明顯的位置</strong>。<span class="ex-ref">p.3734–3735</span></li>
@@ -497,15 +497,15 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Flap</th><th scope="col">Design &amp; use（設計與用途）</th></tr></thead>
 <tbody>
-<tr><td>U-plasty（single advancement）</td><td>兩條平行切線、形成 U 形疤；可讓前額疤痕多呈水平；不改變張力向量、釋放組織有限 → 用途有限</td></tr>
-<tr><td>L-plasty（A-to-L、O-to-L）</td><td>Single tangent flap；redundancy 在對側要切除；可把切線放在 RSTL 或 cosmetic unit 交界，用於 eyebrow、nose、upper lip</td></tr>
-<tr><td>Cheek advancement flap</td><td>Medial cheek／lateral nose 中大型缺損；切口可藏在 alar crease 或 nasolabial fold；leading edge 固定到 <strong>nasal sidewall–cheek junction 的 periosteum</strong>，減壓並重建凹面、避免 webbing；跨 cheek 與 ala 時可 cheek flap + alar FTSG（各自 cosmetic unit）</td></tr>
+<tr><td>U-plasty（single advancement）</td><td>兩條平行切線、形成 U 形疤；偶爾用於讓前額疤痕多呈水平；不改變張力向量、釋放組織有限 → 用途有限</td></tr>
+<tr><td>L-plasty（A-to-L、O-to-L）</td><td>Single tangent flap；redundancy 在對側要切除；O-to-L 特別適用於切線可放進 RSTL 或 cosmetic unit 交界，或線性閉合會跨越 free margin 或 cosmetic unit 交界的缺損（如 eyebrow、nose、upper lip）</td></tr>
+<tr><td>Cheek advancement flap</td><td>Medial cheek／lateral nose 中大型缺損；切口可藏在 alar crease 或 nasolabial fold；leading edge 通常宜固定到 <strong>nasal sidewall–cheek junction 的 periosteum</strong>，減壓並重建凹面、避免 webbing；跨 cheek 與 ala 時可 cheek flap + alar FTSG（各自 cosmetic unit）</td></tr>
 <tr><td>Helical rim advancement</td><td>利用 lobule laxity；傳統 through-and-through 切口只用於下方 helix（比例不超過 <strong class="ex-n">3–4:1</strong>）；改良法沿 scaphoid fossa 單一切線、保留 posterior auricular skin，血流較可靠；縫合要 eversion 以免 notch</td></tr>
-<tr><td>H-plasty（bilateral advancement）</td><td>雙側 U-plasty；forehead、eyebrow、glabella、upper lip</td></tr>
+<tr><td>H-plasty（bilateral advancement）</td><td>雙側 U-plasty；偶爾用於 forehead、eyebrow、glabella、upper lip</td></tr>
 <tr><td>O-to-T（A-to-T、T-plasty）</td><td>雙側 O-to-L；張力分到兩個 advancing edges；底邊放在 free margin 或 cosmetic unit 交界（lip、eyebrow）</td></tr>
 <tr><td>Crescentic advancement flap</td><td>沿 flap 切除小新月形組織，以藏疤或增加切線長度、避免變形；用於 upper lip 與 perialar 缺損（上方 cone 繞 ala 切除，疤痕落在 perinasal sulcus）</td></tr>
-<tr><td><mark class="ex-key">V-to-Y flap（舊稱 island pedicle flap）</mark><span class="ex-qref">108-32 110-42 112-38</span></td><td><mark class="ex-key">Advancement flap 的變化型</mark><span class="ex-qref">108-32 110-42 112-38</span>；<mark class="ex-key">與 epidermis、dermis 的連結全部切斷，靠 <strong>subcutaneous tissue pedicle</strong> 供血</mark><span class="ex-qref">108-32</span>（詳下）</td></tr>
-<tr><td>East–west flap</td><td>Lateral nasal supratip 小到中型缺損（<strong class="ex-n">≤1.5 cm</strong>）；垂直軸切除兩個三角（上方鄰缺損、下方近 columella），側向滑動；鼻部變形少、tissue match 佳</td></tr>
+<tr><td><mark class="ex-key">V-to-Y flap（舊稱 island pedicle flap）</mark><span class="ex-qref">108-32 110-42 112-38</span></td><td><mark class="ex-key">可視為 advancement flap 的變化型</mark><span class="ex-qref">108-32 110-42 112-38</span>；<mark class="ex-key">與 epidermis、dermis 的連結全部切斷，靠 <strong>subcutaneous tissue pedicle</strong> 供血</mark><span class="ex-qref">108-32</span>（詳下）</td></tr>
+<tr><td>East–west flap</td><td>Lateral nasal supratip 小到中型缺損（<strong class="ex-n">≤1.5 cm</strong>）；垂直軸切除兩個三角（上方鄰缺損並與鼻長軸平行、下方位於中線並朝向 columella），側向滑動；鼻部變形少、tissue match 佳</td></tr>
 <tr><td>Rintala flap</td><td>Superior-based；nasal dorsum 大缺損；nasal dorsum 與 glabella 的長方形 flap 於 <strong>supraperiosteal plane</strong> 掀起向下推進；需充分 undermining 以免 nasal tip 上提</td></tr>
 </tbody>
 </table></div>
@@ -513,26 +513,26 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <h3>Crescent along the vermilion border（紅唇緣新月形切除）</h3>
 <ul>
 <li>Upper cutaneous lip 缺損：下方 cone 沿 RSTL 切除，並延伸<strong>越過 vermilion border 到 wet mucosa</strong>，避免紅唇被往下拉。<span class="ex-ref">p.3738</span></li>
-<li><mark class="ex-key">缺損就在 vermilion border 正上方時，在 vermilion border 加做 crescent 可<strong>增加 flap 長度</strong>，縮小 flap 與整體閉合長度（flap + defect）的落差，減少 flap 的水平張力，降低 lip 與 modiolus 變形</mark><span class="ex-qref">115-11</span>。<span class="ex-ref">p.3738</span></li>
+<li><mark class="ex-key">缺損就在 vermilion border 正上方時，在 vermilion border 加做 crescent 可<strong>增加 flap 長度</strong>，有助於縮小 flap 與整體閉合長度（flap + defect）的落差，減少 flap 的部分水平張力，降低 lip 與 modiolus 變形</mark><span class="ex-qref">115-11</span>。<span class="ex-ref">p.3738</span></li>
 <li><mark class="ex-key">切除 crescent 會<strong>延長切口</strong>，以補償「切口 vs 切口 + 缺損」的長度差</mark><span class="ex-qref">115-11</span>（Fig. 203-18）。<span class="ex-ref">p.3739</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>在 vermilion border 加做 crescent 可增加 flap 長度、減少 flap 的水平張力、降低 lip 與 modiolus 變形；切除 crescent 會延長切口。</aside>
+<aside class="ex-trap"><strong>易錯</strong>在 vermilion border 加做 crescent 可增加 flap 長度、減少 flap 的部分水平張力、降低 lip 與 modiolus 變形<span class="ex-ref">p.3738</span>；切除 crescent 會延長切口<span class="ex-ref">p.3739</span>。</aside>
 <h3>V-to-Y (island pedicle) flap details（V-to-Y 皮瓣細節）</h3>
 <ul>
-<li><mark class="ex-key">常用於 <strong>nasal 與 perioral</strong> 缺損等 free margin 易被拉扯變形處；張力向量方向與 primary closure 相同，但被移到缺損遠端（nasal tip 上方、vermilion border 上方或外側），避免缺損周圍變形</mark><span class="ex-qref">108-32</span>。<span class="ex-ref">p.3738</span></li>
+<li><mark class="ex-key">常用於 <strong>nasal 與 perioral</strong> 缺損等 free margin 易被拉扯變形處；張力向量方向主要與 primary closure 相同，但被移到缺損遠端（nasal tip 上方、vermilion border 上方或外側），避免缺損周圍變形</mark><span class="ex-qref">108-32</span>。<span class="ex-ref">p.3738</span></li>
 <li>設計：兩條非平行切線以約 <strong class="ex-n">30°</strong> 相交（像 Burow's triangle），但先平行一小段再收斂 → 三角形略大，接近缺損大小；可依想要的 tension sharing 調整大小。<span class="ex-ref">p.3738</span></li>
-<li>切口只到 superficial subcutaneous tissue；flap 外側在皮下層廣泛 undermining，三角本身只稍微 undermine；角落修圓或把缺損修方。Pedicle 初始要寬，活動度不足時可逐步縮小（尤其 trailing tip）。<span class="ex-ref">p.3738–3739</span></li>
+<li>切口只到 superficial subcutaneous tissue；flap 的 tip 與兩側在皮下層向外廣泛 undermining，三角形 flap 本身只稍微 undermine；角落修圓或把缺損修方。Pedicle 初始要寬，活動度不足時可逐步縮小（尤其 trailing tip）。<span class="ex-ref">p.3738–3739</span></li>
 <li><mark class="ex-key">Nasal dorsum／tip：常在一側或兩側外側做 muscular flap，即 <strong>musculocutaneous island pedicle flap</strong>，在 nasalis 上下都 undermine，必要時水平釋放成 muscular sling；肌肉附著提供 robust blood supply</mark><span class="ex-qref">108-32</span>。<span class="ex-ref">p.3739</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>V-to-Y（舊稱 island pedicle）flap 是 advancement flap 的變化型；「up to 1.5 cm」是 east–west flap（lateral nasal supratip 小到中型缺損）的範圍。</aside>
+<aside class="ex-trap"><strong>易錯</strong>V-to-Y（舊稱 island pedicle）flap 可視為 advancement flap 的變化型<span class="ex-ref">p.3738</span>；「up to 1.5 cm」是 east–west flap（lateral nasal supratip 小到中型缺損）的範圍<span class="ex-ref">p.3739</span>。</aside>
 </section>
 
-<section class="ex-note" id="rotation" data-w="994">
+<section class="ex-note" id="rotation" data-w="995">
 <h2>9. Rotation Flaps（旋轉皮瓣）</h2>
 <ul>
 <li>皮膚繞 pivot point 旋轉進缺損；經典用於 cheek、temple、scalp 的較大缺損；沿弧形切線招募鄰近 lax tissue，並把張力導向多個方向。<span class="ex-ref">p.3740</span></li>
 <li>理想弧長可達缺損寬度的 <strong class="ex-n">5 倍</strong>，約為圓周的 <strong class="ex-n">1/4</strong>；弧越大，flap tip 張力越小、secondary defect 越窄。<span class="ex-ref">p.3740</span></li>
-<li>Large vascular pedicle → tissue necrosis 風險較低。Pivot point 附近的僵硬（<strong>pivotal restraint</strong>）會限制移動，可 undermine 該區或做 <strong>back cut</strong>；但 back cut 會縮窄 pedicle、影響血流。<span class="ex-ref">p.3740</span></li>
+<li>Large vascular pedicle → tissue necrosis 風險較低。Pivot point 附近的僵硬（<strong>pivotal restraint</strong>）會限制移動，可 undermine 該區或做 <strong>back cut</strong>；但 back cut 可能縮窄 pedicle、影響血流。<span class="ex-ref">p.3740</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Flap</th><th scope="col">Key points（重點）</th></tr></thead>
@@ -546,33 +546,33 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">p.3740–3742。</p>
 </section>
 
-<section class="ex-note" id="transposition" data-w="2515">
+<section class="ex-note" id="transposition" data-w="2661">
 <h2>10. Transposition Flaps（轉位皮瓣）</h2>
 <ul>
 <li>Random pattern flap；從有 laxity 的鄰近區借皮膚，<strong>越過中間的組織</strong>（lifted／transposed）填入缺損；secondary defect 閉合時是把組織「推」進缺損（advancement／rotation 是「拉」）。<span class="ex-ref">p.3742</span></li>
-<li>主要功能：<strong>重新分配與重新定向張力</strong>；整體通常比 advancement、rotation flap 小；geometric broken-line 疤痕可能較不明顯，但難以完全放在 RSTL 或 cosmetic unit 交界；鄰近皮膚顏色質地相符。<span class="ex-ref">p.3742–3743</span></li>
+<li>主要功能：<strong>重新分配與重新定向張力</strong>；整體通常比 advancement、rotation flap 小；geometric broken-line 疤痕在某些部位可能比較長的線性閉合不明顯，但難以完全放在 RSTL 或 cosmetic unit 交界；鄰近皮膚顏色質地相符。<span class="ex-ref">p.3742–3743</span></li>
 <li><mark class="ex-key">最常見的 transposition flaps：<strong>rhombic flaps（及變化）、bilobed flaps、banner flaps（如 nasolabial flap）</strong></mark><span class="ex-qref">110-42</span>。<span class="ex-ref">p.3743</span></li>
 </ul>
 <h3>Rhombic flap（菱形皮瓣）</h3>
 <ul>
-<li>Limberg（課本內文拼作 Lindberg）1963 描述的 single-lobed transposition flap；缺損轉成四邊等長的平行四邊形，角度 <strong class="ex-n">60°</strong> 與 <strong class="ex-n">120°</strong>。<span class="ex-ref">p.3743</span></li>
+<li>課本內文寫「Lindberg 1963 首先描述」（參考文獻為 Limberg AA, 1966）的 single-lobed transposition flap；缺損轉成四邊等長的平行四邊形，角度 <strong class="ex-n">60°</strong> 與 <strong class="ex-n">120°</strong>。<span class="ex-ref">p.3743</span></li>
 <li>經典設計：從 obtuse 角延伸一條與邊等長的線（a–b），再畫第二條線（b–c），tip angle <strong class="ex-n">60°</strong>；secondary defect 與 primary defect 垂直，張力向量轉 <strong class="ex-n">90°</strong>，primary defect 幾乎無張力。<span class="ex-ref">p.3743</span></li>
 <li>每個菱形缺損的 short axis 可畫出 <strong class="ex-n">4</strong> 種設計；從 short axis 設計的好處：flap 最小、旋轉弧最小。圓形缺損時延伸線要比缺損直徑長；pivot point 修 Burow's triangle。<span class="ex-ref">p.3743</span></li>
-<li>兩組張力：closing secondary defect，以及 flap tip 進入 primary defect 時的張力（pivotal restraint 與旋轉時縮短；Dzubow）。高張力固定會造成 tip ischemia／necrosis；可延長 leading edge 與 secondary limb，或把 flap angle 設計成 <strong class="ex-n">&gt;120°</strong>，並廣泛 undermining。<span class="ex-ref">p.3744–3745</span></li>
+<li>兩組張力：closing secondary defect，以及 flap tip 進入 primary defect 時的張力（源於 pedicle 抵抗旋轉，以及旋轉時 flap 長度縮短；Dzubow 稱這些力為 pivotal restraint）。高張力固定可能造成 tip ischemia／necrosis，故不建議；可延長 leading edge 與 secondary limb，或把 flap angle 設計成 <strong class="ex-n">&gt;120°</strong>，並廣泛 undermining。<span class="ex-ref">p.3743–3745</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Rhombic variant</th><th scope="col">Tip angle／design</th><th scope="col">Tension（張力）</th></tr></thead>
 <tbody>
-<tr><td>Classic Limberg</td><td><strong class="ex-n">60°</strong></td><td>向量轉 <strong class="ex-n">90°</strong>；張力完全由 secondary defect 承擔</td></tr>
-<tr><td>DuFourmentel</td><td>Tip angle 較窄、旋轉弧較短；第一線平分經典線與菱形邊延長線的夾角，第二線平行菱形長軸</td><td>向量轉 <strong class="ex-n">45°</strong>；primary 與 secondary defect 分擔張力；本章作者較常用</td></tr>
+<tr><td>Classic rhombic（課本內文稱 Lindberg）</td><td><strong class="ex-n">60°</strong></td><td>向量轉 <strong class="ex-n">90°</strong>；張力完全由 secondary defect 承擔</td></tr>
+<tr><td>DuFourmentel</td><td>Tip angle 較窄、旋轉弧較短；第一線平分經典線與菱形邊延長線的夾角，第二線平行菱形長軸</td><td>向量轉 <strong class="ex-n">45°</strong>；primary 與 secondary defect 部分分擔張力；本章作者較常用</td></tr>
 <tr><td>Webster 30°-angle</td><td>Tip angle <strong class="ex-n">30°</strong>，flap 較細、pedicle 較窄</td><td>Flap 面積只有 primary defect 的 <strong class="ex-n">50%</strong>，只解除一半張力；適用於水平軸有相當 laxity 時</td></tr>
 </tbody>
 </table></div>
-<p class="ex-cite">p.3745–3746；Fig. 203-25、203-28、203-29。常用部位：nasal dorsum、nasal sidewall、medial／lateral canthus、lateral forehead、temple、cheek、perioral、inferior chin、dorsal hand，p.3746。</p>
+<p class="ex-cite">p.3743、p.3745–3746；Fig. 203-25、203-28、203-29。常用部位：nasal dorsum、nasal sidewall、medial／lateral canthus、lateral forehead、temple、cheek、perioral、inferior chin、dorsal hand，p.3746。</p>
 <h3>Banner flap（旗形皮瓣）</h3>
 <ul>
-<li>Random-pattern finger-shaped flap；最常做成 <strong>melolabial transposition</strong> 修補 nasal ala，或 pre-／postauricular 皮膚修補耳朵；疤痕放在 nasolabial fold 或 preauricular sulcus。<span class="ex-ref">p.3746–3747</span></li>
-<li>寬度 = 缺損寬度；長度 = pivot point 到缺損遠緣。長而窄的 pedicle 有血流風險 → 旋轉角設計為 <strong class="ex-n">60°–120°</strong>（非原始的 180°），back cut 與 redundancy 切除要朝遠離 pedicle 方向。<span class="ex-ref">p.3747</span></li>
+<li>Random-pattern finger-shaped flap；最常做成 <strong>melolabial transposition</strong> 修補 nasal ala，或 pre-／postauricular 皮膚修補耳朵；疤痕通常放在 nasolabial fold 或 preauricular sulcus。<span class="ex-ref">p.3746–3747</span></li>
+<li>寬度 = 缺損寬度；長度 = pivot point 到缺損遠緣。長而窄 pedicle 的 random flap 若用到全長且 pedicle 來自血流少的區域，血流受損風險可能偏高 → 旋轉角通常設計為 <strong class="ex-n">60°–120°</strong>（非原始的 180°），back cut 與 redundancy 切除要朝遠離 pedicle 方向。<span class="ex-ref">p.3747</span></li>
 </ul>
 <h3>Bilobed flap（雙葉皮瓣）</h3>
 <ul>
@@ -580,9 +580,9 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li><mark class="ex-key">由 <strong>兩個依序、同一旋轉方向的 transposition flaps</strong> 組成</mark><span class="ex-qref">106-06 110-42</span>：primary lobe 填缺損、secondary lobe 填 secondary defect，三角形 tertiary defect 直接縫合；<strong>key suture 關閉 tertiary defect</strong>。可從較遠處借 laxity，同時減少 pedicle 的旋轉弧。<span class="ex-ref">p.3747–3748</span></li>
 <li>Zitelli modification：兩葉置於自缺損中心起算的 <strong class="ex-n">90°</strong> 弧內；在缺損一極切除 Burow's triangle 形成 pivot；primary lobe 寬度 = 缺損寬度，長度剛好超過缺損邊緣；secondary lobe 依 secondary defect 修剪。<span class="ex-ref">p.3748</span></li>
 <li><mark class="ex-key">主要用於 <strong>lower nose</strong> 小到中型缺損：張力被轉成接近 <strong>vertical</strong>，避免 alar rim 變形</mark><span class="ex-qref">106-06</span>；在此部位於 <strong>nasalis 下方</strong> undermine 可提高活動度與存活。<span class="ex-ref">p.3748–3749</span></li>
-<li>Trilobe flap：可用更遠的組織；key suture 關閉 quaternary defect；primary lobe = 缺損直徑、secondary <strong class="ex-n">85–90%</strong>、tertiary <strong class="ex-n">75–80%</strong>；用於 distal nasal tip 與 nasal ala。<span class="ex-ref">p.3748</span></li>
+<li>Trilobe flap：可用更遠的組織；key suture 關閉 quaternary defect；一般 primary lobe = 缺損直徑、secondary <strong class="ex-n">85–90%</strong>、tertiary <strong class="ex-n">75–80%</strong>；用於 distal nasal tip 與 nasal ala。<span class="ex-ref">p.3748</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Bilobed flap 由兩個依序、同一旋轉方向的 transposition flaps 組成；最常見的 transposition flaps 為 rhombic、bilobed、banner；V-to-Y 是 advancement flap 的變化型。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Bilobed flap 由兩個依序、同一旋轉方向的 transposition flaps 組成<span class="ex-ref">p.3747</span>；最常見的 transposition flaps 為 rhombic、bilobed、banner<span class="ex-ref">p.3743</span>；V-to-Y 可視為 advancement flap 的變化型<span class="ex-ref">p.3738</span>。</aside>
 <h3>Z-plasty</h3>
 <ul>
 <li>Transposition flap，用於重新排列（realign）、偽裝疤痕，最常見是<strong>延長攣縮的疤痕</strong>。<span class="ex-ref">p.3748</span></li>
@@ -590,31 +590,31 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 </section>
 
-<section class="ex-note" id="interpolation" data-w="1385">
+<section class="ex-note" id="interpolation" data-w="1495">
 <h2>11. Interpolation Flaps（內插／分期皮瓣）</h2>
 <ul>
-<li>從距缺損較遠處帶 pedicle 的組織；用於太寬或太深、local flap 或 graft 無法處理的缺損。若 pedicle 為 named artery 可歸為 axial flap；需兩次以上手術，又稱 <strong>staged flaps</strong>；暫時性外觀影響大。<span class="ex-ref">p.3748</span></li>
-<li>第一階段：設計並掀起 flap、修補 secondary defect；遠端修薄縫入缺損，pedicle 暫留。第二階段一般在 <strong class="ex-n">2–3 weeks</strong> 後（flap 已從受區建立血流）：斷蒂、近端修薄固定、處理 donor site。<span class="ex-ref">p.3748</span></li>
+<li>從距缺損較遠處帶 pedicle 的組織；通常用於太寬或太深、local flap 或 graft 無法處理的缺損。許多 interpolation flap 若 pedicle 基於大的 named artery，可歸為 axial flap；需兩次以上手術，又稱 <strong>staged flaps</strong>；暫時性外觀影響大。<span class="ex-ref">p.3748</span></li>
+<li>第一階段：設計並掀起 flap、修補 secondary defect；遠端修薄縫入缺損，pedicle 暫留。第二階段一般在 <strong class="ex-n">2–3 weeks</strong> 後（flap 已建立 local blood supply）：斷蒂、近端固定（因 granulation tissue 可能需修薄）、處理 donor site。<span class="ex-ref">p.3748</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Flap</th><th scope="col">Blood supply（血流）</th><th scope="col">Use &amp; key points（用途與重點）</th></tr></thead>
 <tbody>
-<tr><td><mark class="ex-key">Paramedian forehead flap</mark><span class="ex-qref">106-06</span></td><td><mark class="ex-key">One <strong>supratrochlear artery</strong></mark><span class="ex-qref">106-06</span>（位於眉毛內緣，距中線約 <strong class="ex-n">1.5–2 cm</strong>）</td><td>大而深的 nasal 缺損（可合併 cartilage graft）；缺損可擴大到整個 cosmetic subunit；pedicle 寬 <strong class="ex-n">1–1.5 cm</strong> 即可；旋轉約 <strong class="ex-n">180°</strong> 並朝內側，<strong>取對側</strong> supratrochlear artery 供應的前額可減少旋轉；donor 上方常太緊而二度癒合；pedicle 以 Vaseline／Xeroform gauze 或 Surgicel 包覆防乾；<strong class="ex-n">3 weeks</strong> 後斷蒂</td></tr>
-<tr><td>Nasolabial interpolation flap</td><td>Branches of <strong>angular artery</strong></td><td>複雜 alar 缺損（尤其需 cartilage graft 重建 alar rim）；可擴大到整個 alar lobule；myocutaneous flap，pedicle 在 alar groove，donor 在 nasolabial fold 閉合；<strong class="ex-n">3 weeks</strong> 後斷蒂。<strong>Reverse nasolabial（Spear's）flap</strong>：整個 ala 缺損，向上旋轉</td></tr>
-<tr><td>Abbé flap（lip-switch flap）</td><td><strong>Inferior labial artery</strong>（在 orbicularis oris 深部或其內，沿紅唇緣 mucosal 側走）</td><td>大而深的 upper lip 缺損，可達半唇、不跨中線、深及 muscularis；取自 ipsilateral lower lip、全層；pedicle 約 <strong class="ex-n">1 cm</strong> 厚；donor 依 mucosa、muscularis、subcutaneous、cutaneous 分層縫；pedicle <strong>不可環狀包覆</strong>，以 occlusive ointment 保濕；至少 <strong class="ex-n">3 weeks</strong>，期間口裂明顯變形</td></tr>
-<tr><td>Retroauricular flap</td><td><strong>Random</strong>（無大的 named artery）</td><td>Two-staged；helix 大缺損（常侵犯 perichondrium、不適合 graft）；取自 postauricular scalp；pedicle 環狀包紮，術後出血與不適要先告知；donor 常二度癒合；<strong class="ex-n">3 weeks</strong> 後斷蒂</td></tr>
+<tr><td><mark class="ex-key">Paramedian forehead flap</mark><span class="ex-qref">106-06</span></td><td><mark class="ex-key">One <strong>supratrochlear artery</strong></mark><span class="ex-qref">106-06</span>（位於眉毛內緣，距中線約 <strong class="ex-n">1.5–2 cm</strong>）</td><td>大而深的 nasal 缺損（可合併 cartilage graft）；缺損擴大到整個 cosmetic subunit 常可改善外觀；pedicle 寬 <strong class="ex-n">1–1.5 cm</strong> 即可；旋轉約 <strong class="ex-n">180°</strong> 並朝內側，<strong>取對側</strong> supratrochlear artery 供應的前額可減少旋轉；donor 上方常太緊而二度癒合；pedicle 以 Vaseline／Xeroform gauze 或 Surgicel 包覆防乾；<strong class="ex-n">3 weeks</strong> 後斷蒂</td></tr>
+<tr><td>Nasolabial interpolation flap</td><td>Branches of <strong>angular artery</strong></td><td>複雜 alar 缺損（尤其需 cartilage graft 重建 alar rim）；缺損擴大到整個 alar lobule 常可改善外觀；myocutaneous flap，pedicle 在 alar groove，donor 在 nasolabial fold 閉合；<strong class="ex-n">3 weeks</strong> 後斷蒂。<strong>Reverse nasolabial（Spear's）flap</strong>：整個 ala 缺損，向上旋轉</td></tr>
+<tr><td>Abbé flap（lip-switch flap）</td><td><strong>Inferior labial artery</strong>（在 orbicularis oris 深部或其內，沿紅唇緣 mucosal 側走）</td><td>大而深的缺損，通常為 upper lip；特別適合可達半唇且不跨中線的缺損，以及深及 muscularis 的缺損；取自 ipsilateral lower lip、全層；pedicle 約 <strong class="ex-n">1 cm</strong> 厚；donor 依 mucosa、muscularis、subcutaneous、cutaneous 分層縫；pedicle <strong>不可環狀包覆</strong>，以 occlusive ointment 保濕；至少 <strong class="ex-n">3 weeks</strong>，期間口裂明顯變形</td></tr>
+<tr><td>Retroauricular flap</td><td><strong>Random</strong>（無大的 named artery）</td><td>Two-staged；helix 大缺損（常侵犯 perichondrium、不適合 graft）；取自 postauricular scalp；pedicle 環狀包紮，要先告知病人術後很可能出血與不適；donor 常二度癒合；<strong class="ex-n">3 weeks</strong> 後斷蒂</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.3748–3753；Fig. 203-33 至 203-35。</p>
-<aside class="ex-trap"><strong>易錯</strong>Paramedian forehead flap 以一條 supratrochlear artery 為基礎；Abbé flap 以 inferior labial artery 為基礎；retroauricular flap 是 two-staged interpolation flap，因不依賴大的 named artery 而被視為 random flap。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Paramedian forehead flap 以一條 supratrochlear artery 為基礎<span class="ex-ref">p.3748</span>；Abbé flap 以 inferior labial artery 為基礎<span class="ex-ref">p.3751</span>；retroauricular flap 是 two-staged interpolation flap，因不依賴大的 named artery 而被視為 random flap<span class="ex-ref">p.3752</span>。</aside>
 </section>
 
-<section class="ex-note" id="graft-basics" data-w="756">
+<section class="ex-note" id="graft-basics" data-w="783">
 <h2>12. Skin Grafts: Basics &amp; Healing Stages（植皮總論與癒合階段）</h2>
 <ul>
-<li>Graft 完全與 donor site 分離，所有養分來自受區 wound bed；用於皮膚癌切除後重建，以及 chronic ulcers、full-thickness burns、epidermolysis bullosa、vitiligo。<span class="ex-ref">p.3753</span></li>
+<li>Graft 完全與 donor site 分離，所有養分來自受區 wound bed；通常用於皮膚癌切除後重建，也用於 chronic ulcers、full-thickness burns、epidermolysis bullosa、vitiligo。<span class="ex-ref">p.3753</span></li>
 <li>FTSG：epidermis + full-thickness dermis，保留 adnexa。STSG：epidermis + partial dermis，失去 adnexa。Composite graft：FTSG 帶 cartilage。<span class="ex-ref">p.3753</span></li>
-<li>依來源：autograft（皮膚科最常用）、allograft（人到人）、xenograft（動物到人）；後兩者用於 burns 與 chronic wounds，保護並清創傷口、刺激癒合。<span class="ex-ref">p.3753</span></li>
+<li>依來源：autograft（皮膚科最常用）、allograft（人到人）、xenograft（動物到人）；後兩者常用於 burns 與 chronic wounds，保護並清創傷口、刺激癒合。<span class="ex-ref">p.3753</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Stage（階段）</th><th scope="col">Timing（時間）</th><th scope="col">Event（事件）</th></tr></thead>
@@ -627,11 +627,11 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </table></div>
 <p class="ex-cite">p.3753。</p>
 <ul>
-<li>避免傷口受力；過度活動增加受區血流可造成 fluid overload；至少 <strong class="ex-n">1–2 weeks</strong> 不做劇烈活動。Shear forces、hematoma、seroma、infection 會阻礙血管長入、增加 graft failure。<span class="ex-ref">p.3753</span></li>
+<li>避免傷口受力；病人 overstimulation 可能增加受區血流而造成 fluid overload 與血管化受破壞；至少 <strong class="ex-n">1–2 weeks</strong> 不做劇烈活動。Shear forces、hematoma、seroma、infection 可能阻礙血管長入、增加 graft failure。<span class="ex-ref">p.3753</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="ftsg" data-w="1756">
+<section class="ex-note" id="ftsg" data-w="1915">
 <h2>13. Full-Thickness Skin Grafts（全層植皮）</h2>
 <ul>
 <li>適用：複雜線性閉合或 flap 不適合、需密切監測部位、某些部位外觀較理想。能用時 FTSG 優先於 STSG：厚度質地與周圍相近、<strong>wound contraction 相對少</strong>。<span class="ex-ref">p.3753</span></li>
@@ -651,15 +651,15 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <ul>
 <li>Nasal 缺損常用：preauricular、postauricular、nasolabial fold、forehead、conchal bowl。<strong>Preauricular</strong> 可修補多數鼻部缺損（日曬與膚質相近、疤痕不明顯）。<span class="ex-ref">p.3753</span></li>
 <li><strong>Conchal bowl</strong> 特別適合 <strong>nasal tip 與 ala</strong>：質地與 sebaceous gland 密度相近，donor 可二度癒合。Nasolabial fold、forehead 相配但疤痕較明顯。<span class="ex-ref">p.3753</span></li>
-<li>Scalp、forehead 大缺損：supraclavicular、lateral neck、inner arm。<span class="ex-ref">p.3753–3754</span></li>
+<li>Scalp、forehead 大缺損常用 donor：supraclavicular、lateral neck、inner arm。<span class="ex-ref">p.3753–3754</span></li>
 </ul>
 <h3>Harvesting &amp; placement（取皮與固定）</h3>
 <ul>
-<li>以 nonstick dressing 壓在缺損上做 template。有作者建議 graft 比缺損大 <strong class="ex-n">10–20%</strong> 以補償收縮，但 oversizing 會造成 <strong>pincushioning</strong>；本章作者做成<strong>等於或略小於</strong>缺損。<span class="ex-ref">p.3754</span></li>
-<li><mark class="ex-key"><strong>Defatting</strong> 是關鍵步驟：皮下脂肪血流差、妨礙 graft 存活；以 iris scissors 修掉黃色脂肪到露出 <strong>shiny white dermis</strong>；只有受區不平時才刻意留薄層脂肪配合輪廓</mark><span class="ex-qref">113-06</span>。必要時可稍微修薄真皮，但要避免傷及 adnexa。<span class="ex-ref">p.3754</span></li>
+<li>許多術者以 nonstick dressing 壓在缺損上做 template。有作者建議 graft 比缺損大 <strong class="ex-n">10–20%</strong> 以補償收縮，但 oversizing 可能造成 <strong>pincushioning</strong>；本章作者做成<strong>等於或略小於</strong>缺損。<span class="ex-ref">p.3754</span></li>
+<li><mark class="ex-key"><strong>Defatting</strong> 是關鍵步驟：皮下脂肪血流差、妨礙 graft 存活；以 iris scissors 修掉黃色脂肪到露出 <strong>shiny white dermis</strong>；若受區不平，可在 graft 上留薄層脂肪以配合輪廓</mark><span class="ex-qref">113-06</span>。必要時可稍微修薄真皮，但要避免傷及 adnexa。<span class="ex-ref">p.3754</span></li>
 <li>受區止血良好但不可過度電燒；graft 要輕柔操作，邊緣修剪到完全吻合。<span class="ex-ref">p.3755</span></li>
 <li>臉部常用小口徑 nonabsorbable 或 fast-absorbing gut；縫針由 <strong>graft 穿向 recipient</strong>；先在約 <strong class="ex-n">90°</strong> 間隔縫 4 針固定。大片或凹面 graft 加 <strong>basting sutures</strong> 維持貼合、減少 shear。<span class="ex-ref">p.3755</span></li>
-<li><strong>Bolster dressings</strong>：可能預防 hematoma／seroma，但也會影響血流、增加 necrosis 風險。<span class="ex-ref">p.3755</span></li>
+<li><strong>Bolster dressings</strong>：數位作者建議使用；可能有助於預防 hematoma／seroma，但也會影響血流、可能增加 necrosis 風險。<span class="ex-ref">p.3755</span></li>
 <li>較大或周邊有外露 bone／cartilage 的缺損，可先做皮下 <strong>purse-string</strong> 縮小缺損並保護外露組織，再用較小的 graft。<span class="ex-ref">p.3755</span></li>
 </ul>
 <h3>Graft color（植皮顏色判讀）</h3>
@@ -668,25 +668,25 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <tbody>
 <tr><td>Pink</td><td>Healthy</td></tr>
 <tr><td>Purple</td><td>Relative hypoxia，大多仍會存活</td></tr>
-<tr><td>White（surface）</td><td>多為 maceration，停止 occlusion 後可恢復；若為 full-thickness white 可能是 necrosis</td></tr>
+<tr><td>White（surface）</td><td>通常為 maceration，停止 occlusion 後可能恢復；若為 full-thickness white 可能是 necrosis</td></tr>
 <tr><td><mark class="ex-key">Black</mark><span class="ex-qref">113-16</span></td><td><mark class="ex-key">Necrotic → 建議 <strong>gentle wound care without debridement</strong>；壞死 graft 可當 biologic wound dressing，促進 dermal healing，通常可避免 contraction；並開始 antibiotics 降低感染</mark><span class="ex-qref">113-16</span></td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.3755。</p>
-<aside class="ex-trap"><strong>易錯</strong>黑色植皮不要清創，保留當生物性敷料並給抗生素。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Black graft 表示 necrosis：課本稱不清創的 gentle wound care（without debridement）為 the best treatment；壞死 graft 可作為 biologic wound dressing，並應開始 antibiotics 以降低感染風險。<span class="ex-ref">p.3755</span></aside>
 <h3>Burow's（regional）graft</h3>
 <ul>
-<li>利用 partial linear closure 的 Burow's triangle／dog-ear 當 FTSG；不需另一個 donor site、tissue match 佳。圓形缺損面積遠大於一般 ellipse 的三角，因此三角要設計得像 V-to-Y flap 一樣<strong>更寬更長</strong>。<span class="ex-ref">p.3755</span></li>
+<li>利用 Burow's triangle／dog-ear（常來自 partial linear closure）當 FTSG；不需另一個 donor site、tissue match 通常極佳。圓形缺損面積遠大於一般 ellipse 的三角，因此三角要設計得像 V-to-Y flap 一樣<strong>更寬更長</strong>。<span class="ex-ref">p.3755</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="stsg" data-w="1013">
+<section class="ex-note" id="stsg" data-w="1069">
 <h2>14. Split-Thickness Skin Grafts（裂層植皮）</h2>
 <ul>
 <li>Epidermis + partial dermis；較薄 → 對血流需求較低、存活率較高；但缺少完整真皮與附屬器，外觀像疤：<strong>depressed、hypopigmented、shiny</strong>。<span class="ex-ref">p.3755</span></li>
 <li><mark class="ex-key">用途：其他方法無法閉合的大缺損、<strong>較利於 wound bed surveillance</strong>、內襯 tubed pedicle flaps、resurface mucosa</mark><span class="ex-qref">112-38</span>。<span class="ex-ref">p.3755</span></li>
-<li>Donor：upper inner arm、thigh、buttock；小片可徒手以刀片取，大片用 <strong>dermatome</strong>（寬度與深度較精確）。<span class="ex-ref">p.3755</span></li>
-<li><mark class="ex-key"><strong>Meshing</strong>：擴大面積、讓滲液引流以預防 seroma 與 hematoma、提高存活率；但<strong>增加 wound contraction、降低美觀</strong></mark><span class="ex-qref">113-16</span>。大缺損常用 staples 固定。<span class="ex-ref">p.3755</span></li>
+<li>Donor 常取自 upper inner arm、thigh、buttock；小片可徒手以刀片取，大片用 <strong>dermatome</strong>（寬度與深度較精確）。<span class="ex-ref">p.3755</span></li>
+<li><mark class="ex-key"><strong>Meshing</strong>：擴大面積、讓滲液引流以預防 seroma 與 hematoma、提高存活率；但 <strong>wound contraction 增加、美觀下降</strong>與 meshing 有關（associated）</mark><span class="ex-qref">113-16</span>。大缺損常用 staples 固定。<span class="ex-ref">p.3755</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">STSG thickness</th><th scope="col">Range（範圍）</th></tr></thead>
@@ -696,34 +696,34 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <tr><td>Thick</td><td><strong class="ex-n">0.046–0.076 cm</strong></td></tr>
 </tbody>
 </table></div>
-<p class="ex-cite">p.3755。真皮量決定在血流差的床上能否存活；越薄 take rate 越高、外觀越差；donor site 用 bio-occlusive dressings 可快速且較不痛地再上皮化。</p>
+<p class="ex-cite">p.3755。真皮量決定在血流差的床上能否存活；一般越薄 take rate 越高、外觀越差；donor site 用 bio-occlusive dressings 可快速且較不痛地再上皮化。</p>
 <ul>
 <li><mark class="ex-key">主要優點：在血流差處（<strong>over bone 或 cartilage</strong>）仍可存活，並可<strong>早期偵測腫瘤復發</strong></mark><span class="ex-qref">112-38 113-16</span>。<span class="ex-ref">p.3755</span></li>
 <li><mark class="ex-key">缺點：外觀不理想（無附屬器、color match 差）、<strong>graft 下常見 wound contracture</strong></mark><span class="ex-qref">112-38</span>；因此過去用 STSG 的缺損現在常改用二度癒合或 skin substitutes。<span class="ex-ref">p.3755</span></li>
 <li><strong>Punch and pinch grafts</strong>（STSG 的一種）：加速 chronic ulcer 癒合；punch graft 用 <strong class="ex-n">4-mm</strong> punch，pinch graft 用 scalpel（Weck knife）；術後照顧仔細則存活率好，但厚度不一、外觀差。<span class="ex-ref">p.3755</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>STSG 在血流差處（over bone 或 cartilage）仍可存活；FTSG 直接植在 bone、cartilage 或 tendon 上無法存活。FTSG 厚度質地與周圍相近、wound contraction 相對少；STSG 存活率較高，但 graft 下常見 wound contracture。Meshing 與 wound contraction 增加、美觀下降有關。</aside>
+<aside class="ex-trap"><strong>易錯</strong>STSG 在血流差處（over bone 或 cartilage）仍可存活<span class="ex-ref">p.3755</span>；FTSG 直接植在 bone、cartilage 或 tendon 上無法存活<span class="ex-ref">p.3753</span>。FTSG 厚度質地與周圍相近、wound contraction 相對少<span class="ex-ref">p.3753</span>；STSG 存活率較高，但 graft 下常見 wound contracture<span class="ex-ref">p.3755</span>。Meshing 與 wound contraction 增加、美觀下降有關<span class="ex-ref">p.3755</span>。</aside>
 </section>
 
-<section class="ex-note" id="composite" data-w="1161">
+<section class="ex-note" id="composite" data-w="1166">
 <h2>15. Composite Grafts, Cartilage Grafts &amp; Skin Substitutes（複合植皮、軟骨移植與皮膚替代物）</h2>
 <h3>Composite grafts</h3>
 <ul>
-<li>FTSG 帶下方 cartilage；最常用於 <strong>nasal ala 與 helical rim</strong> 小的全層缺損；donor 常為 helix 與 conchal bowl。<span class="ex-ref">p.3756</span></li>
+<li>常為 FTSG 帶下方 cartilage；最常用於 <strong>nasal ala 與 helical rim</strong> 小的全層缺損；donor 常為 helix 與 conchal bowl。<span class="ex-ref">p.3756</span></li>
 <li>Cartilage 要比皮膚多伸出一些，插入受區兩側真皮下的 pockets。<span class="ex-ref">p.3756</span></li>
 <li>只靠<strong>側緣</strong>供血 → 應 <strong class="ex-n">&lt;2 cm²</strong>，否則中央無法存活；<strong>metabolic demand 最高、failure rate 最高</strong>。<span class="ex-ref">p.3757</span></li>
 <li>Nares 細菌量高 → 建議口服抗 streptococcus 與 staphylococcus 的抗生素；<mark class="ex-key">耳部 graft 常建議加 <em>Pseudomonas</em> coverage</mark><span class="ex-qref">112-34</span>。<span class="ex-ref">p.3757</span></li>
 </ul>
 <h3>Free cartilage grafts</h3>
 <ul>
-<li>Cartilage + perichondrium；用於 nasal tip、ala、ear、eyelid 等 free margin，提供結構支撐（防 nasal valve collapse）並維持輪廓、防止凹陷或攣縮。<span class="ex-ref">p.3757</span></li>
+<li>Cartilage + perichondrium；常用於 nasal tip、ala、ear、eyelid 等 free margin，提供結構支撐（防 nasal valve collapse）並維持輪廓、防止凹陷或攣縮。<span class="ex-ref">p.3757</span></li>
 <li>Recontouring 以耳朵的 <strong>elastic cartilage</strong> 優於鼻部 hyaline cartilage；經 postauricular sulcus 或 conchal bowl 取；略長於缺損、插入 pockets、以 absorbable suture 輕固定，通常再以 flap 覆蓋；cartilage 越大，上方 FTSG 血流越差。<span class="ex-ref">p.3757</span></li>
 </ul>
 <h3>Skin substitutes</h3>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Type</th><th scope="col">Features（特點）</th></tr></thead>
 <tbody>
-<tr><td>Dermal xenograft（多為 porcine）</td><td>大缺損、可能減少術後疼痛、shelf-life 長、促進 granulation、術後照護少 → 適合老年或虛弱病人</td></tr>
+<tr><td>Dermal xenograft（多為 porcine）</td><td>大缺損、可能減少術後疼痛、shelf-life 長、促進 granulation、術後照護少 → 常有助於老年或虛弱病人</td></tr>
 <tr><td>Dermal allogenic</td><td>Cadaver skin 或 neonatal foreskin fibroblasts；取代真皮、減少 contraction、可再覆蓋 STSG；用於全層不癒合潰瘍、fasciotomy wounds</td></tr>
 <tr><td>Epidermal autologous</td><td>培養病人自己的 keratinocytes；覆蓋傷口並刺激癒合</td></tr>
 <tr><td>Epidermal allogenic</td><td>Foreskin 或 cadaver keratinocytes；表淺、暫時性覆蓋</td></tr>
@@ -733,10 +733,10 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">p.3757。Skin substitutes 分 epidermal、dermal、composite，再分 autologous、allogenic、xenogenic；需考慮成本與 shelf-life。</p>
 </section>
 
-<section class="ex-note" id="postop" data-w="423">
+<section class="ex-note" id="postop" data-w="424">
 <h2>16. Postoperative Care（術後照顧）</h2>
 <ul>
-<li>出血或 hematoma 會危及 flap／graft 存活並增加感染；靠術中仔細止血與術後加壓敷料。<span class="ex-ref">p.3757</span></li>
+<li>出血或 hematoma 可能危及 flap／graft 存活並增加感染；靠術中仔細止血與術後加壓敷料。<span class="ex-ref">p.3757</span></li>
 <li>Pressure dressing 保留 <strong class="ex-n">24–48 hours</strong>：ointment → nonstick（Telfa）→ gauze → tape；頭皮與四肢可加 Flexinet、Coban 等彈性材料。<span class="ex-ref">p.3757</span></li>
 <li>拆線前保持 <strong>clean、moist、covered</strong>：避免乾燥、促進再上皮化、減少細菌污染、幫助止血。拆除加壓敷料後每天清潔 1–2 次再塗 ointment。<span class="ex-ref">p.3757</span></li>
 <li>建議使用 bland ointment（petrolatum、Aquaphor），而非 neomycin 等外用抗生素：後者<strong>增加 contact dermatitis</strong>，卻沒有明顯降低感染率。<span class="ex-ref">p.3757</span></li>
@@ -744,7 +744,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 </section>
 
-<section class="ex-note" id="complications" data-w="1726">
+<section class="ex-note" id="complications" data-w="1814">
 <h2>17. Complications（併發症）</h2>
 <h3>Bleeding（出血）</h3>
 <ul>
@@ -754,32 +754,32 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 <h3>Pain（疼痛）</h3>
 <ul>
-<li><mark class="ex-key">多以 nonnarcotic 的 <strong>acetaminophen</strong> 控制</mark><span class="ex-qref">103-50</span>；可在手術時開始給、持續 <strong class="ex-n">24 hours</strong>（先發制人比事後追趕容易）。<span class="ex-ref">p.3758</span></li>
-<li><mark class="ex-key">術後 <strong class="ex-n">48 hours</strong> 內避免非處方 NSAIDs，以減少 platelet dysfunction 造成的瘀青與出血</mark><span class="ex-qref">103-50 106-06</span>。<span class="ex-ref">p.3758</span></li>
+<li><mark class="ex-key">通常可用 <strong>acetaminophen</strong> 等 nonnarcotic 止痛藥控制</mark><span class="ex-qref">103-50</span>；可在手術時開始給、持續 <strong class="ex-n">24 hours</strong>（先發制人比事後追趕容易）。<span class="ex-ref">p.3758</span></li>
+<li><mark class="ex-key">術後最多（up to）<strong class="ex-n">48 hours</strong> 內避免非處方 NSAIDs，以減少 platelet dysfunction 造成的瘀青與出血</mark><span class="ex-qref">103-50 106-06</span>。<span class="ex-ref">p.3758</span></li>
 <li>疼痛嚴重需處方止痛藥時，要排除 infection 或 hematoma。<span class="ex-ref">p.3758</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>術後疼痛通常以 nonnarcotic 的 acetaminophen 控制；術後最多 48 小時內避免非處方 NSAIDs，以減少 platelet dysfunction 造成的瘀青與出血。</aside>
+<aside class="ex-trap"><strong>易錯</strong>術後疼痛通常可用 acetaminophen 等 nonnarcotic 止痛藥控制；術後最多 48 小時內避免非處方 NSAIDs，以減少 platelet dysfunction 造成的瘀青與出血。<span class="ex-ref">p.3758</span></aside>
 <h3>Infection（感染）</h3>
 <ul>
-<li>多在術後<strong>第一週</strong>內出現：疼痛增加、紅、熱、膿或惡臭分泌物、發燒；先做 culture，再給 broad-spectrum antibiotic。<span class="ex-ref">p.3758</span></li>
+<li>多在術後<strong>第一週</strong>內出現：疼痛增加、紅、熱、膿性（有時惡臭）分泌物、發燒；懷疑感染時必須做 culture（鑑定病原與抗生素感受性），並開始 broad-spectrum antibiotic。<span class="ex-ref">p.3758</span></li>
 <li><mark class="ex-key">皮膚與黏膜常見菌為 gram-positive cocci，主要是 <strong>staphylococci</strong>（較少是 streptococci）；groin／perineal 有 gram-negative aerobes 與 anaerobes；<strong>ear 與 lower leg</strong> 傷口（尤其糖尿病）可培養出 gram-negative bacilli</mark><span class="ex-qref">103-50 112-34</span>；MRSA 增加，需警覺。<span class="ex-ref">p.3758</span></li>
 </ul>
 <h3>Scars（疤痕）</h3>
 <ul>
-<li>Hypertrophic scars 會隨時間變平變軟；可用 intralesional steroids、5-fluorouracil、fractional 與 vascular lasers 加速。<span class="ex-ref">p.3758</span></li>
-<li>張力或活動大的部位（upper back、deltoid 上方手臂）易 spread 或 atrophic；寬度通常不會隨時間改變。<span class="ex-ref">p.3758</span></li>
+<li>疤痕有時可能變寬或變 hypertrophic；hypertrophic scars 傾向隨時間變平變軟；可用 intralesional steroids、5-fluorouracil、fractional 與 vascular lasers 加速。<span class="ex-ref">p.3758</span></li>
+<li>張力或活動大的部位（upper back、deltoid 上方手臂）疤痕可能 spread 或 atrophic；寬度通常不會隨時間明顯改變。<span class="ex-ref">p.3758</span></li>
 <li>疤痕周圍 erythema 與 telangiectasia（rosacea 等高血流區、高張力處較易持續）：pulsed dye laser、KTP、IPL。<span class="ex-ref">p.3758</span></li>
 <li>Spitting sutures／suture granulomas：buried sutures 放在正確層面可減少；外露可剪除，但不要積極挖取以免留疤。<span class="ex-ref">p.3758</span></li>
 </ul>
 <h3>Flap complications（皮瓣併發症）</h3>
 <ul>
 <li><mark class="ex-key">Partial 或 complete <strong>flap necrosis</strong>：wound bed 血流不足（吸菸者較常見）、下方 hematoma；設計問題如 <strong>pedicle 太窄</strong>無法支撐 flap、<strong>torque 過大</strong>、<strong>leading edge 張力過大</strong></mark><span class="ex-qref">103-50</span>。部分壞死區二度癒合，之後可再做 revision。<span class="ex-ref">p.3758</span></li>
-<li><strong>Trapdoor deformity</strong>（pincushioning）：flap 中央隆起、縫線處凹陷；可在 <strong class="ex-n">6–12 months</strong> 內自行改善；持續者用 intralesional steroids、5-FU、flap elevation 與修薄、fractional ablative laser 或 dermabrasion。預防：缺損周圍廣泛 undermining、flap 適當修薄與大小、使用<strong>銳利幾何形狀</strong>（非圓角）。<span class="ex-ref">p.3758</span></li>
+<li><strong>Trapdoor deformity</strong>（pincushioning）：flap 中央隆起、縫線處凹陷；可能在 <strong class="ex-n">6–12 months</strong> 間自行消退；持續者可能對 intralesional steroids、5-FU、flap elevation 與修薄、fractional ablative laser 或 dermabrasion 有反應。降低風險：缺損周圍廣泛 undermining、flap 適當修薄與大小、使用<strong>銳利幾何形狀</strong>（非圓角）。<span class="ex-ref">p.3758</span></li>
 </ul>
 <h3>Graft complications（植皮併發症）</h3>
 <ul>
-<li>早期 graft failure 來自營養供應不足：wound bed 血流差（吸菸、糖尿病）、shear 或外傷、hematoma／seroma、infection。<span class="ex-ref">p.3758</span></li>
-<li>晚期多為外觀問題（厚度、顏色、質地不符）：可在植皮後 <strong class="ex-n">6–12 weeks</strong> 考慮 fractional ablative／nonablative 治療或 dermabrasion。Contraction 可能明顯（尤其較薄的 graft），造成 free margin 變形。<span class="ex-ref">p.3758</span></li>
+<li>早期 graft failure 來自營養供應不足，常因 wound bed 血流差（吸菸、糖尿病）、shear 或外傷、hematoma／seroma、infection。<span class="ex-ref">p.3758</span></li>
+<li>晚期多為外觀問題（厚度、顏色、質地不符）：可在植皮後 <strong class="ex-n">6–12 weeks</strong> 考慮 fractional ablative／nonablative 治療或 dermabrasion。Contraction 可能明顯（尤其較薄的 graft），可能造成 free margin 變形。<span class="ex-ref">p.3758</span></li>
 </ul>
 </section>
 

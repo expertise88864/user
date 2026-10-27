@@ -3,8 +3,8 @@
 <ul>
 <li>Superficial mycoses 主要由 dermatophytes 與 yeasts 引起，影響全球約 <strong class="ex-n">20–25%</strong> 人口。<span class="ex-ref">p.3436</span></li>
 <li><strong>Topical agents</strong>：用於範圍有限的表淺黴菌感染；便宜、多可 OTC、使用方便、順從性高；許多兼具 antibacterial 與 antiinflammatory 作用（對合併細菌感染或局部發炎有利）。<span class="ex-ref">p.3436</span></li>
-<li><strong>Systemic agents</strong>：tinea capitis 與 onychomycosis 的 mainstay，另保留給大面積、復發或頑固的 dermatomycosis；要注意 drug–drug interactions。<span class="ex-ref">p.3436</span></li>
-<li>主要標的是 <strong>ergosterol</strong>（黴菌細胞膜的基本 sterol）；外用藥最常見的副作用是輕微、暫時的局部過敏反應，口服藥則有不同程度的器官毒性與藥物交互作用。<span class="ex-ref">p.3436</span></li>
+<li><strong>Systemic agents</strong>：tinea capitis 與 onychomycosis 的 mainstay，皮膚科醫師另傾向（tend to）保留給大面積、復發或頑固的 dermatomycosis；要注意 drug–drug interactions。<span class="ex-ref">p.3436</span></li>
+<li>主要標的是 <strong>ergosterol</strong>（黴菌細胞膜的基本 sterol）；外用藥最常見的副作用是輕微、暫時的局部過敏反應，口服藥則有不同程度的器官毒性與可能嚴重的藥物交互作用（possible serious drug interactions）。<span class="ex-ref">p.3436</span></li>
 <li>Azoles 對 yeasts 的活性優於 allylamines，但對 dermatophytes 較弱。<span class="ex-ref">p.3436</span></li>
 <li>Combination therapy（外用 + 口服）有多項優點，見第 14 段。<span class="ex-ref">p.3436</span></li>
 </ul>
@@ -17,7 +17,7 @@
 <tbody>
 <tr><td>Allylamines</td><td>Terbinafine（外用＋口服）、naftifine（僅外用）</td><td><mark data-q="108-38">Squalene epoxidase</mark>：ergosterol 缺乏 → fungistatic；squalene 堆積 → fungicidal</td><td><mark data-q="108-38">Dermatophytes：fungicidal；<em>Candida</em>：fungistatic</mark></td></tr>
 <tr><td>Benzylamines</td><td>Butenafine（唯一）</td><td>同 allylamines，抑制 ergosterol 合成 → 膜通透性增加、細胞死亡</td><td>—</td></tr>
-<tr><td>Azoles（imidazoles、triazoles）</td><td>見第 4、5 段</td><td>Lanosterol <strong>14α-demethylase</strong>（fungal CYP450-dependent）；14α-methylated sterols 堆積</td><td>一般濃度 fungistatic；高濃度可 fungicidal</td></tr>
+<tr><td>Azoles（imidazoles、triazoles）</td><td>見第 4、5 段</td><td>Lanosterol <strong>14α-demethylase</strong>（fungal CYP450-dependent）；14α-methylated sterols 堆積</td><td>一般濃度通常（typically）fungistatic；高濃度可 fungicidal</td></tr>
 <tr><td>Polyenes</td><td>Nystatin</td><td>直接結合 ergosterol（親和力高於哺乳類 cholesterol）→ 形成膜孔洞、內容物外漏</td><td>Fungistatic ＋ fungicidal</td></tr>
 <tr><td>Morpholines</td><td>Amorolfine</td><td>14-reduction 與 7-8 isomerization；ergosterol 耗竭並堆積 24-methylene ignosterol</td><td>Yeasts：fungistatic 及濃度／時間依賴的 fungicidal；多數 dermatophytes：fungicidal</td></tr>
 <tr><td>Hydroxypyridones</td><td>Ciclopirox olamine</td><td>抑制 RNA、DNA、protein precursors 的跨膜攝取；chelate Al3+、Fe3+</td><td>Fungicidal ＋ fungistatic（broad spectrum）</td></tr>
@@ -32,7 +32,7 @@
 <li>Imidazoles 與 triazoles 都是五元雜環：imidazoles 有 <strong class="ex-n">2</strong> 個環內氮原子，triazoles 有 <strong class="ex-n">3</strong> 個，較不易被代謝分解。<span class="ex-ref">p.3445</span></li>
 <li>部分 azoles 有額外機轉：miconazole 抑制 fungal peroxidase（toxic peroxide 堆積）；sertaconazole 高濃度時結合細胞壁 nonsterol lipids 造成溶解；clotrimazole 破壞 phospholipids（intracellular iron 外漏、nucleic acid 分解、抑制呼吸）。<span class="ex-ref">p.3443–3444</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Allylamines 對 dermatophytes 是 fungicidal、對 <em>Candida</em> 是 fungistatic；griseofulvin 與一般濃度的 azoles 都是 fungistatic。Squalene 堆積造成殺菌，ergosterol 缺乏造成抑菌，不要對調。<span class="ex-ref">p.3436</span>、<span class="ex-ref">p.3443</span>、<span class="ex-ref">p.3448</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Allylamines 對 dermatophytes 是 fungicidal、對 <em>Candida</em> 是 fungistatic；griseofulvin 是 fungistatic，一般濃度的 azoles 通常（typically）是 fungistatic。Squalene 堆積造成殺菌，ergosterol 缺乏造成抑菌，不要對調。<span class="ex-ref">p.3436</span>、<span class="ex-ref">p.3443</span>、<span class="ex-ref">p.3448</span></aside>
 </section>
 
 <section class="ex-note" id="allylamines">
@@ -40,13 +40,13 @@
 <h3>Naftifine（外用 allylamine）</h3>
 <ul>
 <li>Broad-spectrum；另有 antibacterial（gram-positive 與 gram-negative）與 antiinflammatory（抑制 leukotrienes、prostaglandins 合成）作用。<span class="ex-ref">p.3436</span></li>
-<li>脂溶性 → 穿透 stratum corneum 佳；單次塗抹後治療濃度可在角質層維持 <strong class="ex-n">5 days</strong>；全身吸收 <strong class="ex-n">3–6%</strong>。<span class="ex-ref">p.3437</span></li>
-<li>Indications：interdigital tinea pedis、tinea cruris、tinea corporis、tinea versicolor、<em>Candida</em> infections；<strong class="ex-n">1%</strong> gel 與 cream，每天一次 <strong class="ex-n">2–4 wk</strong>。副作用輕微（dryness、pruritus、irritation、erythema）。<span class="ex-ref">p.3437</span></li>
+<li>脂溶性 → 穿透 stratum corneum 佳；單次塗抹後治療濃度在角質層最多可維持（up to）<strong class="ex-n">5 days</strong>；全身吸收 <strong class="ex-n">3–6%</strong>。<span class="ex-ref">p.3437</span></li>
+<li>Indications：interdigital tinea pedis、tinea cruris、tinea corporis、tinea versicolor、<em>Candida</em> infections；<strong class="ex-n">1%</strong> gel 與 cream，通常（usually）建議每天一次 <strong class="ex-n">2–4 wk</strong>（依適應症）。副作用一般（generally）輕微（dryness、pruritus、irritation、erythema）。<span class="ex-ref">p.3437</span></li>
 </ul>
 <h3>Terbinafine — Pharmacokinetics（藥物動力學）</h3>
 <ul>
 <li>外用全身吸收微不足道（<strong class="ex-n">3–5%</strong>）。<span class="ex-ref">p.3437</span></li>
-<li>口服吸收<strong>不受食物影響</strong>；脂溶性 → 快速分布並累積於 hair follicles、nails、skin，血中濃度低；half-life <strong class="ex-n">17 h</strong>。<span class="ex-ref">p.3437</span></li>
+<li>口服吸收<strong>不受食物影響</strong>；脂溶性 → 傾向（tends to）快速分布並累積於 hair follicles、nails、skin，血中濃度低；half-life <strong class="ex-n">17 h</strong>。<span class="ex-ref">p.3437</span></li>
 <li>肝臟經 <strong>CYP2D6</strong> 氧化代謝，大部分由尿液排出；advanced renal 或 liver disease 需調整劑量。<span class="ex-ref">p.3437</span></li>
 <li>停藥後可在 keratinized tissue 停留達 <strong class="ex-n">6 months</strong> → 可用 pulse regimen 治療 onychomycosis。<span class="ex-ref">p.3440</span></li>
 </ul>
@@ -55,12 +55,12 @@
 <li>外用 terbinafine 對所有 superficial mycoses 有效，<mark data-q="108-20">包括 tinea versicolor</mark>。<span class="ex-ref">p.3437</span></li>
 <li>若無禁忌，是 <mark data-q="108-20">dermatophytosis 的 first line</mark>：fungicidal、高效、耐受性好、每天一次、藥動學較佳、對 stratum corneum 親和力高。<span class="ex-ref">p.3437–3438</span></li>
 <li>口服對 <em>Trichophyton rubrum</em> 與 <em>T. mentagrophytes</em> 的 fungicidal 作用強於 griseofulvin 與 itraconazole。<span class="ex-ref">p.3438</span></li>
-<li><mark data-q="112-15">Dermatophyte onychomycosis 的第一線選項是 terbinafine</mark>；但 <mark data-q="101-10">對 nondermatophyte 與 <em>Candida</em> onychomycosis 無效</mark>。<span class="ex-ref">p.3438</span></li>
+<li><mark data-q="112-15">Terbinafine 被視為（considered）dermatophyte onychomycosis 的第一線選項</mark>；但 <mark data-q="101-10">對 nondermatophyte 與 <em>Candida</em> onychomycosis 無效</mark>。<span class="ex-ref">p.3438</span></li>
 <li>Tinea capitis：<strong>terbinafine 與 griseofulvin 是兒童 tinea capitis 僅有的兩個 FDA-approved 藥物</strong>；但 terbinafine 對兒童 ectothrix tinea capitis（尤其 <em>Microsporum canis</em>，課本也列 <em>Trichophyton tonsurans</em>）效果不如 griseofulvin，因藥物易累積於 sebum，而青春期前皮脂腺不成熟、皮脂少 → 藥物濃度低。<span class="ex-ref">p.3438</span></li>
-<li>Cutaneous 與 lymphocutaneous sporotrichosis：<strong class="ex-n">500 mg BID</strong>，持續到臨床痊癒後再 <strong class="ex-n">2–4 wk</strong>。<span class="ex-ref">p.3440</span></li>
+<li>許多臨床研究（many clinical studies）顯示 terbinafine 治療 cutaneous 與 lymphocutaneous sporotrichosis 有效：<strong class="ex-n">500 mg BID</strong>，持續到臨床痊癒後再 <strong class="ex-n">2–4 wk</strong>。<span class="ex-ref">p.3438、p.3440</span></li>
 <li><mark data-q="109-30">對 phaeohyphomycosis、chromoblastomycosis、mucormycosis、maduromycosis 也有療效報告</mark>。<span class="ex-ref">p.3440</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong><em>T. tonsurans</em> 實為 endothrix 菌種、Wood light 不發螢光（ch160 p.2933），本章把它與 <em>M. canis</em> 並列在「ectothrix」句中，作答時以 ch160 分類為準。本章列 terbinafine 對深部黴菌「有療效報告」，不代表是 mucormycosis 的常規選擇（ch162 p.2984：感染可對 IV amphotericin B 有反應）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>本章把 <em>T. tonsurans</em> 與 <em>M. canis</em> 並列在「ectothrix tinea capitis」句中（<span class="ex-ref">p.3438</span>）；ch160 則稱 <em>T. tonsurans</em> 為 endothrix organism、Wood light 不發螢光（<span class="ex-ref">p.2933（ch160）</span>）。本章寫 terbinafine 對 mucormycosis 等「has also shown efficacy」（<span class="ex-ref">p.3440</span>）；ch162 寫 mucormycosis 感染可能（may）對 IV amphotericin 有反應（<span class="ex-ref">p.2984（ch162）</span>）。</aside>
 <h3>Terbinafine — Dosage（劑量）</h3>
 <ul>
 <li>外用：cream、powder、solution、spray、gel <strong class="ex-n">1%</strong>；口服：<strong class="ex-n">250 mg</strong> tablets 與 oral granules。<span class="ex-ref">p.3440</span></li>
@@ -70,14 +70,14 @@
 <h3>Terbinafine — Side effects（副作用）</h3>
 <ul>
 <li>外用副作用不常見（<strong class="ex-n">6%</strong>），多為輕微局部反應。<span class="ex-ref">p.3440</span></li>
-<li>口服耐受性好，pulse 比 continuous 副作用少。Most common：輕微 GI upset、食慾改變、體重增加。<span class="ex-ref">p.3440</span></li>
+<li>口服一般（in general）耐受性好，pulse 比 continuous 報告的副作用少。Most common：輕微 GI upset、食慾改變、體重增加。<span class="ex-ref">p.3440</span></li>
 <li><strong>Unique</strong>：altered taste（可持續達 <strong class="ex-n">6 wk</strong>），可伴 loss of smell 與 tongue discoloration。<span class="ex-ref">p.3440</span></li>
 <li><strong>Serious but rare</strong>：hepatotoxicity（可致器官衰竭）、hematologic disorders（含 pancytopenia），停藥後通常可逆。<span class="ex-ref">p.3440</span></li>
-<li>Cutaneous hypersensitivity 可嚴重到 SJS/TEN，多在治療 <strong class="ex-n">4–5 wk</strong> 內；也可有 headache、vertigo、transient optic neuropathy。Table 188-3 另列 aggravate psoriasis、lupus erythematosus。<span class="ex-ref">p.3440–3441</span></li>
+<li>曾有報告（have been reported）cutaneous hypersensitivity 嚴重到 SJS/TEN，多在治療 <strong class="ex-n">4–5 wk</strong> 內；也可有 headache、vertigo、transient optic neuropathy。Table 188-3 另列 aggravate psoriasis、lupus erythematosus。<span class="ex-ref">p.3440–3441</span></li>
 </ul>
 <h3>Terbinafine — Drug interactions（交互作用）</h3>
 <ul>
-<li><strong>強效 CYP2D6 inhibitor</strong> → 增加 nortriptyline、amitriptyline、venlafaxine、desipramine 等的毒性；減少 caffeine 與 cyclosporine 的排除。<span class="ex-ref">p.3440</span></li>
+<li><strong>強效 CYP2D6 inhibitor</strong> → 增加 nortriptyline、amitriptyline、venlafaxine、desipramine 等的潛在毒性（potential toxicity）；減少 caffeine 與 cyclosporine 的排除。<span class="ex-ref">p.3440</span></li>
 <li>應避免併用 rifampicin 與 cimetidine：內文寫兩者分別「增加毒性、降低療效」（<span class="ex-ref">p.3440–3441</span>）；Table 188-4 則為 rifampicin（CYP inducer）降低 terbinafine 濃度、cimetidine（CYP2D6 inhibitor）抑制其代謝、降低清除（<span class="ex-ref">p.3442</span>），兩處順序相反。</li>
 </ul>
 <h3>Butenafine（benzylamine）</h3>
@@ -109,9 +109,9 @@
 <li>外用治療所有 dermatomycoses；shampoo 對 seborrheic dermatitis 有效。<strong>口服製劑已被 FDA 等機構大幅限制</strong>（交互作用、肝臟與腎上腺的嚴重副作用）。<span class="ex-ref">p.3443</span></li>
 <li>美國劑型：<strong class="ex-n">5%</strong> shampoo、<strong class="ex-n">2%</strong> cream、200 mg tablets。<mark data-q="108-20">PV：shampoo 每天一次（停留 5–10 min）<strong class="ex-n">1–4 wk</strong>，預防則每週一次</mark>；scalp seborrheic dermatitis：每週兩次 × <strong class="ex-n">4 wk</strong>；口服用於表淺黴菌每天一次 <strong class="ex-n">10–20 days</strong>。<span class="ex-ref">p.3443</span></li>
 <li>口服副作用：serious — liver toxicity、anaphylaxis、marked depression；較常見 — GI、headache、睡眠障礙、dizziness、pancytopenia，以及 <strong>impotence、gynecomastia、decreased libido</strong>（adrenal 與 testicular 層級的 antiandrogen 作用）。<span class="ex-ref">p.3444</span></li>
-<li><strong>Strong CYP3A4 inhibitor</strong>，會升高併用藥物濃度。<span class="ex-ref">p.3444</span></li>
+<li><strong>Strong CYP3A4 inhibitor</strong>，可（can）升高主要經此酶代謝之併用藥物的濃度。<span class="ex-ref">p.3444</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>本章寫 ketoconazole shampoo 的美國劑型為 5%（<span class="ex-ref">p.3443</span>）；ch161 則把 ketoconazole 2% shampoo 列為 PV 復發預防的選項之一（<span class="ex-ref">p.2963</span>）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>本章寫 ketoconazole shampoo 的美國劑型為 5%（<span class="ex-ref">p.3443</span>）；ch161 寫 PV 部分病人可能需要（may be warranted in some patients）長期預防治療，選項之一為 ketoconazole 2% shampoo（<span class="ex-ref">p.2963（ch161）</span>）。</aside>
 </section>
 
 <section class="ex-note" id="triazoles">
@@ -121,24 +121,24 @@
 <li>Water-soluble bis-triazole，<strong class="ex-n">1990 年代初</strong> FDA 核准。<span class="ex-ref">p.3445</span></li>
 <li>Oral bioavailability 近 <strong class="ex-n">90%</strong>（與 IV 相當）；藥動學線性，<strong>不受胃酸、食物或疾病活性影響</strong>；plasma protein binding 低（free drug 多）；half-life <strong class="ex-n">25–30 h</strong>。<span class="ex-ref">p.3445</span></li>
 <li>廣泛分布於 skin、nail、vitreous、CSF；肝臟代謝少，<strong>主要由腎臟排除 → 腎功能不全需調整劑量</strong>。<span class="ex-ref">p.3445</span></li>
-<li>Indications：esophageal、vaginal、oropharyngeal candidiasis 與 cryptococcal meningitis；對所有 <em>Candida</em> 有效，<strong>除了 <em>C. krusei</em></strong>。Off-label：onychomycosis、tinea、PV、chronic mucocutaneous candidiasis（itraconazole 與 terbinafine 禁忌時）。<span class="ex-ref">p.3445</span></li>
+<li>Indications：esophageal、vaginal、oropharyngeal candidiasis 與 cryptococcal meningitis；對所有 <em>Candida</em> 有效，<strong>除了 <em>C. krusei</em></strong>。Itraconazole 與 terbinafine 禁忌時，fluconazole 可 off-label 用於 onychomycosis、tinea infections、PV 與 chronic mucocutaneous candidiasis。<span class="ex-ref">p.3445</span></li>
 <li>內文劑量：onychomycosis 每週 <strong class="ex-n">150–450 mg</strong>，fingernail <strong class="ex-n">3 mo</strong>、toenail <strong class="ex-n">6 mo</strong>；兒童 3–6 mg/kg/wk，finger 6–12 wk、toe 9–15 wk。Dermatophytosis 150 mg 每週一次：tinea barbae／pedis／corporis <strong class="ex-n">2–4 wk</strong>、tinea cruris 與 capitis <strong class="ex-n">4–6 wk</strong>。<mark data-q="108-20">Cutaneous／chronic mucocutaneous candidiasis 與 PV：<strong class="ex-n">300 mg/wk × 2 wk</strong>，預防每月一次</mark>。<span class="ex-ref">p.3445</span></li>
 <li>副作用：整體比其他抗黴菌藥少；most common — headache、myalgia、dizziness、nausea、dyspepsia、diarrhea、abdominal pain；uncommon — <strong>QT prolongation、torsade de pointes</strong>；rare — SJS/TEN；其他 anaphylaxis、angioedema、acneform eruption、eye hemorrhage、neutropenia。<span class="ex-ref">p.3445</span></li>
 <li>Interactions：CYP3A 的 substrate；中度抑制 CYP3A 與 CYP2C9、輕度抑制 CYP2C19。與 astemizole、cisapride、pimozide、terfenadine 併用可致 fatal arrhythmias。<span class="ex-ref">p.3445</span></li>
 <li>Pregnancy category <mark data-q="107-16">C</mark>。<span class="ex-ref">p.3445</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fluconazole 劑量內文與 Table 188-2 不一致：表列 onychomycosis 150–300 mg/wk（finger 6–9 mo、toe 9–15 mo），兒童 3–6 mg/kg「/d」（finger 12–16 wk、toe 18–26 wk）；內文為 150–450 mg/wk（3／6 mo）、兒童 3–6 mg/kg「/wk」。Pregnancy category 本章為 C，ch160 Table 160-10 則列 D。<span class="ex-ref">p.3439</span>、<span class="ex-ref">p.3445</span>、<span class="ex-ref">p.2935</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Fluconazole 劑量內文與 Table 188-2 不一致：表列 onychomycosis 150–300 mg/wk（finger 6–9 mo、toe 9–15 mo），兒童 3–6 mg/kg「/d」（finger 12–16 wk、toe 18–26 wk）；內文為 150–450 mg/wk（3／6 mo）、兒童 3–6 mg/kg「/wk」。Pregnancy category 本章為 C，ch160 Table 160-10 則列 D。<span class="ex-ref">p.3439</span>、<span class="ex-ref">p.3445</span>、<span class="ex-ref">p.2935（ch160）</span></aside>
 <h3>Itraconazole — Pharmacokinetics（藥物動力學）</h3>
 <ul>
 <li>Broad-spectrum fungistatic triazole，由 ketoconazole 延長 hydrophobic side chains 衍生。<span class="ex-ref">p.3445</span></li>
-<li><mark data-q="104-18">Capsule 需要胃酸才能充分吸收（延緩胃排空、增加溶解）→ 飯後服用；cyclodextrin oral solution 不受胃酸影響，空腹吸收較佳</mark>。<span class="ex-ref">p.3445</span></li>
+<li><mark data-q="104-18">Capsule 需要胃酸才能充分吸收（延緩胃排空、增加溶解）→ 宜於飯後服用（best administrated after a meal）；cyclodextrin oral solution 不受胃酸影響，空腹吸收較佳</mark>。<span class="ex-ref">p.3445</span></li>
 <li>與 terbinafine 一樣對指甲親和力高，停藥後在甲內形成 reservoir <strong class="ex-n">6–9 months</strong>；half-life 約 <strong class="ex-n">21 h</strong>。<span class="ex-ref">p.3445</span></li>
-<li>預防用途的療效與血中濃度成正比，但以 bioassay 測量不應超過 <strong class="ex-n">17 µg/mL</strong>；兒童血中濃度較低，需每天兩次給藥。<span class="ex-ref">p.3445</span></li>
+<li>有人推測（it has been postulated）預防用途的療效與血中濃度成正比，但以 bioassay 測量不應超過 <strong class="ex-n">17 µg/mL</strong>；兒童血中濃度較低，需每天兩次給藥。<span class="ex-ref">p.3445</span></li>
 <li><mark data-q="104-18">肝臟經 <strong>CYP3A4</strong> 廣泛代謝 → 進展性肝病需調整劑量；腎功能不全與透析不影響血中濃度</mark>，但 IV 劑型在 creatinine clearance <strong class="ex-n">&lt;30 mL/min</strong> 時應避免。<span class="ex-ref">p.3445–3446</span></li>
 </ul>
 <h3>Itraconazole — Indications &amp; Dosage（適應症與劑量）</h3>
 <ul>
-<li><mark data-q="101-10">課本列為 <em>Candida</em> 與 nondermatophyte onychomycosis 的主要選擇</mark>；療程短、耐受性好，特別適合兒童。<span class="ex-ref">p.3446</span></li>
+<li><mark data-q="101-10">被認為是 <em>Candida</em> 與 nondermatophyte onychomycosis 的首選（considered the best choice）</mark>；療程短、耐受性好，特別適合兒童。<span class="ex-ref">p.3446</span></li>
 <li>Off-label：tinea corporis、capitis、pedis、cruris、manuum 與 PV。<span class="ex-ref">p.3446</span></li>
 <li>內文：tinea 與 PV 為 <strong class="ex-n">100 mg BID × 5 days</strong>（Table 188-2 列 <mark data-q="108-20">200 mg/d × 1 wk</mark>；PV 預防 400 mg 每月一次）。<span class="ex-ref">p.3446</span></li>
 <li>Onychomycosis：continuous <strong class="ex-n">200 mg/d</strong>（fingernail 6 wk、toenail 12 wk）或 pulse <strong class="ex-n">400 mg/d × 1 wk/mo</strong>（fingernail <strong class="ex-n">2</strong> pulses、toenail <strong class="ex-n">3</strong> pulses）；兒童 <strong class="ex-n">5 mg/kg/d</strong>，內文寫 continuous 或 pulse 皆可（Table 188-2 兒童欄只列 pulse）。<span class="ex-ref">p.3439、p.3446</span></li>
@@ -167,7 +167,7 @@
 <h3>Ciclopirox（hydroxypyridone）</h3>
 <ul>
 <li>Hydroxypyridone 的合成 ethanolamine salt；broad-spectrum fungicidal 與 fungistatic、antibacterial、antiinflammatory（減少 PGE2）。<span class="ex-ref">p.3446–3447</span></li>
-<li>高濃度（<strong class="ex-n">&gt;50 µg/mL</strong>）破壞細胞膜（K ions、peptides、amino acids 外漏）；抑制 yeast aerobic glycolysis；亞抑制濃度減少 <em>Candida albicans</em> 附著；chelate Al3+、Fe3+。<span class="ex-ref">p.3446–3447</span></li>
+<li>高濃度（<strong class="ex-n">&gt;50 µg/mL</strong>）破壞細胞膜（K ions、peptides、amino acids 外漏）；抑制 yeast aerobic glycolysis；亞抑制濃度減少 <em>Candida albicans</em> 對 vaginal 與 buccal epithelial cells 的附著；chelate Al3+、Fe3+。<span class="ex-ref">p.3446–3447</span></li>
 <li>陰道塗抹全身吸收 <strong class="ex-n">15–20%</strong>，其他途徑微不足道；與 efinaconazole、luliconazole 相比 <strong>nail permeation 最低</strong>；glucuronidation 後主要由腎排除。<span class="ex-ref">p.3447</span></li>
 <li><mark data-q="107-18">用於各種 dermatophytoses</mark>，也可治療 cutaneous candidiasis、tinea versicolor、scalp seborrheic dermatitis。<span class="ex-ref">p.3447</span></li>
 <li>Onychomycosis：單用 48 週 cure rate 僅 <strong class="ex-n">5.5–8.5%</strong>；合併口服 terbinafine <strong class="ex-n">88.2%</strong> vs 單用 terbinafine <strong class="ex-n">64.7%</strong>。<span class="ex-ref">p.3447</span></li>
@@ -176,7 +176,7 @@
 </ul>
 <h3>Amorolfine（morpholine）</h3>
 <ul>
-<li>Nail lacquer 形成 reservoir，以指數方式持續釋放到甲板；全身吸收可忽略，經尿液與糞便緩慢排除。<span class="ex-ref">p.3447</span></li>
+<li>Nail lacquer 傾向（tends to）形成 reservoir，以指數方式持續釋放到甲板；全身吸收可忽略，一般（generally）經尿液與糞便以很慢的速度排除。<span class="ex-ref">p.3447</span></li>
 <li>Nail lacquer 在歐洲核准用於<strong>無 matrix 侵犯</strong>的 onychomycosis，<strong>美國未核准</strong>；vaginal tablets 治療 vulvovaginal candidiasis 臨床治癒 <strong class="ex-n">90–95%</strong>，但復發率高。<span class="ex-ref">p.3447</span></li>
 <li><strong class="ex-n">0.25%</strong> cream 每天一次 <strong class="ex-n">2–4 wk</strong>；<strong class="ex-n">5%</strong> nail lacquer 內文為<strong>每週一次</strong>，直到指甲長新（finger 約 <strong class="ex-n">6 mo</strong>、toe 約 <strong class="ex-n">12 mo</strong>）（Table 188-1 印為 once daily × 48 wk）。副作用：鄰近皮膚輕微過敏。Pregnancy <strong>D</strong>。<span class="ex-ref">p.3447</span></li>
 </ul>
@@ -184,7 +184,7 @@
 <ul>
 <li>含 fluorine 原子的新型 oxaborole；作用於新標的 <strong>AARS</strong>，對黴菌的親和力是哺乳類的 <strong class="ex-n">1000 倍</strong>，選擇性抑制黴菌蛋白質合成。<span class="ex-ref">p.3447</span></li>
 <li>Spectrum：<em>Trichophyton rubrum</em>、<em>T. mentagrophytes</em>、<em>T. tonsurans</em>、<em>Epidermophyton floccosum</em>、部分 <em>Microsporum</em> spp.、<em>C. albicans</em>。<span class="ex-ref">p.3447</span></li>
-<li>Alcohol-based solution → 不可用於眼、口、陰道；分子量小 → 甲板穿透佳；廣泛代謝後經尿排出。<span class="ex-ref">p.3448</span></li>
+<li>Alcohol-based solution → 不可用於眼、口、陰道；分子量小 → 甲板穿透佳；通常（usually）經廣泛代謝後經尿排出。<span class="ex-ref">p.3448</span></li>
 <li>核准外用治療 onychomycosis：<strong class="ex-n">5%</strong> solution 每天一次 × <strong class="ex-n">48 wk</strong>；常見副作用 exfoliation、erythema、dermatitis。Pregnancy C。<span class="ex-ref">p.3448</span></li>
 </ul>
 <h3>Efinaconazole（外用 triazole）</h3>
@@ -215,12 +215,12 @@
 <li><strong>Tinea capitis caused by <em>Microsporum</em> species 的 first line</strong>：效果高於 terbinafine，與 itraconazole、fluconazole 相近但較便宜。<span class="ex-ref">p.3448</span></li>
 <li><mark data-q="112-15">唯一 FDA 核准的兒童 onychomycosis 治療，但療效僅限 dermatophytes</mark>。<span class="ex-ref">p.3448</span></li>
 <li>內文劑量：tinea pedis 每天 microsize <strong class="ex-n">1 g</strong> 或 ultramicrosize <strong class="ex-n">660–750 mg</strong> × <strong class="ex-n">4–8 wk</strong>，tinea cruris／corporis 用一半劑量；兒童 tinea capitis：ultramicrosize <strong class="ex-n">10–15 mg/kg</strong>、oral suspension <strong class="ex-n">15–25 mg/kg</strong>、microsize <strong class="ex-n">20–25 mg/kg</strong>，持續 <strong class="ex-n">1–2 months</strong>。<span class="ex-ref">p.3448</span></li>
-<li>副作用以 hypersensitivity 為主：urticaria、serum sickness、AGEP、SCLE、SJS、TEN；<mark data-q="102-38"><strong>photosensitivity（phototoxic 與 photoallergic）常見</strong></mark>；其他 lichenoid eruption、porphyria、pityriasis rosea。<span class="ex-ref">p.3448</span></li>
-<li>Rare but serious：hepatotoxicity、leukopenia、thrombocytopenia、anemia；neurologic（peripheral neuritis、memory loss、confusion、insomnia）不常見。<span class="ex-ref">p.3448</span></li>
+<li>副作用以 hypersensitivity 為主：urticaria、serum sickness、AGEP、SCLE、SJS、TEN；<mark data-q="102-38"><strong>photosensitivity（phototoxic 與 photoallergic）也常有報告（commonly reported）</strong></mark>；其他 lichenoid eruption、porphyria、pityriasis rosea。<span class="ex-ref">p.3448</span></li>
+<li>Rare but serious：hepatotoxicity、leukopenia、thrombocytopenia、anemia；neurologic（peripheral neuritis、memory loss、confusion、insomnia）不常見，見於部分病人（uncommonly recorded in some patients）。<span class="ex-ref">p.3448</span></li>
 <li>不可與 <strong>phenobarbitone</strong> 併用（降低吸收、增加代謝）；與 alcohol、cyclosporine、oral contraceptives、aspirin、warfarin 有交互作用報告。<span class="ex-ref">p.3448</span></li>
 <li>Pregnancy category <mark data-q="108-38">C（本章）</mark>。<span class="ex-ref">p.3448</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Griseofulvin 的 pregnancy category：本章 Table 188-2 與內文為 C（<span class="ex-ref">p.3440</span>、<span class="ex-ref">p.3448</span>），<mark data-q="108-38">ch160 Table 160-10 為 X（懷孕禁用，女性用藥前需驗孕）</mark><span class="ex-ref">p.2935</span>；兩者都不是 B。兒童 tinea capitis 劑量內文與 Table 188-2（microsize 15–20 mg/kg/d 或 ultramicrosize 5–10 mg/kg/d × 6–12 wk）不同（<span class="ex-ref">p.3440</span>、<span class="ex-ref">p.3448</span>）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Griseofulvin 的 pregnancy category：本章 Table 188-2 與內文為 C（<span class="ex-ref">p.3440</span>、<span class="ex-ref">p.3448</span>），<mark data-q="108-38">ch160 Table 160-10 為 X（懷孕禁用，女性用藥前需驗孕）</mark><span class="ex-ref">p.2935（ch160）</span>；兩者都不是 B。兒童 tinea capitis 劑量內文與 Table 188-2（microsize 15–20 mg/kg/d 或 ultramicrosize 5–10 mg/kg/d × 6–12 wk）不同（<span class="ex-ref">p.3440</span>、<span class="ex-ref">p.3448</span>）。</aside>
 </section>
 
 <section class="ex-note" id="topical-table">
@@ -328,7 +328,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 188-1，p.3438；Table 188-2，p.3439–3440。</p>
-<aside class="ex-trap"><strong>易錯</strong>Table 188-2 的口服抗黴菌藥中只有 terbinafine 是 B（<span class="ex-ref">p.3439–3440</span>）。ch160 Table 160-10 另把 fluconazole 列 D、griseofulvin 列 X，與本章不同；該表 terbinafine 同為 B、itraconazole 同為 C（<span class="ex-ref">p.2935</span>）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 188-2 的口服抗黴菌藥中只有 terbinafine 是 B（<span class="ex-ref">p.3439–3440</span>）。ch160 Table 160-10 另把 fluconazole 列 D、griseofulvin 列 X，與本章不同；該表 terbinafine 同為 B、itraconazole 同為 C（<span class="ex-ref">p.2935（ch160）</span>）。</aside>
 </section>
 
 <section class="ex-note" id="drug-choice">
@@ -336,11 +336,11 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Clinical setting</th><th scope="col">Fitzpatrick 9e 重點</th></tr></thead>
 <tbody>
-<tr><td>Dermatophyte onychomycosis</td><td><mark data-q="112-15">Terbinafine 為第一線選項</mark>；外用 efinaconazole、tavaborole、ciclopirox lacquer 可用；合併療法提高治癒率</td></tr>
-<tr><td><em>Candida</em>／nondermatophyte（mold）onychomycosis</td><td><mark data-q="101-10">Terbinafine 無效；itraconazole 為主要選擇</mark></td></tr>
+<tr><td>Dermatophyte onychomycosis</td><td><mark data-q="112-15">Terbinafine 被視為第一線選項</mark>；外用 efinaconazole、tavaborole、ciclopirox lacquer 可用；合併療法提高治癒率</td></tr>
+<tr><td><em>Candida</em>／nondermatophyte（mold）onychomycosis</td><td><mark data-q="101-10">Terbinafine 無效；itraconazole 被認為是首選（best choice）</mark></td></tr>
 <tr><td>Pediatric onychomycosis</td><td>Griseofulvin 是唯一 FDA 核准者（僅限 dermatophytes）；itraconazole 療程短、耐受好，適合兒童</td></tr>
 <tr><td>Tinea capitis（兒童）</td><td>FDA 核准只有 terbinafine 與 griseofulvin；<em>Microsporum</em> 以 griseofulvin 為 first line</td></tr>
-<tr><td>Tinea corporis／cruris／pedis（局部）</td><td>外用 azoles、allylamines、butenafine、ciclopirox；大面積才用口服</td></tr>
+<tr><td>Tinea corporis／cruris／pedis（局部）</td><td>外用 azoles、allylamines、butenafine、ciclopirox；口服用於大面積感染，皮膚科醫師也傾向保留給復發或頑固者（p.3436）</td></tr>
 <tr><td>Pityriasis versicolor</td><td><mark data-q="108-20">外用 ketoconazole shampoo、terbinafine、azoles；口服 itraconazole 或 fluconazole</mark>（nystatin 無效）</td></tr>
 <tr><td>Candidiasis</td><td>Nystatin、azoles；fluconazole 對 <em>C. krusei</em> 無效</td></tr>
 </tbody>
@@ -352,7 +352,7 @@
 <section class="ex-note" id="combination">
 <h2>14. New Vehicles &amp; Combination Therapy（新劑型與合併療法）</h2>
 <ul>
-<li>新載體以提升外用藥 bioavailability：lipid core matrix（藥物持續釋放達 <strong class="ex-n">24 h</strong>、避免光分解）、micelles、solid lipid nanoparticles、nanostructured lipid carriers、microemulsions；vesicular systems 包括 liposomes、niosomes、transferosomes、ethosomes、penetration enhancer vesicles。<span class="ex-ref">p.3448–3449</span></li>
+<li>已有許多新載體被研究（have been investigated）以提升外用藥 bioavailability：lipid core matrix（藥物持續釋放達 <strong class="ex-n">24 h</strong>、避免光分解）、micelles、solid lipid nanoparticles、nanostructured lipid carriers、microemulsions；vesicular systems 包括 liposomes、niosomes、transferosomes、ethosomes、penetration enhancer vesicles。<span class="ex-ref">p.3448–3449</span></li>
 <li>Onychomycosis 的外用＋口服合併：殺菌率較高、預防抗藥性、擴大抗菌譜；療程較短、口服劑量較低 → 毒性降低。<span class="ex-ref">p.3449</span></li>
 <li>特別適用於 onychomycosis 造成的 <strong>onycholysis</strong>：甲板與甲床分離會阻斷藥物在兩者間的傳遞，合併使用可確保甲板與甲床都接觸藥物。<span class="ex-ref">p.3449</span></li>
 <li>表淺皮膚感染加用 topical steroids（同一配方或分開）有爭議；因濫用 steroid 的副作用顧慮，許多研究建議改用本身具 antiinflammatory 作用的外用抗黴菌藥。<span class="ex-ref">p.3449</span></li>
@@ -365,17 +365,17 @@
 <thead><tr><th scope="col">Reaction pattern</th><th scope="col">Antifungal（McKee 5e）</th><th scope="col">Key points</th></tr></thead>
 <tbody>
 <tr><td>Photoallergic reaction</td><td><mark data-q="102-38">Griseofulvin（systemic）</mark></td><td>未曝光皮膚也可受影響；通常日曬後 <strong class="ex-n">≥24 h</strong> 出現；photopatch test 確診 <span class="ex-ref ex-ref-mckee">McKee p.639</span></td></tr>
-<tr><td>Photosensitivity（phototoxic 與 photoallergic）</td><td>Griseofulvin</td><td>引起 photosensitivity 的藥物中，NSAIDs、phenothiazines、amiodarone、antibiotics 與 griseofulvin 等 antifungals 特別重要 <span class="ex-ref ex-ref-mckee">McKee p.640</span></td></tr>
+<tr><td>Photosensitivity（phototoxic 與 photoallergic）</td><td>Griseofulvin</td><td>引起 photosensitivity 的藥物中，NSAIDs、phenothiazines、amiodarone、antibiotics 與 griseofulvin 等 antifungals 似乎（appear）特別重要 <span class="ex-ref ex-ref-mckee">McKee p.640</span></td></tr>
 <tr><td>DRESS</td><td>Terbinafine</td><td>除 anticonvulsants 外的誘發藥之一 <span class="ex-ref ex-ref-mckee">McKee p.640</span></td></tr>
 <tr><td>SCLE-like drug-induced LE</td><td>Terbinafine</td><td>出現 subacute cutaneous LE 樣表現；drug-induced LE 多有 anti-Ro、anti-La、ANA <span class="ex-ref ex-ref-mckee">McKee p.651</span></td></tr>
-<tr><td>Pityriasiform（PR-like）</td><td>Terbinafine（較少見的原因）</td><td>最常見為 ACE inhibitors 與 gold <span class="ex-ref ex-ref-mckee">McKee p.654</span></td></tr>
+<tr><td>Pityriasiform（PR-like）</td><td>Terbinafine（較少見的原因）</td><td>可能特別（may be particularly）由 ACE inhibitors 與 gold 引起 <span class="ex-ref ex-ref-mckee">McKee p.654</span></td></tr>
 <tr><td>Psoriasiform／psoriasis exacerbation</td><td>Terbinafine</td><td>病理與 psoriasis 或 LSC 重疊 <span class="ex-ref ex-ref-mckee">McKee p.654</span></td></tr>
 <tr><td>AGEP</td><td>Terbinafine</td><td>用藥後多在 <strong class="ex-n">24–48 h</strong> 內發生；subcorneal 和／或 intraepidermal pustules <span class="ex-ref ex-ref-mckee">McKee p.656</span></td></tr>
-<tr><td>Voriconazole photosensitivity</td><td><mark data-q="108-38">Voriconazole（second-generation triazole）</mark></td><td>Photosensitivity 約 <strong class="ex-n">1–2%</strong>（長期治療），兒童可達 <strong class="ex-n">20%</strong>；可有 pseudoporphyria、photoaging、multiple lentigines，甚至 aggressive SCC 與 melanoma in situ；病理與非藥物引起者相同 <span class="ex-ref ex-ref-mckee">McKee p.665</span></td></tr>
+<tr><td>Voriconazole photosensitivity</td><td><mark data-q="108-38">Voriconazole（second-generation triazole）</mark></td><td>Photosensitivity 最初報告約 <strong class="ex-n">1–2%</strong>，且見於長期治療後；兒童可能較常見（may be more common），可達 <strong class="ex-n">20%</strong>；也可有 pseudoporphyria；持續的 photoaging 伴 multiple lentigines；部分病人（甚至兒童）發生 aggressive SCC，成人另有 melanoma in situ 報告；病理與非藥物引起者相同 <span class="ex-ref ex-ref-mckee">McKee p.665</span></td></tr>
 </tbody>
 </table>
 <ul>
-<li>Fitzpatrick（ch162 opportunistic fungal infections）：這些感染通常用 amphotericin B 治療，<mark data-q="108-38">但 voriconazole 越來越常用於 aspergillosis</mark>。<span class="ex-ref">p.2984</span></li>
+<li>Fitzpatrick（ch162 Deep Fungal Infections，Other opportunistic mycoses 段）：這些感染的治療通常（usually）是 amphotericin B，<mark data-q="108-38">但 voriconazole 越來越常用於 aspergillosis</mark>。<span class="ex-ref">p.2984（ch162）</span></li>
 </ul>
 <p class="ex-cite">McKee 5e Chapter 14，p.639–665。對照本章：Fitzpatrick 列 griseofulvin 有 AGEP、SCLE、photosensitivity，terbinafine 可加重 psoriasis 與 LE（p.3441、p.3448）。</p>
 </section>

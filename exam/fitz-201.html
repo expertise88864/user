@@ -339,9 +339,9 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <style id="dn-nav-critical">.dn-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}.dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep,#4d6358);text-decoration:none;white-space:nowrap}.dn-nav-link:hover{background:var(--mint-soft,#eaf6f3);color:#0e7c86}.dn-nav .dn-nav-divider{width:1px;height:20px;background:var(--border,#dcd5c8);margin:0 4px}.dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;font-size:15px;line-height:1;padding:0}.dn-nav-icon:hover{background:var(--mint-soft,#eaf6f3)}.dn-nav-icon::after{display:none}.dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;min-height:32px;font-size:11.5px}.dn-nav-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}@media(max-width:899px){header.dn-nav-expanded{z-index:70}.dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:var(--bg,#faf7f2);max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;flex-direction:column;align-items:stretch;padding:14px 18px;border-bottom:1px solid var(--border,#dcd5c8);gap:2px}.dn-nav.open,.dn-nav.dn-nav-open{display:flex}.dn-nav-link{min-height:44px;padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}.dn-nav-icon{width:auto;min-height:44px;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}.dn-nav-icon::after{display:inline;content:attr(aria-label)!important;white-space:nowrap;font-size:14px;font-weight:600}.dn-nav .dn-nav-divider{display:none}.dn-nav .lang-select{min-height:44px;flex-shrink:0}.dn-nav-burger{display:inline-flex}}</style></head><body class="font-sans antialiased text-ink-900"><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><header class="sticky top-0 z-40 backdrop-blur border-b" style="background:rgba(250,247,242,.92); border-color:var(--border)"><div class="max-w-6xl mx-auto px-5 sm:px-8"><div class="h-16 flex items-center justify-between gap-3"><a href="/" class="flex items-center gap-3 min-w-0 flex-shrink-0"><img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" width="36" height="36" fetchpriority="high" loading="eager" decoding="async"><div class="min-w-0 leading-tight"><div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div><div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate" data-zh="陳翊嘉醫師 · 皮膚科衛教筆記" data-en="Dr. Chen Yi-Jia · Dermatology Notes">陳翊嘉醫師 · 皮膚科衛教筆記</div></div></a><nav class="dn-nav" aria-label="主導覽"><a href="/blog" class="dn-nav-link" data-zh="衛教文章" data-en="Articles">衛教文章</a><a href="/exam" class="dn-nav-link" data-zh="皮膚科專科考試" data-en="Board Exam">皮膚科專科考試</a><a href="/about" class="dn-nav-link" data-zh="關於我" data-en="About">關於我</a><span class="dn-nav-divider" aria-hidden="true"></span><button type="button" id="dn-nav-search" class="dn-nav-icon" aria-label="搜尋" title="搜尋文章 (Cmd/Ctrl + K)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button><button type="button" id="dn-nav-theme" class="dn-nav-icon" aria-label="切換暗色模式" title="切換亮 / 暗">🌙</button><select id="langToggle" class="lang-select" aria-label="Language" title="語言切換"><option value="zh">中文</option><option value="en">EN</option></select></nav><button type="button" id="dn-nav-burger" class="dn-nav-burger" aria-label="開啟選單" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button></div></div></header>
 <style>          @media (max-width:899px){   @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}    #dn-nav-search::after{content:'搜尋'} #dn-nav-theme::after{content:'切換暗色'}  #langToggle{align-self:flex-start;margin-top:4px} } body.dn-en #dn-nav-search::after{content:'Search'} body.dn-en #dn-nav-theme::after{content:'Theme'}</style>
 <script src="/assets/inline/nav-burger.js?v=202610232200" defer></script>
-<main id="main-content" class="ex-main" data-exam-page="chapter" data-exam-data="/exam/exam-data.json?v=52cdcc5074"><div class="ex-layout"><details class="ex-toc ex-toc-side" open><summary>本章目錄</summary><nav aria-label="本章目錄"><ol><li><a href="#overview" title="1. Overview（本章架構）" aria-label="1. Overview（本章架構）">1. Overview</a></li><li><a href="#smas" title="2. Superficial Musculoaponeurotic System（SMAS，表淺肌肉腱膜系統）" aria-label="2. Superficial Musculoaponeurotic System（SMAS，表淺肌肉腱膜系統）">2. Superficial Musculoaponeurotic System</a></li><li><a href="#cosmetic-units" title="3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）" aria-label="3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）">3. Topographic Anatomy &amp; Cosmetic Units</a></li><li><a href="#free-margins" title="4. Free Margins（游離緣）" aria-label="4. Free Margins（游離緣）">4. Free Margins</a></li><li><a href="#rstl" title="5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）" aria-label="5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）">5. Relaxed Skin Tension Lines</a></li><li><a href="#danger-zones" title="6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）" aria-label="6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）">6. Facial Motor Nerves &amp; Danger Zones</a></li><li><a href="#sensory-nerves" title="7. Sensory Nerves（感覺神經：Trigeminal nerve）" aria-label="7. Sensory Nerves（感覺神經：Trigeminal nerve）">7. Sensory Nerves</a></li><li><a href="#facial-muscles" title="8. Muscles of Facial Expression（表情肌）" aria-label="8. Muscles of Facial Expression（表情肌）">8. Muscles of Facial Expression</a></li><li><a href="#vascular" title="9. Vascular Anatomy（血管解剖）" aria-label="9. Vascular Anatomy（血管解剖）">9. Vascular Anatomy</a></li><li><a href="#lymphatics" title="10. Lymphatics（淋巴引流）" aria-label="10. Lymphatics（淋巴引流）">10. Lymphatics</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（9）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（11 題）</a></li></ol></nav></details><div class="ex-content"><nav class="crumbs" aria-label="麵包屑"><a href="/">首頁</a><span class="ex-sep" aria-hidden="true">/</span><a href="/exam">專科考試</a><span class="ex-sep" aria-hidden="true">/</span><span>Ch.201</span></nav><p class="ex-kicker">Fitzpatrick 9e · Part 30 Dermatologic Surgery</p><h1 class="ex-h1">Ch.201 Cutaneous Surgical Anatomy</h1><p class="ex-meta">原書 p.3697–3705 · 考題共 11 題（已有詳解 11 題）</p><p class="ex-meta">106 年 1 題、107 年 1 題、108 年 1 題、109 年 1 題、110 年 2 題、111 年 2 題、112 年 1 題、114 年 1 題、115 年 1 題</p><div class="ex-notice">題目取自<a href="https://www.derma.org.tw/specialist/download.php?id=9" target="_blank" rel="noopener noreferrer">臺灣皮膚科醫學會專科醫師甄審筆試試題</a>，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 McKee's Pathology of the Skin, 5th Edition 整理</div><section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2><p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p><div class="ex-links-group"><p class="ex-links-name">DermNet（臨床照片與疾病介紹）</p><ul><li><a href="https://dermnetnz.org/topics/skin-tension-lines" target="_blank" rel="noopener noreferrer">Skin tension lines</a></li><li><a href="https://dermnetnz.org/topics/local-anaesthesia" target="_blank" rel="noopener noreferrer">Local anaesthesia</a></li><li><a href="https://dermnetnz.org/topics/excision-of-skin-lesions" target="_blank" rel="noopener noreferrer">Excision of skin lesions</a></li><li><a href="https://dermnetnz.org/topics/risks-and-complications-of-skin-surgery" target="_blank" rel="noopener noreferrer">Complications of skin surgery</a></li></ul></div></section><details class="ex-toc ex-toc-mobile"><summary>本章目錄</summary><nav aria-label="本章目錄（展開式）"><ol><li><a href="#overview" title="1. Overview（本章架構）" aria-label="1. Overview（本章架構）">1. Overview</a></li><li><a href="#smas" title="2. Superficial Musculoaponeurotic System（SMAS，表淺肌肉腱膜系統）" aria-label="2. Superficial Musculoaponeurotic System（SMAS，表淺肌肉腱膜系統）">2. Superficial Musculoaponeurotic System</a></li><li><a href="#cosmetic-units" title="3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）" aria-label="3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）">3. Topographic Anatomy &amp; Cosmetic Units</a></li><li><a href="#free-margins" title="4. Free Margins（游離緣）" aria-label="4. Free Margins（游離緣）">4. Free Margins</a></li><li><a href="#rstl" title="5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）" aria-label="5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）">5. Relaxed Skin Tension Lines</a></li><li><a href="#danger-zones" title="6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）" aria-label="6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）">6. Facial Motor Nerves &amp; Danger Zones</a></li><li><a href="#sensory-nerves" title="7. Sensory Nerves（感覺神經：Trigeminal nerve）" aria-label="7. Sensory Nerves（感覺神經：Trigeminal nerve）">7. Sensory Nerves</a></li><li><a href="#facial-muscles" title="8. Muscles of Facial Expression（表情肌）" aria-label="8. Muscles of Facial Expression（表情肌）">8. Muscles of Facial Expression</a></li><li><a href="#vascular" title="9. Vascular Anatomy（血管解剖）" aria-label="9. Vascular Anatomy（血管解剖）">9. Vascular Anatomy</a></li><li><a href="#lymphatics" title="10. Lymphatics（淋巴引流）" aria-label="10. Lymphatics（淋巴引流）">10. Lymphatics</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（9）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（11 題）</a></li></ol></nav></details><section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2><div class="ex-notes-tools"><span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）<span class="ex-legend-trap">紅框</span>＝易錯陷阱<strong class="ex-n">粗體數字</strong>＝門檻值</span></div><p class="ex-reading" id="ex-reading" hidden></p><section class="ex-note" id="overview" data-w="460">
+<main id="main-content" class="ex-main" data-exam-page="chapter" data-exam-data="/exam/exam-data.json?v=52cdcc5074"><div class="ex-layout"><details class="ex-toc ex-toc-side" open><summary>本章目錄</summary><nav aria-label="本章目錄"><ol><li><a href="#overview" title="1. Overview（本章架構）" aria-label="1. Overview（本章架構）">1. Overview</a></li><li><a href="#smas" title="2. Superficial Musculoaponeurotic System（SMAS，表淺肌肉腱膜系統）" aria-label="2. Superficial Musculoaponeurotic System（SMAS，表淺肌肉腱膜系統）">2. Superficial Musculoaponeurotic System</a></li><li><a href="#cosmetic-units" title="3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）" aria-label="3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）">3. Topographic Anatomy &amp; Cosmetic Units</a></li><li><a href="#free-margins" title="4. Free Margins（游離緣）" aria-label="4. Free Margins（游離緣）">4. Free Margins</a></li><li><a href="#rstl" title="5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）" aria-label="5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）">5. Relaxed Skin Tension Lines</a></li><li><a href="#danger-zones" title="6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）" aria-label="6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）">6. Facial Motor Nerves &amp; Danger Zones</a></li><li><a href="#sensory-nerves" title="7. Sensory Nerves（感覺神經：Trigeminal nerve）" aria-label="7. Sensory Nerves（感覺神經：Trigeminal nerve）">7. Sensory Nerves</a></li><li><a href="#facial-muscles" title="8. Muscles of Facial Expression（表情肌）" aria-label="8. Muscles of Facial Expression（表情肌）">8. Muscles of Facial Expression</a></li><li><a href="#vascular" title="9. Vascular Anatomy（血管解剖）" aria-label="9. Vascular Anatomy（血管解剖）">9. Vascular Anatomy</a></li><li><a href="#lymphatics" title="10. Lymphatics（淋巴引流）" aria-label="10. Lymphatics（淋巴引流）">10. Lymphatics</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（9）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（11 題）</a></li></ol></nav></details><div class="ex-content"><nav class="crumbs" aria-label="麵包屑"><a href="/">首頁</a><span class="ex-sep" aria-hidden="true">/</span><a href="/exam">專科考試</a><span class="ex-sep" aria-hidden="true">/</span><span>Ch.201</span></nav><p class="ex-kicker">Fitzpatrick 9e · Part 30 Dermatologic Surgery</p><h1 class="ex-h1">Ch.201 Cutaneous Surgical Anatomy</h1><p class="ex-meta">原書 p.3697–3705 · 考題共 11 題（已有詳解 11 題）</p><p class="ex-meta">106 年 1 題、107 年 1 題、108 年 1 題、109 年 1 題、110 年 2 題、111 年 2 題、112 年 1 題、114 年 1 題、115 年 1 題</p><div class="ex-notice">題目取自<a href="https://www.derma.org.tw/specialist/download.php?id=9" target="_blank" rel="noopener noreferrer">臺灣皮膚科醫學會專科醫師甄審筆試試題</a>，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 McKee's Pathology of the Skin, 5th Edition 整理</div><section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2><p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p><div class="ex-links-group"><p class="ex-links-name">DermNet（臨床照片與疾病介紹）</p><ul><li><a href="https://dermnetnz.org/topics/skin-tension-lines" target="_blank" rel="noopener noreferrer">Skin tension lines</a></li><li><a href="https://dermnetnz.org/topics/local-anaesthesia" target="_blank" rel="noopener noreferrer">Local anaesthesia</a></li><li><a href="https://dermnetnz.org/topics/excision-of-skin-lesions" target="_blank" rel="noopener noreferrer">Excision of skin lesions</a></li><li><a href="https://dermnetnz.org/topics/risks-and-complications-of-skin-surgery" target="_blank" rel="noopener noreferrer">Complications of skin surgery</a></li></ul></div></section><details class="ex-toc ex-toc-mobile"><summary>本章目錄</summary><nav aria-label="本章目錄（展開式）"><ol><li><a href="#overview" title="1. Overview（本章架構）" aria-label="1. Overview（本章架構）">1. Overview</a></li><li><a href="#smas" title="2. Superficial Musculoaponeurotic System（SMAS，表淺肌肉腱膜系統）" aria-label="2. Superficial Musculoaponeurotic System（SMAS，表淺肌肉腱膜系統）">2. Superficial Musculoaponeurotic System</a></li><li><a href="#cosmetic-units" title="3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）" aria-label="3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）">3. Topographic Anatomy &amp; Cosmetic Units</a></li><li><a href="#free-margins" title="4. Free Margins（游離緣）" aria-label="4. Free Margins（游離緣）">4. Free Margins</a></li><li><a href="#rstl" title="5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）" aria-label="5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）">5. Relaxed Skin Tension Lines</a></li><li><a href="#danger-zones" title="6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）" aria-label="6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）">6. Facial Motor Nerves &amp; Danger Zones</a></li><li><a href="#sensory-nerves" title="7. Sensory Nerves（感覺神經：Trigeminal nerve）" aria-label="7. Sensory Nerves（感覺神經：Trigeminal nerve）">7. Sensory Nerves</a></li><li><a href="#facial-muscles" title="8. Muscles of Facial Expression（表情肌）" aria-label="8. Muscles of Facial Expression（表情肌）">8. Muscles of Facial Expression</a></li><li><a href="#vascular" title="9. Vascular Anatomy（血管解剖）" aria-label="9. Vascular Anatomy（血管解剖）">9. Vascular Anatomy</a></li><li><a href="#lymphatics" title="10. Lymphatics（淋巴引流）" aria-label="10. Lymphatics（淋巴引流）">10. Lymphatics</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（9）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（11 題）</a></li></ol></nav></details><section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2><div class="ex-notes-tools"><span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）<span class="ex-legend-trap">紅框</span>＝易錯陷阱<strong class="ex-n">粗體數字</strong>＝門檻值</span></div><p class="ex-reading" id="ex-reading" hidden></p><section class="ex-note" id="overview" data-w="476">
 <h2>1. Overview（本章架構）</h2>
-<p>皮膚外科手術大多在頭頸部進行，本章聚焦頭頸部解剖。熟悉解剖可讓同儕溝通更精確、手術安全有效、重建兼顧外觀與功能，並能預測淋巴引流與皮膚惡性腫瘤的轉移路徑。<span class="ex-ref">p.3697</span></p>
+<p>皮膚外科手術絕大多數（vast majority）在頭頸部進行，本章聚焦頭頸部解剖。熟悉解剖可讓同儕溝通更精確、手術安全有效、重建兼顧外觀與功能，並能預測淋巴引流與皮膚惡性腫瘤的轉移路徑。<span class="ex-ref">p.3697</span></p>
 <p>五個核心概念：</p>
 <ol>
 <li>Superficial musculoaponeurotic system（SMAS）</li>
@@ -369,14 +369,14 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <aside class="ex-trap"><strong>易錯</strong>大部分主要動脈與神經走在 SMAS「之內或深層」（within or deep to it），在 SMAS 上方剝離可安全避開神經血管構造。<span class="ex-ref">p.3698</span> SMAS 上方連的是 temporalis 與 frontalis、下方連 platysma。<span class="ex-ref">p.3698</span> Buccinators 與 masseter 是協助咀嚼（mastication）的肌肉。<span class="ex-ref">p.3703</span></aside>
 </section>
 
-<section class="ex-note" id="cosmetic-units" data-w="1343">
+<section class="ex-note" id="cosmetic-units" data-w="1363">
 <h2>3. Topographic Anatomy &amp; Cosmetic Units（表面解剖與美容單位）</h2>
 <ul>
 <li>Cosmetic units：膚色、質地、毛囊皮脂腺特性、毛孔大小、日曬程度相近的區域；由 junction lines 分隔，可很明顯（eyebrows）或很細微（nasofacial sulcus）。<span class="ex-ref">p.3698</span></li>
 <li>臉部主要 cosmetic units：forehead、temples、eyelids、nose、cheeks、upper and lower lips、chin、ears；可再細分為 subunits。</li>
-<li>重建原則：缺損通常宜在同一 unit／subunit 內修補，或向鄰近 unit 借組織（組織特性相近）。</li>
+<li>重建原則：因組織特性相近，缺損常以在同一 unit／subunit 內修補，或向鄰近 unit 借組織為佳（it is often best）。</li>
 <li><mark class="ex-key">疤痕可藏在 cosmetic units 之間的 junction lines；跨越 cosmetic units 的疤痕較明顯、外觀較差</mark><span class="ex-qref">110-42</span>。<span class="ex-ref">p.3698</span></li>
-<li>Subunits 最多、最複雜的區域：<strong>nose、ears、lips</strong>（Figs. 201-1、201-2）。</li>
+<li>臉部較複雜、具多個 subunits 的區域包括 <strong>nose、ears、lips</strong>（Figs. 201-1、201-2）。</li>
 <li>描述病灶位置要具體到 subunit，例如「left nasal sidewall」比「left nose」、「right triangular fossa」比「right ear」好溝通。</li>
 </ul>
 <h3>Nose subunits（鼻部次單位）</h3>
@@ -419,41 +419,41 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 </section>
 
-<section class="ex-note" id="free-margins" data-w="358">
+<section class="ex-note" id="free-margins" data-w="385">
 <h2>4. Free Margins（游離緣）</h2>
 <ul>
 <li>定義：受到張力時容易變形的解剖構造。<span class="ex-ref">p.3699</span></li>
 <li>四個 free margins：<strong>eyelid margin、alar rim、lip vermilion、helical rim</strong>。</li>
-<li>變形造成外觀與功能問題：
+<li>變形造成的不對稱可引起外觀與功能問題：
 <ul>
-<li><strong>Ectropion</strong> → epiphora、conjunctival 與 corneal exposure → corneal scarring。</li>
-<li><strong>Eclabium</strong> → 說話改變、不對稱笑容、流口水（drooling）。</li>
+<li><strong>Ectropion</strong> 可導致 epiphora，以及 conjunctival 與 corneal exposure，進而 corneal scarring。</li>
+<li><strong>Eclabium</strong> 可能（may）導致說話改變、不對稱笑容或流口水（drooling）。</li>
 </ul>
 </li>
 <li>Nasal ala <strong>沒有軟骨</strong>，由 fibrofatty tissue 組成，受張力時特別容易變形。</li>
-<li>縫合時要注意張力向量（tension vectors），避免 free margin 變形。<span class="ex-ref">p.3699</span></li>
+<li><mark class="ex-key">縫合時要注意張力向量（tension vectors），避免 free margin 變形</mark><span class="ex-qref">115-11</span>。<span class="ex-ref">p.3699</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Nasal ala 是 fibrofatty tissue，不含軟骨；這正是鼻翼緣容易被拉變形的原因。<span class="ex-ref">p.3699</span></aside>
 </section>
 
-<section class="ex-note" id="rstl" data-w="646">
+<section class="ex-note" id="rstl" data-w="718">
 <h2>5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）</h2>
 <ul>
 <li>RSTL 是隨時間形成的臉部皺摺，成因：elastic tissue tone 喪失、連接真皮與下方表情肌的 collagenous fibrous septae 變長、皮膚過多、重力、UV 暴露（Fig. 201-3）。<span class="ex-ref">p.3699</span></li>
-<li>臉部 RSTL 特別明顯，因為表情肌附著於上方皮膚，而身體其他肌肉是連接肌腱與骨骼。</li>
-<li>年輕人由表情肌動作誘發，隨年齡必然更明顯。</li>
+<li>RSTL 在臉部最明顯（most obvious），因為表情肌附著於上方皮膚，而身體其他肌肉是連接肌腱與骨骼。</li>
+<li>年輕人可由表情肌動作誘發（can be induced），隨年齡必然更明顯。</li>
 <li><mark class="ex-key">RSTL 通常與<strong>下方肌肉走向垂直（perpendicular to the underlying muscles）</strong></mark><span class="ex-qref">110-42 111-31</span>。</li>
 <li><mark class="ex-key">多數情況下，<strong>切除的長軸應平行 RSTL</strong>，因為這往往是疤痕張力最小的方向</mark><span class="ex-qref">110-42 114-28</span>；皮瓣設計宜讓多數疤痕線落在 RSTL 內。<span class="ex-ref">p.3699</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>RSTL 與肌肉走向「垂直」，不是平行；切除的長軸則應「平行」RSTL。<span class="ex-ref">p.3699</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>RSTL 通常（usually）與下方肌肉走向「垂直」；多數情況下（in most situations），切除的長軸應「平行」RSTL。<span class="ex-ref">p.3699</span></aside>
 <h3>Forehead lipoma（前額 lipoma：他章相關敘述）</h3>
 <ul>
-<li>McKee：lipoma 最常見於 trunk、abdomen、neck，其次 proximal extremities；<mark class="ex-key">臉部少見，其中以 <strong>forehead</strong> 為主</mark><span class="ex-qref">111-31</span>。<span class="ex-ref ex-ref-mckee">McKee p.1700</span></li>
-<li>Fitzpatrick（ch122）：superficial lipoma 通常 <strong class="ex-n">&lt;5 cm</strong>；<mark class="ex-key">deep-seated <strong>intramuscular</strong> 與 <strong>intermuscular</strong> lipomas 可長到相當大</mark><span class="ex-qref">111-31</span>；intramuscular lipoma 切除後復發率較高。<span class="ex-ref">p.2172</span></li>
+<li>McKee：lipoma 最常見於 trunk、abdomen、neck，其次 proximal extremities；<mark class="ex-key">臉部罕見（rarely），尤其是 <strong>forehead</strong></mark><span class="ex-qref">111-31</span>。<span class="ex-ref ex-ref-mckee">McKee p.1700</span></li>
+<li>Fitzpatrick（ch122）：superficial lipoma 通常 <strong class="ex-n">&lt;5 cm</strong>；<mark class="ex-key">deep-seated <strong>intramuscular</strong> 與 <strong>intermuscular</strong> lipomas 可長到相當大</mark><span class="ex-qref">111-31</span>；intramuscular lipoma 切除後復發率較高。<span class="ex-ref">p.2172（ch122）</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="danger-zones" data-w="3217">
+<section class="ex-note" id="danger-zones" data-w="3247">
 <h2>6. Facial Motor Nerves &amp; Danger Zones（顏面運動神經與危險區）</h2>
 <p>頭頸部三個主要 danger zones，各牽涉一條運動神經與其支配肌肉：facial nerve（CN VII）的 <strong>temporal branch</strong> 與 <strong>marginal mandibular branch</strong>，以及 <strong>spinal accessory nerve（CN XI）</strong>。術前應先確認這些神經與肌肉的 baseline function，才能判斷術中是否受傷。<span class="ex-ref">p.3699</span></p>
 <h3>Facial nerve course（顏面神經走向）</h3>
@@ -482,9 +482,9 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li><mark class="ex-key">支配 frontalis、orbicularis oculi 上部纖維、corrugator supercilii、anterior 與 superior auricular muscles</mark><span class="ex-qref">108-48</span>。<span class="ex-ref">p.3701</span></li>
 <li><mark class="ex-key">出 parotid 後斜向越過 temple，走在 <strong>superficial temporal fascia（SMAS 的一部分）與 deep temporal fascia 之間</strong></mark><span class="ex-qref">114-28</span>。</li>
 <li><mark class="ex-key">在跨過 zygomatic arch <strong>中間 1/3</strong> 處分成 <strong class="ex-n">3–5</strong> 支 rami，此處<strong>最表淺、最易受傷</strong></mark><span class="ex-qref">112-39 114-28</span>；<mark class="ex-key">此區應在真皮正下方、筋膜上方的淺層脂肪剝離</mark><span class="ex-qref">114-28</span>。</li>
-<li><mark class="ex-key">皮膚投影（Fig. 201-4）：earlobe 到眉毛外側端的連線</mark><span class="ex-qref">108-48</span>，以及 tragus 到最高額紋上後方的連線。</li>
+<li><mark class="ex-key">大致走向（approximate course）的皮膚投影（Fig. 201-4）：earlobe 到眉毛外側端的連線</mark><span class="ex-qref">108-48</span>，以及 tragus 到最高額紋上後方的連線。</li>
 <li><mark class="ex-key">受損：額部扁平、皺紋與張力線變不明顯；肌肉萎縮後出現 eyebrow 與 eyelid ptosis，可能遮擋視野</mark><span class="ex-qref">112-39</span>；可能需要 brow lift 與 blepharoplasty 矯正。<span class="ex-ref">p.3701</span></li>
-<li>At-a-glance：temporal branch 受損可造成同側 eyebrow ptosis 與上外側視野被遮蔽。<span class="ex-ref">p.3697</span></li>
+<li>At-a-glance：temporal branch 受損可能（may）造成同側 eyebrow ptosis 與上外側視野被遮蔽。<span class="ex-ref">p.3697</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Table 201-1 列出 temporal branch 受損影響的肌肉是 frontalis、orbicularis oculi 上部纖維、corrugator supercilii 與 anterior／superior auricular muscles，其中沒有 temporalis。<span class="ex-ref">p.3700</span> 危險點在跨過 zygomatic arch 的「中間 1/3」處。<span class="ex-ref">p.3700</span>、<span class="ex-ref">p.3701</span></aside>
 
@@ -508,12 +508,12 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <aside class="ex-trap"><strong>易錯</strong>Spinal accessory nerve 在 Erb's point 受損，表現在肩膀（trapezius 麻痺、winging of the scapula、無法聳肩），不是臉部表情肌。<span class="ex-ref">p.3700</span>、<span class="ex-ref">p.3702</span></aside>
 </section>
 
-<section class="ex-note" id="sensory-nerves" data-w="1799">
+<section class="ex-note" id="sensory-nerves" data-w="1873">
 <h2>7. Sensory Nerves（感覺神經：Trigeminal nerve）</h2>
 <ul>
-<li>Trigeminal nerve（CN V）負責臉部大部分感覺；三支分別經兩側位於 <strong>midpupillary line</strong> 的 supraorbital、infraorbital、mental foramina 出顱。<span class="ex-ref">p.3702</span></li>
+<li>Trigeminal nerve（CN V）負責臉部大部分（the majority）感覺；經兩側位於 <strong>midpupillary line</strong> 的三個孔（supraorbital、infraorbital、mental foramina）出顱。<span class="ex-ref">p.3702</span></li>
 <li><mark class="ex-key"><strong>Supraorbital（外側）</strong>與 <strong>supratrochlear（內側）</strong> nerves 支配前額與前頭皮，屬 frontal nerve（ophthalmic nerve 最大分支）的分支；分別經眶緣外側的 supraorbital foramen／notch 與內側的 supratrochlear notch 穿出</mark><span class="ex-qref">111-31</span>。<span class="ex-ref">p.3702–3703</span></li>
-<li><strong>Hutchinson sign</strong>：external nasal（dorsal nasal）nerve 是 nasociliary branch 的 anterior ethmoidal nerve 分支，支配鼻背；nasociliary branch 同時供應鼻尖與角膜，所以 V1 herpes zoster 出現鼻尖水疱時，眼睛可能受侵犯。<span class="ex-ref">p.3703</span></li>
+<li><strong>Hutchinson sign</strong>：external nasal（dorsal nasal）nerve 是 nasociliary branch 的 anterior ethmoidal nerve 分支，支配鼻背，是 Hutchinson sign 的解剖學解釋；此徵象可見於部分（some cases）V1 herpes zoster：nasociliary branch 同時供應鼻尖與角膜，所以鼻尖水疱表示眼睛可能受侵犯。<span class="ex-ref">p.3703</span></li>
 <li>V2 支配 lateral nose、lower eyelid、superior cheek、anterior temple；最大分支是 infraorbital nerve（經 maxilla 的 infraorbital foramen 出顱）。</li>
 <li>Zygomatic branch of V2 → zygomaticofacial nerve（經 zygomatic bone 外側出顱，支配外眼角小區域）與 zygomaticotemporal nerve（經 anterior temporal fossa 出顱，支配前顳部）。</li>
 <li>V3 支配下唇、下巴、下頜與耳前臉頰、前耳、顳部中央頭皮；三條主要皮膚分支：auriculotemporal、buccal、mental。</li>
@@ -536,10 +536,10 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </tbody>
 </table></div>
 <p class="ex-cite">Table 201-2 Branches of the Trigeminal Nerve，p.3703；Figs. 201-5、201-6，p.3702。</p>
-<aside class="ex-trap"><strong>易錯</strong>前額中央的感覺神經是 supraorbital（外側）與 supratrochlear（內側），兩者都是 V1；顳部大部分由 V3 的 auriculotemporal nerve 支配。<span class="ex-ref">p.3702–3703</span> Buccal nerve（V3 感覺）與 facial nerve 的 buccal branch（運動）不同。<span class="ex-ref">p.3702</span>、<span class="ex-ref">p.3703</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>支配前額與前頭皮的感覺神經是 supraorbital（外側）與 supratrochlear（內側），兩者都是 V1（frontal nerve 分支）；顳部大部分由 V3 的 auriculotemporal nerve 支配。<span class="ex-ref">p.3702–3703</span> Buccal nerve（V3 感覺）與 facial nerve 的 buccal branch（運動）不同。<span class="ex-ref">p.3702</span>、<span class="ex-ref">p.3703</span></aside>
 </section>
 
-<section class="ex-note" id="facial-muscles" data-w="845">
+<section class="ex-note" id="facial-muscles" data-w="864">
 <h2>8. Muscles of Facial Expression（表情肌）</h2>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Muscle</th><th scope="col">Action（作用）</th></tr></thead>
@@ -556,10 +556,10 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </tbody>
 </table></div>
 <p class="ex-cite">p.3703；Figure 201-7，p.3704。</p>
-<aside class="ex-trap"><strong>易錯</strong>Corrugator supercilii 收縮使眉毛向內、向下移動；procerus 造成的是鼻根的「橫」向皺紋。<span class="ex-ref">p.3703</span> Glabellar frown lines 的 botulinum toxin 治療，是以 <strong class="ex-n">5</strong> 個注射點處理 corrugators 與 procerus。<span class="ex-ref">p.3925</span> Lip depressors（depressor anguli oris、depressor labii inferioris、mentalis）正是 Table 201-1 中 marginal mandibular branch 受損時受影響的肌肉。<span class="ex-ref">p.3700</span>、<span class="ex-ref">p.3703</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Corrugator supercilii 收縮使眉毛向內、向下移動；procerus 造成的是鼻根的「橫」向皺紋。<span class="ex-ref">p.3703</span> Glabellar lines 的 botulinum toxin 治療，一般眉部（average brow）可分 <strong class="ex-n">5</strong> 個注射點處理 corrugators 與 procerus。<span class="ex-ref">p.3925（ch216）</span> Lip depressors（depressor anguli oris、depressor labii inferioris、mentalis）正是 Table 201-1 中 marginal mandibular branch 受損時受影響的肌肉。<span class="ex-ref">p.3700</span>、<span class="ex-ref">p.3703</span></aside>
 </section>
 
-<section class="ex-note" id="vascular" data-w="1011">
+<section class="ex-note" id="vascular" data-w="1030">
 <h2>9. Vascular Anatomy（血管解剖）</h2>
 <h3>Arteries（動脈）</h3>
 <ul>
@@ -580,7 +580,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li><mark class="ex-key">與軀幹、四肢不同，<strong>臉部靜脈沒有瓣膜（no valves）</strong>，血液可雙向流動</mark><span class="ex-qref">110-26</span>。</li>
 <li><mark class="ex-key">中臉部 ophthalmic vein 與 angular vein 有吻合，感染可經 ophthalmic vein 到達 <strong>cavernous sinus</strong></mark><span class="ex-qref">110-26</span>；angular vein 也與 deep facial vein 及 pterygoid plexus 相通。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>臉部靜脈「無瓣膜」才是正確敘述。<span class="ex-ref">p.3705</span> 臉部血供以 ECA 為主，<span class="ex-ref">p.3703</span> 但 at-a-glance 強調 ECA 與 ICA 雙重血供讓皮瓣與植皮存活可靠。<span class="ex-ref">p.3697</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>臉部靜脈「無瓣膜」才是正確敘述。<span class="ex-ref">p.3705</span> 臉部血供幾乎全部（almost entirely）來自 ECA，<span class="ex-ref">p.3703</span> 但 at-a-glance 強調 ECA 與 ICA 雙重血供讓皮瓣與植皮存活可靠。<span class="ex-ref">p.3697</span></aside>
 </section>
 
 <section class="ex-note" id="lymphatics" data-w="518">

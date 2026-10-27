@@ -1,6 +1,6 @@
 <section class="ex-note" id="overview">
 <h2>1. Overview（本章架構）</h2>
-<p>皮膚外科手術大多在頭頸部進行，本章聚焦頭頸部解剖。熟悉解剖可讓同儕溝通更精確、手術安全有效、重建兼顧外觀與功能，並能預測淋巴引流與皮膚惡性腫瘤的轉移路徑。<span class="ex-ref">p.3697</span></p>
+<p>皮膚外科手術絕大多數（vast majority）在頭頸部進行，本章聚焦頭頸部解剖。熟悉解剖可讓同儕溝通更精確、手術安全有效、重建兼顧外觀與功能，並能預測淋巴引流與皮膚惡性腫瘤的轉移路徑。<span class="ex-ref">p.3697</span></p>
 <p>五個核心概念：</p>
 <ol>
 <li>Superficial musculoaponeurotic system（SMAS）</li>
@@ -33,9 +33,9 @@
 <ul>
 <li>Cosmetic units：膚色、質地、毛囊皮脂腺特性、毛孔大小、日曬程度相近的區域；由 junction lines 分隔，可很明顯（eyebrows）或很細微（nasofacial sulcus）。<span class="ex-ref">p.3698</span></li>
 <li>臉部主要 cosmetic units：forehead、temples、eyelids、nose、cheeks、upper and lower lips、chin、ears；可再細分為 subunits。</li>
-<li>重建原則：缺損通常宜在同一 unit／subunit 內修補，或向鄰近 unit 借組織（組織特性相近）。</li>
+<li>重建原則：因組織特性相近，缺損常以在同一 unit／subunit 內修補，或向鄰近 unit 借組織為佳（it is often best）。</li>
 <li><mark data-q="110-42">疤痕可藏在 cosmetic units 之間的 junction lines；跨越 cosmetic units 的疤痕較明顯、外觀較差</mark>。<span class="ex-ref">p.3698</span></li>
-<li>Subunits 最多、最複雜的區域：<strong>nose、ears、lips</strong>（Figs. 201-1、201-2）。</li>
+<li>臉部較複雜、具多個 subunits 的區域包括 <strong>nose、ears、lips</strong>（Figs. 201-1、201-2）。</li>
 <li>描述病灶位置要具體到 subunit，例如「left nasal sidewall」比「left nose」、「right triangular fossa」比「right ear」好溝通。</li>
 </ul>
 <h3>Nose subunits（鼻部次單位）</h3>
@@ -83,14 +83,14 @@
 <ul>
 <li>定義：受到張力時容易變形的解剖構造。<span class="ex-ref">p.3699</span></li>
 <li>四個 free margins：<strong>eyelid margin、alar rim、lip vermilion、helical rim</strong>。</li>
-<li>變形造成外觀與功能問題：
+<li>變形造成的不對稱可引起外觀與功能問題：
 <ul>
-<li><strong>Ectropion</strong> → epiphora、conjunctival 與 corneal exposure → corneal scarring。</li>
-<li><strong>Eclabium</strong> → 說話改變、不對稱笑容、流口水（drooling）。</li>
+<li><strong>Ectropion</strong> 可導致 epiphora，以及 conjunctival 與 corneal exposure，進而 corneal scarring。</li>
+<li><strong>Eclabium</strong> 可能（may）導致說話改變、不對稱笑容或流口水（drooling）。</li>
 </ul>
 </li>
 <li>Nasal ala <strong>沒有軟骨</strong>，由 fibrofatty tissue 組成，受張力時特別容易變形。</li>
-<li>縫合時要注意張力向量（tension vectors），避免 free margin 變形。<span class="ex-ref">p.3699</span></li>
+<li><mark data-q="115-11">縫合時要注意張力向量（tension vectors），避免 free margin 變形</mark>。<span class="ex-ref">p.3699</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Nasal ala 是 fibrofatty tissue，不含軟骨；這正是鼻翼緣容易被拉變形的原因。<span class="ex-ref">p.3699</span></aside>
 </section>
@@ -99,16 +99,16 @@
 <h2>5. Relaxed Skin Tension Lines（RSTL，放鬆皮膚張力線）</h2>
 <ul>
 <li>RSTL 是隨時間形成的臉部皺摺，成因：elastic tissue tone 喪失、連接真皮與下方表情肌的 collagenous fibrous septae 變長、皮膚過多、重力、UV 暴露（Fig. 201-3）。<span class="ex-ref">p.3699</span></li>
-<li>臉部 RSTL 特別明顯，因為表情肌附著於上方皮膚，而身體其他肌肉是連接肌腱與骨骼。</li>
-<li>年輕人由表情肌動作誘發，隨年齡必然更明顯。</li>
+<li>RSTL 在臉部最明顯（most obvious），因為表情肌附著於上方皮膚，而身體其他肌肉是連接肌腱與骨骼。</li>
+<li>年輕人可由表情肌動作誘發（can be induced），隨年齡必然更明顯。</li>
 <li><mark data-q="110-42,111-31">RSTL 通常與<strong>下方肌肉走向垂直（perpendicular to the underlying muscles）</strong></mark>。</li>
 <li><mark data-q="110-42,114-28">多數情況下，<strong>切除的長軸應平行 RSTL</strong>，因為這往往是疤痕張力最小的方向</mark>；皮瓣設計宜讓多數疤痕線落在 RSTL 內。<span class="ex-ref">p.3699</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>RSTL 與肌肉走向「垂直」，不是平行；切除的長軸則應「平行」RSTL。<span class="ex-ref">p.3699</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>RSTL 通常（usually）與下方肌肉走向「垂直」；多數情況下（in most situations），切除的長軸應「平行」RSTL。<span class="ex-ref">p.3699</span></aside>
 <h3>Forehead lipoma（前額 lipoma：他章相關敘述）</h3>
 <ul>
-<li>McKee：lipoma 最常見於 trunk、abdomen、neck，其次 proximal extremities；<mark data-q="111-31">臉部少見，其中以 <strong>forehead</strong> 為主</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1700</span></li>
-<li>Fitzpatrick（ch122）：superficial lipoma 通常 <strong class="ex-n">&lt;5 cm</strong>；<mark data-q="111-31">deep-seated <strong>intramuscular</strong> 與 <strong>intermuscular</strong> lipomas 可長到相當大</mark>；intramuscular lipoma 切除後復發率較高。<span class="ex-ref">p.2172</span></li>
+<li>McKee：lipoma 最常見於 trunk、abdomen、neck，其次 proximal extremities；<mark data-q="111-31">臉部罕見（rarely），尤其是 <strong>forehead</strong></mark>。<span class="ex-ref ex-ref-mckee">McKee p.1700</span></li>
+<li>Fitzpatrick（ch122）：superficial lipoma 通常 <strong class="ex-n">&lt;5 cm</strong>；<mark data-q="111-31">deep-seated <strong>intramuscular</strong> 與 <strong>intermuscular</strong> lipomas 可長到相當大</mark>；intramuscular lipoma 切除後復發率較高。<span class="ex-ref">p.2172（ch122）</span></li>
 </ul>
 </section>
 
@@ -141,9 +141,9 @@
 <li><mark data-q="108-48">支配 frontalis、orbicularis oculi 上部纖維、corrugator supercilii、anterior 與 superior auricular muscles</mark>。<span class="ex-ref">p.3701</span></li>
 <li><mark data-q="114-28">出 parotid 後斜向越過 temple，走在 <strong>superficial temporal fascia（SMAS 的一部分）與 deep temporal fascia 之間</strong></mark>。</li>
 <li><mark data-q="112-39,114-28">在跨過 zygomatic arch <strong>中間 1/3</strong> 處分成 <strong class="ex-n">3–5</strong> 支 rami，此處<strong>最表淺、最易受傷</strong></mark>；<mark data-q="114-28">此區應在真皮正下方、筋膜上方的淺層脂肪剝離</mark>。</li>
-<li><mark data-q="108-48">皮膚投影（Fig. 201-4）：earlobe 到眉毛外側端的連線</mark>，以及 tragus 到最高額紋上後方的連線。</li>
+<li><mark data-q="108-48">大致走向（approximate course）的皮膚投影（Fig. 201-4）：earlobe 到眉毛外側端的連線</mark>，以及 tragus 到最高額紋上後方的連線。</li>
 <li><mark data-q="112-39">受損：額部扁平、皺紋與張力線變不明顯；肌肉萎縮後出現 eyebrow 與 eyelid ptosis，可能遮擋視野</mark>；可能需要 brow lift 與 blepharoplasty 矯正。<span class="ex-ref">p.3701</span></li>
-<li>At-a-glance：temporal branch 受損可造成同側 eyebrow ptosis 與上外側視野被遮蔽。<span class="ex-ref">p.3697</span></li>
+<li>At-a-glance：temporal branch 受損可能（may）造成同側 eyebrow ptosis 與上外側視野被遮蔽。<span class="ex-ref">p.3697</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Table 201-1 列出 temporal branch 受損影響的肌肉是 frontalis、orbicularis oculi 上部纖維、corrugator supercilii 與 anterior／superior auricular muscles，其中沒有 temporalis。<span class="ex-ref">p.3700</span> 危險點在跨過 zygomatic arch 的「中間 1/3」處。<span class="ex-ref">p.3700</span>、<span class="ex-ref">p.3701</span></aside>
 
@@ -170,9 +170,9 @@
 <section class="ex-note" id="sensory-nerves">
 <h2>7. Sensory Nerves（感覺神經：Trigeminal nerve）</h2>
 <ul>
-<li>Trigeminal nerve（CN V）負責臉部大部分感覺；三支分別經兩側位於 <strong>midpupillary line</strong> 的 supraorbital、infraorbital、mental foramina 出顱。<span class="ex-ref">p.3702</span></li>
+<li>Trigeminal nerve（CN V）負責臉部大部分（the majority）感覺；經兩側位於 <strong>midpupillary line</strong> 的三個孔（supraorbital、infraorbital、mental foramina）出顱。<span class="ex-ref">p.3702</span></li>
 <li><mark data-q="111-31"><strong>Supraorbital（外側）</strong>與 <strong>supratrochlear（內側）</strong> nerves 支配前額與前頭皮，屬 frontal nerve（ophthalmic nerve 最大分支）的分支；分別經眶緣外側的 supraorbital foramen／notch 與內側的 supratrochlear notch 穿出</mark>。<span class="ex-ref">p.3702–3703</span></li>
-<li><strong>Hutchinson sign</strong>：external nasal（dorsal nasal）nerve 是 nasociliary branch 的 anterior ethmoidal nerve 分支，支配鼻背；nasociliary branch 同時供應鼻尖與角膜，所以 V1 herpes zoster 出現鼻尖水疱時，眼睛可能受侵犯。<span class="ex-ref">p.3703</span></li>
+<li><strong>Hutchinson sign</strong>：external nasal（dorsal nasal）nerve 是 nasociliary branch 的 anterior ethmoidal nerve 分支，支配鼻背，是 Hutchinson sign 的解剖學解釋；此徵象可見於部分（some cases）V1 herpes zoster：nasociliary branch 同時供應鼻尖與角膜，所以鼻尖水疱表示眼睛可能受侵犯。<span class="ex-ref">p.3703</span></li>
 <li>V2 支配 lateral nose、lower eyelid、superior cheek、anterior temple；最大分支是 infraorbital nerve（經 maxilla 的 infraorbital foramen 出顱）。</li>
 <li>Zygomatic branch of V2 → zygomaticofacial nerve（經 zygomatic bone 外側出顱，支配外眼角小區域）與 zygomaticotemporal nerve（經 anterior temporal fossa 出顱，支配前顳部）。</li>
 <li>V3 支配下唇、下巴、下頜與耳前臉頰、前耳、顳部中央頭皮；三條主要皮膚分支：auriculotemporal、buccal、mental。</li>
@@ -195,7 +195,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 201-2 Branches of the Trigeminal Nerve，p.3703；Figs. 201-5、201-6，p.3702。</p>
-<aside class="ex-trap"><strong>易錯</strong>前額中央的感覺神經是 supraorbital（外側）與 supratrochlear（內側），兩者都是 V1；顳部大部分由 V3 的 auriculotemporal nerve 支配。<span class="ex-ref">p.3702–3703</span> Buccal nerve（V3 感覺）與 facial nerve 的 buccal branch（運動）不同。<span class="ex-ref">p.3702</span>、<span class="ex-ref">p.3703</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>支配前額與前頭皮的感覺神經是 supraorbital（外側）與 supratrochlear（內側），兩者都是 V1（frontal nerve 分支）；顳部大部分由 V3 的 auriculotemporal nerve 支配。<span class="ex-ref">p.3702–3703</span> Buccal nerve（V3 感覺）與 facial nerve 的 buccal branch（運動）不同。<span class="ex-ref">p.3702</span>、<span class="ex-ref">p.3703</span></aside>
 </section>
 
 <section class="ex-note" id="facial-muscles">
@@ -215,7 +215,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.3703；Figure 201-7，p.3704。</p>
-<aside class="ex-trap"><strong>易錯</strong>Corrugator supercilii 收縮使眉毛向內、向下移動；procerus 造成的是鼻根的「橫」向皺紋。<span class="ex-ref">p.3703</span> Glabellar frown lines 的 botulinum toxin 治療，是以 <strong class="ex-n">5</strong> 個注射點處理 corrugators 與 procerus。<span class="ex-ref">p.3925</span> Lip depressors（depressor anguli oris、depressor labii inferioris、mentalis）正是 Table 201-1 中 marginal mandibular branch 受損時受影響的肌肉。<span class="ex-ref">p.3700</span>、<span class="ex-ref">p.3703</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Corrugator supercilii 收縮使眉毛向內、向下移動；procerus 造成的是鼻根的「橫」向皺紋。<span class="ex-ref">p.3703</span> Glabellar lines 的 botulinum toxin 治療，一般眉部（average brow）可分 <strong class="ex-n">5</strong> 個注射點處理 corrugators 與 procerus。<span class="ex-ref">p.3925（ch216）</span> Lip depressors（depressor anguli oris、depressor labii inferioris、mentalis）正是 Table 201-1 中 marginal mandibular branch 受損時受影響的肌肉。<span class="ex-ref">p.3700</span>、<span class="ex-ref">p.3703</span></aside>
 </section>
 
 <section class="ex-note" id="vascular">
@@ -239,7 +239,7 @@
 <li><mark data-q="110-26">與軀幹、四肢不同，<strong>臉部靜脈沒有瓣膜（no valves）</strong>，血液可雙向流動</mark>。</li>
 <li><mark data-q="110-26">中臉部 ophthalmic vein 與 angular vein 有吻合，感染可經 ophthalmic vein 到達 <strong>cavernous sinus</strong></mark>；angular vein 也與 deep facial vein 及 pterygoid plexus 相通。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>臉部靜脈「無瓣膜」才是正確敘述。<span class="ex-ref">p.3705</span> 臉部血供以 ECA 為主，<span class="ex-ref">p.3703</span> 但 at-a-glance 強調 ECA 與 ICA 雙重血供讓皮瓣與植皮存活可靠。<span class="ex-ref">p.3697</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>臉部靜脈「無瓣膜」才是正確敘述。<span class="ex-ref">p.3705</span> 臉部血供幾乎全部（almost entirely）來自 ECA，<span class="ex-ref">p.3703</span> 但 at-a-glance 強調 ECA 與 ICA 雙重血供讓皮瓣與植皮存活可靠。<span class="ex-ref">p.3697</span></aside>
 </section>
 
 <section class="ex-note" id="lymphatics">
