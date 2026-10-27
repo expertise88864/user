@@ -272,7 +272,7 @@
 <h3>Denileukin diftitox（DAB389–IL-2）</h3>
 <ul>
 <li>Diphtheria toxin fragment + IL-2；被認為（believed）會與表現 high-affinity IL-2 receptor 的惡性細胞結合（<strong>CD25</strong> = IL-2R α chain，加上 β 與 common γ chain）→ 內吞、ADP-ribosyltransferase 進入細胞質 → 阻斷 protein synthesis → apoptosis。<span class="ex-ref">p.3543</span></li>
-<li>也清除 CD4+CD25+FoxP3+ Tregs，可能增強抗腫瘤免疫。<span class="ex-ref">p.3543</span></li>
+<li>也清除 CD4+CD25+FoxP3+ <strong>Tregs</strong>，可能增強抗腫瘤免疫。<span class="ex-ref">p.3543</span></li>
 <li>Heavily pretreated CTCL：complete response <strong class="ex-n">10%</strong>，CR 平均持續 <strong class="ex-n">9 months</strong> → FDA 核准用於 <strong>detectable CD25 expression</strong> 的 CTCL；臨床資料未顯示對 metastatic melanoma 有幫助（Table 193-1 以斜體〔small trials and/or case reports〕列 metastatic melanoma）。<span class="ex-ref">p.3543、p.3550</span></li>
 <li>Dose：IV ≥<strong class="ex-n">15 minutes</strong>，<strong class="ex-n">9 或 18 µg/kg/day</strong>。SE：<strong>infusion reactions 最常見</strong>、reversible transaminitis、vascular leak syndrome、morbilliform rash。<span class="ex-ref">p.3543</span></li>
 </ul>

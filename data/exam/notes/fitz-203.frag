@@ -214,7 +214,7 @@
 </ul>
 <h3>Rhombic flap（菱形皮瓣）</h3>
 <ul>
-<li>課本內文寫「Lindberg 1963 首先描述」（參考文獻為 Limberg AA, 1966）的 single-lobed transposition flap；缺損轉成四邊等長的平行四邊形，角度 <strong class="ex-n">60°</strong> 與 <strong class="ex-n">120°</strong>。<span class="ex-ref">p.3743</span></li>
+<li>課本內文寫「Lindberg 1963 首先描述」（參考文獻為 <strong>Limberg</strong> AA, 1966）的 single-lobed transposition flap；缺損轉成四邊等長的平行四邊形，角度 <strong class="ex-n">60°</strong> 與 <strong class="ex-n">120°</strong>。<span class="ex-ref">p.3743</span></li>
 <li>經典設計：從 obtuse 角延伸一條與邊等長的線（a–b），再畫第二條線（b–c），tip angle <strong class="ex-n">60°</strong>；secondary defect 與 primary defect 垂直，張力向量轉 <strong class="ex-n">90°</strong>，primary defect 幾乎無張力。<span class="ex-ref">p.3743</span></li>
 <li>每個菱形缺損的 short axis 可畫出 <strong class="ex-n">4</strong> 種設計；從 short axis 設計的好處：flap 最小、旋轉弧最小。圓形缺損時延伸線要比缺損直徑長；pivot point 修 Burow's triangle。<span class="ex-ref">p.3743</span></li>
 <li>兩組張力：closing secondary defect，以及 flap tip 進入 primary defect 時的張力（源於 pedicle 抵抗旋轉，以及旋轉時 flap 長度縮短；Dzubow 稱這些力為 pivotal restraint）。高張力固定可能造成 tip ischemia／necrosis，故不建議；可延長 leading edge 與 secondary limb，或把 flap angle 設計成 <strong class="ex-n">&gt;120°</strong>，並廣泛 undermining。<span class="ex-ref">p.3743–3745</span></li>
