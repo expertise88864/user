@@ -126,7 +126,7 @@ def locked_binary(tool_root: Path | None = None) -> Path:
     return binary
 
 
-EXAM_SEARCHABLE = re.compile(r'index|concepts|kantor|mckee|fitz-[0-9]+')
+EXAM_SEARCHABLE = re.compile(r'index|concepts(?:-p[0-9]+)?|kantor|mckee|fitz-[0-9]+')
 
 
 def indexable_glob(root: Path) -> str:

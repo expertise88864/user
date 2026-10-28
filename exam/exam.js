@@ -59,7 +59,8 @@
     store(WRONG_KEY, list);
   }
 
-  // 'chapter' | 'year' | 'book' | 'practice' | 'review' | 'hub' | 'concepts' (set by _gen_exam.py).
+  // 'chapter' | 'year' | 'book' | 'practice' | 'review' | 'hub' | 'concepts' (a part page) |
+  // 'concepts-hub' (set by _gen_exam.py).
   function pageKind() {
     var main = document.querySelector('[data-exam-page]');
     return main ? main.getAttribute('data-exam-page') : '';
@@ -1764,7 +1765,7 @@
   }
 
   // ---------------------------------------------------------- concept overview
-  // /exam/concepts: every concept is a static <li> (sorted by question count).
+  // /exam/concepts-p<k>: every concept of the part is a static <li> (sorted by question count).
   // This adds the search box, the chapter filter, the sort switch and
   // 「載入更多」 paging; without JS the whole list stays visible. Filters are
   // mirrored in the address (?kw=…&ch=…; not ?q=, which opens the site-wide search) so a filtered view can be linked.
@@ -1886,6 +1887,156 @@
     apply();
     revealConcept();
     window.addEventListener('hashchange', revealConcept);
+  }
+
+  // ---------------------------------------------------------- concept hub
+  // /exam/concepts lists the parts and the most-tested concepts statically; every
+  // concept's full text is on its part page (/exam/concepts-p<k>#c-<id>). The
+  // search box, chapter filter and sort search all parts through
+  // exam/concepts-index.json, fetched on first use: rows are [id, 中文, English,
+  // own chapter, every chapter, questions, part]. Old links to
+  // /exam/concepts#c-<id> (and ?ch=, ?kw=, ?sort=) keep working: the id is looked
+  // up and the page replaced by the concept on its part page.
+  function initConceptHub(root) {
+    var url = root.getAttribute('data-cx-hub');
+    var tools = root.querySelector('[data-cx-tools]');
+    var list = document.getElementById('cx-results');
+    var wrap = root.querySelector('.cx-more-wrap');
+    var more = wrap && wrap.querySelector('.ex-more');
+    var empty = root.querySelector('.cx-empty');
+    if (!url || !tools || !list || !more || !window.fetch) return;
+    var input = tools.querySelector('.cx-q');
+    var chapter = tools.querySelector('.cx-ch-select');
+    var sort = tools.querySelector('.cx-sort');
+    var status = tools.querySelector('.cx-status');
+    var PAGE = 50;
+    var index = null;
+    var loading = null;
+    var matches = [];
+    var shown = 0;
+    function norm(s) { return String(s).toLowerCase().replace(/\s+/g, ' '); }
+    function load() {
+      if (!loading) {
+        loading = fetch(url, { credentials: 'same-origin' })
+          .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+          .then(function (data) {
+            var rows = data && Array.isArray(data.concepts) ? data.concepts : [];
+            index = rows.filter(function (r) {
+              return Array.isArray(r) && /^[A-Za-z0-9-]+$/.test(String(r[0])) && /^\d+$/.test(String(r[6]));
+            }).map(function (r, i) {
+              return { id: String(r[0]), zh: String(r[1] || ''), en: String(r[2] || ''), ch: Number(r[3]) || 0,
+                chs: Array.isArray(r[4]) ? r[4].map(Number) : [], n: Number(r[5]) || 0, part: Number(r[6]), i: i,
+                name: norm(String(r[1] || '') + ' ' + String(r[2] || '')) };
+            });
+            return index;
+          });
+        loading.catch(function () {
+          loading = null;
+          status.textContent = '考點索引載入失敗，請重新整理頁面，或從下方的 Part 列表瀏覽。';
+        });
+      }
+      return loading;
+    }
+    function href(c) { return '/exam/concepts-p' + c.part + '#c-' + c.id; }
+    function item(c) {
+      var li = el('li');
+      var a = el('a');
+      a.href = href(c);
+      var name = el('span', 'cx-name', c.zh);
+      if (c.en) name.appendChild(el('small', '', c.en));
+      a.appendChild(name);
+      li.appendChild(a);
+      var meta = el('span', 'cx-meta');
+      meta.appendChild(el('b', '', c.n + ' 題'));
+      meta.appendChild(el('i', '', 'Ch.' + c.ch));
+      li.appendChild(meta);
+      return li;
+    }
+    function showMore(count) {
+      var end = Math.min(shown + count, matches.length);
+      var frag = document.createDocumentFragment();
+      for (var i = shown; i < end; i++) frag.appendChild(item(matches[i]));
+      list.appendChild(frag);
+      shown = end;
+      wrap.hidden = shown >= matches.length;
+      if (!wrap.hidden) {
+        more.textContent = '載入更多（' + (shown + 1) + '–' + Math.min(shown + PAGE, matches.length) +
+          '，共 ' + matches.length + ' 個）';
+      }
+    }
+    function remember() {
+      try {
+        var params = new URLSearchParams();
+        if (input.value.trim()) params.set('kw', input.value.trim());
+        if (chapter.value) params.set('ch', chapter.value);
+        if (sort.value === 'ch') params.set('sort', 'ch');
+        var qs = params.toString();
+        history.replaceState(history.state, '', window.location.pathname + (qs ? '?' + qs : ''));
+      } catch (e) { /* replaceState unavailable: the filter still works */ }
+    }
+    function apply() {
+      var q = norm(input.value.trim());
+      var ch = Number(chapter.value) || 0;
+      remember();
+      if (!q && !ch) {
+        // No filter: the static part list and most-tested list are the page.
+        list.hidden = true;
+        wrap.hidden = true;
+        empty.hidden = true;
+        list.textContent = '';
+        status.textContent = sort.value === 'ch' ? '輸入關鍵字或選擇章節後，結果依章節順序排列。' : '';
+        return;
+      }
+      status.textContent = '搜尋中…';
+      load().then(function (rows) {
+        matches = rows.filter(function (c) {
+          return (!ch || c.chs.indexOf(ch) >= 0) && (!q || c.name.indexOf(q) >= 0);
+        });
+        if (sort.value === 'ch') matches.sort(function (a, b) { return a.ch - b.ch || a.i - b.i; });
+        list.textContent = '';
+        shown = 0;
+        list.hidden = matches.length === 0;
+        showMore(PAGE);
+        empty.hidden = matches.length > 0;
+        status.textContent = '找到 ' + matches.length + ' 個考點' +
+          (q ? '（比對考點名稱；考法內容請在各 Part 頁面內搜尋）' : '') + '，點選後到所屬 Part 頁面';
+      }, function () { /* message set by load() */ });
+    }
+    function redirectOldLink() {
+      var id = window.location.hash.slice(1);
+      if (!/^c-[A-Za-z0-9-]+$/.test(id)) return;
+      load().then(function (rows) {
+        for (var i = 0; i < rows.length; i++) {
+          if ('c-' + rows[i].id === id) { window.location.replace(href(rows[i])); return; }
+        }
+      }, function () { /* message set by load() */ });
+    }
+    var params = new URLSearchParams(window.location.search);
+    input.value = params.get('kw') || '';
+    if (params.get('ch') && chapter.querySelector('option[value="' + Number(params.get('ch')) + '"]')) {
+      chapter.value = String(Number(params.get('ch')));
+    }
+    if (params.get('sort') === 'ch') sort.value = 'ch';
+    var timer = 0;
+    input.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(apply, 150);
+    });
+    input.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') { clearTimeout(timer); apply(); }
+    });
+    chapter.addEventListener('change', apply);
+    sort.addEventListener('change', apply);
+    more.addEventListener('click', function () {
+      var first = shown;
+      showMore(PAGE);
+      var link = list.children[first] && list.children[first].querySelector('a');
+      if (wrap.hidden && link) link.focus();  // the button is gone: keep focus in the list
+    });
+    tools.hidden = false;
+    redirectOldLink();
+    window.addEventListener('hashchange', redirectOldLink);
+    if (input.value || chapter.value) apply();
   }
 
   // Chapter pages: a link to #section must show it even if it sits in a
@@ -2096,6 +2247,8 @@
     if (rank) initRank(rank);
     var conceptList = document.getElementById('cx-all');
     if (conceptList) initConcepts(conceptList);
+    var conceptHub = document.querySelector('[data-cx-hub]');
+    if (conceptHub) initConceptHub(conceptHub);
     revealTarget();
     window.addEventListener('hashchange', revealTarget);
     document.querySelectorAll('.ex-mode').forEach(function (btn) {

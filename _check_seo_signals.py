@@ -830,7 +830,7 @@ def _share_pages() -> list[Path]:
     nobody would have noticed the coverage hole.
     """
     pages: list[Path] = []
-    for directory in (ROOT, ROOT / "blog", ROOT / "en", ROOT / "en" / "blog"):
+    for directory in (ROOT, ROOT / "blog", ROOT / "en", ROOT / "en" / "blog", ROOT / "exam"):
         if directory.exists():
             pages += [p for p in sorted(directory.glob("*.html"))
                       if p.name not in SHARE_PAGE_SKIP]
@@ -1379,6 +1379,89 @@ def check_visible_article_dates() -> None:
         print(f"[OK] header dates match dateModified + lastReviewed on {checked} pages")
 
 
+MIN_EXAM_PAGES = 200
+EXAM_PAGE_MAX_BYTES = 300_000     # the 考點 pages were one 1.9 MB page until 2026-10-28
+
+
+def check_exam_pages() -> None:
+    """/exam/**: one freshness answer per URL, a card of its own, Chinese chapter names.
+
+    The exam pages are generated (_gen_exam.py) and were outside every rule
+    above: the sitemap reused each URL's first-seen date forever, the JSON-LD
+    had no dates, every page shared one generic card and chapter titles were
+    English only. Dates come from data/exam/page_dates.json; the sitemap, the
+    JSON-LD and the visible 「最後更新」 line must all say the same thing.
+    """
+    import json
+
+    ledger_path = ROOT / "data" / "exam" / "page_dates.json"
+    zh_path = ROOT / "data" / "exam" / "chapter_zh.json"
+    if not ledger_path.exists():
+        err("exam", "data/exam/page_dates.json is missing")
+        return
+    ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+    zh = {int(k): v[0] for k, v in json.loads(zh_path.read_text(encoding="utf-8")).items()} \
+        if zh_path.exists() else {}
+    sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8", errors="replace")
+    lastmods = dict(re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", sitemap))
+    pages = sorted((ROOT / "exam").glob("*.html"))
+    bad = 0
+    for fp in pages:
+        rel = fp.relative_to(ROOT).as_posix()
+        route = "/exam" if fp.name == "index.html" else f"/exam/{fp.stem}"
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        problems = []
+        node = None
+        for m in re.finditer(r'<script type="application/ld\+json">([\s\S]*?)</script>', src):
+            try:
+                doc = json.loads(m.group(1))
+            except ValueError:
+                continue
+            if doc.get("@type") in ("WebPage", "CollectionPage"):
+                node = doc
+        entry = ledger.get(route)
+        if node is None:
+            problems.append("no WebPage/CollectionPage JSON-LD")
+        elif entry is None:
+            problems.append("no entry in data/exam/page_dates.json")
+        else:
+            if (node.get("datePublished"), node.get("dateModified")) != (entry["published"], entry["modified"]):
+                problems.append(f"JSON-LD dates {node.get('datePublished')}/{node.get('dateModified')} differ "
+                                f"from page_dates.json {entry['published']}/{entry['modified']}")
+            if lastmods.get(DOMAIN + route) != entry["modified"]:
+                problems.append(f"sitemap lastmod {lastmods.get(DOMAIN + route)} != dateModified {entry['modified']}")
+            shown = re.findall(r'<span class="ex-updated">最後更新：<time datetime="([^"]+)">([^<]+)</time>', src)
+            if shown != [(entry["modified"], entry["modified"])]:
+                problems.append(f"visible 最後更新 {shown} != dateModified {entry['modified']}")
+        og = re.findall(r'<meta\s+property="og:image"\s+content="([^"]+)"', src)
+        image = node.get("image", {}) if node else {}
+        image = image.get("url") if isinstance(image, dict) else image
+        if len(og) != 1 or not og[0].startswith(f"{DOMAIN}/assets/og/exam/"):
+            problems.append(f"og:image is not an exam card: {og}")
+        elif image != og[0]:
+            problems.append(f"JSON-LD image {image} != og:image {og[0]}")
+        m = re.fullmatch(r"fitz-(\d+)", fp.stem)
+        if m:
+            n = int(m.group(1))
+            if og and og[0] != f"{DOMAIN}/assets/og/exam/fitz-{n}.png":
+                problems.append(f"chapter page does not use its own card: {og[0]}")
+            name = zh.get(n)
+            title = re.search(r"<title>([^<]*)</title>", src)
+            h1 = re.search(r'<h1 class="ex-h1">([\s\S]*?)</h1>', src)
+            if name and not (title and name in title.group(1) and h1 and name in h1.group(1)):
+                problems.append(f"Chinese chapter name {name} missing from <title> or <h1>")
+        if fp.stem.startswith("concepts") and fp.stat().st_size > EXAM_PAGE_MAX_BYTES:
+            problems.append(f"{fp.stat().st_size} bytes; 考點 pages stay under {EXAM_PAGE_MAX_BYTES}")
+        for problem in problems:
+            err(rel, problem)
+            bad += 1
+    if len(pages) < MIN_EXAM_PAGES:
+        err("exam", f"only {len(pages)} exam pages inspected (expected >= {MIN_EXAM_PAGES})")
+    elif bad == 0:
+        print(f"[OK] exam pages: dates agree across JSON-LD, sitemap and page ({len(pages)} pages), "
+              f"each uses an exam share card, chapter titles carry the Chinese name")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -1405,6 +1488,7 @@ def main() -> int:
     check_lastmod_matches_datemodified()
     check_article_fields_current()
     check_visible_article_dates()
+    check_exam_pages()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")

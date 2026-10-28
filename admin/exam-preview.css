@@ -13,6 +13,8 @@ mark[data-q]::after{content:attr(data-q);font-size:10.5px;margin-left:2px;vertic
 .ex-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .ex-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#0c5159;font-weight:700;margin:0 0 8px}
 .ex-h1{font-family:'Noto Serif TC',Georgia,serif;font-weight:700;font-size:28px;line-height:1.3;margin:0 0 12px}
+.ex-h1-zh{display:block;font-size:19px;font-weight:600;color:var(--ink-2);margin-top:4px}
+.ex-updated{white-space:nowrap}
 .ex-h2{font-family:'Noto Serif TC',Georgia,serif;font-weight:700;font-size:21px;margin:36px 0 14px}
 .ex-main h3{font-weight:700;font-size:16px;margin:18px 0 8px}
 .ex-lead{font-size:15.5px;line-height:1.9;color:var(--ink-2)}
@@ -315,6 +317,13 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 .cx-also li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;padding:5px 0;border-top:1px solid var(--line);font-size:13.5px}
 .cx-also a{flex:1 1 16em;min-width:0;color:var(--teal-deep);text-decoration:none}
 .cx-also .cx-name{font-size:13.5px}
+.cx-links{list-style:none;padding:0;margin:8px 0}
+.cx-links li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;padding:6px 0;border-top:1px solid var(--line);font-size:13.5px}
+.cx-links a{flex:1 1 16em;min-width:0;color:var(--teal-deep);text-decoration:none}
+.cx-links .cx-name{font-size:13.5px}
+.cx-links[hidden]{display:none}
+.cx-parts a{font-weight:700}
+.cx-pager a{color:var(--teal-deep);font-weight:600}
 .cx-tools{margin:16px 0 8px}
 .cx-filters{display:flex;flex-wrap:wrap;gap:6px 4px;margin:10px 0 0}
 .cx-filters .ex-select{max-width:min(100%,22rem)}
@@ -334,6 +343,8 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 :root[data-theme="dark"] .cx-meta em,:root[data-theme="dark"] .cx-how em{background:#7f1d1d;color:#fee2e2}
 :root[data-theme="dark"] .cx-how em.cx-flag{background:#332a14;color:#fde68a}
 :root[data-theme="dark"] .cx-h{color:#a4d4c4}
-:root[data-theme="dark"] .cx-how a,:root[data-theme="dark"] .cx-chs a,:root[data-theme="dark"] .cx-also a{color:#a4b5a8}
+:root[data-theme="dark"] .cx-how a,:root[data-theme="dark"] .cx-chs a,:root[data-theme="dark"] .cx-also a,:root[data-theme="dark"] .cx-links a,:root[data-theme="dark"] .cx-pager a{color:#a4b5a8}
+:root[data-theme="dark"] .cx-links li{border-color:#3a352c}
+:root[data-theme="dark"] .ex-h1-zh{color:#c9c3b8}
 :root[data-theme="dark"] .cx-traps li{background:rgba(127,29,29,.3);border-left-color:#b45454}
 :root[data-theme="dark"] .cx-traps b{color:#fca5a5}

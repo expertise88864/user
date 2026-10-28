@@ -1,0 +1,1418 @@
+{
+ "concepts": {
+  "foot": "依出題次數排序 · 考法與常見陷阱",
+  "kicker": "專科考試 · 考點",
+  "subtitle": "歷屆考題拆成 2167 個考點",
+  "title": "考點總覽"
+ },
+ "fitz-1": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Fundamentals of Clinical Dermatology: Morphology and Special Clinical Considerations",
+  "title": "Ch.1 臨床皮膚科學基礎：形態學與特殊臨床考量"
+ },
+ "fitz-10": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "The Immunological Structure of the Skin",
+  "title": "Ch.10 皮膚的免疫結構"
+ },
+ "fitz-100": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Delusional, Obsessive-Compulsive, and Factitious Skin Diseases",
+  "title": "Ch.100 妄想性、強迫性與人為性皮膚疾病"
+ },
+ "fitz-101": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Drug Abuse",
+  "title": "Ch.101 藥物濫用"
+ },
+ "fitz-102": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Physical Abuse",
+  "title": "Ch.102 身體虐待"
+ },
+ "fitz-103": {
+  "foot": "考題 22 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Neonatal Dermatology",
+  "title": "Ch.103 新生兒皮膚科"
+ },
+ "fitz-104": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Pediatric and Adolescent Dermatology",
+  "title": "Ch.104 兒童與青少年皮膚科"
+ },
+ "fitz-105": {
+  "foot": "考題 17 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Skin Changes and Diseases in Pregnancy",
+  "title": "Ch.105 懷孕期的皮膚變化與疾病"
+ },
+ "fitz-106": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Skin Aging",
+  "title": "Ch.106 皮膚老化"
+ },
+ "fitz-107": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Caring for LGBT Persons in Dermatology",
+  "title": "Ch.107 LGBT 族群的皮膚科照護"
+ },
+ "fitz-108": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Benign Epithelial Tumors, Hamartomas, and Hyperplasias",
+  "title": "Ch.108 良性上皮腫瘤、錯構瘤與增生"
+ },
+ "fitz-109": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Appendage Tumors of the Skin",
+  "title": "Ch.109 皮膚附屬器腫瘤"
+ },
+ "fitz-11": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cellular Components of the Cutaneous Immune System",
+  "title": "Ch.11 皮膚免疫系統的細胞成分"
+ },
+ "fitz-110": {
+  "foot": "考題 13 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Epithelial Precancerous Lesions",
+  "title": "Ch.110 上皮癌前病變"
+ },
+ "fitz-111": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Basal Cell Carcinoma and Basal Cell Nevus Syndrome",
+  "title": "Ch.111 基底細胞癌與基底細胞痣症候群"
+ },
+ "fitz-112": {
+  "foot": "考題 18 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Squamous Cell Carcinoma and Keratoacanthoma",
+  "title": "Ch.112 鱗狀細胞癌與角化棘皮瘤"
+ },
+ "fitz-113": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Merkel Cell Carcinoma",
+  "title": "Ch.113 默克細胞癌"
+ },
+ "fitz-114": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Paget’s Disease",
+  "title": "Ch.114 佩吉特氏病"
+ },
+ "fitz-115": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Melanocytic Nevi",
+  "title": "Ch.115 黑色素細胞痣"
+ },
+ "fitz-116": {
+  "foot": "考題 17 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Melanoma",
+  "title": "Ch.116 黑色素瘤"
+ },
+ "fitz-117": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Histiocytosis",
+  "title": "Ch.117 組織球增生症"
+ },
+ "fitz-118": {
+  "foot": "考題 10 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Vascular Tumors",
+  "title": "Ch.118 血管腫瘤"
+ },
+ "fitz-119": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Lymphoma",
+  "title": "Ch.119 皮膚淋巴瘤"
+ },
+ "fitz-12": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Soluble Mediators of the Cutaneous Immune System",
+  "title": "Ch.12 皮膚免疫系統的可溶性介質"
+ },
+ "fitz-120": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Pseudolymphoma",
+  "title": "Ch.120 皮膚假性淋巴瘤"
+ },
+ "fitz-121": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Neoplasias and Hyperplasias of Muscular and Neural Origin",
+  "title": "Ch.121 肌肉與神經起源的腫瘤與增生"
+ },
+ "fitz-122": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Lipogenic Neoplasms",
+  "title": "Ch.122 脂肪性腫瘤"
+ },
+ "fitz-123": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Changes in Nutritional Disease",
+  "title": "Ch.123 營養性疾病的皮膚變化"
+ },
+ "fitz-124": {
+  "foot": "考題 12 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "The Porphyrias",
+  "title": "Ch.124 紫質症"
+ },
+ "fitz-125": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Amyloidosis",
+  "title": "Ch.125 類澱粉沉積症"
+ },
+ "fitz-126": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Xanthomas and Lipoprotein Disorders",
+  "title": "Ch.126 黃色瘤與脂蛋白疾病"
+ },
+ "fitz-127": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Fabry Disease",
+  "title": "Ch.127 法布瑞氏症"
+ },
+ "fitz-128": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Calcium and Other Mineral Deposition Disorders",
+  "title": "Ch.128 鈣與其他礦物質沉積疾病"
+ },
+ "fitz-129": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Graft-Versus-Host Disease",
+  "title": "Ch.129 移植物對抗宿主疾病"
+ },
+ "fitz-13": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Basic Principles of Immunologic Diseases in Skin (Pathophysiology of Immunologic/Inflammatory Skin Diseases)",
+  "title": "Ch.13 皮膚免疫疾病的基本原理"
+ },
+ "fitz-130": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Hereditary Disorders of Genome Instability and DNA Repair",
+  "title": "Ch.130 基因體不穩定與 DNA 修復缺陷的遺傳疾病"
+ },
+ "fitz-131": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Ectodermal Dysplasias",
+  "title": "Ch.131 外胚層發育不良"
+ },
+ "fitz-132": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Genetic Immunodeficiency Diseases",
+  "title": "Ch.132 遺傳性免疫缺乏疾病"
+ },
+ "fitz-133": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Skin Manifestations of Internal Organ Disorders",
+  "title": "Ch.133 內臟器官疾病的皮膚表現"
+ },
+ "fitz-134": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Paraneoplastic Syndromes",
+  "title": "Ch.134 皮膚副腫瘤症候群"
+ },
+ "fitz-135": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "The Neurofibromatoses",
+  "title": "Ch.135 神經纖維瘤症"
+ },
+ "fitz-136": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Tuberous Sclerosis Complex",
+  "title": "Ch.136 結節性硬化症"
+ },
+ "fitz-137": {
+  "foot": "考題 21 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Diabetes and Other Endocrine Diseases",
+  "title": "Ch.137 糖尿病與其他內分泌疾病"
+ },
+ "fitz-138": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Necrotizing Venulitis",
+  "title": "Ch.138 皮膚壞死性小靜脈炎"
+ },
+ "fitz-139": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Systemic Necrotizing Arteritis",
+  "title": "Ch.139 全身性壞死性動脈炎"
+ },
+ "fitz-14": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Skin Barrier",
+  "title": "Ch.14 皮膚屏障"
+ },
+ "fitz-140": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Erythema Elevatum Diutinum",
+  "title": "Ch.140 持久性隆起性紅斑"
+ },
+ "fitz-141": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Adamantiades–Behçet Disease",
+  "title": "Ch.141 貝西氏症"
+ },
+ "fitz-142": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Kawasaki Disease",
+  "title": "Ch.142 川崎病"
+ },
+ "fitz-143": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Pigmented Purpuric Dermatoses",
+  "title": "Ch.143 色素性紫斑性皮膚病"
+ },
+ "fitz-144": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cryoglobulinemia and Cryofibrinogenemia",
+  "title": "Ch.144 冷凝球蛋白血症與冷纖維蛋白原血症"
+ },
+ "fitz-145": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Raynaud Phenomenon",
+  "title": "Ch.145 雷諾氏現象"
+ },
+ "fitz-146": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Malignant Atrophic Papulosis (Degos Disease)",
+  "title": "Ch.146 惡性萎縮性丘疹病（Degos 病）"
+ },
+ "fitz-147": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Vascular Malformations",
+  "title": "Ch.147 血管畸形"
+ },
+ "fitz-148": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Changes in Arterial, Venous, and Lymphatic Dysfunction",
+  "title": "Ch.148 動脈、靜脈與淋巴功能障礙的皮膚變化"
+ },
+ "fitz-149": {
+  "foot": "考題 10 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Wound Healing",
+  "title": "Ch.149 傷口癒合"
+ },
+ "fitz-15": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Epidermal and Dermal Adhesion",
+  "title": "Ch.15 表皮與真皮的黏附"
+ },
+ "fitz-150": {
+  "foot": "考題 11 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Superficial Cutaneous Infections and Pyodermas",
+  "title": "Ch.150 淺層皮膚感染與膿皮症"
+ },
+ "fitz-151": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cellulitis and Erysipelas",
+  "title": "Ch.151 蜂窩性組織炎與丹毒"
+ },
+ "fitz-152": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Gram-Positive Infections Associated with Toxin Production",
+  "title": "Ch.152 產毒素革蘭氏陽性菌感染"
+ },
+ "fitz-153": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Necrotizing Fasciitis, Necrotizing Cellulitis, and Myonecrosis",
+  "title": "Ch.153 壞死性筋膜炎、壞死性蜂窩性組織炎與肌壞死"
+ },
+ "fitz-154": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Gram-Negative Coccal and Bacillary Infections",
+  "title": "Ch.154 革蘭氏陰性球菌與桿菌感染"
+ },
+ "fitz-155": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "The Skin in Infective Endocarditis, Sepsis, Septic Shock, and Disseminated Intravascular Coagulation",
+  "title": "Ch.155 感染性心內膜炎、敗血症、敗血性休克與瀰漫性血管內凝血的皮膚表現"
+ },
+ "fitz-156": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Miscellaneous Bacterial Infections with Cutaneous Manifestations",
+  "title": "Ch.156 其他具皮膚表現的細菌感染"
+ },
+ "fitz-157": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Tuberculosis and Infections with Atypical Mycobacteria",
+  "title": "Ch.157 結核病與非典型分枝桿菌感染"
+ },
+ "fitz-158": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Actinomycosis, Nocardiosis, and Actinomycetoma",
+  "title": "Ch.158 放線菌病、奴卡氏菌病與放線菌性足菌腫"
+ },
+ "fitz-159": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Leprosy",
+  "title": "Ch.159 漢生病"
+ },
+ "fitz-16": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Microbiome of the Skin",
+  "title": "Ch.16 皮膚微生物菌叢"
+ },
+ "fitz-160": {
+  "foot": "考題 17 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Superficial Fungal Infection",
+  "title": "Ch.160 淺層黴菌感染"
+ },
+ "fitz-161": {
+  "foot": "考題 10 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Yeast Infections",
+  "title": "Ch.161 酵母菌感染"
+ },
+ "fitz-162": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Deep Fungal Infections",
+  "title": "Ch.162 深部黴菌感染"
+ },
+ "fitz-163": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Exanthematous Viral Diseases",
+  "title": "Ch.163 發疹性病毒疾病"
+ },
+ "fitz-164": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Herpes Simplex",
+  "title": "Ch.164 單純疱疹"
+ },
+ "fitz-165": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Varicella and Herpes Zoster",
+  "title": "Ch.165 水痘與帶狀疱疹"
+ },
+ "fitz-166": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Poxvirus Infections",
+  "title": "Ch.166 痘病毒感染"
+ },
+ "fitz-167": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Human Papillomavirus Infections",
+  "title": "Ch.167 人類乳突病毒感染"
+ },
+ "fitz-168": {
+  "foot": "考題 16 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Manifestations of HIV and Human T-Lymphotropic Virus",
+  "title": "Ch.168 HIV 與人類 T 細胞淋巴球病毒的皮膚表現"
+ },
+ "fitz-169": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Mosquito-Borne Viral Diseases",
+  "title": "Ch.169 蚊媒病毒疾病"
+ },
+ "fitz-17": {
+  "foot": "考題 17 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Photobiology",
+  "title": "Ch.17 皮膚光生物學"
+ },
+ "fitz-170": {
+  "foot": "考題 11 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Syphilis",
+  "title": "Ch.170 梅毒"
+ },
+ "fitz-171": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Endemic (Nonvenereal) Treponematoses",
+  "title": "Ch.171 地方性（非性病性）螺旋體病"
+ },
+ "fitz-172": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Chancroid",
+  "title": "Ch.172 軟性下疳"
+ },
+ "fitz-173": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Lymphogranuloma Venereum",
+  "title": "Ch.173 性病性淋巴肉芽腫"
+ },
+ "fitz-174": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Granuloma Inguinale",
+  "title": "Ch.174 腹股溝肉芽腫"
+ },
+ "fitz-175": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Gonorrhea, Mycoplasma, and Vaginosis",
+  "title": "Ch.175 淋病、黴漿菌與陰道病"
+ },
+ "fitz-176": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Leishmaniasis and Other Protozoan Infections",
+  "title": "Ch.176 利什曼病與其他原蟲感染"
+ },
+ "fitz-177": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Helminthic Infections",
+  "title": "Ch.177 蠕蟲感染"
+ },
+ "fitz-178": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Scabies, Other Mites, and Pediculosis",
+  "title": "Ch.178 疥瘡、其他蟎類與蝨病"
+ },
+ "fitz-179": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Lyme Borreliosis",
+  "title": "Ch.179 萊姆病"
+ },
+ "fitz-18": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Genetics in Relation to the Skin",
+  "title": "Ch.18 皮膚相關遺傳學"
+ },
+ "fitz-180": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "The Rickettsioses, Ehrlichioses, and Anaplasmoses",
+  "title": "Ch.180 立克次體病、艾利希體症與無形體症"
+ },
+ "fitz-181": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Arthropod Bites and Stings",
+  "title": "Ch.181 節肢動物叮咬"
+ },
+ "fitz-182": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Bites and Stings of Terrestrial and Aquatic Life",
+  "title": "Ch.182 陸生與水生動物咬傷與螫傷"
+ },
+ "fitz-183": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Principles of Topical Therapy",
+  "title": "Ch.183 外用治療原則"
+ },
+ "fitz-184": {
+  "foot": "考題 10 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Glucocorticoids",
+  "title": "Ch.184 糖皮質類固醇"
+ },
+ "fitz-185": {
+  "foot": "考題 13 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Retinoids",
+  "title": "Ch.185 A 酸類藥物"
+ },
+ "fitz-186": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Systemic and Topical Antibiotics",
+  "title": "Ch.186 全身性與外用抗生素"
+ },
+ "fitz-187": {
+  "foot": "考題 11 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Dapsone",
+  "title": "Ch.187 Dapsone（達普頌）"
+ },
+ "fitz-188": {
+  "foot": "考題 11 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Antifungals",
+  "title": "Ch.188 抗黴菌藥物"
+ },
+ "fitz-189": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Antihistamines",
+  "title": "Ch.189 抗組織胺"
+ },
+ "fitz-19": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Carcinogenesis and Skin",
+  "title": "Ch.19 皮膚致癌作用"
+ },
+ "fitz-190": {
+  "foot": "考題 17 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cytotoxic and Antimetabolic Agents",
+  "title": "Ch.190 細胞毒性與抗代謝藥物"
+ },
+ "fitz-191": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Antiviral Drugs",
+  "title": "Ch.191 抗病毒藥物"
+ },
+ "fitz-192": {
+  "foot": "考題 13 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Immunosuppressive and Immunomodulatory Drugs",
+  "title": "Ch.192 免疫抑制與免疫調節藥物"
+ },
+ "fitz-193": {
+  "foot": "考題 15 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Immunobiologics: Targeted Therapy Against Cytokines, Cytokine Receptors, and Growth Factors in Dermatology",
+  "title": "Ch.193 免疫生物製劑：針對細胞激素、細胞激素受體與生長因子的標靶治療"
+ },
+ "fitz-194": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Molecular Targeted Therapies",
+  "title": "Ch.194 分子標靶治療"
+ },
+ "fitz-195": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Antiangiogenic Agents",
+  "title": "Ch.195 抗血管新生藥物"
+ },
+ "fitz-196": {
+  "foot": "考題 14 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Other Topical Medications",
+  "title": "Ch.196 其他外用藥物"
+ },
+ "fitz-197": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Photoprotection",
+  "title": "Ch.197 光防護"
+ },
+ "fitz-198": {
+  "foot": "考題 12 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Phototherapy",
+  "title": "Ch.198 光療"
+ },
+ "fitz-199": {
+  "foot": "考題 11 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Photochemotherapy and Photodynamic Therapy",
+  "title": "Ch.199 光化學療法與光動力療法"
+ },
+ "fitz-2": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Pathology of Skin Lesions",
+  "title": "Ch.2 皮膚病灶病理學"
+ },
+ "fitz-20": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Pigmentation and Melanocyte Biology",
+  "title": "Ch.20 色素生成與黑色素細胞生物學"
+ },
+ "fitz-200": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Radiotherapy",
+  "title": "Ch.200 放射治療"
+ },
+ "fitz-201": {
+  "foot": "考題 11 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Surgical Anatomy",
+  "title": "Ch.201 皮膚外科解剖學"
+ },
+ "fitz-202": {
+  "foot": "考題 19 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Perioperative Considerations in Dermatologic Surgery",
+  "title": "Ch.202 皮膚外科手術的圍手術期考量"
+ },
+ "fitz-203": {
+  "foot": "考題 12 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Excisional Surgery and Repair, Flaps, and Grafts",
+  "title": "Ch.203 切除手術與修補、皮瓣與植皮"
+ },
+ "fitz-204": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Mohs Micrographic Surgery",
+  "title": "Ch.204 莫氏顯微手術"
+ },
+ "fitz-205": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Nail Surgery",
+  "title": "Ch.205 指甲手術"
+ },
+ "fitz-206": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cryosurgery and Electrosurgery",
+  "title": "Ch.206 冷凍手術與電燒手術"
+ },
+ "fitz-207": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cosmeceuticals and Skin Care in Dermatology",
+  "title": "Ch.207 藥妝品與皮膚保養"
+ },
+ "fitz-208": {
+  "foot": "考題 15 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Fundamentals of Laser and Light-Based Treatments",
+  "title": "Ch.208 雷射與光療的基本原理"
+ },
+ "fitz-209": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Laser Skin Resurfacing: Cosmetic and Medical Applications",
+  "title": "Ch.209 雷射換膚：美容與醫療應用"
+ },
+ "fitz-21": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Neurobiology of the Skin",
+  "title": "Ch.21 皮膚神經生物學"
+ },
+ "fitz-210": {
+  "foot": "考題 15 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Nonablative Laser and Light-Based Therapy: Cosmetic and Medical Indications",
+  "title": "Ch.210 非剝離式雷射與光療：美容與醫療適應症"
+ },
+ "fitz-211": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Noninvasive Body Contouring",
+  "title": "Ch.211 非侵入性身體雕塑"
+ },
+ "fitz-212": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Treatment of Varicose Veins and Telangiectatic Lower-Extremity Vessels",
+  "title": "Ch.212 靜脈曲張與下肢微血管擴張的治療"
+ },
+ "fitz-213": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Chemical Peels and Dermabrasion",
+  "title": "Ch.213 化學換膚與磨皮"
+ },
+ "fitz-214": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Liposuction Using Tumescent Local Anesthesia",
+  "title": "Ch.214 腫脹麻醉抽脂"
+ },
+ "fitz-215": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Soft-Tissue Augmentation",
+  "title": "Ch.215 軟組織填補"
+ },
+ "fitz-216": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Botulinum Toxin",
+  "title": "Ch.216 肉毒桿菌毒素"
+ },
+ "fitz-217": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Hair Transplantation",
+  "title": "Ch.217 植髮"
+ },
+ "fitz-22": {
+  "foot": "考題 19 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Atopic Dermatitis",
+  "title": "Ch.22 異位性皮膚炎"
+ },
+ "fitz-23": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Nummular Eczema, Lichen Simplex Chronicus, and Prurigo Nodularis",
+  "title": "Ch.23 錢幣狀濕疹、慢性單純性苔癬與結節性癢疹"
+ },
+ "fitz-24": {
+  "foot": "考題 17 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Allergic Contact Dermatitis",
+  "title": "Ch.24 過敏性接觸性皮膚炎"
+ },
+ "fitz-25": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Irritant Dermatitis",
+  "title": "Ch.25 刺激性皮膚炎"
+ },
+ "fitz-26": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Seborrheic Dermatitis",
+  "title": "Ch.26 脂漏性皮膚炎"
+ },
+ "fitz-27": {
+  "foot": "考題 11 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Occupational Skin Diseases",
+  "title": "Ch.27 職業性皮膚病"
+ },
+ "fitz-28": {
+  "foot": "考題 31 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Psoriasis",
+  "title": "Ch.28 乾癬"
+ },
+ "fitz-29": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Pityriasis Rubra Pilaris",
+  "title": "Ch.29 毛孔性紅糠疹"
+ },
+ "fitz-3": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Epidemiology and Public Health in Dermatology",
+  "title": "Ch.3 皮膚科流行病學與公共衛生"
+ },
+ "fitz-30": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Parapsoriasis and Pityriasis Lichenoides",
+  "title": "Ch.30 類乾癬與苔癬樣糠疹"
+ },
+ "fitz-31": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Pityriasis Rosea",
+  "title": "Ch.31 玫瑰糠疹"
+ },
+ "fitz-32": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Lichen Planus",
+  "title": "Ch.32 扁平苔癬"
+ },
+ "fitz-33": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Lichen Nitidus and Lichen Striatus",
+  "title": "Ch.33 光澤苔癬與線狀苔癬"
+ },
+ "fitz-34": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Granuloma Annulare",
+  "title": "Ch.34 環狀肉芽腫"
+ },
+ "fitz-35": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Sarcoidosis",
+  "title": "Ch.35 類肉瘤病"
+ },
+ "fitz-36": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Sweet Syndrome",
+  "title": "Ch.36 Sweet 症候群"
+ },
+ "fitz-37": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Pyoderma Gangrenosum",
+  "title": "Ch.37 壞疽性膿皮症"
+ },
+ "fitz-38": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Subcorneal Pustular Dermatosis (Sneddon-Wilkinson Disease)",
+  "title": "Ch.38 角層下膿疱性皮膚病"
+ },
+ "fitz-39": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Autoinflammatory Disorders",
+  "title": "Ch.39 自體發炎疾病"
+ },
+ "fitz-4": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Developmental Biology of the Skin",
+  "title": "Ch.4 皮膚發育生物學"
+ },
+ "fitz-40": {
+  "foot": "考題 13 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Eosinophilic Diseases",
+  "title": "Ch.40 嗜酸性球疾病"
+ },
+ "fitz-41": {
+  "foot": "考題 14 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Urticaria and Angioedema",
+  "title": "Ch.41 蕁麻疹與血管性水腫"
+ },
+ "fitz-42": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Mastocytosis",
+  "title": "Ch.42 肥大細胞增生症"
+ },
+ "fitz-43": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Erythema Multiforme",
+  "title": "Ch.43 多形性紅斑"
+ },
+ "fitz-44": {
+  "foot": "考題 16 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Epidermal Necrolysis (Stevens-Johnson Syndrome and Toxic Epidermal Necrolysis)",
+  "title": "Ch.44 表皮壞死溶解症（史蒂文生-強生症候群與毒性表皮溶解症）"
+ },
+ "fitz-45": {
+  "foot": "考題 28 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Reactions to Drugs",
+  "title": "Ch.45 藥物皮膚反應"
+ },
+ "fitz-46": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Erythema Annulare Centrifugum and Other Figurate Erythemas",
+  "title": "Ch.46 離心性環狀紅斑與其他環狀紅斑"
+ },
+ "fitz-47": {
+  "foot": "考題 18 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "The Ichthyoses",
+  "title": "Ch.47 魚鱗癬"
+ },
+ "fitz-48": {
+  "foot": "考題 8 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Inherited Palmoplantar Keratodermas",
+  "title": "Ch.48 遺傳性掌蹠角化症"
+ },
+ "fitz-49": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Keratosis Pilaris and Other Follicular Keratotic Disorders",
+  "title": "Ch.49 毛孔角化症與其他毛囊角化疾病"
+ },
+ "fitz-5": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Growth and Differentiation of the Epidermis",
+  "title": "Ch.5 表皮的生長與分化"
+ },
+ "fitz-50": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Acantholytic Disorders of the Skin",
+  "title": "Ch.50 棘層鬆解性皮膚疾病"
+ },
+ "fitz-51": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Porokeratosis",
+  "title": "Ch.51 汗孔角化症"
+ },
+ "fitz-52": {
+  "foot": "考題 17 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Pemphigus",
+  "title": "Ch.52 天疱瘡"
+ },
+ "fitz-53": {
+  "foot": "考題 12 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Paraneoplastic Pemphigus",
+  "title": "Ch.53 副腫瘤性天疱瘡"
+ },
+ "fitz-54": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Bullous Pemphigoid",
+  "title": "Ch.54 大疱性類天疱瘡"
+ },
+ "fitz-55": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Mucous Membrane Pemphigoid",
+  "title": "Ch.55 黏膜類天疱瘡"
+ },
+ "fitz-56": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Epidermolysis Bullosa Acquisita",
+  "title": "Ch.56 後天性表皮分解性水疱症"
+ },
+ "fitz-57": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Intercellular Immunoglobulin (Ig) A Dermatosis (IgA Pemphigus)",
+  "title": "Ch.57 細胞間 IgA 皮膚病（IgA 天疱瘡）"
+ },
+ "fitz-58": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Linear Immunoglobulin A Dermatosis and Chronic Bullous Disease of Childhood",
+  "title": "Ch.58 線狀 IgA 皮膚病與兒童慢性水疱病"
+ },
+ "fitz-59": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Dermatitis Herpetiformis",
+  "title": "Ch.59 疱疹樣皮膚炎"
+ },
+ "fitz-6": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Skin Glands: Sebaceous, Eccrine, and Apocrine Glands",
+  "title": "Ch.6 皮膚腺體：皮脂腺、外分泌汗腺與頂漿汗腺"
+ },
+ "fitz-60": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Inherited Epidermolysis Bullosa",
+  "title": "Ch.60 遺傳性表皮分解性水疱症"
+ },
+ "fitz-61": {
+  "foot": "考題 10 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Lupus Erythematosus",
+  "title": "Ch.61 紅斑性狼瘡"
+ },
+ "fitz-62": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Dermatomyositis",
+  "title": "Ch.62 皮肌炎"
+ },
+ "fitz-63": {
+  "foot": "考題 9 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Systemic Sclerosis",
+  "title": "Ch.63 全身性硬化症"
+ },
+ "fitz-64": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Morphea and Lichen Sclerosus",
+  "title": "Ch.64 局限性硬皮症與硬化性苔癬"
+ },
+ "fitz-65": {
+  "foot": "考題 10 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Psoriatic Arthritis and Reactive Arthritis",
+  "title": "Ch.65 乾癬性關節炎與反應性關節炎"
+ },
+ "fitz-66": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Rheumatoid Arthritis, Juvenile Idiopathic Arthritis, Adult-Onset Still Disease, and Rheumatic Fever",
+  "title": "Ch.66 類風濕性關節炎、幼年型特發性關節炎、成人型史迪爾氏病與風濕熱"
+ },
+ "fitz-67": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Scleredema and Scleromyxedema",
+  "title": "Ch.67 硬腫症與硬化性黏液水腫"
+ },
+ "fitz-68": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Sjögren Syndrome",
+  "title": "Ch.68 修格蘭氏症候群"
+ },
+ "fitz-69": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Relapsing Polychondritis",
+  "title": "Ch.69 復發性多軟骨炎"
+ },
+ "fitz-7": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Biology of Hair Follicles",
+  "title": "Ch.7 毛囊生物學"
+ },
+ "fitz-70": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Anetoderma and Other Atrophic Disorders of the Skin",
+  "title": "Ch.70 斑狀皮膚鬆弛症與其他皮膚萎縮性疾病"
+ },
+ "fitz-71": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Acquired Perforating Disorders",
+  "title": "Ch.71 後天性穿通性疾病"
+ },
+ "fitz-72": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Genetic Disorders Affecting Dermal Connective Tissue",
+  "title": "Ch.72 影響真皮結締組織的遺傳疾病"
+ },
+ "fitz-73": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Panniculitis",
+  "title": "Ch.73 脂肪層炎"
+ },
+ "fitz-74": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Lipodystrophy",
+  "title": "Ch.74 脂肪失養症"
+ },
+ "fitz-75": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Albinism and Other Genetic Disorders of Pigmentation",
+  "title": "Ch.75 白化症與其他遺傳性色素疾病"
+ },
+ "fitz-76": {
+  "foot": "考題 14 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Vitiligo",
+  "title": "Ch.76 白斑症"
+ },
+ "fitz-77": {
+  "foot": "考題 20 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Hypermelanoses",
+  "title": "Ch.77 色素沉著過度症"
+ },
+ "fitz-78": {
+  "foot": "考題 18 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Acne Vulgaris",
+  "title": "Ch.78 尋常性痤瘡"
+ },
+ "fitz-79": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Rosacea",
+  "title": "Ch.79 酒糟"
+ },
+ "fitz-8": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Nail",
+  "title": "Ch.8 指甲"
+ },
+ "fitz-80": {
+  "foot": "考題 11 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Acne Variants and Acneiform Eruptions",
+  "title": "Ch.80 痤瘡變異型與痤瘡樣疹"
+ },
+ "fitz-81": {
+  "foot": "考題 10 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Hyperhidrosis and Anhidrosis",
+  "title": "Ch.81 多汗症與無汗症"
+ },
+ "fitz-82": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Bromhidrosis and Chromhidrosis",
+  "title": "Ch.82 臭汗症與色汗症"
+ },
+ "fitz-83": {
+  "foot": "重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Fox-Fordyce Disease",
+  "title": "Ch.83 Fox-Fordyce 病"
+ },
+ "fitz-84": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Hidradenitis Suppurativa",
+  "title": "Ch.84 化膿性汗腺炎"
+ },
+ "fitz-85": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Androgenetic Alopecia",
+  "title": "Ch.85 雄性禿"
+ },
+ "fitz-86": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Telogen Effluvium",
+  "title": "Ch.86 休止期落髮"
+ },
+ "fitz-87": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Alopecia Areata",
+  "title": "Ch.87 圓禿"
+ },
+ "fitz-88": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cicatricial Alopecias",
+  "title": "Ch.88 疤痕性禿髮"
+ },
+ "fitz-89": {
+  "foot": "考題 7 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Hair Shaft Disorders",
+  "title": "Ch.89 毛幹疾病"
+ },
+ "fitz-9": {
+  "foot": "考題 1 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cutaneous Vasculature",
+  "title": "Ch.9 皮膚血管系統"
+ },
+ "fitz-90": {
+  "foot": "考題 3 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Hirsutism and Hypertrichosis",
+  "title": "Ch.90 多毛症"
+ },
+ "fitz-91": {
+  "foot": "考題 24 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Nail Disorders",
+  "title": "Ch.91 指甲疾病"
+ },
+ "fitz-92": {
+  "foot": "考題 5 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Polymorphic Light Eruption",
+  "title": "Ch.92 多形性日光疹"
+ },
+ "fitz-93": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Actinic Prurigo",
+  "title": "Ch.93 光化性癢疹"
+ },
+ "fitz-94": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Hydroa Vacciniforme",
+  "title": "Ch.94 種痘樣水疱病"
+ },
+ "fitz-95": {
+  "foot": "考題 6 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Actinic Dermatitis",
+  "title": "Ch.95 光化性皮膚炎"
+ },
+ "fitz-96": {
+  "foot": "考題 2 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Solar Urticaria",
+  "title": "Ch.96 日光性蕁麻疹"
+ },
+ "fitz-97": {
+  "foot": "考題 17 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Phototoxicity and Photoallergy",
+  "title": "Ch.97 光毒性與光過敏反應"
+ },
+ "fitz-98": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Cold Injuries",
+  "title": "Ch.98 寒冷傷害"
+ },
+ "fitz-99": {
+  "foot": "考題 4 題 · 重點整理",
+  "kicker": "Fitzpatrick 9e · 專科考試",
+  "subtitle": "Burns",
+  "title": "Ch.99 燒燙傷"
+ },
+ "hub": {
+  "foot": "101–115 年 750 題 · Fitzpatrick 9e 章節重點",
+  "kicker": "專科考試",
+  "subtitle": "重點整理及考題",
+  "title": "皮膚科專科醫師考試"
+ },
+ "kantor": {
+  "foot": "考題 39 題",
+  "kicker": "專科考試 · 其他參考書",
+  "subtitle": "Dermatologic Surgery (Kantor)",
+  "title": "皮膚外科題"
+ },
+ "mckee": {
+  "foot": "考題 13 題",
+  "kicker": "專科考試 · 其他參考書",
+  "subtitle": "McKee's Pathology of the Skin",
+  "title": "病理題"
+ },
+ "year-101": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "101 年甄審筆試"
+ },
+ "year-102": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "102 年甄審筆試"
+ },
+ "year-103": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "103 年甄審筆試"
+ },
+ "year-104": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "104 年甄審筆試"
+ },
+ "year-105": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "105 年甄審筆試"
+ },
+ "year-106": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "106 年甄審筆試"
+ },
+ "year-107": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "107 年甄審筆試"
+ },
+ "year-108": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "108 年甄審筆試"
+ },
+ "year-109": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "109 年甄審筆試"
+ },
+ "year-110": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "110 年甄審筆試"
+ },
+ "year-111": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "111 年甄審筆試"
+ },
+ "year-112": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "112 年甄審筆試"
+ },
+ "year-113": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "113 年甄審筆試"
+ },
+ "year-114": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "114 年甄審筆試"
+ },
+ "year-115": {
+  "foot": "選擇題 50 題 · 計時作答",
+  "kicker": "專科考試 · 考古卷",
+  "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+  "title": "115 年甄審筆試"
+ }
+}

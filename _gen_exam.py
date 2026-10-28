@@ -11,6 +11,8 @@ Sources (hand-maintained):
   data/exam/timemachine.json   physician-approved 「考試當年 vs 現行觀念」 notes per question
                                (text is verbatim; validated by validate_timemachine)
   data/exam/concepts/concepts.json  考點 (exam concepts), built by _import_exam_concepts.py
+  data/exam/page_dates.json    page path -> {hash of the page's visible content, published,
+                               modified}: the committed date ledger (see page_dates())
   data/exam/mock.json          模擬題 (newly written practice questions, NOT official exam
                                questions; validated by validate_mock). Used only by the
                                practice page's 模擬考 option, never by chapter/year pages,
@@ -18,8 +20,12 @@ Sources (hand-maintained):
 
 Outputs (generated, never hand-edit):
   exam/index.html, exam/fitz-<n>.html, exam/year-<y>.html, exam/mckee.html,
-  exam/kantor.html, exam/review.html, exam/concepts.html, exam/exam-data.json,
-  exam/search-index.json, exam/nav-search.json, exam/mock-data.json
+  exam/kantor.html, exam/review.html, exam/concepts.html (考點 hub),
+  exam/concepts-p<k>.html (考點 of Fitzpatrick Part k), exam/concepts-index.json,
+  exam/exam-data.json, exam/search-index.json, exam/nav-search.json,
+  exam/mock-data.json, data/exam/page_dates.json (new or changed pages only) and
+  data/exam/og_cards.json (the share card each page uses; the PNGs under
+  assets/og/exam/ are rendered from it by _gen_exam_og.py)
 
 Pages reuse the normalized notes.html shell (head, header, footer), and the
 output is already in its final normalized form. REGEN_STEPS runs it twice:
@@ -35,6 +41,7 @@ import json
 import re
 import sys
 from collections import Counter, defaultdict
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -317,9 +324,11 @@ def split_template() -> tuple[str, str, str]:
 
 
 def set_head(head: str, *, title: str, description: str, path: str, og_title: str,
-             jsonld: list[dict]) -> str:
+             jsonld: list[dict], image: str) -> str:
     url = DOMAIN + path
     subs = [
+        (r'<meta property="og:image" content="[^"]*" />', f'<meta property="og:image" content="{image}" />'),
+        (r'<meta name="twitter:image" content="[^"]*" />', f'<meta name="twitter:image" content="{image}" />'),
         (r"<title>.*?</title>", f"<title>{esc(title)}</title>"),
         (r'<meta name="robots" content="[^"]*" />',
          '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />'),
@@ -384,20 +393,107 @@ def script_version() -> str:
     return hashlib.sha256(raw).hexdigest()[:10]
 
 
+# ---------------------------------------------------------------- page dates
+# data/exam/page_dates.json is the committed date ledger: page path -> {hash of the
+# page's visible content, published, modified}. A page keeps its dates while the
+# hash matches; new or changed content takes the generation's content date (today,
+# or --content-date YYYY-MM-DD, which _run_quality.py forwards). The rebuild in CI
+# ("Canonical generated file consistency") therefore reproduces every date on any
+# day, and an edit committed without regenerating fails that job instead of
+# silently restamping. Same design as _content_dates.json for the articles
+# (_normalize_date_modified.py). The dates feed JSON-LD datePublished/dateModified,
+# the visible 「最後更新」 line and sitemap.xml <lastmod> (_gen_feeds.py).
+PAGE_DATES = DATA / "page_dates.json"
+LEDGER: dict[str, dict] = {}       # committed ledger, loaded by build()
+NEW_LEDGER: dict[str, dict] = {}   # this build's ledger, filled by page()
+CONTENT_DATE = [""]                # set by build()
+# Navigation that repeats other text (the outline, breadcrumbs) is not content.
+NOT_CONTENT = re.compile(r'<details class="ex-toc[^"]*">.*?</details>|<nav\b.*?</nav>', re.S)
+
+
+def content_hash(body: str) -> str:
+    """Hash of the text a reader sees in a page body. Markup, link targets and
+    whitespace do not count, so a template or styling change keeps every date."""
+    text = re.sub(r"\s+", "", html.unescape(TAGS.sub("", NOT_CONTENT.sub("", body))))
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
+
+
+def page_dates(path: str, body: str) -> tuple[str, str]:
+    digest = content_hash(body)
+    old = LEDGER.get(path)
+    if old and old.get("hash") == digest:
+        entry = {"hash": digest, "published": old["published"], "modified": old["modified"]}
+    else:
+        today = CONTENT_DATE[0]
+        published = old["published"] if old else today
+        entry = {"hash": digest, "published": published, "modified": max(today, published)}
+    NEW_LEDGER[path] = entry
+    return entry["published"], entry["modified"]
+
+
+def load_ledger() -> dict[str, dict]:
+    if not PAGE_DATES.exists():
+        return {}
+    ledger = json.loads(PAGE_DATES.read_text(encoding="utf-8"))
+    day = re.compile(r"\d{4}-\d{2}-\d{2}")
+    bad = [p for p, e in ledger.items()
+           if not isinstance(e, dict) or set(e) != {"hash", "published", "modified"}
+           or not all(isinstance(e[k], str) for k in e)
+           or not day.fullmatch(e["published"]) or not day.fullmatch(e["modified"])
+           or e["modified"] < e["published"]]
+    if bad:
+        raise SystemExit(f"page_dates.json has invalid entries {bad[:5]}")
+    return ledger
+
+
+def ledger_text(ledger: dict[str, dict]) -> str:
+    return json.dumps(ledger, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+
+
+def with_updated(body: str, modified: str) -> str:
+    """「最後更新」 at the end of the meta line under the H1 (its own line if there is none)."""
+    stamp = f'<span class="ex-updated">最後更新：<time datetime="{modified}">{modified}</time></span>'
+    end = body.index("</h1>") + len("</h1>")
+    if body.startswith('<p class="ex-meta">', end):
+        close = body.index("</p>", end)
+        return body[:close] + " · " + stamp + body[close:]
+    return body[:end] + f'<p class="ex-meta">{stamp}</p>' + body[end:]
+
+
+# ---------------------------------------------------------------- share cards
+# Every page names a 1200x630 card under assets/og/exam/. The card text is
+# recorded in data/exam/og_cards.json (written with the pages and compared by
+# --check); _gen_exam_og.py renders the PNGs from it and its --check proves each
+# committed PNG matches the recorded text, so a new chapter page fails CI until
+# its card is rendered.
+OG_SPECS = DATA / "og_cards.json"
+OG_URL = DOMAIN + "/assets/og/exam/"
+OG_CARDS: dict[str, dict] = {}  # card name -> text fields, filled by page()
+
+
 def page(shell, *, path, title, description, og_title, crumbs, jsonld_type, body, page_kind, toc="",
-         mock_data=False) -> str:
+         mock_data=False, card: tuple[str, dict]) -> str:
     head, mid, tail = shell
     crumb_items = [("首頁", "/"), ("專科考試", "/exam")] + crumbs
     if path == "/exam":
         crumb_items = [("首頁", "/"), ("專科考試", "/exam")]
+    card_name, card_fields = card
+    if OG_CARDS.setdefault(card_name, card_fields) != card_fields:
+        raise SystemExit(f"share card {card_name} is given different text by {path}")
+    image = f"{OG_URL}{card_name}.png"
+    published, modified = page_dates(path, body)
+    body = with_updated(body, modified)
     jsonld = [
         {"@context": "https://schema.org", "@type": jsonld_type, "name": og_title,
          "description": description, "url": DOMAIN + path, "inLanguage": "zh-Hant-TW",
+         "datePublished": published, "dateModified": modified,
+         "image": {"@type": "ImageObject", "url": image, "width": 1200, "height": 630},
          "author": {"@type": "Person", "name": "陳翊嘉 醫師"},
          "audience": {"@type": "Audience", "audienceType": "皮膚科住院醫師"}},
         breadcrumb(crumb_items),
     ]
-    out = set_head(head, title=title, description=description, path=path, og_title=og_title, jsonld=jsonld)
+    out = set_head(head, title=title, description=description, path=path, og_title=og_title,
+                   jsonld=jsonld, image=image)
     content = f"{crumbs_html(crumb_items)}{body}"
     if toc:
         inner = f'<div class="ex-layout">{toc}<div class="ex-content">{content}</div></div>'
@@ -430,6 +526,28 @@ MODE_BAR = (
 
 def chapter_title(ch: dict) -> str:
     return f"Ch.{ch['chapter']} {ch['title']}"
+
+
+def chapter_zh(data: dict, n: int) -> str:
+    """Owner-approved Chinese chapter name (data/exam/chapter_zh.json, first item), or ""."""
+    return (data["zh_titles"].get(n) or [""])[0]
+
+
+SITE_SUFFIXES = (" | 陳翊嘉醫師 · ChenDermatologist", " | 陳翊嘉醫師", "")
+TITLE_WIDTH_MAX = 100  # _check_meta.py TITLE_WIDTH_MAX
+
+
+def fit_title(title: str) -> str:
+    """The longest site suffix that keeps <title> within _check_meta.py's width
+    window; a long chapter name drops the "Fitzpatrick " prefix first."""
+    from _check_meta_descriptions import cjk_width
+
+    bare = title.removeprefix("Fitzpatrick ")
+    for suffix in SITE_SUFFIXES:
+        for head in (title, bare):
+            if cjk_width(esc(head + suffix)) <= TITLE_WIDTH_MAX:
+                return head + suffix
+    return bare
 
 
 CHAPTER_PAGES: set[int] = set()  # chapters that get an exam/fitz-<n>.html page; set by build()
@@ -689,6 +807,36 @@ def toc_html(note: str | None, qs_count: int, *, mobile: bool = False, concepts:
 # show none yet; their concepts are still listed on the overview page.
 CONCEPT_PAGE_SIZE = 50
 FLAG_LABELS = {"official_conflict": "官方答案有疑義"}
+# /exam/concepts used to render all 2,000+ concepts (1.9 MB). Each concept now
+# lives on exactly one page per Fitzpatrick part, chosen by its own chapter
+# (/exam/concepts-p<k>, flat so no concepts/ folder sits next to concepts.html);
+# /exam/concepts is the hub: the most-tested concepts, the part list and a
+# cross-page search over exam/concepts-index.json.
+HUB_TOP_MIN = 3     # concepts tested by at least this many questions are listed on the hub
+HUB_TOP_MAX = 150
+PART_RE = re.compile(r"PART (\d+) (.+)")
+
+
+def part_of(data: dict, chapter: int) -> int:
+    return int(PART_RE.fullmatch(data["chapters"][chapter]["part"]).group(1))
+
+
+SMALL_WORDS = {"and", "of", "the", "to", "in", "across"}
+
+
+def part_name(data: dict, k: int) -> str:
+    """'Part 19 Skin Changes across the Span of Life' from the book's upper-case part name."""
+    for ch in data["chapters"].values():
+        m = PART_RE.fullmatch(ch["part"])
+        if int(m.group(1)) == k:
+            words = m.group(2).lower().split()
+            return f"Part {k} " + " ".join(
+                w if i and w in SMALL_WORDS else w[:1].upper() + w[1:] for i, w in enumerate(words))
+    raise KeyError(k)
+
+
+def concept_href(data: dict, c: dict) -> str:
+    return f"/exam/concepts-p{part_of(data, c['ch'])}#c-{c['id']}"
 
 
 def concept_name(c: dict) -> str:
@@ -768,7 +916,7 @@ def chapter_concepts_html(data: dict, n: int, on_page: set[str]) -> tuple[str, i
     also_html = ""
     if also:
         lis = "".join(
-            f'<li><a href="/exam/concepts#c-{c["id"]}">{concept_name(c)}</a>'
+            f'<li><a href="{concept_href(data, c)}">{concept_name(c)}</a>'
             f'<span class="cx-meta"><i>Ch.{c["ch"]}</i><span>本章 {here} 題</span></span></li>'
             for c, here in sorted(also, key=lambda x: (-x[1], x[0]["ch"], x[0]["id"])))
         also_html = (f'<details class="cx-also"><summary>本章考題也考到的其他章考點（{len(also)}）</summary>'
@@ -779,48 +927,125 @@ def chapter_concepts_html(data: dict, n: int, on_page: set[str]) -> tuple[str, i
         f'<h2 id="concepts-h" class="ex-h2">本章考點</h2>'
         f'<p class="ex-meta">本章 {len(own)} 個考點，出現在 {total_q} 題，依考過的題數排序。'
         '點開考點可看到每一次的考法；題號可直接跳到該題。'
-        f'<a href="/exam/concepts?ch={n}">所有章節的考點請見考點總覽</a>。</p>'
+        f'本章考點也收在<a href="/exam/concepts-p{part_of(data, n)}?ch={n}">{esc(part_name(data, part_of(data, n)))} 考點頁</a>，'
+        '所有章節的考點請見<a href="/exam/concepts">考點總覽</a>。</p>'
         f'{concept_rule(data)}<ol class="cx-list">{items}</ol>{also_html}</section>'
     )
     return html_out, len(own)
 
 
-def concepts_page(shell, data, by_chapter) -> str:
-    concepts = data["concepts"]
-    items = "".join(concept_item(c, data, on_page=set(), current_chapter=None, overview=True) for c in concepts)
+def concept_tools(options: str, *, hub: bool) -> str:
+    """Search box, chapter filter and sort switch (hidden until exam.js wires them)."""
+    target = "cx-results" if hub else "cx-all"
+    label = "搜尋所有考點（中文或英文名稱）" if hub else "搜尋本頁考點（中文、英文或考法）"
+    return (
+        '<div class="cx-tools" data-cx-tools hidden>'
+        f'<label class="ex-search-label" for="cx-q">{label}</label>'
+        '<input id="cx-q" class="ex-search-input cx-q" type="search" autocomplete="off" autocapitalize="off" '
+        f'spellcheck="false" enterkeyhint="search" placeholder="例如 pemphigus、Dsg1、光敏感" aria-controls="{target}">'
+        '<div class="cx-filters">'
+        f'<label class="ex-check">章節 <select class="ex-select cx-ch-select" aria-label="依章節篩選" aria-controls="{target}">'
+        f'<option value="">全部章節</option>{options}</select></label>'
+        f'<label class="ex-check">排序 <select class="ex-select cx-sort" aria-label="排序方式" aria-controls="{target}">'
+        '<option value="n">考過的題數</option><option value="ch">章節順序</option></select></label></div>'
+        '<p class="cx-status" role="status" aria-live="polite"></p></div>'
+    )
+
+
+def chapter_options(data, concepts) -> str:
     per_chapter = Counter(ch for c in concepts for ch in c["chs"])
-    options = "".join(
+    return "".join(
         f'<option value="{ch}">Ch.{ch} {esc(data["chapters"][ch]["title"])}（{per_chapter[ch]}）</option>'
         for ch in sorted(per_chapter))
+
+
+def concept_link(data, c: dict) -> str:
+    """A concept as one line linking to its part page (hub lists)."""
+    return (f'<li><a href="{concept_href(data, c)}">{concept_name(c)}</a>'
+            f'<span class="cx-meta"><b>{len(c["how"])} 題</b><i>Ch.{c["ch"]}</i></span></li>')
+
+
+def concepts_hub_page(shell, data, by_part: dict[int, list], index_url: str, card) -> str:
+    concepts = data["concepts"]
     n_q = len({h["q"] for c in concepts for h in c["how"]})
     multi = sum(1 for c in concepts if len(c["how"]) >= 2)
+    # sorted() is stable: equal counts keep the concepts.json order, like the part pages.
+    top = [c for c in sorted(concepts, key=lambda c: -len(c["how"]))
+           if len(c["how"]) >= HUB_TOP_MIN][:HUB_TOP_MAX]
+    parts = "".join(
+        f'<li><a href="/exam/concepts-p{k}">{esc(part_name(data, k))}</a>'
+        f'<span class="cx-meta"><b>{len(items)} 個考點</b></span></li>'
+        for k, items in sorted(by_part.items()))
     body = (
         '<p class="ex-kicker">考點</p><h1 class="ex-h1">考點總覽</h1>'
         f'<p class="ex-lead">把 101–115 年 {n_q} 題拆成 {len(concepts)} 個考點，其中 {multi} 個考過兩題以上。'
-        '預設依考過的題數排序，考得多的排前面；點開考點可看到每一次的考法、牽涉的章節，'
+        '考點依 Fitzpatrick 9e 的 Part 分頁，每頁依考過的題數排序；點開考點可看到每一次的考法、牽涉的章節，'
         '以及常被拿來當陷阱的錯誤觀念。</p>'
         f'{NOTICE}{concept_rule(data)}'
-        '<div class="cx-tools" data-cx-tools hidden>'
-        '<label class="ex-search-label" for="cx-q">搜尋考點（中文、英文或考法）</label>'
-        '<input id="cx-q" class="ex-search-input cx-q" type="search" autocomplete="off" autocapitalize="off" '
-        'spellcheck="false" enterkeyhint="search" placeholder="例如 pemphigus、Dsg1、光敏感" aria-controls="cx-all">'
-        '<div class="cx-filters">'
-        '<label class="ex-check">章節 <select class="ex-select cx-ch-select" aria-label="依章節篩選" aria-controls="cx-all">'
-        f'<option value="">全部章節</option>{options}</select></label>'
-        '<label class="ex-check">排序 <select class="ex-select cx-sort" aria-label="排序方式" aria-controls="cx-all">'
-        '<option value="n">考過的題數</option><option value="ch">章節順序</option></select></label></div>'
-        '<p class="cx-status" role="status" aria-live="polite"></p></div>'
+        f'<div class="cx-hub" data-cx-hub="{index_url}">{concept_tools(chapter_options(data, concepts), hub=True)}'
+        '<ol class="cx-links" id="cx-results" hidden></ol>'
+        '<p class="ex-pending cx-empty" hidden>沒有符合的考點，請換個關鍵字或章節。</p>'
+        '<div class="ex-more-wrap cx-more-wrap" hidden>'
+        '<button type="button" class="ex-more" aria-controls="cx-results">載入更多</button></div></div>'
+        '<section aria-labelledby="cx-parts-h"><h2 id="cx-parts-h" class="ex-h2">依 Fitzpatrick Part 瀏覽</h2>'
+        f'<ul class="cx-links cx-parts">{parts}</ul></section>'
+        '<section aria-labelledby="cx-top-h"><h2 id="cx-top-h" class="ex-h2">最常考的考點</h2>'
+        f'<p class="ex-meta">考過 {HUB_TOP_MIN} 題以上的 {len(top)} 個考點，依題數排序；'
+        '點選後到所屬 Part 的考點頁看完整考法。</p>'
+        f'<ol class="cx-links">{"".join(concept_link(data, c) for c in top)}</ol></section>'
+    )
+    title = "皮膚科專科醫師考試考點總覽"
+    desc = (f"皮膚科專科醫師甄審筆試 101–115 年考題拆解的 {len(concepts)} 個考點，依 Fitzpatrick Part 分頁、"
+            "依出題次數排序，列出每次的考法、牽涉的章節與常見陷阱選項。")
+    return page(shell, path="/exam/concepts", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
+                description=desc, og_title=title, crumbs=[("考點總覽", "/exam/concepts")],
+                jsonld_type="CollectionPage", body=body, page_kind="concepts-hub", card=card)
+
+
+def concepts_part_page(shell, data, k: int, concepts: list[dict], parts: list[int], card) -> str:
+    """Every concept whose own chapter is in Fitzpatrick Part k, in full."""
+    name = part_name(data, k)
+    items = "".join(concept_item(c, data, on_page=set(), current_chapter=None, overview=True) for c in concepts)
+    chapters = sorted({c["ch"] for c in concepts})
+    at = parts.index(k)
+    nav = []
+    if at:
+        nav.append(f'<a href="/exam/concepts-p{parts[at - 1]}">← {esc(part_name(data, parts[at - 1]))}</a>')
+    nav.append('<a href="/exam/concepts">考點總覽</a>')
+    if at + 1 < len(parts):
+        nav.append(f'<a href="/exam/concepts-p{parts[at + 1]}">{esc(part_name(data, parts[at + 1]))} →</a>')
+    pager = f'<p class="ex-meta cx-pager">{" · ".join(nav)}</p>'
+    span = f"Ch.{chapters[0]}–{chapters[-1]}" if len(chapters) > 1 else f"Ch.{chapters[0]}"
+    body = (
+        f'<p class="ex-kicker">考點 · Fitzpatrick 9e</p><h1 class="ex-h1">{esc(name)} 考點</h1>'
+        f'<p class="ex-lead">本頁收錄所屬章節在 {esc(name)}（{span}）的 {len(concepts)} 個考點，'
+        '依考過的題數排序；點開考點可看到每一次的考法、牽涉的章節，以及常被拿來當陷阱的錯誤觀念。'
+        '其他 Part 的考點與跨頁搜尋請見<a href="/exam/concepts">考點總覽</a>。</p>'
+        f'{pager}{NOTICE}{concept_rule(data)}'
+        f'{concept_tools(chapter_options(data, concepts), hub=False)}'
         f'<ol class="cx-list" id="cx-all" data-cx-page="{CONCEPT_PAGE_SIZE}">{items}</ol>'
         '<p class="ex-pending cx-empty" hidden>沒有符合的考點，請換個關鍵字或章節。</p>'
         '<div class="ex-more-wrap cx-more-wrap" hidden>'
         '<button type="button" class="ex-more" aria-controls="cx-all">載入更多</button></div>'
+        f'{pager}'
     )
-    title = "皮膚科專科醫師考試考點總覽"
-    desc = (f"皮膚科專科醫師甄審筆試 101–115 年考題拆解的 {len(concepts)} 個考點，依出題次數排序，"
-            "列出每次的考法、牽涉的 Fitzpatrick 章節與常見陷阱選項。")
-    return page(shell, path="/exam/concepts", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
-                description=desc, og_title=title, crumbs=[("考點總覽", "/exam/concepts")],
-                jsonld_type="CollectionPage", body=body, page_kind="concepts")
+    title = f"專科考試考點：{name}"
+    desc = (f"皮膚科專科醫師甄審筆試 101–115 年考點中，屬於 Fitzpatrick 9e {name}（{span}）"
+            f"的 {len(concepts)} 個考點，依出題次數排序，列出每次的考法、牽涉的章節與常見陷阱選項。")
+    return page(shell, path=f"/exam/concepts-p{k}", title=fit_title(title),
+                description=desc, og_title=title,
+                crumbs=[("考點總覽", "/exam/concepts"), (name, f"/exam/concepts-p{k}")],
+                jsonld_type="CollectionPage", body=body, page_kind="concepts", card=card)
+
+
+def concepts_index(data, concepts: list[dict]) -> dict:
+    """exam/concepts-index.json, for the hub's cross-page search and for old
+    /exam/concepts#c-<id> links. Rows are [id, 中文, English, own chapter,
+    every chapter (own first), questions, part], most tested first."""
+    rows = [[c["id"], c["zh"], c["en"], c["ch"], [c["ch"]] + [ch for ch in c["chs"] if ch != c["ch"]],
+             len(c["how"]), part_of(data, c["ch"])] for c in concepts]
+    return {"parts": {str(k): part_name(data, k) for k in sorted({r[6] for r in rows})},
+            "concepts": rows}
 
 
 NOTES_TOOLS = (
@@ -852,9 +1077,11 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
         notes_html = '<section class="ex-notes"><h2 class="ex-h2">重點整理</h2><p class="ex-pending">這一章的重點尚未整理。</p></section>'
     year_text = "、".join(f"{y} 年 {c} 題" for y, c in sorted(years.items()))
     concepts_html, n_concepts = chapter_concepts_html(data, n, on_page)
+    zh = chapter_zh(data, n)
+    zh_h1 = f' <span class="ex-h1-zh">{esc(zh)}</span>' if zh else ""
     body = (
         f'<p class="ex-kicker">Fitzpatrick 9e · {esc(chapter["part"].title() if chapter["part"] else "")}</p>'
-        f'<h1 class="ex-h1">Ch.{n} {esc(chapter["title"])}</h1>'
+        f'<h1 class="ex-h1">Ch.{n} {esc(chapter["title"])}{zh_h1}</h1>'
         f'<p class="ex-meta">原書 p.{chapter["pageStart"]}–{chapter["pageEnd"]} · '
         + (f'考題共 {len(qs)} 題（已有詳解 {explained} 題）</p><p class="ex-meta">{esc(year_text)}</p>' if qs
            else '101–115 年歷屆未出題</p>')
@@ -863,14 +1090,21 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
         + (f'<section aria-labelledby="qs-h"><h2 id="qs-h" class="ex-h2">考題</h2>{MODE_BAR}'
            + "".join(question_html(q, data, current_chapter=n) for q in qs) + "</section>" if qs else "")
     )
-    title = f"Fitzpatrick Ch.{n} {chapter['title']} 重點與考題"
-    desc = (f"皮膚科專科醫師考試讀書筆記：Fitzpatrick's Dermatology 9e 第 {n} 章 {chapter['title']}"
+    label = f"{zh} {chapter['title']}" if zh else chapter["title"]
+    title = f"Fitzpatrick Ch.{n} {label} 重點與考題"
+    named = f"{zh}（{chapter['title']}）" if zh else chapter["title"]
+    desc = (f"皮膚科專科醫師考試讀書筆記：Fitzpatrick's Dermatology 9e 第 {n} 章 {named}"
             + (f"，整理 101–115 年考題 {len(qs)} 題" + ("與重點整理" if note else "") if qs
                else "，重點整理（101–115 年歷屆未出題）") + "。")
-    return page(shell, path=f"/exam/fitz-{n}", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
-                description=desc, og_title=title, crumbs=[(f"Ch.{n}", f"/exam/fitz-{n}")],
+    foot = " · ".join(([f"考題 {len(qs)} 題"] if qs else []) + (["重點整理"] if note else []))
+    card = (f"fitz-{n}", {"kicker": "Fitzpatrick 9e · 專科考試",
+                          "title": f"Ch.{n} {zh}" if zh else f"Ch.{n}",
+                          "subtitle": chapter["title"], "foot": foot})
+    return page(shell, path=f"/exam/fitz-{n}", title=fit_title(title),
+                description=desc, og_title=title,
+                crumbs=[(f"Ch.{n} {zh}" if zh else f"Ch.{n}", f"/exam/fitz-{n}")],
                 jsonld_type="WebPage", body=body, page_kind="chapter",
-                toc=toc_html(note, len(qs), concepts=n_concepts))
+                toc=toc_html(note, len(qs), concepts=n_concepts), card=card)
 
 
 def year_page(shell, data, year: int, qs: list[dict]) -> str:
@@ -887,9 +1121,12 @@ def year_page(shell, data, year: int, qs: list[dict]) -> str:
     )
     title = f"{year} 年皮膚科專科醫師甄審筆試選擇題（考古卷）"
     desc = f"{year} 年度皮膚科專科醫師甄審筆試選擇題 {len(qs)} 題，可計時作答、交卷計分，並對照官方答案與 Fitzpatrick 詳解。"
+    card = (f"year-{year}", {"kicker": "專科考試 · 考古卷", "title": f"{year} 年甄審筆試",
+                             "subtitle": "皮膚科專科醫師甄審筆試選擇題",
+                             "foot": f"選擇題 {len(qs)} 題 · 計時作答"})
     return page(shell, path=f"/exam/year-{year}", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[(f"{year} 年", f"/exam/year-{year}")],
-                jsonld_type="WebPage", body=body, page_kind="year")
+                jsonld_type="WebPage", body=body, page_kind="year", card=card)
 
 
 def book_page(shell, data, book: str, qs: list[dict]) -> str:
@@ -902,12 +1139,14 @@ def book_page(shell, data, book: str, qs: list[dict]) -> str:
     )
     title = f"皮膚科專科考試 {short}題（{name}）"
     desc = f"皮膚科專科醫師甄審筆試 101–115 年中以 {name} 為主的{short}題，共 {len(qs)} 題，附官方答案。"
+    card = (book, {"kicker": "專科考試 · 其他參考書", "title": f"{short}題", "subtitle": name,
+                   "foot": f"考題 {len(qs)} 題"})
     return page(shell, path=f"/exam/{book}", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[(f"{short}題", f"/exam/{book}")],
-                jsonld_type="WebPage", body=body, page_kind="book")
+                jsonld_type="WebPage", body=body, page_kind="book", card=card)
 
 
-def practice_page(shell, by_year, n_mock: int) -> str:
+def practice_page(shell, by_year, n_mock: int, card) -> str:
     # 模擬考 replaces the year selection with the mock bank; shown only once the bank has questions.
     mock = (
         '<fieldset class="ex-fieldset ex-mock-set"><legend>模擬考</legend>'
@@ -953,10 +1192,10 @@ def practice_page(shell, by_year, n_mock: int) -> str:
             + (f"；也可改做模擬考（{n_mock} 題{MOCK_LABEL}）。" if n_mock else "。"))
     return page(shell, path="/exam/practice", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[("自選／隨機出題", "/exam/practice")],
-                jsonld_type="WebPage", body=body, page_kind="practice", mock_data=bool(n_mock))
+                jsonld_type="WebPage", body=body, page_kind="practice", mock_data=bool(n_mock), card=card)
 
 
-def review_page(shell) -> str:
+def review_page(shell, card) -> str:
     body = (
         '<p class="ex-kicker">複習工具</p><h1 class="ex-h1">錯題本與 Anki 匯出</h1>'
         f"{NOTICE}"
@@ -973,7 +1212,7 @@ def review_page(shell) -> str:
     desc = "皮膚科專科醫師考試讀書筆記的錯題本：集中重練作答模式答錯的考題，並可匯出 Anki 卡片。"
     return page(shell, path="/exam/review", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[("錯題本", "/exam/review")],
-                jsonld_type="WebPage", body=body, page_kind="review")
+                jsonld_type="WebPage", body=body, page_kind="review", card=card)
 
 
 SEARCH_VERSION = [""]  # content hash of search-index.json, set by build()
@@ -993,7 +1232,7 @@ SEARCH_BOX = (
 )
 
 
-def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
+def hub_page(shell, data, by_chapter, by_year, by_book, card) -> str:
     chapters = data["chapters"]
     total = len(data["questions"])
     explained = len(data["explanations"])
@@ -1093,7 +1332,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
             "附出題頻率統計、自選年份或隨機出題的考古卷、錯題本與 Anki 匯出。")
     return page(shell, path="/exam", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=HUB_TITLE, crumbs=[],
-                jsonld_type="CollectionPage", body=body, page_kind="hub")
+                jsonld_type="CollectionPage", body=body, page_kind="hub", card=card)
 
 
 # ---------------------------------------------------------------- search index
@@ -1351,9 +1590,16 @@ def client_data(data) -> dict:
     return {"questions": out}
 
 
-def build() -> dict[str, str]:
+def build(content_date: str | None = None) -> dict[str, str]:
+    """Every exam/ output by file name. Also fills NEW_LEDGER (page dates) and
+    OG_CARDS (share card text); main() writes those to data/exam/."""
     data = load()
     shell = split_template()
+    LEDGER.clear()
+    LEDGER.update(load_ledger())
+    NEW_LEDGER.clear()
+    OG_CARDS.clear()
+    CONTENT_DATE[0] = content_date or date.today().isoformat()
     by_chapter: dict[int, list] = defaultdict(list)
     by_year: dict[int, list] = defaultdict(list)
     by_book: dict[str, list] = defaultdict(list)
@@ -1391,17 +1637,32 @@ def build() -> dict[str, str]:
     index = json.dumps(hub_index, ensure_ascii=False, separators=(",", ":")) + "\n"
     SEARCH_VERSION[0] = hashlib.sha256(index.encode("utf-8")).hexdigest()[:10]
     files: dict[str, str] = {}
-    files["index.html"] = hub_page(shell, data, by_chapter, by_year, by_book)
+    total = len(data["questions"])
+    hub_card = ("hub", {"kicker": "專科考試", "title": "皮膚科專科醫師考試", "subtitle": "重點整理及考題",
+                        "foot": f"101–115 年 {total} 題 · Fitzpatrick 9e 章節重點"})
+    files["index.html"] = hub_page(shell, data, by_chapter, by_year, by_book, hub_card)
     for n, qs in sorted(pages.items()):
         files[f"fitz-{n}.html"] = chapter_page(shell, data, data["chapters"][n], qs)
     for y, qs in sorted(by_year.items()):
         files[f"year-{y}.html"] = year_page(shell, data, y, qs)
     for b, qs in sorted(by_book.items()):
         files[f"{b}.html"] = book_page(shell, data, b, qs)
-    files["practice.html"] = practice_page(shell, by_year, len(data["mock"]))
-    files["review.html"] = review_page(shell)
+    files["practice.html"] = practice_page(shell, by_year, len(data["mock"]), hub_card)
+    files["review.html"] = review_page(shell, hub_card)
     if data["concepts"]:
-        files["concepts.html"] = concepts_page(shell, data, by_chapter)
+        by_part: dict[int, list] = defaultdict(list)
+        for c in data["concepts"]:
+            by_part[part_of(data, c["ch"])].append(c)
+        concepts_card = ("concepts", {"kicker": "專科考試 · 考點", "title": "考點總覽",
+                                      "subtitle": f"歷屆考題拆成 {len(data['concepts'])} 個考點",
+                                      "foot": "依出題次數排序 · 考法與常見陷阱"})
+        cx_index = json.dumps(concepts_index(data, data["concepts"]), ensure_ascii=False,
+                              separators=(",", ":")) + "\n"
+        cx_url = f"/exam/concepts-index.json?v={hashlib.sha256(cx_index.encode('utf-8')).hexdigest()[:10]}"
+        files["concepts.html"] = concepts_hub_page(shell, data, by_part, cx_url, concepts_card)
+        for k, items in sorted(by_part.items()):
+            files[f"concepts-p{k}.html"] = concepts_part_page(shell, data, k, items, sorted(by_part), concepts_card)
+        files["concepts-index.json"] = cx_index
     files["exam-data.json"] = client
     files["search-index.json"] = index
     files["nav-search.json"] = json.dumps(nav_search(data, pages, hub_index), ensure_ascii=False, separators=(",", ":")) + "\n"
@@ -1417,6 +1678,8 @@ EXAM_STYLE = """<style data-exam-style>
 .ex-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .ex-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#0c5159;font-weight:700;margin:0 0 8px}
 .ex-h1{font-family:'Noto Serif TC',Georgia,serif;font-weight:700;font-size:28px;line-height:1.3;margin:0 0 12px}
+.ex-h1-zh{display:block;font-size:19px;font-weight:600;color:var(--ink-2);margin-top:4px}
+.ex-updated{white-space:nowrap}
 .ex-h2{font-family:'Noto Serif TC',Georgia,serif;font-weight:700;font-size:21px;margin:36px 0 14px}
 .ex-main h3{font-weight:700;font-size:16px;margin:18px 0 8px}
 .ex-lead{font-size:15.5px;line-height:1.9;color:var(--ink-2)}
@@ -1719,6 +1982,13 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 .cx-also li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;padding:5px 0;border-top:1px solid var(--line);font-size:13.5px}
 .cx-also a{flex:1 1 16em;min-width:0;color:var(--teal-deep);text-decoration:none}
 .cx-also .cx-name{font-size:13.5px}
+.cx-links{list-style:none;padding:0;margin:8px 0}
+.cx-links li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;padding:6px 0;border-top:1px solid var(--line);font-size:13.5px}
+.cx-links a{flex:1 1 16em;min-width:0;color:var(--teal-deep);text-decoration:none}
+.cx-links .cx-name{font-size:13.5px}
+.cx-links[hidden]{display:none}
+.cx-parts a{font-weight:700}
+.cx-pager a{color:var(--teal-deep);font-weight:600}
 .cx-tools{margin:16px 0 8px}
 .cx-filters{display:flex;flex-wrap:wrap;gap:6px 4px;margin:10px 0 0}
 .cx-filters .ex-select{max-width:min(100%,22rem)}
@@ -1738,7 +2008,9 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 :root[data-theme="dark"] .cx-meta em,:root[data-theme="dark"] .cx-how em{background:#7f1d1d;color:#fee2e2}
 :root[data-theme="dark"] .cx-how em.cx-flag{background:#332a14;color:#fde68a}
 :root[data-theme="dark"] .cx-h{color:#a4d4c4}
-:root[data-theme="dark"] .cx-how a,:root[data-theme="dark"] .cx-chs a,:root[data-theme="dark"] .cx-also a{color:#a4b5a8}
+:root[data-theme="dark"] .cx-how a,:root[data-theme="dark"] .cx-chs a,:root[data-theme="dark"] .cx-also a,:root[data-theme="dark"] .cx-links a,:root[data-theme="dark"] .cx-pager a{color:#a4b5a8}
+:root[data-theme="dark"] .cx-links li{border-color:#3a352c}
+:root[data-theme="dark"] .ex-h1-zh{color:#c9c3b8}
 :root[data-theme="dark"] .cx-traps li{background:rgba(127,29,29,.3);border-left-color:#b45454}
 :root[data-theme="dark"] .cx-traps b{color:#fca5a5}
 </style>
@@ -1770,15 +2042,30 @@ def preview_css() -> str:
     return PREVIEW_BASE + match.group(1)
 
 
-def main() -> int:
-    check = "--check" in sys.argv
-    files = build()
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+
+    from _normalize_date_modified import content_date_argument
+
+    parser = argparse.ArgumentParser(description="Generate the /exam/** pages.")
+    parser.add_argument("--check", action="store_true", help="compare with the committed output; write nothing")
+    parser.add_argument("--content-date", type=content_date_argument,
+                        help="date for new or changed pages (YYYY-MM-DD; default today)")
+    args = parser.parse_args(argv)
+    if args.check and args.content_date:
+        parser.error("--content-date has no effect with --check")
+    check = args.check
+    files = build(args.content_date)
     stale = []
-    extras = {PREVIEW_CSS: preview_css()}
+    # The date ledger and the share card text are written with the pages. Under
+    # --check a page whose content changed without regeneration shows up here
+    # (its hash differs from the committed ledger) as well as in its own file.
+    extras = {PREVIEW_CSS: preview_css(), PAGE_DATES: ledger_text(NEW_LEDGER),
+              OG_SPECS: json.dumps(OG_CARDS, ensure_ascii=False, indent=1, sort_keys=True) + "\n"}
     for path, content in extras.items():
         if check:
             if not path.exists() or path.read_text(encoding="utf-8") != content:
-                stale.append(path.relative_to(ROOT).as_posix())
+                stale.append(path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else str(path))
         else:
             path.write_text(content, encoding="utf-8", newline="\n")
     for name, content in files.items():

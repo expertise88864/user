@@ -154,8 +154,13 @@ class GenerationClockTests(unittest.TestCase):
         self.assertEqual(quality.REGEN_STEPS, recipe)
         self.assertEqual(len(generated), len(recipe))
         changed = [(old, new) for old, new in zip(recipe, generated) if old != new]
-        self.assertEqual(changed, [([quality.PY, "_normalize_date_modified.py"],
-                                   [quality.PY, "_normalize_date_modified.py", "--content-date", "2026-09-30"])])
+        exam = ([quality.PY, "_gen_exam.py"], [quality.PY, "_gen_exam.py", "--content-date", "2026-09-30"])
+        # Both exam passes and the article normalizer, nothing else.
+        self.assertEqual(recipe.count(exam[0]), 2)
+        self.assertEqual(changed, [exam,
+                                   ([quality.PY, "_normalize_date_modified.py"],
+                                    [quality.PY, "_normalize_date_modified.py", "--content-date", "2026-09-30"]),
+                                   exam])
         self.assertEqual(quality.regeneration_steps(), recipe)
 
     def test_missing_or_ambiguous_clock_step_fails_closed(self):

@@ -107,6 +107,7 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
 | `vercel.json`(redirect/header) | 不用 regen | `_check_deployment.py` + codex review |
 | `assets/inline/*.js` | 不用 regen(非 min 化對象);跑 `_check_js_syntax.py` | `_check_runtime_smoke.py` |
 | `data/exam/**`（詳解、標註、章節重點、模擬題 `mock.json`）或 `exam/exam.js` | `python _gen_exam.py`（建置流程會在開頭與結尾各跑一次；同時生成 `admin/exam-preview.css`，後台考試重點預覽專用） | `_gen_exam.py --check`、`_check_static_a11y.py` |
+| 考試區頁面日期與分享圖（隨上一列自動產生） | `_gen_exam.py` 同時寫 `data/exam/page_dates.json`（每頁可見內容雜湊＋首次出現／最後修改日期；內容不變日期不動，改了才用當天或 `--content-date`；`sitemap.xml` 的 lastmod 取自它）與 `data/exam/og_cards.json`（每頁分享圖文字）；`python _gen_exam_og.py` 在本機把缺的或過期的分享圖畫到 `assets/og/exam/`（需 Pillow，建置會自動執行，CI 只驗證不重畫），記錄於 `data/exam/og_rendered.json` | `_gen_exam.py --check`、`_gen_exam_og.py --check`、`_test_exam_seo.py`、`_check_seo_signals.py`（exam 日期／分享圖／中文章名） |
 | 後台「考試重點／題目詳解」雲端草稿（分支 `cms-exam/drafts`） | `python _pull_exam_drafts.py`（把草稿來源檔套到目前工作區，不 commit）→ `python _gen_exam.py` | 走一般 `codex/*` 候選、CI、PR review；詳見 CMS_EDITING_GUIDE.md |
 | `blog/blog-shared.js` 或 `blog-hub.js` | `python _minify.py`(重生 .min.js) | `_check_min_balance.py`, smoke;忘了重生也沒關係 —— `_check_min_sync.py` 已在 gate 裡擋(TD-28) |
 | 新增 TL;DR(`_inject_tldr.py` 的 map) | 醫師審核後 `python _inject_tldr.py --apply` → `python _run_quality.py build` | gate;絕不覆寫既有 dn-tldr |

@@ -21,6 +21,10 @@ REGEN_STEPS: list[list[str]] = [
     # _gen_feeds (sitemap) and the normalizers see every exam page. The final
     # pass at the end of this list re-renders on the finished notes.html shell.
     [PY, "_gen_exam.py"],
+    # Exam share cards (assets/og/exam/) from the card text _gen_exam.py just
+    # wrote: a no-op when every card is current (always so in CI, which has no
+    # Pillow); renders a new chapter's card locally, or fails if it cannot.
+    [PY, "_gen_exam_og.py"],
     # Complete static hub links from the public catalog before EN generation.
     [PY, "_sync_hub_catalog.py"],
     # CODE_REVIEW TD-46 — _normalize_bilingual_attrs.py was removed from
@@ -240,6 +244,10 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
 CHECK_STEPS: list[list[str]] = [
     [PY, "_gen_site_settings.py", "--check"],
     [PY, "_gen_exam.py", "--check"],
+    [PY, "_gen_exam_og.py", "--check"],
+    # Exam SEO: page date ledger, sitemap lastmod, Chinese chapter titles, the
+    # split 考點 pages and their links, per-page share cards.
+    [PY, "-m", "unittest", "_test_exam_seo"],
     # exam.js progress: per-chapter statistics vs. site-wide records, on the
     # real generated pages (parse5 DOM + in-memory localStorage).
     ["node", "--test", "_test_exam_progress.mjs"],
@@ -526,6 +534,10 @@ def regeneration_steps(content_date: str | None = None) -> list[list[str]]:
     if len(matches) != 1:
         raise ValueError("expected exactly one content-date generation step")
     matches[0].extend(["--content-date", frozen_date])
+    # The exam pages keep their own date ledger (data/exam/page_dates.json).
+    for command in steps:
+        if command == [PY, "_gen_exam.py"]:
+            command.extend(["--content-date", frozen_date])
     return steps
 
 
