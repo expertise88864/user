@@ -89,7 +89,7 @@
 <tr><td>Medial / lateral gastrocnemius perforators</td><td>Posterior leg</td><td>SSV → gastrocnemius vein</td></tr>
 <tr><td>Intergemellar perforators</td><td>Posterior leg</td><td>SSV → soleal vein</td></tr>
 <tr><td>Para-Achillean perforators</td><td>Posterior leg</td><td>SSV → fibular veins</td></tr>
-<tr><td>Anterior leg perforators</td><td>Anterior leg</td><td>GSV → anterior tibial vein</td></tr>
+<tr><td>Anterior leg perforators</td><td>Leg（other areas）</td><td>GSV → anterior tibial vein</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 212-2，p.3875（另有 posterior thigh、knee 其他部位、lateral leg perforators）。</p>
@@ -258,7 +258,7 @@
 <h3>Telangiectatic matting（補充）</h3>
 <ul>
 <li>機轉可能與 angiogenesis 及發炎有關（mast cell heparin 與內皮生長因子作用、閉塞血管的直接反應、既有次臨床血管擴張）。<span class="ex-ref">p.3884</span></li>
-<li>Predisposing factors：obesity、leg veins 家族史、長期 telangiectasias、hyperestrogenic states（pregnancy、oral contraceptives 或 hormonal therapy）。弱硬化劑被認為不太可能造成 matting。<span class="ex-ref">p.3885</span></li>
+<li>Predisposing factors：obesity、leg veins 家族史、長期 telangiectasias、hyperestrogenic states（如 pregnancy）、使用 oral contraceptives 或 hormonal therapy。弱硬化劑被認為不太可能造成 matting。<span class="ex-ref">p.3885</span></li>
 <li>治療：weak hypertonic sclerosing agent 或 <strong class="ex-n">585–595-nm</strong> pulsed-dye laser；處理殘留 feeding reticular veins 也可能加速消退。<span class="ex-ref">p.3885</span></li>
 </ul>
 <h3>Necrosis 的其他機轉</h3>

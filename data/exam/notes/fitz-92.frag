@@ -65,7 +65,7 @@
 <ul>
 <li>Psychosocial：焦慮與憂鬱比率皆為一般人口的 <strong class="ex-n">2 倍</strong>，與 psoriasis、atopic dermatitis 病人相近。<span class="ex-ref">p.1613</span></li>
 <li><strong>Lupus erythematosus</strong>：曾有人提出與 PMLE 共同致病機轉；PMLE 病灶可能早於 lupus 出現，部分病例曾提出由 PMLE 進展為 lupus，但長期追蹤研究並未顯示 PMLE 病人 lupus 發生率普遍增加。<span class="ex-ref">p.1613</span></li>
-<li><strong>Psoriasis</strong>：對 UV 免疫抑制的抵抗可能造成其他疾病光加重；一項研究中 photosensitive psoriasis 病人有 <strong class="ex-n">43%</strong> 被判定有 PMLE 病史並繼發 psoriasis 惡化。這些病人可能得不到 UV 的治療效果，反而在 UV 後誘發或加重 psoriasis。<span class="ex-ref">p.1614–1615</span></li>
+<li><strong>Psoriasis</strong>：對 UV 免疫抑制的抵抗可能造成其他疾病光加重；一項研究中 photosensitive psoriasis 病人有 <strong class="ex-n">43%</strong> 被判定有 PMLE 病史並繼發 psoriasis 惡化。這些病人可能得不到 UV 的治療效果，反而在 UV 後誘發或加重 psoriasis。<span class="ex-ref">p.1613–1615</span></li>
 <li><strong>Skin cancer</strong>：皮膚癌病人中 PMLE 盛行率較低；PMLE 病人與配對對照相比有皮膚癌盛行率下降的趨勢，因此 PMLE 可能是 skin cancer protective condition。<span class="ex-ref">p.1617–1618</span></li>
 </ul>
 <p>McKee 補充：一項研究 <strong class="ex-n">14%</strong> 病人有 thyroid disease，94 人中只有 2 人有 LE，作者認為 LE 風險未增加；另一研究則認為部分 PMLE 病人可能有較高 LE 風險。<span class="ex-ref ex-ref-mckee">McKee p.292</span></p>
@@ -76,7 +76,7 @@
 <h3>Immunologic aspects（免疫機轉）</h3>
 <ul>
 <li>確切病因不明；目前推測為<strong>對 UV-induced immune suppression 的抵抗</strong>，加上隨後對 UV 修飾皮膚成分的 <strong>delayed-type hypersensitivity（DTH）</strong>反應。<span class="ex-ref">p.1615</span></li>
-<li>早期病灶最初以 <strong>CD4+ T cells</strong> 浸潤為主（for up to 72 hours，最長 <strong class="ex-n">72 小時</strong>），之後成熟病灶以 <strong>CD8+ T cells</strong> 為主，符合 cell-mediated immune response；病灶中 Langerhans cells 與 dermal macrophages 也增加。Adhesion molecule 表現與 DTH 相似。<span class="ex-ref">p.1615</span></li>
+<li>早期病灶最初有 <strong>CD4+ T cells</strong> 湧入（initial influx，for up to 72 hours，最長 <strong class="ex-n">72 小時</strong>），之後成熟病灶出現 <strong>CD8+ T cells</strong>（followed by CD8+ T cells），符合 cell-mediated immune response；病灶中 Langerhans cells 與 dermal macrophages 也增加。Adhesion molecule 表現與 DTH 相似。<span class="ex-ref">p.1615</span></li>
 <li>正常皮膚照 UV 後形成免疫抑制的 <strong>Th2</strong> 環境：epidermal Langerhans cells 減少、neutrophil 浸潤、釋放 <strong>IL-4、IL-10</strong>。<span class="ex-ref">p.1616</span></li>
 <li>PMLE 病人：contact hypersensitivity 模型中對 UV 免疫抑制有抵抗，UV 誘發的 contact allergen tolerance 受損；但已致敏者對 DNCB 的 elicitation phase 被 UV 抑制的程度與正常人相同。<span class="ex-ref">p.1616</span></li>
 <li>PMLE 皮膚照 UV 後偏向 <strong>Th1</strong> cytokine profile；細胞遷移不足：<strong>CD1a+ Langerhans cells 持續存在</strong>、<strong>neutrophil 浸潤受損</strong>，使 IL-4、IL-10 釋放減少，被認為因此允許對光誘發抗原的過敏反應。<span class="ex-ref">p.1616</span></li>
@@ -150,7 +150,7 @@
 <h3>McKee 補充</h3>
 <ul>
 <li>淺層、有時深層真皮的 <strong>perivascular lymphohistiocytic infiltrate</strong>；特徵性但非一致出現的是 <strong>papillary dermal edema</strong>，常很明顯；大量 papillary dermal edema 可能伴隨（may be associated with）subepidermal 或 intradermal vesicle 形成。<span class="ex-ref ex-ref-mckee">McKee p.293</span></li>
-<li>Papular、papulovesicular 病灶可能可見 acanthosis、spongiosis、偶見 dyskeratotic cells 與 lymphocyte exocytosis；spongiosis 有時嚴重到形成 intraepidermal vesicle，但也有作者認為 spongiosis 不是重要特徵。Basal cell vacuolization 通常輕微，見於部分病例。<span class="ex-ref ex-ref-mckee">McKee p.293</span></li>
+<li>Papular、papulovesicular 病灶可能可見 acanthosis、spongiosis、偶見 dyskeratotic cells 與 lymphocyte exocytosis；spongiosis 有時嚴重到形成 intraepidermal vesicle，但也有作者未發現 spongiosis 是重要特徵（have not found spongiosis to be a significant feature）。Basal cell vacuolization 通常輕微，見於部分病例。<span class="ex-ref ex-ref-mckee">McKee p.293</span></li>
 <li>Papular、papulovesicular 病灶可能有 periadnexal 慢性發炎浸潤；eosinophils、neutrophils 增加的報告未被一致證實；<strong>papillary dermal erythrocyte extravasation</strong> 常見；可能見到搔抓繼發的 hyperkeratosis、acanthosis。<span class="ex-ref ex-ref-mckee">McKee p.293</span></li>
 <li><strong>DIF</strong>：C3、IgG、IgM 可能沿 BMZ 存在，但有染色時通常很弱；多數 PMLE DIF 陰性。<span class="ex-ref ex-ref-mckee">McKee p.293</span></li>
 <li>早期病灶 helper-inducer T cells 為主、dermal Langerhans cells 增加；慢性化後 cytotoxic suppressor T cells 較明顯。<span class="ex-ref ex-ref-mckee">McKee p.293</span></li>

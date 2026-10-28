@@ -16,7 +16,7 @@
 <section class="ex-note" id="delivery">
 <h2>2. Cutaneous Delivery &amp; Diffusion（經皮輸送與擴散）</h2>
 <ul>
-<li>療效＝inherent potency × 穿透皮膚的能力。許多 potent agents（如 hydrocortisone、fluocinolone acetonide）外用吸收很差；反之許多吸收好但 potency 弱者的治療用途可忽略（negligible）。<span class="ex-ref">p.3364</span></li>
+<li>外用藥療效與其 inherent potency 及穿透皮膚的能力有關（relates to）。許多 potent agents（如 hydrocortisone、fluocinolone acetonide）外用吸收很差；反之許多吸收好但 potency 弱者的治療用途可忽略（negligible）。<span class="ex-ref">p.3364</span></li>
 <li>外用藥一般（generally）總吸收量低、吸收慢：hydrocortisone 單次塗抹留置 &gt;1 天，吸收 <strong class="ex-n">&lt;1%</strong>；吸收高峰可延至塗抹後 <strong class="ex-n">12–24 hours</strong>。低吸收不一定代表低療效（topical corticosteroids 靠 inherent potency）。<span class="ex-ref">p.3364</span></li>
 <li><strong>Fick's first law</strong>：J = −D (ΔC/Δδ)，steady-state flux 與 concentration gradient、diffusion coefficient 成正比；負號表示淨流向低濃度；second law 處理 non–steady-state。<span class="ex-ref">p.3364</span></li>
 <li>Δt = x²/2D：擴散只適合極短距離。水的 D 為 2.5 × 10⁻⁵ cm²/s，走 10 µm（約 stratum corneum 寬度）需 <strong class="ex-n">0.4 ms</strong>，100 µm 需 <strong class="ex-n">40 ms</strong>。<span class="ex-ref">p.3364</span></li>
@@ -71,7 +71,7 @@
 <ul>
 <li>附屬器是屏障可能的不連續處；毛囊是可能儲存外用物質的 reservoir，<strong>scalp 最高，其次 forehead、calf</strong>（forehead 多而小的毛囊；calf 少而大）。<span class="ex-ref">p.3367</span></li>
 <li>毛囊開口佔皮膚表面 <strong class="ex-n">0.2%–1.3%</strong>（依部位）；不同族群的 follicular penetration 有差異。<span class="ex-ref">p.3367</span></li>
-<li>只有 <strong>acroinfundibulum</strong> 有完整 stratum corneum；<strong>infrainfundibulum</strong> 的角質細胞似乎（appear）未分化，保護不完整甚至缺如 → 毛囊是正常皮膚重要的吸收途徑，可做 follicular targeting。<span class="ex-ref">p.3367</span></li>
+<li>只有 <strong>acroinfundibulum</strong> 有完整 stratum corneum；<strong>infrainfundibulum</strong> 的角質細胞似乎（appear）未分化，保護不完整甚至缺如 → 毛囊是 nondiseased skin 重要的吸收途徑。甚至固體顆粒也可能（may）深入毛囊開口，此現象可應用於 follicular targeting 的概念。<span class="ex-ref">p.3367</span></li>
 <li>Nanoparticles 在毛囊中保存時間是 stratum corneum 的 <strong class="ex-n">10 倍</strong>；進入毛囊不一定穿透到活組織（毛囊也有屏障）。<span class="ex-ref">p.3368</span></li>
 <li>毛囊周圍有密集微血管，並有 stem cells 與 dendritic cells，是重要標的。以人工封閉毛囊的方法證實 caffeine 等小分子可能（may）經 transcorneal 與 follicular 兩條路徑穿透。<span class="ex-ref">p.3368</span></li>
 </ul>

@@ -19,15 +19,15 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Year</th><th scope="col">Term（名稱）</th></tr></thead>
 <tbody>
-<tr><td>1891</td><td>Sarcomatosis cutis（M. Kaposi）——首次提出 PSL（pseudomalignancy）概念</td></tr>
+<tr><td>1891</td><td>Sarcomatosis cutis（M. Kaposi）</td></tr>
 <tr><td>1910</td><td>Sarcoid Spiegler-Fendt（Darier）</td></tr>
 <tr><td>1923</td><td>Lymphocytoma cutis（Biberstein）</td></tr>
 <tr><td>1943</td><td>Lymphadenosis benigna cutis（Bäfverstedt）</td></tr>
-<tr><td>1969</td><td>Cutaneous lymphoid hyperplasia（Caro and Helwig）；同年首次描述 actinic reticuloid</td></tr>
+<tr><td>1969</td><td>Cutaneous lymphoid hyperplasia（Caro and Helwig）</td></tr>
 <tr><td>1982</td><td>Cutaneous pseudolymphoma（Burg et al）</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 120-2，p.2109；內文 p.2108（Lever 於 1967 年提出 pseudolymphoma of Spiegler and Fendt；actinic reticuloid 1969 年首次描述、M. Kaposi 的 pseudomalignancy 概念亦見內文）。</p>
+<p class="ex-cite">Table 120-2，p.2109；內文 p.2108：M. Kaposi 於 1891 年首次提出 PSL（pseudomalignancy）概念；Lever 於 1967 年提出 pseudolymphoma of Spiegler and Fendt；T-cell PSL 中 actinic reticuloid 於 1969 年首次描述（以上三項不在 Table 120-2 內）。</p>
 </section>
 
 <section class="ex-note" id="workup">
@@ -115,7 +115,7 @@
 <h2>5. <em>Borrelia</em>-Associated B-Cell PSL（伯氏疏螺旋體相關 B 細胞假性淋巴瘤）</h2>
 <ul>
 <li>由 <em>B. burgdorferi</em> 引起者，lymphocytoma cutis 與 lymphadenosis cutis benigna 為同義詞。<span class="ex-ref">p.2111</span></li>
-<li>約 <strong class="ex-n">1%</strong> 臨床明顯的 <em>B. burgdorferi</em> sp. infection 表現為 B-cell PSL；McKee 寫盛行率只有 <strong class="ex-n">0.6–1.3%</strong>。<span class="ex-ref">p.2111</span><span class="ex-ref ex-ref-mckee">McKee p.1483</span></li>
+<li>約 <strong class="ex-n">1%</strong> 臨床明顯的 <em>B. burgdorferi</em> sp. infection 表現為 B-cell PSL；McKee 寫在有 serological 和／或 clinical 感染證據的病人中盛行率只有 <strong class="ex-n">0.6–1.3%</strong>。<span class="ex-ref">p.2111</span><span class="ex-ref ex-ref-mckee">McKee p.1483</span></li>
 <li>部分（非全部）研究有 female preponderance（原文括號寫 male-to-female ratio 2:1）；whites 比 African Americans 多報告；典型影響 children 與 early adulthood，但各年齡層都可能發生，多數 &lt;40 歲。<span class="ex-ref">p.2111</span></li>
 <li>Clinical：通常是 solitary red to violaceous dome-shaped nodule；約 <strong class="ex-n">10% to 15%</strong> 可見 multifocal 病灶。好發 face、scalp，尤其 <strong>earlobes、nipples、scrotum</strong>；可有 regional lymphadenopathy。<span class="ex-ref">p.2112</span></li>
 <li>Histology：germinal centers 傾向較大且融合、mantle zone 小，部分缺乏 polarization → 像 PCFCL 的 neoplastic follicles；plasma cells 幾乎都有，尤其位於浸潤周邊。<span class="ex-ref">p.2112</span></li>
@@ -132,7 +132,7 @@
 <h3>T-cell and mixed PSL</h3>
 <ul>
 <li>Nodular T-cell PSL：dense dermal T-cell–rich nodular infiltrate，B cells 可達 <strong class="ex-n">30%</strong>；mixed PSL 的 T、B cells 數量相等。<span class="ex-ref">p.2113</span></li>
-<li>兩性、各年齡、各族群都可發生；約 <strong class="ex-n">5%</strong> 由 drugs 引起，多數為 idiopathic。<span class="ex-ref">p.2113</span></li>
+<li>兩性、各年齡、各族群都可發生；T-cell PSL 約 <strong class="ex-n">5%</strong> 由 drugs 引起，多數為 idiopathic。<span class="ex-ref">p.2113</span></li>
 <li>Clinical：通常為 solitary 或 multiple red to violaceous nodules，與 B-cell PSL 相似。<span class="ex-ref">p.2113</span></li>
 <li>Histology：多數病例為 dense nodular infiltrate 貫穿整個 dermis 到 superficial subcutis；多為 small lymphocytes，夾雜 eosinophils、histiocytes、plasma cells；germinal centers 罕見；可有 granuloma；可有淋巴球進入毛囊上皮，但通常<strong>沒有明顯 epidermotropism</strong>。<span class="ex-ref">p.2113</span></li>
 <li>IHC：多數病例中，多數 small lymphocytes 為 <strong>CD4+ CD30−</strong> T cells，可混有少數 CD30+ blasts；多數為 polyclonal，有 clonal T cells 者稱 clonal PSL，部分可能進展為 lymphoma。<span class="ex-ref">p.2113</span></li>

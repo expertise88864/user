@@ -13,7 +13,7 @@
 <li>Slow freezing → extracellular ice；fast freezing → 傾向 intracellular ice。Extracellular ice crystals 改變組織滲透性，干擾水與電解質跨膜流動。<span class="ex-ref">p.1666</span></li>
 <li>Thawing 可能與凍結本身一樣具破壞性；反覆 freeze–thaw cycles（意外傷害中可能發生）會加重傷害。<span class="ex-ref">p.1666–1667</span></li>
 <li><mark data-q="102-01,105-22,108-11">Rewarming rate 很重要：<strong>slow rewarming 時 ice crystals 變大、更具破壞性</strong></mark>。<span class="ex-ref">p.1667</span></li>
-<li>疼痛刺激、mental stress、arousal stimuli、深呼吸等自主神經刺激，在溫暖的人身上也能引起皮膚血管收縮；blood viscosity（vascular sludging）也影響冷傷害，受血流速度、hematocrit、platelet adhesiveness、蛋白濃度及 fibrinogen 等異常蛋白影響。<span class="ex-ref">p.1667</span></li>
+<li>疼痛刺激、mental stress、arousal stimuli、深呼吸等自主神經刺激，在溫暖的人身上也能引起皮膚血管收縮；blood viscosity 增加（vascular sludging）也影響寒冷對皮膚的負面效應；blood viscosity 強烈受血流速度、hematocrit、platelet adhesiveness、蛋白濃度及 fibrinogen 等異常蛋白影響。<span class="ex-ref">p.1667</span></li>
 </ul>
 </section>
 
@@ -26,7 +26,7 @@
 <li>Individual factors：transepidermal water loss 的皮膚病（e.g. atopic dermatitis）、physical injuries、leanness、low physical fitness、fatigue、dehydration、previous cold injuries、sickness、trauma、poor peripheral circulation、clothing insulation 不足、old age。<span class="ex-ref">p.1667</span></li>
 <li><strong>Newborns、elderly、急慢性心智功能受損者</strong>最易受害；許多病例與 alcohol consumption、都市遊民、車子拋錨有關；smoking 與 psychotropic drug use 也可能增加傷害。<span class="ex-ref">p.1667</span></li>
 <li>脂肪組織長期輕度遇冷可能使保暖越來越好，因此 overweight 的人較可能在長時間意外遇冷後存活。<span class="ex-ref">p.1667</span></li>
-<li>過去有嚴重冷傷害者，患肢的 hunting reaction 可能明顯延遲或消失，較易反覆冷傷害（pain、hyperesthesia、paresthesia）；部分人皮膚長期偏冷。<span class="ex-ref">p.1667</span></li>
+<li>過去有嚴重冷傷害者，患肢的 hunting reaction 可能明顯延遲或消失，較易反覆冷傷害（pain、hyperesthesia、paresthesia）；其中部分人皮膚長期偏冷。<span class="ex-ref">p.1667</span></li>
 <li>習慣遇冷的皮膚會發展更有效的 shunting；此適應在生命最初幾年最具彈性，老年組織較難形成新的 shunts。<span class="ex-ref">p.1667</span></li>
 </ul>
 </section>
@@ -109,7 +109,7 @@
 <ul>
 <li>Permanent hypersensitivity to cold；較少見 hyperhidrosis。<span class="ex-ref">p.1669</span></li>
 <li><strong>Squamous cell carcinoma</strong> 是罕見結果，通常在 <strong class="ex-n">20–30 years</strong> 後發生於 heel。<span class="ex-ref">p.1669</span></li>
-<li>兒童可能 epiphyseal plate damage 或 premature fusion → shortened digits、joint deviation、dystrophic nails。<span class="ex-ref">p.1669</span></li>
+<li>兒童可能 epiphyseal plate damage 或 premature fusion；premature fusion 可導致 shortened digits、joint deviation、dystrophic nails。<span class="ex-ref">p.1669</span></li>
 <li>Frostbite arthritis（類似 osteoarthritis）可能在數週到數年後出現；frostbite 也可能導致一側或兩側耳朵 ossification。<span class="ex-ref">p.1669–1670</span></li>
 </ul>
 </section>
@@ -119,7 +119,7 @@
 <h3>Iatrogenic（醫源性）</h3>
 <ul>
 <li>美國皮膚科最常見的門診處置是 liquid nitrogen <strong>cryodestruction</strong>：一系列 freeze–thaw cycles 造成目標病灶細胞死亡，類似局部 frostbite。<span class="ex-ref">p.1670</span></li>
-<li>反應強烈或治療過度時，急性期可出現 vesicles 甚至 large bullae（包括 hemorrhagic bullae），之後可有 hemorrhagic crusting、hypopigmentation 甚至 scarring。<span class="ex-ref">p.1670</span></li>
+<li>組織反應強烈或治療過度可能在治療後數天造成明顯反應、疼痛與病人擔憂；急性期可出現 vesicles 甚至 large bullae（包括 hemorrhagic bullae），之後可有 hemorrhagic crusting、hypopigmentation 甚至 scarring。<span class="ex-ref">p.1670</span></li>
 </ul>
 <h3>Inhalant abuse（吸入劑濫用）</h3>
 <ul>
@@ -200,10 +200,10 @@
 <aside class="ex-trap"><strong>易錯</strong><strong>Lupus pernio</strong> 是 sarcoidosis 的 variant（<span class="ex-ref">ch35</span>），與冷傷害無關；<strong>chilblains lupus</strong> 是 chronic cutaneous lupus 的 variant，或發生在 SLE 的情境中。<span class="ex-ref">p.1673</span></aside>
 <h3>Chilblain lupus erythematosus（跨章補充）</h3>
 <ul>
-<li>Chilblain LE 初為 toes、fingers、face 的 purple-red patches、papules、plaques，由濕冷氣候誘發，臨床與病理都和 idiopathic chilblains 相似；演變後常呈帶 telangiectases 的 scarred atrophic plaques。<span class="ex-ref">p.1047（ch61）</span></li>
+<li>Chilblain LE 初為 toes、fingers、face 的 purple-red patches、papules、plaques，由濕冷氣候誘發，臨床與病理都和 idiopathic chilblains 相似；演變後通常呈帶 telangiectases 的 scarred atrophic plaques。<span class="ex-ref">p.1047（ch61）</span></li>
 <li><mark data-q="114-36">病人常在 face 與 head 有典型 DLE 病灶</mark>（可能是 cold-induced acral lesion 之後 Koebnerize DLE）。<span class="ex-ref">p.1047（ch61）</span></li>
 <li>似乎與 anti-Ro/SS-A 相關，許多病例與 Raynaud phenomenon 相關。<span class="ex-ref">p.1047（ch61）</span></li>
-<li><mark data-q="114-36">與 idiopathic chilblains 的區分：<strong>病灶持續超過寒冷月份</strong>、ANA 陽性、或診斷時已有其他 ACR SLE criteria</mark>。<span class="ex-ref">p.1047（ch61）</span></li>
+<li><mark data-q="114-36">與 idiopathic chilblains 的區分：<strong>病灶持續超過寒冷月份</strong>、ANA 陽性、或診斷時已有其他 ACR SLE criteria 之一</mark>。<span class="ex-ref">p.1047（ch61）</span></li>
 <li><mark data-q="114-36">約 <strong class="ex-n">20%</strong> 的 chilblain LE 病人之後發展為 SLE</mark>；<mark data-q="114-36">chilblain LE 常被低估，但很可能是 LE 病人指（趾）病灶最常見的原因之一</mark>。<span class="ex-ref">p.1047（ch61）</span></li>
 <li>McKee：CHLE 約占 DLE 的 <strong class="ex-n">11%</strong>；familial CHLE 有 <em>TREX1</em> 突變（單一家族有 <em>SAMHD1</em>），autosomal dominant，通常幼年發病；sporadic CHLE 通常為中年女性。<span class="ex-ref ex-ref-mckee">McKee p.772、p.774</span></li>
 <li>McKee：<mark data-q="114-36">約 <strong class="ex-n">20%</strong> sporadic CHLE 病人發展為 SLE</mark>，尤其 discoid 與 perniotic lesions 同時出現者，及合併 DLE–erythema multiforme-like syndrome 者；familial CHLE 沒有人進展為 SLE。<span class="ex-ref ex-ref-mckee">McKee p.774</span></li>
@@ -229,7 +229,7 @@
 <li>IgE（較罕見為 IgM）被認為參與致病（have been implicated）；mast cell degranulation 釋出的 histamine 是最重要的 mediators 之一，leukotrienes、platelet-activating factor 等也被牽涉。<span class="ex-ref">p.1674</span></li>
 <li>Cold urticaria 可能見於 <strong class="ex-n">3–4%</strong> 的 cryoglobulinemia 病人；也可能與 cold agglutinins、cryofibrinogens、cold hemolysins 相關；infectious mononucleosis 合併 cryoglobulins 或 cold agglutinins 的報告罕見。<span class="ex-ref">p.1675</span></li>
 <li>Cold urticaria 也可能是 <strong>Muckle-Wells syndrome</strong>（urticaria、deafness、amyloidosis）的徵象：反覆 urticaria、fever、chills、malaise 可能（may）自出生起發生並持續終生。<span class="ex-ref">p.1675</span></li>
-<li>部分 acquired cold urticaria 曾被認為可能與 <em>Helicobacter pylori</em> 有關。<span class="ex-ref">p.1675</span></li>
+<li><em>Helicobacter pylori</em> 曾被提出（suggested）為部分 acquired cold urticaria 的致病因子。<span class="ex-ref">p.1675</span></li>
 <li>McKee：冰塊放在皮膚上可能（may）引發 wheal；有些病人只在全身受冷後出現症狀；偶爾喝冷飲、冷水浴或冷空氣誘發；長時間遇冷可有 headache、dyspnea、hypotension、anaphylaxis、意識喪失；可合併其他 physical urticaria；極罕見合併 cryoglobulinemia，部分病例發生在病毒感染或用藥之後。<span class="ex-ref ex-ref-mckee">McKee p.699</span></li>
 </ul>
 <h3>Familial cold urticaria</h3>

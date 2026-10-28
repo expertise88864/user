@@ -161,7 +161,7 @@
 <p class="ex-cite">McKee Table 9.1，p.320（只摘錄部分欄位與列）。</p>
 <aside class="ex-trap"><strong>易錯</strong>Subcutaneous GA 與 rheumatoid nodule：Fitzpatrick 寫可藉由 necrobiotic zone 內有 mucin 與 rheumatoid nodules 區分（may be distinguished，p.568）；McKee 則寫 mucin 也可能很少或不明顯，若有 fibrin deposition，兩者無法區分（McKee p.319）。</aside>
 <ul>
-<li>McKee：出現 interface changes 時偏向 drug eruption（GA-like drug eruptions）；<em>Mycobacterium marinum</em> 感染偶爾可 mimic interstitial GA，需靠特殊染色與培養；epithelioid sarcoma 的 nuclear atypia 與 pleomorphism 程度在多數病例（in the majority of cases）應可區分兩者，且常有 perineural tumor infiltration。<span class="ex-ref ex-ref-mckee">McKee p.320</span></li>
+<li>McKee：出現 interface changes 時偏向 drug eruption（GA-like drug eruptions）；<em>Mycobacterium marinum</em> 感染偶爾可 mimic interstitial GA，顯微特徵可能相似到只能靠特殊染色與培養診斷；epithelioid sarcoma 的 nuclear atypia 與 pleomorphism 程度在多數病例（in the majority of cases）應可區分兩者，且常有 perineural tumor infiltration。<span class="ex-ref ex-ref-mckee">McKee p.320</span></li>
 </ul>
 </section>
 

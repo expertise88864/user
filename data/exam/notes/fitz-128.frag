@@ -76,7 +76,7 @@
 <ul>
 <li><strong>Pseudoxanthoma elasticum（PXE）</strong>：elastic tissue 的遺傳疾病，特徵是 elastin fibers 進行性鈣化，主要在 skin、retina 的 Bruch's membrane 與 cardiovascular system；<em>ABCC6</em> gene（ATP-binding cassette）突變；血清 <strong>fetuin-A</strong>（anti-mineralization protein）顯著下降。<span class="ex-ref">p.2309</span></li>
 <li><mark data-q="101-13">多數 PXE 病人 calcium phosphate metabolism 正常（dystrophic），但有少數人有 abnormal calcium、phosphate 和／或 vitamin D metabolism，可出現 metastatic calcification：calcified 或 ossified tumors、falx cerebri 鈣化、arterial calcification</mark>。</li>
-<li><strong>Ehlers-Danlos syndrome（EDS）</strong>：fibrillar collagen metabolism 的遺傳疾病；皮下 calcified nodules（spheroids 或 spherules）被認為代表 calcified ischemic fat lobules；healing surgical incisions 也有鈣化報告。</li>
+<li><strong>Ehlers-Danlos syndrome（EDS）</strong>：fibrillar collagen metabolism 的遺傳疾病；皮下 calcified nodules（spheroids 或 spherules）可能（may）出現，被認為代表 calcified ischemic fat lobules；healing surgical incisions 也有鈣化報告。</li>
 <li><strong>Porphyria cutanea tarda</strong>：preauricular area、scalp、neck、dorsa of hands 的 sclerodermoid plaques 可有 dystrophic calcification；伴 ulceration 的 transepidermal elimination of sheets of calcium 也有 rarely reported（罕見報告）。其他可能（may）發生鈣化的遺傳疾病：Werner syndrome、Rothmund–Thomson syndrome、cerebral amyloid angiopathy。<span class="ex-ref">p.2309</span></li>
 </ul>
 <h3>Cutaneous neoplasms</h3>
@@ -126,7 +126,7 @@
 <li><mark data-q="110-38">Fitzpatrick：generally occurs in otherwise healthy adolescents</mark>；可為 sporadic 或 familial。</li>
 <li>Familial type 可伴 hyperphosphatemia 或 normophosphatemia：<em>GALNT3</em>、<em>KLOTHO</em>、<em>FGF23</em> 的 inactivating mutations 可導致 hyperphosphatemic TC；<em>GALNT3</em> 編碼 glycosyltransferase（ppGalNAc-T3），啟動 mucin-type O-glycosylation，推測 FGF23 需經其 glycosylation 才能正常作用。Normophosphatemic familial TC 與 <em>SAMD9</em> 缺失（anti-inflammatory protein，也被認為可能是 tumor suppressor）的突變有關。</li>
 <li>治療：surgical excision 為 treatment of choice；飲食限制 phosphate 與使用抑制 phosphate 吸收的 antacids 有部分成功。</li>
-<li>McKee：TC 在 skin 與 subcutaneous tissues 有大量 calcium deposits，典型在 bony prominences（hip、elbow、scapula）；在 Europe 與 North America 少見，在 South、Central、East Africa 與 Papua New Guinea 不罕見（稱 hip stone）；<strong>female preponderance（2 : 1）</strong>，<mark data-q="110-38">affects younger age groups</mark>。<span class="ex-ref ex-ref-mckee">McKee p.610</span></li>
+<li>McKee：TC 在 skin 與 subcutaneous tissues 有大量 calcium deposits，典型在 bony prominences（hip、elbow、scapula）；在 Europe 與 North America 罕見（rare），在 South、Central、East Africa 與 Papua New Guinea 不罕見（稱 hip stone）；<strong>female preponderance（2 : 1）</strong>，<mark data-q="110-38">affects younger age groups</mark>。<span class="ex-ref ex-ref-mckee">McKee p.610</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 將 tumoral calcinosis 列在 metastatic（Table 128-1，p.2308），並寫 generally occurs in otherwise healthy adolescents（p.2311）；McKee 寫 affects younger age groups（McKee p.610）。</aside>
 <h3>Other disorders</h3>
@@ -177,7 +177,7 @@
 <li><strong>Scrotal calcinosis</strong>：calcified nodules，通常見於其他方面健康的男性，隨時間數目與大小傾向（tend to）增加，最終可能（may）破潰並排出 chalky material。<span class="ex-ref">p.2311</span></li>
 <li>病因有爭議；n = 100 的最大 series 顯示從 epidermal cyst 明確鈣化，到 inflamed cyst 且 lining epithelia 部分消失，再到 calcium deposits，提示是 cysts 的 dystrophic calcification 與 cyst wall 的 obliteration。<span class="ex-ref">p.2311</span>McKee：scrotal variant 的致病機轉最可能（most probably）是既存 dermal cysts 內容物鈣化，多為 epidermoid，偶為 pilar；兩項研究中 over 50% 病例有殘存 epidermal cysts。<span class="ex-ref ex-ref-mckee">McKee p.611</span></li>
 <li>Excision 為 treatment of choice，但病人可能繼續在其他部位長出結節。Penis、vulva、breast 的 idiopathic calcification 也有報告。<span class="ex-ref">p.2311</span></li>
-<li><strong>Subepidermal calcified nodules</strong>：出現在頭部與四肢 exposed areas，通常在兒童；可為 congenital 或 acquired，典型為 hard、<strong class="ex-n">3–10 mm</strong> 的 solitary lesions，也可多發；有些研究者認為是 calcified sweat gland hamartomas。McKee：通常（usually）early childhood 發病，男性較多，多數 nodules hyperkeratotic 且壓痛；組織學有時有 pseudoepitheliomatous hyperplasia 與 transepidermal elimination of calcium。<span class="ex-ref ex-ref-mckee">McKee p.609, 611</span></li>
+<li><strong>Subepidermal calcified nodules</strong>：出現在頭部與四肢 exposed areas，通常在兒童；可為 congenital 或 acquired，典型為 hard、<strong class="ex-n">3–10 mm</strong> 的 solitary lesions，也可多發；有些研究者認為是 calcified sweat gland hamartomas。<span class="ex-ref">p.2311</span>McKee：通常（usually）early childhood 發病，男性較多，多數 nodules hyperkeratotic 且壓痛；組織學有時有 pseudoepitheliomatous hyperplasia 與 transepidermal elimination of calcium。<span class="ex-ref ex-ref-mckee">McKee p.609, 611</span></li>
 <li><strong>Milialike idiopathic calcinosis cutis</strong>：有報告（Reports have described）見於 Down syndrome 病人手背與前臂；有些鈣化與 syringomas 有關。McKee：兒童（usually under the age of 21 years）；two-thirds of cases 與 Down syndrome 有關。<span class="ex-ref">p.2311</span><span class="ex-ref ex-ref-mckee">McKee p.610</span></li>
 <li>McKee：<strong>calcinosis universalis</strong> 為 progressive deposition of calcium in skin and subcutaneous tissue，臨床與 metastatic calcification 很類似；曾與 dermatomyositis、lupus erythematosus、scleroderma、chronic GVHD 有關。<span class="ex-ref ex-ref-mckee">McKee p.609</span></li>
 </ul>
@@ -254,8 +254,8 @@
 <tr><td>Overproduction of uric acid（產生過多）</td><td>Primary</td><td>Idiopathic；hypoxanthine-guanine phosphoribosyltransferase deficiency；phosphoribosylpyrophosphate synthetase superactivity</td></tr>
 <tr><td>Overproduction of uric acid</td><td>Secondary</td><td>Excessive dietary purine intake；increased nucleotide turnover（e.g. myeloproliferative 與 lymphoproliferative disorders、hemolytic disease、psoriasis）</td></tr>
 <tr><td>Diminished excretion of uric acid（排泄減少）</td><td>Primary</td><td>Idiopathic</td></tr>
-<tr><td>Diminished excretion of uric acid</td><td>Secondary</td><td>Diminished renal function；inhibition of tubular urate secretion by competitive anions（e.g. keto- 與 lactic acidosis）；enhanced tubular urate reabsorption；Dehydration, diuretics（原表此行緊接在後，未縮排、無項目符號）</td></tr>
-<tr><td>Diminished excretion of uric acid</td><td>Miscellaneous</td><td>Hypertension；hyperparathyroidism；certain drugs（e.g. cyclosporine、pyrazinamide、ethambutol、low-dose salicylates）；lead nephropathy</td></tr>
+<tr><td>Diminished excretion of uric acid</td><td>Secondary</td><td>Diminished renal function；inhibition of tubular urate secretion by competitive anions（e.g. keto- 與 lactic acidosis）；enhanced tubular urate reabsorption</td></tr>
+<tr><td>Dehydration, diuretics（原表以虛線分隔的第三區塊標題，與 Overproduction、Diminished excretion 同層）</td><td>Miscellaneous</td><td>Hypertension；hyperparathyroidism；certain drugs（e.g. cyclosporine、pyrazinamide、ethambutol、low-dose salicylates）；lead nephropathy</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 128-2，p.2314（對照原頁圖片）。</p>

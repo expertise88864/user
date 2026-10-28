@@ -175,7 +175,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。②④可由課本支持（diabetic dermopathy 與 nephropathy 相關、renal pruritus 很常見；Hodgkin lymphoma 有 B symptoms 與 paraneoplastic pruritus）。但要判斷①③錯誤，兩本課本都沒有直接寫到：Fitzpatrick 9e 沒有描述 polycythemia vera 搔癢遇水加劇（aquagenic），也沒有說明肝病惡化時 cholestatic pruritus 可能減輕，只提到搔癢與 bilirubin 相關性差；McKee 也沒有相關敘述。依一般臨床知識，PV 搔癢是碰水誘發，cholestatic pruritus 在疾病進展後盛行率會下降，所以①③錯誤、答案 B。查證後現行文獻觀念未變：德國 441 例 PV 病人問卷研究中，約 68%（301 例）有 aquagenic pruritus。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。②④可由課本支持（diabetic dermopathy 與 nephropathy 相關、renal pruritus 很常見；Hodgkin lymphoma 有 B symptoms 與 paraneoplastic pruritus）。但要判斷①③錯誤，兩本課本都沒有直接寫到：Fitzpatrick 9e 沒有描述 polycythemia vera 搔癢遇水加劇（aquagenic），也沒有說明肝病惡化時 cholestatic pruritus 可能減輕，只提到搔癢與 bilirubin 相關性差；McKee 也沒有相關敘述。依一般臨床知識，PV 搔癢是碰水誘發，cholestatic pruritus 在疾病進展後盛行率會下降，所以①③錯誤、答案 B。查證後現行文獻觀念未變：德國 441 例 PV 病人問卷研究（Siegel 等，Am J Hematol 2013）中，約 68%（301 例）有 aquagenic pruritus。"
   }
  },
  "101-04": {
@@ -2482,7 +2482,7 @@
   ],
   "dispute": {
    "kind": "conflict",
-   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在 A 的後半句「致病機轉可能和 IgE 有關」，兩本課本說法不一：McKee 5e p.700 寫 physical urticarias（heat、cold、pressure 等）被認為是對 mast cell 的直接作用，支持 A 為錯誤；但 Fitzpatrick 9e p.692 提到部分 physical urticaria 的研究提示異常 IgE 受物理刺激改變構形而活化 mast cell，p.693 也寫 specific IgE 可能連結誘發刺激與 mast cell，p.702 並寫 omalizumab 對 DPU 也有效（off-label）。A 的前半句（偶合併發燒、寒顫、關節痛、肌痛、白血球上升）是舊版敘述，9e 未提及。其餘三項依課本可判為正確，A 仍是唯一可選的錯誤選項，故維持 A。查詢現行文獻（2024 年 chronic inducible urticaria 綜述），omalizumab off-label 用於各型 CIndU 整體效果良好，但 DPU 的確切機轉仍未定論。"
+   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在 A 的後半句「致病機轉可能和 IgE 有關」，兩本課本說法不一：McKee 5e p.700 寫 physical urticarias（heat、cold、pressure 等）被認為是對 mast cell 的直接作用，支持 A 為錯誤；但 Fitzpatrick 9e p.692 提到部分 physical urticaria 的研究提示異常 IgE 受物理刺激改變構形而活化 mast cell，p.693 也寫 specific IgE 可能連結誘發刺激與 mast cell，p.702 並寫 omalizumab 對 DPU 也有效（off-label）。A 的前半句（偶合併發燒、寒顫、關節痛、肌痛、白血球上升）是舊版敘述，9e 未提及。其餘三項依課本可判為正確，A 仍是唯一可選的錯誤選項，故維持 A。查詢現行文獻（2024 年 chronic inducible urticaria 綜述，Muñoz 等，Curr Allergy Asthma Rep 2024），omalizumab off-label 用於各型 CIndU 整體效果良好，但 DPU 的確切機轉仍未定論。"
   }
  },
  "101-39": {
@@ -3337,7 +3337,7 @@
    }
   ],
   "flags": [
-   "D 烏腳病 blackfoot disease 兩本課本皆未提及；台灣文獻回顧（Kaohsiung J Med Sci 2011）明載烏腳病是慢性砷暴露所致、為台灣砷流行區特有的疾病，支持 D 錯誤。本題答案 B 有課本明確支持。"
+   "D 烏腳病 blackfoot disease 兩本課本皆未提及；台灣文獻回顧（Lan 等，Kaohsiung J Med Sci 2011）明載烏腳病是慢性砷暴露所致、為台灣砷流行區特有的疾病，支持 D 錯誤。本題答案 B 有課本明確支持。"
   ]
  },
  "102-01": {
@@ -7488,7 +7488,7 @@
     "key": "D",
     "label": "正確",
     "ok": true,
-    "text": "Berth-Jones 與 Hutchinson（課本內文印為 Huchinson，參考文獻為 Hutchinson PE）的研究指出，冷凍前先削除（paring）可提高足底疣的治癒率，但對手部疣則無此效果。",
+    "text": "Berth-Jones 與 Hutchinson（Br J Dermatol 1992；課本內文印為 Huchinson，參考文獻為 Hutchinson PE）的研究指出，冷凍前先削除（paring）可提高足底疣的治癒率，但對手部疣則無此效果。",
     "refs": [
      [
       206,
@@ -8928,7 +8928,7 @@
   "dispute": {
    "kind": "conflict",
    "exam": "考試答案：依課本出題本意維持原答案 B，因為 Fitzpatrick p.3771 明列 spindle cell features 為 SCC 高危險特徵，B 說「預後較佳」確定是錯誤敘述。疑義在於 A：兩本課本都沒有寫「<2 cm 轉移率約 1%」，McKee p.1205 引用的數據是 <2 cm 腫瘤轉移率 7.6%，若照 McKee，A 也算錯誤。此外 McKee p.1208 提到較常見的 actinic spindle cell SCC 預後良好、很少轉移，只有放射線或外傷相關者屬高惡性度，所以 B 也不是在所有情況下都錯。查詢現行文獻沒有找到會改變本題答案的指引更新。",
-   "current": "現行觀念：2025 年系統性回顧與統合分析（30 篇研究）顯示，AJCC 8th T1 腫瘤（≤2 cm，且沒有符合 AJCC 8th T3 條件的 deep invasion（超過皮下脂肪或 >6 mm）或 perineural invasion（真皮以下或 ≥0.1 mm 神經的鞘內腫瘤細胞，或臨床／影像侵犯具名神經）、minor bone erosion 等升為 T3 的條件）的 nodal metastasis 約 1.5%，BWH T1 約 0.7%。這些是特定分期族群的數據：<2 cm 但具有上述 T3 條件的腫瘤不在其中，所以不能據此證明 A「直徑小於 2 公分轉移率約 1%」普遍成立；本題仍依官方答案 B。",
+   "current": "現行觀念：2025 年系統性回顧與統合分析（Zakhem 等，J Am Acad Dermatol 2025；30 篇研究）顯示，AJCC 8th T1 腫瘤（≤2 cm，且沒有符合 AJCC 8th T3 條件的 deep invasion（超過皮下脂肪或 >6 mm）或 perineural invasion（真皮以下或 ≥0.1 mm 神經的鞘內腫瘤細胞，或臨床／影像侵犯具名神經）、minor bone erosion 等升為 T3 的條件）的 nodal metastasis 約 1.5%，BWH T1 約 0.7%。這些是特定分期族群的數據：<2 cm 但具有上述 T3 條件的腫瘤不在其中，所以不能據此證明 A「直徑小於 2 公分轉移率約 1%」普遍成立；本題仍依官方答案 B。",
    "sources": [
     {
      "pmid": "39889854",
@@ -10408,7 +10408,7 @@
   "dispute": {
    "kind": "conflict",
    "exam": "考試答案：依出題本意維持原答案 A（B、C、D 都與課本相符，以排除法選 A）。疑義在於 Fitzpatrick 9e p.1688 明寫門診燒燙傷傷口感染「通常」由 [i]Staphylococcus[/i] 等正常菌叢引起並以 cellulitis 表現，等於支持 A 為正確敘述，課本與官方答案互相矛盾。出題者可能是以住院大面積燒傷的侵襲性傷口感染多由 [i]Pseudomonas[/i] 等 Gram-negative 菌造成、或舊版教材的說法來命題。",
-   "current": "現行觀念：燒燙傷傷口初期無菌，先由 Gram-positive 菌（以 [i]Staphylococcus aureus[/i] 為主）定殖，之後才轉為 [i]Pseudomonas aeruginosa[/i]、[i]Acinetobacter[/i] 等 Gram-negative 菌；感染可從需全身抗生素的 cellulitis 到侵襲性傷口感染。近年分離菌株統計中 [i]S. aureus[/i]（含 MRSA）仍常居首位，因此「最常見為 staphylococcal cellulitis」並不算明確錯誤。",
+   "current": "現行觀念：燒燙傷傷口初期無菌，先由 Gram-positive 菌（以 [i]Staphylococcus aureus[/i] 為主）定殖，之後才轉為 [i]Pseudomonas aeruginosa[/i]、[i]Acinetobacter[/i] 等 Gram-negative 菌；感染可從需全身抗生素的 cellulitis 到侵襲性傷口感染。近年分離菌株統計（Ke 等，Front Microbiol 2022）中 [i]S. aureus[/i]（含 MRSA）仍常居首位，因此「最常見為 staphylococcal cellulitis」並不算明確錯誤。",
    "sources": [
     {
      "pmid": "33085576",
@@ -13199,7 +13199,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在③：Fitzpatrick 9e 只寫雷射去刺青通常需要多次治療，並介紹同日多次照射的 R20 方法；Fitzpatrick 9e 與 McKee 5e 都沒有提到兩次治療之間的建議間隔，所以無法用課本判定「3–4 週」是錯的。出題本意應是常見的 6–8 週以上間隔。查得的文獻多為病例系列與臨床經驗，沒有指引層級的建議；米蘭 352 例 QS 雷射前瞻世代研究的療程間隔均在 6 週以上，且間隔 ≤8 週與較差的清除效果相關，未支持 3–4 週的間隔，現行觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在③：Fitzpatrick 9e 只寫雷射去刺青通常需要多次治療，並介紹同日多次照射的 R20 方法；Fitzpatrick 9e 與 McKee 5e 都沒有提到兩次治療之間的建議間隔，所以無法用課本判定「3–4 週」是錯的。出題本意應是常見的 6–8 週以上間隔。查得的文獻多為病例系列與臨床經驗，沒有指引層級的建議；米蘭 352 例 QS 雷射前瞻世代研究（Bencini 等，Arch Dermatol 2012）的療程間隔均在 6 週以上，且間隔 ≤8 週與較差的清除效果相關，未支持 3–4 週的間隔，現行觀念未變。"
   }
  },
  "104-49": {
@@ -13820,7 +13820,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在②：Fitzpatrick 9e 只提到注射藥物使用者與 MRSA／[i]S. aureus[/i] 的關係，McKee 5e 也沒有寫到「非靜脈使用安非他命者 MRSA 風險較高」。查詢現行文獻，病例對照研究發現 methamphetamine 使用與 MRSA 皮膚感染相關，且多數使用者是吸食或鼻吸而非注射，觀念與題目一致、未更新，故②仍視為正確。"
+   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在②：Fitzpatrick 9e 只提到注射藥物使用者與 MRSA／[i]S. aureus[/i] 的關係，McKee 5e 也沒有寫到「非靜脈使用安非他命者 MRSA 風險較高」。查詢現行文獻，病例對照研究（Cohen 等，Emerg Infect Dis 2007）發現 methamphetamine 使用與 MRSA 皮膚感染相關，且多數使用者是吸食或鼻吸而非注射，觀念與題目一致、未更新，故②仍視為正確。"
   }
  },
  "105-08": {
@@ -14081,7 +14081,7 @@
   "dispute": {
    "kind": "missing",
    "exam": "考試答案：依課本出題本意維持原答案 C。疑義在②：McKee 5e 只寫刺青色素位於細胞外與 macrophage 內（汞顆粒並沿表淺血管分布），Fitzpatrick 9e 只寫墨水在溶酶體內；兩本都沒有提到 fibroblast 與血管旁 mast cell 含有色素。依出題本意（色素分布於真皮多種細胞）仍判②正確。",
-   "current": "現行觀念：2018 年小鼠研究顯示，長期保留刺青色素的主要是真皮 macrophage，色素經「捕捉—釋放—再捕捉」循環留在原處；但 2023 年人體 in vivo 雙光子螢光壽命影像研究發現，新舊刺青的 carbon black 色素都位於細胞內，真皮中可見於 macrophage、mast cell 與 fibroblast，支持②的敘述。",
+   "current": "現行觀念：2018 年小鼠研究（Baranska 等，J Exp Med 2018）顯示，長期保留刺青色素的主要是真皮 macrophage，色素經「捕捉—釋放—再捕捉」循環留在原處；但 2023 年人體 in vivo 雙光子螢光壽命影像研究（Kröger 等，Dermatology 2023）發現，新舊刺青的 carbon black 色素都位於細胞內，真皮中可見於 macrophage、mast cell 與 fibroblast，支持②的敘述。",
    "sources": [
     {
      "pmid": "29511065",
@@ -14243,7 +14243,7 @@
     "key": "②",
     "label": "錯誤",
     "ok": false,
-    "text": "Cochrane 2015 review 顯示 PUVA 達到 >75% 復色的效果劣於 nbUVB，color matching 也比 nbUVB 差，且副作用較多，因此 PUVA 已非第一線。",
+    "text": "Cochrane 2015 review（Whitton 等，Cochrane Database Syst Rev 2015）的統合分析中，nbUVB 達到 >75% 復色的比例較 PUVA 高，但差異未達統計顯著（RR 1.60，95% CI 0.74–3.45）；nbUVB 組的 nausea 與 erythema 較少，因此 PUVA 已非第一線。",
     "refs": [
      [
       76,
@@ -14299,13 +14299,19 @@
   "dispute": {
    "kind": "conflict",
    "exam": "考試答案：依課本出題本意維持原答案 A。疑義在於③：Fitzpatrick 9e 與 McKee 5e 都沒有給出自發復色比例，Fitzpatrick 只說有毛部位可自發、治療後或日曬後復色（反而暗示曝光部位較易復色），McKee 只說自發復色呈斑片狀、集中於毛囊周圍；傳統說法是自發復色約 10%–20%（確實不到 50%），且多見於年輕人與 sun-exposed areas，與題目「非陽光曝曬的患部比例較高」相反，疑為題目誤植。②（PUVA 較好）與④（marginal 最常見）明確錯誤，含③的組合中只有 A 合理，故維持 A。",
-   "current": "現行觀念：2020 年 167 例橫斷研究顯示，自發復色見於 21.5% 病人（完全復色僅 3.6%），曝光部位較非曝光部位常見，且與年齡、性別、發病年齡無關；支持③前半「不到 50%」，但不支持「年輕人與非曝光部位比例較高」。",
+   "current": "現行觀念：2020 年 167 例橫斷研究（Taneja 等，Indian J Dermatol Venereol Leprol 2020）顯示，自發復色見於 21.5% 病人（完全復色僅 3.6%），曝光部位較非曝光部位常見，且與年齡、性別、發病年齡無關；支持③前半「不到 50%」，但不支持「年輕人與非曝光部位比例較高」。",
    "sources": [
     {
      "pmid": "31793491",
      "title": "A cross-sectional study of spontaneous repigmentation in vitiligo.",
      "year": 2020,
      "url": "https://pubmed.ncbi.nlm.nih.gov/31793491/"
+    },
+    {
+     "pmid": "25710794",
+     "title": "Interventions for vitiligo.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25710794/"
     }
    ]
   }
@@ -18460,7 +18466,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於②（體股癬 2 週、足癬 4 週）與④（症狀消失後至少再塗 1 週）這兩個療程通則，Fitzpatrick 9e 與 McKee 5e 都沒有寫到；9e 只寫外用藥多數每天兩次 2–4 週。①（只塗病灶）與③（nystatin 對 [i]Malassezia[/i] 無效）可由課本判為錯誤，剩下②④正確，故維持 B。查詢文獻回顧（Am Fam Physician 2002）：體癬、股癬通常治療 2 週，足癬以 azole 治療 4 週，臨床痊癒後應再擦至少 1 週，與②④一致。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於②（體股癬 2 週、足癬 4 週）與④（症狀消失後至少再塗 1 週）這兩個療程通則，Fitzpatrick 9e 與 McKee 5e 都沒有寫到；9e 只寫外用藥多數每天兩次 2–4 週。①（只塗病灶）與③（nystatin 對 [i]Malassezia[/i] 無效）可由課本判為錯誤，剩下②④正確，故維持 B。查詢文獻回顧（Weinstein 與 Berman，Am Fam Physician 2002）：體癬、股癬通常治療 2 週，足癬以 azole 治療 4 週，臨床痊癒後應再擦至少 1 週，與②④一致。"
   }
  },
  "106-26": {
@@ -19015,7 +19021,7 @@
   ],
   "flags": [
    "選項 B「Dexosimethasone」應為 desoximethasone（desoximetasone）之拼寫誤植，不影響作答。",
-   "C 選項的 hydrocortisone acetate 未列於 Fitzpatrick Table 24-6（class A 只列 hydrocortisone valerate 等），依 Coopman 分類屬 class A。另依 Baeck（2011）的三組分類，clobetasol（D1）與 desoximethasone（C）同屬致敏性與交叉反應風險最低的 group 3；本題依 Fitzpatrick 明文「無 patch test 證據時 desoximethasone ointment 最安全」選 B。"
+   "C 選項的 hydrocortisone acetate 未列於 Fitzpatrick Table 24-6（class A 只列 hydrocortisone valerate 等），依 Coopman 分類（Coopman 等，Br J Dermatol 1989）屬 class A。另依 Baeck 等（Allergy 2011）的三組分類，clobetasol（D1）與 desoximethasone（C）同屬致敏性與交叉反應風險最低的 group 3；本題依 Fitzpatrick 明文「無 patch test 證據時 desoximethasone ointment 最安全」選 B。"
   ]
  },
  "106-34": {
@@ -22734,7 +22740,7 @@
    }
   ],
   "flags": [
-   "②的「一半以上在 10 歲以前」，兩本書都沒有直接寫這個比例；Fitzpatrick Ch116 引用的大型回顧中位年齡為 12.6 歲。這裡依 McKee「通常在青春期前」與 Fitzpatrick Ch115「出生後頭幾年就可能發生」判定為正確。Krengel（2006）系統性回顧（6571 例 CMN）中 melanoma 診斷年齡中位數為 7 歲（平均 15.5 歲），亦支持②。"
+   "②的「一半以上在 10 歲以前」，兩本書都沒有直接寫這個比例；Fitzpatrick Ch116 引用的大型回顧中位年齡為 12.6 歲。這裡依 McKee「通常在青春期前」與 Fitzpatrick Ch115「出生後頭幾年就可能發生」判定為正確。Krengel 等（Br J Dermatol 2006）系統性回顧（6571 例 CMN）中 melanoma 診斷年齡中位數為 7 歲（平均 15.5 歲），亦支持②。"
   ],
   "dispute": {
    "kind": "missing",
@@ -26343,7 +26349,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於①③的部分細節：①的好發部位（sun-exposed、皺褶、periorificial）與外傷、壓力兩本課本都有，但懷孕、口服避孕藥、曬傷作為惡化因子 Fitzpatrick 9e 與 McKee 5e 都沒有寫；③的清單中 psoriasis 見於 McKee、lupus 見於 Fitzpatrick，rheumatoid arthritis 則兩本都未列。②（leukotrichia 反應較佳）與④（華人發生率較高）明確錯誤，故仍選 B。查詢文獻：2023 年統合分析顯示 vitiligo 病人合併 rheumatoid arthritis 的風險上升（OR 1.82），支持③；2026 年系統性回顧指出壓力、外傷、曬傷等誘發因子雖常被提及，但多為低層級證據，觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於①③的部分細節：①的好發部位（sun-exposed、皺褶、periorificial）與外傷、壓力兩本課本都有，但懷孕、口服避孕藥、曬傷作為惡化因子 Fitzpatrick 9e 與 McKee 5e 都沒有寫；③的清單中 psoriasis 見於 McKee、lupus 見於 Fitzpatrick，rheumatoid arthritis 則兩本都未列。②（leukotrichia 反應較佳）與④（華人發生率較高）明確錯誤，故仍選 B。查詢文獻：2023 年統合分析（Lee 等，J Invest Dermatol 2023）顯示 vitiligo 病人合併 rheumatoid arthritis 的風險上升（OR 1.82），支持③；2026 年系統性回顧（Piquero-Casals 等，Am J Clin Dermatol 2026）指出壓力、外傷、曬傷等誘發因子雖常被提及，但多為低層級證據，觀念未變。"
   }
  },
  "108-44": {
@@ -30423,7 +30429,7 @@
    }
   ],
   "flags": [
-   "③ 依官方答案判為正確；Fitzpatrick 9e 未直接說「可繼續服用」，僅提及對既有不孕問題者可能影響精子生成。男性不孕門診研究顯示 finasteride 可使部分男性精蟲數下降、停藥後多明顯回升，作者建議精蟲過少的 subfertile 男性停藥、想生育者謹慎使用，與課本觀點相符。"
+   "③ 依官方答案判為正確；Fitzpatrick 9e 未直接說「可繼續服用」，僅提及對既有不孕問題者可能影響精子生成。男性不孕門診研究（Samplaski 等，Fertil Steril 2013）顯示 finasteride 可使部分男性精蟲數下降、停藥後多明顯回升，作者建議精蟲過少的 subfertile 男性停藥、想生育者謹慎使用，與課本觀點相符。"
   ]
  },
  "110-09": {
@@ -31744,7 +31750,7 @@
     "key": "①",
     "label": "錯誤",
     "ok": false,
-    "text": "Selective photothermolysis（Anderson 與 Parrish，1983 年發表）的要件是 pulse duration「短於」（或相當於）thermal relaxation time；脈衝長於 TRT 反而讓熱擴散到周邊組織造成傷害。",
+    "text": "Selective photothermolysis（Anderson 與 Parrish，Science 1983 年發表）的要件是 pulse duration「短於」（或相當於）thermal relaxation time；脈衝長於 TRT 反而讓熱擴散到周邊組織造成傷害。",
     "refs": [
      [
       208,
@@ -35343,7 +35349,7 @@
    }
   ],
   "flags": [
-   "Fitzpatrick 9e 列出的 PG 診斷標準（2 major + ≥2 minor）未註明是 Su 等（2004）提出；且原文是「pathergy 病史或 cribriform scarring」（or），並非一定要做 pathergy test，選項 B 用語與課本略有出入。"
+   "Fitzpatrick 9e 列出的 PG 診斷標準（2 major + ≥2 minor）未註明是 Su 等（Int J Dermatol 2004）提出；且原文是「pathergy 病史或 cribriform scarring」（or），並非一定要做 pathergy test，選項 B 用語與課本略有出入。"
   ]
  },
  "111-35": {
@@ -38156,7 +38162,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於④的 JAK inhibitor：Fitzpatrick 9e 的 GA 治療表只列到 TNF-α inhibitors（且註明它們也曾誘發 GA），沒有提到 JAK inhibitor，McKee 5e 也未提及。查系統性回顧（J Am Acad Dermatol 2023；Australas J Dermatol 2025），都把 JAK inhibitor 列為難治型 GA 的可行選項（證據多為個案與小型系列），與題目觀念一致，所以④仍判為正確。現行文獻觀念與題目相同，只是課本未收錄。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於④的 JAK inhibitor：Fitzpatrick 9e 的 GA 治療表只列到 TNF-α inhibitors（且註明它們也曾誘發 GA），沒有提到 JAK inhibitor，McKee 5e 也未提及。查系統性回顧（J Am Acad Dermatol 2023；Bettolini 等，Australas J Dermatol 2025），都把 JAK inhibitor 列為難治型 GA 的可行選項（證據多為個案與小型系列），與題目觀念一致，所以④仍判為正確。現行文獻觀念與題目相同，只是課本未收錄。"
   }
  },
  "112-29": {
@@ -41213,7 +41219,7 @@
     "key": "B",
     "label": "正確",
     "ok": true,
-    "text": "DeFilippis 等的系統性回顧中有 JAK2 突變合併 PG 的病例；JAK 突變可造成發炎與骨髓增生疾病，合併 JAK2 突變之 polycythemia vera 的 PG 對 ruxolitinib 有反應。",
+    "text": "DeFilippis 等（Br J Dermatol 2015）的系統性回顧中有 JAK2 突變合併 PG 的病例；JAK 突變可造成發炎與骨髓增生疾病，合併 JAK2 突變之 polycythemia vera 的 PG 對 ruxolitinib 有反應。",
     "refs": [
      [
       37,

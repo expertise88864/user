@@ -14,8 +14,8 @@
 <thead><tr><th scope="col">Serovars</th><th scope="col">Disease（疾病）</th></tr></thead>
 <tbody>
 <tr><td>A、B、C</td><td>Trachoma（眼部感染）；北美、歐洲罕見，非洲與亞洲常見，是 blindness 的重要原因</td></tr>
-<tr><td>D–K</td><td>Ocular、genital、respiratory tract infections；侷限在 mucosa</td></tr>
-<tr><td>L1、L2、L3</td><td>LGV；較具侵襲性（more invasive），對 <strong>macrophages</strong> 有高親和力</td></tr>
+<tr><td>D–K</td><td>Ocular、genital、respiratory tract infections</td></tr>
+<tr><td>L1、L2、L3</td><td>LGV；與侷限在 mucosa 的 A–K serovars 相比，較具侵襲性（more invasive），對 <strong>macrophages</strong> 有高親和力</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.3194</p>
@@ -167,7 +167,7 @@
 <li>與 LGV primary stage 相比，<strong>chancroid</strong> 潰瘍通常較大且較痛；<strong>donovanosis（granuloma inguinale）</strong>潰瘍有大量易碎 granulation tissue，且沒有 associated lymphadenitis。<span class="ex-ref">p.3197</span></li>
 <li>Acute genital syndrome 可能難與 chancroid 區分；但含少量或沒有膿的 buboes 較可能是 LGV。</li>
 <li>HIV-positive MSM 出現類似 Crohn disease 或 malignancy 的表現時，即使沒有 pathognomonic findings 也要懷疑 LGV proctitis；兩者 proctoscopic findings 相似，但 Crohn disease 位置較近端（more proximally localized）。<span class="ex-ref">p.3197</span></li>
-<li>荷蘭、英國、澳洲的研究顯示，有 rectal chlamydial infection 且有 proctitis 症狀者中 <strong class="ex-n">7%–23%</strong> 為 LGV。<span class="ex-ref">p.3198</span></li>
+<li>荷蘭、英國、澳洲的研究顯示，有 rectal chlamydial infection 且有 proctitis 徵象或症狀（signs or symptoms）者中 <strong class="ex-n">7%–23%</strong> 為 LGV。<span class="ex-ref">p.3198</span></li>
 </ul>
 <h3>Genital ulcer + lymph node：疼痛比較（跨章整理）</h3>
 <table class="ex-table">

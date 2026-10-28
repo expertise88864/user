@@ -43,7 +43,7 @@
 <section class="ex-note" id="cutaneous">
 <h2>3. Cutaneous Findings（皮膚表現）</h2>
 <p><mark data-q="109-04">TSC 病人可能（may）出現多種皮膚表現，包括 <strong>hypomelanotic macules、facial angiofibromas、fibrous cephalic plaques、shagreen patches、ungual fibromas</strong></mark>（At-a-glance 另列 “confetti” lesions）。有些可能出生即有（如 hypomelanotic macules），有些可能到成年才出現（如 ungual fibromas）；多數人最終至少有 1 種皮膚表現，但嚴重度因人而異。<span class="ex-ref">p.2480</span></p>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 列出的 TSC 皮膚表現中沒有 café-au-lait macules（p.2480）；café-au-lait spots 常是 NF-1 最早出現的表現 <span class="ex-ref">p.2465（ch135）</span>。McKee 則寫 TSC 有時（may sometimes）可見 café-au-lait macules <span class="ex-ref ex-ref-mckee">McKee p.1024</span>。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 本章列出的 TSC 皮膚表現中沒有 café-au-lait macules（p.2480）；café-au-lait spots 常是 NF-1 最早出現的表現 <span class="ex-ref">p.2465（ch135）</span>。Table 135-2 則把 tuberous sclerosis 列在 multiple café-au-lait spots 相關症候群的 “Less Likely” 欄 <span class="ex-ref">p.2471（ch135）</span>。McKee 則寫 TSC 有時（may sometimes）可見 café-au-lait macules <span class="ex-ref ex-ref-mckee">McKee p.1024</span>。</aside>
 
 <h3>Hypomelanotic macules（低色素斑、ash-leaf spots）</h3>
 <ul>

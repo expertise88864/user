@@ -83,7 +83,7 @@
 <li>許多報告病例發生在<strong>肌肉注射 NSAIDs</strong> 之後，NSAIDs <strong>可能</strong>掩蓋 NF 的症狀；口服 NSAIDs 也有相關報告。罕見病例發生於 spider bite 後；<strong>可能</strong>是 fistulating Crohn disease 的罕見併發症。</li>
 <li>Group A β-hemolytic streptococci（俗稱 &quot;flesh-eating&quot; bacteria）最早被認為是主要病原，但 NF <strong>very often</strong> 為 polymicrobial；<strong>部分系列中 <em>S. aureus</em> 是最常培養出的菌種</strong>。<em>S. dysgalactiae</em> subsp. <em>equisimilis</em> 與 group A <em>Streptococcus</em> 共有約 <strong class="ex-n">70%</strong> genome，是新近被認識的 NF 病原。<em>Candida albicans</em> 是極罕見的病因。</li>
 <li><strong>Meleney postoperative progressive synergistic gangrene</strong>（Meleney gangrene）等同手術創傷後的 polymicrobial NF，臨床上<strong>可能</strong>無法與 postsurgical cutaneous amebiasis 區分。</li>
-<li>Invasive group A streptococcal NF 主要與 <strong>M types 1 與 3</strong> 相關（產生 pyrogenic exotoxin A 和/或 B）；CD44-mediated cell signaling <strong>促進</strong>（facilitate）組織侵犯；SpeB 使 cathelicidin LL-37 失活；PMN 招募受損被認為與分解 IL-8 的 ScpC 有關；<strong>covRS</strong> two-component system 破壞導致 hypervirulent phenotype；Protein S deficiency <strong>可能</strong>與壞死有關；<em>S. aureus</em> <strong>可能</strong>增強 β-hemolytic streptococcal infection。<span class="ex-ref ex-ref-mckee">McKee p.865</span></li>
+<li>Invasive group A streptococcal NF 主要與 <strong>M types 1 與 3</strong> 相關（產生 pyrogenic exotoxin A 和/或 B）；CD44-mediated cell signaling <strong>促進</strong>（facilitate）組織侵犯；SpeB 使 cathelicidin LL-37 失活；PMN 招募受損被認為與分解 IL-8 的 ScpC 有關；<strong>covRS</strong> two-component system 破壞導致 hypervirulent phenotype；Protein S deficiency <strong>可能</strong>是造成壞死的原因（may be responsible for the necrosis）；<em>S. aureus</em> <strong>可能</strong>增強 β-hemolytic streptococcal infection。<span class="ex-ref ex-ref-mckee">McKee p.865</span></li>
 </ul>
 </section>
 
@@ -227,7 +227,7 @@
 <li>嚴重壞死性過程：edema、necrosis、inflammation 侵犯皮膚與皮下組織，包括 <strong>fascial planes</strong>；圖示為真皮與皮下脂肪強烈急性發炎、幾乎純 neutrophil 浸潤伴壞死。<span class="ex-ref ex-ref-mckee">McKee p.865–866</span></li>
 <li>含骨骼肌的深切片或清創檢體<strong>可能</strong>同時有 myonecrosis。<span class="ex-ref ex-ref-mckee">McKee p.865</span></li>
 <li><strong>各層都有 vascular thrombosis</strong>；secondary vasculitic alterations 並不少見；曾描述 sweat glands 的 hyaline necrosis。</li>
-<li>大量細菌<strong>常</strong>造成低倍下組織 <strong>diffuse basophilia</strong>；<strong>Gram 或 Brown-Hopps stain</strong> 可確認（大量 Gram-positive cocci）。</li>
+<li>大量細菌<strong>常</strong>造成低倍下組織 <strong>diffuse basophilia</strong>；<strong>Gram 或 Brown-Hopps stain</strong> 可確認（Fig. 18.111 圖例可見大量 Gram-positive cocci）。</li>
 <li>組織學表現有足夠特徵、可協助診斷 NF（sufficiently distinctive to facilitate a diagnosis），但微生物檢查（aerobic 與 anaerobic tissue culture）對確認病原<strong>至關重要</strong>。</li>
 <li><strong>Intraoperative frozen section</strong> 對早期診斷與清創時評估手術邊緣存活度特別有用。<span class="ex-ref ex-ref-mckee">McKee p.865–866</span></li>
 <li>培養陰性或無法取得時，PCR 偵測 streptococcal pyrogenic exotoxin B <strong>可能</strong>有助確認 group A streptococcal infection。<span class="ex-ref ex-ref-mckee">McKee p.866</span></li>
