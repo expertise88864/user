@@ -155,7 +155,7 @@
 <li><mark data-q="103-12">Rapid freezing 造成 <strong>intracellular</strong> ice crystal（破壞電解質、pH 改變）；slow freezing 造成 extracellular ice，細胞傷害較少</mark>。<span class="ex-ref">p.3791（ch206）</span></li>
 <li><mark data-q="103-12">Melanocytes 對冷凍最敏感（<strong class="ex-n">−4°C 至 −7°C</strong> 死亡），可能造成 depigmentation，深膚色者尤其；keratinocytes 需 <strong class="ex-n">−20°C 至 −30°C</strong></mark>。<span class="ex-ref">p.3791（ch206）</span></li>
 <li><mark data-q="103-12">一般表淺病灶的 clinical freeze margin 為 <strong class="ex-n">2–3 mm</strong>，惡性或較深病灶 <strong class="ex-n">5 mm</strong></mark>。<span class="ex-ref">p.3793（ch206）</span></li>
-<li><mark data-q="103-12">Berth-Jones 與 Huchinson：cryotherapy＋keratolytic wart paint＋paring 在 <strong class="ex-n">3 months</strong> 治癒率 <strong class="ex-n">52%</strong>；冷凍前先 <strong>paring</strong> 可提高 plantar warts 的治癒率，但對 hand warts 沒有</mark>。<span class="ex-ref">p.3794（ch206）</span></li>
+<li><mark data-q="103-12">Berth-Jones 與 Hutchinson（課本內文印為 Huchinson，參考文獻為 Hutchinson PE）：cryotherapy＋keratolytic wart paint＋paring 在 <strong class="ex-n">3 months</strong> 治癒率 <strong class="ex-n">52%</strong>；冷凍前先 <strong>paring</strong> 可提高 plantar warts 的治癒率，但對 hand warts 沒有</mark>。<span class="ex-ref">p.3794（ch206）</span></li>
 </ul>
 </section>
 
