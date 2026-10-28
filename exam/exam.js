@@ -1974,9 +1974,11 @@
         history.replaceState(history.state, '', window.location.pathname + (qs ? '?' + qs : ''));
       } catch (e) { /* replaceState unavailable: the filter still works */ }
     }
+    var generation = 0;  // every filter change invalidates searches still waiting for the index
     function apply() {
       var q = norm(input.value.trim());
       var ch = Number(chapter.value) || 0;
+      var mine = ++generation;
       remember();
       if (!q && !ch) {
         // No filter: the static part list and most-tested list are the page.
@@ -1989,6 +1991,7 @@
       }
       status.textContent = '搜尋中…';
       load().then(function (rows) {
+        if (mine !== generation) return;  // the filter changed (or was cleared) meanwhile
         matches = rows.filter(function (c) {
           return (!ch || c.chs.indexOf(ch) >= 0) && (!q || c.name.indexOf(q) >= 0);
         });

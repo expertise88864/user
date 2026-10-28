@@ -28,14 +28,16 @@ module.exports = async function checkExamConcepts(browser) {
   const violations = [];
   const errors = [];
   const requested = [];
+  let hold = null;  // when set, the concepts index is answered only after it resolves
   const context = await browser.newContext({ serviceWorkers: 'block', viewport: { width: 1280, height: 900 } });
-  await context.route('**/*', route => {
+  await context.route('**/*', async route => {
     const url = new URL(route.request().url());
     if (url.origin !== ORIGIN) {
       if (url.hostname === 'fonts.googleapis.com') return route.fulfill({ status: 200, contentType: 'text/css', body: '' });
       return route.abort();
     }
     requested.push(url.pathname);
+    if (url.pathname === '/exam/concepts-index.json' && hold) await hold;
     if (url.pathname.startsWith('/_vercel/')) return route.fulfill({ contentType: 'text/javascript', body: '' });
     let rel = decodeURIComponent(url.pathname).replace(/^\/+/, '').replace(/\/+$/, '');
     if (rel === 'exam') rel = 'exam/index';
@@ -86,6 +88,30 @@ module.exports = async function checkExamConcepts(browser) {
       assert.match(await page.locator('.cx-status').textContent(), new RegExp('找到 ' + n52 + ' 個考點'));
       await page.close();
     }
+    // ---- clearing the box while the index is still loading discards that search
+    {
+      const page = await open('/exam/concepts');
+      await page.waitForSelector('[data-cx-tools]:not([hidden])');
+      let release;
+      hold = new Promise(resolve => { release = resolve; });
+      const answered = page.waitForResponse(r => new URL(r.url()).pathname === '/exam/concepts-index.json');
+      await page.fill('#cx-q', 'pemphigus');
+      await page.waitForFunction(() => document.querySelector('.cx-status').textContent === '搜尋中…');
+      await page.fill('#cx-q', '');
+      await page.waitForFunction(() => document.querySelector('.cx-status').textContent === '');
+      release();
+      hold = null;
+      await answered;
+      await page.evaluate(() => new Promise(resolve => setTimeout(resolve, 300)));
+      assert.ok(await page.locator('#cx-results').isHidden(), 'stale results stay hidden');
+      assert.equal(await page.locator('#cx-results li').count(), 0, 'no stale results rendered');
+      assert.equal(await page.locator('.cx-status').textContent(), '', 'no stale status');
+      assert.ok(!new URL(page.url()).search, 'address stays unfiltered');
+      // The next search still works with the now-loaded index.
+      await page.fill('#cx-q', 'pemphigus');
+      await page.waitForSelector('#cx-results:not([hidden]) li');
+      await page.close();
+    }
     // ---- old link: /exam/concepts#c-<id> lands on the part page with the concept open
     {
       const page = await open('/exam/concepts#c-' + target[0]);
@@ -118,5 +144,5 @@ module.exports = async function checkExamConcepts(browser) {
   } finally {
     await context.close();
   }
-  console.log('exam concepts browser: hub search, old-link redirect and part-page filter OK');
+  console.log('exam concepts browser: hub search (incl. clearing during a pending load), old-link redirect and part-page filter OK');
 };
