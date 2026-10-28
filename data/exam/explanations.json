@@ -175,7 +175,15 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。②④可由課本支持（diabetic dermopathy 與 nephropathy 相關、renal pruritus 很常見；Hodgkin lymphoma 有 B symptoms 與 paraneoplastic pruritus）。但要判斷①③錯誤，兩本課本都沒有直接寫到：Fitzpatrick 9e 沒有描述 polycythemia vera 搔癢遇水加劇（aquagenic），也沒有說明肝病惡化時 cholestatic pruritus 可能減輕，只提到搔癢與 bilirubin 相關性差；McKee 也沒有相關敘述。依一般臨床知識，PV 搔癢是碰水誘發，cholestatic pruritus 在疾病進展後盛行率會下降，所以①③錯誤、答案 B。查證後現行文獻觀念未變：德國 441 例 PV 病人問卷研究（Siegel 等，Am J Hematol 2013）中，約 68%（301 例）有 aquagenic pruritus。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。②④可由課本支持（diabetic dermopathy 與 nephropathy 相關、renal pruritus 很常見；Hodgkin lymphoma 有 B symptoms 與 paraneoplastic pruritus）。但要判斷①③錯誤，兩本課本都沒有直接寫到：Fitzpatrick 9e 沒有描述 polycythemia vera 搔癢遇水加劇（aquagenic），也沒有說明肝病惡化時 cholestatic pruritus 可能減輕，只提到搔癢與 bilirubin 相關性差；McKee 也沒有相關敘述。依一般臨床知識，PV 搔癢是碰水誘發，cholestatic pruritus 在疾病進展後盛行率會下降，所以①③錯誤、答案 B。查證後現行文獻觀念未變：德國 441 例 PV 病人問卷研究（Siegel 等，Am J Hematol 2013）中，約 68%（301 例）有 aquagenic pruritus。",
+   "sources": [
+    {
+     "pmid": "23657863",
+     "title": "Aquagenic pruritus in polycythemia vera: characteristics and influence on quality of life in 441 patients.",
+     "year": 2013,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23657863/"
+    }
+   ]
   }
  },
  "101-04": {
@@ -2482,7 +2490,15 @@
   ],
   "dispute": {
    "kind": "conflict",
-   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在 A 的後半句「致病機轉可能和 IgE 有關」，兩本課本說法不一：McKee 5e p.700 寫 physical urticarias（heat、cold、pressure 等）被認為是對 mast cell 的直接作用，支持 A 為錯誤；但 Fitzpatrick 9e p.692 提到部分 physical urticaria 的研究提示異常 IgE 受物理刺激改變構形而活化 mast cell，p.693 也寫 specific IgE 可能連結誘發刺激與 mast cell，p.702 並寫 omalizumab 對 DPU 也有效（off-label）。A 的前半句（偶合併發燒、寒顫、關節痛、肌痛、白血球上升）是舊版敘述，9e 未提及。其餘三項依課本可判為正確，A 仍是唯一可選的錯誤選項，故維持 A。查詢現行文獻（2024 年 chronic inducible urticaria 綜述，Muñoz 等，Curr Allergy Asthma Rep 2024），omalizumab off-label 用於各型 CIndU 整體效果良好，但 DPU 的確切機轉仍未定論。"
+   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在 A 的後半句「致病機轉可能和 IgE 有關」，兩本課本說法不一：McKee 5e p.700 寫 physical urticarias（heat、cold、pressure 等）被認為是對 mast cell 的直接作用，支持 A 為錯誤；但 Fitzpatrick 9e p.692 提到部分 physical urticaria 的研究提示異常 IgE 受物理刺激改變構形而活化 mast cell，p.693 也寫 specific IgE 可能連結誘發刺激與 mast cell，p.702 並寫 omalizumab 對 DPU 也有效（off-label）。A 的前半句（偶合併發燒、寒顫、關節痛、肌痛、白血球上升）是舊版敘述，9e 未提及。其餘三項依課本可判為正確，A 仍是唯一可選的錯誤選項，故維持 A。查詢現行文獻（2024 年 chronic inducible urticaria 綜述，Muñoz 等，Curr Allergy Asthma Rep 2024），omalizumab off-label 用於各型 CIndU 整體效果良好，但 DPU 的確切機轉仍未定論。",
+   "sources": [
+    {
+     "pmid": "39028396",
+     "title": "New insights into chronic inducible urticaria.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39028396/"
+    }
+   ]
   }
  },
  "101-39": {
@@ -8793,7 +8809,15 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 C。疑義在①③：Fitzpatrick 9e 只寫含 titanium dioxide 的墨水（常為白色或粉紅色）雷射後易立即變深，並稱之為 oxidization reaction；ferric oxide、紅色與膚色墨水都沒有寫到，McKee 5e 也未提及。查 Anderson 等（Arch Dermatol 1993）的原始報告，白色、膚色、粉紅－紅色化妝刺青在 QS ruby、QS Nd:YAG 與 510 nm pulsed dye 雷射後立即變黑，機轉推測為 ferric oxide（Fe₂O₃）還原成黑色的 ferrous oxide（FeO），與題目觀念一致，現行文獻觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 C。疑義在①③：Fitzpatrick 9e 只寫含 titanium dioxide 的墨水（常為白色或粉紅色）雷射後易立即變深，並稱之為 oxidization reaction；ferric oxide、紅色與膚色墨水都沒有寫到，McKee 5e 也未提及。查 Anderson 等（Arch Dermatol 1993）的原始報告，白色、膚色、粉紅－紅色化妝刺青在 QS ruby、QS Nd:YAG 與 510 nm pulsed dye 雷射後立即變黑，機轉推測為 ferric oxide（Fe₂O₃）還原成黑色的 ferrous oxide（FeO），與題目觀念一致，現行文獻觀念未變。",
+   "sources": [
+    {
+     "pmid": "8352605",
+     "title": "Cosmetic tattoo ink darkening. A complication of Q-switched and pulsed-laser treatment.",
+     "year": 1993,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/8352605/"
+    }
+   ]
   }
  },
  "103-33": {
@@ -13199,7 +13223,15 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在③：Fitzpatrick 9e 只寫雷射去刺青通常需要多次治療，並介紹同日多次照射的 R20 方法；Fitzpatrick 9e 與 McKee 5e 都沒有提到兩次治療之間的建議間隔，所以無法用課本判定「3–4 週」是錯的。出題本意應是常見的 6–8 週以上間隔。查得的文獻多為病例系列與臨床經驗，沒有指引層級的建議；米蘭 352 例 QS 雷射前瞻世代研究（Bencini 等，Arch Dermatol 2012）的療程間隔均在 6 週以上，且間隔 ≤8 週與較差的清除效果相關，未支持 3–4 週的間隔，現行觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在③：Fitzpatrick 9e 只寫雷射去刺青通常需要多次治療，並介紹同日多次照射的 R20 方法；Fitzpatrick 9e 與 McKee 5e 都沒有提到兩次治療之間的建議間隔，所以無法用課本判定「3–4 週」是錯的。出題本意應是常見的 6–8 週以上間隔。查得的文獻多為病例系列與臨床經驗，沒有指引層級的建議；米蘭 352 例 QS 雷射前瞻世代研究（Bencini 等，Arch Dermatol 2012）的療程間隔均在 6 週以上，且間隔 ≤8 週與較差的清除效果相關，未支持 3–4 週的間隔，現行觀念未變。",
+   "sources": [
+    {
+     "pmid": "22986584",
+     "title": "Removal of tattoos by q-switched laser: variables influencing outcome and sequelae in a large cohort of treated patients.",
+     "year": 2012,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/22986584/"
+    }
+   ]
   }
  },
  "104-49": {
@@ -13820,7 +13852,15 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在②：Fitzpatrick 9e 只提到注射藥物使用者與 MRSA／[i]S. aureus[/i] 的關係，McKee 5e 也沒有寫到「非靜脈使用安非他命者 MRSA 風險較高」。查詢現行文獻，病例對照研究（Cohen 等，Emerg Infect Dis 2007）發現 methamphetamine 使用與 MRSA 皮膚感染相關，且多數使用者是吸食或鼻吸而非注射，觀念與題目一致、未更新，故②仍視為正確。"
+   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在②：Fitzpatrick 9e 只提到注射藥物使用者與 MRSA／[i]S. aureus[/i] 的關係，McKee 5e 也沒有寫到「非靜脈使用安非他命者 MRSA 風險較高」。查詢現行文獻，病例對照研究（Cohen 等，Emerg Infect Dis 2007）發現 methamphetamine 使用與 MRSA 皮膚感染相關，且多數使用者是吸食或鼻吸而非注射，觀念與題目一致、未更新，故②仍視為正確。",
+   "sources": [
+    {
+     "pmid": "18217555",
+     "title": "Methamphetamine use and methicillin-resistant Staphylococcus aureus skin infections.",
+     "year": 2007,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/18217555/"
+    }
+   ]
   }
  },
  "105-08": {
@@ -15599,7 +15639,14 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 C。Fitzpatrick 9e 已刪除壓瘡專章，ch149 只把 pressure ulcers 列為慢性傷口類型，McKee 5e 也只在鑑別診斷中提及，四個敘述（好發部位、成因、MRI 評估骨髓炎、床頭抬高增加薦骨剪力）兩本都沒有直接寫到；依一般壓瘡照護原則，①②③正確、④錯誤，答案 C 合理。查詢現行指引（EPUAP/NPIAP/PPPIA 2019 國際指引的擺位建議仍為床頭抬高 ≤30° 以減少組織變形與剪力），現行文獻觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 C。Fitzpatrick 9e 已刪除壓瘡專章，ch149 只把 pressure ulcers 列為慢性傷口類型，McKee 5e 也只在鑑別診斷中提及，四個敘述（好發部位、成因、MRI 評估骨髓炎、床頭抬高增加薦骨剪力）兩本都沒有直接寫到；依一般壓瘡照護原則，①②③正確、④錯誤，答案 C 合理。查詢現行指引（EPUAP/NPIAP/PPPIA 2019 國際指引的擺位建議仍為床頭抬高 ≤30° 以減少組織變形與剪力），現行文獻觀念未變。",
+   "sources": [
+    {
+     "url": "https://www.internationalguideline.com/2019",
+     "title": "Prevention and Treatment of Pressure Ulcers/Injuries: Clinical Practice Guideline. The International Guideline 2019 (EPUAP/NPIAP/PPPIA)",
+     "year": 2019
+    }
+   ]
   }
  },
  "105-35": {
@@ -18466,7 +18513,15 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於②（體股癬 2 週、足癬 4 週）與④（症狀消失後至少再塗 1 週）這兩個療程通則，Fitzpatrick 9e 與 McKee 5e 都沒有寫到；9e 只寫外用藥多數每天兩次 2–4 週。①（只塗病灶）與③（nystatin 對 [i]Malassezia[/i] 無效）可由課本判為錯誤，剩下②④正確，故維持 B。查詢文獻回顧（Weinstein 與 Berman，Am Fam Physician 2002）：體癬、股癬通常治療 2 週，足癬以 azole 治療 4 週，臨床痊癒後應再擦至少 1 週，與②④一致。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於②（體股癬 2 週、足癬 4 週）與④（症狀消失後至少再塗 1 週）這兩個療程通則，Fitzpatrick 9e 與 McKee 5e 都沒有寫到；9e 只寫外用藥多數每天兩次 2–4 週。①（只塗病灶）與③（nystatin 對 [i]Malassezia[/i] 無效）可由課本判為錯誤，剩下②④正確，故維持 B。查詢文獻回顧（Weinstein 與 Berman，Am Fam Physician 2002）：體癬、股癬通常治療 2 週，足癬以 azole 治療 4 週，臨床痊癒後應再擦至少 1 週，與②④一致。",
+   "sources": [
+    {
+     "pmid": "12046779",
+     "title": "Topical treatment of common superficial tinea infections.",
+     "year": 2002,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/12046779/"
+    }
+   ]
   }
  },
  "106-26": {
@@ -26349,7 +26404,21 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於①③的部分細節：①的好發部位（sun-exposed、皺褶、periorificial）與外傷、壓力兩本課本都有，但懷孕、口服避孕藥、曬傷作為惡化因子 Fitzpatrick 9e 與 McKee 5e 都沒有寫；③的清單中 psoriasis 見於 McKee、lupus 見於 Fitzpatrick，rheumatoid arthritis 則兩本都未列。②（leukotrichia 反應較佳）與④（華人發生率較高）明確錯誤，故仍選 B。查詢文獻：2023 年統合分析（Lee 等，J Invest Dermatol 2023）顯示 vitiligo 病人合併 rheumatoid arthritis 的風險上升（OR 1.82），支持③；2026 年系統性回顧（Piquero-Casals 等，Am J Clin Dermatol 2026）指出壓力、外傷、曬傷等誘發因子雖常被提及，但多為低層級證據，觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於①③的部分細節：①的好發部位（sun-exposed、皺褶、periorificial）與外傷、壓力兩本課本都有，但懷孕、口服避孕藥、曬傷作為惡化因子 Fitzpatrick 9e 與 McKee 5e 都沒有寫；③的清單中 psoriasis 見於 McKee、lupus 見於 Fitzpatrick，rheumatoid arthritis 則兩本都未列。②（leukotrichia 反應較佳）與④（華人發生率較高）明確錯誤，故仍選 B。查詢文獻：2023 年統合分析（Lee 等，J Invest Dermatol 2023）顯示 vitiligo 病人合併 rheumatoid arthritis 的風險上升（OR 1.82），支持③；2026 年系統性回顧（Piquero-Casals 等，Am J Clin Dermatol 2026）指出壓力、外傷、曬傷等誘發因子雖常被提及，但多為低層級證據，觀念未變。",
+   "sources": [
+    {
+     "pmid": "36574529",
+     "title": "Comorbidities in Patients with Vitiligo: A Systematic Review and Meta-Analysis.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36574529/"
+    },
+    {
+     "pmid": "41849116",
+     "title": "Exposome Risk Factors for Vitiligo: A Systematic Evidence Review.",
+     "year": 2026,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41849116/"
+    }
+   ]
   }
  },
  "108-44": {
@@ -36324,7 +36393,14 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於 B 的後半句「新冠疫苗注射時不需停藥」：Fitzpatrick 9e 出版於新冠疫情之前，只寫到 rituximab 可造成 hepatitis B reactivation（所以篩檢肝炎正確），以及 live vaccines 不可在治療前及治療期間施打，沒有討論新冠疫苗。查疫情期間的實務建議（含 IPPF 引用的 ERN-Skin 建議、ACR 對 rituximab 病人的疫苗指引），因 rituximab 造成 B 細胞耗竭會使疫苗抗體反應不佳，建議盡量在 rituximab 前 2–4 週完成接種，或在病情允許下延後下一次 rituximab，並非「不需停藥」，與題目出題本意一致。現行文獻觀念與題目相同，只是課本未收錄。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於 B 的後半句「新冠疫苗注射時不需停藥」：Fitzpatrick 9e 出版於新冠疫情之前，只寫到 rituximab 可造成 hepatitis B reactivation（所以篩檢肝炎正確），以及 live vaccines 不可在治療前及治療期間施打，沒有討論新冠疫苗。查疫情期間的實務建議（含 IPPF 引用的 ERN-Skin 建議），因 rituximab 造成 B 細胞耗竭會使疫苗抗體反應不佳，建議盡量在 rituximab 前 2–4 週完成接種，或在病情允許下延後下一次 rituximab，並非「不需停藥」，與題目出題本意一致。現行文獻觀念與題目相同，只是課本未收錄。",
+   "sources": [
+    {
+     "url": "https://www.pemphigus.org/information-for-pemphigus-and-pemphigoid-patients-related-to-coronavirus-disease-covid-19/",
+     "title": "Information for Pemphigus and Pemphigoid Patients Related to COVID-19 (IPPF)",
+     "year": 2021
+    }
+   ]
   }
  },
  "111-50": {
@@ -38162,7 +38238,15 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於④的 JAK inhibitor：Fitzpatrick 9e 的 GA 治療表只列到 TNF-α inhibitors（且註明它們也曾誘發 GA），沒有提到 JAK inhibitor，McKee 5e 也未提及。查系統性回顧（J Am Acad Dermatol 2023；Bettolini 等，Australas J Dermatol 2025），都把 JAK inhibitor 列為難治型 GA 的可行選項（證據多為個案與小型系列），與題目觀念一致，所以④仍判為正確。現行文獻觀念與題目相同，只是課本未收錄。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於④的 JAK inhibitor：Fitzpatrick 9e 的 GA 治療表只列到 TNF-α inhibitors（且註明它們也曾誘發 GA），沒有提到 JAK inhibitor，McKee 5e 也未提及。查系統性回顧（J Am Acad Dermatol 2023；Bettolini 等，Australas J Dermatol 2025），都把 JAK inhibitor 列為難治型 GA 的可行選項（證據多為個案與小型系列），與題目觀念一致，所以④仍判為正確。現行文獻觀念與題目相同，只是課本未收錄。",
+   "sources": [
+    {
+     "pmid": "40586485",
+     "title": "Management Strategies for Generalised Granuloma Annulare: A Systematic Review of Current and Emerging Therapies.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/40586485/"
+    }
+   ]
   }
  },
  "112-29": {

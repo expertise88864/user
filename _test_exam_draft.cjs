@@ -427,20 +427,30 @@ test('every committed explanation re-saved unchanged reproduces the file exactly
     const result = api.replaceExplanation(EXPL_TEXT, id, plain(EXPL_DATA[id]));
     assert.equal(result.text === EXPL_TEXT, true, id + ' unchanged entry must reproduce the file');
   }
-  // The same through the endpoint for entries with flags, a dispute with sources and a pmid.
+  // The same through the endpoint for entries with flags, and disputes with sources and a pmid
+  // both with and without a "current" section (current is optional).
   const flagged = ids.find(id => EXPL_DATA[id].flags), sourced = ids.find(id => EXPL_DATA[id].dispute && EXPL_DATA[id].dispute.sources);
-  for (const id of [ID_A, flagged, sourced]) {
+  const sourcedWith = ids.find(id => EXPL_DATA[id].dispute && EXPL_DATA[id].dispute.sources && 'current' in EXPL_DATA[id].dispute);
+  const sourcedWithout = ids.find(id => EXPL_DATA[id].dispute && EXPL_DATA[id].dispute.sources && !('current' in EXPL_DATA[id].dispute));
+  assert.ok(sourcedWith && sourcedWithout, 'disputes with sources exist both with and without current');
+  for (const id of [sourcedWith, sourcedWithout]) assert.ok(EXPL_DATA[id].dispute.sources.some(s => s.pmid), id + ' has a pmid source');
+  for (const id of [ID_A, flagged, sourced, sourcedWith, sourcedWithout]) {
     const h = fixture();
     const saved = await h.post({ kind: 'expl', id, entry: plain(EXPL_DATA[id]), baseBlobSha: EXPL_TOKEN });
     assert.equal(saved.status, 200, id);
     assert.equal(h.fileAt(h.head(), EXPL), EXPL_TEXT, id);
     assert.equal(saved.body.blobSha, EXPL_TOKEN);
   }
-  // Key order in the request does not change the bytes.
-  const entry = plain(EXPL_DATA[sourced]);
-  const shuffled = { dispute: { sources: entry.dispute.sources.map(s => ({ url: s.url, year: s.year, title: s.title, ...(s.pmid ? { pmid: s.pmid } : {}) })), current: entry.dispute.current, exam: entry.dispute.exam, kind: entry.dispute.kind },
+  // Key order in the request does not change the bytes, with or without "current".
+  for (const id of [sourced, sourcedWith, sourcedWithout]) {
+    const entry = plain(EXPL_DATA[id]);
+    const shuffled = { dispute: { sources: entry.dispute.sources.map(s => ({ url: s.url, year: s.year, title: s.title, ...(s.pmid ? { pmid: s.pmid } : {}) })),
+      ...('current' in entry.dispute ? { current: entry.dispute.current } : {}), exam: entry.dispute.exam, kind: entry.dispute.kind },
     items: entry.items.map(it => ({ refs: it.refs, text: it.text, ok: it.ok, label: it.label, key: it.key })), summary: entry.summary };
-  assert.equal(api.replaceExplanation(EXPL_TEXT, sourced, shuffled).text, EXPL_TEXT);
+    const result = api.replaceExplanation(EXPL_TEXT, id, shuffled);
+    assert.equal(result.text, EXPL_TEXT, id);
+    assert.equal('current' in JSON.parse(result.text)[id].dispute, 'current' in entry.dispute, id + ' current is neither added nor dropped');
+  }
   // Python's json.dumps output is the same bytes (checked by _test_pull_exam_drafts.py).
 });
 
