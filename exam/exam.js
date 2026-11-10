@@ -623,14 +623,17 @@
     return node;
   }
 
-  // Explanation text marks organism names as [i]Genus species[/i]; render them in italics.
-  function richText(tag, cls, text) {
-    var node = el(tag, cls);
+  // Question and explanation text marks organism names as [i]Genus species[/i]; render them
+  // in italics. appendRich adds the text to an existing node, richText makes a new one.
+  function appendRich(node, text) {
     String(text).split(/(\[i\].+?\[\/i\])/).forEach(function (part) {
       if (/^\[i\].+\[\/i\]$/.test(part)) node.appendChild(el('em', null, part.slice(3, -4)));
       else if (part) node.appendChild(document.createTextNode(part));
     });
     return node;
+  }
+  function richText(tag, cls, text) {
+    return appendRich(el(tag, cls), text);
   }
 
   function renderCard(q, removable) {
@@ -661,13 +664,13 @@
     });
     head.appendChild(chips);
     card.appendChild(head);
-    card.appendChild(el('p', 'ex-stem', q.stem));
+    card.appendChild(richText('p', 'ex-stem', q.stem));
     if (q.statements) {
       var ul = el('ul', 'ex-stmts');
       q.statements.forEach(function (s) {
         var li = el('li');
         li.appendChild(el('span', 'ex-stmt-id', s.id));
-        li.appendChild(document.createTextNode(s.text));
+        appendRich(li, s.text);
         ul.appendChild(li);
       });
       card.appendChild(ul);
@@ -683,7 +686,7 @@
       input.name = 'ans-' + q.id;
       input.value = k;
       var keyEl = el('span', 'ex-opt-key', k);
-      var textEl = el('span', 'ex-opt-text', q.options[k]);
+      var textEl = richText('span', 'ex-opt-text', q.options[k]);
       keyEl.id = 'o-' + q.id + '-' + k;
       textEl.id = 't-' + q.id + '-' + k;
       input.setAttribute('aria-labelledby', keyEl.id + ' ' + textEl.id);

@@ -510,6 +510,38 @@ test('a mock paper is labelled and kept out of every official record', async () 
   assert.ok(again.document.getElementById('q-' + qid).hasAttribute('data-mock'));
 });
 
+// Organism names are marked [i]…[/i] in mock stems, statements and options as
+// well as in explanations; the card shows them in italics, never the markers.
+test('a mock card renders [i] markers in the question text as italics', async () => {
+  const exam = JSON.parse(fs.readFileSync('exam/exam-data.json', 'utf8'));
+  const bank = JSON.parse(fs.readFileSync('exam/mock-data.json', 'utf8'));
+  const marked = q => [q.stem].concat((q.statements || []).map(s => s.text), Object.values(q.options))
+    .filter(text => text.includes('[i]'));
+  const mock = Object.assign({}, bank, { questions: bank.questions.filter(q => marked(q).length) });
+  assert.ok(mock.questions.length >= 5, 'the bank has questions with marked organism names');
+  const fetch = url => Promise.resolve({
+    ok: true, json: () => Promise.resolve(String(url).startsWith('/exam/mock-data.json') ? mock : exam),
+  });
+  const page = open(new FakeStorage(), '/exam/practice', { fetch });
+  const form = page.document.querySelector('[data-practice-form]');
+  const box = form.querySelector('input[name=ex-mock]');
+  box.checked = true;
+  box.dispatch('change');
+  form.querySelector('.ex-build').click();
+  for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve));
+  const cards = page.document.querySelectorAll('#ex-practice-list .ex-q');
+  assert.equal(cards.length, Math.min(50, mock.questions.length));
+  for (const card of cards) {
+    const q = mock.questions.find(row => row.id === card.getAttribute('data-qid'));
+    const names = marked(q).join(' ').match(/\[i\].+?\[\/i\]/g).map(m => m.slice(3, -4));
+    const parts = card.querySelectorAll('.ex-stem, .ex-stmts li, .ex-opt-text');
+    assert.ok(parts.every(part => !/\[\/?i\]/.test(part.textContent)), q.id + ' shows no raw marker');
+    const shown = [];
+    parts.forEach(part => part.querySelectorAll('em').forEach(em => shown.push(em.textContent)));
+    assert.deepEqual(shown.slice().sort(), names.slice().sort(), q.id + ' italicises each marked name');
+  }
+});
+
 // The two banks load independently: a paper asked for earlier whose bank
 // arrives later must not replace the newer paper (or its saved answers).
 test('a slower earlier build never replaces a newer paper', async () => {

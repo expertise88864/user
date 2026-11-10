@@ -1,7 +1,7 @@
 {
  "/exam": {
-  "hash": "47778f49a9e628b9",
-  "modified": "2026-10-25",
+  "hash": "561f6f40c2264259",
+  "modified": "2026-11-10",
   "published": "2026-10-15"
  },
  "/exam/concepts": {
@@ -1260,8 +1260,8 @@
   "published": "2026-10-15"
  },
  "/exam/practice": {
-  "hash": "b3809decf27cad27",
-  "modified": "2026-10-22",
+  "hash": "4c8f9a19a9917cd7",
+  "modified": "2026-11-10",
   "published": "2026-10-15"
  },
  "/exam/review": {
