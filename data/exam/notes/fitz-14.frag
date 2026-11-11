@@ -128,7 +128,7 @@
 <table class="ex-table">
 <thead><tr><th scope="col">脂質</th><th scope="col">重點</th></tr></thead>
 <tbody>
-<tr><td>Cholesterol</td><td>Basal keratinocytes 可從循環吸收 cholesterol，表皮 keratinocytes 也主動由 acetyl CoA 就地合成；rate-limiting step 由 <strong>HMG CoA reductase</strong> 催化；<mark data-q="104-32">barrier repair 時表皮 cholesterol biosynthesis 上調</mark>。<span class="ex-ref">p.212–213</span></td></tr>
+<tr><td>Cholesterol</td><td>Basal keratinocytes 可從循環吸收 cholesterol，表皮 keratinocytes 也主動合成 cholesterol 與 free fatty acids；表皮中大部分（the majority）的 cholesterol 是由 acetyl CoA 就地（in situ）合成；rate-limiting step 由 <strong>HMG CoA reductase</strong> 催化；<mark data-q="104-32">barrier repair 時表皮 cholesterol biosynthesis 上調</mark>。<span class="ex-ref">p.212–213</span></td></tr>
 <tr><td>Free fatty acids</td><td>由 acetyl-CoA 經 acetyl-CoA carboxylase 產生的 malonyl-CoA 合成；表皮可合成 saturated 與 monounsaturated fatty acids，但 essential fatty acids 人體無法自行合成。<span class="ex-ref">p.213</span></td></tr>
 <tr><td>Ceramides</td><td>Sphingoid base 以 amide bond 連接 fatty acid；經 serine palmitoyltransferase 合成，以及水解 glucosylceramide 與 sphingomyelin 產生。<span class="ex-ref">p.213</span></td></tr>
 </tbody>

@@ -391,7 +391,7 @@
 <ul>
 <li>Acromelanosis progressiva：新生兒或出生後數週，肢端或會陰的瀰漫棕色色素；基底層 melanocytes 增加；自行消退。DDx：periungual hyperpigmentation、Dohi、Kitamura。<span class="ex-ref">p.1378</span></li>
 <li>Partial unilateral lentiginosis（PUL）：通常（usually）出生或兒童期出現，一或多個 dermatomes 的 segmental lentigines；可伴 CALM、Lisch nodules、neurofibromas，可能是 <strong>mosaic NF1</strong> 的變異型；QS alexandrite、QS Nd:YAG。<span class="ex-ref">p.1381</span></li>
-<li>Cronkhite-Canada syndrome：文獻約 <strong class="ex-n">450</strong> 例；通常（usually）為亞洲（日本最多）與歐洲裔成人，自第 4 個十年起發病；先在<strong>掌蹠</strong>出現棕斑，之後全身色素、onychodystrophy、alopecia；GI polyposis、腹瀉、體重下降；疑為 autoimmune（可能合併 SLE、RA）；corticosteroids 免疫抑制加營養補充可能有幫助（may be helpful）。McKee：指甲營養不良最多 <strong class="ex-n">98%</strong>。<span class="ex-ref">p.1382–1383</span> <span class="ex-ref ex-ref-mckee">McKee p.1009</span></li>
+<li>Cronkhite-Canada syndrome：文獻約 <strong class="ex-n">450</strong> 例；通常（usually）為亞洲（日本最多）與歐洲裔成人，自第 4 個十年起發病；先在<strong>掌蹠</strong>出現棕斑，之後全身色素、onychodystrophy、alopecia；GI polyposis、腹瀉、體重下降；疑為 autoimmune（可能合併 SLE、RA）；組織學為表皮 melanin 增加合併 dermal melanosis，也可見 acanthosis 與 compact hyperkeratosis；病程為 progressive，可因全身性表現造成明顯的 morbidity 與 mortality；corticosteroids 免疫抑制加營養補充可能有幫助（may be helpful）。McKee：指甲營養不良最多 <strong class="ex-n">98%</strong>。<span class="ex-ref">p.1382–1383</span> <span class="ex-ref ex-ref-mckee">McKee p.1009</span></li>
 <li>Erythrose peribuccale pigmentaire of Brocq：主要女性；通常（usually）口周先紅斑後棕色色素，<strong>不侵犯唇紅緣周圍</strong>；可能與 UV、fragrances 有關；持續進展。<span class="ex-ref">p.1383</span></li>
 <li>Macular amyloidosis（主要在背部的 brown to gray-brown 斑）；atrophoderma of Pasini-Pierini（"cliff-drop" border）；fixed drug eruption。<span class="ex-ref">p.1383</span></li>
 </ul>

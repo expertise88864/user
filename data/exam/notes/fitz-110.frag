@@ -342,6 +342,7 @@
 </table>
 <p class="ex-cite">Table 110-5，p.1870。</p>
 <ul>
+<li>McKee（Paget disease 的鑑別）：Bowen disease／actinic keratosis 的腫瘤細胞通常（usually）對 CAM 5.2、<strong>GCDFP-15</strong>、c-erbB-2 以及 <strong>diastase-PAS</strong>、Alcian blue、zirconyl hematoxylin 呈陰性。<span class="ex-ref ex-ref-mckee">McKee p.1544</span></li>
 <li>McKee：診斷肛門生殖器 BD 前要問是否用過 <strong>podophyllin</strong>（明顯 metaphase cells 是線索）；BD 與 Paget disease、superficial spreading melanoma 的混淆多可用 IHC 與 mucin 染色解決；應評估斑塊多處以排除侵犯。<span class="ex-ref ex-ref-mckee">McKee p.1197</span></li>
 </ul>
 </section>

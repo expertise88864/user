@@ -416,7 +416,7 @@
 <h3>Pharmacokinetics（藥動學）</h3>
 <ul>
 <li>Peak <strong class="ex-n">1–2 hours</strong>；高脂餐似乎（appears to）降低吸收；約 <strong class="ex-n">75%</strong> protein bound。<span class="ex-ref">p.3528</span></li>
-<li>CYP3A4 <strong>substrate 也是 competitive inhibitor</strong> → 可能（may）升高其他經 CYP3A4 代謝藥物的濃度。</li>
+<li>大部分（the majority）的代謝在肝臟進行（為 hepatic CYP3A4 的 substrate）；CYP3A4 <strong>substrate 也是 competitive inhibitor</strong> → 可能（may）升高其他經 CYP3A4 代謝藥物的濃度。<span class="ex-ref">p.3528</span></li>
 <li>主要由糞便排出，只有 <strong class="ex-n">5%</strong> 原型經尿液排出；腎功能不全不需調整，肝功能不全需減量。<span class="ex-ref">p.3528–3529</span></li>
 </ul>
 <h3>Indications（適應症）</h3>

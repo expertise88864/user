@@ -23,7 +23,7 @@
 <thead><tr><th scope="col">Feature</th><th scope="col">Marasmus（Table 123-1）</th><th scope="col">Kwashiorkor（Table 123-2）</th></tr></thead>
 <tbody>
 <tr><td>Age（年齡）</td><td>Infants &lt;1 year</td><td>6 months – 5 years</td></tr>
-<tr><td>Key feature</td><td>Failure to thrive；dry, thin, loose, wrinkled skin；loss of subcutaneous fat and muscle</td><td>Failure to thrive + <strong>edema</strong>；irritability、lethargy、apathy</td></tr>
+<tr><td>Key feature</td><td>Failure to thrive；dry, thin, loose, wrinkled skin；loss of subcutaneous fat and muscle</td><td>Failure to thrive + <strong>edema</strong>（又稱 edematous 或「wet」PEM，<span class="ex-ref">p.2201</span>）；irritability、lethargy、apathy</td></tr>
 <tr><td>Skin（皮膚）</td><td>皮膚變化相對少；loss of buccal fat →「monkey facies」</td><td><mark data-q="105-41">Generalized dermatitis 似 <strong>flaking enamel paint</strong>／cracked（crazy）pavement</mark>；四肢伸側色素增加</td></tr>
 <tr><td>Hair（毛髮）</td><td>Hair loss；fine, brittle hair；alopecia；可有 lanugo 增加</td><td>常先帶紅色調再變淡至 gray-white；營養時好時壞 → 明暗交替帶 <strong>flag sign</strong>；可有 lanugo 增加</td></tr>
 <tr><td>Others</td><td>Nails fissuring；rectal prolapse、abdominal distension；diarrhea／constipation；angular cheilitis；常有體溫低、bradycardia</td><td>Abdominal distension（fatty infiltration of liver）</td></tr>

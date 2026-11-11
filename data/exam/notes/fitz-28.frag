@@ -177,7 +177,7 @@
 <li>外觀正常的皮膚已有亞臨床變化（尤其 lipid biosynthesis）。<span class="ex-ref">p.466</span></li>
 <li>Initial pinhead macule：明顯 edema、上真皮 mononuclear infiltrate（通常侷限於一兩個 papillae）→ 表皮 spongiotic、局部失去 granular layer，venules 擴張。<span class="ex-ref">p.466</span></li>
 <li>較大病灶（<strong class="ex-n">0.5–1.0 cm</strong>）邊緣：表皮厚度加倍，mast cells、macrophages、T cells、DCs 增加；中心有 parakeratosis（mounded 或 spotty）與微血管延長。<span class="ex-ref">p.466</span></li>
-<li>Mature lesion：rete ridges 均勻延長、suprapapillary plate 變薄；epidermal mass 增加 <strong class="ex-n">3–5 倍</strong>，mitoses 明顯增加，常見於 basal layer 之上；cycling basal keratinocytes 由正常約 <strong class="ex-n">10%</strong> 升到 <strong class="ex-n">100%</strong>。<span class="ex-ref">p.466</span></li>
+<li>Mature lesion：rete ridges 均勻延長、suprapapillary plate 變薄；epidermal mass 增加 <strong class="ex-n">3–5 倍</strong>，mitoses 明顯增加，常見於 basal layer 之上；cycling basal keratinocytes 由正常約 <strong class="ex-n">10%</strong> 升到 <strong class="ex-n">100%</strong>；與 initial lesion 及 transitional zone 不同（unlike），mature lesion 的表皮內可見 lymphocytes。<span class="ex-ref">p.466</span></li>
 <li>Rete tips 常 clubbed 或與鄰近融合；papillae 細長水腫，含 dilated tortuous capillaries（blood flow 約增加 <strong class="ex-n">10 倍</strong>）。<mark data-q="107-23">Parakeratosis 伴隨 <strong>granular layer 消失</strong></mark>，常水平融合，可與 orthokeratosis 交替。<span class="ex-ref">p.466–467</span></li>
 <li>Neutrophils 從部分真皮乳頭微血管尖端離開（<strong>squirting papillae</strong>）→ 聚集於 parakeratotic stratum corneum（<strong>Munro's microabscesses</strong>），較少在 spinous layer（<strong>spongiform pustules of Kogoj</strong>）。<span class="ex-ref">p.466</span></li>
 <li>McKee：表皮 transit time 由正常 <strong class="ex-n">56 days</strong> 縮短為 <strong class="ex-n">7 days</strong>；基底層增殖細胞可達三層；以 dermal papillae postcapillary venules 為主的血管增生似乎是最早期表現之一（αVβ3 integrin、VEGF 上調）。<span class="ex-ref ex-ref-mckee">McKee p.229</span></li>
@@ -362,6 +362,7 @@
 <li>Erythrodermic 與 pustular psoriasis 最常用的藥物是 <strong>acitretin</strong>；guttate、erythrodermic、pustular 常演變為 chronic plaque。<span class="ex-ref">p.480</span></li>
 <li>適合<strong>持續使用</strong>：calcipotriol、MTX、acitretin（維持療效、累積毒性低）；不適合長期連續使用：topical corticosteroids、dithranol、tar、photo(chemo)therapy、cyclosporin → 用 combination 或 rotational。<span class="ex-ref">p.488</span></li>
 <li>癢的乾癬應謹慎使用刺激性治療（dithranol、vitamin D3 analogues、photo(chemo)therapy），topical corticosteroids 等強效抗發炎治療較適合。<span class="ex-ref">p.488</span></li>
+<li>外用藥療效比較（short-term studies）：potent topical corticosteroids 優於 calcipotriene；calcipotriene 則比 short-contact anthralin 或 <strong class="ex-n">15%</strong> coal tar 有效。<span class="ex-ref">p.488</span></li>
 <li>Erythrodermic 與 pustular：避免刺激性治療；首選 <strong>acitretin、MTX 或短期 cyclosporin</strong>。<span class="ex-ref">p.488</span></li>
 </ul>
 <h3>Topical treatments（外用藥）</h3>

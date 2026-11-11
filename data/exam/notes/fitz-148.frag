@@ -127,6 +127,7 @@
 <ul>
 <li>皮膚表現常是主訴；最常見與組織或指趾缺血相關：cyanosis、necrosis、gangrene、ulcerations、fissures。<span class="ex-ref">p.2676</span></li>
 <li><strong>脈搏正常</strong>下出現壓痛、冰冷、藍或紫色腳趾（blue toe syndrome）很常見；約 <strong class="ex-n">50%</strong> 有 <strong>livedo racemosa</strong>（通常在足與腿，可延伸到軀幹或臀部）；紅斑常在足外側與 calcaneal region。<span class="ex-ref">p.2676</span></li>
+<li>血管檢查常見 pedal 與 proximal pulses 都正常，因為被 cholesterol emboli 阻塞的是小動脈，而不是較大的 superficial arteries；但在 aorta 或 common femoral arteries 上可能（may）聽到 systolic bruits。<span class="ex-ref">p.2677</span></li>
 <li>即使有潰瘍或壞疽，周圍區域仍是灌流正常的組織（normally perfused tissue）；可有 petechiae、ecchymosis、purpura、splinter hemorrhages、疼痛發炎性結節。<span class="ex-ref">p.2677</span></li>
 <li>Hollenhorst plaques（視網膜動脈分叉處 cholesterol embolus）specific 但 insensitive，因多數栓子來自主動脈弓遠端。<span class="ex-ref">p.2677</span></li>
 </ul>

@@ -196,7 +196,7 @@
 </table>
 <p class="ex-cite">p.1733；嬰兒到成人的放大倍數：頭部 1.7 倍、下肢 3.3 倍、其他部位 2.8 倍。</p>
 <ul>
-<li>Large／giant CMN：melanoma 風險增加；可能有 neurocutaneous melanocytosis 併發症風險，尤其 posterior axial 位置或 <strong class="ex-n">&gt;20 顆 satellite nevi</strong> 時；新生兒有 <strong class="ex-n">&gt;2 顆 medium CMN</strong> 也有風險。NCM 可致 obstructive hydrocephalus 與 primary CNS melanoma。<span class="ex-ref">p.1733</span></li>
+<li>Large／giant CMN：melanoma 風險增加；可能有 neurocutaneous melanocytosis 併發症風險，尤其 posterior axial 位置或 <strong class="ex-n">&gt;20 顆 satellite nevi</strong> 時；新生兒有 <strong class="ex-n">&gt;2 顆 medium CMN</strong> 也有風險。NCM 源自 CNS 內異常的 melanocytic proliferations，可併發 obstructive hydrocephalus 與 primary CNS melanoma。<span class="ex-ref">p.1733</span></li>
 <li><strong>Pigmentary mosaicism</strong>：晚期 somatic mosaic mutation；傾向不越過中線；Blaschko lines、checkerboard、phylloid 或 patchy；多為單獨表現，但廣泛分布或合併神經、心臟、骨骼肌肉疾病、發展遲緩時要找相關疾病。<span class="ex-ref">p.1733–1734</span></li>
 <li><strong>Nevus depigmentosus</strong>：出生即有、邊界清楚的 hypopigmented patch，隨背景膚色漸深，第一年有時更明顯；新生兒有 <strong class="ex-n">≥3 塊</strong> hypomelanotic patches 應評估是否為 tuberous sclerosis complex。<span class="ex-ref">p.1734</span></li>
 </ul>

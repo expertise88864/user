@@ -207,7 +207,7 @@
 <h2>8. Keratoacanthoma（角化棘皮瘤，McKee 補充為主）</h2>
 <h3>Fitzpatrick 病理重點</h3>
 <ul>
-<li>掃描倍率下整體 <strong>symmetric</strong>；大片 monomorphic keratinocytes，eosinophilic cytoplasm、小核；周圍常見含 lymphocytes、eosinophils、neutrophils 的浸潤。<span class="ex-ref">p.1910–1911</span></li>
+<li>掃描倍率下整體 <strong>symmetric</strong>；由 monomorphic keratinocytes 構成的粗大條索（large strands），eosinophilic cytoplasm、小核；周圍常見含 lymphocytes、eosinophils、neutrophils 的浸潤。<span class="ex-ref">p.1910–1911</span></li>
 <li>最終診斷需要 <strong>整個病灶</strong>，主要靠 scanning magnification 下的 silhouette。<span class="ex-ref">p.1910–1911</span></li>
 <li>Stage：early（上皮明顯增生、中央 keratotic plug 不如後期明顯）→ fully developed（大 central keratin core，周圍 well-differentiated squamous epithelium）→ regressing（上皮變薄、無 atypia，但仍看得出 crater）。<span class="ex-ref">p.1911</span></li>
 </ul>

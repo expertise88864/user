@@ -184,7 +184,7 @@
 <h3>Transcriptional regulators（轉錄因子）</h3>
 <ul>
 <li><strong>p63</strong>：控制 epidermal specification，也維持 basal cell fate/proliferation 並誘導分化；直接目標包括結構蛋白與其他轉錄因子，也透過 epigenetic status 作用。<span class="ex-ref">p.66</span></li>
-<li>p63 → <strong>ZNF750</strong> → <strong>Klf4</strong>：Klf4 在 granular genes 表現上扮演主要角色，上調 lipid-modifying enzymes 與 cornified envelope 結構蛋白。<span class="ex-ref">p.66</span></li>
+<li>p63 → <strong>ZNF750</strong> → <strong>Klf4</strong>：p63 的 direct targets 包括結構蛋白與調控分化的其他轉錄因子，ZNF750 是其中之一，又是另一個轉錄因子 Klf4 表現所必需（required）；Klf4 在 granular genes 表現上扮演主要角色，上調 lipid-modifying enzymes 與 cornified envelope 結構蛋白。<span class="ex-ref">p.66</span></li>
 <li><strong>Notch</strong>：basal → spinous 的 commitment factor；在 basal cells 不存在、在 spinous cells 被活化。抑制 Notch 會阻止多種 spinous cell fate 特徵；在 basal cells 活化它足以產生部分 spinous 分化。已知直接目標如 <strong>Hes1</strong>。<span class="ex-ref">p.66</span></li>
 <li>在某些情境下（in some contexts），Notch 與 AP-2 family 的轉錄因子合作：例如 Notch 誘導 spinous cells 表現 <strong>C/EBP</strong>，C/EBP 與 AP-2 一起結合 <strong>keratin 10</strong> promoter 調控其表現。<span class="ex-ref">p.66</span></li>
 <li><strong>Grainyhead-like（GRHL）</strong>：GRHL3 是有效形成 barrier 所必需，部分透過調控 <strong>transglutaminase-1</strong> 表現。<span class="ex-ref">p.66</span></li>

@@ -279,7 +279,7 @@
 <tr><td>Nails（<strong class="ex-n">&gt;30%</strong>）</td><td>Nail bed pigmentation、ridging、dystrophy、permanent anonychia</td></tr>
 <tr><td>Mouth（約 <strong class="ex-n">1/3</strong>）</td><td>Dryness、dysgeusia、late alterations of teeth</td></tr>
 <tr><td>Vulva/vagina（約 <strong class="ex-n">25%</strong>）</td><td>Dyspareunia、vaginal dryness、genital adhesions</td></tr>
-<tr><td>Other</td><td>Esophageal、intestinal、urethral、anal strictures（少見）；chronic lung disease（常歸因於 bronchiolitis obliterans）</td></tr>
+<tr><td>Other</td><td>Esophageal、intestinal、urethral、anal strictures（少見）；chronic lung disease（常歸因於 bronchiolitis obliterans，偶爾需要 lung transplantation）</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 44-5 與內文（Skin 列、各比例出自內文），p.741。強烈建議所有存活者在出院後數週與一年後回診，包括眼科，p.742。</p>

@@ -122,7 +122,7 @@
 <tr><td>Plum</td><td>Vascular neoplasm；dense lymphocytic inflammation；malignant neoplasm；hemorrhage</td><td>Kaposi sarcoma；lymphoma cutis；nodular amelanotic melanoma；ecchymosis</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 1-5，p.8（各列 pathology 與 example 依分號順序對應）。</p>
+<p class="ex-cite">Table 1-5，p.8（各列 pathology 與 example 依分號順序一一對應；例如 Red-brown 列：hemosiderin「cayenne pepper」→ pigmented purpuric dermatosis；granulomatous inflammation「apple jelly」→ sarcoidosis；histiocytic inflammation → Langerhans cell histiocytosis；mixed inflammation → granuloma faciale；plasmacytic inflammation「copper」或「ham」→ secondary syphilis）。</p>
 </section>
 
 <section class="ex-note" id="shape-configuration">

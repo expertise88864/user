@@ -12,7 +12,7 @@
 </table>
 <p class="ex-cite">p.3635–3637；Fig. 198-2（穿透深度），p.3637；PUVA lamp 峰值 p.3641；UVA2 範圍 p.3642–3643。</p>
 <ul>
-<li>現有大量證據（substantial evidence）顯示 UVB 產生的 cis-urocanic acid 是 UVB-induced immunosuppression 的 mediator；NB-UVB 後 hydroxyvitamin D 合成增加，與 baseline trans-urocanic acid 呈負相關。<span class="ex-ref">p.3637</span></li>
+<li>Urocanic acid 是 histidine 的分解產物（breakdown product），大量存在於 stratum corneum，原本被認為是天然的 photoprotectant；現有大量證據（substantial evidence）顯示 UVB 產生的 cis-urocanic acid 是 UVB-induced immunosuppression 的 mediator；NB-UVB 後 hydroxyvitamin D 合成增加，與 baseline trans-urocanic acid 呈負相關。<span class="ex-ref">p.3637</span></li>
 <li>UVB 使 tryptophan 轉為 6-formylindolo[3,2-b]carbazole → 結合 aryl hydrocarbon hydroxylase receptor → 活化 signal transduction pathways，其一導致 COX-2 表現 → prostaglandin E2。<span class="ex-ref">p.3637</span></li>
 <li>有證據（there is evidence）顯示 UVB 也產生 ROS，造成 8-oxo-deoxyguanosine 等 DNA damage、lipid peroxidation。<span class="ex-ref">p.3637</span></li>
 <li>UVA 的 ROS 在粒線體 oxidative phosphorylation 中產生，超過內生抗氧化能力；UV 後氧化物生成也被認為與 photoaging 和 skin cancer 有關（has been implicated）。因為穿透較深，UVA 對病灶位於淺真皮以下的疾病比 UVB 有效。<span class="ex-ref">p.3637</span></li>
