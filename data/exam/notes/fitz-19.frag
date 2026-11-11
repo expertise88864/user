@@ -217,7 +217,7 @@
 <ul>
 <li>BKPyV：posttransplant nephropathy、hemorrhagic cystitis；JCPyV：progressive multifocal leukoencephalopathy。<span class="ex-ref">p.319</span></li>
 <li>HPyV6、HPyV7：pruritic and dyskeratotic dermatoses；<strong>TSPyV</strong>：trichodysplasia spinulosa；幾乎都在 immunosuppressed hosts、伴 productive infection。<span class="ex-ref">p.319</span></li>
-<li><strong>MCPyV</strong> 見於約 <strong class="ex-n">80%</strong> 的 Merkel cell carcinoma，病毒 DNA <strong>clonally integrated</strong>。<span class="ex-ref">p.319</span></li>
+<li><strong>MCPyV</strong> 也存在於<strong>正常皮膚</strong>（normal human skin），但與任何已知和 productive viral infection 有關的皮膚病無關；見於約 <strong class="ex-n">80%</strong> 的 Merkel cell carcinoma，病毒 DNA <strong>clonally integrated</strong>。<span class="ex-ref">p.319</span></li>
 <li>SV40 以 large T antigen（LTAg）破壞 TP53 與 RB1 為主要轉形機轉；MCPyV 似乎相反，<strong>small T antigen（sTAg）</strong>似乎是 in vitro 與 in vivo 的主要 oncogenic driver。<span class="ex-ref">p.319–320</span></li>
 </ul>
 <table class="ex-table">

@@ -177,7 +177,7 @@
 <tr><td>Chromosome 4, short arm deletion</td><td>—</td><td>Scalp defects</td></tr>
 <tr><td>Chromosome 5, short arm deletion</td><td>—</td><td>Premature graying of hair（general features 含 cat-like cry）</td></tr>
 <tr><td>Chromosome 18, long arm deletion</td><td>—</td><td>Eczema in <strong class="ex-n">25%</strong> of cases</td></tr>
-<tr><td>45 XO</td><td>Turner syndrome</td><td>Redundant neck skin and peripheral edema、webbed neck、low posterior hairline、cutis laxa（neck, buttocks）、hypoplastic soft upturned nails、keloids 增加、melanocytic nevi 與 halo nevi 增加、failure to develop full secondary sexual characteristics、lymphatic hypoplasia or lymphedema</td></tr>
+<tr><td>45 XO</td><td>Turner syndrome</td><td>Redundant neck skin and peripheral edema、webbed neck、low posterior hairline、cutis laxa（neck, buttocks）、hypoplastic soft upturned nails、keloids 增加、melanocytic nevi 與 halo nevi 增加、failure to develop full secondary sexual characteristics、lymphatic hypoplasia or lymphedema（general features：early embryonic loss；prenatal ultrasound 可見 <strong>cystic hygroma、chylothorax、ascites、hydrops</strong>）</td></tr>
 <tr><td>47 XXY</td><td>Klinefelter syndrome</td><td>May develop gynecomastia、sparse body and facial hair、leg ulcers 風險增加、systemic lupus erythematosus 發生率增加</td></tr>
 <tr><td>48 XXYY</td><td>—</td><td>Multiple cutaneous angiomas、acrocyanosis、peripheral vascular disease</td></tr>
 <tr><td>47 XYY</td><td>—</td><td>Severe acne（tall phenotypic males）</td></tr>

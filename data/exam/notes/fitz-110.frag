@@ -331,7 +331,7 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Condition</th><th scope="col">Distinguishing points（區分重點）</th></tr></thead>
 <tbody>
-<tr><td>(Extramammary) Paget disease</td><td>Paget cells 成巢或腺樣、有中央 lumen，<strong>基底層最多</strong>；<strong>CEA、mucin、Alcian blue、aldehyde fuchsin、PAS（diastase resistant）陽性</strong>；過度表現 <strong>CK7</strong> 與 <strong>GCDFP-15</strong></td></tr>
+<tr><td>(Extramammary) Paget disease</td><td>Paget cells 成巢或腺樣、有中央 lumen，<strong>基底層最多</strong>；<strong>CEA、mucin、Alcian blue、aldehyde fuchsin、PAS（diastase resistant）陽性</strong>；與 BD 不同（unlike BD），Paget disease 過度表現 low-weight cytokeratins（如 <strong>CK7</strong>）與 <strong>GCDFP-15</strong></td></tr>
 <tr><td>AK type III（bowenoid AK）</td><td>沒有清楚邊界、與周圍表皮漸移；mitoses 較不明顯；<strong>lumican</strong> 在多數 BD 表現、AK 不表現</td></tr>
 <tr><td>Hidroacanthoma simplex</td><td>Lumican 也可陽性，但沒有 atypical mitoses</td></tr>
 <tr><td>Pagetoid melanoma in situ</td><td>BD 的 atypical keratinocytes 之間可見 desmosomal bridges；melanocyte-specific 染色在 melanoma 陽性、BD 與 Paget 陰性</td></tr>
