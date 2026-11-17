@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610282100';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -497,7 +497,7 @@
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202610282100';
+        s.src = '/blog/blog-search.min.js?v=202611172100';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -941,6 +941,7 @@
     { slug:'jaki-switching-alopecia-areata', title:'第一種 JAK 抑制劑治圓禿失敗，換第二種有用嗎？2026 JAAD 108 人換藥真實數據', title_en:'Does switching JAK inhibitors work for alopecia areata? Real-world data from 108 switches (JAAD 2026)', cat:'research', tag:'圓禿 JAK 換藥', date:'2026-05-26', emoji:'', tag_en:'JAKi switching' },
     { slug:'nail-psoriasis-topical-intralesional', title:'指甲乾癬怎麼治？擦藥、病灶內注射到雷射輔助穿透：2026 JAAD 評論的局部治療整理', title_en:'How is nail psoriasis treated? Topical, intralesional, and laser-assisted delivery — a 2026 JAAD editorial review', cat:'research', tag:'指甲乾癬治療', date:'2026-05-31', emoji:'', tag_en:'Nail psoriasis therapy' },
     { slug:'bimekizumab-hidradenitis-suppurativa', title:'化膿性汗腺炎打 bimekizumab 有效嗎？IL-17A/F 雙抑制與 BE-HEARD I/II 三期試驗的嚴格評讀', title_en:'Does bimekizumab work for hidradenitis suppurativa? A critical appraisal of the BE-HEARD I/II phase III trials', cat:'research', tag:'化膿性汗腺炎生物製劑', date:'2026-06-05', emoji:'', tag_en:'HS biologic (bimekizumab)' },
+    { slug:'jaad-monthly-2026-11', title:'皮膚科期刊月報｜JAAD 2026 年 11 月號：13 篇研究深入評讀', title_en:'Dermatology Journal Monthly | JAAD November 2026: 13 studies critically appraised', cat:'research', tag:'期刊月報', date:'2026-11-17', emoji:'', tag_en:'Journal monthly' },
     { slug:'photodynamic-therapy-overview', title:'光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合', title_en:'Photodynamic Therapy (PDT) Complete Guide — from AK and BCC to acne, synthesis of two 2026 JAAD Reviews', cat:'research', tag:'光動力治療', date:'2026-05-23', emoji:'', tag_en:'Photodynamic therapy' },
     { slug:'hairloss-myths',      title:'落髮 / 雄性禿 7 大迷思', title_en:'7 Hair Loss & Male Pattern Baldness Myths', cat:'myth', tag:'落髮', date:'2026-05-03', emoji:'', tag_en:'Hair loss' },
     { slug:'tinea-myths',         title:'香港腳 / 灰指甲 7 大迷思', title_en:'7 Athlete\'s Foot / Nail Fungus Myths', cat:'myth', tag:'足癬', date:'2026-05-03', emoji:'', tag_en:'Tinea' },
@@ -1155,7 +1156,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610282100';
+        s.src = '/blog/blog-article-reading.min.js?v=202611172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1191,7 +1192,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610282100';
+        s.src = '/blog/blog-article-footer.min.js?v=202611172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1221,7 +1222,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610282100';
+        s.src = '/blog/blog-calculators.min.js?v=202611172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1360,7 +1361,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610282100';
+        s.src = '/blog/blog-hub.min.js?v=202611172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1392,7 +1393,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202610282100';
+        script.src = '/blog/blog-support.min.js?v=202611172100';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));

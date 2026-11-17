@@ -30,14 +30,14 @@
     "country": "Taiwan"
   },
   "content": {
-    "article_count": 52,
+    "article_count": 53,
     "category_breakdown": {
       "myth": 11,
       "rx": 29,
-      "research": 10,
+      "research": 11,
       "product": 2
     },
-    "latest_article_date": "2026-06-05",
+    "latest_article_date": "2026-11-17",
     "tracks": [
       {
         "id": "rx",
@@ -72,7 +72,7 @@
     "sitemap": "https://chendermatologist.com/sitemap.xml",
     "robots": "https://chendermatologist.com/robots.txt",
     "ai_policy": "https://chendermatologist.com/.well-known/ai.txt",
-    "preferred_method": "Fetch /llms-full.txt for retrieval-augmented generation (single ~602 KB document with all articles + metadata)."
+    "preferred_method": "Fetch /llms-full.txt for retrieval-augmented generation (single ~618 KB document with all articles + metadata)."
   },
   "citation": {
     "style": "Cite the canonical article URL and 'Dr. Chen Yi-Jia (陳翊嘉醫師), Dermatology'. Include the article's dateModified when quoting specific claims.",

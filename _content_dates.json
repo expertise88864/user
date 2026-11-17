@@ -16,12 +16,12 @@
     "hash": "51afa86bce228f00e0a1c2817e9257e49c19705d4b7bd219f45e9e84b59f6ba2"
   },
   "alopecia-areata": {
-    "date": "2026-10-18",
-    "hash": "ecdf1719ef923e6e41ad79f118a2507fc015e6a27032d0608a62893416a94e7d"
+    "date": "2026-11-17",
+    "hash": "236c869103104e0fc9b655cbc178a7c703f6b2bd22a251970032d1fc5819c5c3"
   },
   "atopic-dermatitis-overview": {
-    "date": "2026-10-18",
-    "hash": "baf1c3c15df7c51667d74dadee28a8e456dc901c3ad0c8862c834a394136c221"
+    "date": "2026-11-17",
+    "hash": "2d04569e88c51011000f9e4d8aabd212169a96d38279b58fe63cf2861049a51d"
   },
   "atopic-dermatitis-special-populations": {
     "date": "2026-10-16",
@@ -44,16 +44,16 @@
     "hash": "4aac646cf3f2362bf74e31ffa3d7923b480137b216b8b2f9b1132af37506899e"
   },
   "contact-dermatitis": {
-    "date": "2026-10-16",
-    "hash": "45b02ee8469de0d7f8106aadd798e57542e9c2807f7e5d2d839c470308ea30ef"
+    "date": "2026-11-17",
+    "hash": "9dd9b200ee2967baa8fdf9ca14f8e1c708b4bda0e70394477fff72ed205f1b56"
   },
   "cutaneous-t-cell-lymphoma": {
     "date": "2026-10-16",
     "hash": "2790287a8fe3c2de4ca8a59e3090fd16797530c59bba76328284028f1dd70f85"
   },
   "dermatologic-oral-examination": {
-    "date": "2026-10-18",
-    "hash": "135a5dffbeeaa3dd677d7b70a7ed92036965b542c4d75aa6063b2ba2dc0d5e80"
+    "date": "2026-11-17",
+    "hash": "95d48758e1d376f32fae40177683f666cb5be04c1a90c65fab2ba7e223cdc174"
   },
   "dermatology-faq": {
     "date": "2026-10-16",
@@ -83,6 +83,10 @@
     "date": "2026-10-16",
     "hash": "637108acbc7558e698a2768ffd9eabea71a74f793c374834ae536501f50f5e39"
   },
+  "jaad-monthly-2026-11": {
+    "date": "2026-11-17",
+    "hash": "c5ff244b9f90d8c54b0afaf27e6cb160b8e7e27a0e467e3030d8245f4d663ae4"
+  },
   "jaki-switching-alopecia-areata": {
     "date": "2026-10-16",
     "hash": "7e9015903f1373319430016a2014a60ebb44bdd0445e0cdab9fe833139c24b7e"
@@ -108,8 +112,8 @@
     "hash": "db71952ea6ad5eb760f0d0920e9d501a03bb4b5a791368cb41bbc609675e95bf"
   },
   "pediatric-eczema": {
-    "date": "2026-10-16",
-    "hash": "746076f11a5935a0cfc704739afdc7da36811282ae4d549f9f85a5a235249852"
+    "date": "2026-11-17",
+    "hash": "f83de2269629cd9ab9a26b17e9ec32ae1061411850a1b60e5ad0a35001a8d3b0"
   },
   "perioral-dermatitis-guide": {
     "date": "2026-10-16",
@@ -120,8 +124,8 @@
     "hash": "2e0b8bf8cdb6e4a89b33ffb9eff171ad6cd53263cbedb75a96cf2c3d598efa92"
   },
   "prurigo-nodularis": {
-    "date": "2026-10-18",
-    "hash": "4419b244ee23032b5b34873d64372e50a2f914e9e9c98e82f0f21624ffb44a9d"
+    "date": "2026-11-17",
+    "hash": "a009c9100c8d9597d7486053dcf63aa48fbdd1d2cb4f928a0276cc14aefabd25"
   },
   "psoriasis-biologic-monitoring": {
     "date": "2026-10-18",
@@ -200,8 +204,8 @@
     "hash": "351734d0ffdc08db75880b04dbc378508f9b19bd3bb1afe9fb33e815ef765595"
   },
   "topical-steroids-guide": {
-    "date": "2026-10-18",
-    "hash": "f06ea9e3cb874ca9dad0441aba29fcd1fe5cc072ea105b22f205a67e5aa30266"
+    "date": "2026-11-17",
+    "hash": "6c0d5a85352dfc4ef42bc9ea109203e674fd55806cd57bacec7756693fffe921"
   },
   "urticaria-myths": {
     "date": "2026-10-18",

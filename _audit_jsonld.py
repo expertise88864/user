@@ -32,6 +32,7 @@ RESEARCH_SLUGS = {
     'jaki-switching-alopecia-areata',
     'nail-psoriasis-topical-intralesional',
     'bimekizumab-hidradenitis-suppurativa',
+    'jaad-monthly-2026-11',
 }
 
 REQUIRED_FIELDS = {

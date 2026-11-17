@@ -60,6 +60,7 @@ RESEARCH_SLUGS = {
     'jaki-switching-alopecia-areata',
     'nail-psoriasis-topical-intralesional',
     'bimekizumab-hidradenitis-suppurativa',
+    'jaad-monthly-2026-11',
 }
 
 def _slug_from_path(path: Path) -> str:

@@ -1,11 +1,206 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Last updated 2026-10-18 · 52 articles · by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)
+Last updated 2026-11-17 · 53 articles · by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
 For citation rules and structural metadata, see https://chendermatologist.com/llms.txt and individual article JSON-LD.
 
+
+---
+## 皮膚科期刊月報｜JAAD 2026 年 11 月號：13 篇研究深入評讀
+URL: https://chendermatologist.com/blog/jaad-monthly-2026-11
+Updated: 2026-11-17
+Section: Research Summary
+Reading time: PT102M
+Tags: 期刊月報, Journal monthly
+
+本月 5 個重點
+
+本月 5 個重點
+
+重度異位性皮膚炎兒童：dupilumab 試驗的事後分析中，第 16 週身高百分位上升 ≥5 的比例為 31.3%，安慰劑組 15.5%（基線低於第 40 百分位者）。訊息是「控制疾病、追蹤生長」，而不是「用藥促進長高」。→ 第 1 篇
+
+AAD 指引：成人異位性皮膚炎治療反應差時，先重新檢視診斷；依臨床懷疑安排切片（懷疑皮膚淋巴瘤時可能需要多處切片）、貼膚測試與刮片／KOH，再考慮換下一種進階治療。→ 第 2 篇
+
+圓禿：ritlecitinib 青少年真實世界資料第 36 週 38.8% 達 SALT ≤20，療效需要時間累積；圓禿與視網膜異常的相對風險 3.88，但絕對比例只有 2.0% 對 0.7%，不支持常規眼底篩檢。→ 第 6、7 篇
+
+高齡、劇癢、治療反應差的「濕疹」要想到非大疱性類天疱瘡：神經共病的勝算比 12.64；DIF 與 BP180/BP230 ELISA 一起做，ELISA 陰性不能排除。→ 第 9 篇
+
+Rituximab 的肺囊蟲肺炎（PJP）預防：未預防組發生率 1.98%，預防組 0.32%。不必每位病人都預防，但合併高劑量類固醇等風險因子者應主動評估。→ 第 10 篇
+
+這份月報怎麼讀
+
+這份月報寫給皮膚科醫師與同行，每月從《Journal of the American Academy of Dermatology》（JAAD）當期挑選對臨床最有意義的研究深入評讀。每一篇都包含研究設計、關鍵數據、研究限制、臨床解讀、台灣適用性與經費來源，並附原文 DOI，方便回頭查閱全文。文中的數字皆取自原文；與原文表格互相矛盾的數字不採用，並在內文註明。
+
+證據強度標示：「高」＝隨機對照試驗、統合分析或分級明確的指引；「中」＝設計較完整的觀察性研究、事後分析或證據等級有限的指引；「初步」＝小型、單中心、回溯性研究、研究信函或專家意見。標示是本刊依研究設計所做的判斷，不是原作者的分級。
+
+給一般讀者：本文使用大量專業術語。若想了解疾病本身，請參考本站的衛教文章，例如異位性皮膚炎總覽與圓禿完整衛教。
+
+13 篇速覽
+
+JAAD 2026 年 11 月號 13 篇評讀速覽
+#
+主題
+一句話結論
+證據
+
+1
+Dupilumab 與重度 AD 兒童的身高
+控制疾病與生長追上相關；不是用藥理由
+中
+
+2
+AAD：難治成人 AD 的診斷檢查
+換藥前先重新確認診斷
+中
+
+3
+台灣乾癬 Th17／第 2 型雙重內表型
+假說性發現，不足以改變用藥
+初步
+
+4
+Dupilumab 與 JAK 抑制劑真實世界比較
+JAK 抑制劑止癢較快；減量者療效較差
+初步
+
+5
+Dupilumab 治療結節性癢疹 52 週
+止癢早於結節消退；眼表疾病較試驗常見
+初步
+
+6
+圓禿 JAK 抑制劑真實世界資料
+療效隨時間累積，評估至少等到第 36 週
+初步
+
+7
+圓禿與視網膜異常
+相對風險高、絕對風險低；有症狀再轉眼科
+初步
+
+8
+酒糟治療網絡統合分析
+大致支持現行治療階梯
+中
+
+9
+非大疱性類天疱瘡預測因子
+高齡頑固濕疹要做 DIF 與 ELISA
+初步
+
+10
+Rituximab 與 PJP 預防
+依合併風險決定，不是人人預防
+中
+
+11
+黏膜扁平苔癬的癌化與 DIF
+持續糜爛者追蹤、低門檻再切片
+初步
+
+12
+默克細胞癌術後放療
+單次 8 Gy 可討論，但尚非等效
+初步
+
+13
+癌症治療中的皮膚外科與 ICI 病人用藥
+少數藥物需協調停藥；留意抗生素與類固醇
+初步
+
+發炎性皮膚病
+
+1. Dupilumab 與重度 AD 兒童的線性生長：身高百分位與 BALP 的事後分析
+
+證據強度：中（第 3 期隨機對照試驗 LIBERTY AD PEDS 及其開放延伸 PED-OLE 的事後探索性分析；所有 P 值為名目值）
+
+出處：Irvine AD, et al. Dupilumab treatment improves linear growth and bone biomarkers in children with atopic dermatitis. J Am Acad Dermatol. 2026;95(5):1324-1334. doi:10.1016/j.jaad.2026.07.006
+
+研究設計與族群：6–11 歲重度異位性皮膚炎（atopic dermatitis, AD）兒童，隨機接受 dupilumab（300 mg 每 4 週或 200 mg 每 2 週）或安慰劑 16 週，皆併用外用類固醇（TCS）；之後全部改用 dupilumab 至第 52 週。分析 304 人（女 153、男 151）。身高依 CDC 生長曲線換算年齡別百分位，主要看基線低於 P50／P40／P30／P25 者身高百分位上升 ≥5 的比例；骨特異性鹼性磷酸酶（bone alkaline phosphatase, BALP）以保存檢體回溯測定。
+
+主要結果：基線時重度 AD 兒童偏多落在低身高百分位，平均 BALP 約 60–64 μg/L，接近參考區間下緣（8–11 歲參考平均約 115–130 μg/L）。重點數字如下（基線低於 P40 者）：
+
+身高（基線低於 P40 的兒童）與 BALP（全體受試兒童）
+指標
+Dupilumab
+安慰劑
+
+第 16 週身高百分位 ≥+5
+31.3%（26/83）
+15.5%（9/58）
+
+第 16 週勝算比（95% CI）
+2.5（1.1–5.8）；校正累積 TCS 劑量後 3.1（1.3–7.8）
+—
+
+第 52 週身高百分位 ≥+5（基準點原文不一致；二組皆已用 dupilumab，無對照）
+50.7%（36/71，全程用藥）
+40.4%（19/47，第 16 週起才改用 dupilumab）
+
+（全體）平均 BALP，第 16 週（μg/L，± SE）
+77.3 ± 1.0（q4w）；81.8 ± 1.1（q2w）
+65.0 ± 1.0
+
+（全體）平均 BALP，第 52 週
+78.6 ± 1.0（q4w）；82.1 ± 1.1（q2w）
+82.1 ± 1.0（轉用後）
+
+研究限制：事後分析，切點多、P 值未校正；以 P50 為切點時第 16 週差異未列為顯著（29.0% vs 15.7%）。第 52 週沒有對照組，比較基準（基線或第 16 週）原文敘述不一致。各中心身高量測未標準化，也沒有評估青春期分期與家族（父母）身高。在 P25–P40 區間，5 個百分位約只相當於 0.13–0.15 個標準差（本站以常態分布換算），量測誤差的影響不可忽視。BALP 上升後仍明顯低於參考平均；其他骨代謝指標檢體數很少。第 52 週 200 mg 每 2 週組的 BALP 正文為 82.1，圖 3 約為 85，且該組僅 19 人有資料。
+
+臨床解讀：最有份量的是第 16 週的隨機比較；校正累積 TCS 用量後結果相近，提示不太像只是少擦類固醇的效果；但無法分辨是 IL-4/IL-13 阻斷本身，還是睡眠與發炎改善的間接作用。方向與 Chen 等人 2025 年 TriNetX 世代研究一致（dupilumab 相較傳統全身性免疫調節劑，與較低的身高百分位下滑風險相關），但兩者都不足以把「促進長高」當成用藥理由。實務上，重度 AD 兒童每次回診宜記錄身高、體重並畫在生長曲線上；生長落後是加速達成有效疾病控制、避免反覆口服類固醇的理由。BALP 不需列為常規檢查。
+
+台灣適用性：健保 §13.17.2 給付 6 歲以上未滿 12 歲兒童使用 dupilumab，條件包括 EASI ≥16、IGA ≥3、外用藥（中效以上 TCS 及 TCI 規律 12 週）與至少一種全身性免疫抑制劑足量 12 週無效，限皮膚科或具兒童過敏免疫風濕專長之兒科醫師處方並經事前審查。依體重分級的劑量包含本研究的 300 mg 每 4 週（15 至未滿 30 公斤）與 200 mg 每 2 週（30 至未滿 60 公斤）。本試驗僅約 28%–35% 曾用全身性藥物，與健保給付族群不完全相同。
+
+經費與利益衝突：由 Sanofi 與 Regeneron 贊助；10 位作者為兩家公司員工，學術作者多與兩公司有顧問或講者關係；醫學寫作由贊助商出資。
+
+延伸閱讀：兒童異位性皮膚炎照護指南、AD 全身性治療、Fitzpatrick Ch.22 異位性皮膚炎
+
+2. AAD 指引：疑似難治性成人 AD 的診斷檢查
+
+證據強度：初步（AAD 指引，採 GRADE「良好實務聲明」；文獻搜尋未找到直接證據，依間接證據與專家共識）
+
+出處：Sidbury R, et al. Guidelines for diagnostic testing in adults with presumed atopic dermatitis refractory to treatment. J Am Acad Dermatol. 2026;95(5):1370.e1-1370.e14. doi:10.1016/j.jaad.2026.07.039
+
+研究設計與族群：多專科工作小組於 2024 年 7 月進行範圍搜尋、2025 年 4 月更新，只提出一條良好實務聲明：成人疑似 AD 經處置仍無反應時，建議考慮進一步檢查。前提是先確認治療已依指引最佳化、病人確實遵從（例如類固醇恐懼造成的不規則使用）。指引引用的資料指出，在使用全身性藥物的難治成人 AD 中，超過 20% 可能是誤診或合併其他皮膚病。
+
+主要結果：指引列出的重點檢查與數字：
+
+貼膚測試（patch test）：成人發病且分布不典型（手、臉、眼瞼）、標準治療無效或惡化、新發或惡化的臉部皮膚炎時考慮，宜用延伸系列，最好在開始全身性治療前做；治療中也可做，必要時調整劑量或時機。文獻中 AD 與過敏性接觸性皮膚炎（allergic contact dermatitis）的重疊率為 7%–91%。
+
+皮膚切片：出現斑片、斑塊、丘疹、腫瘤，或紅皮症合併淋巴結腫大時，可能需要切片以排除皮膚 T 細胞淋巴瘤（CTCL）；可能需多次切片、免疫組化或克隆性分析；文獻中確立替代診斷所需切片數為 1–4 次（中位數 2）。出現水疱時應考慮切片（含直接免疫螢光）。
+
+皮屑檢查：疥瘡刮片敏感度 43%–90%（中位數 45%），皮癬菌 59%–91%，宜多處取樣；尤其注意先改善、後在類固醇下惡化的 tinea incognito。
+
+延誤時間：ACD 中位數 6 個月（3–12）；CTCL 中位數 24 個月（8–144），其中以 AD 接受全身性治療的時間中位數 6 個月（1–96）。
+
+研究限制：沒有直接證據，也沒有各項檢查在難治 AD 中的陽性率或預測值；「無反應」沒有操作型定義與評估時點；皮膚點刺試驗未納入；延誤時間來自指引作者對誤診文獻的整理，原文正文未說明納入研究類型（補充表未附於 PDF），可能偏向被發表的個案。
+
+臨床解讀：結論本身不新，價值在於把「重新檢視診斷」寫成正式指引，並附上鑑別診斷與檢查對照表。對已用 dupilumab 或 JAK 抑制劑卻反應不佳的成人，換第二種進階治療之前，宜先問三件事：是否真的規則使用、是否成人或老年才發病且無異位性病史、型態或分布是否改變；有任何警訊就做切片（必要時多處、追蹤重切）、貼膚測試與 KOH。同期另一篇研究信函提醒，外用類固醇的賦形劑本身也可能是過敏原：美國 358 種處方 TCS 中 77.7% 至少含 1 種 ACDS 核心過敏原，最常見為 propylene glycol（56.4%），軟膏平均含量（0.78 種／產品）低於乳膏（2.93）；台灣產品成分可能不同，擦藥反而惡化時值得考慮。
+
+台灣適用性：健保 §13.17 計算 EASI 時只納入紅腫濕疹部位，單純乾燥、脫屑與抓痕不列入；曾核准使用乾癬生物製劑者，需乾癬症狀消失至少兩年才能申請，或申請前切片排除乾癬並經皮膚科專科醫師確立診斷。可見健保規定本身就要求診斷正確；各院可用的貼膚測試系列不同，請依實際可行性安排或轉介。
+
+經費與利益衝突：全部由 AAD 內部經費支應；多位作者與藥廠有顧問、講者或研究關係，部分作者無利益衝突。
+
+延伸閱讀：接觸性皮膚炎與貼膚測試、皮膚 T 細胞淋巴瘤、外用類固醇指南、Fitzpatrick Ch.24 過敏性接觸性皮膚炎、Fitzpatrick Ch.119 皮膚淋巴瘤
+
+3. 台灣乾癬病灶的 Th17／第 2 型雙重轉錄體內表型（台大團隊）
+
+證據強度：初步（橫斷面轉錄體研究；皮膚 RNA 定序僅 11 位病人與 9 位健康人）
+
+出處：Chen CH, et al. Uncovering a dual T helper 17/type 2 transcriptomic endotype in psoriasis. J Am Acad Dermatol. 2026;95(5):1335-1343. doi:10.1016/j.jaad.2026.06.131
+
+研究設計與族群：台大醫院收錄 50 位斑塊型乾癬（男 37、女 13，平均 42.4 ± 14.3 歲）與 9 位健康志願者。其中 11 位病人取軀幹病灶與非病灶皮膚 4 mm 切片做 bulk RNA 定序（差異表現門檻：FDR 校正 P < .05 且 |log2 fold change| > 2），59 份血液做 65 項細胞激素多重檢測；與 PASI 的相關分析為事後探索；另與西方公開資料集 GSE54456（92 病灶、82 正常）比較。
+
+主要結果：
+
+病灶相對健康皮膚有 4694 個差異表現基因（上調 1874、下調 2820）；IL-23A（log2FC 3.4）、IL-17A（5.5）上調，IL-36G 上調 5.5（P = 1.1×10−55，為文中列出基因中最顯著者），IL-36 家族全面上升。
+
+第 2 型相關：IL-4R（log2FC 2.0）、CCL17（2.0）、TSLP、OX40、STAT6 上升；屏障基因 KRT77（−3.2）、GJB4（−3.5）、FLG2、CLDN1 下降。與 GSE54456 相比，IL4R、STAT6、GATA3、CCL13 的病灶上調幅度在台灣族群顯著較大。
+
+
+[... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 化膿性汗腺炎打 bimekizumab 有效嗎？IL-17A/F 雙抑制與 BE-HEARD I/II 三期試驗的嚴格評讀
@@ -2112,9 +2307,9 @@ Zaias 等人提出 AGNUS 假說：兩腳長度或結構不對稱會破壞正常�
 ---
 ## 嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南
 URL: https://chendermatologist.com/blog/dermatologic-oral-examination
-Updated: 2026-10-18
+Updated: 2026-11-17
 Section: Treatment & Therapy
-Reading time: PT24M
+Reading time: PT27M
 Tags: 口腔黏膜, Oral mucosa
 
 30 秒重點
@@ -2184,6 +2379,12 @@ Q6. 切片前要禁食或停藥嗎？孕婦可以切嗎？
 ① 口腔扁平苔癬（Oral Lichen Planus, OLP）
 
 自體免疫性發炎反應，T 細胞攻擊口腔黏膜上皮基底層。最典型的樣子是「雙側對稱的白色蕾絲狀紋路（Wickham striae）」，多位於頰黏膜；也可能出現紅斑型、糜爛型、萎縮型——後三種比較會痛。常見部位：頰黏膜雙側、舌側、牙齦。約 15–20% 患者同時有皮膚扁平苔癬（手腕、腰、足踝的紫色多角形丘疹），也可能合併指甲、頭皮、生殖器黏膜病變。
+
+2026 年 11 月更新
+
+癌化風險：美國賓州大學單一中心回顧 10 年資料，135 位口腔扁平苔癬病人（排除初次切片已有細胞異型者；整個黏膜扁平苔癬世代中位追蹤 3.9 年）中，4 位（2.96%，95% 信賴區間 0.8%–7.4%）後來在原病灶處發生口腔鱗狀細胞癌；4 位都是長期糜爛型、外用藥控制不佳的病人，從診斷到癌化平均 3.5 年（Tran 等，JAAD 2026）。由於事件數少、轉診中心的病人可能較嚴重，且族群以年長白人女性為主，這個比例不能直接套用到台灣（台灣另有檳榔等重要風險因子）；但它支持既有建議：糜爛型、久治不癒者更需要規則追蹤，出現新的硬塊或不癒合的潰瘍應切片。
+
+直接免疫螢光（DIF）的角色：美國猶他大學回顧 120 個口腔／食道扁平苔癬切片，典型的基底膜區「粗糙纖維蛋白原沉積」（shaggy fibrinogen）只出現在 65.0% 的檢體（只看口腔為 72.3%，食道僅 26.3%）。作者認為 DIF 可支持診斷，但不應依賴它來診斷；以約 65% 的敏感度來看，陰性並不能排除扁平苔癬；作者建議 DIF 在口腔扁平苔癬最主要的用途，是排除同時存在或外觀相似的其他疾病（例如自體免疫水皰病）（Lyon 等，JAAD 2026）。兩篇皆為單一中心、回溯性研究。詳見 2026 年 11 月 JAAD 文獻整理。
 
 ② 復發性口瘡（Recurrent Aphthous Stomatitis, RAS）
 
@@ -2256,34 +2457,6 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 舌側：用沾濕紗布抓住舌尖，輕輕拉到一側，看舌側（舌癌最好發處）。對側同。任何潰瘍要「觸診」感受有無硬結（induration） — 這是非常重要的惡性線索。
 
 舌腹與口底：請病人用舌尖頂上顎，露出舌腹與口底；觀察舌下靜脈、唾腺開口、舌下硬塊。
-
-硬顎、軟顎、扁桃柱：請病人張口、頭略後仰，看硬顎與軟顎；以壓舌板輕壓舌中央，看扁桃柱與咽喉後壁。
-
-這就是 JAAD 2026 建議的標準七步驟。檢查中發現可疑病灶時，會在病歷上以解剖位置記錄、拍照存檔，必要時排切片。
-
-切片時機、流程與切片風險
-
-什麼時候會建議切片？
-
-任何潰瘍超過 2–3 週未癒。
-
-懷疑癌前病變或惡性：口腔白斑、紅斑、混合斑、快速變大的黑斑或結節。
-
-懷疑自體免疫水皰病：類天疱瘡、天疱瘡、慢性剝離性牙齦炎——必須做傳統 HE + 直接免疫螢光雙樣本。
-
-疑似口腔扁平苔癬但需確認分型（萎縮型／糜爛型）或排除上皮分化異常。
-
-不典型外觀的色素病變、肉芽腫、黏液腫（mucocele）反覆復發者。
-
-圖 4：常見口腔切片方法。環形切片（punch）方便快速、不需縫線，最常用於黏膜中段病灶取樣；15 號刀片切除式適合小型可疑病灶完整切除。
-
-切片流程（皮膚科診間）
-
-術前確認：病史（抗凝血藥、心臟病、過敏）、檢查血壓、簽署同意書、拍照存檔。
-
-表面麻醉（選用）：在切片位置塗抹 benzocaine 凝膠 1–2 分鐘，可顯著減輕之後針頭插入的刺痛感。
-
-局部麻醉：以 30 號小針頭注射 lidocaine（多用 2% 利多卡因 + 腎上腺素（epinephrine），部分情況用無腎上腺素配方）；嘴唇與舌部可能需要「神經阻斷」。
 
 
 [... truncated; fetch canonical URL for full text ...]
@@ -4382,9 +4555,9 @@ UpToDate: Management of severe, refractory atopic dermatitis (eczema) in infants
 ---
 ## 接觸性皮膚炎(過敏 vs 刺激)完整衛教
 URL: https://chendermatologist.com/blog/contact-dermatitis
-Updated: 2026-10-16
+Updated: 2026-11-17
 Section: Treatment & Therapy
-Reading time: PT9M
+Reading time: PT11M
 Tags: 接觸性皮膚炎, Contact dermatitis
 
 什麼是接觸性皮膚炎？
@@ -4535,6 +4708,12 @@ IR
 
 陽性反應只代表「有過敏」、不一定是「現在這個皮疹的原因」。BAD 2017 強調：醫師必須將陽性結果與病人實際接觸史、發病區域、職業 / 嗜好做相關性判斷（relevance assessment）。
 
+2026 年 11 月更新
+
+「異膚」治不好時，也要想到接觸性過敏：美國皮膚科醫學會（AAD）2026 年針對「成人疑似異位性皮膚炎、規範治療仍無效」發表指引，提出一項良好實務聲明（Good Practice Statement）：確認治療已依指引調整、病人也確實照著用之後，若仍無效，應考慮進一步檢查。此聲明依據間接證據與專家共識，缺乏直接比較的研究。接觸性皮膚炎是指引列出的主要合併或替代診斷之一；指引建議以下情況可考慮做較完整的貼膚試驗（依接觸史加測相關過敏原）：成人才發病且分布不典型（如手、臉、眼皮）、慢性反覆且標準異膚治療無效或反而惡化、臉部皮膚炎新發或加重；最好在開始全身性異膚藥物之前安排，必要時也可在治療中進行（Sidbury 等，JAAD 2026）。
+
+擦的藥本身也可能含過敏原：一篇分析美國 358 個常用處方外用類固醇標示的研究發現，77.7% 的產品賦形劑中含有至少 1 種常見接觸性過敏原（最常見為丙二醇，56.4%）；乳膏與泡沫劑型平均含量最多，軟膏較少（Belair 等，JAAD 2026）。這是美國產品資料，台灣產品配方可能不同；若用藥後反而惡化，請帶藥品回診討論。詳見 2026 年 11 月 JAAD 文獻整理。
+
 什麼情況該轉介做貼膚試驗？(Johnston 2017, BJD )
 
 反覆發作的手部、臉部、頸部、生殖器、肛周濕疹
@@ -4635,9 +4814,8 @@ Bains SN, Nash P, Fonacier L. Irritant Contact Dermatitis. Clin Rev Allergy Immu
 
 Goulden V, Ling TC, Babakinejad P, et al. BAD and British Photodermatology Group guidelines for narrowband UVB phototherapy 2022. Br J Dermatol. 2022;187(3):295-308. 「來源」
 
-Berth-Jones J, Exton LS, Ladoyanni E, et al. BAD guidelines for the safe and effective prescribing of oral ciclosporin in dermatology 2018. Br J Dermatol. 2019;180(6):1312-1338. 「來源」
 
-UpToDate: Common allergens in allergic contact dermatitis. Accessed 2026.
+[... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教
@@ -6460,9 +6638,9 @@ Omalizumab 給付條文（§6.2.6）僅列「重度持續性氣喘」（12 歲�
 ---
 ## 結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-10-18
+Updated: 2026-11-17
 Section: Treatment & Therapy
-Reading time: PT7M
+Reading time: PT10M
 Tags: 結節性癢疹, Prurigo Nodularis
 
 重點數據 (TDA 2024)盛行率全球 ~50/100,000（亞洲略低、但常被低估診斷）
@@ -6558,6 +6736,13 @@ NB-UVB 對廣泛型 PN 有效；類固醇只能短期橋接
 2022-2024 是 PN 治療的轉捩點 — 兩款生物製劑陸續上市：
 重點：Dupilumab（商品名：杜避炎）
 機轉：抗 IL-4Rα 單株抗體、阻斷 IL-4 / IL-13 訊號 → 降低 Th2 發炎與神經敏化。
+
+2026 年 11 月更新
+
+真實世界 52 週資料：荷蘭多中心 BioDay 登錄研究前瞻收錄 69 位開始使用 dupilumab 的成人結節性癢疹病人（平均病程 12.6 年，75.4% 曾用過全身性免疫調節藥物），其中 49.3% 因重大共病、合併全身用藥、中重度異膚等原因，原本不符合第三期試驗的收案條件。第 52 週的估計結果：最嚴重搔癢分數（peak pruritus NRS）下降至少 4 分的機率為 64.1%，結節評估（IGA PN-S）達 0/1 為 48.3%；但同時達到「搔癢降到輕微（PP-NRS ≤ 3）且結節幾乎清除（IGA PN-S 0/1）」的緩解只有 16.4%（van der Gang 等，JAAD 2026）。
+
+安全性與限制：最常見的不良事件是感染（21.7%）、眼表疾病（ocular surface disease，例如結膜炎，20.3%）與關節／肌肉痛（14.5%），後兩者的比例高於第三期 PRIME 試驗（分別為 3.9% 與未見；各研究族群與定義不同，與本頁表格所列的結膜炎比例不能直接比較）；5 位病人（7.2%）共發生 6 件嚴重不良事件，研究者判斷都不太可能與藥物相關；10.1% 停藥。此研究沒有對照組、人數少，由藥廠贊助（研究者主導）。解讀：對試驗外、較難治的病人，dupilumab 的止癢效果仍明顯，但達到上述緩解標準的人不多；用藥期間若眼睛紅、癢、乾或畏光，請告知醫師。詳見 2026 年 11 月 JAAD 文獻整理。
+
 項目
 內容
 
@@ -6635,9 +6820,8 @@ Pereira MP, et al. EADV recommendations for the diagnosis and treatment of chron
 Yosipovitch G, et al. Efficacy and safety of dupilumab in adults with prurigo nodularis (LIBERTY-PN PRIME / PRIME 2).Nat Med. 2023;29(5):1180-1190. 「來源」
 Kwatra SG, et al. Phase 3 trial of nemolizumab in patients with prurigo nodularis (OLYMPIA 2).N Engl J Med. 2023;389(17):1579-1589. 「來源」
 Galderma. U.S. FDA approval for Nemluvio® (nemolizumab) for adult patients living with prurigo nodularis. 2024-08-13. [Galderma]
-Ständer S, Pereira MP, Berger T, Zeidler C, et al. IFSI-guideline on chronic prurigo including prurigo nodularis. Itch. 2020;5(4):e42. 「來源」
-Huang AH, Williams KA, Kwatra SG. Prurigo nodularis: epidemiology and clinical features. J Am Acad Dermatol. 2020;83(6):1559-1565. 「來源」
-UpToDate: Prurigo nodularis. Accessed 2026.
+
+[... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教
@@ -7692,9 +7876,9 @@ Fitzpatrick V-VI 型膚色：1064 nm Nd:YAG 為較安全選擇；532 / 694 / 755
 ---
 ## 嬰幼兒 / 兒童異位性皮膚炎完整照護指南
 URL: https://chendermatologist.com/blog/pediatric-eczema
-Updated: 2026-10-16
+Updated: 2026-11-17
 Section: Treatment & Therapy
-Reading time: PT13M
+Reading time: PT16M
 Tags: 異位性皮膚炎, Atopic dermatitis
 
 怎麼診斷？Hanifin Rajka 標準
@@ -7861,6 +8045,13 @@ HSV 感染：似乎不增加
 長期安全性資料目前 5 年以上、未見惡性腫瘤增加
 健保條件
 台灣健保給付 Dupilumab 目前限 6 歲以上：6 歲以上未滿 12 歲兒童自 113/2/1 起依 §13.17.2 給付，未滿 6 歲的嬰幼兒目前沒有健保給付條文。6 歲以上未滿 12 歲須符合：病灶持續至少 6 個月、EASI ≧ 16 且 IGA ≧ 3；規律使用中效以上外用類固醇及外用鈣調磷酸酶抑制劑（TCI）達 12 週，並經 methotrexate、azathioprine、cyclosporin 其中至少一種全身性免疫抑制劑足量治療 3 個月仍無效；限皮膚科專科醫師或具兒童過敏免疫風濕專長之兒科專科醫師處方，並須經事前審查核准。詳見皮膚科常用藥物健保規範。12 歲以上的青少年則依 §13.17.1 申請，可選 dupilumab、upadacitinib、abrocitinib，以及 115/6/1 起新增給付的 lebrikizumab（限 12 歲以上且體重至少 40 公斤，第 16 週須達 EASI 50 才能續用）；這幾種藥不得併用。
+
+2026 年 11 月更新
+
+重度異膚與孩子的身高：一項針對 6–11 歲重度異位性皮膚炎兒童的事後分析（post hoc analysis，資料來自 dupilumab 第三期隨機對照試驗 LIBERTY AD PEDS 及其開放標籤延伸試驗）發現，這些孩子在試驗開始時，身高落在較低百分位的比例高於一般兒童。基礎身高低於第 40 百分位的孩子中，使用 dupilumab（併用外用類固醇）16 週後，身高百分位進步至少 5 個百分位者占 31.3%，安慰劑組為 15.5%；持續用藥到第 52 週時為 50.7%。反映骨骼形成的血中指標「骨型鹼性磷酸酶（bone alkaline phosphatase, BALP）」也隨治療上升，但全程都在正常範圍內（Irvine 等，JAAD 2026）。
+
+限制與解讀：這些是事後、探索性的分析，只追蹤 1 年；各試驗中心量身高的方式未標準化，也沒有評估父母身高與青春期發育；研究由藥廠贊助。結果只能說明，使用 dupilumab 的孩子身高百分位進步的比例較高，兩者「相關」；是否經由皮膚炎、搔癢與睡眠改善而間接影響生長，研究並未直接驗證，也不代表 dupilumab 能讓孩子長高，不應為了身高而用藥。若孩子長期處於重度異膚、家長又擔心生長，可請醫師在回診時記錄身高並對照生長曲線。詳見 2026 年 11 月 JAAD 文獻整理。
+
 過敏進行曲（Atopic march）— 預防策略
 異膚兒童約 30-50% 後續發展食物過敏 → 氣喘 → 過敏性鼻炎。關鍵的「皮膚屏障假說」：皮膚屏障破損 → 環境過敏原 / 食物蛋白透皮致敏 → 全身過敏體質形成。
 已實證的預防策略
@@ -7887,16 +8078,6 @@ EAT trial (Perkin et al., NEJM 2016)
 實務建議(2024 國際指引整合）
 4-6 個月開始引入固體副食品（包括雞蛋、花生、小麥、堅果等）
 高風險嬰兒（嚴重異膚 / 已有食物過敏）：請過敏專科醫師評估；可能先做 IgE 或皮膚點刺、再決定引入時機與方式
-引入新食物時：單一新食物 / 次、觀察 48 小時
-哺乳期母親不需要避開特定食物（除非嬰兒已確診過敏）
-家長最常問的問題(PTT / Dcard / 兒科診間最常被問）
-新生兒臉頰紅紅一塊塊是異膚嗎？
-2 個月以下臉頰紅疹常為「新生兒痤瘡」（neonatal acne） — 母體賀爾蒙影響、通常 3-6 個月自行消退。2-3 個月後持續、合併皮膚乾燥、嬰兒煩躁、睡眠中斷、才較像異膚。確診需專科醫師評估。
-嬰兒可以擦類固醇嗎？會不會影響發育？
-可以、而且是首選。Class VI-VII 弱效類固醇（Hydrocortisone 1%）在臉、生殖器等薄皮處短期使用非常安全。長期大量使用高強度類固醇（尤其包尿布封閉狀態下）才會擔心 HPA 軸抑制（下視丘－腦垂體－腎上腺軸的內分泌迴路被外來類固醇壓制，自身腎上腺暫時不分泌皮質醇）/ 生長影響 — 但這是錯誤使用、不是「正確使用」的常見問題。
-異膚會傳染給家人嗎？其他兄弟姊妹會被影響嗎？
-不會傳染，但有家族遺傳傾向。父母一方有異膚 → 子代風險約 30%；父母雙方都有 → 60%。但即使有遺傳體質、後天環境（屏障保護、過敏原暴露、感染）仍能影響是否發病與嚴重度。
-嬰兒異膚一定要避開所有過敏原嗎？
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -8214,9 +8395,9 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-10-18
+Updated: 2026-11-17
 Section: Treatment & Therapy
-Reading time: PT15M
+Reading time: PT22M
 Tags: 圓禿, Alopecia areata
 
 什麼是圓禿？跟一般落髮怎麼分？
@@ -8343,7 +8524,7 @@ Baricitinib（成人重度）
 12 週起評估，36 週仍無療效可考慮停藥；少數人需 36 週至 18 個月才出現足夠反應 （BAD 2025 R42、R44）。長期維持（常需 3-7 年），勿驟停 （BAD 2025 R45）
 
 Ritlecitinib（≥12 歲重度）
-200 mg/day 載入 4 週 → 50 mg/day 維持
+每天 50 mg（台灣核准劑量）
 12 週起評估；36 週仍無療效可考慮停藥，但部分病人需更長療程（最長至 18 個月）才達 SALT < 20 （BAD 2025 R42、R44）。長期治療避免驟停 （BAD 2025 R45）
 
 低劑量口服 Minoxidil（輔助）
@@ -8366,7 +8547,7 @@ JAK3 / TEC 雙抑制
 
 劑量
 4 mg/day（≥75 歲、感染史 2 mg/day）
-200 mg/day 載入 4 週 → 50 mg/day 維持
+每天 50 mg（台灣核准劑量）
 
 關鍵試驗第三期療效
 BRAVE-AA1 / BRAVE-AA2(n = 1200)：36 週 SALT ≤ 20 達成率 4 mg 組 38.8%、2 mg 組 22.8%、安慰劑 6.2%
@@ -8916,9 +9097,9 @@ UpToDate: Acneiform eruption secondary to epidermal growth factor receptor (EGFR
 ---
 ## 外用類固醇完整指南
 URL: https://chendermatologist.com/blog/topical-steroids-guide
-Updated: 2026-10-18
+Updated: 2026-11-17
 Section: Treatment & Therapy
-Reading time: PT9M
+Reading time: PT11M
 Tags: 外用類固醇, Topical steroids
 
 為什麼皮膚科常開類固醇藥膏？
@@ -9068,6 +9249,13 @@ FTU（2-5 歲兒童）
 皮膚廣泛脫皮、滲出
 遠超原始疾病範圍
 處置：逐步減量，改弱強度 / 改頻率，搭配 TCI、光療，必要時短期口服免疫抑制劑。網路上「TSW」的恐怖案例多為長期不當自行使用最強類固醇所致，正確醫療使用幾乎不會發生。
+
+2026 年 11 月更新
+
+藥膏的「賦形劑」也可能引起過敏：除了類固醇成分本身，藥膏中的非活性成分（賦形劑，例如基劑、防腐劑、乳化劑）也可能造成過敏性接觸性皮膚炎。一篇分析美國處方外用類固醇藥品標示的研究（以 DailyMed 資料庫查詢 15 種常用成分，2025 年 9–10 月），共納入 358 個產品：77.7% 含有至少 1 種美國接觸性皮膚炎學會（ACDS）核心貼膚試驗系列中的過敏原，最常見的是丙二醇（propylene glycol，56.4%）、鯨蠟硬脂醇（cetyl stearyl alcohol，43.9%）與 sorbitan sesquioleate（29.6%）。劑型差異很大：乳膏全部（131/131）含有這類成分、平均 2.93 種；軟膏為 47.2%（50/106）、平均 0.78 種；5 個油劑產品都沒有（Belair 等，JAAD 2026）。
+
+限制與提醒：這是美國產品的標示資料，台灣上市的同成分藥膏可能由不同廠商製造、配方不同，不能直接套用；研究也只統計產品「含有」可能的過敏原，並不是病人實際過敏的比例。如果擦了類固醇藥膏反而越擦越紅、越癢或範圍擴大，請帶著藥膏盒回診，不要自行換藥或停藥；醫師可評估是否為接觸性過敏，必要時安排貼膚試驗。延伸閱讀：接觸性皮膚炎完整衛教。
+
 類固醇恐懼症（TCS phobia）
 研究顯示 30-80% 的異膚病人對類固醇有不同程度的恐懼，結果擅自停藥 → 病情惡化 → 抓癢 → 感染 → 用更強類固醇 → 惡性循環。常見誤解：
 類固醇藥膏會被吸收影響身體 → 弱中強度短期使用全身吸收極少（< 2%）
@@ -9165,11 +9353,6 @@ Triamcinolone 0.5% 是 Class III（中強），mometasone 0.1% 乳膏是 Class I
 Werfel T, et al. S3 Guideline Atopic Dermatitis Part 1 — General aspects, topical and non-drug therapies (2024).J Dtsch Dermatol Ges. 2024;22(1):137-153. 「來源」
 Wollenberg A, et al. ETFAD/EADV Eczema task force 2020 position paper. J Eur Acad Dermatol Venereol. 2020. 「來源」
 Eichenfield LF, et al. AAD Guidelines of care for atopic dermatitis. J Am Acad Dermatol. 2014;70(2):338-351. 「來源」
-Sidbury R, et al. AAD Guidelines of care for atopic dermatitis (Adults — Topical, 2023 update).J Am Acad Dermatol. 2023;89(1):e1-e20. 「來源」
-Long CC, Finlay AY. The finger-tip unit—a new practical measure. Clin Exp Dermatol. 1991;16(6):444-447. 「來源」
-Hajar T, et al. A systematic review of topical corticosteroid withdrawal ("steroid addiction") in patients with atopic dermatitis. J Am Acad Dermatol. 2015;72(3):541-549. 「來源」
-Wollenberg A, et al. Proactive therapy with TCS / TCI for AD — efficacy and safety review.Allergy. 2008;63(7):742-750. 「來源」
-UpToDate: General principles of dermatologic therapy and topical corticosteroid use. Accessed 2026.
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -10381,13 +10564,13 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-10-18
+Updated: 2026-11-17
 Section: Treatment & Therapy
-Reading time: PT33M
+Reading time: PT35M
 Tags: 異位性皮膚炎, AD complete guide
 
 首頁 · 衛教文章 · 異位性皮膚炎完整指引
-異膚 · 完整指引 內容更新 2026-10-18 · 醫師審閱 2026-05-03
+異膚 · 完整指引 內容更新 2026-11-17 · 醫師審閱 2026-05-03
 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 
 一句話結論:異位性皮膚炎是「皮膚屏障 + Th2 免疫 + 微生物失衡」三角缺陷的慢性發炎疾病。診斷靠臨床(Hanifin & Rajka 或 UK Working Party 標準)，嚴重度用 EASI / SCORAD / IGA / POEM / DLQI 評估。治療三層次：每天保濕為基礎、急性期外用類固醇 / TCI / PDE-4 / JAK，中重度搭配 4 個生物製劑(Dupilumab/Tralokinumab/Lebrikizumab/Nemolizumab)、3 個口服 JAK 或光療。
@@ -10452,6 +10635,12 @@ JAK1 (±2)
 三、診斷 — 兩套標準與五個鑑別
 
 異位性皮膚炎是純臨床診斷；血液 IgE / TARC(thymus and activation-regulated chemokine,反映 Th2 免疫活化的血中指標)/ 過敏原檢測都不是診斷依據(Werfel 2024 S3 反對例行使用)。
+
+2026 年 11 月更新
+
+成人「像異膚、但治療就是無效」時：美國皮膚科醫學會（AAD）2026 年指引提出一項良好實務聲明（Good Practice Statement）：先確認治療已依指引調整到位、病人也確實照著使用；若仍無效，應考慮進一步檢查，重新確認是否為其他疾病，或合併其他疾病。常見需要排除的包括：接觸性皮膚炎（貼膚試驗；這裡的貼膚試驗是檢查接觸性過敏，與血清 IgE、食物過敏原檢測不同）、黴菌感染與疥瘡（皮屑顯微鏡檢查、培養）、皮膚 T 細胞淋巴瘤（蕈狀肉芽腫）、藥物疹、乾癬、類天疱瘡等（皮膚切片，有時需要多次切片）（Sidbury 等，JAAD 2026）。
+
+指引引用的研究顯示，在使用全身性藥物的成人難治型異膚中，超過 20% 可能是誤診或合併其他皮膚病；作者整理的誤診案例中，接觸性皮膚炎延誤最佳處置的中位數為 6 個月，皮膚 T 細胞淋巴瘤為 24 個月。這項建議依據的是間接證據與專家共識，並非比較不同檢查策略的研究；檢查應依臨床表現個別化，避免過度檢查。延伸閱讀：接觸性皮膚炎完整衛教、2026 年 11 月 JAAD 文獻整理。
 
 Hanifin & Rajka 1980 — 4 主 + 23 次條
 
@@ -10608,31 +10797,5 @@ STEP 1 — 急性期外用
 外用類固醇(TCS)— 美國 7 級分類:Class 1 為 ultra-potent(clobetasol 0.05%),Class 7 為 lowest(hydrocortisone 1%)。部位選擇：臉 / 嬰兒 / 皮膚摺處用 Class 6-7；軀幹四肢 Class 3-5；掌蹠肥厚短期 Class 1-2。
 
 級別
-代表藥
-適用部位
-副作用警示
-
-1 超強
-Clobetasol 0.05%, Halobetasol
-掌蹠肥厚、苔癬化(短期)
-禁用於臉、嬰兒；連續 ≤ 2 週
-
-2-3 強
-Mometasone 0.1%, Betamethasone valerate 0.1%
-軀幹、四肢急性期
-連續 ≤ 4 週，後改 proactive
-
-4-5 中
-Triamcinolone 0.1%, Fluocinolone 0.025%
-多數中度病灶
-長期使用前評估
-
-6-7 弱
-Desonide 0.05%, Hydrocortisone 1%
-臉、皺褶、嬰幼兒
-多數情境第一線
-
-用量(FTU):1 FTU(食指尖到第一指節)≈ 0.5 g，約塗 2 個成人手掌面積。主動式維持(proactive)：緩解後在易復發部位每週 2 次塗 TCS 或 TCI，可降復發 30-60%(Wollenberg 2008、Sidbury 2023 強建議，證據等級 A)。
-
 
 [... truncated; fetch canonical URL for full text ...]
