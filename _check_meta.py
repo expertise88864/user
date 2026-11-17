@@ -246,7 +246,10 @@ def check_articles_dates():
         err('blog-shared.js', 'NOT FOUND')
         return
     src = fp.read_text(encoding='utf-8')
-    today = datetime.date.today().isoformat()
+    # Taipei, not the host clock (same rule as _check_seo_signals._TODAY and
+    # _record_review.taipei_today()): CI runs on ubuntu-latest in UTC, so an
+    # article dated today in Taiwan looked like a future date until 08:00.
+    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).date().isoformat()
     i = src.find('DN.ARTICLES = [')
     end = src.find('];', i) + 2
     if i < 0:

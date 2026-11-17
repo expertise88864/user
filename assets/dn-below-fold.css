@@ -219,8 +219,8 @@ article h2[id]{scroll-margin-top:84px}
   .home-faq { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 10px 14px; }
 }
 
-/* The desktop side outline (#dn-toc-float, >=1180px) replaces the in-article outline (author request 2026-11-17); phones keep the in-article one. */
-body:has(> #dn-toc-float) #dn-inline-toc{display:none}
+/* The desktop side outline (#dn-toc-float) replaces the in-article outline (author request 2026-11-17). Same 1180px threshold as TOC_MIN_WIDTH in blog-article-reading.js, whose resize handler hides the side outline below it, so narrower windows get the in-article outline back. */
+@media (min-width:1180px){body:has(> #dn-toc-float) #dn-inline-toc{display:none}}
 
 /* Journal monthly report: one card per appraised study (2026-11). */
 .jr-entry{background:var(--surface,#fff);border:1px solid var(--border);border-radius:16px;padding:20px 22px 16px;margin:26px 0;box-shadow:0 10px 24px -18px rgba(77,99,88,.35)}
