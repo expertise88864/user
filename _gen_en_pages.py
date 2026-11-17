@@ -120,6 +120,26 @@ EN_OG_OVERRIDES = {
         'title': 'Bimekizumab for Hidradenitis Suppurativa (BE-HEARD I/II, BJD 2026)',
         'desc': 'Bimekizumab is a newer biologic that inhibits both IL-17A and IL-17F. A 2026 British Journal of Dermatology critically appraised topic (McCarthy & Ring) reviews its two phase III trials, BE-HEARD I and II (Kimball et al., Lancet 2024): at week 16, about 48–52% of the every-2-weeks arm reached HiSCR 50 vs 29–32% on placebo, with DLQI and pain improvements, broadly comparable to adalimumab and secukinumab. The appraisal is candid about limits: a 31% placebo response, UCB funding, no comparator beyond week 16 and no head-to-head, common candida infections (23–25%), IBD signals, week-48 retention falling to 66–76%, a predominantly White and female cohort, and exclusion of the most severe phenotype. Covers IL-17A/F mechanism, efficacy, safety, the critical appraisal, and the Taiwan context.',
     },
+    'blog/filler-vascular-occlusion.html': {
+        'title': 'Skin Turning Pale or Purple After Filler: Warning Signs and Urgent Care for Vascular Occlusion',
+        'desc': 'Sudden blanching, a purple net-like pattern, escalating pain or blurred vision after a filler injection can signal vascular occlusion. Warning signs, what to do at once, hyaluronidase and ultrasound-guided treatment, and access in Taiwan.',
+    },
+    'blog/iud-hair-loss.html': {
+        'title': 'Does an IUD Cause Hair Loss? Hormonal vs Copper IUDs (2026 JAAD Study)',
+        'desc': 'A 2026 JAAD study of about 29,000 matched pairs found no excess hair loss diagnoses with hormonal vs copper IUDs. What it means, its limits, other causes.',
+    },
+    'blog/atopic-dermatitis-child-growth.html': {
+        'title': 'Can Atopic Dermatitis Affect a Child\'s Growth? What a 2026 Dupilumab Study Shows',
+        'desc': 'Can severe eczema slow a child\'s growth? A 2026 JAAD post hoc dupilumab analysis: what it shows, its limits, and how to monitor height and sleep.',
+    },
+    'blog/refractory-atopic-dermatitis-workup.html': {
+        'title': 'Atopic Dermatitis That Won\'t Improve: Could It Be Something Else? Testing for Adults With Stubborn Eczema',
+        'desc': 'Adult eczema not improving despite proper treatment? It may be contact allergy, scabies, tinea or, rarely, lymphoma. What the 2026 AAD guideline advises.',
+    },
+    'blog/pemphigoid-elderly-eczema.html': {
+        'title': 'Elderly “Eczema” That Won\'t Clear: Could It Be Pemphigoid Without Blisters?',
+        'desc': 'An older adult\'s itchy rash that lasts for months is not always eczema. Pemphigoid can occur without blisters; a 2026 JAAD study shows the warning signs.',
+    },
     'blog/jaad-monthly-2026-11.html': {
         'title': 'Dermatology Journal Monthly, JAAD November 2026: 13 studies critically appraised',
         'desc': 'A dermatologist-level appraisal of 13 papers from the November 2026 issue of JAAD: growth in severe pediatric AD, the AAD refractory-AD testing guideline, real-world JAK inhibitors in alopecia areata, nonbullous pemphigoid, PJP prophylaxis, Merkel cell carcinoma radiotherapy and more.',
@@ -617,7 +637,10 @@ def derive_meta(src: str, override: dict[str, str] | None) -> tuple[str, str]:
         title = title[:69].rsplit(' ', 1)[0].rstrip(' ,.;:|-') + '…'
 
     lead = (override or {}).get('desc') or ''
-    h1_pos = src.lower().find('</h1>')
+    # Case-insensitive search on the original string (str.lower() can change
+    # the length, e.g. 'İ', which would shift the index into src).
+    h1_m = re.search(r'</h1>', src, re.I)
+    h1_pos = h1_m.start() if h1_m else -1
     if not lead and h1_pos >= 0:
         # Scan up to the first 3 <p> tags after </h1>. For each:
         # 1) prefer the <p>'s own data-en if present and non-CJK

@@ -125,7 +125,7 @@ process.stdout.write(JSON.stringify(input.cases.map(text=>{try{return {ok:true,v
         settings, expected = load_settings()
         actual = parse_json((ROOT / CONTRACT["catalog"]).read_bytes(), limit=200_000)
         self.assertEqual(actual, expected)
-        self.assertEqual(len(catalog_of(actual)), 53)
+        self.assertEqual(len(catalog_of(actual)), 58)
         self.assertEqual(settings["font"], {"bodyFont": "", "headFont": "", "bodySize": ""})
         self.assertEqual(settings["order"], [])
         self.assertEqual(set(settings), {"version", "font", "order"}, "retired 熱門推薦 fields are gone from the source")

@@ -46,5 +46,65 @@
       "png": "36ab5f6ce172f65a1e3b88de61b035cac1c1c0015ed32a2a897ffe8d1650cd0d",
       "webp": "63f1dc3b3e266d924f9b9ef1f2a997fa8a171c67048dcb7737529d3b21aa1f0f"
     }
+  },
+  "atopic-dermatitis-child-growth": {
+    "source": {
+      "title": "異位性皮膚炎會影響孩子長高嗎？從 2026 年 dupilumab 兒童研究談生長追蹤",
+      "subtitle": "",
+      "date": "2026-11-18"
+    },
+    "rendered_tag": "異位性皮膚炎",
+    "files": {
+      "png": "52ee58a5586eff6d69efdf8c7e5ff9ee6d5002ddf3250ba6c408c6f41b6764c9",
+      "webp": "8c9bb078230b37c982a4ba17085a2f295c413ccd7fde835a8b4856b4c2d85cf9"
+    }
+  },
+  "filler-vascular-occlusion": {
+    "source": {
+      "title": "打玻尿酸後皮膚發白、發紫、越來越痛：血管栓塞的警訊與緊急處理",
+      "subtitle": "",
+      "date": "2026-11-18"
+    },
+    "rendered_tag": "最新研究",
+    "files": {
+      "png": "2b47ca8749361f7bbc4fe1f40647c7dd7f928466ff2a288126207961165b3b93",
+      "webp": "3d8f58eea6f6f7911987e16b18dbc76afc27c13c04680a5ba0f10701036cce16"
+    }
+  },
+  "iud-hair-loss": {
+    "source": {
+      "title": "裝避孕器會掉頭髮嗎？荷爾蒙環和銅環比一比（2026 JAAD 研究）",
+      "subtitle": "",
+      "date": "2026-11-18"
+    },
+    "rendered_tag": "落髮",
+    "files": {
+      "png": "3a5a4318aa2b190245f5fc24d12b76c6ba2d89b2a1210b4ab13c7a403172a675",
+      "webp": "7fb5b609eb81c3c461933caa3afbfbfd8cfb7bb69cf6efad92db31c88490ecf6"
+    }
+  },
+  "pemphigoid-elderly-eczema": {
+    "source": {
+      "title": "長輩濕疹一直擦不好，會不會是類天疱瘡？不起水泡型的警訊與檢查",
+      "subtitle": "",
+      "date": "2026-11-18"
+    },
+    "rendered_tag": "最新研究",
+    "files": {
+      "png": "745ac1189b1b43f7e4e85face22afb6c6364f48fb893da59e969cec6b2032d8b",
+      "webp": "51906aaadc0e49370131a460db55a299bde4eb8531ced880340ccaf1724d9dad"
+    }
+  },
+  "refractory-atopic-dermatitis-workup": {
+    "source": {
+      "title": "異位性皮膚炎一直治不好，會不會根本不是異位性？成人頑固濕疹該做哪些檢查",
+      "subtitle": "",
+      "date": "2026-11-18"
+    },
+    "rendered_tag": "異位性皮膚炎",
+    "files": {
+      "png": "396fc1fd2c591aa6cf875de66f6e45f5c0394d1ec6db2cc0309848f3e777f5ca",
+      "webp": "03c0ec20d05c9c37a055fa412bc3d85d6820c5696861663492111dd4ab866f2a"
+    }
   }
 }

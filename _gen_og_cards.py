@@ -368,7 +368,11 @@ def article_fields(path: Path, tags: dict[str, str] | None = None) -> dict[str, 
             break
     if h1_open is None:
         return None
-    close = src.lower().find("</h1", h1_end)
+    # Case-insensitive search on the original string: str.lower() is not
+    # length-preserving (e.g. "İ" becomes two characters), so an index found in
+    # src.lower() can point one character past the real "</h1" in src.
+    close_m = re.compile(r"</h1", re.I).search(src, h1_end)
+    close = close_m.start() if close_m else -1
     inner = src[h1_end:close if close != -1 else len(src)]
 
     # Most H1s are a headline and a subtitle split by <br/>. Only the headline

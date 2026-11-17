@@ -61,5 +61,20 @@ class CardSourcesTest(unittest.TestCase):
             self.assertTrue(cards.check_card_sources({**records, slug: without_tag}))
 
 
+    def test_headline_survives_case_changing_characters_before_h1(self):
+        # "İ".lower() is two characters; an index found in src.lower() used to
+        # point past the real "</h1" and left a stray "<" in the card title.
+        with tempfile.TemporaryDirectory() as folder:
+            page = Path(folder) / 'sample.html'
+            page.write_text('<html><head><script type="application/ld+json">{"name":"Yıldız İ, Çelİk İ"}</script>'
+                            '<meta property="article:section" content="x"></head><body>'
+                            '<h1 class="t">標題（2026 研究）</h1>'
+                            '<script type="application/ld+json">{"datePublished":"2026-11-17"}</script></body></html>',
+                            encoding='utf-8')
+            fields = cards.article_fields(page)
+            self.assertEqual(fields['title'], '標題（2026 研究）')
+            self.assertEqual(fields['date'], '2026-11-17')
+
+
 if __name__ == '__main__':
     unittest.main()
