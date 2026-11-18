@@ -64,9 +64,22 @@ def path_lookup(name: str) -> str | None:
     for directory in os.environ.get("PATH", "").split(os.pathsep):
         if directory and os.path.isabs(directory):
             candidate = os.path.join(directory, name)
-            if os.path.isfile(candidate):
+            if os.path.isfile(candidate) and (os.name == "nt" or os.access(candidate, os.X_OK))                     and not inside_reviewed_checkout(candidate):
                 return candidate
     return None
+
+
+def inside_reviewed_checkout(path: str) -> bool:
+    """True for a file inside the worktree a backfill reviews (CODEX_REVIEW_REPO).
+    Its committed files must never run unsandboxed, whatever PATH says."""
+    reviewed = os.environ.get("CODEX_REVIEW_REPO", "")
+    if not reviewed:
+        return False
+    root, target = os.path.realpath(reviewed), os.path.realpath(path)
+    try:
+        return os.path.normcase(os.path.commonpath([root, target])) == os.path.normcase(root)
+    except ValueError:  # different drives
+        return False
 
 
 def codex_candidates() -> list[str]:
@@ -91,7 +104,7 @@ def codex_candidates() -> list[str]:
         key = os.path.normcase(os.path.abspath(path))
         if os.name == "nt" and not key.endswith(".exe"):
             continue
-        if key not in seen and os.path.isfile(path):
+        if key not in seen and os.path.isfile(path) and not inside_reviewed_checkout(path):
             seen.add(key)
             unique.append(path)
     return unique

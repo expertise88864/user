@@ -539,18 +539,36 @@ class ReviewCliSelectionTests(unittest.TestCase):
             cwd, bin_dir = Path(directory) / 'reviewed', Path(directory) / 'bin'
             cwd.mkdir()
             bin_dir.mkdir()
-            (cwd / name).write_bytes(b'')
-            (bin_dir / name).write_bytes(b'')
+            reviewed_bin = cwd / 'bin'
+            reviewed_bin.mkdir()
+            for path in (cwd / name, reviewed_bin / name, bin_dir / name):
+                path.write_bytes(b'')
+                path.chmod(0o755)
             previous = os.getcwd()
             os.chdir(cwd)
             try:
-                with patch.dict(os.environ, {'PATH': os.pathsep.join(['.', '', str(bin_dir)]),
-                                             'LOCALAPPDATA': str(Path(directory) / 'none')}):
+                # PR #164 round 6 (P1): an absolute PATH entry inside the reviewed
+                # worktree (CODEX_REVIEW_REPO) is skipped as well.
+                with patch.dict(os.environ, {'PATH': os.pathsep.join(['.', '', str(reviewed_bin), str(bin_dir)]),
+                                             'LOCALAPPDATA': str(Path(directory) / 'none'),
+                                             'CODEX_REVIEW_REPO': str(cwd)}):
                     found = self.identity.codex_candidates()
                     self.assertEqual(self.identity.path_lookup(name), str(bin_dir / name))
             finally:
                 os.chdir(previous)
         self.assertEqual([os.path.normcase(p) for p in found], [os.path.normcase(str(bin_dir / name))])
+
+    @unittest.skipIf(os.name == 'nt', 'POSIX execute permission')
+    def test_discovery_skips_a_non_executable_file(self):
+        """PR #164 round 6 (P2): like shutil.which, keep searching past a non-executable codex."""
+        with tempfile.TemporaryDirectory() as directory:
+            first, second = Path(directory) / 'a', Path(directory) / 'b'
+            for folder, mode in ((first, 0o644), (second, 0o755)):
+                folder.mkdir()
+                (folder / 'codex').write_bytes(b'')
+                (folder / 'codex').chmod(mode)
+            with patch.dict(os.environ, {'PATH': os.pathsep.join([str(first), str(second)])}):
+                self.assertEqual(self.identity.path_lookup('codex'), str(second / 'codex'))
 
     @unittest.skipUnless(os.name == 'nt', 'Windows npm shim layout')
     def test_npm_shim_is_followed_to_its_native_binary(self):
