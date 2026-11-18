@@ -276,3 +276,5 @@ article h2[id]{scroll-margin-top:84px}
 :is(#proseZh,#proseEn,.prose,.prose-zh,.prose-en) h2 + .advanced > .lbl{display:block;text-align:center;margin:0 0 20px;font-size:13px;letter-spacing:normal;font-weight:400;color:var(--muted)}
 :is(#proseZh,#proseEn,.prose,.prose-zh,.prose-en) h2 + .advanced > .lbl::before,:is(#proseZh,#proseEn,.prose,.prose-zh,.prose-en) h2 + .advanced > .lbl::after{content:none}
 :is(#proseZh,#proseEn,.prose,.prose-zh,.prose-en) .advanced h3{border-left:3px solid var(--teal);padding-left:10px}
+/* Numeric citation markers in article prose are small superscripts so they do not interrupt reading (author request 2026-11-18). */
+.dn-cite{font-size:.68em;line-height:0;vertical-align:super;color:var(--muted);font-weight:400;margin-left:1px;white-space:nowrap;letter-spacing:0}
