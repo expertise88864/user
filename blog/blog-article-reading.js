@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202611180200';
+          s.src = '/blog/blog-diagrams.min.js?v=202611181400';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -804,9 +804,9 @@
     var savedSize = 'M';
     try { savedSize = localStorage.getItem('dn-font-size') || 'M'; } catch (e) {}
     // H8 — added XL (大型字體模式) for elderly / low-vision users.
-    var sizeMap = { 'S': '15px', 'M': '16.5px', 'L': '18.5px', 'XL': '21px' };
+    var sizeMap = { 'S': '14px', 'M': '15px', 'L': '17px', 'XL': '20px' };
     if (!Object.prototype.hasOwnProperty.call(sizeMap, savedSize)) savedSize = 'M';
-    var lineHeightMap = { 'S': '1.7', 'M': '1.85', 'L': '1.95', 'XL': '2.05' };
+    var lineHeightMap = { 'S': '1.7', 'M': '1.8', 'L': '1.9', 'XL': '2.0' };
     function applyFontSize(s) {
       var styleEl = document.getElementById('dn-font-size-style');
       // The default already ships in CSS before first paint. Re-injecting it

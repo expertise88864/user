@@ -593,7 +593,7 @@ test('font controls defer geometry, restore visibility and preserve size selecti
   xl.handlers.click();
   assert.equal(storage.get('dn-font-size'),'XL');
   assert.equal(xl.attrs['aria-pressed'],'true');
-  assert.match(nodes.get('dn-font-size-style').textContent,/21px/);
+  assert.match(nodes.get('dn-font-size-style').textContent,/20px/);
   const medium = controls.children.find(b=>b.dataset.size==='M');
   medium.handlers.click();
   assert.equal(nodes.has('dn-font-size-style'),false,'returning to M removes the custom heading and body overrides');

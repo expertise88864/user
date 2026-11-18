@@ -27,7 +27,7 @@ module.exports = async function checkReaderControls(browser, { readingSource } =
       assert.equal(await large.evaluate(el => getComputedStyle(el.parentElement).pointerEvents),'auto');
       await large.focus(); await large.press('Enter');
       assert.equal(await large.getAttribute('aria-pressed'),'true');
-      assert.equal(await page.locator('#proseZh').evaluate(el => getComputedStyle(el).fontSize),'21px');
+      assert.equal(await page.locator('#proseZh').evaluate(el => getComputedStyle(el).fontSize),'20px');
       assert.equal(await page.evaluate(()=>localStorage.getItem('dn-font-size')),'XL');
       await page.locator('#dn-font-sizer button[data-size="M"]').click();
       assert.equal(await page.locator('#dn-font-size-style').count(),0);

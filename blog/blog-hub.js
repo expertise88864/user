@@ -435,6 +435,18 @@
       return shown;
     }
 
+    // Topic lists read newest first (author request 2026-11-18). Same-day
+    // articles keep the later catalog entry first, i.e. the most recently added.
+    function newestFirst(slugs) {
+      var meta = {};
+      (DN.ARTICLES || []).forEach(function (a, i) { meta[a.slug] = { d: a.date || '', i: i }; });
+      return slugs.slice().sort(function (a, b) {
+        var ma = meta[a] || { d: '', i: -1 }, mb = meta[b] || { d: '', i: -1 };
+        if (ma.d !== mb.d) return ma.d < mb.d ? 1 : -1;
+        return mb.i - ma.i;
+      });
+    }
+
     function applyFilter(tag) {
       clearTimeout(searchTimer);
       document.getElementById('dn-search-help').hidden = true;
@@ -478,7 +490,7 @@
           if (showMoreBtn) showMoreBtn.style.display = 'none';
         }
       } else if (tag !== '__search__') {
-        var ss = DN.TAG_GROUPS[tag] || [];
+        var ss = newestFirst(DN.TAG_GROUPS[tag] || []);
         var n = showBySlugs(ss);
         var tagEn = DN.TAG_EN && DN.TAG_EN[tag];
         setStatus(tag + ' 相關文章', tagEn ? 'Articles about ' + tagEn : 'Related articles');
