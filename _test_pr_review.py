@@ -328,8 +328,11 @@ class ProfileSwitchTests(unittest.TestCase):
                  "3" * 40: [],
                  "4" * 40: [{"id": 4, "context": pr.CONTEXT, "state": "success", "creator": {"login": "owner"},
                              "description": "APPROVE"}]}
+        heads["5" * 40] = [{"id": 5, "context": legacy, "state": "success", "creator": {"login": "owner"},
+                            "description": "APPROVE"}]
         prs = [{"number": n, "head": {"sha": sha}, "state": "open", "title": "t"}
                for n, sha in enumerate(heads, 1)]
+        prs[4].update(state="closed", merged_at="2026-11-01T00:00:00Z")
 
         def routes(path):
             if path.startswith("/pulls"):
@@ -339,11 +342,65 @@ class ProfileSwitchTests(unittest.TestCase):
         with redirect_stdout(out):
             pr.list_pending(FakeAPI(routes))
         text = out.getvalue()
-        self.assertNotIn("#1 ", text)
-        self.assertIn(f"#2 [open] {'2' * 12} quota-pending ({legacy})", text)
+        # PR #164 round 3 (P2): an open PR approved only under the legacy context still
+        # needs a current-profile review (the promotion gate checks CONTEXT only).
+        self.assertIn(f"#1 [open] {'1' * 12} APPROVE ({legacy}; needs a {pr.CONTEXT} review)", text)
+        self.assertIn(f"#2 [open] {'2' * 12} quota-pending ({legacy}; needs a {pr.CONTEXT} review)", text)
         self.assertIn("#3 [open]", text)
         self.assertNotIn("#4 ", text)
-        self.assertIn("2 PR(s)", text)
+        self.assertNotIn("#5 ", text)
+        self.assertIn("3 PR(s)", text)
+
+    def test_backfill_checkout_must_share_the_repository(self):
+        """PR #164 round 3 (P1): a backfill reviews a historical head with current tooling."""
+        import subprocess
+        import tempfile
+        from unittest.mock import patch
+        self.addCleanup(setattr, pr, "CHECKOUT", None)
+        with tempfile.TemporaryDirectory() as tmp:
+            for name in ("tool", "other"):
+                subprocess.run(["git", "init", "-q", str(Path(tmp) / name)], check=True)
+                subprocess.run(["git", "-C", str(Path(tmp) / name), "-c", "user.name=t", "-c", "user.email=t@t",
+                                "commit", "-q", "--allow-empty", "-m", "x"], check=True)
+            tool = (Path(tmp) / "tool").resolve()
+            worktree = Path(tmp) / "wt"
+            subprocess.run(["git", "-C", str(tool), "worktree", "add", "-q", "--detach", str(worktree)], check=True)
+            with patch.object(pr, "ROOT", tool):
+                with self.assertRaises(pr.Blocked):
+                    pr.set_checkout(Path(tmp) / "other")
+                pr.set_checkout(worktree)
+                self.assertEqual(pr.target(), worktree.resolve())
+                pr.set_checkout(tool)
+                self.assertIsNone(pr.CHECKOUT)
+                self.assertEqual(pr.target(), tool)
+
+    def test_backfill_passes_the_checkout_to_the_current_wrapper(self):
+        import os
+        import subprocess
+        import tempfile
+        from unittest.mock import patch
+        calls = []
+
+        def fake_run(args, **kwargs):
+            calls.append((args, kwargs))
+            return subprocess.CompletedProcess(args, 64)
+        self.addCleanup(setattr, pr, "CHECKOUT", None)
+        with tempfile.TemporaryDirectory() as tmp:
+            tool, checkout = Path(tmp) / "tool", Path(tmp) / "wt"
+            (tool / "tools").mkdir(parents=True)
+            (tool / "tools" / "codex_review.sh").write_text("", encoding="utf-8")
+            checkout.mkdir()
+            with patch.dict(os.environ, {"CODEX_REVIEW_REPO": "stale"}), patch.object(pr, "ROOT", tool),                  patch.object(pr, "bash", return_value="bash"),                  patch.object(pr.subprocess, "run", side_effect=fake_run):
+                pr.run_review("targeted", "b" * 40, SHA, None, None)
+                pr.CHECKOUT = checkout
+                pr.run_review("targeted", "b" * 40, SHA, None, None)
+        (args0, kw0), (args1, kw1) = calls
+        self.assertEqual(args0[1], "tools/codex_review.sh")
+        self.assertNotIn("CODEX_REVIEW_REPO", kw0["env"])
+        self.assertEqual(kw0["cwd"], tool)
+        self.assertEqual(args1[1], (tool / "tools" / "codex_review.sh").as_posix())
+        self.assertEqual(kw1["env"]["CODEX_REVIEW_REPO"], str(checkout))
+        self.assertEqual(kw1["cwd"], checkout)
 
 
 class RebuttalTests(unittest.TestCase):

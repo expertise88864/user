@@ -50,6 +50,20 @@ die() { echo "[codex-review] ERROR: $*" >&2; exit 64; }
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel 2>/dev/null)" \
   || die "必須在 git repository 內執行。"
+# PR backfill (tools/pr_review.py --checkout): review another worktree of this same
+# repository, checked out at the historical PR head, with THIS (current) tooling and
+# profile. The historical checkout's own tools would run an earlier model/effort.
+if [ -n "${CODEX_REVIEW_REPO:-}" ]; then
+  [ -n "${CODEX_REVIEW_TIP:-}" ] || die "CODEX_REVIEW_REPO 只用於 PR 流程(需 CODEX_REVIEW_TIP)。"
+  OWN_COMMON="$(cd "$SCRIPT_DIR" && cd "$(git rev-parse --git-common-dir)" && pwd -P)" \
+    || die "無法解析工具所在 repository。"
+  TARGET_ROOT="$(git -C "$CODEX_REVIEW_REPO" rev-parse --show-toplevel 2>/dev/null)" \
+    || die "CODEX_REVIEW_REPO 不是 git checkout。"
+  TARGET_COMMON="$(cd "$TARGET_ROOT" && cd "$(git rev-parse --git-common-dir)" && pwd -P)" \
+    || die "無法解析 CODEX_REVIEW_REPO 的 repository。"
+  [ "$OWN_COMMON" = "$TARGET_COMMON" ] || die "CODEX_REVIEW_REPO 必須是同一個 repository 的 worktree。"
+  REPO_ROOT="$TARGET_ROOT"
+fi
 REPO_NAME="$(basename "$REPO_ROOT")"
 # PR flow (tools/pr_review.py): this wrapper reviews the checked-out HEAD, so the
 # named PR head must be exactly that commit; never review one head and label another.
@@ -149,7 +163,13 @@ resolve_cli() {
   [ -n "$CODEX_CLI" ] || die "找不到可用的 Codex CLI;不降級到其他模型。"
   # A batch shim runs through cmd.exe, which cuts the multi-line prompt at its first
   # newline (PR #164); use the native codex.exe instead (codex_review_identity.py which).
-  case "$(printf '%s' "$CODEX_CLI" | tr 'A-Z' 'a-z')" in
+  # A bare name (CODEX_REVIEW_CLI=codex) is judged by what it resolves to.
+  local resolved="$CODEX_CLI"
+  case "$CODEX_CLI" in
+    */*|*\\*) ;;
+    *) resolved="$(command -v -- "$CODEX_CLI" 2>/dev/null || printf '%s' "$CODEX_CLI")" ;;
+  esac
+  case "$(printf '%s' "$resolved" | tr 'A-Z' 'a-z')" in
     *.cmd|*.bat|*.ps1) die "CODEX_REVIEW_CLI 不可為 .cmd/.bat/.ps1 shim(多行 prompt 會被截斷);請指定原生 codex.exe。" ;;
   esac
   echo "[codex-review] cli=$CODEX_CLI"

@@ -498,7 +498,25 @@ class BashCliUnicodePathTests(unittest.TestCase):
                                         capture_output=True, text=True, encoding="utf-8", errors="replace")
                 self.assertEqual(result.returncode, code, result.stdout + result.stderr)
         ps1 = (ROOT / "tools/codex_review.ps1").read_text(encoding="utf-8-sig")
-        self.assertIn("if ($cli -match '\\.(cmd|bat|ps1)$') { Die", ps1)
+        self.assertIn("if ($resolved -match '\\.(cmd|bat|ps1)$') { Die", ps1)
+
+    def test_backfill_repo_must_be_this_repository(self):
+        """PR #164 round 3 (P1): CODEX_REVIEW_REPO only selects another worktree of this repository."""
+        with tempfile.TemporaryDirectory() as directory:
+            other = Path(directory) / "other"
+            subprocess.run(["git", "init", "-q", str(other)], check=True)
+            subprocess.run(["git", "-C", str(other), "-c", "user.name=t", "-c", "user.email=t@t",
+                            "commit", "-q", "--allow-empty", "-m", "x"], check=True)
+            tip = subprocess.check_output(["git", "-C", str(other), "rev-parse", "HEAD"], text=True).strip()
+            env = {k: v for k, v in os.environ.items() if k != "BASH_ENV"}
+            for extra, needle in (({"CODEX_REVIEW_TIP": tip}, "同一個 repository"), ({}, "CODEX_REVIEW_TIP")):
+                with self.subTest(extra=extra):
+                    result = subprocess.run(
+                        [BASH, "--noprofile", "--norc", str(ROOT / "tools/codex_review.sh"), "targeted", "HEAD"],
+                        env={**env, "CODEX_REVIEW_REPO": str(other), **extra}, cwd=str(other),
+                        capture_output=True, text=True, encoding="utf-8", errors="replace")
+                    self.assertEqual(result.returncode, 64, result.stdout + result.stderr)
+                    self.assertIn(needle, result.stderr)
 
 
 if __name__ == "__main__":

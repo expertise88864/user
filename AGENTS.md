@@ -3,8 +3,9 @@
 ## 最新使用者定案：審查模型改為 gpt-6.2-astra／medium（2026-11-18）
 
 本節優先於下方所有關於審查模型與 effort 的敘述。
-- 所有程式審查（PR review、diff review、`--resume` 續審、quota-pending 與舊 pending 補審）一律 `gpt-6.2-astra`、reasoning effort `medium`，取代 2026-10-14 起的 `gpt-6.2-astra`／`medium`；仍經 repo wrapper、唯讀、以 session 紀錄證明實際模型與 effort，證明不了就 fail closed，不 fallback 到其他模型或 effort。
-- PR commit status 改為 `codex-review/gpt-6.2-astra`；舊 `codex-review/gpt-6.2-astra` status 與舊 profile 的 session 不再算現行核可，也不能 `--resume`，需以新 profile 重新首輪審查。
+- 所有程式審查（PR review、diff review、`--resume` 續審、quota-pending 與舊 pending 補審）一律 `gpt-6.2-astra`、reasoning effort `medium`，取代 2026-10-14 起的 `gpt-6.1-sol`／`xhigh`；仍經 repo wrapper、唯讀、以 session 紀錄證明實際模型與 effort，證明不了就 fail closed，不 fallback 到其他模型或 effort。
+- PR commit status 改為 `codex-review/gpt-6.2-astra`；舊 `codex-review/gpt-6.1-sol` status 與舊 profile 的 session 不再算現行核可，也不能 `--resume`，需以新 profile 重新首輪審查；`--pending` 只把已完成（merged／closed）PR 的舊 APPROVE 視為歷史核可，open PR 仍列出待以新 profile 審查。
+- 補審（quota-pending、舊 `Claude-Opus-5-Review: pending` 等，取代先前的 `claude-opus-5-5`／high）一律用目前工具：`git worktree add --detach DIR <PR head>` 後執行 `python tools/pr_review.py --pr <號碼> --checkout DIR`。不要在工具所在 checkout 切到歷史 head 執行，那會跑歷史版本工具與當時的模型。
 - Codex CLI：2026-11-18 實測 Codex 桌面版內附 0.163.0-alpha 不支援 `gpt-6.2-astra`，npm 全域 `@openai/codex` 0.169.1 可用；wrapper 仍挑本機版本最高者（`python tools/codex_review_identity.py which` 顯示實際選用）；Windows 上只接受原生 `codex.exe`，npm 的 `codex.cmd` shim 會追到其套件內的 `codex.exe`，因為 cmd.exe 會在第一個換行截斷多行 prompt（PR #164 實際發生）。不支援時先問使用者，不得降級。
 
 ## 最新使用者定案：每個 PR review 一次（2026-10-15）
@@ -16,7 +17,7 @@
 - 有 finding 經驗證為 REJECTED、程式不該改時：把證據寫成反駁檔（不可含 diff），執行 `python tools/pr_review.py --resume --rebuttal 反駁檔`，在同一 session 請審查者重新查證；同一 head 只能反駁一次，審查者不接受就維持 REQUEST_CHANGES（使用者定案 2026-10-15）。
 - 推 main 時 pre-push hook（`_delivery.py`）除候選 CI、PR 與作者意圖檢查外，還要求 exact head 有本人建立的 APPROVE status，且審查範圍涵蓋所有要進 main 的 commit。額度不足時 status 為 quota-pending：可照常發佈但不是通過；額度恢復後用 `python tools/pr_review.py --pending` 找出並補審，結果寫在同一 PR。
 - 不再產生 audit commit；「空 audit commit 也走候選流程」已刪除。純文件變更仍走候選分支、CI、Preview 與 PR review。
-- 切換前帶 `Claude-Opus-5-Review: pending` 的舊 commit 仍以 `claude-opus-5-5`／high 補審，結果記在 PR comment 或 issue，不再寫 audit commit。
+- 切換前帶 `Claude-Opus-5-Review: pending` 的舊 commit 仍需補審，2026-11-18 起改用 `gpt-6.2-astra`／`medium`（`--pr <號碼> --checkout DIR`，見上方定案），結果記在 PR comment 或 issue，不再寫 audit commit。
 
 ## 最新使用者定案：遠端 CI 候選驗證與正式發佈（2026-09-06）
 本節取代下方／舊任務／舊排程中「每次候選 push 前完整本機 CI」及「直接推 main 再修」的規則；不變更醫療內容核可、獨立 Codex/Claude review 或資料保護要求。

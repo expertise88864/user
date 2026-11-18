@@ -488,6 +488,33 @@ class ReviewCliUnicodePathTests(unittest.TestCase):
             self.assertEqual(out.read_text(encoding='utf-8'), self.CLI)
 
 
+class ReviewCliShimTests(unittest.TestCase):
+    """PR #164 round 3 (P2): a bare CODEX_REVIEW_CLI=codex resolving to npm's codex.cmd."""
+
+    @unittest.skipUnless(os.name == 'nt', 'PowerShell PATHEXT resolution')
+    def test_bare_name_resolving_to_a_batch_shim_is_rejected(self):
+        shell = shutil.which('powershell')
+        self.assertIsNotNone(shell)
+        source = (ROOT / 'tools/codex_review.ps1').read_text(encoding='utf-8-sig')
+        start = source.index('function Resolve-Cli {')
+        end = source.index('function Test-SessionId', start)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'zzcodexshim.cmd').write_text('@echo off\n', encoding='utf-8')
+            (root / 'zzcodexnative.exe').write_bytes(b'')
+            script = root / 'probe.ps1'
+            script.write_text(
+                "function Die([string]$Msg) { [Console]::Error.WriteLine($Msg); exit 64 }\n"
+                + source[start:end] + "\n$null = Resolve-Cli\nexit 0\n", encoding='utf-8-sig')
+            for cli, code in (('zzcodexshim', 64), ('zzcodexnative', 0)):
+                with self.subTest(cli=cli):
+                    env = {**os.environ, 'CODEX_REVIEW_CLI': cli,
+                           'PATH': str(root) + os.pathsep + os.environ.get('PATH', '')}
+                    result = subprocess.run([shell, '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(script)],
+                                            env=env, capture_output=True, text=True, errors='replace')
+                    self.assertEqual(result.returncode, code, result.stdout + result.stderr)
+
+
 class ReviewCliSelectionTests(unittest.TestCase):
     def setUp(self):
         sys.path.insert(0, str(ROOT / 'tools'))

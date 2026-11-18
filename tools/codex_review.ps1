@@ -56,6 +56,9 @@ try {
 } finally { [Console]::OutputEncoding = $PrevOutputEncoding }
 if ($LASTEXITCODE -ne 0 -or -not $RepoRoot) { Die '必須在 git repository 內執行。' }
 $RepoRoot = $RepoRoot.Trim()
+# The PR flow, including a backfill of another worktree (CODEX_REVIEW_REPO), runs
+# only through tools/codex_review.sh (tools/pr_review.py); never review this checkout instead.
+if ($env:CODEX_REVIEW_REPO -or $env:CODEX_REVIEW_TIP) { Die 'PR 流程(CODEX_REVIEW_REPO/TIP)只經 tools/pr_review.py 與 codex_review.sh。' }
 $RepoName = Split-Path -Leaf $RepoRoot
 $Python = if (Test-Path -LiteralPath (Join-Path $RepoRoot '.venv/Scripts/python.exe') -PathType Leaf) {
     Join-Path $RepoRoot '.venv/Scripts/python.exe'
@@ -146,7 +149,12 @@ function Resolve-Cli {
     if (-not $cli) { Die '找不到可用的 Codex CLI;不降級到其他模型。' }
     # A batch shim runs through cmd.exe, which cuts the multi-line prompt at its first
     # newline (PR #164); use the native codex.exe instead (codex_review_identity.py which).
-    if ($cli -match '\.(cmd|bat|ps1)$') { Die 'CODEX_REVIEW_CLI 不可為 .cmd/.bat/.ps1 shim(多行 prompt 會被截斷);請指定原生 codex.exe。' }
+    # A bare name (CODEX_REVIEW_CLI=codex) is judged by the command it resolves to:
+    # PATHEXT can pick npm's codex.cmd (or codex.ps1) shim.
+    $resolved = $cli
+    $command = Get-Command -Name $cli -ErrorAction SilentlyContinue | Select-Object -First 1
+    if ($command -and $command.CommandType -in @('Application', 'ExternalScript')) { $resolved = $command.Source }
+    if ($resolved -match '\.(cmd|bat|ps1)$') { Die 'CODEX_REVIEW_CLI 不可為 .cmd/.bat/.ps1 shim(多行 prompt 會被截斷);請指定原生 codex.exe。' }
     Write-Host "[codex-review] cli=$cli"
     return $cli
 }

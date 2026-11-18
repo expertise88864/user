@@ -9,7 +9,8 @@ change medical content, visual baselines, credentials, recipients or scoring.
 2. Make task-owned changes; run relevant local regression tests, syntax/lint and
    required generators. Commit the exact source and generated artifacts together.
 3. Commit freely; there is no per-commit review and no review trailer (user decision
-   2026-10-15). Claude Opus 5.5/high applies only to pre-switch pending backfill.
+   2026-10-15). Pre-switch pending backfill also uses gpt-6.2-astra/medium (2026-11-18; formerly
+   Claude Opus 5.5/high).
 4. Install the tracked pre-push hook with the documented existing hook mechanism.
 5. Push the exact SHA to codex/* normally. The hook runs the offline delivery tests.
    Full tests, types, coverage, browsers and generation drift run on GitHub.
@@ -25,7 +26,9 @@ change medical content, visual baselines, credentials, recipients or scoring.
    REJECTED with evidence may be rebutted once per head: python tools/pr_review.py --resume
    --rebuttal FILE (evidence, never a diff); the reviewer re-checks it and keeps or
    withdraws it. Confirmed
-   quota exhaustion records quota-pending (publishable, not approval); backfill via --pending.
+   quota exhaustion records quota-pending (publishable, not approval); backfill via --pending, then
+   `git worktree add --detach DIR <PR head>` and `python tools/pr_review.py --pr N --checkout DIR`
+   (current tooling and profile; the historical head's own tools would run an older model).
    A --resume reviews only the commits after the last verdict (prev..head, same session),
    plus whether the previous findings are fixed; after a rebase that removed the last
    reviewed head, or for a session started by older tooling, it re-reviews the whole range. Each status records base=, prev= and the
