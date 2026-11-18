@@ -454,6 +454,15 @@ def set_checkout(path: Path) -> None:
     CHECKOUT = None if top == ROOT.resolve() else top
 
 
+def check_tooling_clean() -> None:
+    """A backfill runs this checkout's wrapper and identity verifier on another
+    worktree; local edits to them must never produce a recorded verdict."""
+    if CHECKOUT is not None and subprocess.check_output(
+            ["git", "status", "--porcelain", "--untracked-files=all"], cwd=ROOT,
+            text=True, encoding="utf-8").strip():
+        raise Blocked("The review tooling checkout must be clean: commit or stash its changes first")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--mode", choices=("diff", "targeted", "deep"), default="targeted")
@@ -481,6 +490,10 @@ def main() -> int:
         head = git("rev-parse", "HEAD")
         if git("status", "--porcelain", "--untracked-files=all"):
             raise Blocked("Working tree must be clean: the review covers committed history only")
+        check_tooling_clean()
+        if args.ctx:
+            # The wrapper runs in the reviewed checkout; keep the caller's meaning.
+            args.ctx = str(Path(args.ctx).resolve())
         subprocess.run(["git", "fetch", "--no-tags", "-q", "origin", "main"], cwd=target(), check=True)
         if args.pr:
             pr = find_pr(api, "", args.pr)

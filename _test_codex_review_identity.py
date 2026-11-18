@@ -500,6 +500,13 @@ class BashCliUnicodePathTests(unittest.TestCase):
         ps1 = (ROOT / "tools/codex_review.ps1").read_text(encoding="utf-8-sig")
         self.assertIn("if ($resolved -match '\\.(cmd|bat|ps1)$') { Die", ps1)
 
+    def test_python_comes_from_the_tooling_checkout(self):
+        """PR #164 round 4 (P1): never run a backfilled worktree's .venv outside the sandbox."""
+        source = (ROOT / "tools/codex_review.sh").read_text(encoding="utf-8")
+        self.assertNotIn('"$REPO_ROOT/.venv', source)
+        self.assertIn('PYTHON="$TOOL_ROOT/.venv/Scripts/python.exe"', source)
+        self.assertLess(source.index('TOOL_ROOT="$(git -C "$SCRIPT_DIR"'), source.index('PYTHON="$TOOL_ROOT'))
+
     def test_backfill_repo_must_be_this_repository(self):
         """PR #164 round 3 (P1): CODEX_REVIEW_REPO only selects another worktree of this repository."""
         with tempfile.TemporaryDirectory() as directory:

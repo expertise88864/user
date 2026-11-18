@@ -370,6 +370,12 @@ class ProfileSwitchTests(unittest.TestCase):
                     pr.set_checkout(Path(tmp) / "other")
                 pr.set_checkout(worktree)
                 self.assertEqual(pr.target(), worktree.resolve())
+                pr.check_tooling_clean()
+                (tool / "tools.sh").write_text("edited", encoding="utf-8")
+                # PR #164 round 4 (P1): dirty tooling must not review another worktree.
+                with self.assertRaises(pr.Blocked):
+                    pr.check_tooling_clean()
+                (tool / "tools.sh").unlink()
                 pr.set_checkout(tool)
                 self.assertIsNone(pr.CHECKOUT)
                 self.assertEqual(pr.target(), tool)

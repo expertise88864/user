@@ -65,6 +65,9 @@ if [ -n "${CODEX_REVIEW_REPO:-}" ]; then
   REPO_ROOT="$TARGET_ROOT"
 fi
 REPO_NAME="$(basename "$REPO_ROOT")"
+# Python runs the identity verifier and CLI discovery outside the reviewer sandbox,
+# so it comes from the tooling checkout, never from a backfilled worktree.
+TOOL_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel 2>/dev/null)"   || die "必須在 git repository 內執行。"
 # PR flow (tools/pr_review.py): this wrapper reviews the checked-out HEAD, so the
 # named PR head must be exactly that commit; never review one head and label another.
 TIP=""
@@ -78,10 +81,10 @@ if [ -n "${CODEX_REVIEW_BASE:-}" ]; then
   printf '%s' "$CODEX_REVIEW_BASE" | grep -Eq '^[0-9a-f]{40}$' \
     || die "CODEX_REVIEW_BASE 必須是完整 commit SHA。"
 fi
-if [ -x "$REPO_ROOT/.venv/Scripts/python.exe" ]; then
-  PYTHON="$REPO_ROOT/.venv/Scripts/python.exe"
-elif [ -x "$REPO_ROOT/.venv/bin/python" ]; then
-  PYTHON="$REPO_ROOT/.venv/bin/python"
+if [ -x "$TOOL_ROOT/.venv/Scripts/python.exe" ]; then
+  PYTHON="$TOOL_ROOT/.venv/Scripts/python.exe"
+elif [ -x "$TOOL_ROOT/.venv/bin/python" ]; then
+  PYTHON="$TOOL_ROOT/.venv/bin/python"
 elif command -v python >/dev/null 2>&1; then
   PYTHON="python"
 elif command -v python3 >/dev/null 2>&1; then
