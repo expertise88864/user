@@ -510,12 +510,8 @@ def page(shell, *, path, title, description, og_title, crumbs, jsonld_type, body
     return out + mid + main + tail
 
 
-NOTICE = (
-    '<div class="ex-notice">題目取自'
-    f'<a href="{SOURCE_URL}" target="_blank" rel="noopener noreferrer">{SOURCE_LABEL}試題</a>'
-    "，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 "
-    "McKee's Pathology of the Skin, 5th Edition 整理</div>"
-)
+# The source notice box was removed from every exam page (author request 2026-11-18).
+NOTICE = ""
 
 MODE_BAR = (
     '<div class="ex-toolbar" role="group" aria-label="作答模式">'
@@ -1221,10 +1217,9 @@ def review_page(shell, card) -> str:
 
 # ---------------------------------------------------------------- exam information
 # /exam/info: the society's announcements in one place (author request
-# 2026-11-18). Every fact below was read from derma.org.tw on INFO_CHECKED;
+# 2026-11-18). Every fact below was read from derma.org.tw on 2026-11-18;
 # re-check the linked pages when the society posts a new year's announcement.
 DERMA_SPECIALIST = "https://www.derma.org.tw/specialist/index.php?id="
-INFO_CHECKED = "2026-11-18"
 
 
 def _ext(url: str, label: str) -> str:
@@ -1237,10 +1232,8 @@ def info_page(shell, card) -> str:
     body = (
         '<p class="ex-kicker">考試資訊</p>'
         '<h1 class="ex-h1">皮膚科專科醫師甄審考試資訊</h1>'
-        '<p class="ex-lead">116 年考試日期、報考資格、考試形式、及格標準與出題範圍，整理自'
+        '<p class="ex-lead">116 年考試日期、報考資格、考試形式與及格標準，整理自'
         f'{_ext("https://www.derma.org.tw/specialist/download.php?id=9", "臺灣皮膚科醫學會")}專科甄審公告。</p>'
-        '<div class="ex-notice">本頁為讀書用的整理，資料查核日期 '
-        f'<time datetime="{INFO_CHECKED}">{INFO_CHECKED}</time>；報名與考試請一律以學會最新公告為準。</div>'
 
         '<h2 class="ex-h2" id="dates">116 年度考試日期</h2>'
         '<table class="ex-table"><thead><tr><th scope="col">項目</th><th scope="col">日期與時間</th>'
@@ -1288,42 +1281,16 @@ def info_page(shell, card) -> str:
         '</ul>'
         f'<p class="ex-meta">來源：{src(1, "皮膚科專科醫師甄審原則")}第三、五點。</p>'
 
-        '<h2 class="ex-h2" id="scope">出題參考範圍</h2>'
-        '<ol class="ex-refs">'
-        "<li>McKee's Pathology of the Skin：116 年起改用第 6 版（2026/7/21），115 年以前為第 5 版</li>"
-        "<li>Fitzpatrick's Dermatology in General Medicine, 9th Edition</li>"
-        '<li>Dermatologic Surgery (Jonathan Kantor), 1st Edition（111 年起取代 Surgery of the Skin）</li>'
-        '</ol>'
-        '<p class="ex-meta">參考書出新版滿一年後，即作為下一年度的出題參考書；藥品仿單與藥品給付規範也列入筆試範圍。'
-        f'來源：{src(8, "甄審筆試出題參考範圍")}。</p>'
-        '<p class="ex-meta">本站依此整理：<a href="/exam">Fitzpatrick 各章重點與考題</a>、'
-        '<a href="/exam/mckee">病理（McKee）題</a>、<a href="/exam/kantor">皮膚外科（Kantor）題</a>。</p>'
-
-        '<h2 class="ex-h2" id="rules">試場規則重點</h2>'
-        '<ul class="ex-list">'
-        '<li>考前 30 分鐘內攜帶准考證入場；筆試遲到超過 30 分鐘不得入場，入場後 30 分鐘內不得離場。</li>'
-        '<li>除文具外不得攜帶任何物品；手機等可傳遞訊息的電子產品與書籍一律不得攜帶，違者取消資格。</li>'
-        '</ul>'
-        f'<p class="ex-meta">來源：{src(7, "試場規則")}。</p>'
-
-        '<h2 class="ex-h2" id="appeal">試題申覆</h2>'
-        '<p class="ex-meta">以 115 年度為例：對筆試試題或答案有疑義，須在 115 年 9 月 4 日 17 時前以申覆申請表 email 學會，'
-        '每題一頁並附指定教科書依據；每人最多 3 題，每題 2,000 元；已及格者不得申覆。'
-        f'來源：{src(10, "115年度試題申覆辦法")}。</p>'
-
         '<h2 class="ex-h2" id="past">歷屆考題</h2>'
         '<p class="ex-meta">學會在'
         f'{_ext("https://www.derma.org.tw/specialist/download.php?id=9", "歷屆考題公告")}'
         '公開歷年選擇題、實務測驗與標準答案。本站把 101–115 年選擇題整理成可作答的考古卷，每題附詳解：'
         f'{years} 年；也可以<a href="/exam/practice">自選年份或隨機出題</a>。</p>'
 
-        '<h2 class="ex-h2" id="renewal">證書效期</h2>'
-        '<p class="ex-meta">專科醫師證書效期六年，換證須在六年內取得至少 108 學分（其中年會與春季會至少 54 分）。'
-        f'來源：{src(1, "皮膚科專科醫師甄審原則")}。</p>'
     )
     title = "皮膚科專科醫師甄審考試資訊｜116 年考試日期、資格與及格標準"
     desc = ("皮膚科專科醫師甄審 116 年筆試與口試日期、報考資格、考試形式（選擇題、實務測驗、口試）、"
-            "及格標準、論文加分、出題參考範圍與試題申覆，整理自臺灣皮膚科醫學會公告。")
+            "及格標準與論文加分，整理自臺灣皮膚科醫學會公告。")
     return page(shell, path="/exam/info", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title="皮膚科專科醫師甄審考試資訊", crumbs=[("考試資訊", "/exam/info")],
                 jsonld_type="WebPage", body=body, page_kind="info", card=card)
@@ -1403,8 +1370,10 @@ def hub_page(shell, data, by_chapter, by_year, by_book, card) -> str:
     refs = "".join(f"<li>{esc(book)}</li>" for book in REFERENCE_BOOKS)
     body = (
         f'<h1 class="ex-h1">{HUB_TITLE}<span class="ex-h1-zh">{HUB_SUBTITLE}</span></h1>'
-        '<p class="ex-lead">目前整理 101–115 年考題以及各章節重點整理</p>'
-        '<p class="ex-meta"><a class="ex-cta" href="/exam/info">考試資訊：116 年日期、資格與及格標準</a></p>'
+        f'<p class="ex-meta">101–115 年考古題 {total} 題 · {len(data["notes"])} 章重點整理</p>'
+        '<a class="ex-info-banner" href="/exam/info"><span class="ex-info-banner-k">116 年考試資訊</span>'
+        '<span class="ex-info-banner-t">筆試與口試日期、報考資格、考試形式與及格標準</span>'
+        '<span class="ex-info-banner-go" aria-hidden="true">→</span></a>'
         '<h2 class="ex-h2 ex-h2-sm">目前甄審筆試出題參考範圍</h2>'
         f'<ol class="ex-refs">{refs}</ol>{NOTICE}'
         # 考古卷 and 考點總覽 sit side by side (stacked on phones).
@@ -1929,7 +1898,15 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 :root[data-theme="dark"] .ex-q.ex-done .ex-opt.ex-picked:not([data-correct]){background:#3a1a1a;border-color:#dc2626}
 .ex-h2-sm{font-size:17px;margin:20px 0 6px}
 .ex-refs{font-size:14px;line-height:1.9;padding-left:22px;margin:0 0 8px}
-.ex-list{font-size:14px;line-height:1.9;padding-left:22px;margin:6px 0}
+.ex-list{font-size:14px;line-height:1.9;padding-left:22px;margin:6px 0;list-style:disc}
+.ex-list li::marker{color:var(--teal-deep)}
+.ex-info-banner{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;margin:14px 0 22px;padding:12px 16px;border:1px solid #cfe3d9;border-left:4px solid #4d6358;border-radius:12px;background:#eef6f2;text-decoration:none;color:var(--ink)}
+.ex-info-banner:hover{background:#e3f0e9}
+.ex-info-banner-k{font-weight:700;color:#4d6358;font-size:15px}
+.ex-info-banner-t{font-size:13.5px;color:var(--ink-2);flex:1 1 220px}
+.ex-info-banner-go{font-weight:700;color:#4d6358}
+:root[data-theme="dark"] .ex-info-banner{background:#1f2a25;border-color:#3b4d44;border-left-color:#a4b5a8}
+:root[data-theme="dark"] :is(.ex-info-banner-k,.ex-info-banner-go){color:#a4b5a8}
 .ex-main[data-exam-page="info"] :is(.ex-meta,.ex-lead,.ex-list) a{color:var(--teal-deep);text-decoration:underline;text-underline-offset:2px}
 :root[data-theme="dark"] .ex-main[data-exam-page="info"] :is(.ex-meta,.ex-lead,.ex-list) a{color:#a4b5a8}
 .ex-cta{display:inline-block;border-radius:9999px;padding:6px 16px;background:#4d6358;color:#fff;font-weight:700;text-decoration:none}

@@ -148,7 +148,15 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 :root[data-theme="dark"] .ex-q.ex-done .ex-opt.ex-picked:not([data-correct]){background:#3a1a1a;border-color:#dc2626}
 .ex-h2-sm{font-size:17px;margin:20px 0 6px}
 .ex-refs{font-size:14px;line-height:1.9;padding-left:22px;margin:0 0 8px}
-.ex-list{font-size:14px;line-height:1.9;padding-left:22px;margin:6px 0}
+.ex-list{font-size:14px;line-height:1.9;padding-left:22px;margin:6px 0;list-style:disc}
+.ex-list li::marker{color:var(--teal-deep)}
+.ex-info-banner{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;margin:14px 0 22px;padding:12px 16px;border:1px solid #cfe3d9;border-left:4px solid #4d6358;border-radius:12px;background:#eef6f2;text-decoration:none;color:var(--ink)}
+.ex-info-banner:hover{background:#e3f0e9}
+.ex-info-banner-k{font-weight:700;color:#4d6358;font-size:15px}
+.ex-info-banner-t{font-size:13.5px;color:var(--ink-2);flex:1 1 220px}
+.ex-info-banner-go{font-weight:700;color:#4d6358}
+:root[data-theme="dark"] .ex-info-banner{background:#1f2a25;border-color:#3b4d44;border-left-color:#a4b5a8}
+:root[data-theme="dark"] :is(.ex-info-banner-k,.ex-info-banner-go){color:#a4b5a8}
 .ex-main[data-exam-page="info"] :is(.ex-meta,.ex-lead,.ex-list) a{color:var(--teal-deep);text-decoration:underline;text-underline-offset:2px}
 :root[data-theme="dark"] .ex-main[data-exam-page="info"] :is(.ex-meta,.ex-lead,.ex-list) a{color:#a4b5a8}
 .ex-cta{display:inline-block;border-radius:9999px;padding:6px 16px;background:#4d6358;color:#fff;font-weight:700;text-decoration:none}
