@@ -112,6 +112,7 @@
       label_en: 'Quick find',
       tags: {
         '最新研究':         { _from_cat: 'research' },
+        '疾病總覽':         ['bullous-pemphigoid'],
         '常見問題 FAQ':      ['dermatology-faq'],
         '皮膚科 AI / 數位工具': ['ai-dermatology-roles']
       }
@@ -126,7 +127,8 @@
         '乾癬':              ['psoriasis-overview', 'psoriasis-topical', 'psoriasis-systemic', 'psoriasis-special-populations', 'psoriasis-myths', 'biologics-overview', 'psoriasis-biologic-monitoring', 'nail-psoriasis-topical-intralesional'],
         '蕁麻疹':            ['urticaria-myths'],
         '接觸性皮膚炎':      ['contact-dermatitis'],
-        '口周皮膚炎':        ['perioral-dermatitis-guide']
+        '口周皮膚炎':        ['perioral-dermatitis-guide'],
+        '類天疱瘡':          ['bullous-pemphigoid', 'pemphigoid-elderly-eczema']
       }
     },
     {
@@ -670,6 +672,7 @@
     'atopic-dermatitis-topical': {desc:'異位性皮膚炎外用治療階梯：保濕（每天 ≥ 250 g）、外用類固醇 1-7 級、TCI、PDE4i、外用 JAK 抑制劑、tapinarof、roflumilast、wet wrap — 依 AAD 2023 + UpToDate 2024 整理。',desc_en:'80% of atopic dermatitis is controlled with topical therapy . Three pillars: (1) Daily moisturizer ≥ 250 g/week, soak-and-seal within 3 minutes after bathing; (2)...'},
     'bimekizumab-hidradenitis-suppurativa': {desc:'化膿性汗腺炎（HS）新生物製劑 bimekizumab 同時抑制 IL-17A 與 IL-17F。2026 BJD 評讀 BE-HEARD I/II 三期試驗：第 16 週約半數達 HiSCR 50、DLQI 與疼痛改善；但安慰劑反應高達 31%、candida 感染常見、長期續用率下降。含台灣定位。',desc_en:'Bimekizumab is a newer biologic that inhibits both IL-17A and IL-17F. A 2026 British Journal of Dermatology critically appraised topic (McCarthy & Ring) reviews its...'},
     'biologics-overview': {desc:'皮膚科生物製劑 + 小分子標靶藥完整總覽：Dupilumab、Secukinumab、Guselkumab、Risankizumab、Adalimumab、JAK 抑制劑等 — 機轉、適應症、施打頻率、健保給付條件、副作用、必要篩檢一次看完。',desc_en:'Over the past decade, the biggest revolution in dermatology has been the arrival of biologics and small-molecule targeted therapies. From psoriasis, atopic...'},
+    'bullous-pemphigoid': {desc:'類天疱瘡是長輩常見的自體免疫水疱病：先癢、再起紅疹，最後長出緊繃的大水泡，也有人一開始不起水泡。從原因、哪些藥物可能誘發、切片與抽血怎麼確診，到外用與口服類固醇、doxycycline、生物製劑的治療與居家傷口照顧，由淺到深完整整理。',desc_en:'Bullous pemphigoid is a common autoimmune blistering disease of older adults. Causes, drug triggers, diagnosis, treatment options and blister care, from basics to...'},
     'contact-dermatitis': {desc:'接觸性皮膚炎分過敏型(ACD)與刺激型(ICD)兩大類：常見過敏原(鎳、香料、防腐劑、染髮劑)、Patch Test 判讀、避開過敏原、外用類固醇 / TCI、光療。整理 BAD 2017 指引。',desc_en:'Contact dermatitis is redness, itching, and scaling caused by skin contact with an external substance. It has two major types: allergic contact dermatitis (ACD), in...'},
     'cutaneous-t-cell-lymphoma': {desc:'皮膚 T 細胞淋巴瘤（CTCL）75% 為蕈狀肉芽腫（mycosis fungoides，MF）。本文整理 TDA 2024 共識的診斷、TNMB 分期、外用 / NB-UVB / PUVA、Bexarotene、Methotrexate、生物製劑與鑑別診斷重點。皮膚科醫師整理。',desc_en:'Cutaneous T-cell lymphoma (CTCL) is a rare non-Hodgkin lymphoma arising from malignant T cells in the skin. 75% are mycosis fungoides (MF); the remainder are Sézary...'},
     'dermatologic-oral-examination': {desc:'嘴破超過兩週沒好、嘴唇白色蕾絲狀紋路、牙齦反覆剝離流血，可能是皮膚科問題。整理口腔扁平苔癬、口腔白斑、類天疱瘡等 6 大病灶，以及口腔切片怎麼做、會不會痛。',desc_en:'An ulcer not healing in 2 weeks, white lacy oral patches, or peeling gums often belong to dermatology, not dentistry. Patient-friendly guide to 6 oral mucosal...'},

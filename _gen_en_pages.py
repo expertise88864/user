@@ -120,6 +120,10 @@ EN_OG_OVERRIDES = {
         'title': 'Bimekizumab for Hidradenitis Suppurativa (BE-HEARD I/II, BJD 2026)',
         'desc': 'Bimekizumab is a newer biologic that inhibits both IL-17A and IL-17F. A 2026 British Journal of Dermatology critically appraised topic (McCarthy & Ring) reviews its two phase III trials, BE-HEARD I and II (Kimball et al., Lancet 2024): at week 16, about 48–52% of the every-2-weeks arm reached HiSCR 50 vs 29–32% on placebo, with DLQI and pain improvements, broadly comparable to adalimumab and secukinumab. The appraisal is candid about limits: a 31% placebo response, UCB funding, no comparator beyond week 16 and no head-to-head, common candida infections (23–25%), IBD signals, week-48 retention falling to 66–76%, a predominantly White and female cohort, and exclusion of the most severe phenotype. Covers IL-17A/F mechanism, efficacy, safety, the critical appraisal, and the Taiwan context.',
     },
+    'blog/bullous-pemphigoid.html': {
+        'title': 'Bullous Pemphigoid Explained: Causes, Diagnosis, Treatment and Care',
+        'desc': 'Bullous pemphigoid is a common autoimmune blistering disease of older adults. Causes, drug triggers, diagnosis, treatment options and blister care, from basics to clinical detail.',
+    },
     'blog/filler-vascular-occlusion.html': {
         'title': 'Skin Turning Pale or Purple After Filler: Warning Signs and Urgent Care for Vascular Occlusion',
         'desc': 'Sudden blanching, a purple net-like pattern, escalating pain or blurred vision after a filler injection can signal vascular occlusion. Warning signs, what to do at once, hyaluronidase and ultrasound-guided treatment, and access in Taiwan.',
