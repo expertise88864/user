@@ -480,6 +480,26 @@ class BashCliUnicodePathTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             self.assertEqual(out.read_bytes().decode("utf-8", "replace"), self.CLI)
 
+    def test_resolve_cli_rejects_batch_shims(self):
+        """PR #164: cmd.exe cuts a multi-line prompt passed to a .cmd shim at its first newline."""
+        source = (ROOT / "tools/codex_review.sh").read_text(encoding="utf-8")
+        start = source.index("resolve_cli() {")
+        end = source.index("\n}\n", start) + 3
+        for cli, code in (("C:/npm/codex.CMD", 64), ("C:/npm/codex.ps1", 64), ("C:/npm/x.bat", 64),
+                          ("C:/npm/codex.exe", 0)):
+            with self.subTest(cli=cli), tempfile.TemporaryDirectory() as directory:
+                script = Path(directory) / "probe.sh"
+                script.write_text('die() { echo "$*" >&2; exit 64; }\nreview_git_scope() { :; }\n'
+                                  + source[start:end]
+                                  + "\nresolve_cli >/dev/null\n", encoding="utf-8", newline="\n")
+                env = {k: v for k, v in os.environ.items() if k != "BASH_ENV"}
+                env["CODEX_REVIEW_CLI"] = cli
+                result = subprocess.run([BASH, "--noprofile", "--norc", str(script)], env=env,
+                                        capture_output=True, text=True, encoding="utf-8", errors="replace")
+                self.assertEqual(result.returncode, code, result.stdout + result.stderr)
+        ps1 = (ROOT / "tools/codex_review.ps1").read_text(encoding="utf-8-sig")
+        self.assertIn("if ($cli -match '\\.(cmd|bat|ps1)$') { Die", ps1)
+
 
 if __name__ == "__main__":
     unittest.main()

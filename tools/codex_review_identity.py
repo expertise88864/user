@@ -44,8 +44,27 @@ def cli_version(path: str) -> str:
     return lines[0] if proc.returncode == 0 and lines else ""
 
 
+def npm_native_binaries(shim: str) -> list[str]:
+    """Native codex.exe files of the npm package behind a Windows PATH shim.
+
+    The npm shim (codex.cmd / codex.ps1 / extensionless sh) only starts
+    bin/codex.js, which spawns this binary with the same arguments."""
+    package = os.path.join(os.path.dirname(shim), "node_modules", "@openai")
+    patterns = (
+        ("codex", "node_modules", "@openai", "codex-win32-*", "vendor", "*", "bin", "codex.exe"),
+        ("codex-win32-*", "vendor", "*", "bin", "codex.exe"),
+        ("codex", "vendor", "*", "bin", "codex.exe"),
+    )
+    return sorted({hit for parts in patterns for hit in glob.glob(os.path.join(package, *parts))})
+
+
 def codex_candidates() -> list[str]:
-    """Codex CLIs on this machine: the desktop app's bundled builds, then PATH."""
+    """Codex CLIs on this machine: the desktop app's bundled builds, then PATH.
+
+    On Windows only native .exe files qualify. A batch shim (npm's codex.cmd) runs
+    through cmd.exe, which cuts a multi-line argument at its first newline: the
+    reviewer then receives only the first prompt line (PR #164: two rounds without
+    the range or the verdict format). An npm shim is followed to its native binary."""
     found = []
     local = os.environ.get("LOCALAPPDATA", "")
     if local:
@@ -54,9 +73,13 @@ def codex_candidates() -> list[str]:
         hit = shutil.which(name)
         if hit:
             found.append(hit)
+            if os.name == "nt":
+                found.extend(npm_native_binaries(hit))
     seen, unique = set(), []
     for path in found:
         key = os.path.normcase(os.path.abspath(path))
+        if os.name == "nt" and not key.endswith(".exe"):
+            continue
         if key not in seen and os.path.isfile(path):
             seen.add(key)
             unique.append(path)
@@ -68,9 +91,8 @@ def find_codex() -> tuple[str, str]:
     2026-11 the desktop app's bundled 0.163.0-alpha rejects gpt-6.2-astra for
     ChatGPT accounts while npm 0.169.1 accepts it (in 2026-10 it was the other
     way round), so a fixed-location lookup could pick a CLI that cannot run the
-    required model. The
-    chosen CLI is not trusted for the model either: verify() still checks the
-    actual session record."""
+    required model. The chosen CLI is not trusted for the model either: verify()
+    still checks the actual session record."""
     ranked = []
     for path in codex_candidates():
         version = cli_version(path)

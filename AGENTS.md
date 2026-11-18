@@ -5,7 +5,7 @@
 本節優先於下方所有關於審查模型與 effort 的敘述。
 - 所有程式審查（PR review、diff review、`--resume` 續審、quota-pending 與舊 pending 補審）一律 `gpt-6.2-astra`、reasoning effort `medium`，取代 2026-10-14 起的 `gpt-6.2-astra`／`medium`；仍經 repo wrapper、唯讀、以 session 紀錄證明實際模型與 effort，證明不了就 fail closed，不 fallback 到其他模型或 effort。
 - PR commit status 改為 `codex-review/gpt-6.2-astra`；舊 `codex-review/gpt-6.2-astra` status 與舊 profile 的 session 不再算現行核可，也不能 `--resume`，需以新 profile 重新首輪審查。
-- Codex CLI：2026-11-18 實測 Codex 桌面版內附 0.163.0-alpha 不支援 `gpt-6.2-astra`，npm 全域 `@openai/codex` 0.169.1 可用；wrapper 仍挑本機版本最高者（`python tools/codex_review_identity.py which` 顯示實際選用）。不支援時先問使用者，不得降級。
+- Codex CLI：2026-11-18 實測 Codex 桌面版內附 0.163.0-alpha 不支援 `gpt-6.2-astra`，npm 全域 `@openai/codex` 0.169.1 可用；wrapper 仍挑本機版本最高者（`python tools/codex_review_identity.py which` 顯示實際選用）；Windows 上只接受原生 `codex.exe`，npm 的 `codex.cmd` shim 會追到其套件內的 `codex.exe`，因為 cmd.exe 會在第一個換行截斷多行 prompt（PR #164 實際發生）。不支援時先問使用者，不得降級。
 
 ## 最新使用者定案：每個 PR review 一次（2026-10-15）
 

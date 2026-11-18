@@ -147,6 +147,11 @@ resolve_cli() {
       CODEX_CLI=""
   fi
   [ -n "$CODEX_CLI" ] || die "找不到可用的 Codex CLI;不降級到其他模型。"
+  # A batch shim runs through cmd.exe, which cuts the multi-line prompt at its first
+  # newline (PR #164); use the native codex.exe instead (codex_review_identity.py which).
+  case "$(printf '%s' "$CODEX_CLI" | tr 'A-Z' 'a-z')" in
+    *.cmd|*.bat|*.ps1) die "CODEX_REVIEW_CLI 不可為 .cmd/.bat/.ps1 shim(多行 prompt 會被截斷);請指定原生 codex.exe。" ;;
+  esac
   echo "[codex-review] cli=$CODEX_CLI"
   review_git_scope
 }

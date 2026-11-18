@@ -504,6 +504,23 @@ class ReviewCliSelectionTests(unittest.TestCase):
         # 2026-11: npm 0.169.1 runs gpt-6.2-astra; the bundled 0.163.0-alpha does not.
         self.assertGreater(key('codex-cli 0.169.1'), key('codex-cli 0.163.0-alpha.10.2'))
 
+    @unittest.skipUnless(os.name == 'nt', 'Windows npm shim layout')
+    def test_npm_shim_is_followed_to_its_native_binary(self):
+        """PR #164: cmd.exe cut the multi-line prompt passed through npm's codex.cmd."""
+        with tempfile.TemporaryDirectory() as directory:
+            npm = Path(directory) / 'npm'
+            native = (npm / 'node_modules/@openai/codex/node_modules/@openai/codex-win32-x64'
+                      / 'vendor/x86_64-pc-windows-msvc/bin/codex.exe')
+            native.parent.mkdir(parents=True)
+            native.write_bytes(b'')
+            shim = npm / 'codex.cmd'
+            shim.write_text('@echo off\n', encoding='utf-8')
+            hits = {'codex.cmd': str(shim), 'codex.exe': None, 'codex': None}
+            with patch.dict(os.environ, {'LOCALAPPDATA': str(Path(directory) / 'none')}), \
+                    patch.object(self.identity.shutil, 'which', side_effect=hits.get):
+                found = self.identity.codex_candidates()
+        self.assertEqual([os.path.normcase(p) for p in found], [os.path.normcase(str(native))])
+
     def test_highest_runnable_version_wins_and_none_fails_closed(self):
         versions = {'old': 'codex-cli 0.155.1', 'new': 'codex-cli 0.162.0-alpha.17.2', 'broken': ''}
         with patch.object(self.identity, 'codex_candidates', return_value=['old', 'new', 'broken']), \

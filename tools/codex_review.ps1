@@ -144,6 +144,9 @@ function Resolve-Cli {
         $cli = if ($whichCode -eq 0 -and $found.Count -ge 1) { $found[0].Trim() } else { '' }
     }
     if (-not $cli) { Die '找不到可用的 Codex CLI;不降級到其他模型。' }
+    # A batch shim runs through cmd.exe, which cuts the multi-line prompt at its first
+    # newline (PR #164); use the native codex.exe instead (codex_review_identity.py which).
+    if ($cli -match '\.(cmd|bat|ps1)$') { Die 'CODEX_REVIEW_CLI 不可為 .cmd/.bat/.ps1 shim(多行 prompt 會被截斷);請指定原生 codex.exe。' }
     Write-Host "[codex-review] cli=$cli"
     return $cli
 }
