@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202611181800';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611181900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -497,7 +497,7 @@
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202611181800';
+        s.src = '/blog/blog-search.min.js?v=202611181900';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -947,7 +947,7 @@
     { slug:'atopic-dermatitis-child-growth', title:'異位性皮膚炎會影響孩子長高嗎？從 2026 年 dupilumab 兒童研究談生長追蹤', title_en:'Can Atopic Dermatitis Affect a Child\'s Growth? What a 2026 Dupilumab Study Shows', cat:'research', tag:'異位性皮膚炎', date:'2026-11-18', emoji:'', tag_en:'Atopic dermatitis' },
     { slug:'refractory-atopic-dermatitis-workup', title:'異位性皮膚炎一直治不好，會不會根本不是異位性？成人頑固濕疹該做哪些檢查', title_en:'Atopic Dermatitis That Won\'t Improve: Could It Be Something Else? Testing for Adults With Stubborn Eczema', cat:'research', tag:'異位性皮膚炎', date:'2026-11-18', emoji:'', tag_en:'Atopic dermatitis' },
     { slug:'pemphigoid-elderly-eczema', title:'長輩濕疹一直擦不好，會不會是類天疱瘡？不起水泡型的警訊與檢查', title_en:'Elderly “Eczema” That Won\'t Clear: Could It Be Pemphigoid Without Blisters?', cat:'research', tag:'類天疱瘡', date:'2026-11-18', emoji:'', tag_en:'Pemphigoid' },
-    { slug:'jaad-monthly-2026-11', title:'皮膚科期刊月報｜JAAD 2026 年 11 月號：13 篇研究深入評讀', title_en:'Dermatology Journal Monthly, JAAD November 2026: 13 studies critically appraised', cat:'research', tag:'期刊月報', date:'2026-11-17', emoji:'', tag_en:'Journal monthly' },
+    { slug:'jaad-monthly-2026-11', title:'皮膚科期刊月報｜JAAD 2026 年 11 月號：13 篇研究深入評讀', title_en:'Dermatology Journal Monthly, JAAD November 2026: 13 studies critically appraised', cat:'research', tag:'期刊月報', date:'2026-11-17', emoji:'', tag_en:'Journal monthly', unpublished:true },
     { slug:'photodynamic-therapy-overview', title:'光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合', title_en:'Photodynamic Therapy (PDT) Complete Guide — from AK and BCC to acne, synthesis of two 2026 JAAD Reviews', cat:'research', tag:'光動力治療', date:'2026-05-23', emoji:'', tag_en:'Photodynamic therapy' },
     { slug:'hairloss-myths',      title:'落髮 / 雄性禿 7 大迷思', title_en:'7 Hair Loss & Male Pattern Baldness Myths', cat:'myth', tag:'落髮', date:'2026-05-03', emoji:'', tag_en:'Hair loss' },
     { slug:'tinea-myths',         title:'香港腳 / 灰指甲 7 大迷思', title_en:'7 Athlete\'s Foot / Nail Fungus Myths', cat:'myth', tag:'足癬', date:'2026-05-03', emoji:'', tag_en:'Tinea' },
@@ -1162,7 +1162,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202611181800';
+        s.src = '/blog/blog-article-reading.min.js?v=202611181900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1198,7 +1198,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202611181800';
+        s.src = '/blog/blog-article-footer.min.js?v=202611181900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1228,7 +1228,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202611181800';
+        s.src = '/blog/blog-calculators.min.js?v=202611181900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1367,7 +1367,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202611181800';
+        s.src = '/blog/blog-hub.min.js?v=202611181900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1399,7 +1399,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202611181800';
+        script.src = '/blog/blog-support.min.js?v=202611181900';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));

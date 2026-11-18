@@ -72,7 +72,7 @@ Author: Dr. Chen Yi-Jia (陳翊嘉醫師)
 Author-URL: https://chendermatologist.com/about
 Specialty: Dermatology
 Audience: Patient education + medical-resident reference
-Articles: 59 published
+Articles: 58 published
 Last-Article-Date: 2026-11-18
 License: All rights reserved. Citation with attribution permitted.
 
