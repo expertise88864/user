@@ -149,6 +149,8 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 .ex-h2-sm{font-size:17px;margin:20px 0 6px}
 .ex-refs{font-size:14px;line-height:1.9;padding-left:22px;margin:0 0 8px}
 .ex-list{font-size:14px;line-height:1.9;padding-left:22px;margin:6px 0}
+.ex-main[data-exam-page="info"] :is(.ex-meta,.ex-lead,.ex-list) a{color:var(--teal-deep);text-decoration:underline;text-underline-offset:2px}
+:root[data-theme="dark"] .ex-main[data-exam-page="info"] :is(.ex-meta,.ex-lead,.ex-list) a{color:#a4b5a8}
 .ex-cta{display:inline-block;border-radius:9999px;padding:6px 16px;background:#4d6358;color:#fff;font-weight:700;text-decoration:none}
 .ex-fieldset{border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:10px 0}
 .ex-fieldset legend{font-weight:700;font-size:14px;padding:0 4px}

@@ -1274,6 +1274,8 @@ def info_page(shell, card) -> str:
         '黴菌題只出在實務測驗，以單選題呈現，範圍為住院醫師訓練核心真菌教學目錄 40 株。</li>'
         '<li><strong>口試</strong>：由至少五位口試委員進行，範圍與筆試相同。</li>'
         '</ul>'
+        f'<p class="ex-meta">來源：{src(1, "皮膚科專科醫師甄審原則")}第三、四點（筆試與口試）、'
+        f'{src(8, "甄審筆試出題參考範圍")}（玻片 626 項疾病與核心真菌 40 株）。</p>'
 
         '<h2 class="ex-h2" id="passing">及格標準</h2>'
         '<ul class="ex-list">'
@@ -1928,6 +1930,8 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 .ex-h2-sm{font-size:17px;margin:20px 0 6px}
 .ex-refs{font-size:14px;line-height:1.9;padding-left:22px;margin:0 0 8px}
 .ex-list{font-size:14px;line-height:1.9;padding-left:22px;margin:6px 0}
+.ex-main[data-exam-page="info"] :is(.ex-meta,.ex-lead,.ex-list) a{color:var(--teal-deep);text-decoration:underline;text-underline-offset:2px}
+:root[data-theme="dark"] .ex-main[data-exam-page="info"] :is(.ex-meta,.ex-lead,.ex-list) a{color:#a4b5a8}
 .ex-cta{display:inline-block;border-radius:9999px;padding:6px 16px;background:#4d6358;color:#fff;font-weight:700;text-decoration:none}
 .ex-fieldset{border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:10px 0}
 .ex-fieldset legend{font-weight:700;font-size:14px;padding:0 4px}

@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202611181500';
+          s.src = '/blog/blog-diagrams.min.js?v=202611181700';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -826,7 +826,7 @@
       // Apply font size + matching line-height + larger headings for XL.
       styleEl.textContent =
         '.prose, .prose-zh, .prose-en, #proseZh, #proseEn, article.prose { font-size: ' + px + ' !important; line-height: ' + lh + ' !important; }' +
-        '.prose p, .prose-zh p, .prose-en p, #proseZh p, #proseEn p, article.prose p, article.prose li { font-size: ' + px + ' !important; line-height: ' + lh + ' !important; }' +
+        '.prose p, .prose-zh p, .prose-en p, #proseZh p, #proseEn p, article.prose p, article.prose li, .prose-zh li, .prose-en li, #proseZh li, #proseEn li { font-size: ' + px + ' !important; line-height: ' + lh + ' !important; }' +
         (s === 'XL'
           ? 'article h2 { font-size: 1.55em !important; } article h3 { font-size: 1.28em !important; } article h4 { font-size: 1.12em !important; }'
           : '');

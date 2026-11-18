@@ -1,6 +1,6 @@
 {
   "assets": {
-    "assets/dn-below-fold.css": "eaf740a5a66c1c42da7927074215da4a157469f5c3b9db882968495d4fdca488",
+    "assets/dn-below-fold.css": "740db557030fa71b5c58db1fd7c0e7b56b26ba9290b2e915d1f464901176a6c2",
     "assets/dn-print.css": "f0c197abde8857c9474c07b7417c5344d4f799d4366a48f6eea522536f64c963",
     "assets/inline/analytics-loader.js": "498834b0097e16dabcabd31cc4c6d3f4881cb85e9a8de477f3ef0ebf7c99d33e",
     "assets/inline/dn-init.js": "85a2bde719cab2b1a3affafc226c8a322e8e780363799e1e6040516f35280941",
@@ -11,20 +11,20 @@
     "assets/tw-mini.css": "f5e913a3f65046c041652dd56a76b5cc1e285e8d81c282e6027b204155f745b1",
     "assets/web-vitals.iife.js": "77b2dfc9e065286d780c87f72b5cad08761346ff564ddd3f79102f4d4027e9a6",
     "blog/blog-article-footer.min.js": "bba8ab776c1cd1a766ccf32cc39012e2b9edee16a9f888e2178804536f572821",
-    "blog/blog-article-reading.min.js": "28ad5b0ede57a41031b93149df2724ed698672c969693052c5a4d6bd66b1183f",
+    "blog/blog-article-reading.min.js": "c5c11cb5932ce4d1fd6037824c757cb9061e40ed69a2bd2b381816555e2a761f",
     "blog/blog-article-visuals.min.js": "b75f1b1e42a8cc1a1d93d9159c919119bcc2273e6071b74c8a99a14cda1ad265",
     "blog/blog-calculators.min.js": "97e6776da3c90453f31678a8265c0429d39d8627a163276182037cb77ca7098a",
     "blog/blog-diagrams.min.js": "986ab691d58f95edc500d75b5a96c14ea42477c3f46bc71280822a328737db6d",
     "blog/blog-hub.min.js": "290b346ed52b4df33084b8bafe6a6a152246b9254d9ecba8fd98f8b12d5bf90f",
     "blog/blog-search.min.js": "8a7b9dc571045a1a4438b63c24d89a7ba09588ed9b3a51f8e243ad5371cbd462",
-    "blog/blog-shared.min.js": "e888d7e3c89d345511689a5a34e1c4d03d488a5ffccead9cbb647724dbf9f749",
+    "blog/blog-shared.min.js": "5954ca922880b73c19f74e3455241479ea9e34b0928d73548b9e96aa33418218",
     "blog/blog-support.min.js": "5a26abeb2cdf067d8a8e16978eb2f74dfee11966608d316602478dae4669a1e8"
   },
   "caches": {
-    "CACHE": "cd-v258",
-    "RUNTIME": "cd-runtime-v256"
+    "CACHE": "cd-v259",
+    "RUNTIME": "cd-runtime-v257"
   },
   "hash_format": "sha256-utf8-lf",
-  "version": "202611181500",
-  "worker_sha256": "2baacc06d165a28eb415af7180184743dffcc8e46a22baf370f39599758cc5d5"
+  "version": "202611181700",
+  "worker_sha256": "c7566183498de349c418f455ccec7f5851653b0f09916cfbb46cf895fd34cc1f"
 }

@@ -108,7 +108,7 @@ article h2[id]{scroll-margin-top:84px}
    Latin text (as on the board-exam pages). Keep in step with sizeMap.M in
    blog/blog-article-reading.js. */
 .prose,.prose-zh,.prose-en,#proseZh,#proseEn,article.prose{font-size:15px!important;line-height:1.8!important;font-family:Inter,'PingFang TC','Microsoft JhengHei','Noto Sans TC',sans-serif}
-.prose p,.prose-zh p,.prose-en p,#proseZh p,#proseEn p,article.prose p,article.prose li{font-size:15px!important;line-height:1.8!important}
+.prose p,.prose-zh p,.prose-en p,#proseZh p,#proseEn p,article.prose p,article.prose li,.prose-zh li,.prose-en li,#proseZh li,#proseEn li{font-size:15px!important;line-height:1.8!important}
 :root:not([data-theme="dark"]) :is(.prose,.prose-zh,.prose-en,#proseZh,#proseEn,article.prose){color:#3d3830}
 #proseZh h2,#proseEn h2,article.prose h2{font-size:21px}
 #proseZh h3,#proseEn h3,article.prose h3{font-size:16px}
@@ -262,7 +262,7 @@ article h2[id]{scroll-margin-top:84px}
    a centred divider heading and an audience line instead of a boxed panel. */
 #proseZh h2.dn-pro-h2,#proseEn h2.dn-pro-h2{display:flex;align-items:center;gap:14px;border-left:0;padding-left:0;margin:60px 0 6px;font-size:16px;letter-spacing:.06em;color:var(--teal-deep)}
 #proseZh h2.dn-pro-h2::before,#proseZh h2.dn-pro-h2::after,#proseEn h2.dn-pro-h2::before,#proseEn h2.dn-pro-h2::after{content:'';flex:1;height:1px;background:var(--border)}
-#proseZh .dn-pro-who,#proseEn .dn-pro-who{text-align:center;font-size:13px!important;line-height:1.6!important;color:var(--muted);margin:0 0 20px}
+#proseZh .dn-pro-who,#proseEn .dn-pro-who{text-align:center;font-size:.87em!important;line-height:1.6!important;color:var(--muted);margin:0 0 20px}
 #proseZh .dn-pro h3,#proseEn .dn-pro h3{border-left:3px solid var(--teal);padding-left:10px}
 
 /* Older articles' clinician panels (.advanced) take the same unboxed look (author request 2026-11-18:
