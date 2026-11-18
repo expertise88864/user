@@ -470,6 +470,8 @@ class BashCliUnicodePathTests(unittest.TestCase):
                 'die() { echo "$*" >&2; exit 64; }\n'
                 f"PYTHON={shlex.quote(sys.executable.replace(chr(92), '/'))}\n"
                 f"SCRIPT_DIR={shlex.quote(root.as_posix())}\nREPO_ROOT=/fixture\n"
+                # The wrapper runs CLI discovery from the tooling checkout (TOOL_ROOT).
+                f"TOOL_ROOT={shlex.quote(root.as_posix())}\n"
                 + source[start:end]
                 + f"\nresolve_cli >/dev/null\nprintf '%s' \"$CODEX_CLI\" > {shlex.quote(out.as_posix())}\n",
                 encoding="utf-8", newline="\n")
