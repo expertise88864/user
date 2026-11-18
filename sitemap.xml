@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/exam</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/exam"/>
@@ -2071,6 +2071,14 @@
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/exam/fitz-99"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/fitz-99"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/exam/info</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/exam/info"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/info"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/exam/kantor</loc>

@@ -51,7 +51,11 @@ DOMAIN = "https://chendermatologist.com"
 TEMPLATE = ROOT / "notes.html"
 SOURCE_LABEL = "臺灣皮膚科醫學會專科醫師甄審筆試"
 SOURCE_URL = "https://www.derma.org.tw/specialist/download.php?id=9"
-HUB_TITLE = "皮膚科專科醫師考試重點及考題"
+# Author choice 2026-11-18 (option A): the notes are the section's main point,
+# then the past papers; the <title> adds what people search for.
+HUB_TITLE = "皮膚科專科醫師考試重點整理"
+HUB_SUBTITLE = "Fitzpatrick 各章筆記＋101–115 年考古題詳解"
+HUB_DOC_TITLE = "皮膚科專科醫師考試重點整理與考古題｜Fitzpatrick 各章筆記・101–115 年詳解"
 REFERENCE_BOOKS = [
     "McKee's Pathology of the Skin, 6th Edition (2026/7/21)",
     "Fitzpatrick's Dermatology in General Medicine, 9th Edition (2019/3/19)",
@@ -1215,6 +1219,114 @@ def review_page(shell, card) -> str:
                 jsonld_type="WebPage", body=body, page_kind="review", card=card)
 
 
+# ---------------------------------------------------------------- exam information
+# /exam/info: the society's announcements in one place (author request
+# 2026-11-18). Every fact below was read from derma.org.tw on INFO_CHECKED;
+# re-check the linked pages when the society posts a new year's announcement.
+DERMA_SPECIALIST = "https://www.derma.org.tw/specialist/index.php?id="
+INFO_CHECKED = "2026-11-18"
+
+
+def _ext(url: str, label: str) -> str:
+    return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{label}</a>'
+
+
+def info_page(shell, card) -> str:
+    src = lambda n, label: _ext(f"{DERMA_SPECIALIST}{n}", label)  # noqa: E731
+    years = "".join(f'<a href="/exam/year-{y}">{y}</a>{"、" if y < 115 else ""}' for y in range(101, 116))
+    body = (
+        '<p class="ex-kicker">考試資訊</p>'
+        '<h1 class="ex-h1">皮膚科專科醫師甄審考試資訊</h1>'
+        '<p class="ex-lead">116 年考試日期、報考資格、考試形式、及格標準與出題範圍，整理自'
+        f'{_ext("https://www.derma.org.tw/specialist/download.php?id=9", "臺灣皮膚科醫學會")}專科甄審公告。</p>'
+        '<div class="ex-notice">本頁為讀書用的整理，資料查核日期 '
+        f'<time datetime="{INFO_CHECKED}">{INFO_CHECKED}</time>；報名與考試請一律以學會最新公告為準。</div>'
+
+        '<h2 class="ex-h2" id="dates">116 年度考試日期</h2>'
+        '<table class="ex-table"><thead><tr><th scope="col">項目</th><th scope="col">日期與時間</th>'
+        '<th scope="col">地點</th></tr></thead><tbody>'
+        '<tr><td>筆試</td><td>116 年 8 月 22 日（日）上午</td><td>待定</td></tr>'
+        '<tr><td>口試</td><td>116 年 8 月 22 日（日）下午</td><td>待定</td></tr>'
+        '<tr><td>報名</td><td>日期與方式待定</td><td>—</td></tr>'
+        '</tbody></table>'
+        f'<p class="ex-meta">來源：{src(14, "116年度皮膚科專科醫師甄審")}。'
+        '甄審原則規定報名、考試日期與地點於考前三個月公告。</p>'
+        '<p class="ex-meta">參考上一年：115 年度報名期間為 115 年 7 月 15 日至 8 月 5 日，以書面掛號郵寄、郵戳為憑；'
+        '筆試 8 月 23 日（日）上午 8–12 時、口試同日下午 1–6 時，地點在臺大醫學院'
+        f'（{src(13, "115年度皮膚科專科醫師甄審")}）。</p>'
+
+        '<h2 class="ex-h2" id="eligibility">報考資格</h2>'
+        '<ul class="ex-list">'
+        '<li>在國內皮膚科專科醫師訓練醫院完成訓練並取得證明：108 年 7 月 31 日以前開始訓練者至少 3 年 6 個月；'
+        '108 年 8 月 1 日起開始訓練者至少 4 年。</li>'
+        '<li>持有經學會認可的外國皮膚科專科醫師證書（可免筆試）。</li>'
+        '<li>曾具皮膚科專科醫師資格而喪失者。</li>'
+        '<li>前兩年內筆試及格、口試未通過者。</li>'
+        '</ul>'
+        '<p class="ex-meta">訓練年資計算至口試當日；中斷超過五年須重新訓練。因服役、產假或法令規定，'
+        '最多可提前四個月報考，但須在發證前補足。'
+        f'詳見{src(1, "皮膚科專科醫師甄審原則")}（115 年 10 月 12 日修正）。</p>'
+
+        '<h2 class="ex-h2" id="format">考試形式</h2>'
+        '<ul class="ex-list">'
+        '<li><strong>筆試</strong>：選擇題＋實務測驗（跑檯），中文命題、專有名詞可用英文。</li>'
+        '<li><strong>實務測驗</strong>：顯微鏡玻片的出題範圍為學會公布的 626 項疾病；'
+        '黴菌題只出在實務測驗，以單選題呈現，範圍為住院醫師訓練核心真菌教學目錄 40 株。</li>'
+        '<li><strong>口試</strong>：由至少五位口試委員進行，範圍與筆試相同。</li>'
+        '</ul>'
+
+        '<h2 class="ex-h2" id="passing">及格標準</h2>'
+        '<ul class="ex-list">'
+        '<li>筆試：選擇題須達 60 分，且選擇題與實務測驗平均須達 60 分（百分制）。</li>'
+        '<li>口試：各口試委員評分平均須達 60 分。</li>'
+        '<li>筆試與口試都通過才算及格。所有考生都可參加口試，但筆試未通過者口試成績不保留；'
+        '口試未通過者，筆試及格成績保留兩年。</li>'
+        '<li>論文加分最多 10 分，加在筆試選擇題與實務測驗的平均分數：SCI／SCIE 期刊第一作者每篇 1 分；'
+        'Dermatologica Sinica 原著 3 分、綜論 2 分、短篇報告或通訊 1 分。限單一第一作者，以接受日期為準。</li>'
+        '</ul>'
+        f'<p class="ex-meta">來源：{src(1, "皮膚科專科醫師甄審原則")}第三、五點。</p>'
+
+        '<h2 class="ex-h2" id="scope">出題參考範圍</h2>'
+        '<ol class="ex-refs">'
+        "<li>McKee's Pathology of the Skin：116 年起改用第 6 版（2026/7/21），115 年以前為第 5 版</li>"
+        "<li>Fitzpatrick's Dermatology in General Medicine, 9th Edition</li>"
+        '<li>Dermatologic Surgery (Jonathan Kantor), 1st Edition（111 年起取代 Surgery of the Skin）</li>'
+        '</ol>'
+        '<p class="ex-meta">參考書出新版滿一年後，即作為下一年度的出題參考書；藥品仿單與藥品給付規範也列入筆試範圍。'
+        f'來源：{src(8, "甄審筆試出題參考範圍")}。</p>'
+        '<p class="ex-meta">本站依此整理：<a href="/exam">Fitzpatrick 各章重點與考題</a>、'
+        '<a href="/exam/mckee">病理（McKee）題</a>、<a href="/exam/kantor">皮膚外科（Kantor）題</a>。</p>'
+
+        '<h2 class="ex-h2" id="rules">試場規則重點</h2>'
+        '<ul class="ex-list">'
+        '<li>考前 30 分鐘內攜帶准考證入場；筆試遲到超過 30 分鐘不得入場，入場後 30 分鐘內不得離場。</li>'
+        '<li>除文具外不得攜帶任何物品；手機等可傳遞訊息的電子產品與書籍一律不得攜帶，違者取消資格。</li>'
+        '</ul>'
+        f'<p class="ex-meta">來源：{src(7, "試場規則")}。</p>'
+
+        '<h2 class="ex-h2" id="appeal">試題申覆</h2>'
+        '<p class="ex-meta">以 115 年度為例：對筆試試題或答案有疑義，須在 115 年 9 月 4 日 17 時前以申覆申請表 email 學會，'
+        '每題一頁並附指定教科書依據；每人最多 3 題，每題 2,000 元；已及格者不得申覆。'
+        f'來源：{src(10, "115年度試題申覆辦法")}。</p>'
+
+        '<h2 class="ex-h2" id="past">歷屆考題</h2>'
+        '<p class="ex-meta">學會在'
+        f'{_ext("https://www.derma.org.tw/specialist/download.php?id=9", "歷屆考題公告")}'
+        '公開歷年選擇題、實務測驗與標準答案。本站把 101–115 年選擇題整理成可作答的考古卷，每題附詳解：'
+        f'{years} 年；也可以<a href="/exam/practice">自選年份或隨機出題</a>。</p>'
+
+        '<h2 class="ex-h2" id="renewal">證書效期</h2>'
+        '<p class="ex-meta">專科醫師證書效期六年，換證須在六年內取得至少 108 學分（其中年會與春季會至少 54 分）。'
+        f'來源：{src(1, "皮膚科專科醫師甄審原則")}。</p>'
+    )
+    title = "皮膚科專科醫師甄審考試資訊｜116 年考試日期、資格與及格標準"
+    desc = ("皮膚科專科醫師甄審 116 年筆試與口試日期、報考資格、考試形式（選擇題、實務測驗、口試）、"
+            "及格標準、論文加分、出題參考範圍與試題申覆，整理自臺灣皮膚科醫學會公告。")
+    return page(shell, path="/exam/info", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
+                description=desc, og_title="皮膚科專科醫師甄審考試資訊", crumbs=[("考試資訊", "/exam/info")],
+                jsonld_type="WebPage", body=body, page_kind="info", card=card)
+
+
 SEARCH_VERSION = [""]  # content hash of search-index.json, set by build()
 
 # Hidden until exam.js loads the index, so a page without JS shows no dead box.
@@ -1288,8 +1400,9 @@ def hub_page(shell, data, by_chapter, by_year, by_book, card) -> str:
     )
     refs = "".join(f"<li>{esc(book)}</li>" for book in REFERENCE_BOOKS)
     body = (
-        f'<h1 class="ex-h1">{HUB_TITLE}</h1>'
+        f'<h1 class="ex-h1">{HUB_TITLE}<span class="ex-h1-zh">{HUB_SUBTITLE}</span></h1>'
         '<p class="ex-lead">目前整理 101–115 年考題以及各章節重點整理</p>'
+        '<p class="ex-meta"><a class="ex-cta" href="/exam/info">考試資訊：116 年日期、資格與及格標準</a></p>'
         '<h2 class="ex-h2 ex-h2-sm">目前甄審筆試出題參考範圍</h2>'
         f'<ol class="ex-refs">{refs}</ol>{NOTICE}'
         # 考古卷 and 考點總覽 sit side by side (stacked on phones).
@@ -1327,9 +1440,9 @@ def hub_page(shell, data, by_chapter, by_year, by_book, card) -> str:
         + '<h2 class="ex-h2">其他參考書與工具</h2>'
         f'<ul class="ex-chapter-list">{books}<li><a href="/exam/review">錯題本與 Anki 匯出</a></li></ul>'
     )
-    title = HUB_TITLE
-    desc = (f"皮膚科專科醫師甄審筆試 101–115 年考題 {total} 題，依 Fitzpatrick 9e 章節整理重點，"
-            "附出題頻率統計、自選年份或隨機出題的考古卷、錯題本與 Anki 匯出。")
+    title = HUB_DOC_TITLE
+    desc = (f"皮膚科專科醫師甄審筆試重點整理：依 Fitzpatrick 9e 各章整理考點與表格，附 101–115 年 {total} 題"
+            "考古題與詳解、病理（McKee）與皮膚外科（Kantor）題、出題頻率統計、模擬考與錯題本。")
     return page(shell, path="/exam", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=HUB_TITLE, crumbs=[],
                 jsonld_type="CollectionPage", body=body, page_kind="hub", card=card)
@@ -1649,6 +1762,7 @@ def build(content_date: str | None = None) -> dict[str, str]:
         files[f"{b}.html"] = book_page(shell, data, b, qs)
     files["practice.html"] = practice_page(shell, by_year, len(data["mock"]), hub_card)
     files["review.html"] = review_page(shell, hub_card)
+    files["info.html"] = info_page(shell, hub_card)
     if data["concepts"]:
         by_part: dict[int, list] = defaultdict(list)
         for c in data["concepts"]:
@@ -1813,6 +1927,7 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 :root[data-theme="dark"] .ex-q.ex-done .ex-opt.ex-picked:not([data-correct]){background:#3a1a1a;border-color:#dc2626}
 .ex-h2-sm{font-size:17px;margin:20px 0 6px}
 .ex-refs{font-size:14px;line-height:1.9;padding-left:22px;margin:0 0 8px}
+.ex-list{font-size:14px;line-height:1.9;padding-left:22px;margin:6px 0}
 .ex-cta{display:inline-block;border-radius:9999px;padding:6px 16px;background:#4d6358;color:#fff;font-weight:700;text-decoration:none}
 .ex-fieldset{border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:10px 0}
 .ex-fieldset legend{font-weight:700;font-size:14px;padding:0 4px}

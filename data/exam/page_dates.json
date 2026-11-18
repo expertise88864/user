@@ -1,7 +1,7 @@
 {
  "/exam": {
-  "hash": "3c0b2e8a46f39030",
-  "modified": "2026-11-11",
+  "hash": "9b045c01f5af4c79",
+  "modified": "2026-11-18",
   "published": "2026-10-15"
  },
  "/exam/concepts": {
@@ -1248,6 +1248,11 @@
   "hash": "0b11fed2d5411cd2",
   "modified": "2026-10-28",
   "published": "2026-10-15"
+ },
+ "/exam/info": {
+  "hash": "ebea4b2e5dea66e7",
+  "modified": "2026-11-18",
+  "published": "2026-11-18"
  },
  "/exam/kantor": {
   "hash": "b078c36775d67c9f",
