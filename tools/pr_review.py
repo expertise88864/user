@@ -44,6 +44,11 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTEXT = "codex-review/gpt-6.2-astra"
 MODEL = "gpt-6.2-astra"
 EFFORT = "medium"
+# Status contexts of earlier review profiles (user decision 2026-11-18 replaced
+# gpt-6.1-sol / xhigh). Read only to recover a recorded review range and to tell a
+# historical approval from a never-reviewed PR in --pending; never written, and
+# never approval for promotion (_delivery.py checks CONTEXT only).
+LEGACY_CONTEXTS = ("codex-review/gpt-6.1-sol",)
 MARKER = "<!-- codex-pr-review -->"
 SHA = re.compile(r"^[0-9a-f]{40}$")
 QUOTA = re.compile(r"usage limit|rate limit|try again at|quota", re.I)
@@ -287,24 +292,31 @@ def record(api: API, pr: dict, verdict: str, base: str, head: str, session: str,
     api.call("POST", f"/issues/{pr['number']}/comments", {"body": body})
 
 
-def reviewed_base(api: API, sha: str) -> str:
-    """Base of the newest owner review status on this head (any verdict), or ''."""
+def owner_statuses(api: API, sha: str, contexts: tuple[str, ...]) -> list:
     owner = api.repo.split("/")[0].lower()
-    rows = [s for s in api.call("GET", f"/commits/{sha}/statuses?per_page=100") or []
-            if s.get("context") == CONTEXT
+    return [s for s in api.call("GET", f"/commits/{sha}/statuses?per_page=100") or []
+            if s.get("context") in contexts
             and str(s.get("creator", {}).get("login", "")).lower() == owner]
-    for status in sorted(rows, key=lambda s: s["id"], reverse=True):
-        match = BASE_IN_STATUS.search(str(status.get("description", "")))
-        if match:
-            return match.group(1)
+
+
+def reviewed_base(api: API, sha: str) -> str:
+    """Base of the newest owner review status on this head (any verdict), or ''.
+
+    Current-profile statuses come first; a head reviewed only under an earlier
+    profile (e.g. published while quota-pending) still yields its recorded range,
+    which the backfill then reviews afresh with the current profile."""
+    rows = owner_statuses(api, sha, (CONTEXT, *LEGACY_CONTEXTS))
+    for current in (True, False):
+        group = [s for s in rows if (s.get("context") == CONTEXT) == current]
+        for status in sorted(group, key=lambda s: s["id"], reverse=True):
+            match = BASE_IN_STATUS.search(str(status.get("description", "")))
+            if match:
+                return match.group(1)
     return ""
 
 
-def latest_status(api: API, sha: str) -> dict | None:
-    owner = api.repo.split("/")[0].lower()
-    rows = api.call("GET", f"/commits/{sha}/statuses?per_page=100") or []
-    mine = [s for s in rows if s.get("context") == CONTEXT
-            and str(s.get("creator", {}).get("login", "")).lower() == owner]
+def latest_status(api: API, sha: str, contexts: tuple[str, ...] = (CONTEXT,)) -> dict | None:
+    mine = owner_statuses(api, sha, contexts)
     return max(mine, key=lambda s: s["id"]) if mine else None
 
 
@@ -324,9 +336,13 @@ def list_pending(api: API) -> int:
     for pr in rows:
         head = pr["head"]["sha"]
         status = latest_status(api, head)
-        if status and status["state"] == "success":
+        legacy = None if status else latest_status(api, head, LEGACY_CONTEXTS)
+        if (status or legacy or {}).get("state") == "success":
+            # A legacy APPROVE was the approval in force when it was given; promoting
+            # that head now still needs a current-profile APPROVE (_delivery.py).
             continue
-        label = status["description"] if status else "never reviewed"
+        label = (status["description"] if status else
+                 f"{legacy['description']} ({legacy['context']})" if legacy else "never reviewed")
         merged = "merged" if pr.get("merged_at") else pr["state"]
         print(f"#{pr['number']} [{merged}] {head[:12]} {label} — {pr['title']}")
         count += 1
@@ -387,12 +403,20 @@ def finish(api: API, pr: dict, entry: dict, binding: Path, unrecorded: Path) -> 
     return {"APPROVE": 0, "REQUEST_CHANGES": 2, "QUOTA_PENDING": 3}.get(verdict, 1)
 
 
+def current_profile(entry: dict) -> bool:
+    """Only a verdict produced by the current model/effort may be posted as CONTEXT."""
+    return entry.get("model") == MODEL and entry.get("effort") == EFFORT
+
+
 def retry_record(api: API, pr: dict, head: str, binding: Path, unrecorded: Path) -> int:
     if not unrecorded.is_file():
         raise Blocked("No unrecorded verdict in this checkout")
     entry = json.loads(unrecorded.read_text(encoding="utf-8"))
     if entry.get("repo") != api.repo or entry.get("pr") != pr["number"] or entry.get("head") != head:
         raise Blocked("The unrecorded verdict is for another PR or head")
+    if not current_profile(entry):
+        raise Blocked("The unrecorded verdict came from another review profile; "
+                      f"run a first round with {MODEL}/{EFFORT}")
     return finish(api, pr, entry, binding, unrecorded)
 
 
@@ -448,7 +472,8 @@ def main() -> int:
         unrecorded = ROOT / ".codex-review" / "pr_review_unrecorded.json"
         if args.retry_record:
             return retry_record(api, pr, head, binding, unrecorded)
-        if unrecorded.is_file() and json.loads(unrecorded.read_text(encoding="utf-8")).get("head") == head:
+        pending_entry = json.loads(unrecorded.read_text(encoding="utf-8")) if unrecorded.is_file() else {}
+        if pending_entry.get("head") == head and current_profile(pending_entry):
             raise Blocked("A verdict for this head was not recorded on GitHub; run --retry-record")
         resume_session = None
         previous_head = None
@@ -495,7 +520,8 @@ def main() -> int:
                  "session": session, "bound_session": resume_session or session,
                  "message": message, "resume": args.resume, "rebuttal": bool(rebuttal),
                  "same_head_rebuttal": scope == "rebuttal", "scope": scope, "prev": prev_link,
-                 "replaced": previous_head if scope in ("full", "legacy") else ""}
+                 "replaced": previous_head if scope in ("full", "legacy") else "",
+                 "model": MODEL, "effort": EFFORT}
         unrecorded.write_text(json.dumps(entry), encoding="utf-8")
         return finish(api, pr, entry, binding, unrecorded)
     except (Blocked, OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:

@@ -261,7 +261,8 @@ class RecordRetryTests(unittest.TestCase):
             unrecorded = Path(tmp) / "pr_review_unrecorded.json"
             binding.write_text(json.dumps({"head": "b" * 40}), encoding="utf-8")
             entry = {"repo": "owner/repo", "pr": 7, "verdict": "APPROVE", "base": "c" * 40, "head": SHA,
-                     "session": "s", "bound_session": "s", "message": "APPROVE", "resume": True}
+                     "session": "s", "bound_session": "s", "message": "APPROVE", "resume": True,
+                     "model": pr.MODEL, "effort": pr.EFFORT}
             unrecorded.write_text(json.dumps(entry), encoding="utf-8")
             api, pull = FakeAPI(lambda path: None), {"number": 7}
             with patch.object(pr, "record", side_effect=pr.Blocked("HTTP 502")), \
@@ -283,6 +284,66 @@ class RecordRetryTests(unittest.TestCase):
             for pull, head in (({"number": 8}, SHA), ({"number": 7}, "b" * 40)):
                 with self.subTest(pull=pull, head=head), self.assertRaises(pr.Blocked):
                     pr.retry_record(FakeAPI(lambda path: None), pull, head, Path(tmp) / "b.json", unrecorded)
+
+
+class ProfileSwitchTests(unittest.TestCase):
+    """PR #164 round 1: the 2026-11-18 switch to gpt-6.2-astra / medium."""
+
+    def test_retry_refuses_a_verdict_from_another_profile(self):
+        import tempfile
+        from unittest.mock import patch
+        base = {"repo": "owner/repo", "pr": 7, "verdict": "APPROVE", "base": "c" * 40, "head": SHA,
+                "session": "s", "bound_session": "s", "message": "APPROVE", "resume": False}
+        for profile in ({}, {"model": "gpt-6.1-sol", "effort": "xhigh"}, {"model": pr.MODEL, "effort": "xhigh"}):
+            with self.subTest(profile=profile), tempfile.TemporaryDirectory() as tmp:
+                unrecorded = Path(tmp) / "u.json"
+                unrecorded.write_text(json.dumps({**base, **profile}), encoding="utf-8")
+                with patch.object(pr, "record") as record, self.assertRaises(pr.Blocked):
+                    pr.retry_record(FakeAPI(lambda path: None), {"number": 7}, SHA,
+                                    Path(tmp) / "b.json", unrecorded)
+                record.assert_not_called()
+                self.assertTrue(unrecorded.is_file())
+
+    def test_backfill_recovers_the_range_from_a_legacy_status(self):
+        legacy = pr.LEGACY_CONTEXTS[0]
+        statuses = [
+            {"id": 5, "context": legacy, "creator": {"login": "owner"},
+             "description": f"quota-pending base={'b' * 40}"},
+            {"id": 6, "context": legacy, "creator": {"login": "intruder"},
+             "description": f"APPROVE base={'d' * 40}"},
+        ]
+        self.assertEqual(pr.reviewed_base(FakeAPI(lambda path: statuses), SHA), "b" * 40)
+        current = statuses + [{"id": 1, "context": pr.CONTEXT, "creator": {"login": "owner"},
+                               "description": f"REQUEST_CHANGES base={'c' * 40}"}]
+        self.assertEqual(pr.reviewed_base(FakeAPI(lambda path: current), SHA), "c" * 40)
+
+    def test_pending_keeps_legacy_approvals_and_lists_legacy_pending(self):
+        import io
+        from contextlib import redirect_stdout
+        legacy = pr.LEGACY_CONTEXTS[0]
+        heads = {"1" * 40: [{"id": 1, "context": legacy, "state": "success", "creator": {"login": "owner"},
+                             "description": "APPROVE"}],
+                 "2" * 40: [{"id": 2, "context": legacy, "state": "pending", "creator": {"login": "owner"},
+                             "description": "quota-pending"}],
+                 "3" * 40: [],
+                 "4" * 40: [{"id": 4, "context": pr.CONTEXT, "state": "success", "creator": {"login": "owner"},
+                             "description": "APPROVE"}]}
+        prs = [{"number": n, "head": {"sha": sha}, "state": "open", "title": "t"}
+               for n, sha in enumerate(heads, 1)]
+
+        def routes(path):
+            if path.startswith("/pulls"):
+                return prs
+            return heads[path.split("/")[2]]
+        out = io.StringIO()
+        with redirect_stdout(out):
+            pr.list_pending(FakeAPI(routes))
+        text = out.getvalue()
+        self.assertNotIn("#1 ", text)
+        self.assertIn(f"#2 [open] {'2' * 12} quota-pending ({legacy})", text)
+        self.assertIn("#3 [open]", text)
+        self.assertNotIn("#4 ", text)
+        self.assertIn("2 PR(s)", text)
 
 
 class RebuttalTests(unittest.TestCase):
