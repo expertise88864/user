@@ -36,7 +36,7 @@ class IdentityTests(unittest.TestCase):
                        {"type": "turn.completed", "usage": {"input_tokens": 5, "output_tokens": 2}}]
         self.records = [{"type": "session_meta", "payload": {"id": SID, "cwd": str(self.root)}},
                         {"type": "turn_context", "timestamp": datetime.now(timezone.utc).isoformat(),
-                         "payload": {"cwd": str(self.root), "model": "gpt-6.1-sol", "effort": "xhigh",
+                         "payload": {"cwd": str(self.root), "model": "gpt-6.2-astra", "effort": "medium",
                                      "turn_id": "current-turn", "sandbox_policy": {"type": "read-only"}}}]
 
     def save(self):
@@ -50,7 +50,7 @@ class IdentityTests(unittest.TestCase):
     def test_actual_metadata_and_hashes(self):
         result = self.verify(expected=SID.upper())
         self.assertEqual((result["sessionId"], result["tokensUsed"]), (SID, 7))
-        self.assertEqual(result["actualEffort"], "xhigh")
+        self.assertEqual(result["actualEffort"], "medium")
         self.assertEqual(len(result["sessionLogSHA256"]), 64)
 
     def test_bom_tagged_utf16_events_preserve_actual_identity(self):
@@ -61,8 +61,8 @@ class IdentityTests(unittest.TestCase):
                 self.raw.write_bytes(bom + payload.encode(encoding))
                 result = identity.verify(self.raw, self.root, self.sessions, self.started, SID)
                 self.assertEqual((result["sessionId"], result["tokensUsed"]), (SID, 7))
-                self.assertEqual(result["actualModel"], "gpt-6.1-sol")
-                self.assertEqual(result["actualEffort"], "xhigh")
+                self.assertEqual(result["actualModel"], "gpt-6.2-astra")
+                self.assertEqual(result["actualEffort"], "medium")
 
     def test_malformed_encoding_is_not_silently_trusted(self):
         for raw in (b"\xff", b"\xff\xfe{", b"\xfe\xff\x00"):
@@ -171,8 +171,8 @@ BASH = shutil.which("bash") or ("C:/Program Files/Git/bin/bash.exe" if Path("C:/
 
 @unittest.skipUnless(BASH, "Bash operator requires Bash")
 class BashWrapperTests(unittest.TestCase):
-    def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.1-sol",
-                    actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
+    def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.2-astra",
+                    actual_effort="medium", actual_sandbox="read-only", count=1, legacy=False,
                     retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False,
                     reviewed_head=None, pr_range=None, prev_tip=None, rebuttal=None,
                     full_from=None, verification=None):
@@ -203,7 +203,7 @@ class BashWrapperTests(unittest.TestCase):
             if reviewed_head is not None:
                 (state / "last_reviewed_head").write_text(
                     {"head": head, "base": self.fixture_base}.get(reviewed_head, reviewed_head) + "\n")
-            model, effort = ("gpt-6.1-sol", "high") if legacy else ("gpt-6.1-sol", "xhigh")
+            model, effort = ("gpt-6.1-sol", "xhigh") if legacy else ("gpt-6.2-astra", "medium")
             (state / "usage.tsv").write_text("timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n"
                 f"now\tfixture\tdeep\t{model}\t{effort}\tHEAD\t{SID}\t0\tREQUEST_CHANGES\t1\t{count}\n",
                 newline="\r\n" if crlf else "\n")
@@ -290,8 +290,8 @@ fi
             called = (root / "called-args.json").exists()
             if called:
                 args = json.loads((root / "called-args.json").read_text())
-                self.assertEqual(args[args.index("--model") + 1], "gpt-6.1-sol")
-                self.assertIn("model_reasoning_effort=xhigh", args)
+                self.assertEqual(args[args.index("--model") + 1], "gpt-6.2-astra")
+                self.assertIn("model_reasoning_effort=medium", args)
                 if os.name == "nt":
                     self.assertIn("windows.sandbox=unelevated", args)
                 # Only this repository is marked safe, only for the review child.

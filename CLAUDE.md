@@ -1,10 +1,17 @@
 # CLAUDE.md — chendermatologist.com 操作手冊(給每一個 AI session)
 
+## 最新使用者定案：審查模型改為 gpt-6.2-astra／medium（2026-11-18）
+
+本節優先於下方所有關於審查模型與 effort 的敘述。
+- 所有程式審查（PR review、diff review、`--resume` 續審、quota-pending 與舊 pending 補審）一律 `gpt-6.2-astra`、reasoning effort `medium`，取代 2026-10-14 起的 `gpt-6.2-astra`／`medium`；仍經 repo wrapper、唯讀、以 session 紀錄證明實際模型與 effort，證明不了就 fail closed，不 fallback 到其他模型或 effort。
+- PR commit status 改為 `codex-review/gpt-6.2-astra`；舊 `codex-review/gpt-6.2-astra` status 與舊 profile 的 session 不再算現行核可，也不能 `--resume`，需以新 profile 重新首輪審查。
+- Codex CLI：2026-11-18 實測 Codex 桌面版內附 0.163.0-alpha 不支援 `gpt-6.2-astra`，npm 全域 `@openai/codex` 0.169.1 可用；wrapper 仍挑本機版本最高者（`python tools/codex_review_identity.py which` 顯示實際選用）。不支援時先問使用者，不得降級。
+
 ## 最新使用者定案：每個 PR review 一次（2026-10-15）
 
 本節優先於下方及舊文件中所有「逐 commit review」「push 前 review」「review trailer」「audit commit」規則；模型、CI、Preview、資料保護與醫療內容核可要求不變。
 - 不再逐 commit review，也不用 pre-commit／commit-msg hook 審查；commit 不需要 review trailer。
-- 分支推上 `codex/*` 後執行 `python tools/pr_review.py`：開（或找到）指向 main 的同庫 PR（本網站 `require_pr` 的 PR CI 與 Preview 也用同一個 PR），以 `gpt-6.1-sol`／`xhigh` 唯讀審查 `merge-base(main, head)..head` 整段 diff，結論與 findings 寫成 PR comment，並在 exact head SHA 設 `codex-review/gpt-6.1-sol` commit status。
+- 分支推上 `codex/*` 後執行 `python tools/pr_review.py`：開（或找到）指向 main 的同庫 PR（本網站 `require_pr` 的 PR CI 與 Preview 也用同一個 PR），以 `gpt-6.2-astra`／`medium` 唯讀審查 `merge-base(main, head)..head` 整段 diff，結論與 findings 寫成 PR comment，並在 exact head SHA 設 `codex-review/gpt-6.2-astra` commit status。
 - findings 逐條驗證（CONFIRMED／REJECTED／UNCERTAIN），只修 CONFIRMED；修正後 push，再跑 `python tools/pr_review.py --resume`（同一 session）直到 APPROVE。head 一變，舊 APPROVE 即作廢。
 - 續審只審「上次裁決的 head → 目前 head」的差異並複核前一輪 findings；rebase 使舊 head 不在歷史中時自動改為整段重審（PR comment 註明）。生成物（清單在 `tools/review_scope.py`，依 PIPELINE.md）首輪與續審都改審產生器與源頭資料＋少量抽樣頁，一致性由 CI「Canonical generated file consistency」把關。`--verification 檔案` 把本機驗證摘要帶進提示（使用者 2026-10-15 核可，D-19）。
 - 有 finding 經驗證為 REJECTED、程式不該改時：把證據寫成反駁檔（不可含 diff），執行 `python tools/pr_review.py --resume --rebuttal 反駁檔`，在同一 session 請審查者重新查證；同一 head 只能反駁一次，審查者不接受就維持 REQUEST_CHANGES（使用者定案 2026-10-15）。
@@ -20,7 +27,7 @@
 - HsiaoEye 視覺基準只能由 Ubuntu 產生並人工確認，不自動接受差異；保留 CMS 新修改，衝突停止，不 force-push。CMS 存檔不等於正式發佈完成。
 - 晨報候選 CI 不得寄信、寫回正式 state 或觸發正式排程；變更產報/LLM/外部資料關鍵路徑時另做不寄信 dry-run。既有正式寄信排程不得因候選驗證中斷。
 - CI 失敗持續診斷並修正可確認缺陷，修正後重跑完整遠端驗證；取消、逾時、缺失、讀不到及應跑卻跳過皆不通過。禁止 skip-ci、降門檻或繞 hook 製造全綠。
-- 審查方式見上方 2026-10-15 定案（每個 PR 一次，gpt-6.1-sol／xhigh／read-only）；quota pending 只延後模型審查，不豁免正式發佈的遠端 CI。
+- 審查方式見上方 2026-10-15 定案（每個 PR 一次，gpt-6.2-astra／medium／read-only）；quota pending 只延後模型審查，不豁免正式發佈的遠端 CI。
 - main 發佈後還要驗證 exact-SHA 正式 CI／部署及適用 smoke checks，才可宣告交付；純文件變更也走候選流程。
 - 詳細入口、範圍與限制見 REMOTE_CI_DELIVERY.md。不得把本機快速檢查說成完整 CI，也不得把候選 CI 綠燈當作正式部署成功。
 
@@ -45,12 +52,12 @@ zh-Hant 為源頭、`/en/` 鏡像為生成物。~53 篇文章 + ~130 支根目�
    模型不得自行判斷臨床正確性。流程:草稿 → 使用者說「通過」→ 注入 → 候選 push → PR review(`tools/pr_review.py`)→ 發佈。
 2. **合規紅線**:作者是住院醫師 —— schema/內文**不得**掛醫院隸屬(worksFor/affiliation)、
    不得出現掛號/預約/價格/診所名(醫療法 §9)。`hasCredential` 只放「醫師」執照、不放號碼。
-3. **每個 PR 必過一次 Codex `gpt-6.1-sol`/`xhigh` review**(使用者 2026-10-15 定案,取代逐 commit／每次 push 前審查)。流程:
+3. **每個 PR 必過一次 Codex `gpt-6.2-astra`/`medium` review**(使用者 2026-10-15 定案,取代逐 commit／每次 push 前審查)。流程:
    `codex/*` 候選推上後跑 `python tools/pr_review.py`(開／找 PR,經 repo wrapper `tools/codex_review.sh` 唯讀審查
    `merge-base(main, head)..head`;不貼 diff,MCP 與直接 `codex exec` 都不用)
    → 逐條驗證 finding、只修 CONFIRMED(REJECTED 可附證據 `--resume --rebuttal` 每個 head 一次)
    → push 後 `python tools/pr_review.py --resume` 直到 APPROVE 才推 main
-   (pre-push hook 檢查 exact head 的 `codex-review/gpt-6.1-sol` status)。額度不足記 quota-pending:可發佈但不是通過,
+   (pre-push hook 檢查 exact head 的 `codex-review/gpt-6.2-astra` status)。額度不足記 quota-pending:可發佈但不是通過,
    之後 `--pending` 補審;codex 因其他原因不可用且使用者未明示跳過 → **不推 main**。本專案 codex 已實際攔下多次真問題。
 4. **生成物不手改**。哪些是生成物、改了源頭要跑什麼:見 PIPELINE.md。
    通則:`en/**`、`sitemap.xml`、feeds、`llms-full.txt`、`ai/*.json`、`.well-known/ai.txt`、

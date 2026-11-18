@@ -15,10 +15,11 @@ import subprocess
 import sys
 
 UUID = re.compile(r"[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}", re.I)
-# User decision 2026-10-14: every diff review runs gpt-6.1-sol at xhigh effort.
+# User decision 2026-11-18: every review runs gpt-6.2-astra at medium effort
+# (replacing gpt-6.1-sol / xhigh from 2026-10-14).
 # There is no fallback model or effort; a session that cannot prove both fails.
-MODEL = "gpt-6.1-sol"
-EFFORT = "xhigh"
+MODEL = "gpt-6.2-astra"
+EFFORT = "medium"
 _VERSION = re.compile(r"(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.]+))?")
 
 
@@ -63,9 +64,11 @@ def codex_candidates() -> list[str]:
 
 
 def find_codex() -> tuple[str, str]:
-    """Highest-version runnable CLI. The npm build (0.155.1) rejects gpt-6.1-sol
-    for ChatGPT accounts while the desktop app's bundled alpha accepts it, so a
-    PATH-only lookup would pick a CLI that cannot run the required model. The
+    """Highest-version runnable CLI. Bundled and npm builds lag each other: in
+    2026-11 the desktop app's bundled 0.163.0-alpha rejects gpt-6.2-astra for
+    ChatGPT accounts while npm 0.169.1 accepts it (in 2026-10 it was the other
+    way round), so a fixed-location lookup could pick a CLI that cannot run the
+    required model. The
     chosen CLI is not trusted for the model either: verify() still checks the
     actual session record."""
     ranked = []

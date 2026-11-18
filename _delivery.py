@@ -317,7 +317,7 @@ def verify_pr_checks(sha: str, cfg: dict, api: API, runs: list, candidate: dict)
     return evidence
 
 
-REVIEW_CONTEXT = "codex-review/gpt-6.1-sol"
+REVIEW_CONTEXT = "codex-review/gpt-6.2-astra"
 # tools/pr_review.py: "<verdict> base=<sha> [prev=<sha>] [s=<session prefix>]". A status
 # with prev= reviewed only prev..head and continues an earlier verdict of the same
 # session; one without reviewed base..head whole (also every status older tools wrote).

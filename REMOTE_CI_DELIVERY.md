@@ -18,8 +18,8 @@ change medical content, visual baselines, credentials, recipients or scoring.
 7. Run: python _delivery.py verify FULL_SHA --phase candidate --wait 1800
 8. Review the whole PR once: python tools/pr_review.py (opens the PR if needed; the
    same PR serves require_pr, PR CI and Preview).
-   gpt-6.1-sol/xhigh read-only reviews merge-base(main, head)..head; the verdict goes to a
-   PR comment and to the owner's `codex-review/gpt-6.1-sol` status on the exact head.
+   gpt-6.2-astra/medium read-only reviews merge-base(main, head)..head; the verdict goes to a
+   PR comment and to the owner's `codex-review/gpt-6.2-astra` status on the exact head.
    Validate findings, fix only CONFIRMED ones, push, then python tools/pr_review.py --resume
    until APPROVE. A new head needs a new verdict (and new CI/Preview evidence). A finding
    REJECTED with evidence may be rebutted once per head: python tools/pr_review.py --resume

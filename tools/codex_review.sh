@@ -6,8 +6,9 @@
 #   tools/codex_review.sh resume [session-id]
 #
 # mode:
-#   diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / xhigh / read-only
-#                           (使用者 2026-10-14 定案:任何 diff review 一律如此,不降級)。
+#   diff / targeted / deep  相容模式名稱；皆固定 gpt-6.2-astra / medium / read-only
+#                           (使用者 2026-11-18 定案,取代 2026-10-14 的 gpt-6.1-sol / xhigh:
+#                           任何 review 一律如此,不降級)。
 #                           完整交付差異，沒有檔案、finding 或輪數上限。
 #   resume                  修正後沿用同一個已驗證 session 續審至通過。上一輪可信審查
 #                           的 HEAD 若仍是目前 HEAD 的祖先，只審「該 HEAD..HEAD + 未提交
@@ -29,7 +30,7 @@
 #   CODEX_REVIEW_HARDEN=0      關閉 web_search/apps 的額外 -c 硬化(若該 CLI 版本不認這些鍵)。
 #   CODEX_REVIEW_STRICT=0      關閉 --strict-config。
 #   CODEX_REVIEW_CLI           明示要用的 Codex CLI;未設時由 codex_review_identity.py which
-#                              挑版本最高者(npm 0.155.1 不支援 gpt-6.1-sol,桌面版內附的可以)。
+#                              挑版本最高者(桌面版內附 0.163.0-alpha 不支援 gpt-6.2-astra,npm 0.169.1 可以)。
 #                              不論哪一支,實際模型/effort 一律由 session 紀錄驗證。
 #   CODEX_REVIEW_TIP / CODEX_REVIEW_BASE
 #                              tools/pr_review.py 設定:整個 PR 一次審查(使用者 2026-10-15 定案),
@@ -40,7 +41,7 @@
 #   CODEX_REVIEW_REBUTTAL_FILE PR 續審時對 REJECTED finding 的證據(不可含 diff),審查者自行查證。
 set -uo pipefail
 
-MODEL="gpt-6.1-sol"
+MODEL="gpt-6.2-astra"
 HARDEN="${CODEX_REVIEW_HARDEN:-1}"
 STRICT="${CODEX_REVIEW_STRICT:-1}"
 
@@ -91,9 +92,9 @@ MODE="${1:-}"
 [ -n "$MODE" ] || die "缺少 mode。用法: $0 <diff|targeted|deep> <base-ref> [task-context-file] | $0 resume [session-id]"
 
 case "$MODE" in
-  diff) EFFORT="xhigh" ;;
-  targeted) EFFORT="xhigh" ;;
-  deep) EFFORT="xhigh" ;;
+  diff) EFFORT="medium" ;;
+  targeted) EFFORT="medium" ;;
+  deep) EFFORT="medium" ;;
   resume) EFFORT="" ;;
   *) die "未知 mode '$MODE'(可用:diff | targeted | deep | resume)" ;;
 esac
@@ -269,10 +270,10 @@ if [ "$MODE" = "resume" ]; then
     END { print last }' "$USAGE_TSV")"
   [ -n "$VERIFIED_ROW" ] || die "No completed verified row for this session; start a fresh first review."
   [ "$(printf '%s' "$VERIFIED_ROW" | cut -f4)" = "$MODEL" ] &&
-    [ "$(printf '%s' "$VERIFIED_ROW" | cut -f5)" = "xhigh" ] &&
+    [ "$(printf '%s' "$VERIFIED_ROW" | cut -f5)" = "medium" ] &&
     [ "$(printf '%s' "$VERIFIED_ROW" | cut -f7 | tr 'A-Z' 'a-z')" = "$SID" ] ||
-    die "Recorded session profile is not $MODEL/xhigh; start a fresh first review."
-  RESUME_EFFORT="xhigh"
+    die "Recorded session profile is not $MODEL/medium; start a fresh first review."
+  RESUME_EFFORT="medium"
   RESUME_BASE="$(printf '%s' "$VERIFIED_ROW" | cut -f6)";   [ -n "$RESUME_BASE" ] || RESUME_BASE="unavailable"
   NEXT_PASS=$((PREV_PASS + 1))
   build_flags "$RESUME_EFFORT" resume

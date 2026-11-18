@@ -7,8 +7,9 @@ tools/codex_review.ps1 — 本 repo 唯一的外部 code-review 入口(Codex CLI
   .\tools\codex_review.ps1 resume [session-id]
 
 mode:
-  diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / xhigh / read-only
-                          (使用者 2026-10-14 定案:任何 diff review 一律如此,不降級)。
+  diff / targeted / deep  相容模式名稱；皆固定 gpt-6.2-astra / medium / read-only
+                          (使用者 2026-11-18 定案,取代 2026-10-14 的 gpt-6.1-sol / xhigh:
+                          任何 review 一律如此,不降級)。
                           完整交付差異，沒有檔案、finding 或輪數上限。
   resume                  修正後沿用同一個已驗證 session，完整重審至通過。
 
@@ -24,7 +25,7 @@ mode:
   CODEX_REVIEW_HARDEN=0      關閉 web_search/apps 的額外 -c 硬化。
   CODEX_REVIEW_STRICT=0      關閉 --strict-config。
   CODEX_REVIEW_CLI           明示要用的 Codex CLI;未設時由 codex_review_identity.py which
-                             挑版本最高者(npm 0.155.1 不支援 gpt-6.1-sol,桌面版內附的可以)。
+                             挑版本最高者(桌面版內附 0.163.0-alpha 不支援 gpt-6.2-astra,npm 0.169.1 可以)。
                              不論哪一支,實際模型/effort 一律由 session 紀錄驗證。
 #>
 [CmdletBinding()]
@@ -37,7 +38,7 @@ param(
 # 刻意用 Continue 而非 Stop:PS 5.1 對 native exe 做 2>&1 會把每行 stderr 包成 NativeCommandError,
 # 在 Stop 模式下被誤判為終止錯誤。本腳本改以 $LASTEXITCODE 與明確 Die() 控制流程。
 $ErrorActionPreference = 'Continue'
-$Model = 'gpt-6.1-sol'
+$Model = 'gpt-6.2-astra'
 $Harden = if ($env:CODEX_REVIEW_HARDEN) { $env:CODEX_REVIEW_HARDEN } else { '1' }
 $Strict = if ($env:CODEX_REVIEW_STRICT) { $env:CODEX_REVIEW_STRICT } else { '1' }
 
@@ -79,9 +80,9 @@ if (-not (Test-Path $UsageTsv)) {
 }
 
 switch ($Mode) {
-    'diff'     { $Effort = 'xhigh' }
-    'targeted' { $Effort = 'xhigh' }
-    'deep'     { $Effort = 'xhigh' }
+    'diff'     { $Effort = 'medium' }
+    'targeted' { $Effort = 'medium' }
+    'deep'     { $Effort = 'medium' }
     'resume'   { $Effort = '' }
     default    { Die "未知 mode '$Mode'(可用:diff | targeted | deep | resume)" }
 }
@@ -252,10 +253,10 @@ if ($Mode -eq 'resume') {
     })
     if (-not $verifiedRows.Count) { Die 'No completed verified row for this session; start a fresh first review.' }
     $last = $verifiedRows[-1] -split "`t"
-    if ($last.Count -lt 7 -or $last[3] -ne $Model -or $last[4] -ne 'xhigh' -or $last[6] -ne $Sid) {
-        Die "Recorded session profile is not $Model/xhigh; start a fresh first review."
+    if ($last.Count -lt 7 -or $last[3] -ne $Model -or $last[4] -ne 'medium' -or $last[6] -ne $Sid) {
+        Die "Recorded session profile is not $Model/medium; start a fresh first review."
     }
-    $ResumeEffort = 'xhigh'
+    $ResumeEffort = 'medium'
     $ResumeBase   = if ($last.Count -ge 6 -and $last[5]) { $last[5] } else { 'unavailable' }
 
     $ResumePrompt = @'
