@@ -34,15 +34,17 @@ return /^[a-z0-9-]+$/.test(slug) ? slug : '';
 // Render dynamic pie chart of article categories
 var pieEl = document.getElementById('dn-article-pie');
 if (pieEl && window.DN && DN.ARTICLES) {
+// Only published articles: unpublished ones (e.g. a hidden report) must not be counted or linked.
+var pieArts = DN.publishedArticles ? DN.publishedArticles() : DN.ARTICLES.filter(function (a) { return !a.unpublished; });
 var counts = {};
-DN.ARTICLES.forEach(function (a) {
+pieArts.forEach(function (a) {
 var c = ['myth', 'rx', 'product', 'other'].indexOf(a.cat) !== -1 ? a.cat : 'other';
 counts[c] = (counts[c] || 0) + 1;
 });
 var catLabels = { myth:'迷思澄清', rx:'處方治療', product:'產品 / 成分', other:'其他' };
 var catColors = { myth:'#fef3c7', rx:'#ddd6fe', product:'#a5f3fc', other:'#dcd9d1' };
 var catBorder = { myth:'#d97706', rx:'#7c3aed', product:'#0e7c86', other:'#5e574e' };
-var total = DN.ARTICLES.length;
+var total = pieArts.length;
 // Build SVG donut chart
 var size = 220, r = 80, cx = size/2, cy = size/2;
 var svg = '<svg viewBox="0 0 ' + size + ' ' + size + '" width="' + size + '" height="' + size + '" style="flex-shrink:0">';
@@ -79,10 +81,11 @@ var mapStats = document.getElementById('dn-reading-map-stats');
 var mapReset = document.getElementById('dn-reading-map-reset');
 if (mapSvg && window.DN && DN.ARTICLES) {
 function renderReadingMap() {
-var arts = DN.ARTICLES.slice();
-var read = (DN.getReadSlugs && DN.getReadSlugs()) || [];
+var arts = DN.publishedArticles ? DN.publishedArticles() : DN.ARTICLES.filter(function (a) { return !a.unpublished; });
 var readSet = {};
-read.forEach(function (s) { readSet[s] = true; });
+((DN.getReadSlugs && DN.getReadSlugs()) || []).forEach(function (s) { readSet[s] = true; });
+// Progress counts only articles shown on the map.
+var read = arts.filter(function (a) { return readSet[a.slug]; }).map(function (a) { return a.slug; });
 // Group by category, then sub-cluster by tag
 var groups = { myth: [], rx: [], product: [] };
 arts.forEach(function (a) {
