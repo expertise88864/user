@@ -10,7 +10,6 @@ import math
 import os
 from pathlib import Path
 import re
-import shutil
 import subprocess
 import sys
 
@@ -58,6 +57,18 @@ def npm_native_binaries(shim: str) -> list[str]:
     return sorted({hit for parts in patterns for hit in glob.glob(os.path.join(package, *parts))})
 
 
+def path_lookup(name: str) -> str | None:
+    """First `name` in an absolute PATH directory. Unlike shutil.which on Windows,
+    never the current directory: during a backfill that is the reviewed worktree,
+    whose committed files must not be executed (even for --version)."""
+    for directory in os.environ.get("PATH", "").split(os.pathsep):
+        if directory and os.path.isabs(directory):
+            candidate = os.path.join(directory, name)
+            if os.path.isfile(candidate):
+                return candidate
+    return None
+
+
 def codex_candidates() -> list[str]:
     """Codex CLIs on this machine: the desktop app's bundled builds, then PATH.
 
@@ -70,7 +81,7 @@ def codex_candidates() -> list[str]:
     if local:
         found.extend(sorted(glob.glob(os.path.join(local, "OpenAI", "Codex", "bin", "*", "codex.exe"))))
     for name in (("codex.cmd", "codex.exe", "codex") if os.name == "nt" else ("codex",)):
-        hit = shutil.which(name)
+        hit = path_lookup(name)
         if hit:
             found.append(hit)
             if os.name == "nt":

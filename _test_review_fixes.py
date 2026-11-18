@@ -531,6 +531,27 @@ class ReviewCliSelectionTests(unittest.TestCase):
         # 2026-11: npm 0.169.1 runs gpt-6.2-astra; the bundled 0.163.0-alpha does not.
         self.assertGreater(key('codex-cli 0.169.1'), key('codex-cli 0.163.0-alpha.10.2'))
 
+    def test_discovery_never_runs_a_cli_from_the_current_directory(self):
+        """PR #164 round 5 (P1): shutil.which on Windows searches the current directory,
+        which during a backfill is the reviewed worktree."""
+        name = 'codex.exe' if os.name == 'nt' else 'codex'
+        with tempfile.TemporaryDirectory() as directory:
+            cwd, bin_dir = Path(directory) / 'reviewed', Path(directory) / 'bin'
+            cwd.mkdir()
+            bin_dir.mkdir()
+            (cwd / name).write_bytes(b'')
+            (bin_dir / name).write_bytes(b'')
+            previous = os.getcwd()
+            os.chdir(cwd)
+            try:
+                with patch.dict(os.environ, {'PATH': os.pathsep.join(['.', '', str(bin_dir)]),
+                                             'LOCALAPPDATA': str(Path(directory) / 'none')}):
+                    found = self.identity.codex_candidates()
+                    self.assertEqual(self.identity.path_lookup(name), str(bin_dir / name))
+            finally:
+                os.chdir(previous)
+        self.assertEqual([os.path.normcase(p) for p in found], [os.path.normcase(str(bin_dir / name))])
+
     @unittest.skipUnless(os.name == 'nt', 'Windows npm shim layout')
     def test_npm_shim_is_followed_to_its_native_binary(self):
         """PR #164: cmd.exe cut the multi-line prompt passed through npm's codex.cmd."""
@@ -544,7 +565,7 @@ class ReviewCliSelectionTests(unittest.TestCase):
             shim.write_text('@echo off\n', encoding='utf-8')
             hits = {'codex.cmd': str(shim), 'codex.exe': None, 'codex': None}
             with patch.dict(os.environ, {'LOCALAPPDATA': str(Path(directory) / 'none')}), \
-                    patch.object(self.identity.shutil, 'which', side_effect=hits.get):
+                    patch.object(self.identity, 'path_lookup', side_effect=hits.get):
                 found = self.identity.codex_candidates()
         self.assertEqual([os.path.normcase(p) for p in found], [os.path.normcase(str(native))])
 

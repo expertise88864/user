@@ -160,7 +160,8 @@ resolve_cli() {
     CODEX_CLI="$CODEX_REVIEW_CLI"
   else
     # -X utf8: Python writes the (possibly non-ASCII) path as UTF-8 even when piped.
-    CODEX_CLI="$("$PYTHON" -X utf8 "$SCRIPT_DIR/codex_review_identity.py" which | head -1 | tr -d '\r')" ||
+    # From the tooling checkout: discovery executes candidates (--version) unsandboxed.
+    CODEX_CLI="$(cd "$TOOL_ROOT" && "$PYTHON" -X utf8 "$SCRIPT_DIR/codex_review_identity.py" which | head -1 | tr -d '\r')" ||
       CODEX_CLI=""
   fi
   [ -n "$CODEX_CLI" ] || die "找不到可用的 Codex CLI;不降級到其他模型。"
