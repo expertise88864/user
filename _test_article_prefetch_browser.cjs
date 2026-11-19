@@ -61,29 +61,29 @@ module.exports = async function checkArticlePrefetch(browser) {
     assert.equal(await page.locator('link[rel="prefetch"][as="document"]').count(),1,'Pointer, keyboard and touch hints must deduplicate');
     assert.equal(new URL(page.url()).pathname,'/','Hints must not navigate or intercept reader clicks');
     await page.goto(origin+'/en/blog/index.html');
-    await page.waitForFunction(() => !!window.DN?.bindArticleHub && !!DN.ARTICLES_DESC?.['psoriasis-systemic']);
+    await page.waitForFunction(() => !!window.DN?.bindArticleHub && !!DN.ARTICLES_DESC?.['biologics-overview']);
     const fallback = await page.evaluate(() => {
       const cards = () => Array.from(document.querySelectorAll('a.article-list-item'))
-        .filter(card => /\/blog\/psoriasis-systemic\/?$/.test(new URL(card.href).pathname));
+        .filter(card => /\/blog\/biologics-overview\/?$/.test(new URL(card.href).pathname));
       cards().forEach(card => card.remove());
       DN.bindArticleHub();DN.bindArticleHub();DN.applyTextOnly('en');
       return {count:cards().length,text:cards()[0]?.querySelector('p')?.textContent,
-        expected:DN.ARTICLES_DESC['psoriasis-systemic'].desc_en};
+        expected:DN.ARTICLES_DESC['biologics-overview'].desc_en};
     });
     assert.equal(fallback.count,1,'A missing public card must be recreated once, including repeat binding');
     assert.equal(fallback.text,fallback.expected,'The recreated card must translate using its generated description');
     assert.doesNotMatch(fallback.text,/&(?:gt|lt|amp|quot);/,'Generated descriptions must not display double-escaped entities');
     const safeText = await page.evaluate(() => {
-      const article=DN.ARTICLES.find(row => row.slug==='psoriasis-systemic');
+      const article=DN.ARTICLES.find(row => row.slug==='biologics-overview');
       const payload='<img src="x" onerror="window.__cardInjected=1"> & "quoted"';
       Object.assign(article,{title:'Fixture title',title_en:payload,tag:'Fixture tag',tag_en:payload});
       DN.ARTICLES_DESC[article.slug]={desc:'Fixture description',desc_en:payload};
       document.querySelectorAll('a.article-list-item').forEach(card => {
-        if (/\/blog\/psoriasis-systemic\/?$/.test(new URL(card.href).pathname)) card.remove();
+        if (/\/blog\/biologics-overview\/?$/.test(new URL(card.href).pathname)) card.remove();
       });
       DN.bindArticleHub();DN.applyTextOnly('en');
       const card=Array.from(document.querySelectorAll('a.article-list-item'))
-        .find(node => /\/blog\/psoriasis-systemic\/?$/.test(new URL(node.href).pathname));
+        .find(node => /\/blog\/biologics-overview\/?$/.test(new URL(node.href).pathname));
       const result={payload,title:card.querySelector('h2').textContent,description:card.querySelector('p').textContent,
         tag:card.querySelector('.tag').textContent,images:card.querySelectorAll('img').length,
         injected:!!window.__cardInjected};

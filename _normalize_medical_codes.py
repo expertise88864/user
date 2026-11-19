@@ -84,22 +84,6 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
                           icd10="L40.0", snomed="9014002",
                           mesh="D011565"),
     ],
-    "psoriasis-topical": [
-        medical_condition("Psoriasis vulgaris", "乾癬",
-                          icd10="L40.0", snomed="9014002"),
-    ],
-    "psoriasis-systemic": [
-        medical_condition("Psoriasis vulgaris", "乾癬",
-                          icd10="L40.0", snomed="9014002"),
-    ],
-    "psoriasis-special-populations": [
-        medical_condition("Psoriatic arthritis", "乾癬性關節炎",
-                          icd10="L40.5", snomed="33339001"),
-    ],
-    "psoriasis-myths": [
-        medical_condition("Psoriasis", "乾癬", icd10="L40",
-                          snomed="9014002"),
-    ],
     "psoriasis-biologic-monitoring": [
         medical_condition("Psoriasis", "乾癬", icd10="L40",
                           snomed="9014002"),

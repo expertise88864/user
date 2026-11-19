@@ -37,6 +37,9 @@ from _json_html import script_json
 ROOT = Path(__file__).resolve().parent
 
 QA_RE = re.compile(r'<div class="qa">(.*?)</div>', re.DOTALL)
+# Disease overviews render their FAQ as collapsible items (author choice
+# 2026-11-19): <details class="dn-faq-item"><summary><h3>Q</h3></summary><p>A</p></details>.
+DETAILS_RE = re.compile(r'<details class="dn-faq-item">(.*?)</details>', re.DOTALL)
 H3_RE = re.compile(r'<h3\b[^>]*>(.*?)</h3>', re.DOTALL | re.IGNORECASE)
 P_RE = re.compile(r'<p\b[^>]*>(.*?)</p>', re.DOTALL | re.IGNORECASE)
 OLD_RE = re.compile(
@@ -66,7 +69,7 @@ def extract(src: str) -> list[dict]:
     if not scope:
         return []
     out: list[dict] = []
-    for block in QA_RE.findall(scope):
+    for block in QA_RE.findall(scope) + DETAILS_RE.findall(scope):
         hm = H3_RE.search(block)
         if not hm:
             continue

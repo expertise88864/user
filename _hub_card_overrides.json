@@ -22,24 +22,10 @@
       "title": "嘴角紅疹是痘痘還是濕疹？口周皮膚炎成因、症狀與治療",
       "title_en": "Periorificial (perioral) dermatitis: complete patient guide"
     },
-    "psoriasis-special-populations": {
-      "tag_en": "Psoriasis",
-      "title_en": "Psoriasis comorbidities + special populations — PsA, CV, pregnancy, pediatric, nail, erythroderma"
-    },
-    "psoriasis-systemic": {
-      "tag_en": "Psoriasis",
-      "title": "乾癬全身性治療 — 光療、口服、生物製劑、健保給付",
-      "title_en": "Psoriasis systemic therapy — phototherapy, oral, biologics, NHI coverage"
-    },
-    "psoriasis-topical": {
-      "tag_en": "Psoriasis",
-      "title": "乾癬外用藥治療 — 類固醇、維生素 D、特殊部位用法",
-      "title_en": "Psoriasis topical therapy — steroids, vitamin D, special site applications"
-    },
     "psoriasis-overview": {
       "tag_en": "Psoriasis",
       "title": "乾癬完整衛教 — 分型、嚴重度評估、誘發因子與診斷",
-      "title_en": "Psoriasis complete guide — subtypes, severity assessment, triggers, diagnosis"
+      "title_en": "Psoriasis Explained: Symptoms, Types, Treatment, Biologics, Daily Care and Taiwan NHI Coverage"
     },
     "skin-biopsy-excision": {
       "title_en": "Skin biopsy & tumor excision — why, how, post-op"
@@ -119,10 +105,6 @@
       "tag_en": "Viral warts / HPV",
       "title": "病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好？",
       "title_en": "Viral warts 6 myths — banana peel? One laser treatment enough?"
-    },
-    "psoriasis-myths": {
-      "title": "乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑安全嗎？",
-      "title_en": "Psoriasis 7 myths — not a fungus, not contagious, are biologics safe?"
     },
     "urticaria-myths": {
       "title": "蕁麻疹 6 大迷思 — 一定是過敏嗎？抗組織胺嗜睡？",
@@ -284,24 +266,7 @@
     "psoriasis-overview": {
       "tag_en": "Psoriasis",
       "title": "乾癬完整衛教 — 分型、嚴重度評估、誘發因子與診斷",
-      "title_en": "Psoriasis overview — classification, severity, triggers"
-    },
-    "psoriasis-topical": {
-      "tag_en": "Psoriasis",
-      "title": "乾癬外用藥治療 — 類固醇、維生素 D、特殊部位用法",
-      "title_en": "Topical therapy for psoriasis — steroids, vitamin D, special sites"
-    },
-    "psoriasis-systemic": {
-      "tag_en": "Psoriasis",
-      "title": "乾癬全身性治療 — 光療、口服、生物製劑、健保給付",
-      "title_en": "Systemic therapy for psoriasis — phototherapy, oral, biologics, NHI"
-    },
-    "psoriasis-special-populations": {
-      "tag_en": "Psoriasis"
-    },
-    "psoriasis-myths": {
-      "title": "乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑很安全嗎？",
-      "title_en": "7 Psoriasis Myths — not tinea, not contagious, are biologics safe?"
+      "title_en": "Psoriasis Explained: Symptoms, Types, Treatment, Biologics, Daily Care and Taiwan NHI Coverage"
     },
     "urticaria-myths": {
       "title": "蕁麻疹 6 大迷思 — 一定是過敏？抗組織胺嗜睡？慢性能治好？",

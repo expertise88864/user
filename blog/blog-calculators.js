@@ -318,9 +318,9 @@
     return box;
   };
 
-  // PASI (Psoriasis Area Severity Index, 0-72) — psoriasis-myths
+  // PASI (Psoriasis Area Severity Index, 0-72) — psoriasis-overview
   DN.injectPASI = function () {
-    if (!DN._forceInject && (DN.currentSlug() !== 'psoriasis-myths')) return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'psoriasis-overview')) return;
     var rows = [];
     [['頭頸 (×0.1)','head'],['上肢 (×0.2)','arm'],['軀幹 (×0.3)','trunk'],['下肢 (×0.4)','leg']].forEach(function (r) {
       rows.push({ type:'number', label: r[0]+' · 紅斑 E (0-4)',  hint:'erythema',     key:r[1]+'_E', min:0, max:4, def:0 });
@@ -353,7 +353,7 @@
   // DLQI (Dermatology Life Quality Index, 0-30) — multi-article
   DN.injectDLQI = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-overview','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
     var rows = [];
     var qs = [
       '過去 1 週，皮膚<strong>癢、痠痛、刺痛</strong>的程度？',
@@ -684,9 +684,9 @@
     });
   };
 
-  // NAPSI (Nail Psoriasis Severity Index, 0-32) — psoriasis-myths
+  // NAPSI (Nail Psoriasis Severity Index, 0-32) — psoriasis-overview
   DN.injectNAPSI = function () {
-    if (!DN._forceInject && (DN.currentSlug() !== 'psoriasis-myths')) return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'psoriasis-overview')) return;
     var rows = [
       { type:'number', label:'指甲基質(matrix)病灶象限數', hint:'點狀凹陷 / 縱向溝紋 / 紅斑 / 白斑；0-4 象限', key:'matrix', min:0, max:4, def:0 },
       { type:'number', label:'指甲床(bed)病灶象限數', hint:'油滴徵 / 甲下角化 / 甲剝離 / 線狀出血；0-4 象限', key:'bed', min:0, max:4, def:0 }
@@ -740,7 +740,7 @@
   // Used in clinical trials (Dupilumab, biologic) — patient-friendly 5-grade
   // ─────────────────────────────────────────────────────────────────────
   DN.injectIGA = function () {
-    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-myths','vitiligo','rosacea-myths','acne-myths','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-overview','vitiligo','rosacea-myths','acne-myths','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-iga', tool: 'IGA',
       title: 'IGA 醫師整體評估 — 0-4 分皮膚病嚴重度',
@@ -923,7 +923,7 @@
     'atopic-dermatitis-overview': ['SCORAD', 'EASI'],
     'topical-steroids-guide':     ['EASI', 'IGA'],
     // Psoriasis — PASI is gold standard; NAPSI for nail involvement
-    'psoriasis-myths':            ['PASI', 'NAPSI'],
+    'psoriasis-overview':         ['PASI', 'NAPSI'],
     // Hair
     'alopecia-areata':            ['SALT', 'DLQI'],
     'hairloss-myths':             ['HairScale', 'DLQI'],

@@ -31,7 +31,7 @@ Codex review、遠端 CI 與正式交付流程照常適用。重開：使用者�
 Codex review、遠端 CI 與正式交付流程照常適用。重開：使用者撤回此授權。
 
 **D-22 一個疾病一篇總覽：同疾病的舊衛教文章併入總覽、舊網址 301 到段落**(2026-11-18,使用者定案)
-使用者希望每個疾病只有一篇完整的長文總覽（大綱導覽、圖文並茂、只用自繪圖解不放照片），讓讀者不必開多個網頁；研究類文章（最新研究）保持獨立並從總覽連過去。舊文章從 DN.ARTICLES 與首頁標籤移除、刪除頁面，zh／en 舊網址（含 .html）在 vercel.json 永久轉址到總覽對應段落，站內連結改指新段落。第一批：異位性皮膚炎（atopic-dermatitis-overview 沿用網址；併入 atopic-dermatitis-topical→#topical、atopic-dermatitis-systemic→#systemic、atopic-dermatitis-special-populations→#comorbidities、pediatric-eczema→#children）。之後乾癬、痤瘡依同一做法（痤瘡只併 acne-myths 與 isotretinoin-patient，其他專題保留）。內容規則同 D-21。重開：使用者改回多篇架構。
+使用者希望每個疾病只有一篇完整的長文總覽（大綱導覽、圖文並茂、只用自繪圖解不放照片），讓讀者不必開多個網頁；研究類文章（最新研究）保持獨立並從總覽連過去。舊文章從 DN.ARTICLES 與首頁標籤移除、刪除頁面，zh／en 舊網址（含 .html）在 vercel.json 永久轉址到總覽對應段落，站內連結改指新段落。第一批：異位性皮膚炎（atopic-dermatitis-overview 沿用網址；併入 atopic-dermatitis-topical→#topical、atopic-dermatitis-systemic→#systemic、atopic-dermatitis-special-populations→#comorbidities、pediatric-eczema→#children）。第二批：乾癬（psoriasis-overview 沿用網址；併入 psoriasis-topical→#topical、psoriasis-systemic→#treatment（原文涵蓋照光、口服、生物製劑，故轉到治療階梯）、psoriasis-special-populations→#comorbidities、psoriasis-myths→#myths；PASI／NAPSI 計算器移到總覽，站內連結依原段落對到 #biologics、#dn-pasi 等）。之後痤瘡依同一做法（只併 acne-myths 與 isotretinoin-patient，其他專題保留）。轉址一律 statusCode 301。內容規則同 D-21。重開：使用者改回多篇架構。
 
 **D-19 Codex 續審只審上一輪之後的差異**(2026-10-15,使用者定案)
 `tools/codex_review.sh resume`:同一 session 上一輪可信審查的 HEAD(`.codex-review/last_reviewed_head`)

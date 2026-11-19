@@ -813,7 +813,10 @@ SHARE_PAGE_SKIP = {"404.html", "offline.html", "admin.html", "reset-sw.html"}
 RASTER_SUFFIXES = (".png", ".jpg", ".jpeg", ".webp")
 # Article-scoped floors (blog/ only). MIN_SHARE_PAGES below covers the
 # share-image sweep, which spans both locales and is therefore much larger.
-MIN_ARTICLE_NODES = 55
+# D-22 merges several older pages of one disease into a single overview, so the
+# article count falls on purpose (54 after the psoriasis merge). The floor only
+# catches a scan that silently found too little; it is not a quality bar.
+MIN_ARTICLE_NODES = 50
 MIN_SHARE_PAGES = 120
 MIN_SITEMAP_ARTICLES = 50      # a noindex article is legitimately not listed
 MIN_CARD_EDGE = 600            # Facebook/X want >=600px on the short side

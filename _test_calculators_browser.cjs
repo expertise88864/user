@@ -4,12 +4,12 @@ const fs = require('node:fs');
 const crypto = require('node:crypto');
 const cases = [
   ['SCORAD', 'atopic-dermatitis-overview', 'dn-scorad'], ['SALT', 'alopecia-areata', 'dn-salt'],
-  ['UAS7', 'urticaria-myths', 'dn-uas7'], ['PASI', 'psoriasis-myths', 'dn-pasi'],
+  ['UAS7', 'urticaria-myths', 'dn-uas7'], ['PASI', 'psoriasis-overview', 'dn-pasi'],
   ['DLQI', 'atopic-dermatitis-overview', 'dn-dlqi'], ['Hurley', 'hidradenitis-suppurativa', 'dn-hurley'],
   ['HairScale', 'hairloss-myths', 'dn-hair-scale'], ['Fitzpatrick', 'sunscreen-myths', 'dn-fitzpatrick'],
   ['GAGS', 'acne-myths', 'dn-gags'], ['MASI', 'melasma-myths', 'dn-masi'],
   ['POEM', 'atopic-dermatitis-overview', 'dn-poem'], ['IHS4', 'hidradenitis-suppurativa', 'dn-ihs4'],
-  ['NAPSI', 'psoriasis-myths', 'dn-napsi'], ['VASPruritus', 'prurigo-nodularis', 'dn-vas-itch'],
+  ['NAPSI', 'psoriasis-overview', 'dn-napsi'], ['VASPruritus', 'prurigo-nodularis', 'dn-vas-itch'],
   ['IGA', 'atopic-dermatitis-overview', 'dn-iga'], ['ASIS', 'acne-myths', 'dn-asis'],
   ['VASI', 'vitiligo', 'dn-vasi'], ['EASI', 'atopic-dermatitis-overview', 'dn-easi'],
 ];

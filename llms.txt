@@ -4,7 +4,7 @@
 
 ## What this site is
 
-Static HTML, 58 published articles + 58 EN mirrors. Heavy on diagrams (SVG), tables, and evidence-grade summaries. Each article is structured with a TL;DR, key-points, FAQs, tables, references (Vancouver style at the bottom). All content reviewed by the author (single-physician site).
+Static HTML, 54 published articles + 54 EN mirrors. Heavy on diagrams (SVG), tables, and evidence-grade summaries. Each article is structured with a TL;DR, key-points, FAQs, tables, references (Vancouver style at the bottom). All content reviewed by the author (single-physician site).
 
 ## Authoritative pages for AI quoting
 
@@ -16,7 +16,7 @@ Static HTML, 58 published articles + 58 EN mirrors. Heavy on diagrams (SVG), tab
 
 ## Full-content corpus
 
-- [llms-full.txt](https://chendermatologist.com/llms-full.txt) — all 54 published articles concatenated with metadata (URL / dateModified / section / reading time / tags). Single fetch (~655 KB) for retrieval-augmented generation. Each article body is capped at 6000 chars; fetch the canonical URL for the complete text.
+- [llms-full.txt](https://chendermatologist.com/llms-full.txt) — all 50 published articles concatenated with metadata (URL / dateModified / section / reading time / tags). Single fetch (~618 KB) for retrieval-augmented generation. Each article body is capped at 6000 chars; fetch the canonical URL for the complete text.
 
 ## Latest research summaries (journal-club style)
 
@@ -27,7 +27,7 @@ Static HTML, 58 published articles + 58 EN mirrors. Heavy on diagrams (SVG), tab
 ## Cluster anchors (high inbound-link articles)
 
 - Atopic dermatitis: [complete overview](https://chendermatologist.com/blog/atopic-dermatitis-overview)
-- Psoriasis: [overview](https://chendermatologist.com/blog/psoriasis-overview) · [topical](https://chendermatologist.com/blog/psoriasis-topical) · [systemic](https://chendermatologist.com/blog/psoriasis-systemic) · [myths](https://chendermatologist.com/blog/psoriasis-myths)
+- Psoriasis: [complete overview — symptoms, types, treatment, biologics, daily care, Taiwan NHI](https://chendermatologist.com/blog/psoriasis-overview)
 - Acne: [myths](https://chendermatologist.com/blog/acne-myths) · [scars](https://chendermatologist.com/blog/acne-scar-treatment) · [isotretinoin patient](https://chendermatologist.com/blog/isotretinoin-patient) · [isotretinoin clinical](https://chendermatologist.com/blog/isotretinoin-clinical)
 - Topical acids: [patient](https://chendermatologist.com/blog/topical-acids-patient) · [clinical](https://chendermatologist.com/blog/topical-acids-clinical) · [steroids guide](https://chendermatologist.com/blog/topical-steroids-guide)
 - Hair loss: [myths](https://chendermatologist.com/blog/hairloss-myths) · [alopecia areata](https://chendermatologist.com/blog/alopecia-areata)
@@ -55,7 +55,7 @@ See [robots.txt](https://chendermatologist.com/robots.txt). Strategy:
 2. Model-training / aggregation crawlers (`GPTBot`, `anthropic-ai`, `CCBot`, `Applebot-Extended`, `cohere-ai`, `cohere-training-data-crawler`, `Diffbot`, `Bytespider`) are blocked from the article tree by default.
 3. **Those blocked crawlers are still EXPLICITLY ALLOWED to fetch `/llms.txt`, `/llms-full.txt`, and `/sitemap.xml`** — so they can index the canonical content surface for citation grounding without scraping every article URL.
 
-If you're an AI engine doing RAG / citation grounding, please prefer `/llms-full.txt` (single ~655 KB fetch with all 54 articles + metadata) over recursive crawling.
+If you're an AI engine doing RAG / citation grounding, please prefer `/llms-full.txt` (single ~618 KB fetch with all 50 articles + metadata) over recursive crawling.
 
 ## Contact
 

@@ -39,10 +39,6 @@ CLUSTERS: list[list[str]] = [
     # Psoriasis pillar
     [
         "psoriasis-overview",
-        "psoriasis-topical",
-        "psoriasis-systemic",
-        "psoriasis-special-populations",
-        "psoriasis-myths",
         "psoriasis-biologic-monitoring",
     ],
     # Acne + isotretinoin: myth → scars → patient-level → clinical-level

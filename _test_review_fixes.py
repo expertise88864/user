@@ -128,6 +128,17 @@ class TranslationTests(unittest.TestCase):
             self.assertEqual(faq.process(page),0)
             self.assertEqual(page.read_text(encoding='utf8'),first)
 
+    def test_collapsible_overview_faq_items_are_extracted(self):
+        import _gen_faq_from_qa as faq
+        src=('<h2 id="faq">FAQ</h2><div class="dn-faq">'
+             '<details class="dn-faq-item"><summary><h3 id="q1">Will it go away?</h3></summary>'
+             '<p>It is chronic but can be well controlled.</p></details>'
+             '<details class="dn-faq-item"><summary><h3>Diet?</h3></summary><p>Most people need no diet.</p></details>'
+             '</div><h2 id="refs">Refs</h2><div class="qa"><h3>Out of scope</h3><p>Not part of the FAQ section.</p></div>')
+        self.assertEqual(faq.extract(src),[
+            {'q':'Will it go away?','a':'It is chronic but can be well controlled.'},
+            {'q':'Diet?','a':'Most people need no diet.'}])
+
     def test_authoring_details_faq_uses_safe_json_without_changing_values(self):
         # This older authoring helper replaces stdout at import. Run its real
         # extractor/injector in a child so it cannot close the test runner's IO.

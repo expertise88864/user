@@ -2246,6 +2246,19 @@
     </image:image>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/psoriasis-overview</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/psoriasis-overview.png</image:loc>
+      <image:title>乾癬完整介紹：症狀、類型、治療、生物製劑、日常照護與健保給付</image:title>
+      <image:caption>乾癬是免疫引起的慢性發炎性皮膚病，不是黴菌、也不會傳染。依臺灣皮膚科醫學會 2024 共識與最新國際指引，整理各型乾癬的樣子、嚴重度與治療目標、外用藥、照光、口服藥與生物製劑、關節炎與心血管共病、懷孕與兒童用藥、生活照護，以及健保給付條件。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/atopic-dermatitis-child-growth</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -2493,58 +2506,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/psoriasis-overview</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-overview"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-overview"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-overview.png</image:loc>
-      <image:title>乾癬完整衛教 — 分型、嚴重度、誘發因子</image:title>
-      <image:caption>乾癬（psoriasis）是免疫介導 Th17 / IL-23 慢性發炎皮膚病。本文整理 6 大臨床亞型、嚴重度評估（BSA / PASI / IGA / DLQI）、誘發因子、合併症警訊、鑑別診斷重點。皮膚科醫師整理。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/psoriasis-special-populations</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-special-populations"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-special-populations"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-special-populations.png</image:loc>
-      <image:title>乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症</image:title>
-      <image:caption>乾癬合併症(乾癬性關節炎 PsA、心血管、代謝症候群、肝病、憂鬱、IBD)篩檢與處理；特殊族群(懷孕、哺乳、兒童、指甲乾癬、紅皮症型)治療策略。整理 AAD-NPF 2019-2020 指引。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/psoriasis-systemic</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-systemic"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-systemic"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-systemic.png</image:loc>
-      <image:title>乾癬全身性治療 — 光療、口服、生物製劑</image:title>
-      <image:caption>乾癬中重度全身性治療完整衛教：光療（NB-UVB / PUVA / Excimer）、口服 MTX / cyclosporine / acitretin / apremilast / deucravacitinib、生物製劑、台灣健保給付完整解析。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/psoriasis-topical</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-topical"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-topical"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-topical.png</image:loc>
-      <image:title>乾癬外用藥治療 — 類固醇、維生素 D、特殊部位</image:title>
-      <image:caption>乾癬外用治療階梯：類固醇 1-7 級、calcipotriol / calcitriol、強強複方（Daivobet）、tazarotene、TCI、coal tar 與特殊部位（臉、皺褶、頭皮、指甲）治療 — 依 AAD-NPF 2021 整理。</image:caption>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/skin-biopsy-excision</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -2659,19 +2620,6 @@
       <image:loc>https://chendermatologist.com/assets/og/prurigo-nodularis.png</image:loc>
       <image:title>結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療</image:title>
       <image:caption>Prurigo nodularis 中文是結節性癢疹（PN），特徵是非常癢的硬結節。整理症狀、診斷評估與治療選項，包含 dupilumab、nemolizumab 等新藥，附醫學文獻。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/psoriasis-myths</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-myths"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-myths"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-myths.png</image:loc>
-      <image:title>乾癬 7 大迷思</image:title>
-      <image:caption>乾癬是癬嗎？會傳染？要避開太陽？類固醇會傷皮膚？生物製劑會傷免疫？7 個最常誤會的乾癬(psoriasis)觀念 + IL-17 / IL-23 致病機轉圖 + 健保給付條件。</image:caption>
     </image:image>
   </url>
   <url>

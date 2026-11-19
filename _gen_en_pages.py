@@ -154,10 +154,6 @@ EN_OG_OVERRIDES = {
         'title': 'Skin biopsy & tumor excision — guide & post-op care',
         'desc': 'Patient-friendly dermatology guide to skin biopsy and tumor excision: indications, technique, post-op wound care, scar care, and follow-up. Integrates AAD biopsy guideline.',
     },
-    'blog/psoriasis-special-populations.html': {
-        'title': 'Psoriasis comorbidities — PsA, CV, pregnancy, pediatric',
-        'desc': 'Psoriasis comorbidities and special populations: psoriatic arthritis screening, cardiovascular risk, pregnancy / breastfeeding biologic safety, pediatric considerations, and Taiwan NHI coverage notes.',
-    },
     'blog/warts-myths.html': {
         'title': 'Warts myths — banana peel, single laser, self-resolution?',
         'desc': 'Common warts (HPV) myth-busting: does banana peel work, can one laser session cure, will warts self-resolve, when to see a dermatologist. Treatment ladder included.',

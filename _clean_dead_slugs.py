@@ -17,7 +17,9 @@ ROOT = Path(__file__).resolve().parent
 DEAD = ['atopic-dermatitis-comorbidity', 'eczema-myths',
         'atopic-dermatitis-topical', 'atopic-dermatitis-systemic',
         # merged into the atopic dermatitis overview (D-22, 2026-11-18)
-        'atopic-dermatitis-special-populations', 'pediatric-eczema']
+        'atopic-dermatitis-special-populations', 'pediatric-eczema',
+        # merged into the psoriasis overview (D-22, 2026-11-19)
+        'psoriasis-topical', 'psoriasis-systemic', 'psoriasis-special-populations', 'psoriasis-myths']
 
 def strip_article_list_item(html, slug):
     """Remove <a class="article-list-item" href="/blog/SLUG" …>…</a> exactly once."""
