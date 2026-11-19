@@ -14,6 +14,23 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from _check_internal_links import ROOT, calculator_anchors, has_fragment, page_url, page_path
 
 
+def routed_target(link: str) -> str:
+    """Map a site-absolute clean URL to its real file; keep the query and fragment.
+
+    Redirect destinations in vercel.json may point at a section anchor
+    (/blog/x#part). hyperlink resolves anchors against files, so the clean route
+    must name the .html file, exactly as routed_html() does for page links.
+    Unknown targets and external URLs pass through unchanged so they still fail.
+    """
+    parsed = urlsplit(link)
+    if parsed.scheme or parsed.netloc:
+        return link
+    target = page_path(parsed.path)
+    if target is not None and target.suffix == '.html':
+        return urlunsplit(('', '', '/' + target.relative_to(ROOT).as_posix(), parsed.query, parsed.fragment))
+    return link
+
+
 def routed_html(text: str, source: Path) -> str:
     """Resolve real clean URLs in HTML attributes; preserve every fragment."""
     edits = []
@@ -71,7 +88,7 @@ def stage(destination: Path) -> None:
     config = json.loads((ROOT / 'vercel.json').read_text(encoding='utf-8'))
     for item in config.get('redirects', []):
         if ':' not in item['source'] and '*' not in item['source']:
-            redirects.append(f"{item['source']} {item['destination']}")
+            redirects.append(f"{item['source']} {routed_target(item['destination'])}")
     (destination / '_redirects').write_text('\n'.join(redirects) + '\n', encoding='utf-8')
     # This single asset is supplied by Vercel Speed Insights, outside Git.
     runtime = destination / '_vercel/speed-insights/script.js'

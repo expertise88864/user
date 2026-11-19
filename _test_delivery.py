@@ -34,6 +34,12 @@ class DeliveryTests(unittest.TestCase):
         script = '<script>const s = \'<a href="/tools">\';</script>'
         self.assertEqual(h.routed_html(script, d.ROOT / 'index.html'), script)
 
+    def test_hyperlink_redirect_destinations_resolve_to_files_with_fragments(self):
+        import _check_hyperlink as h
+        self.assertEqual(h.routed_target('/tools#absent-fixture'), '/tools.html#absent-fixture')
+        self.assertEqual(h.routed_target('/nonexistent-fixture#bad'), '/nonexistent-fixture#bad')
+        self.assertEqual(h.routed_target('https://example.com/x#y'), 'https://example.com/x#y')
+
     def test_hosted_smoke_is_required_on_main_but_not_candidate(self):
         entry = next(w for w in d.policy()['workflows'] if w['path'] == '.github/workflows/delivery.yml')
         def jobs(phase):
