@@ -1,9 +1,5 @@
 {
   "_README": "lastReviewed is a CLAIM THAT THE PHYSICIAN READ THE ARTICLE on that date. It is declared here and never derived: no pipeline step may move it. source='published' means this entry is the conservative FLOOR — the day the article was published, which the physician demonstrably reviewed because he wrote it. It understates on purpose. source='reviewed' means an actual re-read was recorded. Record one with:  python _record_review.py <slug> [YYYY-MM-DD]",
-  "acne-myths": {
-    "date": "2026-05-02",
-    "source": "published"
-  },
   "acne-scar-treatment": {
     "date": "2026-05-04",
     "source": "published"
@@ -65,10 +61,6 @@
     "source": "published"
   },
   "isotretinoin-clinical": {
-    "date": "2026-05-02",
-    "source": "published"
-  },
-  "isotretinoin-patient": {
     "date": "2026-05-02",
     "source": "published"
   },
@@ -214,6 +206,10 @@
   },
   "bullous-pemphigoid": {
     "date": "2026-11-18",
+    "source": "published"
+  },
+  "acne-overview": {
+    "date": "2026-11-19",
     "source": "published"
   }
 }

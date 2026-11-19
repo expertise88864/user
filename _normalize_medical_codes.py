@@ -90,18 +90,9 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
     ],
 
     # ─── Acne + isotretinoin ───
-    "acne-myths": [
-        medical_condition("Acne vulgaris", "尋常性痤瘡",
-                          icd10="L70.0", snomed="11381005",
-                          mesh="D000152"),
-    ],
     "acne-scar-treatment": [
         medical_condition("Acne scarring", "痘疤",
                           icd10="L90.5", snomed="402411006"),
-    ],
-    "isotretinoin-patient": [
-        medical_condition("Severe acne vulgaris", "嚴重尋常性痤瘡",
-                          icd10="L70.0", snomed="11381005"),
     ],
     "isotretinoin-clinical": [
         medical_condition("Severe acne vulgaris", "嚴重尋常性痤瘡",

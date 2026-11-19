@@ -167,7 +167,7 @@ def run_smoke(base_url: str) -> list[str]:
     pages = [
         ("/", "home", [dn_init, 'id="dn-hub"', shared]),
         ("/blog/", "blog index", [dn_init, shared]),
-        ("/blog/acne-myths", "article", [dn_init, 'id="proseZh"', shared]),
+        ("/blog/acne-overview", "article", [dn_init, 'id="proseZh"', shared]),
         ("/about", "about", [dn_init, shared]),
         ("/tools", "tools", [dn_init, shared]),
     ]
@@ -207,8 +207,8 @@ def run_smoke(base_url: str) -> list[str]:
         search_index = []
     if not isinstance(search_index, list) or len(search_index) < 30:
         errors.append("search-index: expected at least 30 indexed public pages")
-    elif not any(item.get("url") == "/blog/acne-myths" for item in search_index if isinstance(item, dict)):
-        errors.append("search-index: missing /blog/acne-myths")
+    elif not any(item.get("url") == "/blog/acne-overview" for item in search_index if isinstance(item, dict)):
+        errors.append("search-index: missing /blog/acne-overview")
 
     sw_body, content_type = fetch(base_url, "/sw.js")
     if "javascript" not in content_type:

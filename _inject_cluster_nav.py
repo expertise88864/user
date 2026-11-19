@@ -43,9 +43,7 @@ CLUSTERS: list[list[str]] = [
     ],
     # Acne + isotretinoin: myth → scars → patient-level → clinical-level
     [
-        "acne-myths",
         "acne-scar-treatment",
-        "isotretinoin-patient",
         "isotretinoin-clinical",
     ],
     # Topical acids + steroids: patient → clinical → steroid guide

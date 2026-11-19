@@ -1144,9 +1144,8 @@
 
   // Per-article slug → which diagrams to inject (and at which H2 index)
   DN.MED_DIAGRAM_MAP = {
-    'acne-myths':              [{ key: 'acne-pathogenesis', after: 1 }, { key: 'bpo-mechanism', after: 3 }],
+    'acne-overview':           [{ key: 'bpo-mechanism', after: 6 }],
     'acne-scar-treatment':     [{ key: 'acne-pathogenesis', after: 0 }],
-    'isotretinoin-patient':    [{ key: 'acne-pathogenesis', after: 1 }],
     'isotretinoin-clinical':   [{ key: 'acne-pathogenesis', after: 0 }],
     'topical-acids-patient':   [{ key: 'acne-pathogenesis', after: 1 }],
     'topical-acids-clinical':  [{ key: 'acne-pathogenesis', after: 0 }],

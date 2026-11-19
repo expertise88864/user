@@ -35,7 +35,7 @@ jobs:
           # Sample across categories: 2 myth, 2 rx, 2 research, 1 product, 1 note.
           # Avoid running on all 50 (sdtt does network fetches; would be slow).
           cat > /tmp/sample.txt <<'EOF'
-          blog/acne-myths.html
+          blog/acne-overview.html
           blog/sunscreen-myths.html
           blog/atopic-dermatitis-overview.html
           blog/biologics-overview.html

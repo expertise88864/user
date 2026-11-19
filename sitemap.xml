@@ -2233,6 +2233,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/year-115"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/acne-overview</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/acne-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/acne-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/acne-overview.png</image:loc>
+      <image:title>痘痘（痤瘡）完整介紹：成因、分級、擦藥吃藥、A 酸、痘疤與日常照護</image:title>
+      <image:caption>痘痘（痤瘡）為什麼會長、怎麼分級、該擦什麼藥、什麼時候需要口服藥或口服 A 酸？依臺灣皮膚科醫學會 2024 痤瘡治療共識與 AAD 2024 指引，整理外用藥、抗生素、荷爾蒙治療、口服 A 酸注意事項、痘疤、飲食迷思與健保規定。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/atopic-dermatitis-child-growth</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -2377,7 +2390,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/photodynamic-therapy-overview</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/photodynamic-therapy-overview"/>
@@ -2455,7 +2468,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/perioral-dermatitis-guide</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/perioral-dermatitis-guide"/>
@@ -2532,21 +2545,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/acne-myths</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/acne-myths"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/acne-myths"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/acne-myths.png</image:loc>
-      <image:title>痘痘 8 大迷思</image:title>
-      <image:caption>痘痘擠掉就好？牙膏點痘有效？青春期才會長？整理 8 個常見痘痘迷思，從保養、飲食、藥膏、A 酸、抗生素到就醫時機，說明哪些作法可能讓發炎與痘疤惡化，幫助民眾避開擠痘、過度清潔與錯誤偏方，並建立較安全的治療期待。</image:caption>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/acne-scar-treatment</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/acne-scar-treatment"/>
@@ -2568,19 +2568,6 @@
       <image:loc>https://chendermatologist.com/assets/og/cutaneous-t-cell-lymphoma.png</image:loc>
       <image:title>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教</image:title>
       <image:caption>皮膚 T 細胞淋巴瘤（CTCL）75% 為蕈狀肉芽腫（mycosis fungoides，MF）。本文整理 TDA 2024 共識的診斷、TNMB 分期、外用 / NB-UVB / PUVA、Bexarotene、Methotrexate、生物製劑與鑑別診斷重點。皮膚科醫師整理。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/isotretinoin-patient</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/isotretinoin-patient"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/isotretinoin-patient"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/isotretinoin-patient.png</image:loc>
-      <image:title>口服 A 酸完整衛教</image:title>
-      <image:caption>口服 A 酸的英文學名是 isotretinoin（羅可坦、Acnetane），用於中重度痘痘。整理誰適合吃、累積劑量、抽血追蹤、避孕至少一個月、雷射禁忌、停藥復發率，以及健保與自費差別。</image:caption>
     </image:image>
   </url>
   <url>
@@ -2663,7 +2650,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/epidermoid-cyst</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/epidermoid-cyst"/>
@@ -2767,7 +2754,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/targeted-therapy-skin</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/targeted-therapy-skin"/>
@@ -2819,7 +2806,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/hairloss-myths</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/hairloss-myths"/>
@@ -2832,7 +2819,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/melasma-myths</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/melasma-myths"/>
@@ -2845,7 +2832,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/rosacea-myths</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/rosacea-myths"/>
@@ -2858,7 +2845,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/sunscreen-myths</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/sunscreen-myths"/>
@@ -2884,7 +2871,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/isotretinoin-clinical</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/isotretinoin-clinical"/>

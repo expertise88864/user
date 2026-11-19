@@ -114,7 +114,7 @@
       label_en: 'Quick find',
       tags: {
         '最新研究':         { _from_cat: 'research' },
-        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview', 'psoriasis-overview'],
+        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview', 'psoriasis-overview', 'acne-overview'],
         '常見問題 FAQ':      ['dermatology-faq'],
         '皮膚科 AI / 數位工具': ['ai-dermatology-roles']
       }
@@ -138,7 +138,7 @@
       label_en: 'Acne & follicles',
       card: true,
       tags: {
-        '痘痘 / 痘疤':       ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient', 'spironolactone-dermatology-safety'],
+        '痘痘 / 痘疤':       ['acne-overview', 'acne-scar-treatment', 'topical-acids-patient', 'spironolactone-dermatology-safety'],
         '玫瑰斑 / 酒糟':     ['rosacea-myths'],
         '化膿性汗腺炎':      ['hidradenitis-suppurativa', 'bimekizumab-hidradenitis-suppurativa']
       }
@@ -182,12 +182,12 @@
       tags: {
         '生物製劑':          ['biologics-overview', 'atopic-dermatitis-overview', 'psoriasis-overview', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'psoriasis-biologic-monitoring', 'hidradenitis-suppurativa', 'bimekizumab-hidradenitis-suppurativa', 'jaki-switching-alopecia-areata'],
         '類固醇藥膏':        ['topical-steroids-guide', 'atopic-dermatitis-overview'],
-        '酸類 / A 酸':       ['topical-acids-patient', 'skin-whitening-agents', 'isotretinoin-patient'],
+        '酸類 / A 酸':       ['acne-overview', 'topical-acids-patient', 'skin-whitening-agents'],
         '雷射 / 光電':       ['laser-dermatology', 'acne-scar-treatment', 'rosacea-myths', 'photodynamic-therapy-overview'],
         '處置 / 手術':       ['skin-biopsy-excision', 'epidermoid-cyst', 'actinic-keratosis-scc', 'dermatologic-oral-examination'],
         '防曬':              ['sunscreen-myths'],
         '標靶藥物副作用':    ['targeted-therapy-skin'],
-        '健保 / 自費':       ['nhi-derm-drugs', 'biologics-overview', 'isotretinoin-patient']
+        '健保 / 自費':       ['acne-overview', 'nhi-derm-drugs', 'biologics-overview']
       }
     }
   ];
@@ -664,7 +664,7 @@
 
 // dn-articles-desc:start
   DN.ARTICLES_DESC = {
-    'acne-myths': {desc:'痘痘擠掉就好？牙膏點痘有效？青春期才會長？整理 8 個常見痘痘迷思，從保養、飲食、藥膏、A 酸、抗生素到就醫時機，說明哪些作法可能讓發炎與痘疤惡化，幫助民眾避開擠痘、過度清潔與錯誤偏方，並建立較安全的治療期待。',desc_en:'Clear answers to common acne myths: popping pimples, toothpaste spot treatment, dry skin acne, washing frequency, supplements, scars, and when to see a dermatologist.'},
+    'acne-overview': {desc:'痘痘（痤瘡）為什麼會長、怎麼分級、該擦什麼藥、什麼時候需要口服藥或口服 A 酸？依臺灣皮膚科醫學會 2024 痤瘡治療共識與 AAD 2024 指引，整理外用藥、抗生素、荷爾蒙治療、口服 A 酸注意事項、痘疤、飲食迷思與健保規定。',desc_en:'Causes, grading, creams and tablets, isotretinoin safety, scars and dark marks, diet myths and daily care for acne in one guide.'},
     'acne-scar-treatment': {desc:'痘疤完整治療指引：冰鑿 / 廂車 / 滾動凹疤怎麼分？紅疤、黑色素沉著、肥厚疤、蟹足腫如何處理？4 種凹疤治療對照表 + 飛梭雷射 / TCA CROSS / 皮下分離選擇邏輯。',desc_en:'Acne can be treated, but acne scars are the trickiest. The key is to identify the scar type first — ice-pick, boxcar, rolling, hypertrophic, post-inflammatory...'},
     'actinic-keratosis-scc': {desc:'日光性角化症是皮膚癌前病變、會進展為鱗狀細胞癌。整合 BAD 2017 / AAD 2021 / BAD 2022 五大指引：Olsen 分級、cryotherapy / 5-FU / imiquimod / PDT / Mohs 切除選擇。',desc_en:'Actinic keratosis (AK) is caused by long-term UV damage; precancerous skin lesion Bowen disease is cutaneous SCC in situ cutaneous squamous cell carcinoma (cSCC) is a...'},
     'ai-dermatology-roles': {desc:'2026 三篇 JAAD 研究綜合：Kremer 眼動追蹤（DEXI 熱圖 r=0.540、5/20 顆黑色素瘤誤判）、Mahajan 多模態 LLM 看 12 種發炎性皮膚病（GPT-5 46.2%、深膚色準確率掉 13%）、Cao 數位轉錄秘書。AI 在皮膚科的三條前線與限制。',desc_en:'Resident-level research review integrating 2026 JAAD Reviews and the JAAD eye-tracking study comparing dermatologist gaze maps with DEXI dermoscopy AI heat maps...'},
@@ -683,7 +683,6 @@
     'filler-vascular-occlusion': {desc:'打玻尿酸或其他填充物後，皮膚突然發白、出現紫色網狀斑、疼痛加劇，或視力模糊，可能是血管栓塞。本文整理國際共識的警訊時間表、該怎麼立刻行動、玻尿酸酶與超音波導引治療的證據，以及台灣玻尿酸酶專案進口現況。',desc_en:'Sudden blanching, a purple net-like pattern, escalating pain or blurred vision after a filler injection can signal vascular occlusion. Warning signs, what to do at...'},
     'hairloss-myths': {desc:'一天掉幾根算正常？染髮會掉髮？戴帽悶了會禿？雄性禿吃中藥就好？Minoxidil 副作用很多？圓禿是壓力造成的？植髮一次解決？7 個民眾最常誤會的落髮觀念，陳翊嘉醫師（皮膚科）整理，附口服+外用治療階梯與植髮指南。',desc_en:'Hair loss is a worry shared by both men and women. New ”hair tonics”, ”follicle serums” appear every month — but only a handful are evidence-based . This article...'},
     'hidradenitis-suppurativa': {desc:'化膿性汗腺炎（HS，hidradenitis suppurativa，又稱反常性痤瘡）盛行率約 0.3%，好發腋下、鼠蹊，反覆紅腫膿瘡。整理 Hurley 分期、Secukinumab（健保自 2025/7/1 給付）、Adalimumab、手術選擇與台灣健保現況。',desc_en:'Hidradenitis suppurativa (HS, also called acne inversa) is a chronic, relapsing inflammatory follicular disease occurring in friction-prone fold areas (axillae...'},
-    'isotretinoin-patient': {desc:'口服 A 酸的英文學名是 isotretinoin（羅可坦、Acnetane），用於中重度痘痘。整理誰適合吃、累積劑量、抽血追蹤、避孕至少一個月、雷射禁忌、停藥復發率，以及健保與自費差別。',desc_en:'Oral isotretinoin is a highly effective treatment for moderate-to-severe acne and the only drug that hits all four causes simultaneously (sebum, keratinization, C...'},
     'iud-hair-loss': {desc:'擔心裝荷爾蒙避孕器會掉頭髮？2026 年 JAAD 一項約 2.9 萬對配對病人的病歷資料庫研究發現，荷爾蒙環使用者被診斷落髮的比例沒有比銅環高（0.9% 對 1.1%），但差距很小。本文說明研究限制、其他常見掉髮原因，以及發現掉髮時該怎麼做。',desc_en:'A 2026 JAAD study of about 29,000 matched pairs found no excess hair loss diagnoses with hormonal vs copper IUDs. What it means, its limits, other causes.'},
     'jaki-switching-alopecia-areata': {desc:'重度圓禿第一種 JAK 抑制劑沒效，換第二種值得嗎？2026 JAAD 6 中心 108 人回溯研究：換第二種 48.8% 達 SALT≤20、換第三種 52.4%。第一種有反應是最強預測因子（OR 3.33）。整理換藥路徑、安全性與台灣品名。',desc_en:'When the first JAK inhibitor fails in severe alopecia areata, does switching help? June-2026 JAAD multicenter retrospective (Martin et al., 6 US clinics, n=108)...'},
     'laser-dermatology': {desc:'皮膚科雷射完整對照：532 / 595 / 755 / 1064 / 1550 / 2940 / 10600 nm 等 11 種波長，每個對應哪些斑、痘疤、刺青、毛、紅、痣、疣的適應症與證據強度。依 2022 德國 S2k 雷射指引整理。',desc_en:'Lasers are not the more expensive or newer the better — different wavelengths target different chromophores (pigment, hemoglobin, water), and picking the wrong one...'},

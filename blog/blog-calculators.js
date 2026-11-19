@@ -550,9 +550,9 @@
     });
   };
 
-  // GAGS (Global Acne Grading System, 0-44) — acne-myths
+  // GAGS (Global Acne Grading System, 0-44) — acne-overview
   DN.injectGAGS = function () {
-    if (!DN._forceInject && (DN.currentSlug() !== 'acne-myths')) return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'acne-overview')) return;
     var sites = [
       ['前額(×2)','forehead'], ['右臉頰(×2)','rcheek'], ['左臉頰(×2)','lcheek'],
       ['鼻部(×1)','nose'], ['下巴(×1)','chin'], ['胸 / 上背(×3)','chest']
@@ -740,7 +740,7 @@
   // Used in clinical trials (Dupilumab, biologic) — patient-friendly 5-grade
   // ─────────────────────────────────────────────────────────────────────
   DN.injectIGA = function () {
-    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-overview','vitiligo','rosacea-myths','acne-myths','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-overview','vitiligo','rosacea-myths','acne-overview','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-iga', tool: 'IGA',
       title: 'IGA 醫師整體評估 — 0-4 分皮膚病嚴重度',
@@ -775,7 +775,7 @@
   // Alexis 2014. FDA-qualified PRO endpoint for acne trials.
   // ─────────────────────────────────────────────────────────────────────
   DN.injectASIS = function () {
-    if (!DN._forceInject && !['acne-myths','acne-scar-treatment','isotretinoin-patient','topical-acids-patient'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['acne-overview','acne-scar-treatment','topical-acids-patient'].includes(DN.currentSlug())) return;
     var qs = [
       '臉上痘痘的紅 / 腫 / 痛',
       '痘痘留下的疤 / 黑印',
@@ -930,9 +930,8 @@
     // Urticaria — UAS7 + DLQI is the EAACI gold standard pair
     'urticaria-myths':            ['UAS7', 'DLQI'],
     // Acne — GAGS for severity, ASIS for patient-reported impact
-    'acne-myths':                 ['GAGS', 'ASIS'],
+    'acne-overview':              ['GAGS', 'ASIS'],
     'acne-scar-treatment':        ['GAGS', 'DLQI'],
-    'isotretinoin-patient':       ['GAGS', 'ASIS'],
     'isotretinoin-clinical':      ['GAGS', 'IGA'],
     'topical-acids-patient':      ['GAGS', 'DLQI'],
     'topical-acids-clinical':     ['GAGS', 'IGA'],

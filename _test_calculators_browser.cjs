@@ -7,10 +7,10 @@ const cases = [
   ['UAS7', 'urticaria-myths', 'dn-uas7'], ['PASI', 'psoriasis-overview', 'dn-pasi'],
   ['DLQI', 'atopic-dermatitis-overview', 'dn-dlqi'], ['Hurley', 'hidradenitis-suppurativa', 'dn-hurley'],
   ['HairScale', 'hairloss-myths', 'dn-hair-scale'], ['Fitzpatrick', 'sunscreen-myths', 'dn-fitzpatrick'],
-  ['GAGS', 'acne-myths', 'dn-gags'], ['MASI', 'melasma-myths', 'dn-masi'],
+  ['GAGS', 'acne-overview', 'dn-gags'], ['MASI', 'melasma-myths', 'dn-masi'],
   ['POEM', 'atopic-dermatitis-overview', 'dn-poem'], ['IHS4', 'hidradenitis-suppurativa', 'dn-ihs4'],
   ['NAPSI', 'psoriasis-overview', 'dn-napsi'], ['VASPruritus', 'prurigo-nodularis', 'dn-vas-itch'],
-  ['IGA', 'atopic-dermatitis-overview', 'dn-iga'], ['ASIS', 'acne-myths', 'dn-asis'],
+  ['IGA', 'atopic-dermatitis-overview', 'dn-iga'], ['ASIS', 'acne-overview', 'dn-asis'],
   ['VASI', 'vitiligo', 'dn-vasi'], ['EASI', 'atopic-dermatitis-overview', 'dn-easi'],
 ];
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');

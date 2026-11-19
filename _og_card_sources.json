@@ -142,5 +142,17 @@
       "png": "902a881f195cd2a0f2089a1f50cd5d16fa4006613e88fb4d22a320355dbe7643",
       "webp": "f3d16f2f6341dec218880f3bccc9242ec7a01a29f483c5c97e91baacbd37d4c8"
     }
+  },
+  "acne-overview": {
+    "source": {
+      "title": "痘痘（痤瘡）完整介紹：成因、分級、擦藥吃藥、A 酸、痘疤與日常照護",
+      "subtitle": "",
+      "date": "2026-11-19"
+    },
+    "rendered_tag": "疾病總覽",
+    "files": {
+      "png": "47f736447d88f0856dba12ddb19252e1e2ef116e9b90f784db9e43abd671894e",
+      "webp": "2a802f494a5f0063798eba2a9405dbefb79bc31b150c25a79223630f1cb5b420"
+    }
   }
 }

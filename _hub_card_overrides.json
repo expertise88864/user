@@ -137,23 +137,11 @@
       "title": "防曬 8 大迷思 — 室內、陰天、SPF、物理化學一次釐清",
       "title_en": "8 sunscreen myths — indoors, cloudy days, SPF, mineral vs chemical"
     },
-    "acne-myths": {
-      "title": "痘痘 8 大迷思 — 民眾最常誤會的觀念",
-      "title_en": "8 acne myths the public still believes"
-    },
-    "isotretinoin-patient": {
-      "title": "口服 A 酸完整衛教 — 適合誰吃、副作用、療程、復發率、雷射禁忌",
-      "title_en": "Oral isotretinoin — every clinic FAQ in plain language"
-    },
     "topical-acids-patient": {
       "tag": "外用酸類"
     }
   },
   "blog/index.html": {
-    "acne-myths": {
-      "title": "痘痘 8 大迷思 — 民眾最常誤會的觀念",
-      "title_en": "8 acne myths the public still believes"
-    },
     "sunscreen-myths": {
       "title": "防曬 8 大迷思 — 室內、陰天、SPF、物理化學一次釐清",
       "title_en": "8 sunscreen myths — indoors, cloudy days, SPF, mineral vs chemical"
@@ -278,10 +266,6 @@
     },
     "topical-acids-patient": {
       "tag": "外用酸類"
-    },
-    "isotretinoin-patient": {
-      "title": "口服 A 酸完整衛教 — 適合誰吃、副作用、療程、復發率、雷射禁忌",
-      "title_en": "Oral isotretinoin — every clinic FAQ in plain language"
     }
   }
 }

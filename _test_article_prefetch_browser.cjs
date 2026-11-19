@@ -46,14 +46,14 @@ module.exports = async function checkArticlePrefetch(browser) {
       document.querySelectorAll('script[type="speculationrules"]').forEach(node => node.remove());
       DN.prefetchOnIdle();
       const host = document.createElement('section');host.id='prefetch-fixture';document.body.appendChild(host);
-      for (const href of ['/', '/admin', '/blog/acne-myths?q=private', '/blog/severe-scabies-treatment',
-        'https://article-prefetch.test.example.com/blog/acne-myths', '/blog/acne-myths#dx']) {
+      for (const href of ['/', '/admin', '/blog/acne-overview?q=private', '/blog/severe-scabies-treatment',
+        'https://article-prefetch.test.example.com/blog/acne-overview', '/blog/acne-overview#dx']) {
         const a=document.createElement('a');a.href=href;a.textContent='Fixture article';host.appendChild(a);
         a.dispatchEvent(new MouseEvent('mouseover',{bubbles:true}));
       }
     });
     assert.deepEqual(await page.locator('link[rel="prefetch"][as="document"]').evaluateAll(nodes => nodes.map(node => node.href)),
-      [origin+'/blog/acne-myths'],'Only an explicit published article intent may create a manual hint');
+      [origin+'/blog/acne-overview'],'Only an explicit published article intent may create a manual hint');
     await page.evaluate(() => {
       const a=document.querySelector('#prefetch-fixture a:last-child');a.dispatchEvent(new FocusEvent('focusin',{bubbles:true}));
       a.dispatchEvent(new Event('touchstart',{bubbles:true}));

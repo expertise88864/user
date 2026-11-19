@@ -198,7 +198,7 @@ for (const address of ['javascript:alert(1)', 'JavaScript:alert(1)', 'java&#115;
   });
 }
 for (const address of ['https://example.test/paper','http://example.test/paper','mailto:example@example.test',
-  'tel:+88612345678','#main-content','/blog/acne-myths']) {
+  'tel:+88612345678','#main-content','/blog/acne-overview']) {
   test('source drafts preserve ordinary reference links: '+address,async()=>{
     const h=fixture();
     const content=HTML.replace('本機測試','<a href="'+address+'">Fixture link</a>');

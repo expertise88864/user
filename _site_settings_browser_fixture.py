@@ -21,7 +21,7 @@ def main():
         address = '/' if name == 'index.html' else '/blog'
         pages[address] = sync_source((ROOT / name).read_text(encoding='utf8'), element,
                                      articles, overrides.get(name), order=order)
-    pages['/blog/acne-myths'] = (ROOT/'blog/acne-myths.html').read_text(encoding='utf8')
+    pages['/blog/acne-overview'] = (ROOT/'blog/acne-overview.html').read_text(encoding='utf8')
     css = render_theme((ROOT/'assets/dn-below-fold.css').read_text(encoding='utf8'), font)
     print(json.dumps({'pages':pages,'css':css,'order':order,'font':font},ensure_ascii=True))
 

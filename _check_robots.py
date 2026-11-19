@@ -154,7 +154,7 @@ def main() -> None:
     # block (a literal `Disallow: /` in the resolved group) AND that every
     # representative path is disallowed, so a future narrow-disallow policy
     # can't slip through a single-path probe.
-    probes = ['/blog/acne-myths', '/blog/', '/en/blog/acne-myths', '/glossary', '/tools', '/about']
+    probes = ['/blog/acne-overview', '/blog/', '/en/blog/acne-overview', '/glossary', '/tools', '/about']
     for ua in REQUIRED_BLOCKED:
         rules = rules_for(ua, groups)
         has_broad_block = any(kind == 'disallow' and pattern == '/' for kind, pattern in rules)

@@ -72,10 +72,6 @@ EN_OG_OVERRIDES = {
         'title': 'Dermatology Articles Index | Dr. Yi-Jia Chen',
         'desc': 'Index of dermatology articles: acne, sunscreen, eczema, melasma, isotretinoin, topical acids, steroids, biologics, hair loss, and mpox.',
     },
-    'blog/acne-myths.html': {
-        'title': '8 Acne Myths | Dermatologist Patient Education',
-        'desc': 'Clear answers to common acne myths: popping pimples, toothpaste spot treatment, dry skin acne, washing frequency, supplements, scars, and when to see a dermatologist.',
-    },
     'blog/sunscreen-myths.html': {
         'title': '8 Sunscreen Myths | SPF, UVA, Indoor Light, Mineral vs Chemical',
         'desc': 'A dermatologist explains sunscreen myths about indoor light, cloudy days, SPF numbers, UVA and PA ratings, mineral versus chemical filters, acne-prone skin, and melasma.',
@@ -119,6 +115,10 @@ EN_OG_OVERRIDES = {
     'blog/bimekizumab-hidradenitis-suppurativa.html': {
         'title': 'Bimekizumab for Hidradenitis Suppurativa (BE-HEARD I/II, BJD 2026)',
         'desc': 'Bimekizumab is a newer biologic that inhibits both IL-17A and IL-17F. A 2026 British Journal of Dermatology critically appraised topic (McCarthy & Ring) reviews its two phase III trials, BE-HEARD I and II (Kimball et al., Lancet 2024): at week 16, about 48–52% of the every-2-weeks arm reached HiSCR 50 vs 29–32% on placebo, with DLQI and pain improvements, broadly comparable to adalimumab and secukinumab. The appraisal is candid about limits: a 31% placebo response, UCB funding, no comparator beyond week 16 and no head-to-head, common candida infections (23–25%), IBD signals, week-48 retention falling to 66–76%, a predominantly White and female cohort, and exclusion of the most severe phenotype. Covers IL-17A/F mechanism, efficacy, safety, the critical appraisal, and the Taiwan context.',
+    },
+    'blog/acne-overview.html': {
+        'title': 'Acne Explained: Causes, Grading, Creams, Tablets, Isotretinoin, Scars and Daily Care',
+        'desc': 'Causes, grading, creams and tablets, isotretinoin safety, scars and dark marks, diet myths and daily care for acne in one guide.',
     },
     'blog/bullous-pemphigoid.html': {
         'title': 'Bullous Pemphigoid Explained: Causes, Diagnosis, Treatment and Care',
