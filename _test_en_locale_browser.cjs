@@ -32,7 +32,7 @@ async function checkEnglishReturn(browser) {
      if(javaScriptEnabled){assert.equal(destination.search,'?from=locale-test');assert.equal(destination.hash,fragment);assert.ok(await page.locator(fragment).isVisible());}
      assert.ok(await page.locator('main').isVisible());
      if(javaScriptEnabled&&en.endsWith('/perioral-dermatitis-guide')) {
-      await page.goto(origin+en+'?from=locale-test#en-dx',{waitUntil:'load'});
+      await page.goto(origin+en+'?from=locale-test#dx',{waitUntil:'load'});
       await page.locator('#dn-en-banner-zh').click();await page.waitForURL(u=>u.pathname===zh&&u.hash==='#dx');
       assert.ok(await page.locator('#dx').isVisible(),'The translated anchor must target the primary Chinese prose');
      }

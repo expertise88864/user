@@ -153,7 +153,7 @@ module.exports = async function checkReadingNavigation(browser, {readingSource, 
 async function checkLanguageFragments(browser) {
   const journeys = [
     {slug:'skin-biopsy-excision',zh:'postop',en:'postop-en'},
-    {slug:'perioral-dermatitis-guide',zh:'dx',en:'en-dx'},
+    {slug:'perioral-dermatitis-guide',zh:'dx',en:'dx'},
     {slug:'photodynamic-therapy-overview',zh:'pdt-\u4e09\u8981\u7d20\u8207\u5206\u5b50\u5c64\u7d1a\u6a5f\u8f49',en:'the-three-pillars-of-pdt-and-molecular-m'},
   ];
   const origin = 'https://reading-locale.test', results = [];

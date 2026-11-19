@@ -80,7 +80,7 @@ EN_OG_OVERRIDES = {
         'title': 'Oral Isotretinoin Clinical Guide | Dermatology Notes',
         'desc': 'Resident-level isotretinoin notes covering pharmacology, mechanisms, indications, dosing, adverse effects, drug interactions, monitoring, and acne guideline integration.',
     },
-    'blog/perioral-dermatitis-guide.html': {'title': 'Periorificial (Perioral) Dermatitis: Complete Patient Guide', 'desc': 'Recurring rash around the mouth or nose: perioral dermatitis, acne or eczema? Read about symptoms, possible triggers, diagnosis and when to seek care.'},
+    'blog/perioral-dermatitis-guide.html': {'title': 'Perioral (Periorificial) Dermatitis Explained: Causes, Symptoms, Diagnosis, Treatment and Daily Care', 'desc': 'Small red bumps around the mouth, nose or eyes that flare after steroid creams? Triggers, look-alikes, steroid withdrawal, treatment, children and skin care.'},
     'blog/toenail-mechanical-disorders.html': {
         # SEO_AUDIT B1 — shortened from 76 → 63 chars so SERP doesn't truncate.
         'title': 'Toenail Mechanical Disorders — 12-Type Atlas & Diabetic Foot',

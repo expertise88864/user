@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202611200300';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611200900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -497,7 +497,7 @@
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202611200300';
+        s.src = '/blog/blog-search.min.js?v=202611200900';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -927,7 +927,7 @@
     { slug:'sunscreen-myths',     title:'防曬 8 大迷思', title_en:'8 Sunscreen Myths', cat:'myth', tag:'防曬', date:'2026-05-03', emoji:'', tag_en:'Sunscreen' },
     { slug:'melasma-myths',       title:'肝斑 7 大迷思', title_en:'7 Melasma Myths', cat:'myth', tag:'肝斑', date:'2026-05-03', emoji:'', tag_en:'Melasma' },
     { slug:'rosacea-myths',       title:'玫瑰痤瘡 6 大迷思', title_en:'Rosacea myths', cat:'myth', tag:'酒糟肌', date:'2026-05-03', emoji:'', tag_en:'Rosacea' },
-    { slug:'perioral-dermatitis-guide', title:'嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教', title_en:'Perioral / Periorificial dermatitis: complete guide', cat:'rx', tag:'口周皮膚炎', date:'2026-05-13', emoji:'', tag_en:'Perioral dermatitis' },
+    { slug:'perioral-dermatitis-guide', title:'口周皮膚炎完整介紹：成因、症狀、診斷、治療與日常照護', title_en:'Perioral (Periorificial) Dermatitis Explained: Causes, Symptoms, Diagnosis, Treatment and Daily Care', cat:'rx', tag:'口周皮膚炎', date:'2026-05-13', revised:'2026-11-20', emoji:'', tag_en:'Perioral dermatitis' },
     { slug:'toenail-mechanical-disorders', title:'腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病', title_en:'Toenail mechanical disorders: complete patient guide', cat:'rx', tag:'趾甲與足部', date:'2026-05-13', emoji:'', tag_en:'Toenail disorders' },
     { slug:'dermatologic-oral-examination', title:'嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南', title_en:'Oral mucosa: when to see a dermatologist — exam and biopsy guide', cat:'rx', tag:'口腔黏膜', date:'2026-05-13', emoji:'', tag_en:'Oral mucosa' },
     { slug:'severe-scabies-treatment', title:'嚴重疥瘡為什麼治不好？口服 ivermectin + 外用 permethrin 完整治療指南', title_en:'Severe scabies: complete ivermectin + permethrin treatment guide', cat:'rx', tag:'疥瘡', date:'2026-05-13', emoji:'', tag_en:'Scabies', unpublished:true },
@@ -1154,7 +1154,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202611200300';
+        s.src = '/blog/blog-article-reading.min.js?v=202611200900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1190,7 +1190,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202611200300';
+        s.src = '/blog/blog-article-footer.min.js?v=202611200900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1220,7 +1220,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202611200300';
+        s.src = '/blog/blog-calculators.min.js?v=202611200900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1359,7 +1359,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202611200300';
+        s.src = '/blog/blog-hub.min.js?v=202611200900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1391,7 +1391,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202611200300';
+        script.src = '/blog/blog-support.min.js?v=202611200900';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));

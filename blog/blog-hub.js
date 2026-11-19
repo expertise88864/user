@@ -114,7 +114,7 @@
       label_en: 'Quick find',
       tags: {
         '最新研究':         { _from_cat: 'research' },
-        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview', 'psoriasis-overview', 'acne-overview'],
+        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview', 'psoriasis-overview', 'acne-overview', 'perioral-dermatitis-guide'],
         '常見問題 FAQ':      ['dermatology-faq'],
         '皮膚科 AI / 數位工具': ['ai-dermatology-roles']
       }
@@ -691,7 +691,7 @@
     'nail-psoriasis-topical-intralesional': {desc:'指甲乾癬擦藥沒效要打針嗎？2026 JAAD 編輯評論整理指甲乾癬的局部與病灶內治療：維生素 D 藥膏、局部 methotrexate + CO2 雷射輔助穿透、病灶內 MTX/類固醇注射，含甲基質麻醉技巧與台灣健保自費實況。',desc_en:'Nail psoriasis is hard to treat because creams cannot cross the thick nail plate and the matrix sits deep. A June-2026 JAAD Letter from the Editor (Elston) reviews...'},
     'nhi-derm-drugs': {desc:'台灣健保皮膚科常用藥物完整規範 — 口服 A 酸、Dupilumab、Adalimumab、Omalizumab、JAK 抑制劑、IL-17 / IL-23 生物製劑、Tacrolimus、MTX、Cyclosporine 給付條件、PASS 流程一次查清楚。',desc_en:'A complete reference of Taiwan NHI rules for commonly prescribed dermatology drugs. Each entry lists: indication, ICD-10 code, NHI coverage criteria, dose, course...'},
     'pemphigoid-elderly-eczema': {desc:'長輩全身癢、紅疹擦藥好幾個月都不好，不一定只是濕疹。類天疱瘡是老年人常見的自體免疫皮膚病，有些人完全不起水泡。整理 2026 年 JAAD 研究找出的警訊：病程長、範圍大、合併神經疾病，以及切片、免疫螢光與抽血如何確診。',desc_en:'An older adult’s itchy rash that lasts for months is not always eczema. Pemphigoid can occur without blisters; a 2026 JAAD study shows the warning signs.'},
-    'perioral-dermatitis-guide': {desc:'口周皮膚炎（perioral dermatitis）是嘴角、鼻翼周圍反覆的小紅疹，常和痘痘、濕疹混淆。整理成因（含類固醇藥膏）、症狀、鑑別重點、治療方式與大約多久會好。',desc_en:'Recurring rash around the mouth or nose: perioral dermatitis, acne or eczema? Read about symptoms, possible triggers, diagnosis and when to seek care.'},
+    'perioral-dermatitis-guide': {desc:'嘴巴、鼻翼、眼睛周圍反覆長小紅疹、刺刺燙燙，擦類固醇先好後壞？依 UpToDate、2026 年 JAAD 綜論與系統性回顧，整理口周皮膚炎的誘發因子、和痘痘酒糟的分別、停用類固醇的反彈、外用與口服治療、兒童注意事項與日常保養。',desc_en:'Small red bumps around the mouth, nose or eyes that flare after steroid creams? Triggers, look-alikes, steroid withdrawal, treatment, children and skin care.'},
     'photodynamic-therapy-overview': {desc:'光動力治療（PDT）原理機轉、ALA 與 MAL 光敏劑、紅光與藍光選擇、12 大適應症按證據等級（AK、BCC、Bowen disease、痘痘、酒紅斑、光老化等）完整整理。整合 2026 JAAD 兩篇 CME Review。患者 7 題 FAQ + 臨床雙軌寫法。',desc_en:'In June 2026, the Journal of the American Academy of Dermatology published two CME Reviews on photodynamic therapy (PDT): Part I covers mechanism and photosensitizers...'},
     'prurigo-nodularis': {desc:'Prurigo nodularis 中文是結節性癢疹（PN），特徵是非常癢的硬結節。整理症狀、診斷評估與治療選項，包含 dupilumab、nemolizumab 等新藥，附醫學文獻。',desc_en:'Prurigo nodularis (PN) is called 結節性癢疹 in Chinese. Read about its definition, itch and nodules, diagnostic assessment, treatment options and references.'},
     'psoriasis-biologic-monitoring': {desc:'打乾癬生物製劑要不要每年抽血？2026 JAAD 系統性回顧用 USPSTF 評級重新看：TNF-α 仍需結核 + B 肝；IL-17 問口腔念珠菌 + 腸道症狀；IL-23 大多不必。整合台灣健保落差。',desc_en:'This systematic review (Duong JQ et al, JAAD 2026;94:1438-46; published online January 2026, in print May 2026) applies USPSTF A/B/C/D/I evidence grades to the...'},

@@ -6,7 +6,7 @@ const path = require('node:path');
 
 const journeys = [
   ['dupilumab-long-term-maintenance', ['patient', 'relapse', 'design'], ['patient', 'relapse', 'design']],
-  ['perioral-dermatitis-guide', ['dx', 'when', 'qa'], ['en-dx', 'en-when', 'en-qa']],
+  ['perioral-dermatitis-guide', ['dx', 'when', 'faq'], ['dx', 'when', 'faq']],
   ['topical-acids-patient', ['overview', 'combo', 'start'], ['why-en', 'combine-en', 'howto-en']],
   ['prurigo-nodularis', ['what', 'dx', 'tx'], ['what-en', 'dx-en', 'tx-en']],
   ['tinea-myths', ['tx', 'm3', 'end', 'lt2'], ['tx-en', 'm3-en', 'end-en', 'm2-en']],

@@ -154,5 +154,17 @@
       "png": "47f736447d88f0856dba12ddb19252e1e2ef116e9b90f784db9e43abd671894e",
       "webp": "2a802f494a5f0063798eba2a9405dbefb79bc31b150c25a79223630f1cb5b420"
     }
+  },
+  "perioral-dermatitis-guide": {
+    "source": {
+      "title": "口周皮膚炎完整介紹：成因、症狀、診斷、治療與日常照護",
+      "subtitle": "",
+      "date": "2026-05-13"
+    },
+    "rendered_tag": "疾病總覽",
+    "files": {
+      "png": "98b69cc7735a5b181b6b39839d5ac470943b3facf2c5d8d61e85516d50f9345e",
+      "webp": "085a1f307e8ed44669c6e20519e8b3e7668275fd708728d8b04ed931794921bd"
+    }
   }
 }
