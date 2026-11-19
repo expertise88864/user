@@ -22,7 +22,10 @@ def theme_css(font):
     if font['headFont']:
         rules.append('h1,h2,h3,h4,.font-display{font-family:' + font['headFont'] + '!important}')
     if font['bodySize']:
-        rules.append('article p,article li,article td{font-size:' + font['bodySize'] + '!important}')
+        # :is() takes the specificity of #proseZh/#proseEn, and the block is appended after the
+        # stylesheet's own `#proseZh p{font-size:15px!important}`, so the chosen size reaches
+        # article prose too (it previously lost to that ID rule on every #proseZh page).
+        rules.append(':is(article,#proseZh,#proseEn) :is(p,li,td){font-size:' + font['bodySize'] + '!important}')
     return '\n'.join(rules)
 
 

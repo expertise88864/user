@@ -20,7 +20,7 @@ class SettingsRenderTests(unittest.TestCase):
             rendered = render_theme(source, FONT)
             self.assertTrue(rendered.startswith(source))
             self.assertIn("body{font-family:Georgia,'Noto Serif TC',serif!important}",rendered)
-            self.assertIn('article p,article li,article td{font-size:18px!important}',rendered)
+            self.assertIn(':is(article,#proseZh,#proseEn) :is(p,li,td){font-size:18px!important}',rendered)
             self.assertEqual(render_theme(rendered, FONT), rendered)
             self.assertEqual(render_theme(rendered, EMPTY), source)
             changed = render_theme(rendered, {**FONT,'bodySize':'16px'})

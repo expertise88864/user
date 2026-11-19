@@ -549,7 +549,7 @@
     css += '}\n';
     if (bodyFont) css += `body{font-family:var(--font-body)!important}\n`;
     if (headFont) css += `h1,h2,h3,h4,.font-display{font-family:var(--font-display)!important}\n`;
-    if (bodySize) css += `article p,article li,article td{font-size:var(--font-body-size)!important}\n`;
+    if (bodySize) css += `:is(article,#proseZh,#proseEn) :is(p,li,td){font-size:var(--font-body-size)!important}\n`;
     return css;
   }
 
