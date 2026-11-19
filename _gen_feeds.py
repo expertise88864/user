@@ -114,6 +114,7 @@ def parse_article_catalog() -> dict[str, dict[str, str]]:
     # apostrophes and cannot read JSON-keyed legacy/new catalog entries.
     return {item['slug']: {'slug': item['slug'], 'title': item['title'],
                           'tag': item.get('tag', ''), 'date': item.get('date', '2026-01-01'),
+                          'revised': item.get('revised', ''),
                           'cat': item.get('cat', 'myth')}
             for item in load_catalog(ROOT) if not item.get('unpublished')}
 
@@ -389,12 +390,16 @@ def build_atom() -> str:
     for a in ARTICLES[:30]:
         d = _parse_date_safe(a['date'], a.get('slug', ''))
         iso = d.strftime('%Y-%m-%dT00:00:00Z')
+        # A rewritten article keeps its first publication in <published> and
+        # announces the rewrite through <updated> (catalog `revised`).
+        updated = (_parse_date_safe(a['revised'], a.get('slug', '')).strftime('%Y-%m-%dT00:00:00Z')
+                   if a.get('revised') else iso)
         out += [
             '  <entry>',
             f'    <title>{html.escape(a["title"])}</title>',
             f'    <link href="{DOMAIN}/blog/{a["slug"]}" rel="alternate"/>',
             f'    <id>{DOMAIN}/blog/{a["slug"]}</id>',
-            f'    <updated>{iso}</updated>',
+            f'    <updated>{updated}</updated>',
             f'    <published>{iso}</published>',
             f'    <category term="{html.escape(a.get("tag", ""))}"/>',
             f'    <summary>{html.escape(a["title"])} | ChenDermatologist 皮膚科衛教筆記</summary>',

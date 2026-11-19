@@ -1,6 +1,6 @@
 {
   "assets": {
-    "assets/dn-below-fold.css": "21d453f58350628dc3ccf83943b49a4fc3d922a7f50dcd0f9e09be4d17aed3dc",
+    "assets/dn-below-fold.css": "a8aaaea8e033a2331333884d8a9fe3e134661feac8c8efb56b12f233acb45037",
     "assets/dn-print.css": "f0c197abde8857c9474c07b7417c5344d4f799d4366a48f6eea522536f64c963",
     "assets/inline/analytics-loader.js": "498834b0097e16dabcabd31cc4c6d3f4881cb85e9a8de477f3ef0ebf7c99d33e",
     "assets/inline/dn-init.js": "85a2bde719cab2b1a3affafc226c8a322e8e780363799e1e6040516f35280941",
@@ -11,20 +11,20 @@
     "assets/tw-mini.css": "f5e913a3f65046c041652dd56a76b5cc1e285e8d81c282e6027b204155f745b1",
     "assets/web-vitals.iife.js": "77b2dfc9e065286d780c87f72b5cad08761346ff564ddd3f79102f4d4027e9a6",
     "blog/blog-article-footer.min.js": "bba8ab776c1cd1a766ccf32cc39012e2b9edee16a9f888e2178804536f572821",
-    "blog/blog-article-reading.min.js": "a0265f0fd9b27f8edbb584f92ae89e9552ca93d9d79019be742c217634782c27",
+    "blog/blog-article-reading.min.js": "a07a007cc91d4589b1250ff56532e8e1c3ac76e34f0077fe5fd43dafc8c7f56a",
     "blog/blog-article-visuals.min.js": "b75f1b1e42a8cc1a1d93d9159c919119bcc2273e6071b74c8a99a14cda1ad265",
     "blog/blog-calculators.min.js": "7a533e59c43200a126fea6cef171272a3b510923b2a127ecf0fd0c48adb79dc1",
     "blog/blog-diagrams.min.js": "9d858c74a27085c8a91f5ef94599bd25693b3157332af464a24e39eff8821b50",
-    "blog/blog-hub.min.js": "64789dc65b717601b17aee8e2b492487cfb5e6bb23c8f3748bb7367d895f115a",
+    "blog/blog-hub.min.js": "a32a1fd1d372f1c76e069443903c05af35739c4ec636035b240dce534a7193b4",
     "blog/blog-search.min.js": "8a7b9dc571045a1a4438b63c24d89a7ba09588ed9b3a51f8e243ad5371cbd462",
-    "blog/blog-shared.min.js": "f114c49ac6845e45ca7e972bc85a6e9d6c854a4ada38a30836f603d3b68d5356",
+    "blog/blog-shared.min.js": "9e782f51057f7ca125ac74f008367f146e801dd77f74cdde19e556594d4e5a88",
     "blog/blog-support.min.js": "5a26abeb2cdf067d8a8e16978eb2f74dfee11966608d316602478dae4669a1e8"
   },
   "caches": {
-    "CACHE": "cd-v266",
-    "RUNTIME": "cd-runtime-v264"
+    "CACHE": "cd-v267",
+    "RUNTIME": "cd-runtime-v265"
   },
   "hash_format": "sha256-utf8-lf",
-  "version": "202611192300",
-  "worker_sha256": "75d0f16316f2d8375b6d8d6e4fb60771941f27390b610d33c86f63f8dea4a7c8"
+  "version": "202611200100",
+  "worker_sha256": "b40043331d788a3178f6def28edc00a2207b7bb4a081282828ea896aaca29859"
 }

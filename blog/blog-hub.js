@@ -443,7 +443,7 @@
     // articles keep the later catalog entry first, i.e. the most recently added.
     function newestFirst(slugs) {
       var meta = {};
-      (DN.ARTICLES || []).forEach(function (a, i) { meta[a.slug] = { d: a.date || '', i: i }; });
+      (DN.ARTICLES || []).forEach(function (a, i) { meta[a.slug] = { d: a.revised || a.date || '', i: i }; });
       return slugs.slice().sort(function (a, b) {
         var ma = meta[a] || { d: '', i: -1 }, mb = meta[b] || { d: '', i: -1 };
         if (ma.d !== mb.d) return ma.d < mb.d ? 1 : -1;
@@ -626,7 +626,7 @@
       var tagEn = escapeHtml(a.tag_en || a.tag || '');
       var titleZh = escapeHtml(a.title || '');
       var titleEn = escapeHtml(a.title_en || a.title || '');
-      var date = escapeHtml(a.date || '');
+      var date = escapeHtml(a.revised || a.date || '');
       var catZh = escapeHtml(clz);
       var catEn = escapeHtml(cle);
       descZh = escapeHtml(descZh);
