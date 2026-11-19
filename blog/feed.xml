@@ -9,24 +9,6 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed</generator>
     <item>
-      <title>異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付</title>
-      <link>https://chendermatologist.com/blog/atopic-dermatitis-overview</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-overview</guid>
-      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>異位性皮膚炎</category>
-      <description>異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>乾癬完整介紹：症狀、類型、治療、生物製劑、日常照護與健保給付</title>
-      <link>https://chendermatologist.com/blog/psoriasis-overview</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/psoriasis-overview</guid>
-      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>乾癬</category>
-      <description>乾癬完整介紹：症狀、類型、治療、生物製劑、日常照護與健保給付 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
       <title>異位性皮膚炎會影響孩子長高嗎？從 2026 年 dupilumab 兒童研究談生長追蹤</title>
       <link>https://chendermatologist.com/blog/atopic-dermatitis-child-growth</link>
       <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-child-growth</guid>
@@ -198,6 +180,15 @@
       <description>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
     <item>
+      <title>乾癬完整介紹：症狀、類型、共病、治療選擇、日常照護與健保給付</title>
+      <link>https://chendermatologist.com/blog/psoriasis-overview</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/psoriasis-overview</guid>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>乾癬</category>
+      <description>乾癬完整介紹：症狀、類型、共病、治療選擇、日常照護與健保給付 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
+    <item>
       <title>皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？</title>
       <link>https://chendermatologist.com/blog/skin-biopsy-excision</link>
       <guid isPermaLink="true">https://chendermatologist.com/blog/skin-biopsy-excision</guid>
@@ -277,6 +268,15 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>結節性癢疹</category>
       <description>結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
+    <item>
+      <title>A酸、A醇、杜鵑花酸怎麼選？五大酸類差別與搭配</title>
+      <link>https://chendermatologist.com/blog/topical-acids-patient</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/topical-acids-patient</guid>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>酸類</category>
+      <description>A酸、A醇、杜鵑花酸怎麼選？五大酸類差別與搭配 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
   </channel>
 </rss>

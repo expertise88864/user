@@ -2233,32 +2233,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/year-115"/>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/atopic-dermatitis-overview</loc>
-    <lastmod>2026-11-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-overview.png</image:loc>
-      <image:title>異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付</image:title>
-      <image:caption>異位性皮膚炎是皮膚屏障受損加上免疫發炎造成的慢性、反覆發作的癢疹。依臺灣皮膚科醫學會共識與最新國際指引，整理各年齡症狀、診斷與過敏檢查、外用類固醇與非類固醇藥膏、生物製劑與 JAK 抑制劑、洗澡保濕、飲食、兒童與孕期用藥，以及健保給付條件。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/psoriasis-overview</loc>
-    <lastmod>2026-11-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-overview"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-overview"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-overview.png</image:loc>
-      <image:title>乾癬完整介紹：症狀、類型、治療、生物製劑、日常照護與健保給付</image:title>
-      <image:caption>乾癬是免疫引起的慢性發炎性皮膚病，不是黴菌、也不會傳染。依臺灣皮膚科醫學會 2024 共識與最新國際指引，整理各型乾癬的樣子、嚴重度與治療目標、外用藥、照光、口服藥與生物製劑、關節炎與心血管共病、懷孕與兒童用藥、生活照護，以及健保給付條件。</image:caption>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/atopic-dermatitis-child-growth</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -2506,6 +2480,19 @@
     </image:image>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/psoriasis-overview</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/psoriasis-overview.png</image:loc>
+      <image:title>乾癬完整介紹：症狀、類型、共病、治療選擇、日常照護與健保給付</image:title>
+      <image:caption>乾癬是免疫引起的慢性發炎性皮膚病，不是黴菌、也不會傳染。依臺灣皮膚科醫學會 2024 共識與最新國際指引，整理各型乾癬的樣子、嚴重度與治療目標、外用藥、照光、口服藥與生物製劑、關節炎與心血管共病、懷孕與兒童用藥、生活照護，以及健保給付條件。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/skin-biopsy-excision</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -2598,7 +2585,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/nhi-derm-drugs</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/nhi-derm-drugs"/>
@@ -2663,7 +2650,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/dermatology-faq</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/dermatology-faq"/>
@@ -2715,7 +2702,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/biologics-overview</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/biologics-overview"/>
@@ -2728,7 +2715,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/hidradenitis-suppurativa</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/hidradenitis-suppurativa"/>
@@ -2793,7 +2780,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/topical-steroids-guide</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/topical-steroids-guide"/>
@@ -2815,6 +2802,19 @@
       <image:loc>https://chendermatologist.com/assets/og/warts-myths.png</image:loc>
       <image:title>病毒疣 6 大迷思</image:title>
       <image:caption>病毒疣會自己好嗎？香蕉皮、大蒜可以治嗎？冷凍要打幾次？雷射打一次就消嗎？HPV 跟疫苗有關嗎？6 個民眾最常誤會的病毒疣（HPV viral warts）觀念，陳翊嘉醫師（皮膚科）整理，附 HPV 型別與部位對照、冷凍 / 雷射 / 免疫療法治療階梯。</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/atopic-dermatitis-overview</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-overview.png</image:loc>
+      <image:title>異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付</image:title>
+      <image:caption>異位性皮膚炎是皮膚屏障受損加上免疫發炎造成的慢性、反覆發作的癢疹。依臺灣皮膚科醫學會共識與最新國際指引，整理各年齡症狀、診斷與過敏檢查、外用類固醇與非類固醇藥膏、生物製劑與 JAK 抑制劑、洗澡保濕、飲食、兒童與孕期用藥，以及健保給付條件。</image:caption>
     </image:image>
   </url>
   <url>

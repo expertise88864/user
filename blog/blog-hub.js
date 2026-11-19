@@ -582,7 +582,9 @@
     });
     if (articles.length === 0) return;
     var dateBySlug = {};
-    articles.forEach(function (a) { dateBySlug[a.slug] = a.date || '1970-01-01'; });
+    // A rewritten article keeps its first-publication date (feeds, JSON-LD) and lists by its
+    // revision date, so a substantially rewritten overview sorts with new work (author request 2026-11-19).
+    articles.forEach(function (a) { dateBySlug[a.slug] = a.revised || a.date || '1970-01-01'; });
 
     // Gather existing cards by slug
     var existing = {};

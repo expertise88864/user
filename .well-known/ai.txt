@@ -73,7 +73,7 @@ Author-URL: https://chendermatologist.com/about
 Specialty: Dermatology
 Audience: Patient education + medical-resident reference
 Articles: 50 published
-Last-Article-Date: 2026-11-19
+Last-Article-Date: 2026-11-18
 License: All rights reserved. Citation with attribution permitted.
 
 # Contact

@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202611192100';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611192300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -497,7 +497,7 @@
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202611192100';
+        s.src = '/blog/blog-search.min.js?v=202611192300';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -956,7 +956,7 @@
     { slug:'contact-dermatitis',  title:'接觸性皮膚炎(過敏 vs 刺激)完整衛教', title_en:'Contact dermatitis', cat:'rx', tag:'接觸性皮膚炎', date:'2026-05-08', emoji:'', tag_en:'Contact dermatitis' },
     { slug:'actinic-keratosis-scc', title:'日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教', title_en:'Actinic keratosis + cutaneous squamous cell carcinoma', cat:'rx', tag:'皮膚癌', date:'2026-05-08', emoji:'', tag_en:'AK / SCC' },
     { slug:'skin-biopsy-excision', title:'皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？', title_en:'Skin biopsy & tumor excision: complete guide', cat:'rx', tag:'處置 / 手術', date:'2026-05-09', emoji:'', tag_en:'Skin biopsy & excision' },
-    { slug:'psoriasis-overview',  title:'乾癬完整介紹：症狀、類型、治療、生物製劑、日常照護與健保給付', title_en:'Psoriasis Explained: Symptoms, Types, Treatment, Biologics, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'乾癬', date:'2026-11-19', emoji:'', tag_en:'Psoriasis' },
+    { slug:'psoriasis-overview',  title:'乾癬完整介紹：症狀、類型、共病、治療選擇、日常照護與健保給付', title_en:'Psoriasis Explained: Symptoms, Types, Related Conditions, Treatment, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'乾癬', date:'2026-05-09', revised:'2026-11-19', emoji:'', tag_en:'Psoriasis' },
     { slug:'shingles-myths',      title:'帶狀疱疹 6 大迷思', title_en:'6 Shingles (Herpes Zoster) Myths', cat:'myth', tag:'皮蛇', date:'2026-05-04', emoji:'', tag_en:'Shingles' },
     { slug:'topical-acids-patient', title:'A酸、A醇、杜鵑花酸怎麼選？五大酸類差別與搭配', title_en:'Retinoids, Retinol and Azelaic Acid: Differences and Combinations', cat:'product', tag:'酸類', date:'2026-05-07', emoji:'', tag_en:'Topical acids' },
     { slug:'isotretinoin-patient',  title:'口服 A 酸完整衛教', title_en:'Oral Isotretinoin', cat:'rx', tag:'口服 A 酸', date:'2026-05-07', emoji:'', tag_en:'Isotretinoin' },
@@ -975,7 +975,7 @@
     { slug:'laser-dermatology', title:'皮膚科雷射完整對照', title_en:'Dermatologic laser comparison', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
     { slug:'prurigo-nodularis', title:'結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療', title_en:'Prurigo Nodularis: Meaning, Symptoms and Treatment', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
     { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', title_en:'Cutaneous T-cell lymphoma (CTCL / MF)', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },
-    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付', title_en:'Atopic Dermatitis Explained: Symptoms, Diagnosis, Treatment, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'異位性皮膚炎', date:'2026-11-19', emoji:'', tag_en:'Atopic dermatitis' },
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付', title_en:'Atopic Dermatitis Explained: Symptoms, Diagnosis, Treatment, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-03', revised:'2026-11-19', emoji:'', tag_en:'Atopic dermatitis' },
   ];
 
   // -----------------------------------------------------------------------
@@ -1155,7 +1155,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202611192100';
+        s.src = '/blog/blog-article-reading.min.js?v=202611192300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1191,7 +1191,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202611192100';
+        s.src = '/blog/blog-article-footer.min.js?v=202611192300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1221,7 +1221,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202611192100';
+        s.src = '/blog/blog-calculators.min.js?v=202611192300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1360,7 +1360,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202611192100';
+        s.src = '/blog/blog-hub.min.js?v=202611192300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1392,7 +1392,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202611192100';
+        script.src = '/blog/blog-support.min.js?v=202611192300';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));
@@ -2005,4 +2005,20 @@
     }
     return { applyLang: apply };
   };
+
+  // Collapsible FAQ answers are article content: open them for printing, then
+  // restore each reader's own disclosure state afterwards.
+  (function () {
+    if (typeof window === 'undefined' || typeof window.addEventListener !== 'function') return;
+    var opened = [];
+    window.addEventListener('beforeprint', function () {
+      opened = Array.prototype.filter.call(document.querySelectorAll('details.dn-faq-item:not([open])'), function (d) {
+        d.open = true; return true;
+      });
+    });
+    window.addEventListener('afterprint', function () {
+      opened.forEach(function (d) { d.open = false; });
+      opened = [];
+    });
+  })();
 })();

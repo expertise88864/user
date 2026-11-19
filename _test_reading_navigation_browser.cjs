@@ -114,7 +114,7 @@ module.exports = async function checkReadingNavigation(browser, {readingSource, 
         assert.ok(await toc.evaluate(node => node.open),'Keyboard must open the real native disclosure');
         const expected = await links.last().getAttribute('data-toc-inline');
         await activateFragmentLink(page,links.last(),expected);
-        if (route.includes('psoriasis-overview')) assert.deepEqual(await links.evaluateAll(nodes => nodes.map(node => node.dataset.tocInline)),['what-is-psoriasis','six-clinical-subtypes','severity-assessment','triggers','diagnosis','bottom-line']);
+        if (route.includes('psoriasis-overview')) assert.deepEqual(await links.evaluateAll(nodes => nodes.map(node => node.dataset.tocInline)),['kp','basics','types','symptoms','triggers','diagnosis','severity','treatment','topical','phototherapy','systemic','biologics','care','comorbidities','special','myths','when','faq','pro','refs']);
         if (route.includes('photodynamic-therapy-overview')) {
           const ports=page.locator('article .dn-table-scroll');
           assert.equal(await ports.count(),3,'PDT comparison tables need static scrollports without JavaScript');

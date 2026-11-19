@@ -123,12 +123,24 @@
     "source": {
       "title": "異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付",
       "subtitle": "",
-      "date": "2026-11-19"
+      "date": "2026-05-03"
     },
     "rendered_tag": "疾病總覽",
     "files": {
-      "png": "57ee0bb1d13da7109b8b81ce0778f2467180654b5153fb31100d97f702976856",
-      "webp": "3235af993fa2a367153eff35e1f24399db82d38fb7cb476bbc8418da93d88917"
+      "png": "f158b60104e72c9099b10f7659c2a5a9283e3c5fb615b277c015b99679e1c7e5",
+      "webp": "5bd45b5e7f1c407df4d7a80d016e3ccf447bff667b230c3f7219150dd18bb2cc"
+    }
+  },
+  "psoriasis-overview": {
+    "source": {
+      "title": "乾癬完整介紹：症狀、類型、共病、治療選擇、日常照護與健保給付",
+      "subtitle": "",
+      "date": "2026-05-09"
+    },
+    "rendered_tag": "疾病總覽",
+    "files": {
+      "png": "902a881f195cd2a0f2089a1f50cd5d16fa4006613e88fb4d22a320355dbe7643",
+      "webp": "f3d16f2f6341dec218880f3bccc9242ec7a01a29f483c5c97e91baacbd37d4c8"
     }
   }
 }
