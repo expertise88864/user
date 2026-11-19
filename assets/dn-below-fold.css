@@ -294,3 +294,5 @@ article h2[id]{scroll-margin-top:84px}
 @media (max-width:520px){.dn-faq-item>summary{padding:14px 42px 14px 48px}.dn-faq-item>summary::before{left:12px}:is(#proseZh,#proseEn,.prose,.prose-zh,.prose-en) .dn-faq-item>:not(summary){margin:0 16px 14px 48px}}
 :root[data-theme="dark"] .dn-faq{--dn-faq-badge:var(--mint-soft)}
 @media print{.dn-faq-item>summary::after{display:none}.dn-faq-item::details-content{content-visibility:visible;display:block;height:auto}}
+/* Legacy fragment targets kept before a heading when a rewritten page changes its section ids. */
+.dn-legacy-anchor{display:block;height:0;scroll-margin-top:84px}
