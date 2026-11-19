@@ -24,20 +24,8 @@
     "hash": "8e5eaac00e27bbe71cbcabfdabb283342f959be475fb7dc8a8176da81c7fbf5a"
   },
   "atopic-dermatitis-overview": {
-    "date": "2026-11-18",
-    "hash": "2b01fe9c96f5911bf7f840c45bbd3d4a96f9aad3ba66110e7746630a989cd86c"
-  },
-  "atopic-dermatitis-special-populations": {
-    "date": "2026-10-16",
-    "hash": "21bbdd5e4678a08e28d78be3ed8c2b3a3256abaf1bd3982ce9b7efe8e150506b"
-  },
-  "atopic-dermatitis-systemic": {
-    "date": "2026-10-16",
-    "hash": "89203234ca7c6a71d93ac368aa6248af8fdc7e2c8befcafd2fad8e91ce14d8f9"
-  },
-  "atopic-dermatitis-topical": {
-    "date": "2026-10-16",
-    "hash": "dc5025ef2c5dc0e22a087446ce9eb9a535abb8b1b04c1370eb3801f05e4866af"
+    "date": "2026-11-19",
+    "hash": "54deb62ddd07c143526e72877a5c8320f125476a414904e497558020fc21fbbc"
   },
   "bimekizumab-hidradenitis-suppurativa": {
     "date": "2026-10-16",
@@ -126,10 +114,6 @@
   "nhi-derm-drugs": {
     "date": "2026-10-18",
     "hash": "db71952ea6ad5eb760f0d0920e9d501a03bb4b5a791368cb41bbc609675e95bf"
-  },
-  "pediatric-eczema": {
-    "date": "2026-11-18",
-    "hash": "bef5a9bce1fbb955e5469f84505f08e8d042939424dca3ec2b0133b12f0e1f25"
   },
   "pemphigoid-elderly-eczema": {
     "date": "2026-11-18",

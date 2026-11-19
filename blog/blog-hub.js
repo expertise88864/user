@@ -114,7 +114,7 @@
       label_en: 'Quick find',
       tags: {
         '最新研究':         { _from_cat: 'research' },
-        '疾病總覽':         ['bullous-pemphigoid'],
+        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview'],
         '常見問題 FAQ':      ['dermatology-faq'],
         '皮膚科 AI / 數位工具': ['ai-dermatology-roles']
       }
@@ -125,7 +125,7 @@
       label_en: 'Dermatitis & allergy',
       card: true,
       tags: {
-        '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-special-populations', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'refractory-atopic-dermatitis-workup', 'atopic-dermatitis-child-growth'],
+        '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'topical-steroids-guide', 'biologics-overview', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'refractory-atopic-dermatitis-workup', 'atopic-dermatitis-child-growth'],
         '乾癬':              ['psoriasis-overview', 'psoriasis-topical', 'psoriasis-systemic', 'psoriasis-special-populations', 'psoriasis-myths', 'biologics-overview', 'psoriasis-biologic-monitoring', 'nail-psoriasis-topical-intralesional'],
         '蕁麻疹':            ['urticaria-myths'],
         '接觸性皮膚炎':      ['contact-dermatitis'],
@@ -180,7 +180,7 @@
       label_en: 'Treatments & medicines',
       card: true,
       tags: {
-        '生物製劑':          ['biologics-overview', 'atopic-dermatitis-systemic', 'psoriasis-systemic', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'psoriasis-biologic-monitoring', 'hidradenitis-suppurativa', 'bimekizumab-hidradenitis-suppurativa', 'jaki-switching-alopecia-areata'],
+        '生物製劑':          ['biologics-overview', 'psoriasis-systemic', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'psoriasis-biologic-monitoring', 'hidradenitis-suppurativa', 'bimekizumab-hidradenitis-suppurativa', 'jaki-switching-alopecia-areata'],
         '類固醇藥膏':        ['topical-steroids-guide', 'atopic-dermatitis-overview'],
         '酸類 / A 酸':       ['topical-acids-patient', 'skin-whitening-agents', 'isotretinoin-patient'],
         '雷射 / 光電':       ['laser-dermatology', 'acne-scar-treatment', 'rosacea-myths', 'photodynamic-therapy-overview'],
@@ -668,10 +668,7 @@
     'ai-dermatology-roles': {desc:'2026 三篇 JAAD 研究綜合：Kremer 眼動追蹤（DEXI 熱圖 r=0.540、5/20 顆黑色素瘤誤判）、Mahajan 多模態 LLM 看 12 種發炎性皮膚病（GPT-5 46.2%、深膚色準確率掉 13%）、Cao 數位轉錄秘書。AI 在皮膚科的三條前線與限制。',desc_en:'Resident-level research review integrating 2026 JAAD Reviews and the JAAD eye-tracking study comparing dermatologist gaze maps with DEXI dermoscopy AI heat maps...'},
     'alopecia-areata': {desc:'圓禿(Alopecia areata、俗稱鬼剃頭)是自體免疫疾病、台灣終生風險 1.7-2.1%。SALT 分級評估嚴重度、輕中度用病灶內類固醇注射 + Minoxidil、重度用 JAK 抑制劑(Baricitinib)。',desc_en:'Alopecia areata (AA) is an autoimmune-driven hair loss. Lifetime risk in Taiwan is ~1.7-2.1%, and 85.5% of patients develop disease before age 40. Mild cases can...'},
     'atopic-dermatitis-child-growth': {desc:'嚴重異位性皮膚炎的孩子身高會落後嗎？2026 年 JAAD 一篇 dupilumab 兒童試驗事後分析發現，病情控制後，部分身高偏矮的孩子生長有往上追的跡象。本文說明研究數字與限制，以及家長如何記錄身高、顧好睡眠、避免不必要的忌口。',desc_en:'Can severe eczema slow a child’s growth? A 2026 JAAD post hoc dupilumab analysis: what it shows, its limits, and how to monitor height and sleep.'},
-    'atopic-dermatitis-overview': {desc:'異位性皮膚炎完整概論：Th2/IL-4/IL-13 為核心的免疫機轉、filaggrin 基因突變、皮膚微生物失衡、Hanifin & Rajka 與 UK Working Party 診斷標準、EASI / SCORAD / IGA / POEM / DLQI 評分系統、4 大誘發因子與分型。陳翊嘉醫師整理。',desc_en:'Atopic dermatitis (AD) is the most common chronic inflammatory skin disease in children. Global pediatric prevalence is 15–30% (2–10% in adults); Taiwan pediatric...'},
-    'atopic-dermatitis-special-populations': {desc:'異位性皮膚炎不只是皮膚病：氣喘、過敏性鼻炎、食物過敏、嗜伊紅性食道炎、憂鬱、心血管、感染、白內障；懷孕哺乳藥物、嬰幼兒、老年人。整合 AAD 2022 + 2023 兒童指引。',desc_en:'AD is the skin manifestation of systemic Th2 hyperactivity . AAD 2022 comorbidities guideline (Davis): seven essential screens — asthma (30-50%), allergic rhinitis...'},
-    'atopic-dermatitis-systemic': {desc:'異位性皮膚炎中重度全身治療：4 種生物製劑（dupilumab / tralokinumab / lebrikizumab / nemolizumab）、3 種 JAK 抑制劑、光療詳細比較 — 機轉、頻率、療效、副作用與健保給付條件一次看完。',desc_en:'When AD remains moderate-severe (EASI ≥ 16, IGA ≥ 3) or significantly impacts sleep/work after 4-8 weeks of adequate topical care, step up to systemic therapy. AAD...'},
-    'atopic-dermatitis-topical': {desc:'異位性皮膚炎外用治療階梯：保濕（每天 ≥ 250 g）、外用類固醇 1-7 級、TCI、PDE4i、外用 JAK 抑制劑、tapinarof、roflumilast、wet wrap — 依 AAD 2023 + UpToDate 2024 整理。',desc_en:'80% of atopic dermatitis is controlled with topical therapy . Three pillars: (1) Daily moisturizer ≥ 250 g/week, soak-and-seal within 3 minutes after bathing; (2)...'},
+    'atopic-dermatitis-overview': {desc:'異位性皮膚炎是皮膚屏障受損加上免疫發炎造成的慢性、反覆發作的癢疹。依臺灣皮膚科醫學會共識與最新國際指引，整理各年齡症狀、診斷與過敏檢查、外用類固醇與非類固醇藥膏、生物製劑與 JAK 抑制劑、洗澡保濕、飲食、兒童與孕期用藥，以及健保給付條件。',desc_en:'Atopic dermatitis explained: symptoms, diagnosis, topical and systemic treatment, daily care, food, children, pregnancy and Taiwan NHI rules in one guide.'},
     'bimekizumab-hidradenitis-suppurativa': {desc:'化膿性汗腺炎（HS）新生物製劑 bimekizumab 同時抑制 IL-17A 與 IL-17F。2026 BJD 評讀 BE-HEARD I/II 三期試驗：第 16 週約半數達 HiSCR 50、DLQI 與疼痛改善；但安慰劑反應高達 31%、candida 感染常見、長期續用率下降。含台灣定位。',desc_en:'Bimekizumab is a newer biologic that inhibits both IL-17A and IL-17F. A 2026 British Journal of Dermatology critically appraised topic (McCarthy & Ring) reviews its...'},
     'biologics-overview': {desc:'皮膚科生物製劑 + 小分子標靶藥完整總覽：Dupilumab、Secukinumab、Guselkumab、Risankizumab、Adalimumab、JAK 抑制劑等 — 機轉、適應症、施打頻率、健保給付條件、副作用、必要篩檢一次看完。',desc_en:'Over the past decade, the biggest revolution in dermatology has been the arrival of biologics and small-molecule targeted therapies. From psoriasis, atopic...'},
     'bullous-pemphigoid': {desc:'類天疱瘡是長輩常見的自體免疫水疱病：先癢、再起紅疹，最後長出緊繃的大水泡，也有人一開始不起水泡。從原因、哪些藥物可能誘發、切片與抽血怎麼確診，到外用與口服類固醇、doxycycline、生物製劑的治療與居家傷口照顧，由淺到深完整整理。',desc_en:'Bullous pemphigoid is a common autoimmune blistering disease of older adults. Causes, drug triggers, diagnosis, treatment options and blister care, from basics to...'},
@@ -692,7 +689,6 @@
     'mpox-care': {desc:'M 痘（猴痘，Mpox）皮膚照護衛教：整理傳染途徑、皮疹變化、居家傷口照護、何時就醫、隔離注意事項、疫苗與皮膚科常見問題，協助患者與照護者降低傳播、搔抓感染與併發症風險，並掌握需要醫療評估的警訊與追蹤重點流程。',desc_en:'Mpox virus infection causes lymphadenopathy, fever, headache, myalgia, and a skin rash. Most patients recover within weeks on their own. While there is no specific...'},
     'nail-psoriasis-topical-intralesional': {desc:'指甲乾癬擦藥沒效要打針嗎？2026 JAAD 編輯評論整理指甲乾癬的局部與病灶內治療：維生素 D 藥膏、局部 methotrexate + CO2 雷射輔助穿透、病灶內 MTX/類固醇注射，含甲基質麻醉技巧與台灣健保自費實況。',desc_en:'Nail psoriasis is hard to treat because creams cannot cross the thick nail plate and the matrix sits deep. A June-2026 JAAD Letter from the Editor (Elston) reviews...'},
     'nhi-derm-drugs': {desc:'台灣健保皮膚科常用藥物完整規範 — 口服 A 酸、Dupilumab、Adalimumab、Omalizumab、JAK 抑制劑、IL-17 / IL-23 生物製劑、Tacrolimus、MTX、Cyclosporine 給付條件、PASS 流程一次查清楚。',desc_en:'A complete reference of Taiwan NHI rules for commonly prescribed dermatology drugs. Each entry lists: indication, ICD-10 code, NHI coverage criteria, dose, course...'},
-    'pediatric-eczema': {desc:'嬰幼兒(0-5 歲)異位性皮膚炎完整照護指南：診斷標準、好發部位、洗澡保濕、外用類固醇 / TCI 安全用法、過敏原檢測、Dupilumab 嬰幼兒適應症、共病風險。整理 2024 德國 S3 指引。',desc_en:'Atopic dermatitis is the most common pediatric skin disease — global childhood prevalence ~10-20% (Germany 13%), Taiwan ~7-10%. Most cases start in infancy (birth to...'},
     'pemphigoid-elderly-eczema': {desc:'長輩全身癢、紅疹擦藥好幾個月都不好，不一定只是濕疹。類天疱瘡是老年人常見的自體免疫皮膚病，有些人完全不起水泡。整理 2026 年 JAAD 研究找出的警訊：病程長、範圍大、合併神經疾病，以及切片、免疫螢光與抽血如何確診。',desc_en:'An older adult’s itchy rash that lasts for months is not always eczema. Pemphigoid can occur without blisters; a 2026 JAAD study shows the warning signs.'},
     'perioral-dermatitis-guide': {desc:'口周皮膚炎（perioral dermatitis）是嘴角、鼻翼周圍反覆的小紅疹，常和痘痘、濕疹混淆。整理成因（含類固醇藥膏）、症狀、鑑別重點、治療方式與大約多久會好。',desc_en:'Recurring rash around the mouth or nose: perioral dermatitis, acne or eczema? Read about symptoms, possible triggers, diagnosis and when to seek care.'},
     'photodynamic-therapy-overview': {desc:'光動力治療（PDT）原理機轉、ALA 與 MAL 光敏劑、紅光與藍光選擇、12 大適應症按證據等級（AK、BCC、Bowen disease、痘痘、酒紅斑、光老化等）完整整理。整合 2026 JAAD 兩篇 CME Review。患者 7 題 FAQ + 臨床雙軌寫法。',desc_en:'In June 2026, the Journal of the American Academy of Dermatology published two CME Reviews on photodynamic therapy (PDT): Part I covers mechanism and photosensitizers...'},

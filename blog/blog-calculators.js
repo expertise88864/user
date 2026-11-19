@@ -91,7 +91,7 @@
   // SCORAD (Atopic Dermatitis Severity)
   DN.injectSCORAD = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview' && slug !== 'pediatric-eczema')) return;
+    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview')) return;
     var anchor = document.querySelector('article.max-w-3xl');
     if (!anchor || document.getElementById('dn-scorad')) return;
     DN.calcStyles();
@@ -625,7 +625,7 @@
   // POEM (Patient-Oriented Eczema Measure, 0-28) — atopic-dermatitis-overview
   DN.injectPOEM = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview' && slug !== 'pediatric-eczema')) return;
+    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview')) return;
     var qs = [
       'Q1 · 過去 1 週，皮膚<strong>癢</strong>幾天？',
       'Q2 · 過去 1 週，皮膚<strong>讓您睡不好</strong>幾天？',
@@ -714,7 +714,7 @@
   // 0-10 single-item subjective itch intensity. Reizner 2012 standard.
   // ─────────────────────────────────────────────────────────────────────
   DN.injectVASPruritus = function () {
-    if (!DN._forceInject && !['atopic-dermatitis-overview','urticaria-myths','prurigo-nodularis','pediatric-eczema','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','urticaria-myths','prurigo-nodularis','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-vas-itch', tool: 'VAS-Pruritus',
       title: 'VAS 搔癢評分 — 主觀癢度（過去 24 小時最劇烈）',
@@ -740,7 +740,7 @@
   // Used in clinical trials (Dupilumab, biologic) — patient-friendly 5-grade
   // ─────────────────────────────────────────────────────────────────────
   DN.injectIGA = function () {
-    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-myths','vitiligo','rosacea-myths','acne-myths','pediatric-eczema','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-myths','vitiligo','rosacea-myths','acne-myths','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-iga', tool: 'IGA',
       title: 'IGA 醫師整體評估 — 0-4 分皮膚病嚴重度',
@@ -873,7 +873,7 @@
   // EASI (Eczema Area & Severity Index, 0-72) — alternative to SCORAD
   DN.injectEASI = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview' && slug !== 'pediatric-eczema')) return;
+    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview')) return;
     var sites = [
       ['頭頸 (×0.1 成人 / ×0.2 兒童）','head', 0.1],
       ['上肢 (×0.2)','arm', 0.2],
@@ -921,7 +921,6 @@
   DN.CALC_ORDER = {
     // Eczema family — SCORAD covers area+intensity+itch+sleep (most patient-relevant)
     'atopic-dermatitis-overview': ['SCORAD', 'EASI'],
-    'pediatric-eczema':           ['SCORAD', 'POEM'],
     'topical-steroids-guide':     ['EASI', 'IGA'],
     // Psoriasis — PASI is gold standard; NAPSI for nail involvement
     'psoriasis-myths':            ['PASI', 'NAPSI'],

@@ -22,18 +22,6 @@
       "title": "嘴角紅疹是痘痘還是濕疹？口周皮膚炎成因、症狀與治療",
       "title_en": "Periorificial (perioral) dermatitis: complete patient guide"
     },
-    "atopic-dermatitis-special-populations": {
-      "tag_en": "Atopic dermatitis",
-      "title_en": "AD comorbidities & special populations — atopic march, mental health, pregnancy, infections"
-    },
-    "atopic-dermatitis-systemic": {
-      "tag_en": "Atopic dermatitis",
-      "title_en": "Systemic therapy for AD — biologics, JAK inhibitors, phototherapy"
-    },
-    "atopic-dermatitis-topical": {
-      "tag_en": "Atopic dermatitis",
-      "title_en": "Topical therapy for AD — moisturizers, steroids, TCI, PDE4, JAK creams"
-    },
     "psoriasis-special-populations": {
       "tag_en": "Psoriasis",
       "title_en": "Psoriasis comorbidities + special populations — PsA, CV, pregnancy, pediatric, nail, erythroderma"
@@ -65,11 +53,6 @@
     "nhi-derm-drugs": {
       "title": "皮膚科常用藥物健保規範完整整理 — 給付條件、劑量、PASS",
       "title_en": "Dermatology drugs NHI rules — coverage criteria, dose, prior authorization (PASS)"
-    },
-    "pediatric-eczema": {
-      "tag": "兒童異膚",
-      "tag_en": "Pediatric AD",
-      "title_en": "Pediatric Atopic Dermatitis — Complete Care Guide"
     },
     "epidermoid-cyst": {
       "title": "粉瘤完整衛教 — 為什麼不能自己擠？何時該手術切除？",
@@ -147,7 +130,7 @@
     },
     "atopic-dermatitis-overview": {
       "tag_en": "Atopic dermatitis",
-      "title_en": "Atopic Dermatitis Complete Guide — Treatment, Comorbidity, 6 Myths"
+      "title_en": "Atopic Dermatitis Explained: Symptoms, Diagnosis, Treatment, Daily Care and Taiwan NHI Coverage"
     },
     "tinea-myths": {
       "tag": "香港腳 / 灰指甲",
@@ -257,14 +240,9 @@
       "title": "皮膚科雷射完整對照 — 波長 × 適應症 × 證據強度",
       "title_en": "Dermatologic laser comparison — wavelength × indication × evidence"
     },
-    "pediatric-eczema": {
-      "tag": "兒童異膚",
-      "tag_en": "Pediatric eczema",
-      "title_en": "Infant & pediatric atopic dermatitis — complete care guide"
-    },
     "atopic-dermatitis-overview": {
       "tag_en": "Atopic dermatitis",
-      "title_en": "Atopic Dermatitis Complete Guide — Treatment, Comorbidity, 6 Myths"
+      "title_en": "Atopic Dermatitis Explained: Symptoms, Diagnosis, Treatment, Daily Care and Taiwan NHI Coverage"
     },
     "cutaneous-t-cell-lymphoma": {
       "title": "皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教 — TDA + 血液腫瘤學會 2024",
@@ -320,17 +298,6 @@
     },
     "psoriasis-special-populations": {
       "tag_en": "Psoriasis"
-    },
-    "atopic-dermatitis-topical": {
-      "tag_en": "Atopic dermatitis",
-      "title_en": "Topical therapy for AD — moisturizers, steroids, TCI, PDE4, JAK creams"
-    },
-    "atopic-dermatitis-systemic": {
-      "tag_en": "Atopic dermatitis",
-      "title_en": "Systemic therapy for AD — biologics, JAK inhibitors, phototherapy"
-    },
-    "atopic-dermatitis-special-populations": {
-      "tag_en": "Atopic dermatitis"
     },
     "psoriasis-myths": {
       "title": "乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑很安全嗎？",

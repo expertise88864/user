@@ -97,21 +97,6 @@
       "title_en": "Perioral / Periorificial dermatitis: complete guide"
     },
     {
-      "slug": "atopic-dermatitis-special-populations",
-      "title": "異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染",
-      "title_en": "AD comorbidities & special populations"
-    },
-    {
-      "slug": "atopic-dermatitis-systemic",
-      "title": "異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療",
-      "title_en": "Systemic therapy for atopic dermatitis"
-    },
-    {
-      "slug": "atopic-dermatitis-topical",
-      "title": "異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏",
-      "title_en": "Topical therapy for atopic dermatitis"
-    },
-    {
       "slug": "psoriasis-special-populations",
       "title": "乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症",
       "title_en": "Psoriasis comorbidities & special populations"
@@ -160,11 +145,6 @@
       "slug": "nhi-derm-drugs",
       "title": "皮膚科常用藥物健保規範完整整理",
       "title_en": "Taiwan NHI rules for common dermatology drugs"
-    },
-    {
-      "slug": "pediatric-eczema",
-      "title": "嬰幼兒 / 兒童異位性皮膚炎完整照護指南",
-      "title_en": "Infant & pediatric atopic dermatitis"
     },
     {
       "slug": "laser-dermatology",
@@ -248,8 +228,8 @@
     },
     {
       "slug": "atopic-dermatitis-overview",
-      "title": "異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思",
-      "title_en": "Atopic dermatitis: complete guide — treatment, comorbidities, 6 myths"
+      "title": "異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付",
+      "title_en": "Atopic Dermatitis Explained: Symptoms, Diagnosis, Treatment, Daily Care and Taiwan NHI Coverage"
     },
     {
       "slug": "tinea-myths",

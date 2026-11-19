@@ -9,6 +9,15 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed</generator>
     <item>
+      <title>異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付</title>
+      <link>https://chendermatologist.com/blog/atopic-dermatitis-overview</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-overview</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>異位性皮膚炎</category>
+      <description>異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
+    <item>
       <title>異位性皮膚炎會影響孩子長高嗎？從 2026 年 dupilumab 兒童研究談生長追蹤</title>
       <link>https://chendermatologist.com/blog/atopic-dermatitis-child-growth</link>
       <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-child-growth</guid>
@@ -180,33 +189,6 @@
       <description>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
     <item>
-      <title>異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染</title>
-      <link>https://chendermatologist.com/blog/atopic-dermatitis-special-populations</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-special-populations</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>異位性皮膚炎</category>
-      <description>異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療</title>
-      <link>https://chendermatologist.com/blog/atopic-dermatitis-systemic</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-systemic</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>異位性皮膚炎</category>
-      <description>異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏</title>
-      <link>https://chendermatologist.com/blog/atopic-dermatitis-topical</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-topical</guid>
-      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>異位性皮膚炎</category>
-      <description>異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
       <title>乾癬完整衛教 — 分型、嚴重度、誘發因子</title>
       <link>https://chendermatologist.com/blog/psoriasis-overview</link>
       <guid isPermaLink="true">https://chendermatologist.com/blog/psoriasis-overview</guid>
@@ -277,6 +259,24 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>痘痘</category>
       <description>痘痘 8 大迷思 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
+    <item>
+      <title>痘疤完整治療指引</title>
+      <link>https://chendermatologist.com/blog/acne-scar-treatment</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/acne-scar-treatment</guid>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>痘疤</category>
+      <description>痘疤完整治療指引 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
+    <item>
+      <title>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教</title>
+      <link>https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</guid>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>皮膚淋巴瘤</category>
+      <description>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
   </channel>
 </rss>

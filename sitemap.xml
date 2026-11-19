@@ -2233,6 +2233,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/year-115"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/atopic-dermatitis-overview</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-overview.png</image:loc>
+      <image:title>異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付</image:title>
+      <image:caption>異位性皮膚炎是皮膚屏障受損加上免疫發炎造成的慢性、反覆發作的癢疹。依臺灣皮膚科醫學會共識與最新國際指引，整理各年齡症狀、診斷與過敏檢查、外用類固醇與非類固醇藥膏、生物製劑與 JAK 抑制劑、洗澡保濕、飲食、兒童與孕期用藥，以及健保給付條件。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/atopic-dermatitis-child-growth</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -2477,45 +2490,6 @@
       <image:loc>https://chendermatologist.com/assets/og/toenail-mechanical-disorders.png</image:loc>
       <image:title>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病</image:title>
       <image:caption>腳趾甲變黃變厚不一定是灰指甲——9 成趾甲變形其實來自鞋子壓迫與腳型。整理 12 種常見趾甲變形（剝離、嵌甲、Beau&#x27;s line、夾擊甲等）、4 種足部結構異常與糖尿病趾甲照護，含台灣健保藥品與商品名。整合 2026 JAAD review。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/atopic-dermatitis-special-populations</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-special-populations"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-special-populations"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-special-populations.png</image:loc>
-      <image:title>異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染</image:title>
-      <image:caption>異位性皮膚炎不只是皮膚病：氣喘、過敏性鼻炎、食物過敏、嗜伊紅性食道炎、憂鬱、心血管、感染、白內障；懷孕哺乳藥物、嬰幼兒、老年人。整合 AAD 2022 + 2023 兒童指引。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/atopic-dermatitis-systemic</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-systemic"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-systemic"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-systemic.png</image:loc>
-      <image:title>異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療</image:title>
-      <image:caption>異位性皮膚炎中重度全身治療：4 種生物製劑（dupilumab / tralokinumab / lebrikizumab / nemolizumab）、3 種 JAK 抑制劑、光療詳細比較 — 機轉、頻率、療效、副作用與健保給付條件一次看完。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/atopic-dermatitis-topical</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-topical"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-topical"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-topical.png</image:loc>
-      <image:title>異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏</image:title>
-      <image:caption>異位性皮膚炎外用治療階梯：保濕（每天 ≥ 250 g）、外用類固醇 1-7 級、TCI、PDE4i、外用 JAK 抑制劑、tapinarof、roflumilast、wet wrap — 依 AAD 2023 + UpToDate 2024 整理。</image:caption>
     </image:image>
   </url>
   <url>
@@ -2779,19 +2753,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/pediatric-eczema</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/pediatric-eczema"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/pediatric-eczema"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/pediatric-eczema.png</image:loc>
-      <image:title>嬰幼兒 / 兒童異位性皮膚炎完整照護指南</image:title>
-      <image:caption>嬰幼兒(0-5 歲)異位性皮膚炎完整照護指南：診斷標準、好發部位、洗澡保濕、外用類固醇 / TCI 安全用法、過敏原檢測、Dupilumab 嬰幼兒適應症、共病風險。整理 2024 德國 S3 指引。</image:caption>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/alopecia-areata</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -2906,19 +2867,6 @@
       <image:loc>https://chendermatologist.com/assets/og/warts-myths.png</image:loc>
       <image:title>病毒疣 6 大迷思</image:title>
       <image:caption>病毒疣會自己好嗎？香蕉皮、大蒜可以治嗎？冷凍要打幾次？雷射打一次就消嗎？HPV 跟疫苗有關嗎？6 個民眾最常誤會的病毒疣（HPV viral warts）觀念，陳翊嘉醫師（皮膚科）整理，附 HPV 型別與部位對照、冷凍 / 雷射 / 免疫療法治療階梯。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/atopic-dermatitis-overview</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-overview.png</image:loc>
-      <image:title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</image:title>
-      <image:caption>異位性皮膚炎完整概論：Th2/IL-4/IL-13 為核心的免疫機轉、filaggrin 基因突變、皮膚微生物失衡、Hanifin &amp; Rajka 與 UK Working Party 診斷標準、EASI / SCORAD / IGA / POEM / DLQI 評分系統、4 大誘發因子與分型。陳翊嘉醫師整理。</image:caption>
     </image:image>
   </url>
   <url>

@@ -139,7 +139,7 @@ class FragmentTests(unittest.TestCase):
     def test_standalone_english_transform_rebuilds_copied_navigation(self):
         # These published templates use separately authored EN prose with
         # different IDs; standalone mirror generation must not retain ZH TOCs.
-        for slug in ('psoriasis-systemic', 'atopic-dermatitis-topical', 'epidermoid-cyst'):
+        for slug in ('psoriasis-systemic', 'rosacea-myths', 'epidermoid-cyst'):
             with self.subTest(slug=slug):
                 source = (Path(__file__).parent / 'blog' / (slug + '.html')).read_text(encoding='utf-8')
                 result = transform_english(source, '/blog/' + slug, '/en/blog/' + slug, 'blog/' + slug + '.html')

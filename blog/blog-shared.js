@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202611182000';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611190900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -497,7 +497,7 @@
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202611182000';
+        s.src = '/blog/blog-search.min.js?v=202611190900';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -917,8 +917,8 @@
   // its slug here. Drift is caught by check_diagram_calc_slug_lists() in
   // _check_meta.py.
   // -----------------------------------------------------------------------
-  DN.DIAGRAM_SLUGS = ['acne-myths','acne-scar-treatment','alopecia-areata','atopic-dermatitis-overview','biologics-overview','cutaneous-t-cell-lymphoma','epidermoid-cyst','hairloss-myths','hidradenitis-suppurativa','isotretinoin-clinical','isotretinoin-patient','laser-dermatology','melasma-myths','mpox-care','pediatric-eczema','prurigo-nodularis','psoriasis-myths','rosacea-myths','shingles-myths','sunscreen-myths','targeted-therapy-skin','tinea-myths','topical-acids-clinical','topical-acids-patient','topical-steroids-guide','urticaria-myths','vitiligo','warts-myths'];
-  DN.CALC_SLUGS    = ['acne-myths','acne-scar-treatment','alopecia-areata','atopic-dermatitis-overview','biologics-overview','cutaneous-t-cell-lymphoma','dermatology-faq','epidermoid-cyst','hairloss-myths','hidradenitis-suppurativa','isotretinoin-clinical','isotretinoin-patient','laser-dermatology','melasma-myths','mpox-care','nhi-derm-drugs','pediatric-eczema','prurigo-nodularis','psoriasis-myths','rosacea-myths','shingles-myths','skin-whitening-agents','sunscreen-myths','targeted-therapy-skin','tinea-myths','topical-acids-clinical','topical-acids-patient','topical-steroids-guide','urticaria-myths','vitiligo','warts-myths'];
+  DN.DIAGRAM_SLUGS = ['acne-myths','acne-scar-treatment','alopecia-areata','atopic-dermatitis-overview','biologics-overview','cutaneous-t-cell-lymphoma','epidermoid-cyst','hairloss-myths','hidradenitis-suppurativa','isotretinoin-clinical','isotretinoin-patient','laser-dermatology','melasma-myths','mpox-care','prurigo-nodularis','psoriasis-myths','rosacea-myths','shingles-myths','sunscreen-myths','targeted-therapy-skin','tinea-myths','topical-acids-clinical','topical-acids-patient','topical-steroids-guide','urticaria-myths','vitiligo','warts-myths'];
+  DN.CALC_SLUGS    = ['acne-myths','acne-scar-treatment','alopecia-areata','atopic-dermatitis-overview','biologics-overview','cutaneous-t-cell-lymphoma','dermatology-faq','epidermoid-cyst','hairloss-myths','hidradenitis-suppurativa','isotretinoin-clinical','isotretinoin-patient','laser-dermatology','melasma-myths','mpox-care','nhi-derm-drugs','prurigo-nodularis','psoriasis-myths','rosacea-myths','shingles-myths','skin-whitening-agents','sunscreen-myths','targeted-therapy-skin','tinea-myths','topical-acids-clinical','topical-acids-patient','topical-steroids-guide','urticaria-myths','vitiligo','warts-myths'];
 
   // -----------------------------------------------------------------------
   // Article catalog (single source of truth for related-articles / TOC links).
@@ -977,13 +977,10 @@
     { slug:'epidermoid-cyst', title:'粉瘤完整衛教', title_en:'Epidermoid cyst', cat:'rx', tag:'粉瘤', date:'2026-05-05', emoji:'', tag_en:'Epidermoid cyst' },
     { slug:'nhi-derm-drugs', title:'皮膚科常用藥物健保規範完整整理', title_en:'Taiwan NHI rules for common dermatology drugs', cat:'rx', tag:'健保規範', date:'2026-05-07', emoji:'', tag_en:'NHI rules' },
     { slug:'laser-dermatology', title:'皮膚科雷射完整對照', title_en:'Dermatologic laser comparison', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
-    { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', title_en:'Infant & pediatric atopic dermatitis', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-05', emoji:'', tag_en:'Atopic dermatitis' },
     { slug:'prurigo-nodularis', title:'結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療', title_en:'Prurigo Nodularis: Meaning, Symptoms and Treatment', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
     { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', title_en:'Cutaneous T-cell lymphoma (CTCL / MF)', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },
-    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思', title_en:'Atopic dermatitis: complete guide — treatment, comorbidities, 6 myths', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-03', emoji:'', tag_en:'AD complete guide' },
-    { slug:'atopic-dermatitis-topical',  title:'異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏', title_en:'Topical therapy for atopic dermatitis', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-09', emoji:'', tag_en:'AD topical' },
-    { slug:'atopic-dermatitis-systemic', title:'異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療', title_en:'Systemic therapy for atopic dermatitis', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-09', emoji:'', tag_en:'AD systemic' },
-    { slug:'atopic-dermatitis-special-populations', title:'異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染', title_en:'AD comorbidities & special populations', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-09', emoji:'', tag_en:'AD special populations' },  ];
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付', title_en:'Atopic Dermatitis Explained: Symptoms, Diagnosis, Treatment, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'異位性皮膚炎', date:'2026-11-19', emoji:'', tag_en:'Atopic dermatitis' },
+  ];
 
   // -----------------------------------------------------------------------
   // Article numbering — assign #001-#NNN by chronological publish order
@@ -1162,7 +1159,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202611182000';
+        s.src = '/blog/blog-article-reading.min.js?v=202611190900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1198,7 +1195,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202611182000';
+        s.src = '/blog/blog-article-footer.min.js?v=202611190900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1228,7 +1225,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202611182000';
+        s.src = '/blog/blog-calculators.min.js?v=202611190900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1367,7 +1364,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202611182000';
+        s.src = '/blog/blog-hub.min.js?v=202611190900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1399,7 +1396,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202611182000';
+        script.src = '/blog/blog-support.min.js?v=202611190900';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));

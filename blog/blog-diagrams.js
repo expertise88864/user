@@ -1152,8 +1152,7 @@
     'topical-acids-clinical':  [{ key: 'acne-pathogenesis', after: 0 }],
     'sunscreen-myths':         [{ key: 'uv-penetration', after: 1 }, { key: 'spf-curve', after: 3 }],
     'melasma-myths':           [{ key: 'uv-penetration', after: 2 }],
-    'atopic-dermatitis-overview': [{ key: 'skin-barrier', after: 1 }, { key: 'tcs-potency', after: 4 }],
-    'pediatric-eczema':        [{ key: 'skin-barrier', after: 1 }, { key: 'tcs-potency', after: 3 }],
+    'atopic-dermatitis-overview': [{ key: 'tcs-potency', after: 5 }],
     'topical-steroids-guide':  [{ key: 'tcs-potency', after: 1 }],
     'hairloss-myths':          [{ key: 'hair-cycle', after: 2 }],
     'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }],
@@ -1168,7 +1167,6 @@
     'prurigo-nodularis':       [{ key: 'biologics-cytokines', after: 2 }, { key: 'skin-barrier', after: 0 }],
     'hidradenitis-suppurativa': [{ key: 'biologics-cytokines', after: 2 }],
     // R30: New diagrams
-    'pediatric-eczema':        [{ key: 'skin-barrier', after: 1 }, { key: 'scorad-bsa', after: 3 }, { key: 'tcs-potency', after: 5 }],
     'acne-scar-treatment':     [{ key: 'acne-pathogenesis', after: 0 }, { key: 'acne-scar-types', after: 1 }],
     'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }],
     'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'jak-tree', after: 3 }, { key: 'skin-barrier', after: 5 }],

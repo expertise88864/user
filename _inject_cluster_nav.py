@@ -35,10 +35,6 @@ CLUSTERS: list[list[str]] = [
     # Atopic dermatitis pillar: overview → topical → systemic → special pops → pediatric
     [
         "atopic-dermatitis-overview",
-        "atopic-dermatitis-topical",
-        "atopic-dermatitis-systemic",
-        "atopic-dermatitis-special-populations",
-        "pediatric-eczema",
     ],
     # Psoriasis pillar
     [

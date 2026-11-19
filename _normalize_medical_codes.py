@@ -77,22 +77,6 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
                           icd10="L20.9", snomed="24079001",
                           mesh="D003876"),
     ],
-    "atopic-dermatitis-topical": [
-        medical_condition("Atopic dermatitis", "異位性皮膚炎",
-                          icd10="L20.9", snomed="24079001"),
-    ],
-    "atopic-dermatitis-systemic": [
-        medical_condition("Atopic dermatitis", "異位性皮膚炎",
-                          icd10="L20.9", snomed="24079001"),
-    ],
-    "atopic-dermatitis-special-populations": [
-        medical_condition("Atopic dermatitis", "異位性皮膚炎",
-                          icd10="L20.9", snomed="24079001"),
-    ],
-    "pediatric-eczema": [
-        medical_condition("Pediatric atopic dermatitis", "兒童異位性皮膚炎",
-                          icd10="L20.83", snomed="24079001"),
-    ],
 
     # ─── Psoriasis cluster ───
     "psoriasis-overview": [
