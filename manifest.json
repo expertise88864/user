@@ -19,7 +19,7 @@
   ],
   "shortcuts": [
     { "name": "衛教文章", "short_name": "文章", "url": "/blog/" },
-    { "name": "痘痘 8 大迷思", "short_name": "痘痘迷思", "url": "/blog/acne-overview#myths" },
+    { "name": "痘痘常見迷思", "short_name": "痘痘迷思", "url": "/blog/acne-overview#myths" },
     { "name": "防曬 8 大迷思", "short_name": "防曬迷思", "url": "/blog/sunscreen-myths" }
   ]
 }

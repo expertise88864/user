@@ -9,7 +9,7 @@ module.exports = async function checkDiagramLoading(browser) {
   let cases = 0;
   for (const width of [390, 800, 1440]) {
     for (const mode of ['eager', 'controlled-lazy', 'native-lazy']) {
-      for (const slug of ['acne-myths', 'laser-dermatology']) {
+      for (const slug of ['acne-overview', 'laser-dermatology']) {
         const context = await browser.newContext({ viewport: { width, height: 900 }, serviceWorkers: 'block' });
         try {
           const page = await context.newPage();

@@ -129,7 +129,6 @@ def main() -> None:
     nothing here calls write_text.
     """
     drift = [rel for rel, fn in {
-        "blog/acne-myths.html": normalize_acne,
         "blog/sunscreen-myths.html": normalize_sunscreen,
         "blog/isotretinoin-clinical.html": normalize_isotretinoin,
     }.items() if fn(ROOT / rel)]

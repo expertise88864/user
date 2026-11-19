@@ -36,7 +36,7 @@ module.exports = async function checkNavSearch(browser, {sharedSource} = {}) {
         const body = name === 'blog/blog-shared.js' && sharedSource !== undefined ? sharedSource : fs.readFileSync(file);
         await route.fulfill({status:200,contentType,body});
       });
-      for (const width of helperAvailable ? [390,800,1440] : [1440]) for (const address of ['/en','/','/en/blog','/blog','/en/blog/acne-myths','/blog/acne-myths']) {
+      for (const width of helperAvailable ? [390,800,1440] : [1440]) for (const address of ['/en','/','/en/blog','/blog','/en/blog/acne-overview','/blog/acne-overview']) {
         const page = await context.newPage(), errors = [];
         page.on('pageerror',error=>errors.push(error.message));
         try {

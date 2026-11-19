@@ -21,7 +21,7 @@ module.exports=async function checkPublicSettings(browser){
    const contentType=file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'application/octet-stream';
    await route.fulfill({status:200,contentType,body:fs.readFileSync(file)});
   });
-  for(const width of [390,800,1440])for(const address of ['/','/blog','/blog/acne-myths']){
+  for(const width of [390,800,1440])for(const address of ['/','/blog','/blog/acne-overview']){
    const page=await context.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));
    try{
     await page.setViewportSize({width,height:900});
@@ -29,7 +29,7 @@ module.exports=async function checkPublicSettings(browser){
     const fonts=await page.evaluate(()=>({body:getComputedStyle(document.body).fontFamily,head:getComputedStyle(document.querySelector('h1')).fontFamily}));
     const firstFamily=value=>value.split(',')[0].replace(/["']/g,'').trim();
     assert.equal(firstFamily(fonts.body),'Georgia');assert.equal(firstFamily(fonts.head),'Inter');
-    if(address==='/blog/acne-myths'){
+    if(address==='/blog/acne-overview'){
      assert.equal(await page.locator('article p').first().evaluate(el=>getComputedStyle(el).fontSize),'18px');
     }else{
      await page.waitForFunction(()=>window.DN&&typeof window.DN.bindArticleHub==='function');

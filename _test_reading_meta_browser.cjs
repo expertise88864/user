@@ -23,7 +23,7 @@ module.exports = async function checkReadingMetadata(browser) {
     await context.addInitScript(() => {
       Number.prototype.toLocaleString = function () { throw Error('Locale formatter must not be needed for reading metadata'); };
     });
-    for (const route of ['/blog/acne-myths','/en/blog/acne-myths','/en/blog/dupilumab-long-term-maintenance']) {
+    for (const route of ['/blog/acne-overview','/en/blog/acne-overview','/en/blog/dupilumab-long-term-maintenance']) {
       const page = await context.newPage();
       const errors = [];
       page.on('pageerror',error=>errors.push(error.message));

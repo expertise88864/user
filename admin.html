@@ -766,10 +766,10 @@ document.getElementById('newFileBtn').addEventListener('click', async ()=>{
 const slug = document.getElementById('newFileName').value.trim().toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
 if(!slug){ alert('請輸入文章 slug,例如 melasma-myths'); return; }
 if(!PAT){ alert('請先登入 PAT'); return; }
-if(!confirm('要從 "acne-myths.html 範本" 建立 blog/' + slug + '.html 嗎？')) return;
+if(!confirm('要從 "sunscreen-myths.html 範本" 建立 blog/' + slug + '.html 嗎？')) return;
 setStatus('讀取範本...');
 try {
-const tpl = await gh('GET', 'contents/blog/acne-overview.html');
+const tpl = await gh('GET', 'contents/blog/sunscreen-myths.html');
 const content = decodeUtf8Base64(tpl.content);
 const newPath = 'blog/' + slug + '.html';
 await gh('PUT', 'contents/' + newPath, {
