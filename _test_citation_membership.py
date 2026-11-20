@@ -41,6 +41,19 @@ class CitationMembership(unittest.TestCase):
         c = nc.parse_citation('Patient education: Eczema (The Basics). In: UpToDate (accessed November 18, 2026).')
         self.assertEqual(c['datePublished'], '2026')
 
+    def test_registry_record_and_design_paper_are_separate_works(self):
+        # PR #173: a registry record and its design paper are listed as two references,
+        # so each keeps its own year (and only the paper carries the PMID).
+        html = refs('<li>LIBERTY-BP ADEPT (NCT04206553): ClinicalTrials.gov results, first posted 2026-03-06. '
+                    '<a href="https://clinicaltrials.gov/study/NCT04206553">clinicaltrials.gov/study/NCT04206553</a>.</li>',
+                    '<li>Murrell DF, Joly P, Werth VP, et al. Study design of a phase 2/3 randomized controlled trial. '
+                    'Adv Ther. 2024;41(7):2991-3002. <a href="https://doi.org/10.1007/s12325-024-02810-3">doi</a> PMID 38443648</li>')
+        reg, paper = nc.extract_citations(html)
+        self.assertEqual(reg['datePublished'], '2026')
+        self.assertNotIn('identifier', reg)
+        self.assertEqual(paper['datePublished'], '2024')
+        self.assertIn({'@type': 'PropertyValue', 'propertyID': 'PMID', 'value': '38443648'}, paper['identifier'])
+
     def test_pmid_with_or_without_colon(self):
         for ref in ('Shen WC. A long enough title. JAMA Dermatol. 2022;158(2):167-175. PMID 34964804',
                     'Shen WC. A long enough title. JAMA Dermatol. 2022;158(2):167-175. PMID: 34964804'):
