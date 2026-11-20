@@ -1,189 +1,438 @@
 {
   "edges": {
-    "acne-myths": [
-      "isotretinoin-patient",
-      "topical-acids-patient"
+    "acne-overview": [
+      "acne-scar-treatment",
+      "bullous-pemphigoid",
+      "hidradenitis-suppurativa",
+      "isotretinoin-clinical",
+      "laser-dermatology",
+      "perioral-dermatitis-guide",
+      "rosacea-myths",
+      "spironolactone-dermatology-safety",
+      "sunscreen-myths",
+      "topical-acids-clinical",
+      "topical-acids-patient",
+      "urticaria-overview"
     ],
     "acne-scar-treatment": [
-      "acne-myths",
-      "isotretinoin-patient",
+      "acne-overview",
+      "laser-dermatology",
+      "photodynamic-therapy-overview",
+      "spironolactone-dermatology-safety",
       "sunscreen-myths",
       "topical-acids-patient"
     ],
+    "actinic-keratosis-scc": [
+      "cutaneous-t-cell-lymphoma",
+      "dermatologic-oral-examination",
+      "epidermoid-cyst",
+      "photodynamic-therapy-overview",
+      "skin-biopsy-excision"
+    ],
+    "ai-dermatology-roles": [
+      "actinic-keratosis-scc",
+      "atopic-dermatitis-child-growth",
+      "dermatologic-oral-examination",
+      "filler-vascular-occlusion",
+      "iud-hair-loss",
+      "refractory-atopic-dermatitis-workup",
+      "skin-biopsy-excision"
+    ],
     "alopecia-areata": [
-      "eczema-myths",
-      "hairloss-myths"
+      "atopic-dermatitis-overview",
+      "hairloss-myths",
+      "iud-hair-loss",
+      "jaki-switching-alopecia-areata",
+      "semaglutide-hair-loss"
+    ],
+    "atopic-dermatitis-child-growth": [
+      "atopic-dermatitis-overview",
+      "dupilumab-long-term-maintenance",
+      "filler-vascular-occlusion",
+      "refractory-atopic-dermatitis-workup",
+      "topical-steroids-guide"
+    ],
+    "atopic-dermatitis-overview": [
+      "atopic-dermatitis-child-growth",
+      "biologics-overview",
+      "contact-dermatitis",
+      "dupilumab-long-term-maintenance",
+      "nhi-derm-drugs",
+      "prurigo-nodularis",
+      "psoriasis-overview",
+      "refractory-atopic-dermatitis-workup",
+      "topical-steroids-guide",
+      "urticaria-overview"
+    ],
+    "bimekizumab-hidradenitis-suppurativa": [
+      "dupilumab-long-term-maintenance",
+      "hidradenitis-suppurativa",
+      "jaki-switching-alopecia-areata",
+      "psoriasis-biologic-monitoring"
     ],
     "biologics-overview": [
       "alopecia-areata",
-      "eczema-myths",
+      "atopic-dermatitis-overview",
+      "cutaneous-t-cell-lymphoma",
       "hidradenitis-suppurativa",
-      "psoriasis-myths",
-      "urticaria-myths",
+      "prurigo-nodularis",
+      "psoriasis-biologic-monitoring",
+      "psoriasis-overview",
+      "targeted-therapy-skin",
+      "urticaria-overview",
+      "vitiligo"
+    ],
+    "bullous-pemphigoid": [
+      "acne-overview",
+      "pemphigoid-elderly-eczema",
+      "perioral-dermatitis-guide",
+      "urticaria-overview"
+    ],
+    "contact-dermatitis": [
+      "actinic-keratosis-scc",
+      "cutaneous-t-cell-lymphoma",
+      "perioral-dermatitis-guide",
       "vitiligo"
     ],
     "cutaneous-t-cell-lymphoma": [
+      "actinic-keratosis-scc",
+      "atopic-dermatitis-overview",
       "biologics-overview",
-      "eczema-myths",
-      "prurigo-nodularis"
+      "contact-dermatitis",
+      "photodynamic-therapy-overview",
+      "prurigo-nodularis",
+      "targeted-therapy-skin"
     ],
-    "demodex-rosacea": [
-      "acne-myths",
-      "rosacea-myths",
-      "topical-acids-patient"
+    "dermatologic-oral-examination": [
+      "actinic-keratosis-scc",
+      "ai-dermatology-roles",
+      "perioral-dermatitis-guide",
+      "skin-biopsy-excision"
     ],
     "dermatology-faq": [
-      "acne-myths",
       "acne-scar-treatment",
       "alopecia-areata",
+      "atopic-dermatitis-overview",
       "biologics-overview",
-      "demodex-rosacea",
-      "eczema-myths",
+      "contact-dermatitis",
+      "dermatologic-oral-examination",
       "hairloss-myths",
       "hidradenitis-suppurativa",
-      "isotretinoin-patient",
+      "laser-dermatology",
       "melasma-myths",
       "mpox-care",
-      "psoriasis-myths",
+      "prurigo-nodularis",
       "rosacea-myths",
       "shingles-myths",
       "skin-whitening-agents",
       "sunscreen-myths",
       "targeted-therapy-skin",
       "tinea-myths",
+      "toenail-mechanical-disorders",
       "topical-acids-patient",
       "topical-steroids-guide",
-      "urticaria-myths",
       "vitiligo",
       "warts-myths"
     ],
-    "eczema-myths": [
-      "acne-myths",
-      "biologics-overview",
-      "topical-steroids-guide"
+    "dupilumab-long-term-maintenance": [
+      "atopic-dermatitis-overview",
+      "biologics-overview"
     ],
     "epidermoid-cyst": [
-      "acne-myths",
       "acne-scar-treatment",
-      "hidradenitis-suppurativa"
+      "actinic-keratosis-scc",
+      "dermatologic-oral-examination",
+      "hidradenitis-suppurativa",
+      "skin-biopsy-excision",
+      "urticaria-overview"
+    ],
+    "filler-vascular-occlusion": [
+      "atopic-dermatitis-child-growth",
+      "dermatology-faq",
+      "iud-hair-loss",
+      "pemphigoid-elderly-eczema",
+      "refractory-atopic-dermatitis-workup"
     ],
     "hairloss-myths": [
-      "acne-myths",
       "alopecia-areata",
       "biologics-overview",
+      "semaglutide-hair-loss",
+      "spironolactone-dermatology-safety",
       "topical-acids-patient"
     ],
     "hidradenitis-suppurativa": [
-      "acne-myths",
-      "isotretinoin-patient",
-      "psoriasis-myths"
+      "bimekizumab-hidradenitis-suppurativa",
+      "prurigo-nodularis",
+      "psoriasis-overview",
+      "urticaria-overview"
     ],
     "isotretinoin-clinical": [
-      "isotretinoin-patient",
       "topical-acids-clinical"
     ],
-    "isotretinoin-patient": [
-      "isotretinoin-clinical",
-      "topical-acids-patient"
+    "iud-hair-loss": [
+      "alopecia-areata",
+      "atopic-dermatitis-child-growth",
+      "filler-vascular-occlusion",
+      "hairloss-myths",
+      "jaki-switching-alopecia-areata",
+      "semaglutide-hair-loss"
+    ],
+    "jaad-monthly-2026-11": [
+      "alopecia-areata",
+      "atopic-dermatitis-child-growth",
+      "contact-dermatitis",
+      "cutaneous-t-cell-lymphoma",
+      "dermatologic-oral-examination",
+      "dupilumab-long-term-maintenance",
+      "filler-vascular-occlusion",
+      "iud-hair-loss",
+      "jaki-switching-alopecia-areata",
+      "pemphigoid-elderly-eczema",
+      "prurigo-nodularis",
+      "psoriasis-overview",
+      "refractory-atopic-dermatitis-workup",
+      "rosacea-myths",
+      "skin-biopsy-excision",
+      "targeted-therapy-skin",
+      "topical-steroids-guide"
+    ],
+    "jaki-switching-alopecia-areata": [
+      "alopecia-areata",
+      "bimekizumab-hidradenitis-suppurativa",
+      "iud-hair-loss",
+      "psoriasis-biologic-monitoring",
+      "semaglutide-hair-loss"
     ],
     "laser-dermatology": [
       "acne-scar-treatment",
       "hidradenitis-suppurativa",
       "nhi-derm-drugs",
+      "photodynamic-therapy-overview",
       "rosacea-myths",
-      "skin-whitening-agents"
+      "skin-whitening-agents",
+      "urticaria-overview"
     ],
     "melasma-myths": [
-      "acne-myths",
+      "shingles-myths",
       "skin-whitening-agents",
       "sunscreen-myths",
-      "topical-acids-patient"
+      "topical-acids-patient",
+      "warts-myths"
     ],
     "mpox-care": [
+      "acne-overview",
       "acne-scar-treatment",
-      "shingles-myths"
+      "bullous-pemphigoid",
+      "perioral-dermatitis-guide",
+      "shingles-myths",
+      "urticaria-overview"
+    ],
+    "nail-psoriasis-topical-intralesional": [
+      "atopic-dermatitis-child-growth",
+      "filler-vascular-occlusion",
+      "iud-hair-loss",
+      "psoriasis-biologic-monitoring",
+      "psoriasis-overview",
+      "toenail-mechanical-disorders"
     ],
     "nhi-derm-drugs": [
+      "acne-overview",
       "alopecia-areata",
+      "atopic-dermatitis-overview",
       "biologics-overview",
-      "eczema-myths",
+      "bullous-pemphigoid",
       "hidradenitis-suppurativa",
-      "isotretinoin-patient",
-      "psoriasis-myths",
       "skin-whitening-agents",
       "topical-steroids-guide",
-      "urticaria-myths"
+      "urticaria-overview"
     ],
-    "pediatric-eczema": [
-      "biologics-overview",
-      "eczema-myths",
-      "nhi-derm-drugs",
+    "pemphigoid-elderly-eczema": [
+      "atopic-dermatitis-child-growth",
+      "atopic-dermatitis-overview",
+      "bullous-pemphigoid",
+      "contact-dermatitis",
+      "cutaneous-t-cell-lymphoma",
+      "filler-vascular-occlusion",
+      "iud-hair-loss",
+      "prurigo-nodularis",
+      "severe-scabies-treatment",
+      "skin-biopsy-excision",
       "topical-steroids-guide"
+    ],
+    "perioral-dermatitis-guide": [
+      "acne-overview",
+      "atopic-dermatitis-overview",
+      "contact-dermatitis",
+      "isotretinoin-clinical",
+      "nhi-derm-drugs",
+      "rosacea-myths",
+      "skin-biopsy-excision",
+      "sunscreen-myths",
+      "topical-steroids-guide"
+    ],
+    "photodynamic-therapy-overview": [
+      "actinic-keratosis-scc",
+      "atopic-dermatitis-child-growth",
+      "filler-vascular-occlusion",
+      "iud-hair-loss",
+      "refractory-atopic-dermatitis-workup",
+      "rosacea-myths"
     ],
     "prurigo-nodularis": [
+      "atopic-dermatitis-overview",
       "biologics-overview",
-      "eczema-myths",
+      "dupilumab-long-term-maintenance",
       "topical-steroids-guide"
     ],
-    "psoriasis-myths": [
+    "psoriasis-biologic-monitoring": [
+      "bimekizumab-hidradenitis-suppurativa",
       "biologics-overview",
-      "eczema-myths"
+      "dupilumab-long-term-maintenance",
+      "jaki-switching-alopecia-areata",
+      "nail-psoriasis-topical-intralesional",
+      "nhi-derm-drugs"
+    ],
+    "psoriasis-overview": [
+      "atopic-dermatitis-overview",
+      "biologics-overview",
+      "laser-dermatology",
+      "nail-psoriasis-topical-intralesional",
+      "nhi-derm-drugs",
+      "psoriasis-biologic-monitoring",
+      "topical-steroids-guide",
+      "urticaria-overview"
+    ],
+    "refractory-atopic-dermatitis-workup": [
+      "atopic-dermatitis-child-growth",
+      "atopic-dermatitis-overview",
+      "contact-dermatitis",
+      "cutaneous-t-cell-lymphoma",
+      "dupilumab-long-term-maintenance",
+      "filler-vascular-occlusion",
+      "severe-scabies-treatment",
+      "skin-biopsy-excision",
+      "tinea-myths",
+      "topical-steroids-guide"
     ],
     "rosacea-myths": [
-      "eczema-myths",
+      "acne-scar-treatment",
+      "atopic-dermatitis-overview",
+      "laser-dermatology",
+      "photodynamic-therapy-overview",
       "sunscreen-myths",
-      "topical-acids-patient"
+      "topical-acids-patient",
+      "warts-myths"
+    ],
+    "semaglutide-hair-loss": [
+      "alopecia-areata",
+      "hairloss-myths",
+      "spironolactone-dermatology-safety"
     ],
     "shingles-myths": [
-      "eczema-myths"
+      "atopic-dermatitis-overview",
+      "melasma-myths",
+      "rosacea-myths",
+      "sunscreen-myths",
+      "warts-myths"
+    ],
+    "skin-biopsy-excision": [
+      "actinic-keratosis-scc",
+      "dermatologic-oral-examination",
+      "epidermoid-cyst",
+      "warts-myths"
     ],
     "skin-whitening-agents": [
+      "acne-overview",
       "melasma-myths",
       "sunscreen-myths",
       "topical-acids-patient"
     ],
+    "spironolactone-dermatology-safety": [
+      "atopic-dermatitis-child-growth",
+      "filler-vascular-occlusion",
+      "iud-hair-loss",
+      "refractory-atopic-dermatitis-workup"
+    ],
     "sunscreen-myths": [
-      "acne-myths",
-      "isotretinoin-patient",
-      "topical-acids-patient"
+      "melasma-myths",
+      "rosacea-myths",
+      "shingles-myths",
+      "topical-acids-patient",
+      "warts-myths"
     ],
     "targeted-therapy-skin": [
-      "acne-myths",
-      "eczema-myths"
+      "actinic-keratosis-scc",
+      "atopic-dermatitis-overview",
+      "cutaneous-t-cell-lymphoma",
+      "photodynamic-therapy-overview",
+      "skin-biopsy-excision"
     ],
     "tinea-myths": [
-      "eczema-myths"
+      "atopic-dermatitis-overview",
+      "severe-scabies-treatment",
+      "toenail-mechanical-disorders"
+    ],
+    "toenail-mechanical-disorders": [
+      "nhi-derm-drugs",
+      "perioral-dermatitis-guide",
+      "skin-biopsy-excision",
+      "tinea-myths"
     ],
     "topical-acids-clinical": [
       "isotretinoin-clinical",
       "topical-acids-patient"
     ],
     "topical-acids-patient": [
-      "isotretinoin-patient",
+      "acne-overview",
+      "skin-whitening-agents",
+      "sunscreen-myths",
       "topical-acids-clinical"
     ],
     "topical-steroids-guide": [
-      "eczema-myths",
-      "psoriasis-myths"
+      "atopic-dermatitis-child-growth",
+      "atopic-dermatitis-overview",
+      "biologics-overview",
+      "contact-dermatitis",
+      "prurigo-nodularis"
     ],
-    "urticaria-myths": [
-      "eczema-myths",
-      "nhi-derm-drugs"
+    "urticaria-overview": [
+      "acne-overview",
+      "atopic-dermatitis-overview",
+      "biologics-overview",
+      "bullous-pemphigoid",
+      "contact-dermatitis",
+      "dupilumab-long-term-maintenance",
+      "prurigo-nodularis",
+      "psoriasis-overview",
+      "topical-steroids-guide"
+    ],
+    "vitiligo-maintenance-clinical": [
+      "atopic-dermatitis-child-growth",
+      "filler-vascular-occlusion",
+      "iud-hair-loss",
+      "refractory-atopic-dermatitis-workup"
     ],
     "vitiligo": [
+      "actinic-keratosis-scc",
       "alopecia-areata",
-      "melasma-myths"
+      "contact-dermatitis",
+      "dermatologic-oral-examination",
+      "melasma-myths",
+      "vitiligo-maintenance-clinical"
     ],
     "warts-myths": [
+      "melasma-myths",
+      "mpox-care",
+      "rosacea-myths",
+      "shingles-myths",
+      "sunscreen-myths",
       "tinea-myths"
     ]
   },
   "orphans": [
-    "cutaneous-t-cell-lymphoma",
-    "dermatology-faq",
-    "epidermoid-cyst",
-    "laser-dermatology",
-    "pediatric-eczema"
+    "jaad-monthly-2026-11"
   ],
-  "dead_ends": []
+  "dead_ends": [
+    "severe-scabies-treatment"
+  ]
 }
