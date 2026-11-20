@@ -8,23 +8,23 @@
     "assets/inline/font-loader.js": "f1a44c32f02cf376a7a89fe5ed9d1d60bd226b562ec125173ab95c90ca93445e",
     "assets/inline/gtag-bootstrap.js": "9376670c2c284b25faddae51180506f62b7bdef3786f94592f37ffd3e96168a8",
     "assets/inline/nav-burger.js": "8806a35218f37fc62667e4f4761e566acbe46284b2094588ab1e0ff99f9910dd",
-    "assets/tw-mini.css": "f5e913a3f65046c041652dd56a76b5cc1e285e8d81c282e6027b204155f745b1",
+    "assets/tw-mini.css": "d0ef8baddb5e74ffc356029bc975b911fba9af144942bd73d5cac2c50b23273a",
     "assets/web-vitals.iife.js": "77b2dfc9e065286d780c87f72b5cad08761346ff564ddd3f79102f4d4027e9a6",
     "blog/blog-article-footer.min.js": "bba8ab776c1cd1a766ccf32cc39012e2b9edee16a9f888e2178804536f572821",
-    "blog/blog-article-reading.min.js": "6d105e56e7aeadbc7e48f6e6e58932c57497d59726d5af61e01117eb7d321b00",
+    "blog/blog-article-reading.min.js": "53f186fd75fd93574ac3d251e482004f43b0337b7c0c62c1cb3e22d59bb4c962",
     "blog/blog-article-visuals.min.js": "f558332b7c8c6d7a8418dc72e177c1982a0dcce455c1366bf8daf3cbb238d7f2",
     "blog/blog-calculators.min.js": "fff0df4f8f9396c2e3f8dbddf9e3b8dc6b40fc91a8f74d305ae47c0da09c4126",
     "blog/blog-diagrams.min.js": "8f9027e5bb27aa7e373663622562bbd9d674839595eaa51c4ca107398406ebe8",
     "blog/blog-hub.min.js": "02793feb4640b3e21fa737d36e58629af6b0146e2523a294c4215c752ab68aa6",
     "blog/blog-search.min.js": "8a7b9dc571045a1a4438b63c24d89a7ba09588ed9b3a51f8e243ad5371cbd462",
-    "blog/blog-shared.min.js": "59d0732dd12dd17aeb44a9e3dc38f21a2488604d1cb2a348b5056c57ba889272",
+    "blog/blog-shared.min.js": "bd0da54dcb22b7031a303fa9c2feff3c3cb820ee5ac3992e735c0df23af89647",
     "blog/blog-support.min.js": "5a26abeb2cdf067d8a8e16978eb2f74dfee11966608d316602478dae4669a1e8"
   },
   "caches": {
-    "CACHE": "cd-v273",
-    "RUNTIME": "cd-runtime-v271"
+    "CACHE": "cd-v274",
+    "RUNTIME": "cd-runtime-v272"
   },
   "hash_format": "sha256-utf8-lf",
-  "version": "202611202100",
-  "worker_sha256": "17f5add048f991435bc7d81c67cefe3298d16c7a00899c187a5240a2d5ad97a3"
+  "version": "202611211000",
+  "worker_sha256": "fc03f7f04fd36b3f29f8a1e499fa86b874cf4a754364fea003ffb90e3eebe725"
 }

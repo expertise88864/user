@@ -82,5 +82,16 @@ class PerformanceMigrationTests(unittest.TestCase):
             self.assertTrue(callable(module.main))
 
 
+class ContentVisibilityLayoutTests(unittest.TestCase):
+    def test_sections_before_article_skip_the_600px_placeholder(self):
+        # The empty ad slot and JS-filled meta sections sit above the article in the first
+        # viewport; with content-visibility:auto their 600px placeholder pushed the article
+        # off-screen until layout collapsed them (Lighthouse CLS 0.38-0.45 on acne-overview).
+        css = (Path(__file__).resolve().parent/'assets'/'tw-mini.css').read_text(encoding='utf-8')
+        auto = css.index('main > section:not(:first-of-type),')
+        override = css.index('main > section:not(:first-of-type):has(~ article) { content-visibility: visible; }')
+        self.assertGreater(override, auto)  # same specificity plus :has(), and later in the file
+
+
 if __name__=='__main__':
     unittest.main()

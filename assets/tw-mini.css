@@ -82,6 +82,11 @@ footer.mag-footer {
 }
 /* Hero stays always rendered for fast LCP */
 .mag-hero, header.sticky { content-visibility: visible; }
+/* Small sections before an article (empty ad slot, JS-filled meta) sit in the
+   first viewport. The 600px placeholder pushed the article off-screen until
+   layout collapsed them, a page-wide jump (Lighthouse CLS 0.38–0.45 on
+   acne-overview). Render them normally. */
+main > section:not(:first-of-type):has(~ article) { content-visibility: visible; }
 
 /* dn-med-fig — keep SVG fonts readable on mobile via horizontal scroll
    instead of squeezing the whole figure to viewport width. */
