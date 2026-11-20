@@ -42,7 +42,7 @@ LI_RE = re.compile(
     r'<li(?P<attrs>(?:[^>"]|"[^"]*")*)>(?P<body>.*?)</li>',
     re.DOTALL | re.IGNORECASE,
 )
-PMID_RE = re.compile(r'PMID:\s*(\d{4,9})', re.IGNORECASE)
+PMID_RE = re.compile(r'PMID:?\s*(\d{4,9})', re.IGNORECASE)
 DOI_HREF_RE = re.compile(
     r'href="https?://(?:dx\.)?doi\.org/([^"#?\s]+)"', re.IGNORECASE,
 )
@@ -52,6 +52,9 @@ DOI_TEXT_RE = re.compile(
 EM_RE = re.compile(r'<em>(.*?)</em>', re.DOTALL | re.IGNORECASE)
 TAG_RE = re.compile(r'<[^>]+>')
 YEAR_RE = re.compile(r'\b(19[5-9]\d|20\d{2})\b')
+# Vancouver journal segment `2016;84:340-345` / `2022;158(2):167-175` gives the
+# publication year; prefer it over earlier years in a title ("from 2003 to 2013").
+JOURNAL_YEAR_RE = re.compile(r'\b(19[5-9]\d|20\d{2})\s*;\s*\d')
 
 
 def strip_tags(s: str) -> str:
@@ -128,7 +131,7 @@ def parse_citation(li_html: str) -> dict | None:
     if same_as:
         citation["sameAs"] = same_as
 
-    year = YEAR_RE.search(text)
+    year = JOURNAL_YEAR_RE.search(text) or YEAR_RE.search(text)
     if year:
         citation["datePublished"] = year.group(1)
 
