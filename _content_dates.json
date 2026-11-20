@@ -1,7 +1,7 @@
 {
   "acne-overview": {
-    "date": "2026-11-19",
-    "hash": "4e991b0f3111f776c44c1a9f8f120fc2ed5bd802e3ce666e87fbd3fc31227a62"
+    "date": "2026-11-20",
+    "hash": "94e8f92c302f0aff56d6160c31a1b38753a884caaca67c79851377a2fb32e7a4"
   },
   "acne-scar-treatment": {
     "date": "2026-11-19",
@@ -24,8 +24,8 @@
     "hash": "8e5eaac00e27bbe71cbcabfdabb283342f959be475fb7dc8a8176da81c7fbf5a"
   },
   "atopic-dermatitis-overview": {
-    "date": "2026-11-19",
-    "hash": "54deb62ddd07c143526e72877a5c8320f125476a414904e497558020fc21fbbc"
+    "date": "2026-11-20",
+    "hash": "cd07b2cd3ee2af32bcbdb112442cc4321167f59ceace9d964ccfb17425c52d9e"
   },
   "bimekizumab-hidradenitis-suppurativa": {
     "date": "2026-10-16",
@@ -36,8 +36,8 @@
     "hash": "39636846604e64c36846f03dc01d9fe891fb3bf5b87d9d8dea30ee840dda7480"
   },
   "bullous-pemphigoid": {
-    "date": "2026-11-18",
-    "hash": "e82c940a94712b420ddef6e079a7d070bc90d808e05db619a02ca6ea181d138e"
+    "date": "2026-11-20",
+    "hash": "7df082eeb7be7ad1ef84e71a20fcb3b1ab1efe992e7866a73f9c20d16a1ca787"
   },
   "contact-dermatitis": {
     "date": "2026-11-18",
@@ -117,7 +117,7 @@
   },
   "perioral-dermatitis-guide": {
     "date": "2026-11-20",
-    "hash": "cd2c70256efa43d42f9275e3577fc6a6d6ee33c571a3e9de925738b5bdc04a57"
+    "hash": "2f4c8bd20e8629cd4ee2eff90d1831aad087cf90970fcc04f513dc52907de181"
   },
   "photodynamic-therapy-overview": {
     "date": "2026-11-19",
@@ -132,8 +132,8 @@
     "hash": "01e95e842dd86e6027fd438123bc35a2d71c9fabdc4d1b90f21499cb9e382261"
   },
   "psoriasis-overview": {
-    "date": "2026-11-19",
-    "hash": "5dea775ffa5fc60aa417aa67ee187b69be0eeb81a7b8d63b566133ae6c13367f"
+    "date": "2026-11-20",
+    "hash": "5c5999c76c5be22dc3f78b887288a1c78ce1738b69e3e0dbe22d41dfcf281c56"
   },
   "refractory-atopic-dermatitis-workup": {
     "date": "2026-11-18",

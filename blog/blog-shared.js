@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202611201700';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611202100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -497,7 +497,7 @@
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202611201700';
+        s.src = '/blog/blog-search.min.js?v=202611202100';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -940,8 +940,8 @@
     { slug:'jaki-switching-alopecia-areata', title:'第一種 JAK 抑制劑治圓禿失敗，換第二種有用嗎？2026 JAAD 108 人換藥真實數據', title_en:'Does switching JAK inhibitors work for alopecia areata? Real-world data from 108 switches (JAAD 2026)', cat:'research', tag:'圓禿 JAK 換藥', date:'2026-05-26', emoji:'', tag_en:'JAKi switching' },
     { slug:'nail-psoriasis-topical-intralesional', title:'指甲乾癬怎麼治？擦藥、病灶內注射到雷射輔助穿透：2026 JAAD 評論的局部治療整理', title_en:'How is nail psoriasis treated? Topical, intralesional, and laser-assisted delivery — a 2026 JAAD editorial review', cat:'research', tag:'指甲乾癬治療', date:'2026-05-31', emoji:'', tag_en:'Nail psoriasis therapy' },
     { slug:'bimekizumab-hidradenitis-suppurativa', title:'化膿性汗腺炎打 bimekizumab 有效嗎？IL-17A/F 雙抑制與 BE-HEARD I/II 三期試驗的嚴格評讀', title_en:'Does bimekizumab work for hidradenitis suppurativa? A critical appraisal of the BE-HEARD I/II phase III trials', cat:'research', tag:'化膿性汗腺炎生物製劑', date:'2026-06-05', emoji:'', tag_en:'HS biologic (bimekizumab)' },
-    { slug:'acne-overview', title:'痘痘（痤瘡）完整介紹：成因、分級、擦藥吃藥、A 酸、痘疤與日常照護', title_en:'Acne Explained: Causes, Grading, Creams, Tablets, Isotretinoin, Scars and Daily Care', cat:'rx', tag:'痘痘', date:'2026-11-19', emoji:'', tag_en:'Acne' },
-    { slug:'bullous-pemphigoid', title:'類天疱瘡完整介紹：長輩全身癢、起水泡的原因、診斷、治療與照護', title_en:'Bullous Pemphigoid Explained: Causes, Diagnosis, Treatment and Care', cat:'rx', tag:'類天疱瘡', date:'2026-11-18', emoji:'', tag_en:'Pemphigoid' },
+    { slug:'acne-overview', title:'痘痘（痤瘡）完整介紹：成因、分級、擦藥吃藥、A 酸、痘疤與日常照護', title_en:'Acne Explained: Causes, Grading, Creams, Tablets, Isotretinoin, Scars and Daily Care', cat:'rx', tag:'痘痘', date:'2026-11-19', revised:'2026-11-20', emoji:'', tag_en:'Acne' },
+    { slug:'bullous-pemphigoid', title:'類天疱瘡完整介紹：長輩全身癢、起水泡的原因、診斷、治療與照護', title_en:'Bullous Pemphigoid Explained: Causes, Diagnosis, Treatment and Care', cat:'rx', tag:'類天疱瘡', date:'2026-11-18', revised:'2026-11-20', emoji:'', tag_en:'Pemphigoid' },
     { slug:'filler-vascular-occlusion', title:'打玻尿酸後皮膚發白、發紫、越來越痛：血管栓塞的警訊與緊急處理', title_en:'Skin Turning Pale or Purple After Filler: Warning Signs and Urgent Care for Vascular Occlusion', cat:'research', tag:'填充物併發症', date:'2026-11-18', emoji:'', tag_en:'Filler complications' },
     { slug:'iud-hair-loss', title:'裝避孕器會掉頭髮嗎？荷爾蒙環和銅環比一比（2026 JAAD 研究）', title_en:'Does an IUD Cause Hair Loss? Hormonal vs Copper IUDs (2026 JAAD Study)', cat:'research', tag:'避孕器與落髮', date:'2026-11-18', emoji:'', tag_en:'IUD and hair loss' },
     { slug:'atopic-dermatitis-child-growth', title:'異位性皮膚炎會影響孩子長高嗎？從 2026 年 dupilumab 兒童研究談生長追蹤', title_en:'Can Atopic Dermatitis Affect a Child\'s Growth? What a 2026 Dupilumab Study Shows', cat:'research', tag:'異位性皮膚炎', date:'2026-11-18', emoji:'', tag_en:'Atopic dermatitis' },
@@ -956,7 +956,7 @@
     { slug:'contact-dermatitis',  title:'接觸性皮膚炎(過敏 vs 刺激)完整衛教', title_en:'Contact dermatitis', cat:'rx', tag:'接觸性皮膚炎', date:'2026-05-08', emoji:'', tag_en:'Contact dermatitis' },
     { slug:'actinic-keratosis-scc', title:'日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教', title_en:'Actinic keratosis + cutaneous squamous cell carcinoma', cat:'rx', tag:'皮膚癌', date:'2026-05-08', emoji:'', tag_en:'AK / SCC' },
     { slug:'skin-biopsy-excision', title:'皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？', title_en:'Skin biopsy & tumor excision: complete guide', cat:'rx', tag:'處置 / 手術', date:'2026-05-09', emoji:'', tag_en:'Skin biopsy & excision' },
-    { slug:'psoriasis-overview',  title:'乾癬完整介紹：症狀、類型、共病、治療選擇、日常照護與健保給付', title_en:'Psoriasis Explained: Symptoms, Types, Related Conditions, Treatment, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'乾癬', date:'2026-05-09', revised:'2026-11-19', emoji:'', tag_en:'Psoriasis' },
+    { slug:'psoriasis-overview',  title:'乾癬完整介紹：症狀、類型、共病、治療選擇、日常照護與健保給付', title_en:'Psoriasis Explained: Symptoms, Types, Related Conditions, Treatment, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'乾癬', date:'2026-05-09', revised:'2026-11-20', emoji:'', tag_en:'Psoriasis' },
     { slug:'shingles-myths',      title:'帶狀疱疹 6 大迷思', title_en:'6 Shingles (Herpes Zoster) Myths', cat:'myth', tag:'皮蛇', date:'2026-05-04', emoji:'', tag_en:'Shingles' },
     { slug:'topical-acids-patient', title:'A酸、A醇、杜鵑花酸怎麼選？五大酸類差別與搭配', title_en:'Retinoids, Retinol and Azelaic Acid: Differences and Combinations', cat:'product', tag:'酸類', date:'2026-05-07', emoji:'', tag_en:'Topical acids' },
     { slug:'acne-scar-treatment',   title:'痘疤完整治療指引', title_en:'Acne scar treatment', cat:'rx', tag:'痘疤', date:'2026-05-07', emoji:'', tag_en:'Acne scars' },
@@ -974,7 +974,7 @@
     { slug:'laser-dermatology', title:'皮膚科雷射完整對照', title_en:'Dermatologic laser comparison', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
     { slug:'prurigo-nodularis', title:'結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療', title_en:'Prurigo Nodularis: Meaning, Symptoms and Treatment', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
     { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', title_en:'Cutaneous T-cell lymphoma (CTCL / MF)', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },
-    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付', title_en:'Atopic Dermatitis Explained: Symptoms, Diagnosis, Treatment, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-03', revised:'2026-11-19', emoji:'', tag_en:'Atopic dermatitis' },
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整介紹：症狀、診斷、治療、日常照護與健保給付', title_en:'Atopic Dermatitis Explained: Symptoms, Diagnosis, Treatment, Daily Care and Taiwan NHI Coverage', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-03', revised:'2026-11-20', emoji:'', tag_en:'Atopic dermatitis' },
   ];
 
   // -----------------------------------------------------------------------
@@ -1154,7 +1154,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202611201700';
+        s.src = '/blog/blog-article-reading.min.js?v=202611202100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1190,7 +1190,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202611201700';
+        s.src = '/blog/blog-article-footer.min.js?v=202611202100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1220,7 +1220,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202611201700';
+        s.src = '/blog/blog-calculators.min.js?v=202611202100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1359,7 +1359,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202611201700';
+        s.src = '/blog/blog-hub.min.js?v=202611202100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1391,7 +1391,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202611201700';
+        script.src = '/blog/blog-support.min.js?v=202611202100';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));
