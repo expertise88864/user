@@ -28,7 +28,7 @@ def main():
         path = os.path.join(BLOG, s + '.html')
         with open(path, 'r', encoding='utf-8') as f:
             html = f.read()
-        for m in re.finditer(r'href="/blog/([^"#?/]+)"', html):
+        for m in re.finditer(r'href="/blog/([^"#?/]+)(?:[#?][^"]*)?"', html):
             target = m.group(1)
             if target in slugs_set and target != s:
                 out_links[s].add(target)

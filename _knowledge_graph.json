@@ -110,6 +110,7 @@
       "skin-biopsy-excision"
     ],
     "dermatology-faq": [
+      "acne-overview",
       "acne-scar-treatment",
       "alopecia-areata",
       "atopic-dermatitis-overview",
@@ -122,6 +123,7 @@
       "melasma-myths",
       "mpox-care",
       "prurigo-nodularis",
+      "psoriasis-overview",
       "rosacea-myths",
       "shingles-myths",
       "skin-whitening-agents",
@@ -131,6 +133,7 @@
       "toenail-mechanical-disorders",
       "topical-acids-patient",
       "topical-steroids-guide",
+      "urticaria-overview",
       "vitiligo",
       "warts-myths"
     ],
@@ -139,6 +142,7 @@
       "biologics-overview"
     ],
     "epidermoid-cyst": [
+      "acne-overview",
       "acne-scar-treatment",
       "actinic-keratosis-scc",
       "dermatologic-oral-examination",
@@ -154,6 +158,7 @@
       "refractory-atopic-dermatitis-workup"
     ],
     "hairloss-myths": [
+      "acne-overview",
       "alopecia-areata",
       "biologics-overview",
       "semaglutide-hair-loss",
@@ -161,12 +166,14 @@
       "topical-acids-patient"
     ],
     "hidradenitis-suppurativa": [
+      "acne-overview",
       "bimekizumab-hidradenitis-suppurativa",
       "prurigo-nodularis",
       "psoriasis-overview",
       "urticaria-overview"
     ],
     "isotretinoin-clinical": [
+      "acne-overview",
       "topical-acids-clinical"
     ],
     "iud-hair-loss": [
@@ -180,6 +187,7 @@
     "jaad-monthly-2026-11": [
       "alopecia-areata",
       "atopic-dermatitis-child-growth",
+      "atopic-dermatitis-overview",
       "contact-dermatitis",
       "cutaneous-t-cell-lymphoma",
       "dermatologic-oral-examination",
@@ -213,6 +221,7 @@
       "urticaria-overview"
     ],
     "melasma-myths": [
+      "acne-overview",
       "shingles-myths",
       "skin-whitening-agents",
       "sunscreen-myths",
@@ -242,6 +251,7 @@
       "biologics-overview",
       "bullous-pemphigoid",
       "hidradenitis-suppurativa",
+      "psoriasis-overview",
       "skin-whitening-agents",
       "topical-steroids-guide",
       "urticaria-overview"
@@ -271,6 +281,7 @@
       "topical-steroids-guide"
     ],
     "photodynamic-therapy-overview": [
+      "acne-overview",
       "actinic-keratosis-scc",
       "atopic-dermatitis-child-growth",
       "filler-vascular-occlusion",
@@ -290,7 +301,8 @@
       "dupilumab-long-term-maintenance",
       "jaki-switching-alopecia-areata",
       "nail-psoriasis-topical-intralesional",
-      "nhi-derm-drugs"
+      "nhi-derm-drugs",
+      "psoriasis-overview"
     ],
     "psoriasis-overview": [
       "atopic-dermatitis-overview",
@@ -315,6 +327,7 @@
       "topical-steroids-guide"
     ],
     "rosacea-myths": [
+      "acne-overview",
       "acne-scar-treatment",
       "atopic-dermatitis-overview",
       "laser-dermatology",
@@ -354,6 +367,7 @@
       "refractory-atopic-dermatitis-workup"
     ],
     "sunscreen-myths": [
+      "acne-overview",
       "melasma-myths",
       "rosacea-myths",
       "shingles-myths",
@@ -361,6 +375,7 @@
       "warts-myths"
     ],
     "targeted-therapy-skin": [
+      "acne-overview",
       "actinic-keratosis-scc",
       "atopic-dermatitis-overview",
       "cutaneous-t-cell-lymphoma",
@@ -393,7 +408,8 @@
       "atopic-dermatitis-overview",
       "biologics-overview",
       "contact-dermatitis",
-      "prurigo-nodularis"
+      "prurigo-nodularis",
+      "psoriasis-overview"
     ],
     "urticaria-overview": [
       "acne-overview",
