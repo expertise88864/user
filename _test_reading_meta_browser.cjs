@@ -23,7 +23,10 @@ module.exports = async function checkReadingMetadata(browser) {
     await context.addInitScript(() => {
       Number.prototype.toLocaleString = function () { throw Error('Locale formatter must not be needed for reading metadata'); };
     });
-    for (const route of ['/blog/acne-overview','/en/blog/acne-overview','/en/blog/dupilumab-long-term-maintenance']) {
+    const KIND = {'/blog/acne-overview':'皮膚科疾病完整介紹','/blog/psoriasis-overview':'皮膚科疾病完整介紹',
+      '/blog/sunscreen-myths':'皮膚科迷思破解','/en/blog/dupilumab-long-term-maintenance':'皮膚科最新研究'};
+    for (const route of ['/blog/acne-overview','/en/blog/acne-overview','/blog/psoriasis-overview','/blog/sunscreen-myths',
+                         '/en/blog/dupilumab-long-term-maintenance','/blog/topical-acids-patient']) {
       const page = await context.newPage();
       const errors = [];
       page.on('pageerror',error=>errors.push(error.message));
@@ -37,7 +40,13 @@ module.exports = async function checkReadingMetadata(browser) {
       assert.equal(await page.locator('[data-dn-wordcount]').count(),0,'No word-count badge');
       const panel = await page.locator('#dn-secondary-meta').textContent();
       assert.doesNotMatch(panel,/閱讀約|min read|№|封面與閱讀資訊|Cover and reading information/);
-      if (route.endsWith('/acne-overview')) assert.match(await hero.innerHTML(),/皮膚科疾病完整介紹/,'Overview covers name the series');
+      if (KIND[route]) assert.match(await hero.innerHTML(),new RegExp(KIND[route]),route+': the cover names the article kind');
+      const header = await page.locator('main').evaluate(main => {
+        const meta = document.getElementById('dn-secondary-meta');
+        const panel = meta && (meta.closest('section') || meta.parentElement);
+        return (panel ? panel.textContent : '') + ' ' + (document.getElementById('dn-article-details')?.textContent || '');
+      });
+      assert.doesNotMatch(header,/封面與閱讀資訊|Cover and reading information|cover and reading information/,route+': no cover/reading heading');
       await page.evaluate(() => window.DN.addReadingMeta());
       assert.equal(await page.locator('#dn-reading-meta').count(),0,'Reinitialization adds no bar');
       assert.deepEqual(errors,[],'Reading metadata must not require locale initialization');

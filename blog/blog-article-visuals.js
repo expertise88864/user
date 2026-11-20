@@ -760,6 +760,15 @@
 
     HEROES['異位性皮膚炎'] = HEROES['異膚'];
     var heroSvg = HEROES[meta.tag] || HEROES['常見問題 FAQ'];
+    // Every cover names the article kind (D-23). Themed covers have a right-hand
+    // text group: the label goes under its subtitle. Illustrated magazine covers
+    // (dn-hero-rough) get it bottom-left, clear of the artwork.
+    if (heroSvg.indexOf(kindLabel) === -1) {
+      var kindText = '陳翊嘉醫師 · ' + kindLabel;
+      heroSvg = heroSvg.indexOf('dn-hero-rough') !== -1
+        ? heroSvg.replace(/<\/svg>$/, '<text x="24" y="224" font-family="Noto Sans TC,sans-serif" font-size="13" font-weight="600" fill="#0c5159">' + kindText + '</text></svg>')
+        : heroSvg.replace(/<\/g><\/svg>$/, '<text x="0" y="172" font-family="Noto Sans TC,sans-serif" font-size="13" fill="#5e574e">' + kindText + '</text></g></svg>');
+    }
     var article = document.querySelector('article.max-w-3xl');
     var h1 = (article && article.querySelector('h1')) ||
       document.querySelector('main h1') ||
