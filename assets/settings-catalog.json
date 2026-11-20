@@ -2,6 +2,11 @@
   "version": 1,
   "articles": [
     {
+      "slug": "urticaria-overview",
+      "title": "蕁麻疹完整介紹：急性與慢性、誘發因素、檢查、抗組織胺與生物製劑、日常照護",
+      "title_en": "Urticaria (Hives) Explained: Acute and Chronic Types, Triggers, Tests, Antihistamines, Biologics and Daily Care"
+    },
+    {
       "slug": "perioral-dermatitis-guide",
       "title": "口周皮膚炎完整介紹：成因、症狀、診斷、治療與日常照護",
       "title_en": "Perioral (Periorificial) Dermatitis Explained: Causes, Symptoms, Diagnosis, Treatment and Daily Care"
@@ -210,11 +215,6 @@
       "slug": "warts-myths",
       "title": "病毒疣 6 大迷思",
       "title_en": "Warts myths"
-    },
-    {
-      "slug": "urticaria-myths",
-      "title": "蕁麻疹 6 大迷思",
-      "title_en": "6 Urticaria (Hives) Myths"
     },
     {
       "slug": "tinea-myths",

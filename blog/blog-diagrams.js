@@ -1160,7 +1160,6 @@
     'rosacea-myths':           [{ key: 'rosacea-subtypes', after: 1 }, { key: 'uv-penetration', after: 4 }],
     'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'skin-barrier', after: 3 }],
     'vitiligo':                [{ key: 'vitiligo-types', after: 1 }, { key: 'uv-penetration', after: 3 }],
-    'urticaria-myths':         [{ key: 'mast-cell', after: 1 }],
     'targeted-therapy-skin':   [{ key: 'biologics-cytokines', after: 1 }],
     'cutaneous-t-cell-lymphoma': [{ key: 'biologics-cytokines', after: 2 }],
     'prurigo-nodularis':       [{ key: 'biologics-cytokines', after: 2 }, { key: 'skin-barrier', after: 0 }],

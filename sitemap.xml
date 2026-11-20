@@ -2233,6 +2233,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/year-115"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/urticaria-overview</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/urticaria-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/urticaria-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/urticaria-overview.png</image:loc>
+      <image:title>蕁麻疹完整介紹：急性與慢性、誘發因素、檢查、抗組織胺與生物製劑、日常照護</image:title>
+      <image:caption>蕁麻疹（風疹塊）和血管性水腫是什麼？急性與慢性怎麼分、會不會是食物過敏、需要抽血驗過敏原嗎？依 2026 國際蕁麻疹指引與臺灣皮膚科醫學會共識，整理抗組織胺怎麼吃、omalizumab 等生物製劑與新藥、誘發性蕁麻疹、急診警訊與健保現況。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/acne-overview</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -2572,7 +2585,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/nhi-derm-drugs</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/nhi-derm-drugs"/>
@@ -2610,19 +2623,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/urticaria-myths</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/urticaria-myths"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/urticaria-myths"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/urticaria-myths.png</image:loc>
-      <image:title>蕁麻疹 6 大迷思</image:title>
-      <image:caption>蕁麻疹一定是過敏？反覆發作是免疫力差？抗組織胺會嗜睡上癮？會傳染？慢性蕁麻疹治不好？食物過敏檢測有用嗎？6 個最常誤會的蕁麻疹(風疹塊)觀念 + 治療階梯。</image:caption>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/vitiligo</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -2637,7 +2637,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/dermatology-faq</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/dermatology-faq"/>
@@ -2689,7 +2689,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/biologics-overview</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/biologics-overview"/>

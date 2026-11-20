@@ -114,7 +114,7 @@
       label_en: 'Quick find',
       tags: {
         '最新研究':         { _from_cat: 'research' },
-        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview', 'psoriasis-overview', 'acne-overview', 'perioral-dermatitis-guide'],
+        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview', 'psoriasis-overview', 'acne-overview', 'perioral-dermatitis-guide', 'urticaria-overview'],
         '常見問題 FAQ':      ['dermatology-faq'],
         '皮膚科 AI / 數位工具': ['ai-dermatology-roles']
       }
@@ -127,7 +127,7 @@
       tags: {
         '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'topical-steroids-guide', 'biologics-overview', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'refractory-atopic-dermatitis-workup', 'atopic-dermatitis-child-growth'],
         '乾癬':              ['psoriasis-overview', 'biologics-overview', 'psoriasis-biologic-monitoring', 'nail-psoriasis-topical-intralesional'],
-        '蕁麻疹':            ['urticaria-myths'],
+        '蕁麻疹':            ['urticaria-overview'],
         '接觸性皮膚炎':      ['contact-dermatitis'],
         '口周皮膚炎':        ['perioral-dermatitis-guide'],
         '類天疱瘡':          ['bullous-pemphigoid', 'pemphigoid-elderly-eczema']
@@ -180,7 +180,7 @@
       label_en: 'Treatments & medicines',
       card: true,
       tags: {
-        '生物製劑':          ['biologics-overview', 'atopic-dermatitis-overview', 'psoriasis-overview', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'psoriasis-biologic-monitoring', 'hidradenitis-suppurativa', 'bimekizumab-hidradenitis-suppurativa', 'jaki-switching-alopecia-areata'],
+        '生物製劑':          ['biologics-overview', 'atopic-dermatitis-overview', 'psoriasis-overview', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'psoriasis-biologic-monitoring', 'hidradenitis-suppurativa', 'bimekizumab-hidradenitis-suppurativa', 'jaki-switching-alopecia-areata', 'urticaria-overview'],
         '類固醇藥膏':        ['topical-steroids-guide', 'atopic-dermatitis-overview'],
         '酸類 / A 酸':       ['acne-overview', 'topical-acids-patient', 'skin-whitening-agents'],
         '雷射 / 光電':       ['laser-dermatology', 'acne-scar-treatment', 'rosacea-myths', 'photodynamic-therapy-overview'],
@@ -709,7 +709,7 @@
     'toenail-mechanical-disorders': {desc:'腳趾甲變黃變厚不一定是灰指甲——9 成趾甲變形其實來自鞋子壓迫與腳型。整理 12 種常見趾甲變形（剝離、嵌甲、Beau’s line、夾擊甲等）、4 種足部結構異常與糖尿病趾甲照護，含台灣健保藥品與商品名。整合 2026 JAAD review。',desc_en:'Over 90% of toenail dystrophy is mechanical, not fungal. Patient-friendly guide to the 12 most common types (onycholysis, subungual heloma, Beau lines, retronychia...'},
     'topical-acids-patient': {desc:'A酸、A醇、杜鵑花酸、果酸與水楊酸有什麼差別？從五大酸類比較、入門方式、搭配問題到使用時的不適，依照你的問題找到對應段落。',desc_en:'Compare retinoids, retinol, azelaic acid, AHA and salicylic acid. Find sections on their differences, getting started, combining products and irritation.'},
     'topical-steroids-guide': {desc:'類固醇藥膏怎麼分強弱？臉 / 身體 / 手腳該用哪一級？指尖單位(FTU)怎麼算？可以擦多久？懷孕能用嗎？7 級類固醇藥膏分類 + 台灣常見品名 + 停藥反彈 + 類固醇恐懼症解析。',desc_en:'Topical corticosteroids are among the most prescribed drugs in dermatology, but topical steroid phobia (TCS phobia) drives many patients to stop early or seek folk...'},
-    'urticaria-myths': {desc:'蕁麻疹一定是過敏？反覆發作是免疫力差？抗組織胺會嗜睡上癮？會傳染？慢性蕁麻疹治不好？食物過敏檢測有用嗎？6 個最常誤會的蕁麻疹(風疹塊)觀念 + 治療階梯。',desc_en:'Urticaria (hives) is one of the most common skin complaints in Taiwan dermatology clinics, with a lifetime prevalence of 15-20%. But many patients ask: Did I eat...'},
+    'urticaria-overview': {desc:'蕁麻疹（風疹塊）和血管性水腫是什麼？急性與慢性怎麼分、會不會是食物過敏、需要抽血驗過敏原嗎？依 2026 國際蕁麻疹指引與臺灣皮膚科醫學會共識，整理抗組織胺怎麼吃、omalizumab 等生物製劑與新藥、誘發性蕁麻疹、急診警訊與健保現況。',desc_en:'Types, triggers and myths, useful and useless tests, antihistamine updosing, biologics and new drugs, inducible urticaria, red flags and daily care.'},
     'vitiligo': {desc:'白斑(Vitiligo)是自體免疫色素脫失疾病、全球盛行率 1-2%。依臺灣皮膚科醫學會 2024 共識整理：分節 vs 非分節型、外用 Ruxolitinib / Tacrolimus、NB-UVB / 308nm Excimer。',desc_en:'Vitiligo is autoimmune-driven depigmentation of the skin. Global prevalence is 1-2%, affecting all ages, sexes, and ethnicities. While not painful or...'},
     'vitiligo-maintenance-clinical': {desc:'非分節型白斑治療成功後仍約三分之一會復發。整理 Shih HY、Ng CY 2026 Br J Dermatol 長庚 809 人世代：手腳病灶、甲狀腺、其他自體免疫是三大預測因子；手腳合併甲狀腺 2.5 倍。',desc_en:'After 6 months of stability following successful repigmentation, about one-third (32.9%) of patients with non-segmental vitiligo experience recurrence/relapse within...'},
     'warts-myths': {desc:'病毒疣會自己好嗎？香蕉皮、大蒜可以治嗎？冷凍要打幾次？雷射打一次就消嗎？HPV 跟疫苗有關嗎？6 個民眾最常誤會的病毒疣（HPV viral warts）觀念，陳翊嘉醫師（皮膚科）整理，附 HPV 型別與部位對照、冷凍 / 雷射 / 免疫療法治療階梯。',desc_en:'Common warts (HPV) myth-busting: does banana peel work, can one laser session cure, will warts self-resolve, when to see a dermatologist. Treatment ladder included.'},

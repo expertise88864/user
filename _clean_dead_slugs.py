@@ -21,7 +21,9 @@ DEAD = ['atopic-dermatitis-comorbidity', 'eczema-myths',
         # merged into the psoriasis overview (D-22, 2026-11-19)
         'psoriasis-topical', 'psoriasis-systemic', 'psoriasis-special-populations', 'psoriasis-myths',
         # merged into the acne overview (D-22, 2026-11-19)
-        'acne-myths', 'isotretinoin-patient']
+        'acne-myths', 'isotretinoin-patient',
+        # merged into the urticaria overview (D-22, 2026-11-21)
+        'urticaria-myths']
 
 def strip_article_list_item(html, slug):
     """Remove <a class="article-list-item" href="/blog/SLUG" …>…</a> exactly once."""

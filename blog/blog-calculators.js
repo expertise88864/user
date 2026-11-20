@@ -202,7 +202,7 @@
   // UAS7 (Urticaria Activity Score over 7 days)
   DN.injectUAS7 = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && (slug !== 'urticaria-myths')) return;
+    if (!DN._forceInject && (slug !== 'urticaria-overview')) return;
     var anchor = document.querySelector('article.max-w-3xl');
     if (!anchor || document.getElementById('dn-uas7')) return;
     DN.calcStyles();
@@ -353,7 +353,7 @@
   // DLQI (Dermatology Life Quality Index, 0-30) — multi-article
   DN.injectDLQI = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-overview','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-overview','urticaria-overview','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
     var rows = [];
     var qs = [
       '過去 1 週，皮膚<strong>癢、痠痛、刺痛</strong>的程度？',
@@ -714,7 +714,7 @@
   // 0-10 single-item subjective itch intensity. Reizner 2012 standard.
   // ─────────────────────────────────────────────────────────────────────
   DN.injectVASPruritus = function () {
-    if (!DN._forceInject && !['atopic-dermatitis-overview','urticaria-myths','prurigo-nodularis','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','urticaria-overview','prurigo-nodularis','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-vas-itch', tool: 'VAS-Pruritus',
       title: 'VAS 搔癢評分 — 主觀癢度（過去 24 小時最劇烈）',
@@ -740,7 +740,7 @@
   // Used in clinical trials (Dupilumab, biologic) — patient-friendly 5-grade
   // ─────────────────────────────────────────────────────────────────────
   DN.injectIGA = function () {
-    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-overview','vitiligo','rosacea-myths','acne-overview','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-overview','vitiligo','rosacea-myths','acne-overview','prurigo-nodularis','urticaria-overview'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-iga', tool: 'IGA',
       title: 'IGA 醫師整體評估 — 0-4 分皮膚病嚴重度',
@@ -928,7 +928,7 @@
     'alopecia-areata':            ['SALT', 'DLQI'],
     'hairloss-myths':             ['HairScale', 'DLQI'],
     // Urticaria — UAS7 + DLQI is the EAACI gold standard pair
-    'urticaria-myths':            ['UAS7', 'DLQI'],
+    'urticaria-overview':         ['UAS7', 'DLQI'],
     // Acne — GAGS for severity, ASIS for patient-reported impact
     'acne-overview':              ['GAGS', 'ASIS'],
     'acne-scar-treatment':        ['GAGS', 'DLQI'],

@@ -32,8 +32,8 @@
     "hash": "0a3ed9fd7401fb3829521463badbfb3973d113ffd0df6449296afed747279162"
   },
   "biologics-overview": {
-    "date": "2026-11-19",
-    "hash": "39636846604e64c36846f03dc01d9fe891fb3bf5b87d9d8dea30ee840dda7480"
+    "date": "2026-11-21",
+    "hash": "a8a48405fec83ecf8cf72913e92669ea6aac21dcb41237ba034888eb9ad31a71"
   },
   "bullous-pemphigoid": {
     "date": "2026-11-20",
@@ -52,8 +52,8 @@
     "hash": "b2d92efe6f53905bdb9c22e9179e682084006c3dd274d843603622dea45b1ffb"
   },
   "dermatology-faq": {
-    "date": "2026-11-19",
-    "hash": "7a17648acaac333760709a93d2233f8025bbd2c307b217d7bb8846040e06bcb3"
+    "date": "2026-11-21",
+    "hash": "88fec80a7b2a89f0f599ae28e659c2ccb399c97b94df9721f7a82dace12a0f07"
   },
   "dupilumab-long-term-maintenance": {
     "date": "2026-11-18",
@@ -108,8 +108,8 @@
     "hash": "dc4bd645ebe3f031de03f473c437521480d436d4461435ea7ae3f85a3ea79abb"
   },
   "nhi-derm-drugs": {
-    "date": "2026-11-19",
-    "hash": "f506d1f8dddaf2a14875edc7165e280fc46628ce870aae317f664fa98f925395"
+    "date": "2026-11-21",
+    "hash": "d7fc3cd2edae1c69ba1443c0df568f561819bc2e82330a838a623c663a85e392"
   },
   "pemphigoid-elderly-eczema": {
     "date": "2026-11-18",
@@ -195,9 +195,9 @@
     "date": "2026-11-19",
     "hash": "07048ef02ce8e87fd3da2e3790f9a7f308379021bbb121f321b08512f040548a"
   },
-  "urticaria-myths": {
-    "date": "2026-10-18",
-    "hash": "c808ef83fd88a78b2b5e1988f4ca076cde6a2f1a82b17b9d31ea4add08a277d6"
+  "urticaria-overview": {
+    "date": "2026-11-21",
+    "hash": "17f0181dc4dfe13d35e351b1eb74c31f1f593455679bdcfae0022c767caa12e1"
   },
   "vitiligo": {
     "date": "2026-10-18",

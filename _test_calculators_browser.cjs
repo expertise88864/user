@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const crypto = require('node:crypto');
 const cases = [
   ['SCORAD', 'atopic-dermatitis-overview', 'dn-scorad'], ['SALT', 'alopecia-areata', 'dn-salt'],
-  ['UAS7', 'urticaria-myths', 'dn-uas7'], ['PASI', 'psoriasis-overview', 'dn-pasi'],
+  ['UAS7', 'urticaria-overview', 'dn-uas7'], ['PASI', 'psoriasis-overview', 'dn-pasi'],
   ['DLQI', 'atopic-dermatitis-overview', 'dn-dlqi'], ['Hurley', 'hidradenitis-suppurativa', 'dn-hurley'],
   ['HairScale', 'hairloss-myths', 'dn-hair-scale'], ['Fitzpatrick', 'sunscreen-myths', 'dn-fitzpatrick'],
   ['GAGS', 'acne-overview', 'dn-gags'], ['MASI', 'melasma-myths', 'dn-masi'],

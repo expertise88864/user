@@ -116,6 +116,10 @@ EN_OG_OVERRIDES = {
         'title': 'Bimekizumab for Hidradenitis Suppurativa (BE-HEARD I/II, BJD 2026)',
         'desc': 'Bimekizumab is a newer biologic that inhibits both IL-17A and IL-17F. A 2026 British Journal of Dermatology critically appraised topic (McCarthy & Ring) reviews its two phase III trials, BE-HEARD I and II (Kimball et al., Lancet 2024): at week 16, about 48–52% of the every-2-weeks arm reached HiSCR 50 vs 29–32% on placebo, with DLQI and pain improvements, broadly comparable to adalimumab and secukinumab. The appraisal is candid about limits: a 31% placebo response, UCB funding, no comparator beyond week 16 and no head-to-head, common candida infections (23–25%), IBD signals, week-48 retention falling to 66–76%, a predominantly White and female cohort, and exclusion of the most severe phenotype. Covers IL-17A/F mechanism, efficacy, safety, the critical appraisal, and the Taiwan context.',
     },
+    'blog/urticaria-overview.html': {
+        'title': 'Urticaria (Hives) Explained: Acute and Chronic Types, Triggers, Tests, Antihistamines, Biologics and Daily Care',
+        'desc': 'Types, triggers and myths, useful and useless tests, antihistamine updosing, biologics and new drugs, inducible urticaria, red flags and daily care.',
+    },
     'blog/acne-overview.html': {
         'title': 'Acne Explained: Causes, Grading, Creams, Tablets, Isotretinoin, Scars and Daily Care',
         'desc': 'Causes, grading, creams and tablets, isotretinoin safety, scars and dark marks, diet myths and daily care for acne in one guide.',

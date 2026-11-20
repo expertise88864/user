@@ -164,10 +164,6 @@
     "date": "2026-05-04",
     "source": "published"
   },
-  "urticaria-myths": {
-    "date": "2026-05-04",
-    "source": "published"
-  },
   "vitiligo": {
     "date": "2026-05-04",
     "source": "published"
@@ -210,6 +206,10 @@
   },
   "acne-overview": {
     "date": "2026-11-20",
+    "source": "published"
+  },
+  "urticaria-overview": {
+    "date": "2026-11-21",
     "source": "published"
   }
 }

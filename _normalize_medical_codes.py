@@ -188,11 +188,6 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
     ],
 
     # ─── Urticaria / inflammatory ───
-    "urticaria-myths": [
-        medical_condition("Chronic spontaneous urticaria", "慢性自發性蕁麻疹",
-                          icd10="L50.1", snomed="48740009",
-                          mesh="D014581"),
-    ],
     "prurigo-nodularis": [
         medical_condition("Prurigo nodularis", "結節性癢疹",
                           icd10="L28.1", snomed="36821000119103"),
