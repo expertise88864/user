@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202611201100';
+          s.src = '/blog/blog-diagrams.min.js?v=202611201500';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -234,68 +234,15 @@
   };
 
 
+  // Reading-information bar (article number, reading time, author link, word
+  // count) removed by the author's decision 2026-11-20: only the cover stays
+  // above the article. What remains is the engaged-reading tracker.
   DN.addReadingMeta = function () {
+    if (DN._readingTracked) return;
     const proseEl = outlineProse();
     if (!proseEl) return;
-    if (document.getElementById('dn-reading-meta')) return;
-    // Build-generated navigation can sit inside article.prose. Count a detached
-    // copy without those repeated UI labels; never alter the live article.
-    const readingBody = proseEl.cloneNode(true);
-    readingBody.querySelectorAll('#dn-inline-toc, #dn-secondary-meta, #dn-reading-meta')
-      .forEach(function (element) { element.remove(); });
-    // Keep word boundaries: removing whitespace merges an English article
-    // into one token and understates both its reading time and word count.
-    const text = readingBody.textContent || '';
-    const cjkChars = (text.match(/[一-鿿]/g) || []).length;
-    const otherWords = (text.match(/[A-Za-z0-9]+/g) || []).length;
-    // Reading speed: ~350 zh chars/min OR ~200 en words/min
-    const minutes = Math.max(2, Math.round(cjkChars / 350 + otherWords / 200));
-
     const slug = DN.currentSlug();
-    // No date chip here (owner's decision 2026-10-17). The build writes
-    // "內容更新 … · 醫師審閱 …" into the article header from the content and
-    // review ledgers (_normalize_article_dates.py). This bar used to add
-    // "最後審閱 <catalog date>", but the catalog date is the publication date,
-    // not the physician's recorded review, and contradicted the header.
-
-    // Find a good insertion point — right after first <h1> sibling chain
-    const h1 = document.querySelector('article h1, section h1');
-    const lead = h1 ? h1.parentElement.querySelector('p') : null;
-    const target = lead || h1;
-    if (!target) return;
-    const bar = document.createElement('div');
-    bar.id = 'dn-reading-meta';
-    bar.style.cssText = 'display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0 8px;font-size:12.5px;color:var(--ink-2);';
-
-    // Article number badge
-    const articleNum = DN.getArticleNumber(slug);
-    const numBadge = articleNum
-      ? '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;font-weight:700;letter-spacing:.04em;font-family:Inter,sans-serif"><span aria-hidden="true">№</span><span>' + articleNum + '</span></span>'
-      : '';
-    // ZH/EN badges use comma-grouped integer counts. Avoid initializing a
-    // browser locale formatter just for three small labels on article startup.
-    function formatCount(value) { return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
-    const totalLabel = cjkChars
-      ? formatCount(cjkChars) + ' 字' + (otherWords ? ' / ' + formatCount(otherWords) + ' words' : '')
-      : formatCount(otherWords) + ' words';
-    const countLabelEn = cjkChars
-      ? formatCount(cjkChars) + ' characters' + (otherWords ? ' / ' + formatCount(otherWords) + ' words' : '')
-      : formatCount(otherWords) + ' words';
-
-    bar.innerHTML =
-      numBadge +
-      '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#f1ece4;border:1px solid #a5f3fc;color:#4d6358;font-weight:600">' +
-        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
-        '<span data-zh="閱讀約 ' + minutes + ' 分鐘" data-en="' + minutes + ' min read">閱讀約 ' + minutes + ' 分鐘</span>' +
-      '</span>' +
-      '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:var(--surface,#fff);border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>' +
-      '<span data-dn-wordcount style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#fef3c7;border:1px solid #fcd34d;color:#854d0e;font-weight:600">' +
-        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>' +
-        '<span data-zh="' + totalLabel + '" data-en="' + countLabelEn + '">' + totalLabel + '</span>' +
-      '</span>';
-    const secondaryMeta = document.getElementById('dn-secondary-meta');
-    if (secondaryMeta) secondaryMeta.appendChild(bar);
-    else target.parentNode.insertBefore(bar, target.nextSibling);
+    DN._readingTracked = true;
 
     // Mark this article as read — but ONLY when the reader has truly engaged.
     // Threshold: scrolled past ≥ 70% of article body AND spent ≥ 30 seconds on page.

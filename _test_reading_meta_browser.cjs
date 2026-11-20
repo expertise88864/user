@@ -28,13 +28,18 @@ module.exports = async function checkReadingMetadata(browser) {
       const errors = [];
       page.on('pageerror',error=>errors.push(error.message));
       await page.goto('https://reading.test'+route);
-      const badge = page.locator('#dn-reading-meta [data-dn-wordcount]');
-      await badge.waitFor({state:'attached'});
-      assert.equal(await badge.count(),1,'Word count must exist even when the footer bundle is blocked');
-      assert.match(await badge.locator('[data-en]').getAttribute('data-en'),/\d[\d,]* (?:words|characters)/);
-      const before = await page.locator('#dn-reading-meta').innerHTML();
+      // Author decision 2026-11-20: no reading-information bar (number, reading time,
+      // author link, word count) above articles; the cover alone stays.
+      const hero = page.locator('#dn-secondary-meta #dn-article-hero');
+      await hero.waitFor({state:'attached'});
+      assert.equal(await hero.count(),1,'The cover stays in the secondary meta panel');
+      assert.equal(await page.locator('#dn-reading-meta').count(),0,'No reading-information bar');
+      assert.equal(await page.locator('[data-dn-wordcount]').count(),0,'No word-count badge');
+      const panel = await page.locator('#dn-secondary-meta').textContent();
+      assert.doesNotMatch(panel,/閱讀約|min read|№|封面與閱讀資訊|Cover and reading information/);
+      if (route.endsWith('/acne-overview')) assert.match(await hero.innerHTML(),/皮膚科疾病完整介紹/,'Overview covers name the series');
       await page.evaluate(() => window.DN.addReadingMeta());
-      assert.equal(await page.locator('#dn-reading-meta').innerHTML(),before,'Reinitialization must keep one complete metadata bar');
+      assert.equal(await page.locator('#dn-reading-meta').count(),0,'Reinitialization adds no bar');
       assert.deepEqual(errors,[],'Reading metadata must not require locale initialization');
       await page.close();
     }

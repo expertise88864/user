@@ -131,34 +131,23 @@ test('language refresh avoids redundant mutations but translates new content and
   assert.equal(plainText.textContent,'Custom visible text');
 });
 
-test('reading metadata counts spaced English words and includes the badge without locale initialization', () => {
-  const bars = [];
+test('reading metadata adds no information bar and initializes once (author decision 2026-11-20)', () => {
+  const appended = [];
   const prose = {textContent:'皮'.repeat(3500) + ' ' + Array(800).fill('word').join(' ')};
   prose.cloneNode = () => ({textContent:prose.textContent,querySelectorAll:()=>[]});
   const article = {contains:element=>element===prose};
-  const lead = {};
-  const h1 = {parentElement:{querySelector:()=>lead}};
   const doc = {
     documentElement:{lang:'en'},
-    getElementById:id=>id==='proseZh'?prose:id==='dn-reading-meta'?bars[0]:id==='dn-secondary-meta'?{appendChild:bar=>bars.push(bar)}:null,
-    querySelector:selector=>selector==='article'?article:selector==='article h1, section h1'?h1:null,
-    createElement:()=>({style:{},innerHTML:''})
+    getElementById:id=>id==='proseZh'?prose:id==='dn-secondary-meta'?{appendChild:node=>appended.push(node)}:null,
+    querySelector:selector=>selector==='article'?article:null,
+    createElement:()=>{ throw Error('No reading-information element may be created'); }
   };
   const context = vm.createContext({window:{DN:{currentSlug:()=>null,getArticleNumber:()=>null,ARTICLES:[]}},document:doc});
   vm.runInContext("Number.prototype.toLocaleString=function(){throw Error('Unexpected locale formatter');};",context);
   vm.runInContext(readFileSync(new URL('./blog/blog-article-reading.js',import.meta.url),'utf8'),context);
   context.window.DN.addReadingMeta();
-  assert.equal(bars.length,1);
-  assert.match(bars[0].innerHTML,/14 min read/);
-  assert.match(bars[0].innerHTML,/data-dn-wordcount/);
-  assert.match(bars[0].innerHTML,/3,500 characters \/ 800 words/);
   context.window.DN.addReadingMeta();
-  assert.equal(bars.length,1,'Repeated initialization must not duplicate metadata');
-  bars.length=0;
-  prose.textContent=Array(1000).fill('word').join(' ');
-  context.window.DN.addReadingMeta();
-  assert.match(bars[0].innerHTML,/5 min read/);
-  assert.match(bars[0].innerHTML,/1,000 words/);
+  assert.equal(appended.length,0,'Nothing is added to the cover panel');
 });
 test('reading completion requires foreground dwell and scroll, and fires once', () => {
   let now = 0, tick, reads = 0, events = 0, visibleBottom = 200;

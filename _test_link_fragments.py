@@ -115,7 +115,8 @@ class FragmentTests(unittest.TestCase):
         self.assertIn('First &amp; second</a>', result)
         self.assertEqual(extract_faqs(result), [])
         english = reading_shell(result, True)
-        self.assertIn('Cover and reading information', english)
+        self.assertNotIn('Cover and reading information', english)
+        self.assertIn('id="dn-secondary-meta"', english)
         self.assertIn('In this article', english)
 
     def test_reading_shell_keeps_existing_patient_metadata_and_article_h1(self):

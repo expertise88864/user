@@ -30,6 +30,9 @@ Codex review、遠端 CI 與正式交付流程照常適用。重開：使用者�
 標題上方「醫師審閱」照常顯示上線日期（`_review_dates.json` source "published"），與 D-20 相同；使用者 2026-11-18 針對本系列明示「照 JAAD 系列顯示」，不使用「待審」狀態。
 Codex review、遠端 CI 與正式交付流程照常適用。重開：使用者撤回此授權。
 
+**D-23 文章上方只留封面；封面文字依文章類型**(2026-11-20,使用者定案)
+文章標題下方不再顯示「封面與閱讀資訊」那一排（文章編號 №、閱讀時間、作者連結、字數），只保留封面圖；已讀記錄（捲動 70%＋停留 30 秒）照舊在背景運作。封面上的「皮膚科衛教」依文章類型改寫：疾病總覽「皮膚科疾病完整介紹」、研究「皮膚科最新研究」、迷思「皮膚科迷思破解」、治療「皮膚科治療解析」，其他維持「皮膚科衛教筆記」；痘痘封面的大標題非總覽時寫「痘痘 / 痤瘡」。頁首與頁尾的網站名稱「皮膚科衛教筆記」不變。重開：使用者要求恢復閱讀資訊。
+
 **D-22 一個疾病一篇總覽：同疾病的舊衛教文章併入總覽、舊網址 301 到段落**(2026-11-18,使用者定案)
 使用者希望每個疾病只有一篇完整的長文總覽（大綱導覽、圖文並茂、只用自繪圖解不放照片），讓讀者不必開多個網頁；研究類文章（最新研究）保持獨立並從總覽連過去。舊文章從 DN.ARTICLES 與首頁標籤移除、刪除頁面，zh／en 舊網址（含 .html）在 vercel.json 永久轉址到總覽對應段落，站內連結改指新段落。第一批：異位性皮膚炎（atopic-dermatitis-overview 沿用網址；併入 atopic-dermatitis-topical→#topical、atopic-dermatitis-systemic→#systemic、atopic-dermatitis-special-populations→#comorbidities、pediatric-eczema→#children）。第二批：乾癬（psoriasis-overview 沿用網址；併入 psoriasis-topical→#topical、psoriasis-systemic→#treatment（原文涵蓋照光、口服、生物製劑，故轉到治療階梯）、psoriasis-special-populations→#comorbidities、psoriasis-myths→#myths；PASI／NAPSI 計算器移到總覽，站內連結依原段落對到 #biologics、#dn-pasi 等）。第三批：痤瘡（新網址 acne-overview；只併入 acne-myths→#myths、isotretinoin-patient→#isotretinoin；acne-scar-treatment、isotretinoin-clinical、topical-acids 兩篇、spironolactone 研究保留獨立；GAGS／ASIS 計算器移到總覽；原本以 acne-myths 為範例頁的檢查與測試改用 acne-overview）。改寫的既有總覽保留首次發布日，另以 revised 欄位排序。第四批：口周皮膚炎（沿用 perioral-dermatitis-guide 網址改寫為總覽，無退役頁；首次發布日 2026-05-13 不變，revised 2026-11-20；中英頁改用相同段落錨點，原 en-* 錨點不再存在）。轉址一律 statusCode 301。內容規則同 D-21。重開：使用者改回多篇架構。
 

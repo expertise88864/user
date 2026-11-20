@@ -60,8 +60,7 @@ module.exports = async function checkReadingEngagement(browser, {readingSource, 
           DN.addReadingMeta(); DN.addReadingMeta();
           DN.bindScrollMemory(); DN.bindGAEvents(); DN.bindGAEvents();
         });
-        assert.equal(await page.locator('#dn-reading-meta').count(),1,layout+' must show one reading-information bar');
-        assert.match(await page.locator('#dn-reading-meta [data-dn-wordcount]').textContent(),/1,20\d words/);
+        assert.equal(await page.locator('#dn-reading-meta').count(),0,layout+' shows no reading-information bar (2026-11-20)');
         async function tick(now, pct, hidden) {
           return page.evaluate(async ({now,pct,hidden}) => {
             READING_TEST.now = now;

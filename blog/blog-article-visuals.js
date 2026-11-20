@@ -578,6 +578,14 @@
     var meta = (DN.ARTICLES || []).find(function (a) { return a.slug === slug; });
     if (!meta) return;
 
+    // Cover wording (author decision 2026-11-20): disease overviews say
+    // 皮膚科疾病完整介紹; other articles name their kind; the site name stays
+    // in the header and footer only. Overview pages carry the build-written
+    // "疾病總覽 · …" eyebrow.
+    var isOverview = !!document.querySelector('main [data-zh^="疾病總覽 · "]');
+    var KIND_LABEL = { research: '皮膚科最新研究', myth: '皮膚科迷思破解', rx: '皮膚科治療解析' };
+    var kindLabel = isOverview ? '皮膚科疾病完整介紹' : (KIND_LABEL[meta.cat] || '皮膚科衛教筆記');
+
     // Each hero is ~720x240, cream/teal palette, hand-drawn feel.
     // Wrapped in a <picture>-like figure that auto-resizes.
     var HEROES = {
@@ -588,7 +596,7 @@
         '<circle cx="80" cy="85" r="6" fill="#dc2626"/><circle cx="80" cy="85" r="2" fill="#fff"/>' +
         '<circle cx="120" cy="100" r="5" fill="#9a3412"/><circle cx="105" cy="125" r="4" fill="#9a3412"/>' +
         '<circle cx="135" cy="80" r="3" fill="#7a9285"/><path d="M75 145 Q100 160 125 145" fill="none" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/>' +
-        '</g><g transform="translate(380 50)"><text x="0" y="40" font-family="Noto Serif TC,Georgia,serif" font-size="32" font-weight="700" fill="#0c5159">皮膚科衛教</text>' +
+        '</g><g transform="translate(380 50)"><text x="0" y="40" font-family="Noto Serif TC,Georgia,serif" font-size="32" font-weight="700" fill="#0c5159">' + (isOverview ? '皮膚科疾病完整介紹' : '痘痘 / 痤瘡') + '</text>' +
         '<text x="0" y="78" font-family="Inter,sans-serif" font-size="14" letter-spacing="3" fill="#7a9285">DERMATOLOGY · ACNE</text>' +
         '<line x1="0" y1="100" x2="240" y2="100" stroke="#a4b5a8" stroke-width="2"/>' +
         '<text x="0" y="140" font-family="Noto Sans TC,sans-serif" font-size="13" fill="#5e574e">尋常痤瘡 · Acne vulgaris</text>' +
@@ -746,7 +754,7 @@
         '</g><g transform="translate(280 50)"><text x="0" y="40" font-family="Noto Serif TC,Georgia,serif" font-size="32" font-weight="700" fill="#0c5159">' + (meta.title.length > 14 ? meta.title.slice(0, 14) + '⋯' : meta.title) + '</text>' +
         '<text x="0" y="78" font-family="Inter,sans-serif" font-size="14" letter-spacing="3" fill="#7a9285">' + (meta.tag_en || 'DERMATOLOGY') + '</text>' +
         '<line x1="0" y1="100" x2="340" y2="100" stroke="#a4b5a8" stroke-width="2"/>' +
-        '<text x="0" y="140" font-family="Noto Sans TC,sans-serif" font-size="13" fill="#5e574e">陳翊嘉醫師 · 皮膚科衛教筆記</text>' +
+        '<text x="0" y="140" font-family="Noto Sans TC,sans-serif" font-size="13" fill="#5e574e">陳翊嘉醫師 · ' + kindLabel + '</text>' +
         '</g></svg>'
     };
 

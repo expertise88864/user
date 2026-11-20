@@ -147,10 +147,10 @@ def normalize(src: str, english: bool = False) -> str:
                        if start < pos < end and tag.lower() == '</h1>'), None)
         edits.append((h1_end or insertion, h1_end or insertion, toc))
     if not any(attributes(tag).get('id') == 'dn-secondary-meta' for _, tag in tags):
-        title = 'Cover and reading information' if english else '封面與閱讀資訊'
+        # Holds only the cover since 2026-11-20 (no "cover and reading information" label).
         meta = ('<!-- dn-reading-shell:meta --><section class="max-w-3xl mx-auto px-5 sm:px-8">'
-                '<div id="dn-secondary-meta" class="dn-article-details dn-article-meta">'
-                '<div class="dn-article-meta-title">' + title + '</div></div></section><!-- /dn-reading-shell -->')
+                '<div id="dn-secondary-meta" class="dn-article-details dn-article-meta"></div>'
+                '</section><!-- /dn-reading-shell -->')
         edits.append((start, start, meta))
     for position, stop, block in sorted(edits, reverse=True):
         src = src[:position] + block + src[stop:]
