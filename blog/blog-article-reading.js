@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202611212300';
+          s.src = '/blog/blog-diagrams.min.js?v=202611212330';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -754,6 +754,9 @@
     var sizeMap = { 'S': '14px', 'M': '15px', 'L': '17px', 'XL': '20px' };
     if (!Object.prototype.hasOwnProperty.call(sizeMap, savedSize)) savedSize = 'M';
     var lineHeightMap = { 'S': '1.7', 'M': '1.8', 'L': '1.9', 'XL': '2.0' };
+    // Reference lists are compact on screen (12.5px at M, assets/tw-mini.css);
+    // scale them with the chosen size, never below 12px.
+    var referenceSizeMap = { 'S': '12px', 'M': '12.5px', 'L': '14px', 'XL': '16.5px' };
     function applyFontSize(s) {
       var styleEl = document.getElementById('dn-font-size-style');
       // The default already ships in CSS before first paint. Re-injecting it
@@ -776,7 +779,8 @@
         '.prose p, .prose-zh p, .prose-en p, #proseZh p, #proseEn p, article.prose p, article.prose li, .prose-zh li, .prose-en li, #proseZh li, #proseEn li { font-size: ' + px + ' !important; line-height: ' + lh + ' !important; }' +
         (s === 'XL'
           ? 'article h2 { font-size: 1.55em !important; } article h3 { font-size: 1.28em !important; } article h4 { font-size: 1.12em !important; }'
-          : '');
+          : '') +
+        '@media screen { ol.references li, article ol.references li, .prose-zh ol.references li, .prose-en ol.references li, #proseZh ol.references li, #proseEn ol.references li, #references+ol li { font-size: ' + (referenceSizeMap[s] || referenceSizeMap.M) + ' !important; line-height: 1.5 !important; } }';
       try { localStorage.setItem('dn-font-size', s); } catch (e) {}
     }
     applyFontSize(savedSize);

@@ -3,6 +3,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 module.exports = async function checkReaderControls(browser, { readingSource } = {}) {
   const source = readingSource || fs.readFileSync('blog/blog-article-reading.js', 'utf8');
+  // The production stylesheet makes reference lists compact; the text-size control must still scale them.
+  const siteCss = fs.readFileSync('assets/tw-mini.css', 'utf8');
   const results = [];
   for (const width of [390,800,1440]) {
     const context = await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});
@@ -11,8 +13,9 @@ module.exports = async function checkReaderControls(browser, { readingSource } =
         const url = new URL(route.request().url());
         if (url.origin !== 'https://reader-controls.test') return route.abort();
         if (url.pathname === '/runtime.js') return route.fulfill({contentType:'application/javascript; charset=utf-8',body:source});
+        if (url.pathname === '/site.css') return route.fulfill({contentType:'text/css; charset=utf-8',body:siteCss});
         if (url.pathname !== '/fixture') return route.fulfill({status:404,body:''});
-        return route.fulfill({contentType:'text/html; charset=utf-8',body:'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>Isolated reader</title></head><body><details id="dn-reading-settings"><summary>閱讀設定</summary></details><article id="proseZh" class="prose"><h2 id="section">Fixture heading</h2><p>Fixture paragraph</p></article><div style="height:5000px"></div><script src="/runtime.js"></script></body></html>'});
+        return route.fulfill({contentType:'text/html; charset=utf-8',body:'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>Isolated reader</title><link rel="stylesheet" href="/site.css"></head><body><details id="dn-reading-settings"><summary>閱讀設定</summary></details><article id="proseZh" class="prose"><h2 id="section">Fixture heading</h2><p>Fixture paragraph</p><ol class="references"><li id="ref-1">Fixture reference</li></ol></article><div style="height:5000px"></div><script src="/runtime.js"></script></body></html>'});
       });
       const page = await context.newPage(), errors = [];
       page.on('pageerror', error => errors.push(error.message));
@@ -20,6 +23,8 @@ module.exports = async function checkReaderControls(browser, { readingSource } =
       assert.deepEqual(errors,[], 'The fixture must load the actual reading runtime before exercising controls');
       await page.evaluate(() => { DN.currentSlug=()=> 'reader-fixture'; DN.addFontSizer(); DN.addFontSizer(); });
       await page.locator('#dn-reading-settings summary').click();
+      const referenceSize = () => page.locator('#ref-1').evaluate(el => getComputedStyle(el).fontSize);
+      assert.equal(await referenceSize(),'12.5px','reference lists are compact at the default size');
       const large = page.locator('#dn-font-sizer button[data-size="XL"]');
       assert.equal(await page.locator('#dn-font-sizer').count(),1);
       assert.equal(await large.isVisible(),true);
@@ -28,9 +33,11 @@ module.exports = async function checkReaderControls(browser, { readingSource } =
       await large.focus(); await large.press('Enter');
       assert.equal(await large.getAttribute('aria-pressed'),'true');
       assert.equal(await page.locator('#proseZh').evaluate(el => getComputedStyle(el).fontSize),'20px');
+      assert.equal(await referenceSize(),'16.5px','the text-size control also enlarges references');
       assert.equal(await page.evaluate(()=>localStorage.getItem('dn-font-size')),'XL');
       await page.locator('#dn-font-sizer button[data-size="M"]').click();
       assert.equal(await page.locator('#dn-font-size-style').count(),0);
+      assert.equal(await referenceSize(),'12.5px');
       await context.addInitScript(() => {
         localStorage.setItem('dn:scroll:reader-fixture', JSON.stringify({y:600,pct:'<img src=x onerror="window.RESTORE_INJECTED=1">',ts:Date.now(),h2:'Fixture'}));
       });
