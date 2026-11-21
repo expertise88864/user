@@ -417,8 +417,13 @@ main > section:not(:first-of-type):has(~ article) { content-visibility: visible;
    academic journal formatting. */
 .cite,article cite{font-size:.82em;color:#6b7280;font-style:normal;font-weight:400;letter-spacing:.01em}
 /* References list — wrapped as a card matching addAuthorBio padding/look */
-ol.references,article ol.references,#references+ol{font-size:.82em;color:#4b5563;line-height:1.7;padding:22px 26px 22px 48px;margin:18px 0;background:#fff;border:1px solid #e7e2d8;border-radius:18px;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18);list-style-position:outside}
-ol.references li,article ol.references li{margin:6px 0;line-height:1.7;padding-left:4px}
+ol.references,article ol.references,#references+ol{font-size:.82em;color:#4b5563;line-height:1.5;padding:12px 14px 12px 34px;margin:14px 0;background:#fff;border:1px solid #e7e2d8;border-radius:18px;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18);list-style-position:outside}
+/* Compact references (2026-11-21): the body-text rule in dn-below-fold.css
+   (.prose-zh li / #proseZh li: 15px, line-height 1.8) also matched reference
+   items, so the list rendered at body size. That rule is !important, so these
+   are too; the ID-qualified selectors outrank it.
+   12.5px stays above Lighthouse's 12px legibility floor. */
+ol.references li,article ol.references li,.prose-zh ol.references li,.prose-en ol.references li,#proseZh ol.references li,#proseEn ol.references li,#references+ol li{font-size:12.5px !important;margin:2px 0;line-height:1.5 !important;padding-left:2px}
 ol.references li em,article ol.references li em{color:#374151;font-style:italic}
 ol.references li strong,article ol.references li strong{font-size:1.05em;color:#0c5159}
 ol.references a,article ol.references a{color:#0c5159;font-weight:600}
