@@ -40,8 +40,8 @@
     "hash": "08067df81cabcc35881a2dda9c26ee73c28d8671d88b59819ff6a5a8ce8193c3"
   },
   "contact-dermatitis": {
-    "date": "2026-11-18",
-    "hash": "35a026f67bfd288a764ab58d40853289023ea5d2b1e5871e905abca489d1f953"
+    "date": "2026-11-21",
+    "hash": "e790ff89ae3c44d0a4225c35c22020b919df08a654ddb872fe0a7c88ace5e9a8"
   },
   "cutaneous-t-cell-lymphoma": {
     "date": "2026-10-16",
@@ -70,6 +70,10 @@
   "hairloss-myths": {
     "date": "2026-11-19",
     "hash": "671292614b87ae6ab25de41014893c61f53bb2bb2652f3667ebf19c9d1ec7ff5"
+  },
+  "hand-eczema-overview": {
+    "date": "2026-11-21",
+    "hash": "489ac57d929fcc193bf50d207a924833cad23f7867094f86edd823219820b742"
   },
   "hidradenitis-suppurativa": {
     "date": "2026-11-19",

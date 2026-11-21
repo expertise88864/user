@@ -3,6 +3,7 @@
     "acne-overview": [
       "acne-scar-treatment",
       "bullous-pemphigoid",
+      "hand-eczema-overview",
       "hidradenitis-suppurativa",
       "isotretinoin-clinical",
       "laser-dermatology",
@@ -57,6 +58,7 @@
       "biologics-overview",
       "contact-dermatitis",
       "dupilumab-long-term-maintenance",
+      "hand-eczema-overview",
       "nhi-derm-drugs",
       "prurigo-nodularis",
       "psoriasis-overview",
@@ -84,13 +86,13 @@
     ],
     "bullous-pemphigoid": [
       "acne-overview",
+      "hand-eczema-overview",
       "pemphigoid-elderly-eczema",
-      "perioral-dermatitis-guide",
       "urticaria-overview"
     ],
     "contact-dermatitis": [
       "actinic-keratosis-scc",
-      "cutaneous-t-cell-lymphoma",
+      "hand-eczema-overview",
       "perioral-dermatitis-guide",
       "vitiligo"
     ],
@@ -146,9 +148,9 @@
       "acne-scar-treatment",
       "actinic-keratosis-scc",
       "dermatologic-oral-examination",
+      "hand-eczema-overview",
       "hidradenitis-suppurativa",
-      "skin-biopsy-excision",
-      "urticaria-overview"
+      "skin-biopsy-excision"
     ],
     "filler-vascular-occlusion": [
       "atopic-dermatitis-child-growth",
@@ -164,6 +166,15 @@
       "semaglutide-hair-loss",
       "spironolactone-dermatology-safety",
       "topical-acids-patient"
+    ],
+    "hand-eczema-overview": [
+      "atopic-dermatitis-overview",
+      "biologics-overview",
+      "contact-dermatitis",
+      "nhi-derm-drugs",
+      "psoriasis-overview",
+      "tinea-myths",
+      "topical-steroids-guide"
     ],
     "hidradenitis-suppurativa": [
       "acne-overview",
@@ -213,12 +224,12 @@
     ],
     "laser-dermatology": [
       "acne-scar-treatment",
+      "hand-eczema-overview",
       "hidradenitis-suppurativa",
       "nhi-derm-drugs",
       "photodynamic-therapy-overview",
       "rosacea-myths",
-      "skin-whitening-agents",
-      "urticaria-overview"
+      "skin-whitening-agents"
     ],
     "melasma-myths": [
       "acne-overview",
@@ -232,7 +243,7 @@
       "acne-overview",
       "acne-scar-treatment",
       "bullous-pemphigoid",
-      "perioral-dermatitis-guide",
+      "hand-eczema-overview",
       "shingles-myths",
       "urticaria-overview"
     ],
@@ -249,7 +260,7 @@
       "alopecia-areata",
       "atopic-dermatitis-overview",
       "biologics-overview",
-      "bullous-pemphigoid",
+      "hand-eczema-overview",
       "hidradenitis-suppurativa",
       "psoriasis-overview",
       "skin-whitening-agents",
@@ -404,10 +415,10 @@
       "topical-acids-clinical"
     ],
     "topical-steroids-guide": [
-      "atopic-dermatitis-child-growth",
       "atopic-dermatitis-overview",
       "biologics-overview",
       "contact-dermatitis",
+      "hand-eczema-overview",
       "prurigo-nodularis",
       "psoriasis-overview"
     ],
@@ -418,6 +429,7 @@
       "bullous-pemphigoid",
       "contact-dermatitis",
       "dupilumab-long-term-maintenance",
+      "hand-eczema-overview",
       "prurigo-nodularis",
       "psoriasis-overview",
       "topical-steroids-guide"

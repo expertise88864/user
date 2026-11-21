@@ -88,6 +88,7 @@
     '猴痘 Mpox': 'Mpox',
     '口周皮膚炎': 'Perioral dermatitis',
     '類天疱瘡': 'Bullous pemphigoid',
+    '手部濕疹': 'Hand eczema',
     '疾病總覽': 'Disease overviews',
     '指甲': 'Nails',
     '口腔黏膜': 'Oral mucosa',
@@ -114,7 +115,7 @@
       label_en: 'Quick find',
       tags: {
         '最新研究':         { _from_cat: 'research' },
-        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview', 'psoriasis-overview', 'acne-overview', 'perioral-dermatitis-guide', 'urticaria-overview'],
+        '疾病總覽':         ['bullous-pemphigoid', 'atopic-dermatitis-overview', 'psoriasis-overview', 'acne-overview', 'perioral-dermatitis-guide', 'urticaria-overview', 'hand-eczema-overview'],
         '常見問題 FAQ':      ['dermatology-faq'],
         '皮膚科 AI / 數位工具': ['ai-dermatology-roles']
       }
@@ -125,12 +126,13 @@
       label_en: 'Dermatitis & allergy',
       card: true,
       tags: {
-        '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'topical-steroids-guide', 'biologics-overview', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'refractory-atopic-dermatitis-workup', 'atopic-dermatitis-child-growth'],
+        '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'hand-eczema-overview', 'topical-steroids-guide', 'biologics-overview', 'prurigo-nodularis', 'dupilumab-long-term-maintenance', 'refractory-atopic-dermatitis-workup', 'atopic-dermatitis-child-growth'],
         '乾癬':              ['psoriasis-overview', 'biologics-overview', 'psoriasis-biologic-monitoring', 'nail-psoriasis-topical-intralesional'],
         '蕁麻疹':            ['urticaria-overview'],
         '接觸性皮膚炎':      ['contact-dermatitis'],
         '口周皮膚炎':        ['perioral-dermatitis-guide'],
-        '類天疱瘡':          ['bullous-pemphigoid', 'pemphigoid-elderly-eczema']
+        '類天疱瘡':          ['bullous-pemphigoid', 'pemphigoid-elderly-eczema'],
+        '手部濕疹':          ['hand-eczema-overview', 'contact-dermatitis']
       }
     },
     {
@@ -682,6 +684,7 @@
     'epidermoid-cyst': {desc:'粉瘤（表皮囊腫，epidermoid cyst)是皮下圓形腫塊，常被誤認為痘痘而擠破。本文解釋粉瘤跟痘痘怎麼分、為什麼自己擠會反覆復發、發炎時的處置、何時該開刀完整切除、健保給付條件。陳翊嘉醫師（皮膚科）整理。',desc_en:'An epidermoid cyst is a round, mobile subcutaneous mass often mistaken for a pimple — but the two are fundamentally different. The cyst has a complete wall; without...'},
     'filler-vascular-occlusion': {desc:'打玻尿酸或其他填充物後，皮膚突然發白、出現紫色網狀斑、疼痛加劇，或視力模糊，可能是血管栓塞。本文整理國際共識的警訊時間表、該怎麼立刻行動、玻尿酸酶與超音波導引治療的證據，以及台灣玻尿酸酶專案進口現況。',desc_en:'Sudden blanching, a purple net-like pattern, escalating pain or blurred vision after a filler injection can signal vascular occlusion. Warning signs, what to do at...'},
     'hairloss-myths': {desc:'一天掉幾根算正常？染髮會掉髮？戴帽悶了會禿？雄性禿吃中藥就好？Minoxidil 副作用很多？圓禿是壓力造成的？植髮一次解決？7 個民眾最常誤會的落髮觀念，陳翊嘉醫師（皮膚科）整理，附口服+外用治療階梯與植髮指南。',desc_en:'Hair loss is a worry shared by both men and women. New ”hair tonics”, ”follicle serums” appear every month — but only a handful are evidence-based . This article...'},
+    'hand-eczema-overview': {desc:'手部濕疹（富貴手、主婦濕疹）與汗皰疹是什麼？為什麼一直復發？依 2022 歐洲手部濕疹指引與國內外文獻，整理成因與職業風險、臺灣過敏原資料、何時做貼膚試驗、洗手與手套怎麼用、外用類固醇到新藥，以及臺灣藥證與健保現況。',desc_en:'Hand eczema and pompholyx: causes, job risks, Taiwanese data, patch testing, washing and gloves, treatments and new drugs, and Taiwan licence and NHI status.'},
     'hidradenitis-suppurativa': {desc:'化膿性汗腺炎（HS，hidradenitis suppurativa，又稱反常性痤瘡）盛行率約 0.3%，好發腋下、鼠蹊，反覆紅腫膿瘡。整理 Hurley 分期、Secukinumab（健保自 2025/7/1 給付）、Adalimumab、手術選擇與台灣健保現況。',desc_en:'Hidradenitis suppurativa (HS, also called acne inversa) is a chronic, relapsing inflammatory follicular disease occurring in friction-prone fold areas (axillae...'},
     'iud-hair-loss': {desc:'擔心裝荷爾蒙避孕器會掉頭髮？2026 年 JAAD 一項約 2.9 萬對配對病人的病歷資料庫研究發現，荷爾蒙環使用者被診斷落髮的比例沒有比銅環高（0.9% 對 1.1%），但差距很小。本文說明研究限制、其他常見掉髮原因，以及發現掉髮時該怎麼做。',desc_en:'A 2026 JAAD study of about 29,000 matched pairs found no excess hair loss diagnoses with hormonal vs copper IUDs. What it means, its limits, other causes.'},
     'jaki-switching-alopecia-areata': {desc:'重度圓禿第一種 JAK 抑制劑沒效，換第二種值得嗎？2026 JAAD 6 中心 108 人回溯研究：換第二種 48.8% 達 SALT≤20、換第三種 52.4%。第一種有反應是最強預測因子（OR 3.33）。整理換藥路徑、安全性與台灣品名。',desc_en:'When the first JAK inhibitor fails in severe alopecia areata, does switching help? June-2026 JAAD multicenter retrospective (Martin et al., 6 US clinics, n=108)...'},

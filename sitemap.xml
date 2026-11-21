@@ -2233,6 +2233,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/year-115"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/hand-eczema-overview</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/hand-eczema-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/hand-eczema-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/hand-eczema-overview.png</image:loc>
+      <image:title>手部濕疹與汗皰疹完整介紹：成因、類型、貼膚試驗、護手與治療</image:title>
+      <image:caption>手部濕疹（富貴手、主婦濕疹）與汗皰疹是什麼？為什麼一直復發？依 2022 歐洲手部濕疹指引與國內外文獻，整理成因與職業風險、臺灣過敏原資料、何時做貼膚試驗、洗手與手套怎麼用、外用類固醇到新藥，以及臺灣藥證與健保現況。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/urticaria-overview</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -2546,7 +2559,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/contact-dermatitis</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/contact-dermatitis"/>
