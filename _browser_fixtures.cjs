@@ -50,7 +50,15 @@ function options(name) {
 }
 
 async function runFixtures(browser) {
-  for (const name of FIXTURES) await require('./' + name)(browser, options(name));
+  for (const name of FIXTURES) {
+    try {
+      await require('./' + name)(browser, options(name));
+    } catch (error) {
+      // Name the suite: bare assertions (false !== true) do not say where they failed.
+      error.message = name + ': ' + error.message;
+      throw error;
+    }
+  }
   return FIXTURES.length;
 }
 
@@ -62,4 +70,4 @@ if (require.main === module) (async () => {
   try {
     console.log('Browser fixtures passed: ' + await runFixtures(browser) + ' suites');
   } finally { await browser.close(); }
-})().catch(error => { console.error(error.message); process.exitCode = 1; });
+})().catch(error => { console.error(error.stack || error.message); process.exitCode = 1; });
