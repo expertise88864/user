@@ -70,4 +70,10 @@ if (require.main === module) (async () => {
   try {
     console.log('Browser fixtures passed: ' + await runFixtures(browser) + ' suites');
   } finally { await browser.close(); }
-})().catch(error => { console.error(error.stack || error.message); process.exitCode = 1; });
+})().catch(error => {
+  // The stack is fixed when the error is created, so later message prefixes
+  // (suite name, fixture details) appear only in error.message: print both.
+  console.error(error.message);
+  if (error.stack) console.error(error.stack);
+  process.exitCode = 1;
+});
