@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202611231100';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611231200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -497,7 +497,7 @@
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202611231100';
+        s.src = '/blog/blog-search.min.js?v=202611231200';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -1169,7 +1169,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202611231100';
+        s.src = '/blog/blog-article-reading.min.js?v=202611231200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1205,7 +1205,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202611231100';
+        s.src = '/blog/blog-article-footer.min.js?v=202611231200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1235,7 +1235,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202611231100';
+        s.src = '/blog/blog-calculators.min.js?v=202611231200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1374,7 +1374,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202611231100';
+        s.src = '/blog/blog-hub.min.js?v=202611231200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1406,7 +1406,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202611231100';
+        script.src = '/blog/blog-support.min.js?v=202611231200';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));

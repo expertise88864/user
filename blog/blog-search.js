@@ -289,11 +289,17 @@
     // Local matches are already shown; when Pagefind settles, repaint only if
     // no result link has keyboard focus (repainting would remove it). The next
     // keystroke shows the full-text matches.
-    pagefindData(pf, q).then(function (datas) {
-      if (S.fresh(q, epoch) && !(S.focusInside && S.focusInside())) paint(S, q, words, local, datas, false);
-    }, function () {
-      if (S.fresh(q, epoch) && !(S.focusInside && S.focusInside())) paint(S, q, words, local, [], false);
-    });
+    function settle(datas) {
+      if (!S.fresh(q, epoch)) return;
+      if (S.focusInside && S.focusInside()) {
+        // Keep the focused link; only the search is no longer pending.
+        var sp = S.results.querySelector && S.results.querySelector('.dn-sp');
+        if (sp && sp.parentNode) sp.parentNode.removeChild(sp);
+        return;
+      }
+      paint(S, q, words, local, datas, false);
+    }
+    pagefindData(pf, q).then(settle, function () { settle([]); });
     return true;
   };
 })();

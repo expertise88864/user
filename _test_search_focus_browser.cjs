@@ -61,12 +61,14 @@ module.exports = async function checkSearchFocus(browser) {
     await page.evaluate(() => window.__releasePagefind());
     await page.waitForTimeout(400);
     assert.equal(await focusedHref(), href, 'a late Pagefind result keeps the focused result link');
+    assert.equal(await page.locator('#dn-cmdk-results .dn-sp').count(), 0, 'the full-text search is no longer shown as pending');
     releaseIndex();
     await page.waitForTimeout(400);
     assert.equal(await focusedHref(), href, 'a late full-text index keeps the focused result link');
-    // Typing again shows the refined results, including the late Pagefind match.
+    // Typing again shows the refined results, including the late Pagefind match
+    // (its excerpt exists only in the stand-in module, not in the local catalog).
     await page.locator('#dn-cmdk-input').fill('痘痘 ');
-    await page.locator('#dn-cmdk-results a[href="/blog/acne-overview"]').first().waitFor({ state: 'attached' });
+    await page.locator('#dn-cmdk-results', { hasText: 'late full-text match' }).waitFor({ state: 'visible', timeout: 5000 });
     assert.deepEqual(errors, []);
     console.log('Search focus checks passed: late Pagefind and full-text loads keep keyboard focus');
   } finally {
