@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Last updated 2026-11-21 · 50 articles · by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)
+Last updated 2026-11-22 · 50 articles · by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
@@ -4212,9 +4212,9 @@ Tazarotene（外用 A 酸類）：每晚擦一次，只擦在病灶上，避免�
 ---
 ## 接觸性皮膚炎(過敏 vs 刺激)完整衛教
 URL: https://chendermatologist.com/blog/contact-dermatitis
-Updated: 2026-11-21
+Updated: 2026-11-22
 Section: Treatment & Therapy
-Reading time: PT11M
+Reading time: PT12M
 Tags: 接觸性皮膚炎, Contact dermatitis
 
 什麼是接觸性皮膚炎？
@@ -4308,7 +4308,7 @@ PPD（對苯二胺）
 
 常見刺激物 ICD
 
-水（頻繁洗手 ≥ 20 次/日）、肥皂、酒精性洗手液
+濕工作（每個工作班別手濕或戴不透氣手套超過 2 小時，或洗手超過 20 次）、肥皂
 
 清潔劑、漂白水、染色劑、油漆稀釋劑
 
@@ -4319,6 +4319,8 @@ PPD（對苯二胺）
 尿液、糞便（尿布皮膚炎）、唾液（舔嘴角）
 
 物理摩擦 / 黏貼物 / 玻璃纖維 / 塵土
+
+手不髒的時候，用酒精乾洗手取代肥皂洗手，對皮膚的刺激反而比較小（Thyssen 2022, Contact Dermatitis；濕工作定義依 Bissonnette 2025, JAAD）。
 
 如何診斷？Patch Test 貼膚試驗
 
@@ -4393,7 +4395,7 @@ IR
 
 保濕（emollient）：每日多次、特別是洗手後。修復屏障、降低 ICD 與 ACD 復發。
 
-工作手套：依過敏原選丁腈（nitrile）/ 乙烯（vinyl）/ 聚乙烯；避免乳膠（若橡膠過敏）。長時間使用搭配內裡棉手套吸汗。
+工作手套：濕工作、接觸清潔劑或化學品時戴防護手套；不要戴得比需要的時間久，以免手套本身刺激皮膚；拋棄式手套只用一次，戴久時裡面加棉手套吸汗。對天然乳膠過敏就避開乳膠手套；對橡膠手套裡的促進劑過敏，可改用不含促進劑（accelerator-free）的手套（Silverberg 2026, Am J Clin Dermatol）。丁腈、乙烯手套本身也可能引起刺激性皮膚炎（Howe, Overview of dermatitis）。
 
 屏障乳霜（barrier cream）：工作前塗、效果中等、不能取代手套。
 
@@ -4425,7 +4427,7 @@ Dupilumab、JAK 抑制劑：慢性嚴重 ACD/ICD 的新興治療、文獻持續�
 
 美髮業 ─ PPD、漂白劑、洗髮乳、頻繁洗手
 
-醫護人員 ─ 乳膠 / 橡膠化學品、酒精消毒、頻繁洗手
+醫護人員 ─ 乳膠 / 橡膠化學品、頻繁洗手（手不髒時改用酒精乾洗手，比肥皂洗手溫和）
 
 餐飲業 ─ 食物刺激、清潔劑、水洗
 
@@ -4442,7 +4444,7 @@ BAD 2017 強調：確認職業相關後、應同時做工作場所評估（workp
 常見問題（PTT / Dcard 上常被問的）
 
 Q乳膠手套過敏怎麼辦？
-A乳膠過敏分兩型：第 I 型（立即性、IgE）會造成蕁麻疹甚至過敏性休克；第 IV 型（遲發性接觸性皮膚炎）會反覆紅疹脫屑。建議改用丁腈或乙烯手套。
+A手套過敏分兩種：對天然乳膠蛋白過敏屬第 I 型（立即性、IgE），會造成蕁麻疹甚至嚴重過敏反應，要改用不含天然乳膠的手套；對橡膠手套裡的化學促進劑過敏屬第 IV 型（遲發性接觸性皮膚炎），會反覆紅疹脫屑，可改用不含促進劑（accelerator-free）的手套。
 Q染髮膏會引起接觸性皮膚炎嗎？該換哪種？
 APPD（對苯二胺）是永久性染髮膏中最常見過敏原、約 30% 染髮過敏可追溯至 PPD。可改用不含 PPD 的配方或半永久性染髮品（semi-permanent）、洗 4-6 次褪。指甲花（henna）若標榜純天然應檢查成分；市售『黑 henna』常摻 PPD、風險更高、避免使用。染髮前 48 小時做測試貼是基本要求。
 Q為什麼修指甲後會手指脫皮？
@@ -4466,12 +4468,6 @@ A『敏感肌』、『不致敏』在台灣不是法定詞彙、各品牌定義�
 Johnston GA, Exton LS, Mohd Mustapa MF, et al. British Association of Dermatologists' guidelines for the management of contact dermatitis 2017. Br J Dermatol. 2017;176(2):317-329. 「來源」
 
 Wilkinson M, Orton D, et al. ESCD/BSCA position statement on patch testing — relevance assessment. Contact Dermatitis. 2018;79(6):319-325.
-
-Frosch PJ, John SM, eds. Contact Dermatitis. 6th ed. Springer; 2020.
-
-Bains SN, Nash P, Fonacier L. Irritant Contact Dermatitis. Clin Rev Allergy Immunol. 2019;56(1):99-109.
-
-Goulden V, Ling TC, Babakinejad P, et al. BAD and British Photodermatology Group guidelines for narrowband UVB phototherapy 2022. Br J Dermatol. 2022;187(3):295-308. 「來源」
 
 
 [... truncated; fetch canonical URL for full text ...]
