@@ -9,6 +9,7 @@ const fs = require('node:fs');
 const FIXTURES = [
   '_test_analytics_origin_browser.cjs',
   '_test_nav_search_browser.cjs',
+  '_test_search_focus_browser.cjs',
   '_test_article_prefetch_browser.cjs',
   '_test_settings_public_browser.cjs',
   '_test_admin_editing_browser.cjs',

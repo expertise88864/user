@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202611231000';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611231100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -492,12 +492,12 @@
       // Kick off lazy loads — both pagefind (preferred) and the legacy
       // fulltext json (fallback). Whichever responds first wins next render.
       loadPagefind();
-      loadFulltextIndex().then(function () { if (overlay.classList.contains('open')) render(input.value); });
+      loadFulltextIndex().then(refreshOpenResults);
       // Grouped article + exam results (blog-search.js); the title search below stays the fallback.
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202611231000';
+        s.src = '/blog/blog-search.min.js?v=202611231100';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -568,15 +568,21 @@
         if (activeIdx) setActive(activeIdx);
       },
       fresh: function (q, epoch) { return epoch === searchEpoch && overlay.classList.contains('open') && normalizeSearch(input.value) === q; },
-      rerender: refreshOpenResults
+      rerender: refreshOpenResults,
+      // True while a result link has keyboard focus; asynchronous repaints wait.
+      focusInside: focusInResults
     };
 
     // A background load (Pagefind, the search bundle, the exam index) may
     // refine the open results. Never replace them while a result link has
     // keyboard focus: the focused link would be removed and focus would drop
     // to <body>. The next keystroke renders the refined results.
+    function focusInResults() {
+      var active = document.activeElement;
+      return !!(active && results.contains && results.contains(active));
+    }
     function refreshOpenResults() {
-      if (overlay.classList.contains('open') && !results.contains(document.activeElement)) render(input.value);
+      if (overlay.classList.contains('open') && !focusInResults()) render(input.value);
     }
 
     function render(q, fallbackOnly) {
@@ -1163,7 +1169,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202611231000';
+        s.src = '/blog/blog-article-reading.min.js?v=202611231100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1199,7 +1205,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202611231000';
+        s.src = '/blog/blog-article-footer.min.js?v=202611231100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1229,7 +1235,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202611231000';
+        s.src = '/blog/blog-calculators.min.js?v=202611231100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1368,7 +1374,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202611231000';
+        s.src = '/blog/blog-hub.min.js?v=202611231100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1400,7 +1406,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202611231000';
+        script.src = '/blog/blog-support.min.js?v=202611231100';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));

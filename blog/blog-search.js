@@ -286,10 +286,13 @@
     var pf = S.pagefind();
     paint(S, q, words, local, null, !!pf);
     if (!pf) return true;
+    // Local matches are already shown; when Pagefind settles, repaint only if
+    // no result link has keyboard focus (repainting would remove it). The next
+    // keystroke shows the full-text matches.
     pagefindData(pf, q).then(function (datas) {
-      if (S.fresh(q, epoch)) paint(S, q, words, local, datas, false);
+      if (S.fresh(q, epoch) && !(S.focusInside && S.focusInside())) paint(S, q, words, local, datas, false);
     }, function () {
-      if (S.fresh(q, epoch)) paint(S, q, words, local, [], false);
+      if (S.fresh(q, epoch) && !(S.focusInside && S.focusInside())) paint(S, q, words, local, [], false);
     });
     return true;
   };
