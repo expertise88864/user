@@ -2,6 +2,11 @@
   "version": 1,
   "articles": [
     {
+      "slug": "herpes-zoster-overview",
+      "title": "帶狀疱疹（皮蛇）完整介紹：症狀、急診警訊、抗病毒藥、神經痛與疫苗",
+      "title_en": "Shingles (Herpes Zoster) Explained: Symptoms, Red Flags, Antivirals, Nerve Pain and Vaccination"
+    },
+    {
       "slug": "urticaria-overview",
       "title": "蕁麻疹完整介紹：急性與慢性、誘發因素、檢查、抗組織胺與生物製劑、日常照護",
       "title_en": "Urticaria (Hives) Explained: Acute and Chronic Types, Triggers, Tests, Antihistamines, Biologics and Daily Care"
@@ -210,11 +215,6 @@
       "slug": "acne-scar-treatment",
       "title": "痘疤完整治療指引",
       "title_en": "Acne scar treatment"
-    },
-    {
-      "slug": "shingles-myths",
-      "title": "帶狀疱疹 6 大迷思",
-      "title_en": "6 Shingles (Herpes Zoster) Myths"
     },
     {
       "slug": "warts-myths",

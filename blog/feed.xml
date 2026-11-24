@@ -9,6 +9,15 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed</generator>
     <item>
+      <title>帶狀疱疹（皮蛇）完整介紹：症狀、急診警訊、抗病毒藥、神經痛與疫苗</title>
+      <link>https://chendermatologist.com/blog/herpes-zoster-overview</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/herpes-zoster-overview</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>帶狀疱疹</category>
+      <description>帶狀疱疹（皮蛇）完整介紹：症狀、急診警訊、抗病毒藥、神經痛與疫苗 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
+    <item>
       <title>手部濕疹與汗皰疹完整介紹：成因、類型、貼膚試驗、護手與治療</title>
       <link>https://chendermatologist.com/blog/hand-eczema-overview</link>
       <guid isPermaLink="true">https://chendermatologist.com/blog/hand-eczema-overview</guid>
@@ -268,15 +277,6 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>健保規範</category>
       <description>皮膚科常用藥物健保規範完整整理 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療</title>
-      <link>https://chendermatologist.com/blog/prurigo-nodularis</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/prurigo-nodularis</guid>
-      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>結節性癢疹</category>
-      <description>結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
   </channel>
 </rss>

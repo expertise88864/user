@@ -52,8 +52,8 @@
     "hash": "b2d92efe6f53905bdb9c22e9179e682084006c3dd274d843603622dea45b1ffb"
   },
   "dermatology-faq": {
-    "date": "2026-11-21",
-    "hash": "88fec80a7b2a89f0f599ae28e659c2ccb399c97b94df9721f7a82dace12a0f07"
+    "date": "2026-11-25",
+    "hash": "dc998467fac003df2c6d3b524bb92285a8ab17f1ca9e2781328222c97f56f9af"
   },
   "dupilumab-long-term-maintenance": {
     "date": "2026-11-18",
@@ -74,6 +74,10 @@
   "hand-eczema-overview": {
     "date": "2026-11-21",
     "hash": "c485e37a36a3698f82a6795a58770cd25ed15dbbea3ec4527f222d74bfe864fe"
+  },
+  "herpes-zoster-overview": {
+    "date": "2026-11-25",
+    "hash": "3d77b96d7a8eeffbbb31d962c4e5b632f72336b66dc8a6cd614e204bf7431c4c"
   },
   "hidradenitis-suppurativa": {
     "date": "2026-11-19",
@@ -104,8 +108,8 @@
     "hash": "6ccdb5e72e9d3e545862986324040783aae59b004ffbb6176178a1c9ea13fd49"
   },
   "mpox-care": {
-    "date": "2026-10-18",
-    "hash": "b35d3b9cb71263d3237b3ef9fb7df74b80c723bdfc21eaca122d00a8d9cd74bc"
+    "date": "2026-11-25",
+    "hash": "46724b081159b9587470fd456318596b966a84f50bc34534e751eaae0338589e"
   },
   "nail-psoriasis-topical-intralesional": {
     "date": "2026-10-16",
@@ -154,10 +158,6 @@
   "severe-scabies-treatment": {
     "date": "2026-10-16",
     "hash": "6f06710e84b847bdf6472c7b0e49c6c85c0825ca46331f7e7fe6d7f0f60627ad"
-  },
-  "shingles-myths": {
-    "date": "2026-10-16",
-    "hash": "6877a269fddca2f8b877eb718982ea2ba00f78ae18c26c34c7690d81508f66a1"
   },
   "skin-biopsy-excision": {
     "date": "2026-10-16",
@@ -212,7 +212,7 @@
     "hash": "52a35f77de26922a5733306dc85a6a192a80de85d956ba701ec49f43665162ba"
   },
   "warts-myths": {
-    "date": "2026-10-16",
-    "hash": "2cada8a3c9dbe5b48b3d736463f7fb11065cbaa1a99ffc63a1ce443ca5f342b8"
+    "date": "2026-11-25",
+    "hash": "5d53adfd714ea0fc92fb01f96cfc5191ad5da2f9e3739cec403c43b238cfa5d1"
   }
 }

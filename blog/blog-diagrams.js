@@ -1168,7 +1168,6 @@
     'acne-scar-treatment':     [{ key: 'acne-pathogenesis', after: 0 }, { key: 'acne-scar-types', after: 1 }],
     'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }],
     'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'jak-tree', after: 3 }, { key: 'skin-barrier', after: 5 }],
-    'shingles-myths':          [{ key: 'dermatome-map', after: 1 }],
     'mpox-care':               [{ key: 'dermatome-map', after: 2 }, { key: 'clinical-photo-placeholder', after: 4 }],
     // Tinea hyphae
     'tinea-myths':             [{ key: 'tinea-hyphae', after: 2 }],

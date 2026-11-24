@@ -190,5 +190,17 @@
       "png": "cf6e6312a5a7ab401fcdd8e3acc0d8a197a57e119fbbcd0d3eb9d0329fef2a1b",
       "webp": "b9693b4f58be836f08ca84a054ce13f09e5fc2c980eb309e4467f7dd1cf54869"
     }
+  },
+  "herpes-zoster-overview": {
+    "source": {
+      "title": "帶狀疱疹（皮蛇）完整介紹：症狀、急診警訊、抗病毒藥、神經痛與疫苗",
+      "subtitle": "",
+      "date": "2026-11-25"
+    },
+    "rendered_tag": "疾病總覽",
+    "files": {
+      "png": "55eb0d036a7b93b463680170c38cc513308392b9522269ddf6ef755bf0045ca6",
+      "webp": "c9b588049befcf68e79361dfc6d00ace6f352c80a6c92ff4cd5ccdc5d1610b86"
+    }
   }
 }

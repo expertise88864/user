@@ -114,7 +114,7 @@ module.exports = async function checkDiagramViewer(browser) {
     } finally { await context.close(); }
     // Exercise the original article HTML, styles, bundles and native lazy
     // initialization as well as the catalogue fixtures above.
-    for (const [slug, key, after] of [['laser-dermatology', 'laser-wavelength', 0], ['shingles-myths', 'dermatome-map', 1]]) {
+    for (const [slug, key, after] of [['laser-dermatology', 'laser-wavelength', 0], ['mpox-care', 'dermatome-map', 2]]) {
       const articleContext = await browser.newContext({ viewport: { width, height: 900 }, serviceWorkers: 'block' });
       try {
         const page = await articleContext.newPage();

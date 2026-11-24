@@ -120,10 +120,6 @@
     "date": "2026-05-13",
     "source": "published"
   },
-  "shingles-myths": {
-    "date": "2026-05-04",
-    "source": "published"
-  },
   "skin-biopsy-excision": {
     "date": "2026-05-09",
     "source": "published"
@@ -214,6 +210,10 @@
   },
   "hand-eczema-overview": {
     "date": "2026-11-21",
+    "source": "published"
+  },
+  "herpes-zoster-overview": {
+    "date": "2026-11-25",
     "source": "published"
   }
 }

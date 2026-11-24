@@ -2233,6 +2233,19 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/year-115"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/herpes-zoster-overview</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/herpes-zoster-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/herpes-zoster-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/herpes-zoster-overview.png</image:loc>
+      <image:title>帶狀疱疹（皮蛇）完整介紹：症狀、急診警訊、抗病毒藥、神經痛與疫苗</image:title>
+      <image:caption>帶狀疱疹（皮蛇）是什麼？會不會傳染、繞一圈會怎樣？依德國 S2k 指引、臺灣學會疫苗建議與臺灣健保資料，整理症狀時間軸、急診警訊、72 小時抗病毒藥與健保條件、疱疹後神經痛、照護、懷孕與長輩、Shingrix 疫苗和常見迷思。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/hand-eczema-overview</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -2650,7 +2663,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/dermatology-faq</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/dermatology-faq"/>
@@ -2728,7 +2741,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/mpox-care</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/mpox-care"/>
@@ -2737,19 +2750,6 @@
       <image:loc>https://chendermatologist.com/assets/og/mpox-care.png</image:loc>
       <image:title>M 痘（猴痘）皮膚照護</image:title>
       <image:caption>M 痘（猴痘，Mpox）皮膚照護衛教：整理傳染途徑、皮疹變化、居家傷口照護、何時就醫、隔離注意事項、疫苗與皮膚科常見問題，協助患者與照護者降低傳播、搔抓感染與併發症風險，並掌握需要醫療評估的警訊與追蹤重點流程。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/shingles-myths</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/shingles-myths"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/shingles-myths"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/shingles-myths.png</image:loc>
-      <image:title>帶狀疱疹 6 大迷思</image:title>
-      <image:caption>皮蛇繞一圈會死？是壓力造成？年輕人不會得？抗病毒藥要 72 小時內吃？Shingrix 疫苗值得嗎？6 個最常誤會的帶狀疱疹(herpes zoster)觀念 + 治療階梯 + 疫苗比較。</image:caption>
     </image:image>
   </url>
   <url>
@@ -2793,7 +2793,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/warts-myths</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/warts-myths"/>

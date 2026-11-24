@@ -2,8 +2,8 @@
   "edges": {
     "acne-overview": [
       "acne-scar-treatment",
-      "bullous-pemphigoid",
       "hand-eczema-overview",
+      "herpes-zoster-overview",
       "hidradenitis-suppurativa",
       "isotretinoin-clinical",
       "laser-dermatology",
@@ -85,8 +85,8 @@
       "vitiligo"
     ],
     "bullous-pemphigoid": [
-      "acne-overview",
       "hand-eczema-overview",
+      "herpes-zoster-overview",
       "pemphigoid-elderly-eczema",
       "urticaria-overview"
     ],
@@ -120,6 +120,7 @@
       "contact-dermatitis",
       "dermatologic-oral-examination",
       "hairloss-myths",
+      "herpes-zoster-overview",
       "hidradenitis-suppurativa",
       "laser-dermatology",
       "melasma-myths",
@@ -127,7 +128,6 @@
       "prurigo-nodularis",
       "psoriasis-overview",
       "rosacea-myths",
-      "shingles-myths",
       "skin-whitening-agents",
       "sunscreen-myths",
       "targeted-therapy-skin",
@@ -148,7 +148,7 @@
       "acne-scar-treatment",
       "actinic-keratosis-scc",
       "dermatologic-oral-examination",
-      "hand-eczema-overview",
+      "herpes-zoster-overview",
       "hidradenitis-suppurativa",
       "skin-biopsy-excision"
     ],
@@ -175,6 +175,20 @@
       "psoriasis-overview",
       "tinea-myths",
       "topical-steroids-guide"
+    ],
+    "herpes-zoster-overview": [
+      "acne-overview",
+      "alopecia-areata",
+      "atopic-dermatitis-overview",
+      "biologics-overview",
+      "bullous-pemphigoid",
+      "contact-dermatitis",
+      "dermatology-faq",
+      "hand-eczema-overview",
+      "mpox-care",
+      "nhi-derm-drugs",
+      "psoriasis-overview",
+      "urticaria-overview"
     ],
     "hidradenitis-suppurativa": [
       "acne-overview",
@@ -224,7 +238,7 @@
     ],
     "laser-dermatology": [
       "acne-scar-treatment",
-      "hand-eczema-overview",
+      "herpes-zoster-overview",
       "hidradenitis-suppurativa",
       "nhi-derm-drugs",
       "photodynamic-therapy-overview",
@@ -233,7 +247,7 @@
     ],
     "melasma-myths": [
       "acne-overview",
-      "shingles-myths",
+      "rosacea-myths",
       "skin-whitening-agents",
       "sunscreen-myths",
       "topical-acids-patient",
@@ -242,9 +256,8 @@
     "mpox-care": [
       "acne-overview",
       "acne-scar-treatment",
-      "bullous-pemphigoid",
       "hand-eczema-overview",
-      "shingles-myths",
+      "herpes-zoster-overview",
       "urticaria-overview"
     ],
     "nail-psoriasis-topical-intralesional": [
@@ -261,6 +274,7 @@
       "atopic-dermatitis-overview",
       "biologics-overview",
       "hand-eczema-overview",
+      "herpes-zoster-overview",
       "hidradenitis-suppurativa",
       "psoriasis-overview",
       "skin-whitening-agents",
@@ -352,13 +366,6 @@
       "hairloss-myths",
       "spironolactone-dermatology-safety"
     ],
-    "shingles-myths": [
-      "atopic-dermatitis-overview",
-      "melasma-myths",
-      "rosacea-myths",
-      "sunscreen-myths",
-      "warts-myths"
-    ],
     "skin-biopsy-excision": [
       "actinic-keratosis-scc",
       "dermatologic-oral-examination",
@@ -379,9 +386,9 @@
     ],
     "sunscreen-myths": [
       "acne-overview",
+      "hairloss-myths",
       "melasma-myths",
       "rosacea-myths",
-      "shingles-myths",
       "topical-acids-patient",
       "warts-myths"
     ],
@@ -423,13 +430,13 @@
       "psoriasis-overview"
     ],
     "urticaria-overview": [
-      "acne-overview",
       "atopic-dermatitis-overview",
       "biologics-overview",
       "bullous-pemphigoid",
       "contact-dermatitis",
       "dupilumab-long-term-maintenance",
       "hand-eczema-overview",
+      "herpes-zoster-overview",
       "prurigo-nodularis",
       "psoriasis-overview",
       "topical-steroids-guide"
@@ -449,10 +456,11 @@
       "vitiligo-maintenance-clinical"
     ],
     "warts-myths": [
+      "hairloss-myths",
+      "herpes-zoster-overview",
       "melasma-myths",
       "mpox-care",
       "rosacea-myths",
-      "shingles-myths",
       "sunscreen-myths",
       "tinea-myths"
     ]

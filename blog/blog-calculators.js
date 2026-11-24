@@ -957,7 +957,7 @@
     'dermatology-faq':            ['DLQI'],
     'tinea-myths':                ['DLQI'],
     'warts-myths':                ['DLQI'],
-    'shingles-myths':             ['DLQI'],
+    'herpes-zoster-overview':      ['DLQI'],
     'mpox-care':                  ['DLQI'],
     'epidermoid-cyst':            ['DLQI'],
     'cutaneous-t-cell-lymphoma':  ['VAS', 'DLQI']
