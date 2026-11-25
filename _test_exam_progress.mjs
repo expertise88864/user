@@ -572,9 +572,12 @@ test('practice papers can be limited to chapters and to unanswered or wrong ques
   const build = async () => { form.querySelector('.ex-build').click(); await flush(); };
   const pick = form.querySelector('.ex-chap-pick');
 
-  // Every chapter with a past question is offered, with its question count.
+  // Every chapter with a past or a mock question is offered, with its past-question count.
   const offered = form.querySelectorAll('input[name=ex-chap]').map(box => Number(box.value)).sort((a, b) => a - b);
-  assert.deepEqual(offered, [...new Set(exam.questions.flatMap(q => q.fitz))].sort((a, b) => a - b));
+  const tested = new Set(exam.questions.flatMap(q => q.fitz));
+  const mockOnly = [...new Set(mock.questions.flatMap(q => q.fitz))].filter(n => !tested.has(n));
+  assert.deepEqual(offered, [...tested, ...mockOnly].sort((a, b) => a - b));
+  for (const n of mockOnly) assert.match(chap(n).closest('label').textContent, /0 題，僅模擬題/);
   assert.match(chap(52).closest('label').textContent, new RegExp('Ch\\.52 .*' + ch52.length + ' 題'));
 
   form.querySelector('select[name=ex-count]').value = '0';
@@ -630,6 +633,15 @@ test('practice papers can be limited to chapters and to unanswered or wrong ques
   chap(28).dispatch('change');
   radio('ex-status', 'new');
   await build();
+  if (mockOnly.length) {
+    chap(28).checked = false;
+    chap(mockOnly[0]).checked = true;
+    await build();
+    assert.deepEqual(ids().sort(), mock.questions.filter(q => inCh(q, mockOnly[0])).map(q => q.id).sort());
+    chap(mockOnly[0]).checked = false;
+    chap(28).checked = true;
+    await build();
+  }
   const mock28 = mock.questions.filter(q => inCh(q, 28)).map(q => q.id);
   assert.deepEqual(ids().sort(), mock28.slice().sort());
   answer(page, mock28[0], mock.questions.find(q => q.id === mock28[0]).answer[0]);
@@ -672,6 +684,60 @@ test('a slower earlier build never replaces a newer paper', async () => {
   assert.equal(saved.mock, true);
   assert.equal(saved.done[qid], key);
   assert.equal(storage.getItem('dnExamProgress'), null);
+});
+
+// A click whose choices are refused is still the newest request: a bank that
+// arrives for an earlier click must not replace the paper on screen.
+test('a refused click on 產生試卷 cancels a build that is still loading', async () => {
+  const exam = JSON.parse(fs.readFileSync('exam/exam-data.json', 'utf8'));
+  const mock = JSON.parse(fs.readFileSync('exam/mock-data.json', 'utf8'));
+  let releaseMock;
+  const fetch = url => String(url).startsWith('/exam/mock-data.json')
+    ? new Promise(resolve => { releaseMock = () => resolve({ ok: true, json: () => Promise.resolve(mock) }); })
+    : Promise.resolve({ ok: true, json: () => Promise.resolve(exam) });
+  const flush = async () => { for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve)); };
+  const storage = new FakeStorage();
+  const page = open(storage, '/exam/practice', { fetch });
+  const form = page.document.querySelector('[data-practice-form]');
+  form.querySelector('.ex-build').click();
+  await flush();
+  const ids = () => page.document.querySelectorAll('#ex-practice-list .ex-q').map(card => card.getAttribute('data-qid'));
+  const before = ids(), saved = storage.getItem('dnExamPaper');
+  assert.ok(before.length);
+  const box = form.querySelector('input[name=ex-mock]');
+  box.checked = true;
+  box.dispatch('change');
+  form.querySelector('.ex-build').click();                 // mock bank still loading
+  form.querySelectorAll('input[name=ex-scope]').forEach(radio => { radio.checked = radio.value === 'pick'; });
+  form.querySelector('.ex-build').click();                 // refused: no chapter chosen
+  releaseMock();
+  await flush();
+  assert.equal(form.querySelector('.ex-build-note').textContent, '請至少選一章');
+  assert.deepEqual(ids(), before);
+  assert.equal(storage.getItem('dnExamPaper'), saved);
+});
+
+// A click that matches nothing while the saved paper is still loading must not
+// keep that paper off the screen; the click's own message stays.
+test('a saved paper is still restored after a click that matched nothing', async () => {
+  const exam = JSON.parse(fs.readFileSync('exam/exam-data.json', 'utf8'));
+  let release;
+  const fetch = () => new Promise(resolve => { release = () => resolve({ ok: true, json: () => Promise.resolve(exam) }); });
+  const flush = async () => { for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve)); };
+  const storage = new FakeStorage({
+    dnExamPaper: JSON.stringify({ practice: { id: 'p1', rev: 0, start: Date.now() - 5000, seen: Date.now() - 1000,
+      ids: ['101-01', '101-02'], sel: {}, done: {} } }),
+  });
+  const page = open(storage, '/exam/practice', { fetch });
+  const form = page.document.querySelector('[data-practice-form]');
+  form.querySelectorAll('input[name=ex-status]').forEach(radio => { radio.checked = radio.value === 'wrong'; });
+  form.querySelector('.ex-build').click();                 // nothing was ever answered wrong
+  release();
+  await flush();
+  const ids = page.document.querySelectorAll('#ex-practice-list .ex-q').map(card => card.getAttribute('data-qid'));
+  assert.deepEqual(ids, ['101-01', '101-02']);
+  assert.match(form.querySelector('.ex-build-note').textContent, /沒有符合條件的題目/);
+  assert.equal(storage.json('dnExamPaper').practice.id, 'p1');
 });
 
 // Reading progress on the hub (the real browser behaviour, dwell time and the

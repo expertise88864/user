@@ -1154,9 +1154,11 @@ def book_page(shell, data, book: str, qs: list[dict]) -> str:
 
 
 def practice_chapters(data, by_chapter) -> str:
-    """Chapter choice of the practice page: every chapter with a past question, by Fitzpatrick Part."""
+    """Chapter choice of the practice page, by Fitzpatrick Part: every chapter with a
+    past or a mock question (chapters tested only by mock questions say so)."""
     groups: dict[int, list[int]] = {}
-    for n in sorted(c for c, qs in by_chapter.items() if qs):
+    tested = {c for c, qs in by_chapter.items() if qs}
+    for n in sorted(tested | {c for q in data["mock"] for c in q["fitz"]}):
         groups.setdefault(part_of(data, n), []).append(n)
     out = []
     for k in sorted(groups):
@@ -1164,9 +1166,10 @@ def practice_chapters(data, by_chapter) -> str:
         for n in groups[k]:
             zh = chapter_zh(data, n)
             name = f"Ch.{n} {data['chapters'][n]['title']}" + (f"（{zh}）" if zh else "")
+            count = f"{len(by_chapter[n])} 題" if n in tested else "0 題，僅模擬題"
             boxes.append(
                 f'<label class="ex-check"><input type="checkbox" name="ex-chap" value="{n}" aria-label="{esc(name)}"> '
-                f'<span>{esc(name)} <span class="ex-chap-n">{len(by_chapter[n])} 題</span></span></label>')
+                f'<span>{esc(name)} <span class="ex-chap-n">{count}</span></span></label>')
         out.append(
             f'<details class="ex-chap-part"><summary>{esc(part_name(data, k))} '
             f'<span class="ex-chap-n" data-part-picked="{k}">（{len(boxes)} 章）</span></summary>'

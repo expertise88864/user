@@ -996,11 +996,12 @@
       if (bar) bar.hidden = false;
       summary.hidden = false;
     }
-    // Each 產生試卷 (and the resume below) takes a number; the two banks load
-    // independently, so a request that finishes after a newer one was made is
-    // dropped instead of replacing the newer paper.
+    // Each click on 產生試卷 takes a number, before its choices are checked; the
+    // two banks load independently, so a request that finishes after a newer
+    // click (valid or not) is dropped instead of replacing the paper on screen.
     var buildSeq = 0;
     form.querySelector('.ex-build').addEventListener('click', function () {
+      var seq = ++buildSeq;
       var mock = !!(mockBox && mockBox.checked);
       var years = [];
       form.querySelectorAll('input[name=ex-year]:checked').forEach(function (box) { years.push(Number(box.value)); });
@@ -1011,7 +1012,6 @@
       var count = Number(form.querySelector('select[name=ex-count]').value);
       var order = form.querySelector('input[name=ex-order]:checked').value;
       note.textContent = '題目載入中…';
-      var seq = ++buildSeq;
       (mock ? mockData() : examData()).then(function (data) {
         if (seq !== buildSeq) return;
         var pool = mock ? data.questions.slice()
@@ -1054,19 +1054,22 @@
     var savedMock = saved.mock === true;
     if (savedMock && mockBox) { mockBox.checked = true; syncMock(); }
     var resumeSeq = buildSeq;
+    // A message from a later click on 產生試卷 is kept.
+    function say(text) { if (buildSeq === resumeSeq) note.textContent = text; }
     (savedMock ? mockData() : examData()).then(function (data) {
-      // A new paper was asked for (or generated) meanwhile.
-      if (paper || buildSeq !== resumeSeq) return;
+      // A new paper was generated meanwhile (one still loading, or a click that
+      // matched nothing, does not keep the saved paper off the screen).
+      if (paper) return;
       // Another tab may have handed it in or saved to it while the data loaded.
       saved = loadPaper('practice');
-      if (!saved || !Array.isArray(saved.ids) || !saved.ids.length) { note.textContent = ''; return; }
-      if ((saved.mock === true) !== savedMock) { note.textContent = '試卷已在其他分頁更換，請重新整理頁面。'; return; }
+      if (!saved || !Array.isArray(saved.ids) || !saved.ids.length) { say(''); return; }
+      if ((saved.mock === true) !== savedMock) { say('試卷已在其他分頁更換，請重新整理頁面。'); return; }
       var byId = {};
       data.questions.forEach(function (q) { byId[q.id] = q; });
       var pool = saved.ids.map(function (id) { return byId[id]; }).filter(Boolean);
       paperKey = 'practice';
       paper = saved;
-      if (!pool.length) { endPaper(); note.textContent = ''; return; }
+      if (!pool.length) { endPaper(); say(''); return; }
       show(pool, savedMock);
       restoreFromPaper(pageCards());
       // The timer continues from where the page was left, not from the wall clock.
@@ -1074,9 +1077,9 @@
       savePaper(function (p) { p.start += away; });
       if (paper) barApi.start(paper.start);
       updateAnswerBar();
-      note.textContent = '已接續上次未交卷的試卷（共 ' + pool.length + ' 題）。按「產生試卷並開始計時」會改出一份新的試卷。';
+      say('已接續上次未交卷的試卷（共 ' + pool.length + ' 題）。按「產生試卷並開始計時」會改出一份新的試卷。');
     }).catch(function () {
-      if (buildSeq === resumeSeq) note.textContent = '題庫載入失敗，請重新整理頁面。';
+      say('題庫載入失敗，請重新整理頁面。');
     });
   }
 
