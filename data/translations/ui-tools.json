@@ -30,10 +30,6 @@
       "en": ""
     },
     {
-      "zh": "無業配、無贊助",
-      "en": ""
-    },
-    {
       "zh": "1 · SCORAD（異膚）",
       "en": ""
     },
@@ -602,10 +598,6 @@
       "en": ""
     },
     {
-      "zh": "本網站所有量表均無業配、無贊助、無聯盟連結",
-      "en": ""
-    },
-    {
       "zh": "寫信告知",
       "en": ""
     },
@@ -642,8 +634,8 @@
       "injected": true
     },
     {
-      "zh": "<strong>重要提醒：</strong>本指南所有量表為「<strong>病人自評輔助工具</strong>」，不取代專科醫師面對面評估。生物製劑健保申請、處方治療決策需由皮膚專科醫師依完整病史與檢查決定。本網站<strong>無業配、無贊助</strong>，所有引用學會共識可點擊 PubMed 查證。",
-      "en": "<strong>Important:</strong> every scale here is a <strong>patient self-assessment aid</strong> and does not replace a face-to-face specialist assessment. NHI biologic applications and prescribing decisions must be made by a dermatologist on the full history and examination. This site carries <strong>no advertising and no sponsorship</strong>; every society consensus cited can be checked on PubMed.",
+      "zh": "<strong>重要提醒：</strong>本指南所有量表為「<strong>病人自評輔助工具</strong>」，不取代專科醫師面對面評估。生物製劑健保申請、處方治療決策需由皮膚專科醫師依完整病史與檢查決定。所有引用的學會共識都可點擊 PubMed 查證。",
+      "en": "<strong>Important:</strong> every scale here is a <strong>patient self-assessment aid</strong> and does not replace a face-to-face specialist assessment. NHI biologic applications and prescribing decisions must be made by a dermatologist on the full history and examination. Every society consensus cited can be checked on PubMed.",
       "injected": true
     },
     {
@@ -2257,8 +2249,8 @@
       "injected": true
     },
     {
-      "zh": "<strong>本網站所有量表均無業配、無贊助、無聯盟連結</strong>，引用的學會共識可點擊 PubMed 查證。發現錯誤請<a href=\"mailto:expertise88864@gmail.com?subject=量表計算器回饋\" style=\"color:var(--teal-deep);text-decoration:underline\">寫信告知</a>。",
-      "en": "<strong>None of the scales on this site carries advertising, sponsorship or affiliate links</strong>, and every society consensus cited can be checked on PubMed. If you spot an error, please <a href=\"mailto:expertise88864@gmail.com?subject=Calculator%20feedback\" style=\"color:var(--teal-deep);text-decoration:underline\">email us</a>.",
+      "zh": "引用的學會共識都可點擊 PubMed 查證。發現錯誤請<a href=\"mailto:expertise88864@gmail.com?subject=量表計算器回饋\" style=\"color:var(--teal-deep);text-decoration:underline\">寫信告知</a>。",
+      "en": "Every society consensus cited can be checked on PubMed. If you spot an error, please <a href=\"mailto:expertise88864@gmail.com?subject=Calculator%20feedback\" style=\"color:var(--teal-deep);text-decoration:underline\">email us</a>.",
       "injected": true
     },
     {

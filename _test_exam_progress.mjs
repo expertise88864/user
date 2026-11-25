@@ -542,6 +542,101 @@ test('a mock card renders [i] markers in the question text as italics', async ()
   }
 });
 
+// 章節 and 作答狀況 on the practice page narrow either bank; a choice that
+// matches nothing leaves the paper already on screen alone.
+test('practice papers can be limited to chapters and to unanswered or wrong questions', async () => {
+  const exam = JSON.parse(fs.readFileSync('exam/exam-data.json', 'utf8'));
+  const mock = JSON.parse(fs.readFileSync('exam/mock-data.json', 'utf8'));
+  const fetch = url => Promise.resolve({
+    ok: true, json: () => Promise.resolve(String(url).startsWith('/exam/mock-data.json') ? mock : exam),
+  });
+  const flush = async () => { for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve)); };
+  const inCh = (q, n) => q.fitz.includes(n);
+  const ch52 = exam.questions.filter(q => inCh(q, 52)).map(q => q.id);
+  assert.ok(ch52.length >= 5);
+  const [right, wrong] = ch52;
+  const storage = new FakeStorage({
+    dnExamProgress: JSON.stringify({ [right]: [1, 1, 'A'], [wrong]: [0, 2, 'B'], '101-01': [0, 3, 'A'] }),
+    // The wrong notebook is a separate list: it does not decide 答錯.
+    dnExamWrong: JSON.stringify([right]),
+  });
+  const page = open(storage, '/exam/practice', { fetch });
+  const form = page.document.querySelector('[data-practice-form]');
+  const note = form.querySelector('.ex-build-note');
+  const radio = (name, value) => form.querySelectorAll('input[name=' + name + ']').forEach(box => {
+    box.checked = box.value === value;
+    if (box.checked) box.dispatch('change');
+  });
+  const chap = n => form.querySelectorAll('input[name=ex-chap]').find(box => box.value === String(n));
+  const ids = () => page.document.querySelectorAll('#ex-practice-list .ex-q').map(card => card.getAttribute('data-qid'));
+  const build = async () => { form.querySelector('.ex-build').click(); await flush(); };
+  const pick = form.querySelector('.ex-chap-pick');
+
+  // Every chapter with a past question is offered, with its question count.
+  const offered = form.querySelectorAll('input[name=ex-chap]').map(box => Number(box.value)).sort((a, b) => a - b);
+  assert.deepEqual(offered, [...new Set(exam.questions.flatMap(q => q.fitz))].sort((a, b) => a - b));
+  assert.match(chap(52).closest('label').textContent, new RegExp('Ch\\.52 .*' + ch52.length + ' 題'));
+
+  form.querySelector('select[name=ex-count]').value = '0';
+  assert.ok(pick.hidden, 'the chapter list is closed for 全部章節');
+  radio('ex-scope', 'pick');
+  assert.ok(!pick.hidden);
+  await build();
+  assert.equal(note.textContent, '請至少選一章');
+  assert.deepEqual(ids(), []);
+
+  chap(52).checked = true;
+  chap(52).dispatch('change');
+  assert.equal(form.querySelector('.ex-chap-count').textContent, '已選 1 章');
+  await build();
+  assert.deepEqual(ids().sort(), ch52.slice().sort());
+  radio('ex-status', 'new');
+  await build();
+  assert.deepEqual(ids().sort(), ch52.filter(id => id !== right && id !== wrong).sort());
+  radio('ex-status', 'wrong');
+  await build();
+  assert.deepEqual(ids(), [wrong]);
+  radio('ex-status', 'todo');
+  await build();
+  assert.deepEqual(ids().sort(), ch52.filter(id => id !== right).sort());
+
+  // Fewer matches than the chosen number is said; no match changes nothing.
+  form.querySelector('select[name=ex-count]').value = '10';
+  radio('ex-status', 'wrong');
+  await build();
+  assert.match(note.textContent, /符合條件的只有 1 題/);
+  const before = storage.getItem('dnExamPaper');
+  form.querySelector('.ex-chap-none').click();
+  chap(1).closest('.ex-chap-list').querySelector('.ex-part-all').click();
+  const part1 = form.querySelectorAll('.ex-chap-list').find(g => g.getAttribute('data-part') === '1')
+    .querySelectorAll('input[name=ex-chap]');
+  assert.ok(part1.length && part1.every(box => box.checked));
+  chap(52).checked = false;
+  const wrongInPart1 = exam.questions.some(q => ['101-01', wrong].includes(q.id) && part1.some(box => inCh(q, Number(box.value))));
+  if (!wrongInPart1) {
+    await build();
+    assert.match(note.textContent, /沒有符合條件的題目/);
+    assert.deepEqual(ids(), [wrong]);
+    assert.equal(storage.getItem('dnExamPaper'), before);
+  }
+
+  // The mock bank uses its own records.
+  const box = form.querySelector('input[name=ex-mock]');
+  box.checked = true;
+  box.dispatch('change');
+  form.querySelector('select[name=ex-count]').value = '0';
+  form.querySelector('.ex-chap-none').click();
+  chap(28).checked = true;
+  chap(28).dispatch('change');
+  radio('ex-status', 'new');
+  await build();
+  const mock28 = mock.questions.filter(q => inCh(q, 28)).map(q => q.id);
+  assert.deepEqual(ids().sort(), mock28.slice().sort());
+  answer(page, mock28[0], mock.questions.find(q => q.id === mock28[0]).answer[0]);
+  await build();
+  assert.deepEqual(ids().sort(), mock28.slice(1).sort());
+});
+
 // The two banks load independently: a paper asked for earlier whose bank
 // arrives later must not replace the newer paper (or its saved answers).
 test('a slower earlier build never replaces a newer paper', async () => {

@@ -68,8 +68,8 @@ BANNED_CLAIMS = (
     "最好的治療",
     "治療王者",
     "神藥",
-    # Sponsorship-suggestive language: the site explicitly disclaims sponsorship,
-    # so copy that contradicts that promise is a defect.
+    # Sponsorship-suggestive language: product-endorsement wording does not belong
+    # in patient education, whether or not a page is ever sponsored.
     "推薦使用",
     "強力推薦",
     "首選品牌",

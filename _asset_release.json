@@ -10,21 +10,21 @@
     "assets/inline/nav-burger.js": "8806a35218f37fc62667e4f4761e566acbe46284b2094588ab1e0ff99f9910dd",
     "assets/tw-mini.css": "5f73a8b170a63497c418e0d0667905139b7a330dab9333eb1c7cdaed872c3d31",
     "assets/web-vitals.iife.js": "77b2dfc9e065286d780c87f72b5cad08761346ff564ddd3f79102f4d4027e9a6",
-    "blog/blog-article-footer.min.js": "bba8ab776c1cd1a766ccf32cc39012e2b9edee16a9f888e2178804536f572821",
-    "blog/blog-article-reading.min.js": "d9c4ed7751dd4ba5aeccb553692ea7a753751c44d385add7751b8a1caec91793",
+    "blog/blog-article-footer.min.js": "f48fe98e4fe855918a0624ce350aabd830cccf116d21d5f9198a905683c252b4",
+    "blog/blog-article-reading.min.js": "dd045ad12abf9fdea9b9ac2ad94d5b0b69cc54810beda18e76a050e1859c3fa5",
     "blog/blog-article-visuals.min.js": "f558332b7c8c6d7a8418dc72e177c1982a0dcce455c1366bf8daf3cbb238d7f2",
     "blog/blog-calculators.min.js": "8ea09fd4c3f65c67d55016f002d7a9f7e98b2eb8e5d7bfb39824a7573c280f7c",
     "blog/blog-diagrams.min.js": "c8811221e63c1b10c994e6c5cba34cb77b7ec908409bff6e0059a861d3f08294",
     "blog/blog-hub.min.js": "fb75663a450f872dfc8419c2df99aa10ea904c6f925dfb112493df63e83d4f7a",
     "blog/blog-search.min.js": "1228c58d99873daf053d2e8d1138441c0f4d7631ab5c3ad443c9ff213702c7a9",
-    "blog/blog-shared.min.js": "765f5d3c763f9d819db17b49e987886c2317795e98defce4d97f6c534ce41ead",
-    "blog/blog-support.min.js": "5a26abeb2cdf067d8a8e16978eb2f74dfee11966608d316602478dae4669a1e8"
+    "blog/blog-shared.min.js": "aff87c95e0d65183276a340620b0266cb6c49ec690720855bca0dae8d45015ef",
+    "blog/blog-support.min.js": "4f30ca6fb09ad2648c7b4c0b97328ee128effd62ffba8cbcdb753ed69a6c054b"
   },
   "caches": {
-    "CACHE": "cd-v284",
-    "RUNTIME": "cd-runtime-v282"
+    "CACHE": "cd-v285",
+    "RUNTIME": "cd-runtime-v283"
   },
   "hash_format": "sha256-utf8-lf",
-  "version": "202611251800",
-  "worker_sha256": "5bd1183248d885457d3a6bd3bc0022667bed86ca942e5d47cb8491ba607344e6"
+  "version": "202611252330",
+  "worker_sha256": "9b1778a6d2a6708a59d3c7395376357dd93fa74b1558aa475a8dca7cdde4c981"
 }

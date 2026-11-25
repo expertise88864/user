@@ -122,8 +122,8 @@ TRANSLATIONS: dict[str, str] = {
     "主題地圖 · TOPICS": "Topic Map · TOPICS",
     "中文": "Chinese",
     "重要提醒": "Important notice",
-    "本網站文章僅作衛教資訊、個別評估、處方、雷射或手術仍需就近至皮膚科專科醫師門診評估。本站不從事醫療廣告、亦不推薦特定診所或療程。":
-        "All articles are for general education only. Individual evaluation, prescription, laser, or surgery must be assessed by a dermatologist in person. This site does not engage in medical advertising and does not recommend specific clinics or procedures.",
+    "本網站文章僅作衛教資訊、個別評估、處方、雷射或手術仍需就近至皮膚科專科醫師門診評估。":
+        "All articles are for general education only. Individual evaluation, prescription, laser, or surgery must be assessed by a dermatologist in person.",
     # index.html — article card H2 titles + descriptions
     "皮膚科雷射完整對照 — 波長 × 適應症 × 證據強度":
         "Dermatologic laser comparison — wavelength × indication × evidence",

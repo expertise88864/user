@@ -1129,12 +1129,19 @@ def year_page(shell, data, year: int, qs: list[dict]) -> str:
                 jsonld_type="WebPage", body=body, page_kind="year", card=card)
 
 
+def book_expl_note(data, qs: list[dict]) -> str:
+    """How many of the page's questions have an explanation (worded from the data)."""
+    done = sum(1 for q in qs if q["id"] in data["explanations"])
+    have = "每題都有詳解" if done == len(qs) else f"其中 {done} 題有詳解，其餘只列出官方答案"
+    return f"{have}，依據見每題所附的書目頁碼；Fitzpatrick 也有涵蓋的題目，題號旁會標出章節。"
+
+
 def book_page(shell, data, book: str, qs: list[dict]) -> str:
     name, short = OTHER_BOOKS[book]
     body = (
         f'<p class="ex-kicker">其他參考書</p><h1 class="ex-h1">{esc(short)}題 · {esc(name)}</h1>'
         f'<p class="ex-meta">主要考 {esc(name)} 內容的考題，共 {len(qs)} 題。'
-        "這些題目的詳解需要該書內容，目前只列出官方答案；若 Fitzpatrick 也有涵蓋，題目旁會標出章節。</p>"
+        f"{book_expl_note(data, qs)}</p>"
         f"{NOTICE}{MODE_BAR}" + "".join(question_html(q, data) for q in qs)
     )
     title = f"皮膚科專科考試 {short}題（{name}）"
@@ -1146,13 +1153,44 @@ def book_page(shell, data, book: str, qs: list[dict]) -> str:
                 jsonld_type="WebPage", body=body, page_kind="book", card=card)
 
 
-def practice_page(shell, by_year, n_mock: int, card) -> str:
+def practice_chapters(data, by_chapter) -> str:
+    """Chapter choice of the practice page: every chapter with a past question, by Fitzpatrick Part."""
+    groups: dict[int, list[int]] = {}
+    for n in sorted(c for c, qs in by_chapter.items() if qs):
+        groups.setdefault(part_of(data, n), []).append(n)
+    out = []
+    for k in sorted(groups):
+        boxes = []
+        for n in groups[k]:
+            zh = chapter_zh(data, n)
+            name = f"Ch.{n} {data['chapters'][n]['title']}" + (f"（{zh}）" if zh else "")
+            boxes.append(
+                f'<label class="ex-check"><input type="checkbox" name="ex-chap" value="{n}" aria-label="{esc(name)}"> '
+                f'<span>{esc(name)} <span class="ex-chap-n">{len(by_chapter[n])} 題</span></span></label>')
+        out.append(
+            f'<details class="ex-chap-part"><summary>{esc(part_name(data, k))} '
+            f'<span class="ex-chap-n" data-part-picked="{k}">（{len(boxes)} 章）</span></summary>'
+            f'<div class="ex-chap-list" data-part="{k}">'
+            f'<button type="button" class="ex-part-all" aria-label="{esc(part_name(data, k))} 全選或全不選">整個 Part 全選／全不選</button>'
+            f'{"".join(boxes)}</div></details>')
+    return (
+        '<fieldset class="ex-fieldset ex-chap-set"><legend>章節</legend>'
+        '<label class="ex-check"><input type="radio" name="ex-scope" value="all" aria-label="全部章節" checked> 全部章節</label>'
+        '<label class="ex-check"><input type="radio" name="ex-scope" value="pick" aria-label="自選章節"> 自選章節</label>'
+        '<div class="ex-chap-pick" hidden>'
+        '<p class="ex-mock-note">可選多章；一題可能屬於多章，選到其中一章就會列入。題數為 101–115 年考古題。</p>'
+        '<div class="ex-toolbar"><button type="button" class="ex-chap-none">清除章節選擇</button>'
+        '<span class="ex-chap-count" aria-live="polite"></span></div>'
+        f'{"".join(out)}</div></fieldset>')
+
+
+def practice_page(shell, data, by_year, by_chapter, n_mock: int, card) -> str:
     # 模擬考 replaces the year selection with the mock bank; shown only once the bank has questions.
     mock = (
         '<fieldset class="ex-fieldset ex-mock-set"><legend>模擬考</legend>'
         f'<label class="ex-check"><input type="checkbox" name="ex-mock" value="1" aria-label="模擬考（題庫 {n_mock} 題）">'
         f' 模擬考（題庫 {n_mock} 題）</label>'
-        f'<p class="ex-mock-note">勾選後改從模擬題出題（{MOCK_LABEL}；年份選擇不適用）。'
+        f'<p class="ex-mock-note">勾選後改從模擬題出題（{MOCK_LABEL}；年份選擇不適用，章節與作答狀況仍可選）。'
         "模擬題依 Fitzpatrick 與 McKee 新撰寫，比照歷屆題型，每題經獨立作答與逐句對照原文核對；"
         "作答紀錄另外保存，不計入考古題的作答統計與錯題本。</p></fieldset>"
     ) if n_mock else ""
@@ -1170,6 +1208,13 @@ def practice_page(shell, by_year, n_mock: int, card) -> str:
         f'<div class="ex-checks">{years}</div>'
         '<div class="ex-toolbar"><button type="button" class="ex-years-all">全選</button>'
         '<button type="button" class="ex-years-none">全不選</button></div></fieldset>'
+        f"{practice_chapters(data, by_chapter)}"
+        '<fieldset class="ex-fieldset"><legend>作答狀況</legend>'
+        '<label class="ex-check"><input type="radio" name="ex-status" value="all" aria-label="不限" checked> 不限</label>'
+        '<label class="ex-check"><input type="radio" name="ex-status" value="new" aria-label="沒做過"> 沒做過</label>'
+        '<label class="ex-check"><input type="radio" name="ex-status" value="wrong" aria-label="答錯"> 答錯</label>'
+        '<label class="ex-check"><input type="radio" name="ex-status" value="todo" aria-label="沒做過或答錯"> 沒做過或答錯</label>'
+        '<p class="ex-mock-note">依這台裝置的作答紀錄；「答錯」指最近一次作答答錯的題目，與錯題本分開計算。</p></fieldset>'
         '<fieldset class="ex-fieldset"><legend>題數</legend><select name="ex-count" class="ex-select" aria-label="題數">'
         '<option value="10">10 題</option><option value="25">25 題</option><option value="50" selected>50 題</option>'
         '<option value="100">100 題</option><option value="0">全部</option></select></fieldset>'
@@ -1183,7 +1228,7 @@ def practice_page(shell, by_year, n_mock: int, card) -> str:
         '<button type="button" class="ex-finish">交卷並計分</button>'
         '<span class="ex-score" aria-live="polite"></span></div>'
         '<div id="ex-practice-list" class="ex-review-list">'
-        '<p class="ex-pending">選好年份、題數與順序後按「產生試卷」。</p></div>'
+        '<p class="ex-pending">選好出題範圍、題數與順序後按「產生試卷」。</p></div>'
         '<noscript><p class="ex-meta">這個功能需要啟用 JavaScript。未啟用時，可以直接開啟單一年度的考古卷：</p>'
         f'<ul class="ex-year-links">{year_links}</ul></noscript>'
     )
@@ -1731,7 +1776,7 @@ def build(content_date: str | None = None) -> dict[str, str]:
         files[f"year-{y}.html"] = year_page(shell, data, y, qs)
     for b, qs in sorted(by_book.items()):
         files[f"{b}.html"] = book_page(shell, data, b, qs)
-    files["practice.html"] = practice_page(shell, by_year, len(data["mock"]), hub_card)
+    files["practice.html"] = practice_page(shell, data, by_year, by_chapter, len(data["mock"]), hub_card)
     files["review.html"] = review_page(shell, hub_card)
     files["info.html"] = info_page(shell, hub_card)
     if data["concepts"]:
@@ -1918,6 +1963,14 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 .ex-mock-notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:13px;font-weight:600;color:#7c2d12;line-height:1.7}
 .ex-checks{display:flex;flex-wrap:wrap;gap:6px 14px}
 .ex-check{font-size:14px;display:inline-flex;align-items:center;gap:4px;margin-right:12px}
+.ex-chap-pick[hidden]{display:none}
+.ex-chap-part{border-top:1px solid var(--border);padding:8px 0}
+.ex-chap-part summary{cursor:pointer;font-size:14px;font-weight:600;line-height:1.6}
+.ex-chap-list{display:grid;gap:8px;padding:8px 0 4px}
+.ex-chap-list .ex-check{align-items:flex-start;gap:8px;line-height:1.5}
+.ex-chap-list .ex-check input{margin-top:4px;flex:none}
+.ex-chap-n{font-size:12.5px;font-weight:400;color:var(--ink-2)}
+.ex-part-all{justify-self:start;font-size:13px;border:1px solid var(--border);border-radius:9999px;padding:4px 12px;background:transparent;color:inherit;cursor:pointer}
 .ex-select{border:1px solid var(--border);border-radius:8px;padding:4px 8px;font-size:14px;background:#fff;color:inherit}
 :root[data-theme="dark"] .ex-cta{background:#a4b5a8;color:#16140f}
 :root[data-theme="dark"] .ex-select{background:#24211c;border-color:#3a352c}

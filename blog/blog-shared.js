@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202611251800';
+        s.src = '/blog/blog-article-visuals.min.js?v=202611252330';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -497,7 +497,7 @@
       if (!DN.searchRender && !DN._searchBundle) {
         DN._searchBundle = 1;
         var s = document.createElement('script');
-        s.src = '/blog/blog-search.min.js?v=202611251800';
+        s.src = '/blog/blog-search.min.js?v=202611252330';
         s.onload = SEARCH.rerender;
         s.onerror = function () { DN._searchBundle = 0; };
         document.head.appendChild(s);
@@ -1169,7 +1169,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202611251800';
+        s.src = '/blog/blog-article-reading.min.js?v=202611252330';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1205,7 +1205,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202611251800';
+        s.src = '/blog/blog-article-footer.min.js?v=202611252330';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1235,7 +1235,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202611251800';
+        s.src = '/blog/blog-calculators.min.js?v=202611252330';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1374,7 +1374,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202611251800';
+        s.src = '/blog/blog-hub.min.js?v=202611252330';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1406,7 +1406,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202611251800';
+        script.src = '/blog/blog-support.min.js?v=202611252330';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));
@@ -1440,6 +1440,7 @@
     if (pagePath === '/about' || pagePath.startsWith('/admin')) return;
     var isEn = DN.detectLang() === 'en';
     var prefix = isEn ? '/en' : '';
+    var isExam = !isEn && /^\/exam(?:\/|$)/.test(pagePath);
     var mobile = window.matchMedia && window.matchMedia('(max-width: 767px)');
     var lastY = null;
 
@@ -1448,35 +1449,37 @@
     bar.setAttribute('aria-label', isEn ? 'Quick navigation' : '快速操作工具列');
     bar.style.cssText =
       'position:fixed;bottom:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr;' +
-      'background:rgba(250,247,242,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);' +
+      'background:var(--dn-cta-bg);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);' +
       'border-top:1px solid var(--border, #dcd5c8);box-shadow:0 -4px 20px -8px rgba(77,99,88,.2);' +
       'padding-bottom:env(safe-area-inset-bottom);' +
       'transform:translateY(0);transition:transform .25s ease';
-    bar.innerHTML =
-      '<a href="' + (prefix || '/') + '" ' +
-        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="home" aria-label="' + (isEn ? 'Home' : '首頁') + '">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' +
-        '<span data-zh="首頁" data-en="Home">' + (isEn ? 'Home' : '首頁') + '</span>' +
-      '</a>' +
-      '<a href="' + prefix + '/blog" ' +
-        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="latest" aria-label="' + (isEn ? 'Latest articles' : '最新文章') + '">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>' +
-        '<span data-zh="最新文章" data-en="Latest">' + (isEn ? 'Latest' : '最新文章') + '</span>' +
-      '</a>' +
-      '<a href="' + prefix + '/about" ' +
-        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700" ' +
-        'data-cta="about" aria-label="' + (isEn ? 'About' : '關於我') + '">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>' +
-        '<span data-zh="關於我" data-en="About">' + (isEn ? 'About' : '關於我') + '</span>' +
-      '</a>';
+    // [href, data-cta, zh, en, label zh, label en, icon paths]
+    var items = [
+      [prefix || '/', 'home', '首頁', 'Home', '首頁', 'Home',
+        '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>'],
+      // /exam pages: the middle entry leads to the exam hub instead of the article list.
+      isExam ? ['/exam', 'exam', '專科考試', '', '專科考試', '',
+        '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>']
+        : [prefix + '/blog', 'latest', '最新文章', 'Latest', '最新文章', 'Latest articles',
+        '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/>'],
+      [prefix + '/about', 'about', '關於我', 'About', '關於我', 'About',
+        '<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/>']
+    ];
+    bar.innerHTML = items.map(function (it) {
+      return '<a href="' + it[0] + '" data-cta="' + it[1] + '" aria-label="' + (isEn ? it[5] : it[4]) + '">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + it[6] + '</svg>' +
+        '<span' + (it[3] ? ' data-zh="' + it[2] + '" data-en="' + it[3] + '"' : '') + '>' + (isEn ? it[3] : it[2]) + '</span></a>';
+    }).join('');
 
     var style = document.createElement('style');
     style.id = 'dn-sticky-cta-css';
     style.textContent =
-      '#dn-sticky-cta a:active{ background:#f1ece4 }' +
-      '#dn-sticky-cta a:hover{ background:#f5f1eb }' +
+      '#dn-sticky-cta{ --dn-cta-bg:rgba(250,247,242,.96);--dn-cta-ink:#4d6358;--dn-cta-hover:#f5f1eb;--dn-cta-active:#f1ece4 }' +
+      ':root[data-theme="dark"] #dn-sticky-cta{ --dn-cta-bg:rgba(31,28,23,.96);--dn-cta-ink:#c9d6cc;--dn-cta-hover:#2b2721;--dn-cta-active:#35302a }' +
+      '#dn-sticky-cta a{ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:var(--dn-cta-ink);font-size:11px;font-weight:700 }' +
+      '#dn-sticky-cta a+a{ border-left:1px solid var(--border, #dcd5c8) }' +
+      '#dn-sticky-cta a:hover{ background:var(--dn-cta-hover) }' +
+      '#dn-sticky-cta a:active{ background:var(--dn-cta-active) }' +
       '@media (min-width: 768px){ #dn-sticky-cta{ display:none !important } body.dn-has-sticky-cta{ padding-bottom:0 !important } }' +
       '@media (max-width: 767px){ body.dn-has-sticky-cta{ padding-bottom:64px } }';
     document.head.appendChild(style);

@@ -644,6 +644,21 @@ test('toolbar links and accessible labels stay in the rendered language',()=>{
   const bar=toolbarHarness('/blog/acne-myths').nodes.get('dn-sticky-cta');
   assert.match(bar.innerHTML,/href="\/blog"/);assert.match(bar.innerHTML,/aria-label="最新文章"/);
 });
+test('exam pages link to the exam hub and the toolbar follows the dark theme',()=>{
+  for(const path of ['/exam','/exam/','/exam/fitz-52','/exam/practice.html']){
+    const bar=toolbarHarness(path).nodes.get('dn-sticky-cta');
+    assert.match(bar.innerHTML,/href="\/exam"/,path);assert.match(bar.innerHTML,/aria-label="專科考試"/);
+    assert.doesNotMatch(bar.innerHTML,/href="\/blog"/);
+    assert.equal(bar.innerHTML.match(/<a /g).length,3);assert.equal(bar.innerHTML.match(/<\/a>/g).length,3);
+  }
+  for(const path of ['/','/blog/acne-myths','/examples']){
+    const bar=toolbarHarness(path).nodes.get('dn-sticky-cta');
+    assert.doesNotMatch(bar.innerHTML,/href="\/exam"/,path);assert.match(bar.innerHTML,/href="\/blog"/);
+  }
+  const h=toolbarHarness('/');const css=h.nodes.get('dn-sticky-cta-css').textContent;
+  assert.match(css,/:root\[data-theme="dark"\] #dn-sticky-cta\{ --dn-cta-bg:rgba\(31,28,23/);
+  assert.match(h.nodes.get('dn-sticky-cta').style.cssText,/background:var\(--dn-cta-bg\)/);
+});
 test('toolbar consistently excludes about and admin routes in both languages',()=>{
   for(const path of ['/about','/about/','/about.html','/en/about','/en/about/','/en/about.html','/admin.html','/en/admin']){
     const h=toolbarHarness(path);assert.equal(h.nodes.size,0,path);assert.equal(h.reads(),0);assert.equal(h.frames.length,0);

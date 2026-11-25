@@ -68,7 +68,7 @@ module.exports = async function checkLanguageEnhancements(browser, { sharedSourc
           assert.equal(firstDisplay.title, 'Buy me a coffee', 'The English enhancement is translated before its first insertion');
           assert.equal(supportRequests - requestsBefore, 1, 'Concurrent callers share one request; a previous failed request can retry');
           assert.equal(firstDisplay.href, '/en/support', 'The support link preserves the reader language');
-          assert.ok(firstDisplay.paragraph.startsWith('No ads, no sponsorships.'));
+          assert.ok(firstDisplay.paragraph.startsWith('All articles and calculators are free.'));
           assert.equal(await page.locator('#dn-bmc-footer').count(), 1);
           await page.locator('#dn-bmc-footer').scrollIntoViewIfNeeded();
           assert.ok(await page.locator('#dn-bmc-footer h3').isVisible());

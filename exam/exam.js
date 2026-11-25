@@ -925,6 +925,59 @@
     }
     if (mockBox) mockBox.addEventListener('change', syncMock);
     syncMock();
+    // 章節: every chapter, or the chapters ticked in the list.
+    var pick = form.querySelector('.ex-chap-pick');
+    var chapBoxes = Array.prototype.slice.call(form.querySelectorAll('input[name=ex-chap]'));
+    function chosen(name) {
+      var box = Array.prototype.slice.call(form.querySelectorAll('input[name=' + name + ']'))
+        .filter(function (b) { return b.checked; })[0];
+      return box ? box.value : 'all';
+    }
+    function pickedChapters() {
+      return chapBoxes.filter(function (box) { return box.checked; }).map(function (box) { return Number(box.value); });
+    }
+    function syncChapters() {
+      if (!pick) return;
+      pick.hidden = chosen('ex-scope') !== 'pick';
+      var n = pickedChapters().length;
+      form.querySelector('.ex-chap-count').textContent = n ? '已選 ' + n + ' 章' : '尚未選章節';
+      form.querySelectorAll('.ex-chap-list').forEach(function (group) {
+        var boxes = Array.prototype.slice.call(group.querySelectorAll('input[name=ex-chap]'));
+        var on = boxes.filter(function (box) { return box.checked; }).length;
+        var label = form.querySelector('[data-part-picked="' + group.getAttribute('data-part') + '"]');
+        if (label) label.textContent = on ? '（已選 ' + on + '／' + boxes.length + ' 章）' : '（' + boxes.length + ' 章）';
+      });
+    }
+    form.querySelectorAll('input[name=ex-scope]').forEach(function (box) { box.addEventListener('change', syncChapters); });
+    chapBoxes.forEach(function (box) { box.addEventListener('change', syncChapters); });
+    form.querySelectorAll('.ex-part-all').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var boxes = Array.prototype.slice.call(btn.closest('.ex-chap-list').querySelectorAll('input[name=ex-chap]'));
+        var every = boxes.every(function (box) { return box.checked; });
+        boxes.forEach(function (box) { box.checked = !every; });
+        syncChapters();
+      });
+    });
+    var chapNone = form.querySelector('.ex-chap-none');
+    if (chapNone) {
+      chapNone.addEventListener('click', function () {
+        chapBoxes.forEach(function (box) { box.checked = false; });
+        syncChapters();
+      });
+    }
+    syncChapters();
+    // 作答狀況, from the latest recorded answer (mock questions keep their own records).
+    function statusTest(status, mock) {
+      var map = mock ? load(MOCK_PROGRESS_KEY, {}) : progressMap();
+      if (!isMap(map)) map = {};
+      return function (q) {
+        var rec = own(map, q.id) && Array.isArray(map[q.id]) ? map[q.id] : null;
+        if (status === 'new') return !rec;
+        if (status === 'wrong') return !!rec && !rec[0];
+        if (status === 'todo') return !rec || !rec[0];
+        return true;
+      };
+    }
     var summary = buildAnswerBar(null, '');
     summary.hidden = true;
     list.parentNode.insertBefore(summary, list);
@@ -952,6 +1005,9 @@
       var years = [];
       form.querySelectorAll('input[name=ex-year]:checked').forEach(function (box) { years.push(Number(box.value)); });
       if (!mock && !years.length) { note.textContent = '請至少選一個年份'; return; }
+      var chapters = chosen('ex-scope') === 'pick' ? pickedChapters() : null;
+      if (chapters && !chapters.length) { note.textContent = '請至少選一章'; return; }
+      var status = chosen('ex-status');
       var count = Number(form.querySelector('select[name=ex-count]').value);
       var order = form.querySelector('input[name=ex-order]:checked').value;
       note.textContent = '題目載入中…';
@@ -960,6 +1016,18 @@
         if (seq !== buildSeq) return;
         var pool = mock ? data.questions.slice()
           : data.questions.filter(function (q) { return years.indexOf(q.year) !== -1; });
+        if (chapters) {
+          pool = pool.filter(function (q) {
+            return (q.fitz || []).some(function (n) { return chapters.indexOf(n) !== -1; });
+          });
+        }
+        pool = pool.filter(statusTest(status, mock));
+        var found = pool.length;
+        if (!found) {
+          // Nothing is replaced: a paper already on screen stays as it is.
+          note.textContent = '沒有符合條件的題目，請放寬' + (mock ? '' : '年份、') + '章節或作答狀況';
+          return;
+        }
         if (order === 'random') shuffle(pool);
         if (count > 0) pool = pool.slice(0, count);
         // Cards read paper.sel/done when wired, so the paper exists first.
@@ -969,7 +1037,8 @@
         if (mock) fresh.mock = true;
         beginPaper('practice', fresh);
         show(pool, mock);
-        note.textContent = '共 ' + pool.length + ' 題' + (mock ? MOCK_LABEL : '') + '，計時開始';
+        note.textContent = '共 ' + pool.length + ' 題' + (mock ? MOCK_LABEL : '') +
+          (found < count ? '（符合條件的只有 ' + found + ' 題）' : '') + '，計時開始';
         barApi.start(paper.start);
         setOnlyTodo(false);
         updateAnswerBar();
