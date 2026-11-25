@@ -1177,7 +1177,6 @@
     // ABCDE + AK progression for sunscreen / melasma articles (UV damage articles)
     'sunscreen-myths':         [{ key: 'uv-penetration', after: 1 }, { key: 'spf-curve', after: 3 }, { key: 'melanoma-abcde', after: 5 }, { key: 'ak-progression', after: 7 }],
     // More clinical-photo placeholders for diseases without owned images
-    'warts-myths':             [],
     'epidermoid-cyst':         [{ key: 'clinical-photo-placeholder', after: 1 }],
   };
 

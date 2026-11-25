@@ -210,7 +210,7 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
     ],
 
     # ─── Viral skin ───
-    "warts-myths": [
+    "warts-overview": [
         medical_condition("Viral wart", "病毒疣",
                           icd10="B07.9", snomed="240542004"),
     ],

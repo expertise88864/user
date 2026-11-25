@@ -202,5 +202,17 @@
       "png": "55eb0d036a7b93b463680170c38cc513308392b9522269ddf6ef755bf0045ca6",
       "webp": "c9b588049befcf68e79361dfc6d00ace6f352c80a6c92ff4cd5ccdc5d1610b86"
     }
+  },
+  "warts-overview": {
+    "source": {
+      "title": "病毒疣完整介紹：類型、傳染、冷凍與水楊酸、足底疣與雞眼、何時看醫師",
+      "subtitle": "",
+      "date": "2026-11-25"
+    },
+    "rendered_tag": "疾病總覽",
+    "files": {
+      "png": "19dfeacb3a30d88f0057254937cbee5127020b1c974bc82fc537d902eeeacf79",
+      "webp": "76a173ad89d344cc0ab7fd397245c763f894786e5cc089f50eae4a01ac707fac"
+    }
   }
 }

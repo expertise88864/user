@@ -116,6 +116,10 @@ EN_OG_OVERRIDES = {
         'title': 'Bimekizumab for Hidradenitis Suppurativa (BE-HEARD I/II, BJD 2026)',
         'desc': 'Bimekizumab is a newer biologic that inhibits both IL-17A and IL-17F. A 2026 British Journal of Dermatology critically appraised topic (McCarthy & Ring) reviews its two phase III trials, BE-HEARD I and II (Kimball et al., Lancet 2024): at week 16, about 48–52% of the every-2-weeks arm reached HiSCR 50 vs 29–32% on placebo, with DLQI and pain improvements, broadly comparable to adalimumab and secukinumab. The appraisal is candid about limits: a 31% placebo response, UCB funding, no comparator beyond week 16 and no head-to-head, common candida infections (23–25%), IBD signals, week-48 retention falling to 66–76%, a predominantly White and female cohort, and exclusion of the most severe phenotype. Covers IL-17A/F mechanism, efficacy, safety, the critical appraisal, and the Taiwan context.',
     },
+    'blog/warts-overview.html': {
+        'title': 'Viral Warts Explained: Types, Spread, Freezing and Salicylic Acid, Plantar Wart or Corn, When to See a Doctor',
+        'desc': 'Types, spread, natural course, what salicylic acid and freezing really achieve, red flags, NHI rules and myths about viral warts.',
+    },
     'blog/herpes-zoster-overview.html': {
         'title': 'Shingles (Herpes Zoster) Explained: Symptoms, Red Flags, Antivirals, Nerve Pain and Vaccination',
         'desc': 'Symptoms, red flags, antivirals and NHI rules, nerve pain, contagion, vaccination and myths about shingles in one page.',
@@ -165,10 +169,6 @@ EN_OG_OVERRIDES = {
     'blog/skin-biopsy-excision.html': {
         'title': 'Skin biopsy & tumor excision — guide & post-op care',
         'desc': 'Patient-friendly dermatology guide to skin biopsy and tumor excision: indications, technique, post-op wound care, scar care, and follow-up. Integrates AAD biopsy guideline.',
-    },
-    'blog/warts-myths.html': {
-        'title': 'Warts myths — banana peel, single laser, self-resolution?',
-        'desc': 'Common warts (HPV) myth-busting: does banana peel work, can one laser session cure, will warts self-resolve, when to see a dermatologist. Treatment ladder included.',
     },
     'blog/rosacea-myths.html': {
         'title': 'Rosacea myths — phenotypes, treatment ladder, Demodex',

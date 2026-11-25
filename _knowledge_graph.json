@@ -137,7 +137,7 @@
       "topical-steroids-guide",
       "urticaria-overview",
       "vitiligo",
-      "warts-myths"
+      "warts-overview"
     ],
     "dupilumab-long-term-maintenance": [
       "atopic-dermatitis-overview",
@@ -251,7 +251,7 @@
       "skin-whitening-agents",
       "sunscreen-myths",
       "topical-acids-patient",
-      "warts-myths"
+      "warts-overview"
     ],
     "mpox-care": [
       "acne-overview",
@@ -359,7 +359,7 @@
       "photodynamic-therapy-overview",
       "sunscreen-myths",
       "topical-acids-patient",
-      "warts-myths"
+      "warts-overview"
     ],
     "semaglutide-hair-loss": [
       "alopecia-areata",
@@ -370,7 +370,7 @@
       "actinic-keratosis-scc",
       "dermatologic-oral-examination",
       "epidermoid-cyst",
-      "warts-myths"
+      "warts-overview"
     ],
     "skin-whitening-agents": [
       "acne-overview",
@@ -390,7 +390,7 @@
       "melasma-myths",
       "rosacea-myths",
       "topical-acids-patient",
-      "warts-myths"
+      "warts-overview"
     ],
     "targeted-therapy-skin": [
       "acne-overview",
@@ -455,13 +455,18 @@
       "melasma-myths",
       "vitiligo-maintenance-clinical"
     ],
-    "warts-myths": [
-      "hairloss-myths",
+    "warts-overview": [
+      "actinic-keratosis-scc",
+      "atopic-dermatitis-overview",
+      "biologics-overview",
+      "dermatology-faq",
+      "hand-eczema-overview",
       "herpes-zoster-overview",
-      "melasma-myths",
+      "laser-dermatology",
       "mpox-care",
-      "rosacea-myths",
-      "sunscreen-myths",
+      "nhi-derm-drugs",
+      "photodynamic-therapy-overview",
+      "skin-biopsy-excision",
       "tinea-myths"
     ]
   },

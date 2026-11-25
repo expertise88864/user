@@ -65,7 +65,7 @@ CLUSTERS: list[list[str]] = [
     ],
     # Viral skin infections
     [
-        "warts-myths",
+        "warts-overview",
         "herpes-zoster-overview",
         "mpox-care",
     ],

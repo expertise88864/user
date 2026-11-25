@@ -168,10 +168,6 @@
     "date": "2026-05-23",
     "source": "published"
   },
-  "warts-myths": {
-    "date": "2026-05-04",
-    "source": "published"
-  },
   "jaad-monthly-2026-11": {
     "date": "2026-11-17",
     "source": "published"
@@ -213,6 +209,10 @@
     "source": "published"
   },
   "herpes-zoster-overview": {
+    "date": "2026-11-25",
+    "source": "published"
+  },
+  "warts-overview": {
     "date": "2026-11-25",
     "source": "published"
   }

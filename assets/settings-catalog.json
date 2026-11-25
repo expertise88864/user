@@ -7,6 +7,11 @@
       "title_en": "Shingles (Herpes Zoster) Explained: Symptoms, Red Flags, Antivirals, Nerve Pain and Vaccination"
     },
     {
+      "slug": "warts-overview",
+      "title": "病毒疣完整介紹：類型、傳染、冷凍與水楊酸、足底疣與雞眼、何時看醫師",
+      "title_en": "Viral Warts Explained: Types, Spread, Freezing and Salicylic Acid, Plantar Wart or Corn, When to See a Doctor"
+    },
+    {
       "slug": "urticaria-overview",
       "title": "蕁麻疹完整介紹：急性與慢性、誘發因素、檢查、抗組織胺與生物製劑、日常照護",
       "title_en": "Urticaria (Hives) Explained: Acute and Chronic Types, Triggers, Tests, Antihistamines, Biologics and Daily Care"
@@ -215,11 +220,6 @@
       "slug": "acne-scar-treatment",
       "title": "痘疤完整治療指引",
       "title_en": "Acne scar treatment"
-    },
-    {
-      "slug": "warts-myths",
-      "title": "病毒疣 6 大迷思",
-      "title_en": "Warts myths"
     },
     {
       "slug": "tinea-myths",

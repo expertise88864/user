@@ -53,7 +53,7 @@
   },
   "dermatology-faq": {
     "date": "2026-11-25",
-    "hash": "dc998467fac003df2c6d3b524bb92285a8ab17f1ca9e2781328222c97f56f9af"
+    "hash": "531445517946a72b98d0a31956742b2d20ca905d29934202a7ef39ae99be213f"
   },
   "dupilumab-long-term-maintenance": {
     "date": "2026-11-18",
@@ -211,8 +211,8 @@
     "date": "2026-10-18",
     "hash": "52a35f77de26922a5733306dc85a6a192a80de85d956ba701ec49f43665162ba"
   },
-  "warts-myths": {
+  "warts-overview": {
     "date": "2026-11-25",
-    "hash": "5d53adfd714ea0fc92fb01f96cfc5191ad5da2f9e3739cec403c43b238cfa5d1"
+    "hash": "1125edf6415efeb5016e4e6115aa97a795128afa1808b295fd578f4f11b8a15d"
   }
 }

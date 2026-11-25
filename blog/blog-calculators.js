@@ -956,7 +956,7 @@
     // Others
     'dermatology-faq':            ['DLQI'],
     'tinea-myths':                ['DLQI'],
-    'warts-myths':                ['DLQI'],
+    'warts-overview':             ['DLQI'],
     'herpes-zoster-overview':      ['DLQI'],
     'mpox-care':                  ['DLQI'],
     'epidermoid-cyst':            ['DLQI'],
